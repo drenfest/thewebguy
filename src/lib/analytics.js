@@ -1,6 +1,7 @@
 import { browser } from "$app/environment";
+import { env } from "$env/dynamic/public";
 
-export const gaMeasurementId = (import.meta.env.PUBLIC_GA_MEASUREMENT_ID || "").trim();
+export const gaMeasurementId = (env.PUBLIC_GA_MEASUREMENT_ID || "").trim();
 
 const scrollThresholds = [25, 50, 75, 90];
 const trackedScrollDepths = new Set();
@@ -136,8 +137,13 @@ export function initGoogleAnalytics() {
       window.dataLayer.push(arguments);
     };
 
+  if (!initialized && window.__theWebGuyGaInitialized) {
+    initialized = true;
+  }
+
   if (!initialized) {
     initialized = true;
+    window.__theWebGuyGaInitialized = true;
     window.gtag("js", new Date());
     window.gtag("config", gaMeasurementId, { send_page_view: false });
   }
@@ -267,4 +273,3 @@ export function trackScrollDepth() {
   trackedScrollDepths.add(threshold);
   trackEvent("scroll_depth", { scroll_percent: threshold });
 }
-

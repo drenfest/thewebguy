@@ -5,7 +5,9 @@ Content and navigation data that powers the site.
 ## Files
 
 - `content.js`: main content model. Contains FAQs, blog posts, services, skills, location pages, URL helpers, slug maps, and relationship maps.
+- `llm-context.js`: generates `/llms.txt` and `/llms-full.txt` from the canonical content model, including AI-facing positioning, route maps, service summaries, skill summaries, blog summaries, local pages, and usage guardrails.
 - `navigation.js`: header/mega-menu/footer navigation definitions, route validation helpers, and link builders.
+- `schema.js`: structured data helpers for WebPage, ProfessionalService, Service, BlogPosting, FAQPage, and BreadcrumbList JSON-LD.
 
 ## Common Patterns
 
@@ -14,10 +16,13 @@ Content and navigation data that powers the site.
 - Service pages connect to skills through `serviceSkillMap`.
 - Location pages connect to related services, related skills, and nearby locations.
 - Blog posts include sections, FAQs, internal links, and related service slugs.
+- AI/LLM context should be generated from existing content arrays so service, blog, skill, and location changes do not drift across multiple files.
 
 ## How It Is Used
 
 Routes import arrays and maps from `content.js`. Dynamic route `+page.js` files look up records by slug and pass the record into the Svelte page. Navigation components import grouped menu data from `navigation.js`.
+
+The `llms.txt` and `llms-full.txt` endpoints import `llm-context.js` so answer engines and AI assistants can parse the site's offer, route taxonomy, and guardrails without scraping every page first.
 
 ## How To Extend
 
@@ -25,9 +30,10 @@ Routes import arrays and maps from `content.js`. Dynamic route `+page.js` files 
 - Add a skill to `skillPages`, then connect it through `serviceSkillMap` or related skill arrays.
 - Add a blog post with a unique slug, sections, links, and FAQs.
 - Add a location with context, tasks, related services, related skills, and nearby slugs.
+- Update `llm-context.js` when AI-facing guidance changes, such as citation preferences, rate/positioning rules, or new machine-discovery files.
 
 ## Suggested Improvements
 
 - Split this file by content type if it becomes harder to review.
 - Add validation for duplicate slugs and broken internal links.
-- Add schema helpers for service, FAQ, and article structured data.
+- Extend schema helpers when new page types need richer structured data.

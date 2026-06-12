@@ -9,11 +9,13 @@
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import { blogUrl, servicePages, serviceUrl, somethingBrokePosts } from "$lib/data/content.js";
+  import { breadcrumbSchema, schemaList } from "$lib/data/schema.js";
 
   const breadcrumbs = [
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
     { label: "Services", title: "Current page: Website services" }
   ];
+  const seoSchema = schemaList(breadcrumbSchema(breadcrumbs, "/services/"));
 
   const painCards = [
     ["Something broke", "Start here when the issue is visible, urgent, or hard to explain: broken layouts, failed forms, mobile bugs, server trouble, tracking scripts, or plugin weirdness.", "/blog/something-broke-on-your-website/", "Diagnose a broken site"],
@@ -87,6 +89,7 @@
 <Seo
   title="Website Services at $55/hr | The Web Guy"
   description="Explore contract website services from The Web Guy, including WordPress support, technical SEO implementation, landing pages, site speed, tracking, ecommerce, and agency overflow."
+  schema={seoSchema}
 />
 
 <main>

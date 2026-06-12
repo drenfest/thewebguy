@@ -9,11 +9,13 @@
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import { locationPages, locationUrl } from "$lib/data/content.js";
+  import { breadcrumbSchema, schemaList } from "$lib/data/schema.js";
 
   const breadcrumbs = [
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
     { label: "Locations", title: "Current page: web support service area" }
   ];
+  const seoSchema = schemaList(breadcrumbSchema(breadcrumbs, "/locations/"));
 
   const regions = [...new Set(locationPages.map((location) => location.region))];
   const effectVariants = ["section-effect--grid", "section-effect--signals", "section-effect--traces"];
@@ -99,6 +101,7 @@
 <Seo
   title="Local Website Support Near Freeport, IL | The Web Guy"
   description="Local-friendly hourly website support near Freeport, IL for WordPress, website fixes, technical SEO, landing pages, tracking, ecommerce, and webmaster help at $55/hr."
+  schema={seoSchema}
 />
 
 <main>

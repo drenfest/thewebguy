@@ -9,11 +9,13 @@
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import { blogPosts, blogUrl, somethingBrokePosts } from "$lib/data/content.js";
+  import { breadcrumbSchema, schemaList } from "$lib/data/schema.js";
 
   const breadcrumbs = [
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
     { label: "Blog", title: "Current page: Website troubleshooting blog" }
   ];
+  const seoSchema = schemaList(breadcrumbSchema(breadcrumbs, "/blog/"));
 
   const startHerePosts = blogPosts.filter((post) => post.problemType === "Start here");
   const blogHubLinks = [
@@ -100,6 +102,7 @@
 <Seo
   title="Website Troubleshooting Blog | The Web Guy"
   description="Practical website troubleshooting posts about broken layouts, JavaScript bugs, forms, embeds, tracking scripts, CMS weirdness, WordPress, SEO, and technical website support."
+  schema={seoSchema}
 />
 
 <main>

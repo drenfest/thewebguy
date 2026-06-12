@@ -4,11 +4,13 @@
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
   import SectionHeading from "$lib/components/SectionHeading.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
+  import { breadcrumbSchema, schemaList } from "$lib/data/schema.js";
 
   const breadcrumbs = [
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
     { label: "Privacy Policy", title: "Current page: Privacy Policy" }
   ];
+  const seoSchema = schemaList(breadcrumbSchema(breadcrumbs, "/privacy/"));
 
   const policyLinks = [
     [
@@ -24,6 +26,7 @@
 <Seo
   title="Privacy Policy | The Web Guy"
   description="Privacy Policy for The Web Guy, including contact form data, analytics, Gmail API email delivery, and how website support requests are handled."
+  schema={seoSchema}
 />
 
 <main>
@@ -115,4 +118,3 @@
     </div>
   </section>
 </main>
-

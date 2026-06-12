@@ -10,15 +10,22 @@
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import { blogPosts, blogUrl } from "$lib/data/content.js";
+  import { articleSchema, breadcrumbSchema, faqSchema, schemaList } from "$lib/data/schema.js";
 
   let { data } = $props();
   const post = $derived(data.post);
+  const postPath = $derived(blogUrl(post.slug));
   const breadcrumbTitle = $derived(post.h1 || post.title.replace(" | The Web Guy", ""));
   const breadcrumbs = $derived([
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
     { label: "Blog", href: "/blog/", title: "View the website troubleshooting blog" },
     { label: breadcrumbTitle, title: `Current article: ${breadcrumbTitle}` }
   ]);
+  const seoSchema = $derived(schemaList(
+    breadcrumbSchema(breadcrumbs, postPath),
+    articleSchema(post, postPath),
+    faqSchema(post.faqs || [])
+  ));
   const relatedPosts = $derived(blogPosts.filter((item) => item.slug !== post.slug).slice(0, 3));
   const topicalItems = $derived((post.links || []).map(([label, href, copy]) => ({
     label: "Related page",
@@ -198,7 +205,7 @@
   }
 </script>
 
-<Seo title={post.title.includes("|") ? post.title : `${post.title} | The Web Guy`} description={post.meta} />
+<Seo title={post.title.includes("|") ? post.title : `${post.title} | The Web Guy`} description={post.meta} schema={seoSchema} />
 
 <main>
   <Hero eyebrow={post.eyebrow} h1={post.h1 || post.title} intro={post.summary} cta={post.heroCta || "Send This Website Problem"} secondary={post.heroSecondary || "View Website Fixes"} secondaryHref={post.heroSecondaryHref || "/services/website-fixes/"} />

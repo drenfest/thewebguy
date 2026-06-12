@@ -14,14 +14,18 @@
     trackScrollDepth
   } from "$lib/analytics.js";
 
-  function loadScript() {
-    if (!gaMeasurementId || document.getElementById("ga4-script")) return;
+  const gaScriptSrc = $derived(`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(gaMeasurementId)}`);
 
-    const script = document.createElement("script");
-    script.id = "ga4-script";
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(gaMeasurementId)}`;
-    document.head.appendChild(script);
+  function gaInlineSnippet() {
+    const id = JSON.stringify(gaMeasurementId);
+    return `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = window.gtag || gtag;
+      window.__theWebGuyGaInitialized = true;
+      gtag('js', new Date());
+      gtag('config', ${id}, { send_page_view: false });
+    `;
   }
 
   function closestElement(target, selector) {
@@ -31,7 +35,6 @@
   onMount(() => {
     if (!gaMeasurementId) return;
 
-    loadScript();
     initGoogleAnalytics();
 
     const focusedFields = new Set();
@@ -86,3 +89,10 @@
     queueMicrotask(() => trackPageView(window.location.href, document.title));
   });
 </script>
+
+<svelte:head>
+  {#if gaMeasurementId}
+    <script async src={gaScriptSrc}></script>
+    {@html `<script>${gaInlineSnippet()}</script>`}
+  {/if}
+</svelte:head>

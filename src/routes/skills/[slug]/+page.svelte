@@ -12,14 +12,21 @@
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import { serviceMap, serviceUrl, skillMap, skillUrl } from "$lib/data/content.js";
+  import { breadcrumbSchema, faqSchema, schemaList, skillPageSchema } from "$lib/data/schema.js";
 
   let { data } = $props();
   const skill = $derived(data.skill);
+  const skillPath = $derived(skillUrl(skill.slug));
   const breadcrumbs = $derived([
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
     { label: "Skills", href: "/skills/", title: "View all technical web skills" },
     { label: skill.eyebrow, title: `Current page: ${skill.h1.replace(" at $55/hr", "")}` }
   ]);
+  const seoSchema = $derived(schemaList(
+    breadcrumbSchema(breadcrumbs, skillPath),
+    skillPageSchema(skill, skillPath),
+    faqSchema(skill.faqs || [])
+  ));
   const relatedServiceCards = $derived(skill.relatedServices.map((slug) => serviceMap[slug]).filter(Boolean));
   const relatedSkills = $derived(skill.relatedSkills.map((slug) => skillMap[slug]).filter(Boolean));
   const topicalItems = $derived([
@@ -248,7 +255,7 @@
   const allSkillInternalParagraphs = $derived([...(skillFocusParagraphs[skill.slug] || []), ...skillSupportingParagraphs, ...skillInternalParagraphs]);
 </script>
 
-<Seo title={skill.title} description={skill.meta} />
+<Seo title={skill.title} description={skill.meta} schema={seoSchema} />
 
 <main>
   <Hero eyebrow={skill.eyebrow} h1={skill.h1} intro={skill.intro} cta={`Get ${skill.eyebrow} Help`} />

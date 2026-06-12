@@ -3086,8 +3086,8 @@ html.reduced-motion .logo-mark.animated .logo-person-head {
   margin-top: 12px;
 }
 
-.internal-link-copy + .card-grid {
-  margin-top: clamp(24px, 3.4vw, 38px);
+.internal-link-copy + :is(.card-grid, .decision-grid, .cluster-grid, .depth-grid, .process-grid, .topical-link-list) {
+  margin-top: clamp(30px, 4vw, 48px);
 }
 
 .internal-link-copy p {

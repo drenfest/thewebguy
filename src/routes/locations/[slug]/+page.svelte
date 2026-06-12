@@ -11,9 +11,11 @@
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import { locationMap, locationUrl, serviceMap, serviceUrl, skillMap, skillUrl } from "$lib/data/content.js";
+  import { breadcrumbSchema, faqSchema, locationServiceSchema, schemaList } from "$lib/data/schema.js";
 
   let { data } = $props();
   const location = $derived(data.location);
+  const locationPath = $derived(locationUrl(location.slug));
   const breadcrumbs = $derived([
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
     { label: "Locations", href: "/locations/", title: "View all service area locations" },
@@ -51,6 +53,11 @@
     [`Do you offer ongoing website support for ${location.city} businesses?`, `Yes. Ongoing hourly support works well for monthly updates, small improvements, technical fixes, and recurring webmaster tasks.`],
     [`Can you help agencies or marketing teams near ${location.city}?`, `Yes. Agency overflow support is available for production work, SEO implementation, landing pages, tracking QA, and website cleanup.`]
   ]);
+  const seoSchema = $derived(schemaList(
+    breadcrumbSchema(breadcrumbs, locationPath),
+    locationServiceSchema(location, locationPath),
+    faqSchema(locationFaqs)
+  ));
   const contextualSupportItems = $derived([
     ...nearbyLocations.slice(0, 3).map((nearby) => ({
       title: `Local Website Support in ${nearby.city}, ${nearby.state}`,
@@ -172,7 +179,7 @@
   ]);
 </script>
 
-<Seo title={location.title} description={location.meta} />
+<Seo title={location.title} description={location.meta} schema={seoSchema} />
 
 <main>
   <Hero

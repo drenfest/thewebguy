@@ -10,8 +10,15 @@
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import { faqs, locationPages, locationUrl, servicePages, serviceUrl } from "$lib/data/content.js";
+  import { breadcrumbSchema, faqSchema, organizationSchema, schemaList, websiteSchema } from "$lib/data/schema.js";
 
   const breadcrumbs = [{ label: "Home", title: "Current page: The Web Guy homepage" }];
+  const homeSchema = schemaList(
+    organizationSchema(),
+    websiteSchema(),
+    breadcrumbSchema(breadcrumbs, "/"),
+    faqSchema(faqs)
+  );
 
   const serviceBySlug = Object.fromEntries(servicePages.map((service) => [service.slug, service]));
   const featuredServices = [
@@ -168,13 +175,14 @@
 <Seo
   title="The Web Guy | Contract Web Developer & SEO Support"
   description="Hire The Web Guy for contract WordPress, web development, technical SEO, landing pages, tracking, ecommerce, and website support at $55/hr."
+  schema={homeSchema}
 />
 
 <main>
   <Hero
     eyebrow="The Web Guy"
     h1="Contract Web Help for Broken, Slow, Stuck, or Unfinished Websites"
-    intro="The Web Guy helps businesses and agencies fix WordPress issues, implement SEO work, build landing pages, troubleshoot tracking, stabilize ecommerce, connect systems, and handle the technical web work nobody has time to finish."
+    intro="The Web Guy is a contract web developer for businesses and agencies that need WordPress issues fixed, SEO work implemented, landing pages built, tracking troubleshot, ecommerce stabilized, systems connected, and technical web work finished."
     cta="Send a Website Problem"
     secondary="View Services"
     showCapabilityLinks={false}

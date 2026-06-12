@@ -4,11 +4,13 @@
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
   import SectionHeading from "$lib/components/SectionHeading.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
+  import { breadcrumbSchema, schemaList } from "$lib/data/schema.js";
 
   const breadcrumbs = [
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
     { label: "Terms", title: "Current page: Terms of Service" }
   ];
+  const seoSchema = schemaList(breadcrumbSchema(breadcrumbs, "/terms/"));
 
   const termsLinks = [
     [
@@ -24,6 +26,7 @@
 <Seo
   title="Terms of Service | The Web Guy"
   description="Terms of Service for The Web Guy website, contact form, website support information, hourly contract work, and acceptable use."
+  schema={seoSchema}
 />
 
 <main>
@@ -122,4 +125,3 @@
     </div>
   </section>
 </main>
-

@@ -13,14 +13,27 @@
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import FaqList from "$lib/components/FaqList.svelte";
   import { serviceMap, serviceSkillMap, serviceUrl, skillMap, skillUrl } from "$lib/data/content.js";
+  import { breadcrumbSchema, faqSchema, schemaList, serviceSchema } from "$lib/data/schema.js";
 
   let { data } = $props();
   const service = $derived(data.service);
+  const servicePath = $derived(serviceUrl(service.slug));
   const breadcrumbs = $derived([
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
     { label: "Services", href: "/services/", title: "View all website services" },
     { label: service.eyebrow, title: `Current page: ${service.h1.replace(" at $55/hr", "")}` }
   ]);
+  const serviceFaqs = $derived([
+    [`What does ${service.eyebrow.toLowerCase()} cost?`, `Contract help for this work is billed at $55/hr when the task, site, and access are clear.`],
+    ["What should I send first?", "Send the URL, what should happen, what is happening now, timeline, and any audit notes, screenshots, or task lists."],
+    ["Can this be one-time or ongoing?", "Yes. This can be a one-time fix, a small project, agency overflow, or part of ongoing webmaster/platform support."],
+    ["What does The Web Guy avoid promising?", "No fake guarantees, no unlimited flat-rate work, and no pretending every issue is simple before the site is reviewed."]
+  ]);
+  const seoSchema = $derived(schemaList(
+    breadcrumbSchema(breadcrumbs, servicePath),
+    serviceSchema(service, servicePath),
+    faqSchema(serviceFaqs)
+  ));
   const relatedServices = $derived(service.related.map((slug) => serviceMap[slug]).filter(Boolean));
   const relatedSkills = $derived((serviceSkillMap[service.slug] || []).map((slug) => skillMap[slug]).filter(Boolean));
   const fallbackAudienceHeading = $derived(`${service.audience.split(".")[0]}.`);
@@ -251,7 +264,7 @@
   }
 </script>
 
-<Seo title={service.title} description={service.meta} />
+<Seo title={service.title} description={service.meta} schema={seoSchema} />
 
 <main>
   <Hero eyebrow={service.eyebrow} h1={service.h1} intro={service.intro} cta={service.cta} />
@@ -326,13 +339,6 @@
   <CtaBand heading={service.cta} copy="Send the URL, the task list, or the thing that keeps getting pushed off. The Web Guy will help turn it into actual website work." label={service.cta} />
   <section class="section section-effect section-effect--traces section-effect--low">
     <SectionHeading eyebrow="FAQ" h2={`${service.eyebrow} questions`} />
-    <FaqList
-      items={[
-        [`What does ${service.eyebrow.toLowerCase()} cost?`, `Contract help for this work is billed at $55/hr when the task, site, and access are clear.`],
-        ["What should I send first?", "Send the URL, what should happen, what is happening now, timeline, and any audit notes, screenshots, or task lists."],
-        ["Can this be one-time or ongoing?", "Yes. This can be a one-time fix, a small project, agency overflow, or part of ongoing webmaster/platform support."],
-        ["What does The Web Guy avoid promising?", "No fake guarantees, no unlimited flat-rate work, and no pretending every issue is simple before the site is reviewed."]
-      ]}
-    />
+    <FaqList items={serviceFaqs} />
   </section>
 </main>

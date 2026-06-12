@@ -9,6 +9,7 @@
   import { onMount } from "svelte";
   import { trackEvent } from "$lib/analytics.js";
   import { locationPages, servicePages, skillPages } from "$lib/data/content.js";
+  import { breadcrumbSchema, schemaList } from "$lib/data/schema.js";
   import { contactState } from "$lib/state/contact-state.svelte.js";
 
   let status = $state({ type: "idle", message: "" });
@@ -20,6 +21,7 @@
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
     { label: "Contact", title: "Current page: Send a website support request" }
   ];
+  const seoSchema = schemaList(breadcrumbSchema(breadcrumbs, "/contact/"));
   const contactTopicalLinks = [
     {
       label: "Broken-site request",
@@ -167,6 +169,7 @@
 <Seo
   title="Contact The Web Guy | Send the Website Problem"
   description="Send The Web Guy your website issue, WordPress task, SEO implementation need, landing page request, tracking problem, or agency overflow work."
+  schema={seoSchema}
 />
 
 <main>

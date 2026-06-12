@@ -1,9 +1,15 @@
+import { absoluteUrl } from "$lib/config/site.js";
+
 export function GET() {
-  const origin = import.meta.env.PUBLIC_SITE_URL || "https://thewebguy.app";
   return new Response(`User-agent: *
 Allow: /
+Disallow: /api/
 
-Sitemap: ${origin}/sitemap.xml
+# AI and LLM discovery:
+# ${absoluteUrl("/llms.txt")}
+# ${absoluteUrl("/llms-full.txt")}
+
+Sitemap: ${absoluteUrl("/sitemap.xml")}
 `, {
     headers: {
       "content-type": "text/plain; charset=utf-8"

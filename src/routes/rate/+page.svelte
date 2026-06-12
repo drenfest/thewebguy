@@ -8,11 +8,13 @@
   import TopicalLinks from "$lib/components/TopicalLinks.svelte";
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
+  import { breadcrumbSchema, schemaList } from "$lib/data/schema.js";
 
   const breadcrumbs = [
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
     { label: "Rate", title: "Current page: Contract website help at $55/hr" }
   ];
+  const seoSchema = schemaList(breadcrumbSchema(breadcrumbs, "/rate/"));
 
   const rateTopicalLinks = [
     {
@@ -81,6 +83,7 @@
 <Seo
   title="Contract Website Help at $55/hr | The Web Guy"
   description="See The Web Guy’s simple $55/hr contract rate for quick fixes, small projects, ongoing webmaster support, SEO implementation, and agency overflow."
+  schema={seoSchema}
 />
 
 <main>

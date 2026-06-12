@@ -9,11 +9,13 @@
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import { skillPages, skillUrl } from "$lib/data/content.js";
+  import { breadcrumbSchema, schemaList } from "$lib/data/schema.js";
 
   const breadcrumbs = [
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
     { label: "Skills", title: "Current page: Technical web skills" }
   ];
+  const seoSchema = schemaList(breadcrumbSchema(breadcrumbs, "/skills/"));
 
   const groups = [
     ["Platforms", ["shopify-plus-liquid", "wordpress-plugin-development", "wordpress-theme-development"]],
@@ -96,6 +98,7 @@
 <Seo
   title="Technical Web Skills Behind The Web Guy"
   description="Explore the practical production skills behind The Web Guy, including WordPress engineering, Shopify Plus, performance, debugging, GA4/GTM, APIs, programmatic SEO, and Cloudflare support."
+  schema={seoSchema}
 />
 
 <main>
