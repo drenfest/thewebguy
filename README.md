@@ -37,7 +37,7 @@ Render settings:
 Required Render environment variables:
 
 - `NODE_VERSION`: `20`
-- `PUBLIC_SITE_URL`: canonical site origin used by robots and sitemap routes.
+- `PUBLIC_SITE_URL`: canonical site origin used by robots, sitemap, schema, and LLM routes. Use `https://thewebguy.app`; the app normalizes a bare `thewebguy.app` value, but the full origin is preferred.
 - `PUBLIC_GA_MEASUREMENT_ID`: public GA4 measurement ID, such as `G-XXXXXXXXXX`. Leave blank to disable analytics. Restart/redeploy the Render service after changing it so the Node app reads the new runtime value.
 - `CONTACT_EMAIL_PROVIDER`: set to `gmail` on Render free hosting. Use `smtp` only on hosts that allow outbound SMTP.
 - `CONTACT_TO_EMAIL`: private contact form destination address. Set this in Render; do not commit the real value.

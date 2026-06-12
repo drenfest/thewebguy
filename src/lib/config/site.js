@@ -9,7 +9,20 @@ export const site = {
     "Contract web development, WordPress support, technical SEO implementation, landing pages, website fixes, tracking, ecommerce cleanup, and webmaster support at $55/hr."
 };
 
-export const siteOrigin = (env.PUBLIC_SITE_URL || "https://thewebguy.app").replace(/\/+$/, "");
+const fallbackOrigin = "https://thewebguy.app";
+
+function normalizeSiteOrigin(value) {
+  const rawOrigin = String(value || fallbackOrigin).trim().replace(/\/+$/, "");
+  const originWithProtocol = /^[a-z][a-z\d+\-.]*:\/\//i.test(rawOrigin) ? rawOrigin : `https://${rawOrigin}`;
+
+  try {
+    return new URL(originWithProtocol).origin;
+  } catch {
+    return fallbackOrigin;
+  }
+}
+
+export const siteOrigin = normalizeSiteOrigin(env.PUBLIC_SITE_URL);
 
 export function shouldUseTrailingSlash(pathname = "/") {
   const cleanPath = pathname.split("?")[0].split("#")[0];
