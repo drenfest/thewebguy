@@ -9,6 +9,7 @@
   import TopicalLinks from "$lib/components/TopicalLinks.svelte";
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
+  import ProofReel from "$lib/components/ProofReel.svelte";
   import { faqs, locationPages, locationUrl, servicePages, serviceUrl } from "$lib/data/content.js";
   import { breadcrumbSchema, faqSchema, organizationSchema, schemaList, websiteSchema } from "$lib/data/schema.js";
 
@@ -180,7 +181,7 @@
 
 <main>
   <Hero
-    eyebrow="The Web Guy"
+    eyebrow="Contract web developer and SEO support"
     h1="Contract Web Help for Broken, Slow, Stuck, or Unfinished Websites"
     intro="The Web Guy is a contract web developer for businesses and agencies that need WordPress issues fixed, SEO work implemented, landing pages built, tracking troubleshot, ecommerce stabilized, systems connected, and technical web work finished."
     cta="Send a Website Problem"
@@ -192,7 +193,7 @@
 
   <section class="section section-effect section-effect--grid section-effect--medium">
     <SectionHeading
-      eyebrow="Start with the problem"
+      eyebrow="Website problem routing"
       h2="Pick the thing that sounds closest"
       body="You do not need to know whether the issue is WordPress, CSS, JavaScript, hosting, analytics, or a plugin. Start with the symptom and route into the right kind of help."
     />
@@ -210,7 +211,7 @@
 
   <section class="section soft-section section-effect section-effect--signals section-effect--medium">
     <SectionHeading
-      eyebrow="Service clusters"
+      eyebrow="Website service categories"
       h2="The work usually falls into four buckets"
       body="The offer is broad enough to handle real messy websites, but the work stays practical: fix, build, implement, measure, connect, and keep moving."
     />
@@ -231,7 +232,7 @@
 
   <section class="section section-effect section-effect--traces section-effect--medium">
     <SectionHeading
-      eyebrow="Featured services"
+      eyebrow="High-value website support"
       h2="High-value website help you can hand off"
       body="These are the core service pages most visitors will recognize first. Each one is built around a specific problem and points to the relevant deeper skills."
     />
@@ -240,7 +241,7 @@
   </section>
 
   <ContextualSupport
-    eyebrow="Common starts"
+    eyebrow="Common website starting points"
     heading="Core service paths from the homepage"
     intro="These are the most common next pages when a website problem needs more than a quick explanation."
     items={homeContextualItems}
@@ -248,7 +249,7 @@
 
   <section class="section soft-section technical-depth-section effect effect-dark-grid effect-medium">
     <SectionHeading
-      eyebrow="Technical depth"
+      eyebrow="Technical execution depth"
       h2="Built for the work behind the visible page"
       body="A lot of web work looks simple until it touches the CMS, templates, scripts, tracking, APIs, cache, product data, or reporting. That is the work this site is positioned around."
     />
@@ -262,10 +263,12 @@
     </div>
   </section>
 
+  <ProofReel />
+
   <section class="section split-section local-remote-section section-effect section-effect--grid section-effect--low">
     <div>
       <SectionHeading
-        eyebrow="Local and remote"
+        eyebrow="Local and remote website support"
         h2="Hourly web support near Freeport, IL and remote-friendly"
         body="The Web Guy supports businesses near Freeport, Rockford, Monroe, Beloit, Janesville, Dixon, Sterling, Galena, Dubuque, Madison, and remote teams that need practical contract website help."
       />
@@ -282,7 +285,7 @@
     <div class="rate-layout">
       <div>
         <SectionHeading
-          eyebrow="Contract rate"
+          eyebrow="Hourly contract rate"
           h2="Simple hourly website help: $55/hr"
           body="Best for ongoing support, agency overflow, WordPress cleanup, SEO implementation, landing pages, tracking fixes, ecommerce support, APIs, and practical technical website work."
         />
@@ -297,7 +300,7 @@
   </section>
 
   <section class="section section-effect section-effect--signals section-effect--medium">
-    <SectionHeading eyebrow="Process" h2="A simple way to start" />
+    <SectionHeading eyebrow="Website support process" h2="A simple way to start contract web work" />
     <div class="process-grid">
       {#each [
         ["01", "Send the context", "URL, platform, symptom, goal, deadline, audit notes, or task list."],
@@ -311,7 +314,7 @@
   </section>
 
   <TopicalLinks
-    eyebrow="Where to go next"
+    eyebrow="Website support routes"
     heading="Route the website problem into the right support path"
     intro="The fastest path is usually not a broad rebuild. Pick the page that matches the symptom, platform, implementation need, or next decision."
     items={homeTopicalLinks}

@@ -8,7 +8,9 @@
   import TopicalLinks from "$lib/components/TopicalLinks.svelte";
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
+  import ProofPanel from "$lib/components/ProofPanel.svelte";
   import { locationPages, locationUrl } from "$lib/data/content.js";
+  import { locationsHubProof } from "$lib/data/proof.js";
   import { breadcrumbSchema, schemaList } from "$lib/data/schema.js";
 
   const breadcrumbs = [
@@ -106,7 +108,7 @@
 
 <main>
   <Hero
-    eyebrow="Service area"
+    eyebrow="Local website support service area"
     h1="Local Website Support Near Freeport, IL"
     intro="The Web Guy provides local-friendly and remote-friendly website support for businesses near Freeport, IL and surrounding cities. Hourly web help starts at $55/hr."
     cta="Request Local Web Support"
@@ -117,7 +119,7 @@
   <section class="section split-section section-effect section-effect--grid section-effect--low">
     <div>
       <SectionHeading
-        eyebrow="Freeport-area support"
+        eyebrow="Freeport-area website support"
         h2="Local enough to understand the region, remote-friendly enough to move fast"
         body="This service area is built around practical hourly website help for local companies, agencies, contractors, ecommerce sellers, professional services, nonprofits, and organizations that need work handled without a large agency process."
       />
@@ -130,19 +132,21 @@
     </div>
   </section>
 
+  <ProofPanel proof={locationsHubProof} />
+
   <section class="section split-section section-effect section-effect--signals section-effect--low">
     <div>
       <SectionHeading
-        eyebrow="Local site problems"
-        h2="Most local requests are really lead-flow problems"
+        eyebrow="Local lead-flow problems"
+        h2="Most local website requests are really lead-flow problems"
         body="A local business website usually needs useful service pages, working contact forms, reliable phone-click tracking, fast mobile pages, clean WordPress updates, and technical SEO implementation that supports how people search in the region."
       />
       <a class="text-link" href="/services/technical-seo-implementation/" title="View technical SEO implementation support for local service pages, metadata, schema, redirects, and internal links">Improve local SEO execution</a>
     </div>
     <div>
       <SectionHeading
-        eyebrow="Remote-friendly execution"
-        h2="The city page is just the entry point"
+        eyebrow="Remote-friendly local support"
+        h2="The city page is just the entry point for the website work"
         body="Once the site problem is clear, the work usually routes into WordPress Support, Website Fixes, Landing Pages, Analytics & Tracking, or Ongoing Webmaster Support rather than a generic local marketing package."
       />
       <a class="text-link" href="/services/ongoing-webmaster-support/" title="View ongoing webmaster support for recurring updates, fixes, SEO tasks, tracking, and site cleanup">View ongoing webmaster help</a>
@@ -150,14 +154,14 @@
   </section>
 
   <ContextualSupport
-    eyebrow="Local context"
+    eyebrow="Nearby city pages"
     heading="Primary local website support pages"
     intro="Use these city pages when you want local-friendly website support near Freeport without a full agency handoff."
     items={locationHubContextualItems}
   />
 
   <TopicalLinks
-    eyebrow="Local support paths"
+    eyebrow="Local website support paths"
     heading="Connect the service area to the actual website work"
     intro="Local-friendly support is most useful when the city page connects to the service page that matches the task: WordPress, broken-site fixes, SEO, tracking, or recurring help."
     items={locationHubLinks}
@@ -167,7 +171,7 @@
 
   {#each regions as region, index}
     <section class={`section section-effect ${effectVariants[(index + 1) % effectVariants.length]} section-effect--low`}>
-      <SectionHeading eyebrow="Locations" h2={`${region} service area`} />
+      <SectionHeading eyebrow={`${region} website support cities`} h2={`${region} local website support service area`} />
       <CardGrid
         className="card-grid service-grid"
         items={locationPages

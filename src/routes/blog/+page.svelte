@@ -107,7 +107,7 @@
 
 <main>
   <Hero
-    eyebrow="Blog"
+    eyebrow="Website troubleshooting blog"
     h1="Website Troubleshooting Notes"
     intro="Practical explanations for the kinds of website problems businesses and agencies run into: broken layouts, scripts, forms, embeds, tracking, CMS weirdness, and the web work that gets pushed off."
     cta="Send a Website Problem"
@@ -119,7 +119,7 @@
 
   <section class="section section-effect section-effect--grid section-effect--low">
     <SectionHeading
-      eyebrow="Start here"
+      eyebrow="Broken website starting points"
       h2="When something broke"
       body="These posts are built for the moment when the site is acting weird and you need a sharper name for the problem before asking for help."
     />
@@ -137,7 +137,7 @@
   </section>
 
   <section class="section soft-section section-effect section-effect--signals section-effect--low">
-    <SectionHeading eyebrow="Something broke" h2="Specific website problems" />
+    <SectionHeading eyebrow="Specific broken-site symptoms" h2="Specific website problems" />
     <CardGrid
       className="card-grid service-grid"
       items={somethingBrokePosts.map((post) => [
@@ -151,14 +151,14 @@
   </section>
 
   <ContextualSupport
-    eyebrow="Troubleshooting topics"
+    eyebrow="Troubleshooting-to-service paths"
     heading="Troubleshooting paths with service context"
     intro="Use these reading paths to move from the symptom to the page that can help fix it."
     items={blogHubContextualItems}
   />
 
   <TopicalLinks
-    eyebrow="Blog support paths"
+    eyebrow="Article-to-service routes"
     heading="Turn the article into the next practical website action"
     intro="The posts are written to help name the problem. These links point from the reading path into the service pages that usually handle the work."
     items={blogHubLinks}
@@ -167,7 +167,7 @@
   <CtaBand heading="Know what broke?" copy="Send the URL, symptoms, what should happen, and what changed recently. That is enough to start a useful conversation." label="Send the Website Problem" />
 
   <section class="section section-effect section-effect--traces section-effect--low">
-    <SectionHeading eyebrow="All posts" h2="Practical website support articles" />
+    <SectionHeading eyebrow="Website troubleshooting posts" h2="Practical website support articles" />
     <CardGrid
       className="card-grid service-grid"
       items={blogPosts.map((post) => [

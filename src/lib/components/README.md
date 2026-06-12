@@ -17,6 +17,8 @@ Reusable Svelte components for the site UI.
 - `InternalLinkCopy.svelte`: renders natural paragraph text with inline internal links and title attributes for body-copy topical support.
 - `MotionObserver.svelte`: reveal/animation observer for elements using reveal data attributes.
 - `NearbyLocations.svelte`: related local pages for location detail routes.
+- `ProofPanel.svelte`: compact dark-gradient proof section used on service, skill, and location pages without adding another card grid.
+- `ProofReel.svelte`: lightweight homepage proof carousel using semantic HTML, CSS scroll-snap, accessible controls, and no autoplay.
 - `RelatedServices.svelte`: service relationship component.
 - `RelatedSkills.svelte`: skill relationship component.
 - `SectionHeading.svelte`: reusable eyebrow, heading, and body copy block.
@@ -32,6 +34,8 @@ Reusable Svelte components for the site UI.
 - Related-link components use slugs from `content.js` and convert them into URLs.
 - Icons are inline SVG so site colors, sizing, and card layout can control them.
 - `GoogleAnalytics.svelte` mounts once in the root layout and delegates event naming/metadata to `src/lib/analytics.js`.
+- Carousel-style proof should stay sparse, below the fold, and implemented without heavy slider libraries.
+- Proof panels should stay evidence-focused: real categories of handled work, no invented client names, testimonials, or guaranteed outcomes.
 
 ## How It Is Used
 

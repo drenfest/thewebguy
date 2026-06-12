@@ -8,7 +8,7 @@
 </script>
 
 <section class="section related-section section-effect section-effect--traces section-effect--low">
-  <SectionHeading eyebrow="Related services" h2="Other ways The Web Guy can help" />
+  <SectionHeading eyebrow={`Related ${service.eyebrow?.toLowerCase() || "website"} services`} h2={`Website services that often overlap with ${service.eyebrow || "this work"}`} />
   <CardGrid
     className="card-grid compact-grid"
     items={related.map((item) => [

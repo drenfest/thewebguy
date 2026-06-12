@@ -10,7 +10,9 @@
   import TopicalLinks from "$lib/components/TopicalLinks.svelte";
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
+  import ProofPanel from "$lib/components/ProofPanel.svelte";
   import { locationMap, locationUrl, serviceMap, serviceUrl, skillMap, skillUrl } from "$lib/data/content.js";
+  import { proofForLocation } from "$lib/data/proof.js";
   import { breadcrumbSchema, faqSchema, locationServiceSchema, schemaList } from "$lib/data/schema.js";
 
   let { data } = $props();
@@ -24,6 +26,7 @@
   const relatedServices = $derived(location.relatedServices.map((slug) => serviceMap[slug]).filter(Boolean));
   const relatedSkills = $derived(location.relatedSkills.map((slug) => skillMap[slug]).filter(Boolean));
   const nearbyLocations = $derived(location.nearby.map((slug) => locationMap[slug]).filter(Boolean));
+  const locationProof = $derived(proofForLocation(location.slug));
   const regionalSupportSlugs = ["freeport-il", "rockford-il", "monroe-wi", "beloit-wi", "janesville-wi", "madison-wi"];
   const regionalLinkLocations = $derived(regionalSupportSlugs.map((slug) => locationMap[slug]).filter((nearby) => nearby && nearby.slug !== location.slug));
   const topicalItems = $derived([
@@ -193,20 +196,22 @@
 
   <section class="section split-section section-effect section-effect--grid section-effect--low">
     <div>
-      <SectionHeading eyebrow="Local context" h2={`Website support for businesses in and around ${location.city}`} />
+      <SectionHeading eyebrow={`${location.city} website support`} h2={`Website support for businesses near ${location.city}, ${location.state}`} />
       {#each location.context as paragraph}<p>{paragraph}</p>{/each}
       <InternalLinkCopy paragraphs={locationInternalParagraphs} />
     </div>
     <div>
-      <SectionHeading eyebrow="Common local tasks" h2="Website work you can hand off" />
+      <SectionHeading eyebrow={`${location.city} website tasks`} h2={`Common website requests from ${location.city}-area businesses`} />
       <ul class="check-list">
         {#each location.tasks as task}<li>{task}</li>{/each}
       </ul>
     </div>
   </section>
 
+  <ProofPanel proof={locationProof} />
+
   <section class="section soft-section section-effect section-effect--signals section-effect--low">
-    <SectionHeading eyebrow="Relevant services" h2={`Useful services for ${location.city}-area businesses`} />
+    <SectionHeading eyebrow={`${location.city} service fit`} h2={`Website services for ${location.city}-area sites`} />
     <CardGrid
       className="card-grid compact-grid"
       items={relatedServices.map((service) => [
@@ -222,8 +227,8 @@
   <section class="section split-section section-effect section-effect--grid section-effect--low">
     <div>
       <SectionHeading
-        eyebrow="How to use this page"
-        h2={`Common ${location.city} support paths`}
+        eyebrow={`Route ${location.city} web requests`}
+        h2={`How ${location.city} website support requests usually start`}
         body={`Most ${location.city}-area website requests start with a specific symptom: a page needs updated, a form is not sending, tracking does not match leads, an SEO task is stuck, or WordPress needs cleanup.`}
       />
       <ul class="check-list">
@@ -237,8 +242,8 @@
     </div>
     <div>
       <SectionHeading
-        eyebrow="Technical capabilities"
-        h2="What may matter after the first look"
+        eyebrow={`${location.city} technical support`}
+        h2={`Technical website skills that may matter after the first look`}
         body={`Once the ${location.city} site issue is reproduced, the fix may involve a specific platform, tracking setup, template, script, API, performance problem, or hosting layer.`}
       />
       <ul class="check-list">
@@ -253,7 +258,7 @@
   </section>
 
   <section class="section section-effect section-effect--traces section-effect--low">
-    <SectionHeading eyebrow="Why hourly works" h2="A practical alternative to a full agency or full-time hire" body={`Many ${location.city}-area businesses do not need a big agency package every time a page breaks, tracking fails, a plugin causes trouble, or a landing page needs launched. Hourly contract help at $55/hr keeps the scope clear and lets the work start with the actual problem.`} />
+    <SectionHeading eyebrow={`Hourly web help in ${location.city}`} h2={`A practical alternative to a full agency or full-time hire`} body={`Many ${location.city}-area businesses do not need a big agency package every time a page breaks, tracking fails, a plugin causes trouble, or a landing page needs launched. Hourly contract help at $55/hr keeps the scope clear and lets the work start with the actual problem.`} />
     <CardGrid
       className="card-grid compact-grid"
       items={relatedSkills.map((skill) => [
@@ -269,14 +274,14 @@
   <NearbyLocations slugs={location.nearby} />
 
   <ContextualSupport
-    eyebrow="Local context"
-    heading={`Nearby support paths around ${location.city}`}
+    eyebrow={`${location.city} nearby support`}
+    heading={`Nearby website support paths around ${location.city}`}
     intro="Use these nearby city and service links when the issue connects local pages, forms, tracking, platform cleanup, or SEO implementation."
     items={contextualSupportItems}
   />
 
   <TopicalLinks
-    eyebrow="Topical support"
+    eyebrow={`${location.city} support routes`}
     heading={`Related web support for ${location.city}-area businesses`}
     intro="These links connect local service-area pages to the services and skills most likely to solve the actual website problem."
     items={topicalItems}

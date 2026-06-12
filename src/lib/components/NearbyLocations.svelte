@@ -9,7 +9,7 @@
 
 {#if locations.length}
   <section class="section soft-section section-effect section-effect--signals section-effect--low">
-    <SectionHeading eyebrow="Nearby locations" h2="Nearby service areas" />
+    <SectionHeading eyebrow="Nearby website support areas" h2="Nearby local website support pages" />
     <CardGrid
       className="card-grid compact-grid"
       items={locations.map((location) => [

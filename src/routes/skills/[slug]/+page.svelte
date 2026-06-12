@@ -11,7 +11,9 @@
   import TopicalLinks from "$lib/components/TopicalLinks.svelte";
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
+  import ProofPanel from "$lib/components/ProofPanel.svelte";
   import { serviceMap, serviceUrl, skillMap, skillUrl } from "$lib/data/content.js";
+  import { proofForSkill } from "$lib/data/proof.js";
   import { breadcrumbSchema, faqSchema, schemaList, skillPageSchema } from "$lib/data/schema.js";
 
   let { data } = $props();
@@ -29,6 +31,7 @@
   ));
   const relatedServiceCards = $derived(skill.relatedServices.map((slug) => serviceMap[slug]).filter(Boolean));
   const relatedSkills = $derived(skill.relatedSkills.map((slug) => skillMap[slug]).filter(Boolean));
+  const skillProof = $derived(proofForSkill(skill.slug));
   const topicalItems = $derived([
     {
       label: "Skill hub",
@@ -264,21 +267,23 @@
 
   <section class="section split-section section-effect section-effect--grid section-effect--medium">
     <div>
-      <SectionHeading eyebrow="Problems this solves" h2="Where this skill becomes useful" />
+      <SectionHeading eyebrow={`${skill.eyebrow} problem fit`} h2={`${skill.eyebrow} problems this helps solve`} />
       <ul class="check-list">
         {#each skill.problems as problem}<li>{problem}</li>{/each}
       </ul>
     </div>
     <div>
-      <SectionHeading eyebrow="Specific tasks" h2="What The Web Guy can handle" />
+      <SectionHeading eyebrow={`${skill.eyebrow} tasks`} h2={`${skill.eyebrow} implementation tasks`} />
       <ul class="check-list">
         {#each skill.tasks as task}<li>{task}</li>{/each}
       </ul>
     </div>
   </section>
 
+  <ProofPanel proof={skillProof} />
+
   <section class="section soft-section section-effect section-effect--signals section-effect--medium">
-    <SectionHeading eyebrow="Service connection" h2="How this connects to real website work" body={skill.connection} />
+    <SectionHeading eyebrow={`${skill.eyebrow} in service work`} h2={`Where ${skill.eyebrow} fits into website support`} body={skill.connection} />
     <InternalLinkCopy paragraphs={allSkillInternalParagraphs} />
     <CardGrid
       className="card-grid compact-grid"
@@ -289,8 +294,8 @@
   {#if skill.contextCards}
     <section class="section section-effect section-effect--traces section-effect--low">
       <SectionHeading
-        eyebrow="Implementation context"
-        h2={`${skill.eyebrow} connects to nearby site work`}
+        eyebrow={`Related ${skill.eyebrow.toLowerCase()} work`}
+        h2={`${skill.eyebrow} support paths and adjacent tasks`}
         body="These are the service and skill paths most likely to matter when this capability shows up on a real website."
       />
       <CardGrid className="card-grid compact-grid" items={skill.contextCards} />
@@ -300,15 +305,15 @@
   <RelatedSkills slugs={skill.relatedSkills} />
 
   <ContextualSupport
-    eyebrow={`${skill.eyebrow} handoff`}
-    heading={`Where ${skill.eyebrow} turns into service work`}
+    eyebrow={`${skill.eyebrow} service handoff`}
+    heading={`Where ${skill.eyebrow} becomes billable website work`}
     intro="These links connect this capability to the service paths where it usually becomes useful work."
     items={contextualSupportItems}
   />
 
   <TopicalLinks
-    eyebrow="Topical support"
-    heading={`${skill.eyebrow} fits into larger website support work`}
+    eyebrow={`${skill.eyebrow} support routes`}
+    heading={`${skill.eyebrow} inside larger website support work`}
     intro="Use these links when the skill is only one part of the work and you need the surrounding service, platform, or technical implementation context."
     items={topicalItems}
   />

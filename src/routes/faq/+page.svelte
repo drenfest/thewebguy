@@ -93,7 +93,7 @@
 
 <main>
   <Hero
-    eyebrow="FAQ"
+    eyebrow="Contract website help FAQ"
     h1="The Web Guy FAQ"
     intro="Answers about the $55/hr rate, WordPress support, agency overflow, SEO implementation, landing pages, tracking, ecommerce, and ongoing support."
   />
@@ -102,13 +102,13 @@
     <InternalLinkCopy paragraphs={faqInlineParagraphs} />
   </section>
   <ContextualSupport
-    eyebrow="Deeper answers"
+    eyebrow="FAQ service paths"
     heading="FAQ answers with full service context"
     intro="Use these deeper pages when a short answer needs a practical service path."
     items={faqContextualItems}
   />
   <TopicalLinks
-    eyebrow="Related answers"
+    eyebrow="FAQ next steps"
     heading="If the FAQ points to a specific kind of work, start there"
     intro="These pages expand the short answers into the service, rate, and request paths people most often need after reading the FAQ."
     items={faqTopicalLinks}

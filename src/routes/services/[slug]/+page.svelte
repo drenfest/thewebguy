@@ -12,7 +12,9 @@
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import FaqList from "$lib/components/FaqList.svelte";
+  import ProofPanel from "$lib/components/ProofPanel.svelte";
   import { serviceMap, serviceSkillMap, serviceUrl, skillMap, skillUrl } from "$lib/data/content.js";
+  import { proofForService } from "$lib/data/proof.js";
   import { breadcrumbSchema, faqSchema, schemaList, serviceSchema } from "$lib/data/schema.js";
 
   let { data } = $props();
@@ -36,6 +38,7 @@
   ));
   const relatedServices = $derived(service.related.map((slug) => serviceMap[slug]).filter(Boolean));
   const relatedSkills = $derived((serviceSkillMap[service.slug] || []).map((slug) => skillMap[slug]).filter(Boolean));
+  const serviceProof = $derived(proofForService(service.slug));
   const fallbackAudienceHeading = $derived(`${service.audience.split(".")[0]}.`);
   const audienceHeading = $derived(service.audienceHeading || fallbackAudienceHeading);
   const audienceBody = $derived(service.audienceHeading ? service.audience : service.audience.split(".").slice(1).join(".").trim());
@@ -258,9 +261,38 @@
     ]
   };
   const allServiceInternalParagraphs = $derived([...(serviceFocusParagraphs[service.slug] || []), ...serviceSupportingParagraphs, ...serviceInternalParagraphs]);
+  const serviceHeadingOverrides = {
+    "What can be implemented": "Technical SEO tasks that can be implemented",
+    "Send the crawl notes, audit spreadsheet, or task list": "How to hand off technical SEO implementation work",
+    "Why websites get slow": "Why WordPress and business websites get slow",
+    "What The Web Guy can and cannot promise": "Realistic Core Web Vitals and Lighthouse expectations",
+    "Send the URL and the problem": "Website bug help starts with the URL and symptom",
+    "The person to send annoying website problems to": "Website fix help without a rebuild",
+    "Communication expectations": "How agency overflow handoffs stay clear",
+    "Conversion and UX fixes": "Ecommerce conversion and product page fixes",
+    "Install, troubleshoot, and verify": "GA4 and GTM installation, troubleshooting, and verification",
+    "Connect the pieces that keep breaking": "Website API integrations for forms, CRMs, and ecommerce",
+    "Keep the site stable": "Website reliability, SSL, DNS, and hosting support",
+    "When automation is worth it": "When website automation saves real production time",
+    "Ongoing support usually includes": "Ongoing webmaster support tasks for existing sites",
+    "When a lightweight build makes sense": "When React or static site work is the right fit"
+  };
 
   function sectionEffect(index, intensity = "medium", extra = "") {
     return ["section", extra, "section-effect", effectVariants[index % effectVariants.length], `section-effect--${intensity}`].filter(Boolean).join(" ");
+  }
+
+  function serviceSectionEyebrow(section) {
+    const heading = section.h2.toLowerCase();
+    if (heading.includes("common") || heading.includes("what can") || heading.includes("tasks")) return `${service.eyebrow} tasks`;
+    if (heading.includes("connect") || heading.includes("related") || heading.includes("overlap")) return `Related ${service.eyebrow.toLowerCase()} work`;
+    if (heading.includes("when") || heading.includes("expect") || heading.includes("promise") || heading.includes("not")) return `${service.eyebrow} fit`;
+    if (heading.includes("send") || heading.includes("handoff")) return `${service.eyebrow} handoff`;
+    return `${service.eyebrow} scope`;
+  }
+
+  function serviceSectionHeading(section) {
+    return serviceHeadingOverrides[section.h2] || section.h2;
   }
 </script>
 
@@ -273,7 +305,7 @@
 
   <section class="section split-section audience-section section-effect section-effect--grid section-effect--medium">
     <div>
-      <SectionHeading eyebrow="Who this is for" h2={audienceHeading} body={audienceBody} />
+      <SectionHeading eyebrow={`${service.eyebrow} fit`} h2={audienceHeading} body={audienceBody} />
       {#if service.audienceItems}
         <ul class="check-list audience-list">
           {#each service.audienceItems as item}<li>{item}</li>{/each}
@@ -288,9 +320,11 @@
     <InternalLinkCopy paragraphs={allServiceInternalParagraphs} className="internal-link-copy--wide" />
   </section>
 
+  <ProofPanel proof={serviceProof} />
+
   {#each service.sections as section, index}
     <section class={sectionEffect(index + 1, index % 2 === 1 ? "low" : "medium", index % 2 === 1 ? "soft-section" : "")}>
-      <SectionHeading eyebrow={index === 0 ? "Details" : "Practical support"} h2={section.h2} />
+      <SectionHeading eyebrow={serviceSectionEyebrow(section)} h2={serviceSectionHeading(section)} />
       {#if section.cards}
         <CardGrid items={section.cards} />
       {:else if section.bullets}
@@ -309,7 +343,7 @@
   {/each}
 
   <section class="section no-overpromise section-effect section-effect--signals section-effect--low">
-    <SectionHeading eyebrow="No overpromising" h2="What this service is and is not" />
+    <SectionHeading eyebrow={`${service.eyebrow} fit and limits`} h2={`What ${service.eyebrow} includes, and where the limits are`} />
     <div class="split-section tight">
       <p>This is practical contract execution. The Web Guy can inspect the site, make changes, troubleshoot issues, explain tradeoffs, and keep work moving. Some problems depend on hosting, platform limits, third-party tools, access, business requirements, or existing code quality.</p>
       <ul class="check-list">
@@ -325,13 +359,13 @@
   <RelatedServices {service} />
   <RelatedSkills slugs={serviceSkillMap[service.slug] || []} />
   <ContextualSupport
-    eyebrow={`${service.eyebrow} fit`}
-    heading={`Where ${service.eyebrow} usually connects next`}
+    eyebrow={`Related ${service.eyebrow.toLowerCase()} work`}
+    heading={`Where ${service.eyebrow} work often expands`}
     intro="These links point to nearby services and skills that often become part of the same real website request."
     items={contextualSupportItems}
   />
   <TopicalLinks
-    eyebrow="Topical support"
+    eyebrow={`${service.eyebrow} support routes`}
     heading={`${service.eyebrow} connects to nearby website work`}
     intro="If this service is close but not the whole problem, these related pages help route the work by platform, symptom, technical task, or next practical step."
     items={topicalItems}

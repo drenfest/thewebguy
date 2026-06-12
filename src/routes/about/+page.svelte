@@ -88,7 +88,7 @@
 
 <main>
   <Hero
-    eyebrow="About"
+    eyebrow="Contract website support"
     h1="About The Web Guy"
     intro="The Web Guy is built around practical web support: fixing broken pages, cleaning up WordPress, implementing SEO work, building landing pages, troubleshooting tracking, and helping agencies move production work forward."
     cta="Work With The Web Guy"
@@ -97,7 +97,7 @@
   <Breadcrumbs items={breadcrumbs} />
 
   <section class="section split-section section-effect section-effect--grid section-effect--low">
-    <div><SectionHeading eyebrow="What The Web Guy is" h2="A practical contract website support service" body="This is not a fake agency brand and not a resume page. The public offer is simple: contract website help at $55/hr for real tasks that need technical execution." /></div>
+    <div><SectionHeading eyebrow="Contract support model" h2="A practical contract website support service" body="This is not a fake agency brand and not a resume page. The public offer is simple: contract website help at $55/hr for real tasks that need technical execution." /></div>
     <div>
       <ul class="check-list">
         <li>WordPress and webmaster support</li>
@@ -112,7 +112,7 @@
   </section>
 
   <section class="section soft-section section-effect section-effect--signals section-effect--low">
-    <SectionHeading eyebrow="Tools and technologies" h2="Comfortable across the messy middle of websites" />
+    <SectionHeading eyebrow="Website tools and technologies" h2="Comfortable across the messy middle of websites" />
     <CardGrid
       items={[
         ["CMS and ecommerce", "WordPress, Elementor, page builders, custom themes, PHP templates, Shopify, Liquid, WooCommerce, BigCommerce, and content cleanup.", "/services/wordpress-support/", "View WordPress support", "wordpress-support"],
@@ -124,14 +124,14 @@
   </section>
 
   <ContextualSupport
-    eyebrow="Work fit"
+    eyebrow="Website support fit"
     heading="Practical support paths behind the background"
     intro="These links move from work style and background into the exact service paths visitors usually need."
     items={aboutContextualItems}
   />
 
   <TopicalLinks
-    eyebrow="Useful next pages"
+    eyebrow="About-to-service routes"
     heading="Move from background context into a specific website request"
     intro="If the About page answers whether the work style is a fit, these pages help route the actual task into the right support area."
     items={aboutTopicalLinks}
@@ -140,7 +140,7 @@
   <CtaBand heading="Have a real website problem?" copy="Send the URL, context, and what needs to happen next." />
 
   <section class="section split-section section-effect section-effect--traces section-effect--low">
-    <div><SectionHeading eyebrow="Working style" h2="Plain, useful, and focused on the site" body="The best requests include a URL, a task list, an audit, screenshots, or a clear description of what should happen. The Web Guy gives practical updates instead of technical theater." /></div>
-    <div><SectionHeading eyebrow="Good fit / not good fit" h2="Best for execution, not bloated process" body="Good fit: businesses and agencies that need a technical person to move web work forward. Not a fit: unlimited flat-fee work, fake emergency chaos, or projects that need a large agency team." /></div>
+    <div><SectionHeading eyebrow="How website work is handled" h2="Plain, useful, and focused on the site" body="The best requests include a URL, a task list, an audit, screenshots, or a clear description of what should happen. The Web Guy gives practical updates instead of technical theater." /></div>
+    <div><SectionHeading eyebrow="Best-fit website projects" h2="Best for execution, not bloated process" body="Good fit: businesses and agencies that need a technical person to move web work forward. Not a fit: unlimited flat-fee work, fake emergency chaos, or projects that need a large agency team." /></div>
   </section>
 </main>

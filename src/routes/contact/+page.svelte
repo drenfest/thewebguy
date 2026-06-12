@@ -174,7 +174,7 @@
 
 <main>
   <Hero
-    eyebrow="Contact"
+    eyebrow="Website support request"
     h1="Send The Web Guy the Problem"
     intro="Tell me what is broken, what needs built, or what keeps getting pushed off. Include the URL, timeline, and what a useful outcome looks like."
     cta="Use the Request Form"
@@ -185,7 +185,7 @@
 
   <section class="section soft-section section-effect section-effect--signals section-effect--low">
     <SectionHeading
-      eyebrow="Before the form"
+      eyebrow="Website request prep"
       h2="Pick the closest work type, then send the messy version"
       body="The request form can handle rough context, but these links help frame the page, platform, tracking, or SEO work before you send it."
     />
@@ -193,14 +193,14 @@
   </section>
 
   <ContextualSupport
-    eyebrow="Request framing"
+    eyebrow="Service pages before the form"
     heading="Service context before the request form"
     intro="These pages can help frame the request before the form: what broke, what needs improved, and what kind of help fits."
     items={contactContextualItems}
   />
 
   <TopicalLinks
-    eyebrow="Before you send it"
+    eyebrow="Request routing"
     heading="Choose the closest request path, then describe the real site problem"
     intro="The form can handle messy requests, but these pages help frame the work if you already know the likely service category."
     items={contactTopicalLinks}
@@ -209,7 +209,7 @@
   <section class="section split-section section-effect section-effect--signals section-effect--low">
     <div>
       <SectionHeading
-        eyebrow="Broken or urgent"
+        eyebrow="Broken website request"
         h2="Send the symptom and the URL"
         body="If something broke, the most useful request starts with the exact page, what should happen, what is happening instead, device/browser notes, and any recent WordPress, plugin, theme, script, hosting, or content changes."
       />
@@ -217,7 +217,7 @@
     </div>
     <div>
       <SectionHeading
-        eyebrow="Planned work"
+        eyebrow="SEO, page, or support request"
         h2="Send the task list or audit notes"
         body="If the work is not urgent, include the page goal, platform, SEO audit, crawl notes, tracking requirements, rough deadline, and whether this is one-time help, agency overflow, or recurring webmaster support."
       />
@@ -229,8 +229,8 @@
     <div class="contact-grid">
       <div>
         <SectionHeading
-          eyebrow="Start here"
-          h2="Send a real request"
+          eyebrow="Website support request form"
+          h2="Send a website support request"
           body="Include the URL, what should happen, what is happening now, timeline, and whether this is one-time or ongoing. If you have an audit, screenshots, crawl notes, or a task list, mention that too."
         />
         <div class="rate-callout light">

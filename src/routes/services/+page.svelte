@@ -8,7 +8,9 @@
   import TopicalLinks from "$lib/components/TopicalLinks.svelte";
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
+  import ProofPanel from "$lib/components/ProofPanel.svelte";
   import { blogUrl, servicePages, serviceUrl, somethingBrokePosts } from "$lib/data/content.js";
+  import { servicesHubProof } from "$lib/data/proof.js";
   import { breadcrumbSchema, schemaList } from "$lib/data/schema.js";
 
   const breadcrumbs = [
@@ -94,17 +96,17 @@
 
 <main>
   <Hero
-    eyebrow="Services"
-    h1="Website Services at $55/hr"
-    intro="Practical contract web support for businesses, agencies, ecommerce stores, SEO teams, and overloaded marketing teams that need useful website work done."
+    eyebrow="Contract website services"
+    h1="Contract Website Services for WordPress, SEO, Tracking, and Site Fixes"
+    intro="Practical contract web support at $55/hr for businesses, agencies, ecommerce stores, SEO teams, and overloaded marketing teams that need useful website work done."
   />
 
   <Breadcrumbs items={breadcrumbs} />
 
   <section class="section section-effect section-effect--grid section-effect--medium">
     <SectionHeading
-      eyebrow="Service hub"
-      h2="Choose the service closest to the problem"
+      eyebrow="Website service routing"
+      h2="Choose the website service closest to the actual problem"
       body="If you are not sure where the work fits, start with the problem. The categories below are here to help you route the request, not force you into a package."
     />
     <InternalLinkCopy paragraphs={serviceHubInlineParagraphs} />
@@ -120,8 +122,10 @@
     />
   </section>
 
+  <ProofPanel proof={servicesHubProof} />
+
   <section class="section soft-section section-effect section-effect--signals section-effect--medium">
-    <SectionHeading eyebrow="How to choose" h2="Start with the pain, not the label" />
+    <SectionHeading eyebrow="Website problem routing" h2="Start with the website pain, not the service label" />
     <CardGrid
       className="card-grid compact-grid"
       items={painCards}
@@ -131,16 +135,16 @@
   <section class="section split-section section-effect section-effect--traces section-effect--low">
     <div>
       <SectionHeading
-        eyebrow="Common handoff paths"
-        h2="Most requests start as a symptom"
+        eyebrow="Broken-site handoffs"
+        h2="Most website service requests start as a symptom"
         body="A broken page usually starts with Website Fixes, then moves into WordPress Support, production debugging, or reliability work once the cause is clear. SEO requests often begin with Technical SEO Implementation, then turn into schema, crawl cleanup, internal links, or ecommerce product data."
       />
       <a class="text-link" href="/services/website-fixes/" title="View website fixes for broken layouts, forms, scripts, embeds, and visible bugs">Start with website fixes</a>
     </div>
     <div>
       <SectionHeading
-        eyebrow="Launch and measurement"
-        h2="New work needs a working path"
+        eyebrow="Page launches and measurement"
+        h2="New website work needs a working path"
         body="A page build is usually tied to Landing Pages, Analytics & Tracking, React/static front-end work, or API integrations. If an agency already owns strategy, Agency Overflow keeps production moving without turning every task into a full project."
       />
       <a class="text-link" href="/services/landing-pages/" title="View landing page support for service pages, campaign pages, forms, tracking, and launch work">Plan a page build</a>
@@ -148,14 +152,14 @@
   </section>
 
   <ContextualSupport
-    eyebrow="Service starting points"
-    heading="Primary service paths from the services hub"
+    eyebrow="Website service starting points"
+    heading="Primary website service paths from the services hub"
     intro="Start with these service paths when the problem is visible, technical, unfinished, or stuck between strategy and implementation."
     items={serviceHubContextualItems}
   />
 
   <TopicalLinks
-    eyebrow="Service routes"
+    eyebrow="Website service routes"
     heading="Match the request to the page that can actually move it forward"
     intro="These are the strongest service paths for common website problems, from broken front-end behavior to SEO implementation, tracking, and agency overflow."
     items={serviceHubLinks}
@@ -163,7 +167,7 @@
 
   <section class="section section-effect section-effect--traces section-effect--medium">
     <SectionHeading
-      eyebrow="Something broke"
+      eyebrow="Broken website symptoms"
       h2="Pick the broken thing that sounds closest"
       body="If the issue is visible, urgent, or hard to explain, these posts help name the problem and route it to the right kind of website fix."
     />
