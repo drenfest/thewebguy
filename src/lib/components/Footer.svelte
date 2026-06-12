@@ -32,6 +32,8 @@
   function linkTitle(label, href = "") {
     if (href === "/contact/") return "Open the contact request form";
     if (href === "/sitemap.xml") return "View the XML sitemap";
+    if (href === "/privacy/") return "Read The Web Guy Privacy Policy";
+    if (href === "/terms/") return "Read The Web Guy Terms of Service";
     return `View ${label}`;
   }
 
@@ -220,6 +222,8 @@
       <p class="copyright">&copy; {year} The Web Guy. All rights reserved.</p>
       <nav class="footer-legal-links" aria-label="Footer utility links">
         <a href="/sitemap.xml" title="View the XML sitemap">Sitemap</a>
+        <a href="/privacy/" title="Read The Web Guy Privacy Policy">Privacy</a>
+        <a href="/terms/" title="Read The Web Guy Terms of Service">Terms</a>
       </nav>
     </div>
   </div>

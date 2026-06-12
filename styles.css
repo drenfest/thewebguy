@@ -489,6 +489,19 @@ body.nav-open {
   transform: translateX(34%);
 }
 
+.button:disabled,
+.button[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.72;
+  transform: none;
+  box-shadow: none;
+}
+
+.button:disabled::after,
+.button[aria-disabled="true"]::after {
+  display: none;
+}
+
 .button-primary {
   background:
     linear-gradient(110deg, rgba(255, 255, 255, 0.26), transparent 34%),
@@ -2492,6 +2505,16 @@ select:focus {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
+}
+
+.bot-field {
+  position: absolute !important;
+  left: -10000px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
 
 .form-note {

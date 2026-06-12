@@ -15,11 +15,13 @@ SvelteKit route tree. Every directory here maps to a URL segment or server endpo
 - `contact/`: contact/request form page.
 - `faq/`: global FAQ page.
 - `locations/`: location index and dynamic local pages.
+- `privacy/`: privacy policy for contact form data, analytics, Gmail API delivery, and site usage.
 - `rate/`: rate/pricing page.
 - `robots.txt/`: dynamic robots.txt endpoint.
 - `services/`: services index and dynamic service pages.
 - `sitemap.xml/`: dynamic sitemap endpoint.
 - `skills/`: skills index and dynamic skill pages.
+- `terms/`: terms of service for site usage, contact requests, and hourly support scope.
 
 ## Common Patterns
 

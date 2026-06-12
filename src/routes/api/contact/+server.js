@@ -3,6 +3,14 @@ import tls from "node:tls";
 import { json } from "@sveltejs/kit";
 import { env } from "$env/dynamic/private";
 
+const MIN_FORM_AGE_MS = 2500;
+const MAX_FORM_AGE_MS = 12 * 60 * 60 * 1000;
+const RATE_WINDOW_MS = 60 * 60 * 1000;
+const MAX_REQUESTS_PER_WINDOW = 5;
+const DUPLICATE_WINDOW_MS = 2 * 60 * 1000;
+const rateBuckets = new Map();
+const duplicateBuckets = new Map();
+
 function clean(value, limit = 4000) {
   return String(value || "").trim().slice(0, limit);
 }
@@ -26,6 +34,69 @@ function extractEmail(value) {
   if (bracketed) return bracketed[1];
   const plain = text.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i);
   return plain ? plain[0] : "";
+}
+
+function getClientKey(request, getClientAddress) {
+  const forwardedFor = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim();
+  return forwardedFor || getClientAddress?.() || "unknown";
+}
+
+function pruneBuckets(map, now) {
+  for (const [key, value] of map.entries()) {
+    if (value.expiresAt <= now) map.delete(key);
+  }
+}
+
+function rateLimitExceeded(key) {
+  const now = Date.now();
+  pruneBuckets(rateBuckets, now);
+
+  const current = rateBuckets.get(key);
+  if (!current) {
+    rateBuckets.set(key, { count: 1, expiresAt: now + RATE_WINDOW_MS });
+    return false;
+  }
+
+  current.count += 1;
+  return current.count > MAX_REQUESTS_PER_WINDOW;
+}
+
+function duplicateSubmission(key) {
+  const now = Date.now();
+  pruneBuckets(duplicateBuckets, now);
+
+  if (duplicateBuckets.has(key)) return true;
+  duplicateBuckets.set(key, { expiresAt: now + DUPLICATE_WINDOW_MS });
+  return false;
+}
+
+function releaseDuplicate(key) {
+  duplicateBuckets.delete(key);
+}
+
+function hashValue(value) {
+  let hash = 5381;
+  for (let index = 0; index < value.length; index += 1) {
+    hash = (hash * 33) ^ value.charCodeAt(index);
+  }
+  return (hash >>> 0).toString(36);
+}
+
+function botCheck(payload) {
+  const honeypot = clean(payload.websiteCompany || payload.companyWebsite || payload._gotcha, 500);
+  if (honeypot) return { blocked: true, silent: true, reason: "honeypot" };
+
+  const loadedAt = Number(payload.formLoadedAt);
+  const age = Date.now() - loadedAt;
+  if (!Number.isFinite(loadedAt) || age < MIN_FORM_AGE_MS) {
+    return { blocked: true, status: 400, message: "Please wait a moment, then submit the request again.", reason: "too_fast" };
+  }
+
+  if (age > MAX_FORM_AGE_MS) {
+    return { blocked: true, status: 400, message: "Please reload the contact form and try again.", reason: "stale_form" };
+  }
+
+  return { blocked: false };
 }
 
 function buildHtml(lines) {
@@ -269,10 +340,25 @@ function preferredProvider() {
   return "";
 }
 
-export async function POST({ request }) {
+export async function POST({ request, getClientAddress }) {
   const payload = await request.json().catch(() => null);
   if (!payload) {
     return json({ message: "Invalid request body." }, { status: 400 });
+  }
+
+  const botResult = botCheck(payload);
+  if (botResult.blocked) {
+    if (!botResult.silent) console.warn("Contact request blocked by bot protection", botResult.reason);
+    return json(
+      botResult.silent ? { ok: true, mode: "filtered" } : { message: botResult.message || "The request could not be sent." },
+      { status: botResult.status || 200 }
+    );
+  }
+
+  const clientKey = getClientKey(request, getClientAddress);
+  if (rateLimitExceeded(clientKey)) {
+    console.warn("Contact request rate limited", clientKey);
+    return json({ message: "Too many requests from this connection. Please try again later." }, { status: 429 });
   }
 
   const email = clean(payload.email);
@@ -295,6 +381,11 @@ export async function POST({ request }) {
     hours: clean(payload.hours),
     details
   };
+
+  const duplicateKey = `${clientKey}:${normalized.email.toLowerCase()}:${hashValue(`${normalized.url}|${normalized.service}|${normalized.details}`)}`;
+  if (duplicateSubmission(duplicateKey)) {
+    return json({ message: "This request was already received. Please wait before sending it again." }, { status: 409 });
+  }
 
   const lines = [
     "Request for The Web Guy",
@@ -322,6 +413,7 @@ export async function POST({ request }) {
 
   if (provider === "gmail" || (!provider && gmailApiConfigured(gmailConfig))) {
     if (!gmailApiConfigured(gmailConfig)) {
+      releaseDuplicate(duplicateKey);
       console.error("Contact email is not configured. Set CONTACT_TO_EMAIL, CONTACT_FROM_EMAIL, GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET, and GMAIL_REFRESH_TOKEN.");
       return json({ message: "The contact form email is not configured yet." }, { status: 503 });
     }
@@ -341,12 +433,14 @@ export async function POST({ request }) {
         request: normalized
       });
     } catch (error) {
+      releaseDuplicate(duplicateKey);
       console.error("Contact Gmail API delivery failed", error);
       return json({ message: "The request could not be sent. Please try again in a moment." }, { status: 502 });
     }
   }
 
   if (!smtpConfigured(config)) {
+    releaseDuplicate(duplicateKey);
     console.error("Contact email is not configured. Set Gmail API variables or set CONTACT_TO_EMAIL, CONTACT_FROM_EMAIL, SMTP_HOST, SMTP_USER, and SMTP_PASSWORD.");
     return json({ message: "The contact form email is not configured yet." }, { status: 503 });
   }
@@ -366,6 +460,7 @@ export async function POST({ request }) {
       request: normalized
     });
   } catch (error) {
+    releaseDuplicate(duplicateKey);
     console.error("Contact SMTP delivery failed", error);
     return json({ message: "The request could not be sent. Please try again in a moment." }, { status: 502 });
   }

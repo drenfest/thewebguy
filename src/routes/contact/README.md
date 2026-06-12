@@ -13,6 +13,8 @@ Contact/request form page at `/contact/`.
 - Success and error messages are rendered in-page.
 - The hero CTA points to `#request-form` so users can jump directly to the form.
 - Contact form analytics use `trackEvent` for submit, success, error, and select-change events.
+- The submit button locks while sending and stays locked after a successful request to prevent duplicate sends.
+- Includes a hidden honeypot and form-load timestamp that are sent to `/api/contact` for challenge-free bot protection.
 
 ## How It Is Used
 
@@ -26,9 +28,9 @@ GA4 events on this route avoid raw private values. The page tracks selected cate
 - Keep destination email and provider secrets out of this page.
 - Update select options by changing source content data, not hardcoding duplicates.
 - If adding analytics for a new field, track a category or boolean rather than the raw value when the field may contain private details.
+- Keep bot-protection payload names aligned with `/api/contact` if changing hidden fields.
 
 ## Suggested Improvements
 
 - Add client-side validation messages for URL and required details.
-- Add a honeypot or challenge-free spam control.
 - Clear the draft after successful server-side delivery if preferred.

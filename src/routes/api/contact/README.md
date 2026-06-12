@@ -15,6 +15,7 @@ Contact form delivery endpoint at `/api/contact`.
 - Sends SMTP through built-in Node modules when SMTP is explicitly configured and reachable.
 - Returns a configuration error when email delivery is missing instead of exposing the private recipient address.
 - Uses submitted email as `reply_to`.
+- Applies challenge-free bot controls before email delivery: honeypot, minimum/stale form age checks, per-connection rate limiting, and short-window duplicate detection.
 
 ## How It Is Used
 
@@ -23,11 +24,12 @@ Contact form delivery endpoint at `/api/contact`.
 ## How To Extend
 
 - Add provider-specific tags or metadata if tracking request sources.
-- Add a honeypot field and reject filled honeypot submissions.
+- Keep spam checks lightweight and user-friendly unless bot traffic requires a stronger challenge provider.
 - Add a CRM/database handoff after successful email delivery.
 
 ## Suggested Improvements
 
 - Add tests for missing payload, missing required fields, Gmail API success/failure, SMTP success/failure, and missing configuration.
 - Add idempotency protection if duplicate submissions become a problem.
+- Move rate limiting to durable storage if the app scales beyond one Node process or needs cross-deploy persistence.
 - Consider moving email body construction into a helper if more notification types are added.

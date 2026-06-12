@@ -6,11 +6,16 @@
   import TopicalLinks from "$lib/components/TopicalLinks.svelte";
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
+  import { onMount } from "svelte";
   import { trackEvent } from "$lib/analytics.js";
   import { locationPages, servicePages, skillPages } from "$lib/data/content.js";
   import { contactState } from "$lib/state/contact-state.svelte.js";
 
   let status = $state({ type: "idle", message: "" });
+  let botTrap = $state("");
+  let formLoadedAt = $state("");
+  const formLocked = $derived(status.type === "loading" || status.type === "success");
+  const submitLabel = $derived(status.type === "loading" ? "Sending..." : status.type === "success" ? "Request Sent" : "Send Request");
   const breadcrumbs = [
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
     { label: "Contact", title: "Current page: Send a website support request" }
@@ -118,11 +123,17 @@
     });
   }
 
+  onMount(() => {
+    formLoadedAt = String(Date.now());
+  });
+
   async function submitRequest(event) {
     event.preventDefault();
+    if (formLocked) return;
+
     status = { type: "loading", message: "Preparing request..." };
 
-    const formData = { ...contactState.draft };
+    const formData = { ...contactState.draft, websiteCompany: botTrap, formLoadedAt };
     const trackingPayload = contactTrackingPayload(formData);
     let responseStatus = "network";
     trackEvent("contact_form_submit", trackingPayload);
@@ -269,9 +280,11 @@
           </label>
           <label>Approximate monthly hours<input bind:value={contactState.draft.hours} name="hours" type="text" placeholder="Not sure, 5-10, 10-20, as needed" /></label>
         </div>
+        <label class="bot-field" aria-hidden="true" tabindex="-1">Leave this field blank<input bind:value={botTrap} name="websiteCompany" type="text" autocomplete="off" tabindex="-1" /></label>
+        <input type="hidden" name="formLoadedAt" value={formLoadedAt} />
         <p class="form-note">Requests send through the private contact route. Your email is used as the reply-to address.</p>
         {#if status.message}<p class={`form-status ${status.type}`}>{status.message}</p>{/if}
-        <button class="button button-primary cta-animated cta-animated--primary" type="submit">Send Request</button>
+        <button class="button button-primary cta-animated cta-animated--primary" type="submit" disabled={formLocked} aria-disabled={formLocked}>{submitLabel}</button>
       </form>
     </div>
   </section>

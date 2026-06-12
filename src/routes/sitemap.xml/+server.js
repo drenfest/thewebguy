@@ -15,7 +15,9 @@ export function GET() {
     "/about/",
     "/rate/",
     "/contact/",
-    "/faq/"
+    "/faq/",
+    "/privacy/",
+    "/terms/"
   ];
 
   const body = `<?xml version="1.0" encoding="UTF-8"?>
