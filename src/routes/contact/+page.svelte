@@ -183,48 +183,6 @@
 
   <Breadcrumbs items={breadcrumbs} />
 
-  <section class="section soft-section section-effect section-effect--signals section-effect--low">
-    <SectionHeading
-      eyebrow="Website request prep"
-      h2="Pick the closest work type, then send the messy version"
-      body="The request form can handle rough context, but these links help frame the page, platform, tracking, or SEO work before you send it."
-    />
-    <InternalLinkCopy paragraphs={contactInlineParagraphs} />
-  </section>
-
-  <ContextualSupport
-    eyebrow="Service pages before the form"
-    heading="Service context before the request form"
-    intro="These pages can help frame the request before the form: what broke, what needs improved, and what kind of help fits."
-    items={contactContextualItems}
-  />
-
-  <TopicalLinks
-    eyebrow="Request routing"
-    heading="Choose the closest request path, then describe the real site problem"
-    intro="The form can handle messy requests, but these pages help frame the work if you already know the likely service category."
-    items={contactTopicalLinks}
-  />
-
-  <section class="section split-section section-effect section-effect--signals section-effect--low">
-    <div>
-      <SectionHeading
-        eyebrow="Broken website request"
-        h2="Send the symptom and the URL"
-        body="If something broke, the most useful request starts with the exact page, what should happen, what is happening instead, device/browser notes, and any recent WordPress, plugin, theme, script, hosting, or content changes."
-      />
-      <a class="text-link" href="/services/website-fixes/" title="View website fixes for broken layouts, forms, modals, embeds, scripts, and website bugs">View website fixes</a>
-    </div>
-    <div>
-      <SectionHeading
-        eyebrow="SEO, page, or support request"
-        h2="Send the task list or audit notes"
-        body="If the work is not urgent, include the page goal, platform, SEO audit, crawl notes, tracking requirements, rough deadline, and whether this is one-time help, agency overflow, or recurring webmaster support."
-      />
-      <a class="text-link" href="/services/technical-seo-implementation/" title="View technical SEO implementation for audit notes, crawl cleanup, schema, redirects, headings, and internal links">View SEO implementation</a>
-    </div>
-  </section>
-
   <section class="section contact-section">
     <div class="contact-grid">
       <div>
@@ -289,6 +247,48 @@
         {#if status.message}<p class={`form-status ${status.type}`}>{status.message}</p>{/if}
         <button class="button button-primary cta-animated cta-animated--primary" type="submit" disabled={formLocked} aria-disabled={formLocked}>{submitLabel}</button>
       </form>
+    </div>
+  </section>
+
+  <section class="section soft-section section-effect section-effect--signals section-effect--low">
+    <SectionHeading
+      eyebrow="Website request prep"
+      h2="Pick the closest work type, then send the messy version"
+      body="The request form can handle rough context, but these links help frame the page, platform, tracking, or SEO work before you send it."
+    />
+    <InternalLinkCopy paragraphs={contactInlineParagraphs} />
+  </section>
+
+  <ContextualSupport
+    eyebrow="Service pages before the form"
+    heading="Service context before the request form"
+    intro="These pages can help frame the request before the form: what broke, what needs improved, and what kind of help fits."
+    items={contactContextualItems}
+  />
+
+  <TopicalLinks
+    eyebrow="Request routing"
+    heading="Choose the closest request path, then describe the real site problem"
+    intro="The form can handle messy requests, but these pages help frame the work if you already know the likely service category."
+    items={contactTopicalLinks}
+  />
+
+  <section class="section split-section section-effect section-effect--signals section-effect--low">
+    <div>
+      <SectionHeading
+        eyebrow="Broken website request"
+        h2="Send the symptom and the URL"
+        body="If something broke, the most useful request starts with the exact page, what should happen, what is happening instead, device/browser notes, and any recent WordPress, plugin, theme, script, hosting, or content changes."
+      />
+      <a class="text-link" href="/services/website-fixes/" title="View website fixes for broken layouts, forms, modals, embeds, scripts, and website bugs">View website fixes</a>
+    </div>
+    <div>
+      <SectionHeading
+        eyebrow="SEO, page, or support request"
+        h2="Send the task list or audit notes"
+        body="If the work is not urgent, include the page goal, platform, SEO audit, crawl notes, tracking requirements, rough deadline, and whether this is one-time help, agency overflow, or recurring webmaster support."
+      />
+      <a class="text-link" href="/services/technical-seo-implementation/" title="View technical SEO implementation for audit notes, crawl cleanup, schema, redirects, headings, and internal links">View SEO implementation</a>
     </div>
   </section>
 </main>
