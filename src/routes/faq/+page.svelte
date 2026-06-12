@@ -8,6 +8,7 @@
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import { faqs } from "$lib/data/content.js";
+  import { staticHeroImages } from "$lib/data/hero-images.js";
   import { breadcrumbSchema, faqSchema, schemaList } from "$lib/data/schema.js";
 
   const breadcrumbs = [
@@ -96,6 +97,7 @@
     eyebrow="Contract website help FAQ"
     h1="The Web Guy FAQ"
     intro="Answers about the $55/hr rate, WordPress support, agency overflow, SEO implementation, landing pages, tracking, ecommerce, and ongoing support."
+    image={staticHeroImages.faq}
   />
   <Breadcrumbs items={breadcrumbs} />
   <section class="section soft-section section-effect section-effect--signals section-effect--low">

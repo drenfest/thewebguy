@@ -8,6 +8,7 @@
   import TopicalLinks from "$lib/components/TopicalLinks.svelte";
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
+  import { staticHeroImages } from "$lib/data/hero-images.js";
   import { breadcrumbSchema, schemaList } from "$lib/data/schema.js";
 
   const breadcrumbs = [
@@ -92,6 +93,7 @@
     h1="Contract Website Help at $55/hr"
     intro="A clear hourly rate for practical website support: quick fixes, small projects, ongoing webmaster work, SEO implementation, agency overflow, and technical cleanup."
     cta="Start a Website Request"
+    image={staticHeroImages.rate}
   />
 
   <Breadcrumbs items={breadcrumbs} />

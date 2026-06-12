@@ -10,6 +10,7 @@
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import { blogPosts, blogUrl } from "$lib/data/content.js";
+  import { blogHeroImage } from "$lib/data/hero-images.js";
   import { articleSchema, breadcrumbSchema, faqSchema, schemaList } from "$lib/data/schema.js";
 
   let { data } = $props();
@@ -208,7 +209,15 @@
 <Seo title={post.title.includes("|") ? post.title : `${post.title} | The Web Guy`} description={post.meta} schema={seoSchema} />
 
 <main>
-  <Hero eyebrow={post.eyebrow} h1={post.h1 || post.title} intro={post.summary} cta={post.heroCta || "Send This Website Problem"} secondary={post.heroSecondary || "View Website Fixes"} secondaryHref={post.heroSecondaryHref || "/services/website-fixes/"} />
+  <Hero
+    eyebrow={post.eyebrow}
+    h1={post.h1 || post.title}
+    intro={post.summary}
+    cta={post.heroCta || "Send This Website Problem"}
+    secondary={post.heroSecondary || "View Website Fixes"}
+    secondaryHref={post.heroSecondaryHref || "/services/website-fixes/"}
+    image={blogHeroImage(post)}
+  />
 
   <Breadcrumbs items={breadcrumbs} />
 

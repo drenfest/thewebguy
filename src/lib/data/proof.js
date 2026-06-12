@@ -154,6 +154,25 @@ export const serviceProofBySlug = {
       }
     ]
   },
+  "ai-built-website-cleanup": {
+    eyebrow: "AI cleanup proof",
+    heading: "Proof of cleanup work across generated code, launch details, and messy site handoffs",
+    intro: "AI-built site cleanup fits the same production reality as the rest of the site: the output may be close, but forms, routing, SEO, tracking, performance, deployment, and maintainability still need judgment.",
+    items: [
+      {
+        label: "Generated-code review",
+        copy: "Worked with AI-assisted code, Svelte/SvelteKit, React-style front-end work, JavaScript, APIs, environment variables, and production debugging paths where the generated output needed human review."
+      },
+      {
+        label: "Launch readiness",
+        copy: "Connected fast builds to metadata, schema, sitemap and robots support, internal links, form flow, GA4/GTM tracking, deployment checks, and practical UX review."
+      },
+      {
+        label: "Cleanup mindset",
+        copy: "Handled the same fragile layers AI-built sites often expose: broken layouts, missing edge cases, heavy assets, routing problems, API handoffs, and code that needs to be easier to edit."
+      }
+    ]
+  },
   "agency-overflow": {
     eyebrow: "Agency proof",
     heading: "Proof of production support for overloaded web and SEO teams",

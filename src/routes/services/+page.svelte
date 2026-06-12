@@ -10,6 +10,7 @@
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import ProofPanel from "$lib/components/ProofPanel.svelte";
   import { blogUrl, servicePages, serviceUrl, somethingBrokePosts } from "$lib/data/content.js";
+  import { staticHeroImages } from "$lib/data/hero-images.js";
   import { servicesHubProof } from "$lib/data/proof.js";
   import { breadcrumbSchema, schemaList } from "$lib/data/schema.js";
 
@@ -99,6 +100,7 @@
     eyebrow="Contract website services"
     h1="Contract Website Services for WordPress, SEO, Tracking, and Site Fixes"
     intro="Practical contract web support at $55/hr for businesses, agencies, ecommerce stores, SEO teams, and overloaded marketing teams that need useful website work done."
+    image={staticHeroImages.services}
   />
 
   <Breadcrumbs items={breadcrumbs} />

@@ -10,6 +10,7 @@
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import ProofPanel from "$lib/components/ProofPanel.svelte";
   import { skillPages, skillUrl } from "$lib/data/content.js";
+  import { staticHeroImages } from "$lib/data/hero-images.js";
   import { skillsHubProof } from "$lib/data/proof.js";
   import { breadcrumbSchema, schemaList } from "$lib/data/schema.js";
 
@@ -109,6 +110,7 @@
     h1="Technical Web Skills for WordPress, SEO, Tracking, APIs, and Performance"
     intro="These are practical production skills used to fix, stabilize, speed up, automate, measure, and improve websites. They support the $55/hr service work without turning the site into a resume."
     cta="Send a Technical Issue"
+    image={staticHeroImages.skills}
   />
 
   <Breadcrumbs items={breadcrumbs} />

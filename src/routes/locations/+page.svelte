@@ -10,6 +10,7 @@
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import ProofPanel from "$lib/components/ProofPanel.svelte";
   import { locationPages, locationUrl } from "$lib/data/content.js";
+  import { staticHeroImages } from "$lib/data/hero-images.js";
   import { locationsHubProof } from "$lib/data/proof.js";
   import { breadcrumbSchema, schemaList } from "$lib/data/schema.js";
 
@@ -112,6 +113,7 @@
     h1="Local Website Support Near Freeport, IL"
     intro="The Web Guy provides local-friendly and remote-friendly website support for businesses near Freeport, IL and surrounding cities. Hourly web help starts at $55/hr."
     cta="Request Local Web Support"
+    image={staticHeroImages.locations}
   />
 
   <Breadcrumbs items={breadcrumbs} />

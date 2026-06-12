@@ -4,6 +4,7 @@
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
   import SectionHeading from "$lib/components/SectionHeading.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
+  import { staticHeroImages } from "$lib/data/hero-images.js";
   import { breadcrumbSchema, schemaList } from "$lib/data/schema.js";
 
   const breadcrumbs = [
@@ -39,6 +40,7 @@
     secondary="Read Terms"
     secondaryHref="/terms/"
     showCapabilityLinks={false}
+    image={staticHeroImages.privacy}
   />
 
   <Breadcrumbs items={breadcrumbs} />

@@ -38,6 +38,13 @@
       <circle class="icon-accent" cx="44" cy="42" r="6" />
       <path class="icon-accent" d="M44 32v4M44 48v4M34 42h4M50 42h4M37 35l3 3M48 46l3 3M37 49l3-3M48 38l3-3" />
       <circle class="icon-dot" cx="44" cy="42" r="2.2" />
+    {:else if slug === "ai-built-website-cleanup"}
+      <rect class="icon-line" x="15" y="18" width="34" height="24" rx="4" />
+      <path class="icon-line" d="M23 49h18M32 42v7" />
+      <path class="icon-accent" d="M24 28l-4 4 4 4M40 28l4 4-4 4M35 26l-6 12" />
+      <circle class="icon-ring" cx="44" cy="43" r="6" />
+      <path class="icon-accent" d="M44 34v3M44 49v3M35 43h3M50 43h3M38 37l2 2M48 47l2 2M38 49l2-2M48 39l2-2" />
+      <circle class="icon-dot" cx="44" cy="43" r="2.1" />
     {:else if slug === "agency-overflow"}
       <rect class="icon-line" x="17" y="20" width="14" height="14" rx="2" />
       <rect class="icon-line" x="33" y="20" width="14" height="14" rx="2" />

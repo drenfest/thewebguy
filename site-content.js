@@ -94,6 +94,7 @@ export const servicePages = [
         cards: [
           ["Schema and structured data", "Audit notes about FAQ, service, article, product, local, or organization markup can move into structured data implementation.", "/skills/schema-structured-data/", "View schema support"],
           ["Crawl and internal links", "Crawl exports often become redirect cleanup, broken-link fixes, crawl path review, and internal linking implementation.", "/skills/crawl-analysis-internal-linking/", "View crawl and link help"],
+          ["AI-built site cleanup", "AI-built pages still need metadata, schema, routing, internal links, sitemap support, and crawlable structure before they are ready for real users.", "/services/ai-built-website-cleanup/", "View AI-built website cleanup"],
           ["Programmatic SEO", "When SEO recommendations involve many similar pages, templates, metadata patterns, or data-driven pages, programmatic SEO may be the right layer.", "/skills/programmatic-seo/", "View programmatic SEO"],
           ["Ecommerce SEO", "Product schema, category structure, Merchant Center issues, and product data cleanup often pull technical SEO into ecommerce support.", "/services/ecommerce-support/", "View ecommerce support"]
         ]
@@ -104,7 +105,7 @@ export const servicePages = [
           "The next step can be simple: send the URL, the notes, and the priorities. The Web Guy can help identify what should be handled first, what needs access, what requires a developer-level change, and what may need more caution before touching production."
       }
     ],
-    related: ["wordpress-support", "analytics-tracking", "landing-pages", "agency-overflow"]
+    related: ["ai-built-website-cleanup", "wordpress-support", "analytics-tracking", "landing-pages", "agency-overflow"]
   },
   {
     slug: "landing-pages",
@@ -202,7 +203,8 @@ export const servicePages = [
           ["Performance engineering", "Core Web Vitals, render-blocking assets, layout shift, and front-end weight often need more than a plugin setting.", "/skills/performance-engineering/", "View performance engineering"],
           ["WordPress cleanup", "Theme weight, plugins, builders, image handling, and cache behavior often make speed work a WordPress support issue.", "/services/wordpress-support/", "View WordPress support"],
           ["Cloudflare and hosting", "Caching, DNS, SSL mode, server limits, and edge behavior can affect whether speed fixes actually hold.", "/skills/cloudflare-dns-ssl/", "View Cloudflare and DNS help"],
-          ["Website fixes", "Slow pages sometimes hide visible layout bugs, script errors, broken embeds, and unstable components that need direct fixing.", "/services/website-fixes/", "View website fixes"]
+          ["Website fixes", "Slow pages sometimes hide visible layout bugs, script errors, broken embeds, and unstable components that need direct fixing.", "/services/website-fixes/", "View website fixes"],
+          ["AI-built cleanup", "Vibe-coded pages can ship with oversized assets, duplicate scripts, fragile layout, and bundle weight that need practical cleanup.", "/services/ai-built-website-cleanup/", "View AI-built website cleanup"]
         ]
       },
       {
@@ -211,7 +213,7 @@ export const servicePages = [
           "Performance work can improve a site, but nobody should promise perfect scores on every page. Some scripts are business requirements. Some themes are heavy. Some hosting is limiting. The useful goal is to identify the biggest drag, fix what is practical, and explain what remains."
       }
     ],
-    related: ["wordpress-support", "website-fixes", "security-hosting-reliability", "ongoing-webmaster-support"]
+    related: ["ai-built-website-cleanup", "wordpress-support", "website-fixes", "security-hosting-reliability", "ongoing-webmaster-support"]
   },
   {
     slug: "website-fixes",
@@ -255,6 +257,7 @@ export const servicePages = [
         cards: [
           ["Start with the symptom", "A broken website request is easier to fix when the issue is described by what changed, what should happen, and where it fails.", "/blog/something-broke-on-your-website/", "Read the troubleshooting guide"],
           ["Production debugging", "Console errors, network failures, script conflicts, and weird browser behavior often need production debugging rather than guesswork.", "/skills/production-debugging/", "View debugging help"],
+          ["AI-built cleanup", "When ChatGPT, Codex, Lovable, Bolt, Cursor, Replit, v0, or another builder got the site close but fragile, cleanup can turn the output into something safer to edit.", "/services/ai-built-website-cleanup/", "View AI-built website cleanup"],
           ["Forms and tracking", "Broken forms, modals, pixels, and conversion events often connect website fixes to analytics and tracking cleanup.", "/services/analytics-tracking/", "View tracking support"],
           ["Hosting and reliability", "SSL warnings, redirect loops, cache conflicts, DNS changes, and server errors may move the fix into reliability support.", "/services/security-hosting-reliability/", "View reliability support"]
         ]
@@ -265,7 +268,88 @@ export const servicePages = [
           "Not every website problem deserves a full project. Some need a careful technical look, a fix, and a plain-English summary of what changed. That is exactly where hourly contract help makes sense."
       }
     ],
-    related: ["wordpress-support", "analytics-tracking", "api-integrations", "security-hosting-reliability"]
+    related: ["ai-built-website-cleanup", "wordpress-support", "analytics-tracking", "api-integrations", "security-hosting-reliability"]
+  },
+  {
+    slug: "ai-built-website-cleanup",
+    title: "AI-Built Website Cleanup at $55/hr | The Web Guy",
+    meta: "Built with ChatGPT, Codex, Lovable, Bolt, Cursor, or Replit? Get hourly help fixing, cleaning up, and launching AI-built websites.",
+    h1: "AI-Built Website Cleanup at $55/hr",
+    eyebrow: "AI-built site cleanup",
+    intro:
+      "Built something with ChatGPT, Codex, Lovable, Bolt, Cursor, Replit, v0, or another AI tool and now it is half-working, hard to edit, slow, broken, or confusing? The Web Guy helps clean up AI-built websites, fix the parts that broke, improve structure, connect forms and tracking, and turn vibe-coded output into something usable.",
+    cta: "Clean Up My AI-Built Site",
+    audience:
+      "This is for site owners, founders, marketers, agencies, and builders who used AI to move faster but now need a real web developer to review the output, fix the fragile parts, connect missing systems, and make the site safer to launch or keep editing.",
+    audienceHeading: "When AI-built website cleanup makes sense",
+    audienceItems: [
+      "ChatGPT or Codex helped build it, but now errors are piling up.",
+      "Lovable, Bolt, Replit, Cursor, v0, or another AI builder produced something close but not finished.",
+      "The site works locally but breaks after deployment.",
+      "The page looks okay but forms, tracking, routing, schema, or SEO basics are missing.",
+      "The code is hard to edit because the structure is confusing.",
+      "The app or site has environment variable, API, database, auth, or deployment issues.",
+      "The site feels slow, fragile, bloated, or risky to keep changing blindly.",
+      "You need someone technical to review what AI generated and make it safer, cleaner, and more maintainable."
+    ],
+    sections: [
+      {
+        h2: "What AI-built sites usually need cleaned up",
+        cards: [
+          ["Broken layouts and responsive issues", "Fix sections that overlap, mobile views that fall apart, spacing that drifts, and generated CSS that does not hold up across real screens."],
+          ["Routing and navigation cleanup", "Clean up routes, links, redirects, missing pages, active states, 404 behavior, and navigation that made sense in the prompt but not in the site."],
+          ["Forms, modals, and lead flow", "Repair forms, validation, modal behavior, success states, email delivery, CRM handoffs, hidden fields, and the path from user action to lead."],
+          ["GA4/GTM tracking and conversion events", "Add or verify analytics, conversion events, pixels, tag placement, form tracking, and the measurement checks needed before launch."],
+          ["Schema, metadata, sitemap, robots, and internal links", "Add the boring SEO basics AI often skips: titles, descriptions, headings, schema, sitemap support, robots rules, canonicals, and internal links."],
+          ["Deployment, build, environment variable, and hosting issues", "Trace local-vs-live failures, missing env vars, build errors, host configuration, SSL, domains, and deployment assumptions."],
+          ["API, webhook, CRM, and database connections", "Debug payloads, endpoints, authentication, missing fields, webhooks, database calls, and third-party handoffs that need to work reliably."],
+          ["Accessibility basics and real UX checks", "Check keyboard flow, labels, contrast, focus states, readable structure, button behavior, and the practical UX details generated output can miss."],
+          ["Performance, assets, scripts, and bundle weight", "Clean up oversized assets, duplicate scripts, unused code, layout shift, heavy bundles, loading behavior, and performance drag."],
+          ["Error handling, validation, and edge cases", "Add practical handling for failed submissions, missing data, broken responses, invalid input, loading states, and real-world user behavior."],
+          ["Security basics and suspicious generated code", "Review risky snippets, exposed secrets, unsafe client-side assumptions, dependency choices, form handling, and obvious security hygiene issues."],
+          ["Maintainability and future editing", "Improve file structure, naming, comments where helpful, reusable components, content organization, and the path for future updates."]
+        ]
+      },
+      {
+        h2: "AI can build fast. Cleanup still takes judgment.",
+        body:
+          "AI tools are useful for momentum, prototypes, landing pages, and fast builds. The problem is that generated work often skips boring but important production details: accessibility, schema, routing, robots and sitemap support, form handling, email deliverability, analytics, error handling, performance, redirects, security basics, maintainability, deployment environment variables, database sanity, and actual UX. AI gives you motion. It does not always give you judgment."
+      },
+      {
+        h2: "AI tools this work can support",
+        body:
+          "This cleanup work can support sites built with ChatGPT, Codex, Lovable, Bolt, Cursor, Replit, v0, GitHub Copilot, Svelte, React, WordPress, Shopify, WooCommerce, static sites, JavaScript, APIs, and common hosting or deployment platforms. This is not official platform support or a partnership claim. It is practical help with generated or AI-assisted website work that needs a technical review."
+      },
+      {
+        h2: "Related support paths",
+        cards: [
+          ["Website Fixes", "Use this when the AI-built site has visible bugs, broken layouts, JavaScript errors, forms, modals, embeds, or mobile issues.", "/services/website-fixes/", "View Website Fixes"],
+          ["Technical SEO Implementation", "Use this when generated output needs metadata, headings, schema, sitemap support, crawl cleanup, or internal links.", "/services/technical-seo-implementation/", "View Technical SEO Implementation"],
+          ["Analytics & Tracking", "Use this when GA4, GTM, pixels, conversion events, form tracking, or reporting needs to be added or verified.", "/services/analytics-tracking/", "View Analytics & Tracking"],
+          ["Site Speed Cleanup", "Use this when generated assets, scripts, layout shift, rendering, or bundle weight make the site slow or unstable.", "/services/site-speed-performance/", "View Site Speed Cleanup"],
+          ["API & Integration Work", "Use this when forms, CRMs, APIs, webhooks, auth, databases, or third-party data handoffs need debugging.", "/services/api-integrations/", "View API & Integration Work"],
+          ["Production Debugging", "Use this when the problem only shows up on the live site, in the browser console, after deployment, or under real user flow.", "/skills/production-debugging/", "View Production Debugging"],
+          ["Performance Engineering", "Use this when performance needs deeper review across scripts, assets, rendering, cache, and Core Web Vitals signals.", "/skills/performance-engineering/", "View Performance Engineering"],
+          ["Schema & Structured Data", "Use this when the generated site needs structured data that matches real visible content and search intent.", "/skills/schema-structured-data/", "View Schema & Structured Data"],
+          ["Cloudflare, DNS & SSL", "Use this when deployment, domain, redirect, SSL, cache, or Cloudflare behavior is part of the launch problem.", "/skills/cloudflare-dns-ssl/", "View Cloudflare, DNS & SSL"]
+        ]
+      },
+      {
+        h2: "Send the URL and what feels broken",
+        body:
+          "You do not need to diagnose everything first. Send the URL, repo or builder context if available, what should happen, what is happening instead, and what tool helped build it. The Web Guy can help figure out the safest first cleanup step."
+      }
+    ],
+    faqs: [
+      ["Can you fix a website built with ChatGPT or Codex?", "Yes. AI-assisted sites can be reviewed and cleaned up when the URL, repo, generated files, or builder context are available."],
+      ["Can you clean up a Lovable, Bolt, Cursor, Replit, or v0 project?", "Yes. The work can include layout fixes, routing cleanup, deployment issues, forms, tracking, SEO basics, API connections, and maintainability improvements."],
+      ["What should I send before you look at it?", "Send the URL, repo or builder link if available, what tool helped build it, what should happen, what is happening instead, and any deployment or environment notes."],
+      ["Can you make an AI-built site faster?", "Often, yes. Generated sites can carry oversized assets, duplicate scripts, unused code, layout shift, and bundle weight that can be reviewed and cleaned up."],
+      ["Can you add tracking, forms, schema, or SEO basics?", "Yes. GA4/GTM tracking, form flow, metadata, schema, sitemap support, robots rules, internal links, and launch checks are common cleanup tasks."],
+      ["Can you help if I do not understand the code AI generated?", "Yes. You do not need to diagnose the code first. Send what you have and the visible problem, and the first step is to identify the safest cleanup path."],
+      ["Do you rebuild everything from scratch?", "Not by default. The first move is to inspect what exists, keep what is useful, and clean up the parts that are fragile, missing, broken, or risky."]
+    ],
+    related: ["website-fixes", "technical-seo-implementation", "analytics-tracking", "site-speed-performance", "api-integrations", "react-static-sites"]
   },
   {
     slug: "agency-overflow",
@@ -420,6 +504,7 @@ export const servicePages = [
           ["GA4 and GTM integrity", "When events are missing, duplicated, or mislabeled, the work becomes measurement integrity across GA4 and Tag Manager.", "/skills/ga4-gtm-measurement-integrity/", "View GA4/GTM help"],
           ["Disconnected systems", "If leads, dashboards, CRMs, or ecommerce numbers disagree, start by mapping the flow from action to destination.", "/blog/website-data-systems-not-connecting/", "Read the data flow guide"],
           ["API handoffs", "Forms, CRMs, webhooks, hidden fields, and payload issues can make tracking work overlap with integrations.", "/services/api-integrations/", "View API integration help"],
+          ["AI-built cleanup", "AI-generated forms and pages often need GA4/GTM events, conversion checks, and lead-flow verification before launch.", "/services/ai-built-website-cleanup/", "View AI-built website cleanup"],
           ["Landing page measurement", "Campaign pages need forms, click tracking, conversion events, UTMs, and verification before they launch.", "/services/landing-pages/", "View landing page help"]
         ]
       },
@@ -429,7 +514,7 @@ export const servicePages = [
           "The useful tracking work is not just dropping in a snippet. It is making sure the snippet fires in the right place, sends the right data, avoids duplicates, and reflects the action the business actually cares about."
       }
     ],
-    related: ["landing-pages", "technical-seo-implementation", "ecommerce-support", "website-fixes"]
+    related: ["ai-built-website-cleanup", "landing-pages", "technical-seo-implementation", "ecommerce-support", "website-fixes"]
   },
   {
     slug: "api-integrations",
@@ -475,6 +560,7 @@ export const servicePages = [
           ["Webhook implementation", "When the issue is payload format, authentication, endpoint behavior, or logging, the work maps to API and webhook integration skills.", "/skills/rest-api-webhook-integrations/", "View webhook skills"],
           ["Ecommerce data", "Product feeds, order flows, checkout data, and catalog updates connect integrations to ecommerce support.", "/services/ecommerce-support/", "View ecommerce support"],
           ["Tracking and events", "Form submissions, conversion events, hidden fields, and CRM handoffs often need analytics verification too.", "/services/analytics-tracking/", "View tracking support"],
+          ["AI-built cleanup", "Generated apps and AI-built sites often need API, webhook, database, auth, and environment variable issues traced before they are usable.", "/services/ai-built-website-cleanup/", "View AI-built website cleanup"],
           ["Production debugging", "Silent failures, bad responses, and scripts that work only sometimes need debugging inside the real production flow.", "/skills/production-debugging/", "View debugging help"]
         ]
       },
@@ -484,7 +570,7 @@ export const servicePages = [
           "Good integration work includes checking what happens when something fails. The Web Guy can help test payloads in Postman, inspect responses, review logs, and explain what needs to change so the workflow is less fragile."
       }
     ],
-    related: ["automation-internal-tools", "analytics-tracking", "ecommerce-support", "website-fixes"]
+    related: ["ai-built-website-cleanup", "automation-internal-tools", "analytics-tracking", "ecommerce-support", "website-fixes"]
   },
   {
     slug: "security-hosting-reliability",

@@ -9,6 +9,7 @@
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import { blogPosts, blogUrl, somethingBrokePosts } from "$lib/data/content.js";
+  import { staticHeroImages } from "$lib/data/hero-images.js";
   import { breadcrumbSchema, schemaList } from "$lib/data/schema.js";
 
   const breadcrumbs = [
@@ -113,6 +114,7 @@
     cta="Send a Website Problem"
     secondary="View Website Fixes"
     secondaryHref="/services/website-fixes/"
+    image={staticHeroImages.blog}
   />
 
   <Breadcrumbs items={breadcrumbs} />

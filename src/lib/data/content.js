@@ -185,6 +185,7 @@ export const blogPosts = [
     relatedIntro: "Broken-site requests often move into one of these hands-on service areas after the first symptom is clear.",
     links: [
       ["Website Fixes", "/services/website-fixes/", "Start here for broken layouts, forms, modals, embeds, mobile issues, scripts, and bugs that need practical debugging."],
+      ["AI-Built Website Cleanup", "/services/ai-built-website-cleanup/", "Use this when ChatGPT, Codex, Lovable, Bolt, Cursor, Replit, v0, or another AI builder produced something close but fragile, broken, or not ready to launch."],
       ["WordPress Support", "/services/wordpress-support/", "Use this when the issue involves WordPress, plugins, themes, Elementor, PHP, CSS, JavaScript, or page builder cleanup."],
       ["Security, Hosting & Reliability", "/services/security-hosting-reliability/", "Use this when the symptom points toward DNS, SSL, redirects, Cloudflare, caching, hosting, or server reliability."],
       ["Analytics & Tracking", "/services/analytics-tracking/", "Use this when the site appears to work but GA4, GTM, pixels, events, form tracking, or conversions cannot be trusted."],
@@ -195,6 +196,7 @@ export const blogPosts = [
     contextIntro: "A broken-site request usually gets clearer after the first symptom is sorted. These paths help route visible, functional, tracking, and infrastructure problems into the right kind of hands-on help.",
     contextCards: [
       ["Website Fixes", "Use this for broken layouts, failed forms, modals, embeds, JavaScript errors, CSS issues, and other visible website bugs.", "/services/website-fixes/", "View website fixes for broken layouts, forms, modals, embeds, and website bugs"],
+      ["AI-Built Website Cleanup", "Use this when the broken page or prototype came from an AI builder and now needs routing, code, deployment, tracking, forms, or SEO cleanup.", "/services/ai-built-website-cleanup/", "View AI-built website cleanup"],
       ["WordPress Support", "Use this when the problem lives in WordPress, Elementor, a theme, a plugin update, PHP, page builder settings, or cached assets.", "/services/wordpress-support/", "View WordPress support for plugins, themes, Elementor, PHP, and site cleanup"],
       ["Security, Hosting & Reliability", "Use this when the symptom points to DNS, SSL, redirects, Cloudflare, cache, hosting, downtime, or server-level behavior.", "/services/security-hosting-reliability/", "View hosting, DNS, SSL, cache, and reliability support"],
       ["Analytics & Tracking", "Use this when the site looks okay but forms, GA4, GTM, pixels, conversion events, or CRM handoff cannot be trusted.", "/services/analytics-tracking/", "View analytics and tracking support for GA4, GTM, pixels, forms, and conversions"]
@@ -676,6 +678,7 @@ export const blogPosts = [
     links: [
       ["Analytics & Tracking", "/services/analytics-tracking/", "For GA4, GTM, form events, pixels, conversion tracking, ecommerce events, and measurement cleanup."],
       ["API Integrations", "/services/api-integrations/", "For REST APIs, webhooks, payloads, auth, endpoint issues, form handoffs, and systems that need to connect."],
+      ["AI-Built Website Cleanup", "/services/ai-built-website-cleanup/", "For AI-built forms, prototypes, apps, or landing pages where generated code skipped tracking, API handoffs, validation, or deployment details."],
       ["Ecommerce Support", "/services/ecommerce-support/", "For Shopify, WooCommerce, product data, purchase events, revenue mismatch, checkout tracking, and Merchant Center issues."],
       ["Automation & Internal Tools", "/services/automation-internal-tools/", "For practical workflows, dashboards, crawlers, checkers, scripts, and reporting helpers connected to website data."],
       ["GA4/GTM Measurement Integrity", "/skills/ga4-gtm-measurement-integrity/", "For trigger cleanup, event verification, conversion checks, duplicate tags, and reporting QA."],
@@ -686,6 +689,7 @@ export const blogPosts = [
     contextCards: [
       ["Analytics & Tracking", "Use this for GA4, GTM, pixels, form events, conversion checks, duplicate tags, ecommerce events, and measurement cleanup.", "/services/analytics-tracking/", "View analytics and tracking troubleshooting support"],
       ["API Integrations", "Use this when forms, CRMs, webhooks, REST APIs, payloads, auth, or endpoint behavior are where the data stops moving.", "/services/api-integrations/", "View API and webhook integration support"],
+      ["AI-Built Website Cleanup", "Use this when generated code created a form, dashboard, prototype, or app flow that does not send data where it should.", "/services/ai-built-website-cleanup/", "View AI-built website cleanup for disconnected systems"],
       ["Ecommerce Support", "Use this when purchase events, product data, revenue, checkout, Merchant Center, Shopify, or WooCommerce data does not line up.", "/services/ecommerce-support/", "View ecommerce tracking and product data support"],
       ["GA4/GTM Measurement Integrity", "Use this for trigger cleanup, DebugView checks, event naming, conversion verification, duplicate containers, and reporting QA.", "/skills/ga4-gtm-measurement-integrity/", "View GA4 and Google Tag Manager measurement integrity support"]
     ],
@@ -721,6 +725,7 @@ export const blogPosts = [
     ],
     links: [
       ["Website Fixes", "/services/website-fixes/"],
+      ["AI-Built Cleanup", "/services/ai-built-website-cleanup/"],
       ["WordPress Support", "/services/wordpress-support/"],
       ["Front-End Help", "/services/react-static-sites/"]
     ],
@@ -728,6 +733,7 @@ export const blogPosts = [
     contextIntro: "Layout problems are usually visual symptoms with a technical cause. These paths cover the common places the fix lands after the broken section is reproduced.",
     contextCards: [
       ["Website Fixes", "Use this for overlapping sections, broken mobile layouts, drifting buttons, missing images, sticky header problems, and visible page bugs.", "/services/website-fixes/", "View website fixes for broken layouts and visible bugs"],
+      ["AI-Built Cleanup", "Use this when the layout came from an AI-generated page, prototype, or app and needs responsive cleanup before launch.", "/services/ai-built-website-cleanup/", "View AI-built website cleanup for broken layouts"],
       ["WordPress Support", "Use this when the layout issue is tied to WordPress, Elementor, page builder spacing, theme updates, plugins, or cached CSS.", "/services/wordpress-support/", "View WordPress support for layout and builder issues"],
       ["React & Static Sites", "Use this when the fix needs front-end structure, component cleanup, responsive CSS, JavaScript behavior, or static page work.", "/services/react-static-sites/", "View React and static front-end support"],
       ["Production Debugging", "Use this when the layout bug needs browser inspection, console checks, CSS isolation, deployment review, or a careful production-safe fix.", "/skills/production-debugging/", "View production debugging support for website layout issues"]
@@ -750,6 +756,7 @@ export const blogPosts = [
     links: [
       ["Website Fixes", "/services/website-fixes/"],
       ["Production Debugging", "/skills/production-debugging/"],
+      ["AI-Built Cleanup", "/services/ai-built-website-cleanup/"],
       ["Front-End Help", "/services/react-static-sites/"]
     ],
     contextHeading: "Use the right debugging lane for CSS and JavaScript bugs",
@@ -757,6 +764,7 @@ export const blogPosts = [
     contextCards: [
       ["Website Fixes", "Use this for broken menus, modals, buttons, CSS conflicts, page-specific bugs, and scripts that stop a normal site action.", "/services/website-fixes/", "View website fixes for CSS, JavaScript, menus, modals, and bugs"],
       ["Production Debugging", "Use this when the problem needs console errors, network checks, script isolation, cache review, or production-safe troubleshooting.", "/skills/production-debugging/", "View production debugging for CSS and JavaScript website bugs"],
+      ["AI-Built Cleanup", "Use this when generated CSS, JavaScript, routing, components, or state logic are close but unreliable on the real site.", "/services/ai-built-website-cleanup/", "View AI-built website cleanup for CSS and JavaScript bugs"],
       ["React & Static Sites", "Use this when the bug lives in a component, static build, front-end route, JavaScript behavior, or lightweight site deployment.", "/services/react-static-sites/", "View React and static site front-end support"],
       ["WordPress Support", "Use this when CSS or JavaScript behavior is coming from a WordPress theme, plugin, page builder, shortcode, or injected script.", "/services/wordpress-support/", "View WordPress support for front-end bugs"]
     ]
@@ -778,6 +786,7 @@ export const blogPosts = [
     links: [
       ["Website Fixes", "/services/website-fixes/"],
       ["Analytics & Tracking", "/services/analytics-tracking/"],
+      ["AI-Built Cleanup", "/services/ai-built-website-cleanup/"],
       ["API & Integrations", "/services/api-integrations/"]
     ],
     contextHeading: "Forms and modals usually touch more than the page",
@@ -785,6 +794,7 @@ export const blogPosts = [
     contextCards: [
       ["Website Fixes", "Use this for forms that spin, modals that do not open, validation bugs, redirect problems, hidden fields, and visible interaction failures.", "/services/website-fixes/", "View website fixes for forms, modals, redirects, and interaction bugs"],
       ["Analytics & Tracking", "Use this when form submissions, thank-you states, GA4 events, GTM triggers, pixels, or conversion reporting need to be verified.", "/services/analytics-tracking/", "View analytics and tracking support for forms and conversions"],
+      ["AI-Built Cleanup", "Use this when an AI-built form, modal, or lead flow needs validation, email delivery, CRM handoff, tracking, or deployment cleanup.", "/services/ai-built-website-cleanup/", "View AI-built website cleanup for forms and modals"],
       ["API Integrations", "Use this when a form should send data to a CRM, webhook, automation, email tool, booking tool, or another system and the handoff fails.", "/services/api-integrations/", "View API integration support for forms, CRMs, and webhooks"],
       ["Production Debugging", "Use this when browser errors, script conflicts, plugins, cache, or third-party embeds are making the form or modal behavior unreliable.", "/skills/production-debugging/", "View production debugging for forms and modal issues"]
     ]
@@ -834,6 +844,7 @@ export const blogPosts = [
     links: [
       ["Analytics & Tracking", "/services/analytics-tracking/"],
       ["GA4 / GTM", "/skills/ga4-gtm-measurement-integrity/"],
+      ["AI-Built Cleanup", "/services/ai-built-website-cleanup/"],
       ["Landing Pages", "/services/landing-pages/"]
     ],
     contextHeading: "Where tracking script cleanup should route",
@@ -841,6 +852,7 @@ export const blogPosts = [
     contextCards: [
       ["Analytics & Tracking", "Use this for GA4, GTM, pixels, conversion events, form tracking, ecommerce tracking, duplicate scripts, and tag cleanup.", "/services/analytics-tracking/", "View analytics and tracking cleanup support"],
       ["GA4/GTM Measurement Integrity", "Use this for trigger QA, DebugView checks, event naming, conversion verification, duplicate containers, consent issues, and reporting confidence.", "/skills/ga4-gtm-measurement-integrity/", "View GA4 and Google Tag Manager measurement integrity support"],
+      ["AI-Built Cleanup", "Use this when AI-generated pages need tracking snippets, conversion events, form measurement, or tag placement added before launch.", "/services/ai-built-website-cleanup/", "View AI-built website cleanup for tracking scripts"],
       ["Landing Pages", "Use this when tracking needs to launch with a campaign page, paid traffic page, lead form, phone click, or conversion-focused page.", "/services/landing-pages/", "View landing page support with tracking setup"],
       ["Website Data Systems", "Use this when GA4, GTM, forms, ecommerce data, CRMs, dashboards, or APIs disagree and the whole flow needs to be traced.", "/blog/website-data-systems-not-connecting/", "Read the guide to website data and systems not connecting"]
     ]
@@ -996,11 +1008,12 @@ export const skillPages = [
     connection: "Production debugging supports website fixes, API integrations, analytics cleanup, security/hosting reliability, and agency overflow work.",
     contextCards: [
       ["Website fixes", "Visible bugs, broken layouts, failed forms, and script conflicts usually need production debugging before the fix is obvious.", "/services/website-fixes/", "View website fixes", "website-fixes"],
+      ["AI-built cleanup", "Generated sites and vibe-coded apps often need production debugging when the live deploy, routing, forms, APIs, tracking, or environment variables fail.", "/services/ai-built-website-cleanup/", "View AI-built cleanup", "website-fixes"],
       ["API integrations", "Payload errors, failed webhooks, bad responses, and missing logs often connect debugging to integration work.", "/services/api-integrations/", "View API integrations", "api-integrations"],
       ["Analytics and tracking", "Missing events, duplicate tags, broken pixels, and unreliable form data often need debugging inside the live page flow.", "/services/analytics-tracking/", "View tracking support", "analytics-tracking"],
       ["Reliability support", "Redirect loops, SSL issues, cache behavior, and hosting errors can make a production bug a stability problem.", "/services/security-hosting-reliability/", "View reliability support", "security-hosting-reliability"]
     ],
-    relatedServices: ["website-fixes", "api-integrations", "analytics-tracking", "security-hosting-reliability"],
+    relatedServices: ["website-fixes", "ai-built-website-cleanup", "api-integrations", "analytics-tracking", "security-hosting-reliability"],
     relatedSkills: ["rest-api-webhook-integrations", "ga4-gtm-measurement-integrity", "php-javascript-node", "platform-reliability"],
     faqs: [
       ["What should I send for debugging?", "Send the URL, what should happen, what happens instead, screenshots if useful, and what changed recently."],
@@ -1198,6 +1211,7 @@ export const serviceSkillMap = {
   "landing-pages": ["ga4-gtm-measurement-integrity", "performance-engineering", "programmatic-seo"],
   "site-speed-performance": ["performance-engineering", "cloudflare-dns-ssl", "production-debugging"],
   "website-fixes": ["production-debugging", "php-javascript-node", "cloudflare-dns-ssl"],
+  "ai-built-website-cleanup": ["production-debugging", "performance-engineering", "rest-api-webhook-integrations"],
   "agency-overflow": ["production-debugging", "wordpress-theme-development", "automation-dashboards-reporting"],
   "ecommerce-support": ["shopify-plus-liquid", "google-merchant-center-product-data", "ga4-gtm-measurement-integrity"],
   "analytics-tracking": ["ga4-gtm-measurement-integrity", "production-debugging", "google-merchant-center-product-data"],

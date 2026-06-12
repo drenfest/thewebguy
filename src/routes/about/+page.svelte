@@ -8,6 +8,7 @@
   import TopicalLinks from "$lib/components/TopicalLinks.svelte";
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
+  import { staticHeroImages } from "$lib/data/hero-images.js";
   import { breadcrumbSchema, schemaList } from "$lib/data/schema.js";
 
   const breadcrumbs = [
@@ -92,6 +93,7 @@
     h1="About The Web Guy"
     intro="The Web Guy is built around practical web support: fixing broken pages, cleaning up WordPress, implementing SEO work, building landing pages, troubleshooting tracking, and helping agencies move production work forward."
     cta="Work With The Web Guy"
+    image={staticHeroImages.about}
   />
 
   <Breadcrumbs items={breadcrumbs} />

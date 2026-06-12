@@ -1,10 +1,11 @@
-import { mkdir, stat } from "node:fs/promises";
+import { mkdir, readdir, stat } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 
 const root = process.cwd();
 const heroSource = path.join(root, "static/images/technical-web-support-hero.png");
 const heroOutputDir = path.join(root, "static/images");
+const pageHeroSourceDir = path.join(root, "static/images/heroes");
 
 const heroVariants = [
   { width: 640, jpegQuality: 78, webpQuality: 72 },
@@ -81,7 +82,38 @@ async function optimizeHero() {
   return Promise.all(jobs);
 }
 
-const results = await optimizeHero();
+async function optimizePageHeroes() {
+  await mkdir(pageHeroSourceDir, { recursive: true });
+
+  const files = await readdir(pageHeroSourceDir);
+  const sourceFiles = files.filter((file) => /-source\.(png|jpe?g|webp)$/i.test(file));
+
+  const jobs = sourceFiles.flatMap((file) => {
+    const sourcePath = path.join(pageHeroSourceDir, file);
+    const slug = file.replace(/-source\.(png|jpe?g|webp)$/i, "");
+
+    return heroVariants.flatMap(({ width, jpegQuality, webpQuality }) => [
+      writeVariant({
+        sourcePath,
+        outputPath: path.join(pageHeroSourceDir, `${slug}-${width}.jpg`),
+        width,
+        format: "jpeg",
+        quality: jpegQuality
+      }),
+      writeVariant({
+        sourcePath,
+        outputPath: path.join(pageHeroSourceDir, `${slug}-${width}.webp`),
+        width,
+        format: "webp",
+        quality: webpQuality
+      })
+    ]);
+  });
+
+  return Promise.all(jobs);
+}
+
+const results = [...await optimizeHero(), ...await optimizePageHeroes()];
 const optimized = results.filter((result) => result.status === "optimized");
 
 if (optimized.length) {

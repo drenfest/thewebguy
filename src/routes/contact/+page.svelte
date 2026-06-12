@@ -9,6 +9,7 @@
   import { onMount } from "svelte";
   import { trackEvent } from "$lib/analytics.js";
   import { locationPages, servicePages, skillPages } from "$lib/data/content.js";
+  import { staticHeroImages } from "$lib/data/hero-images.js";
   import { breadcrumbSchema, schemaList } from "$lib/data/schema.js";
   import { contactState } from "$lib/state/contact-state.svelte.js";
 
@@ -179,6 +180,7 @@
     intro="Tell me what is broken, what needs built, or what keeps getting pushed off. Include the URL, timeline, and what a useful outcome looks like."
     cta="Use the Request Form"
     ctaHref="#request-form"
+    image={staticHeroImages.contact}
   />
 
   <Breadcrumbs items={breadcrumbs} />

@@ -14,6 +14,7 @@
   import FaqList from "$lib/components/FaqList.svelte";
   import ProofPanel from "$lib/components/ProofPanel.svelte";
   import { serviceMap, serviceSkillMap, serviceUrl, skillMap, skillUrl } from "$lib/data/content.js";
+  import { serviceHeroImage } from "$lib/data/hero-images.js";
   import { proofForService } from "$lib/data/proof.js";
   import { breadcrumbSchema, faqSchema, schemaList, serviceSchema } from "$lib/data/schema.js";
 
@@ -25,7 +26,7 @@
     { label: "Services", href: "/services/", title: "View all website services" },
     { label: service.eyebrow, title: `Current page: ${service.h1.replace(" at $55/hr", "")}` }
   ]);
-  const serviceFaqs = $derived([
+  const serviceFaqs = $derived(service.faqs || [
     [`What does ${service.eyebrow.toLowerCase()} cost?`, `Contract help for this work is billed at $55/hr when the task, site, and access are clear.`],
     ["What should I send first?", "Send the URL, what should happen, what is happening now, timeline, and any audit notes, screenshots, or task lists."],
     ["Can this be one-time or ongoing?", "Yes. This can be a one-time fix, a small project, agency overflow, or part of ongoing webmaster/platform support."],
@@ -125,6 +126,10 @@
     "website-fixes": [
       { text: "CMS, plugin, and theme weirdness", href: "/blog/cms-plugin-theme-weirdness/", title: "Read about CMS, plugin, and theme weirdness" },
       { text: "forms and modals not working", href: "/blog/forms-modals-not-working/", title: "Read about forms and modals not working" }
+    ],
+    "ai-built-website-cleanup": [
+      { text: "CSS and JavaScript website bugs", href: "/blog/css-javascript-errors-website-bugs/", title: "Read about CSS and JavaScript bugs in generated or existing sites" },
+      { text: "website data not connecting", href: "/blog/website-data-systems-not-connecting/", title: "Read about website data, forms, tracking, APIs, and systems not connecting" }
     ],
     "agency-overflow": [
       { text: "CMS, plugin, and theme weirdness", href: "/blog/cms-plugin-theme-weirdness/", title: "Read about CMS, plugin, and theme weirdness in client sites" },
@@ -246,6 +251,28 @@
         " when audit notes need to become actual site changes."
       ]
     ],
+    "ai-built-website-cleanup": [
+      [
+        "AI-built website cleanup often starts with ",
+        { text: "Website Fixes", href: "/services/website-fixes/", title: "View website fixes for broken generated layouts, forms, scripts, and front-end issues" },
+        ", then pulls in ",
+        { text: "Production Debugging", href: "/skills/production-debugging/", title: "View production debugging for AI-built sites that fail after deployment" },
+        ", ",
+        { text: "Analytics & Tracking", href: "/services/analytics-tracking/", title: "View analytics and tracking setup for AI-built websites" },
+        ", or ",
+        { text: "API & Integrations", href: "/services/api-integrations/", title: "View API and integration help for AI-built websites, forms, CRMs, webhooks, and data handoffs" },
+        " depending on what the generated site skipped."
+      ],
+      [
+        "If the AI-generated page looks close but is not launch-ready, compare ",
+        { text: "Technical SEO Implementation", href: "/services/technical-seo-implementation/", title: "View technical SEO implementation for metadata, schema, sitemap support, robots, and internal links" },
+        ", ",
+        { text: "Site Speed", href: "/services/site-speed-performance/", title: "View site speed cleanup for bloated generated assets, scripts, and layout shift" },
+        ", and ",
+        { text: "Cloudflare / DNS / SSL", href: "/skills/cloudflare-dns-ssl/", title: "View Cloudflare, DNS, SSL, domain, and deployment support" },
+        " before pushing more changes blindly."
+      ]
+    ],
     "agency-overflow": [
       [
         "Agency overflow work often moves between ",
@@ -299,7 +326,7 @@
 <Seo title={service.title} description={service.meta} schema={seoSchema} />
 
 <main>
-  <Hero eyebrow={service.eyebrow} h1={service.h1} intro={service.intro} cta={service.cta} />
+  <Hero eyebrow={service.eyebrow} h1={service.h1} intro={service.intro} cta={service.cta} image={serviceHeroImage(service)} />
   <Breadcrumbs items={breadcrumbs} />
   <ServiceNav current={service.slug} services={relatedServices} />
 

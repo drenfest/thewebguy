@@ -13,6 +13,7 @@
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import ProofPanel from "$lib/components/ProofPanel.svelte";
   import { serviceMap, serviceUrl, skillMap, skillUrl } from "$lib/data/content.js";
+  import { skillHeroImage } from "$lib/data/hero-images.js";
   import { proofForSkill } from "$lib/data/proof.js";
   import { breadcrumbSchema, faqSchema, schemaList, skillPageSchema } from "$lib/data/schema.js";
 
@@ -261,7 +262,7 @@
 <Seo title={skill.title} description={skill.meta} schema={seoSchema} />
 
 <main>
-  <Hero eyebrow={skill.eyebrow} h1={skill.h1} intro={skill.intro} cta={`Get ${skill.eyebrow} Help`} />
+  <Hero eyebrow={skill.eyebrow} h1={skill.h1} intro={skill.intro} cta={`Get ${skill.eyebrow} Help`} image={skillHeroImage(skill)} />
 
   <Breadcrumbs items={breadcrumbs} />
 

@@ -9,8 +9,25 @@
     ctaHref = "/contact/",
     secondary = "View Services",
     secondaryHref = "/services/",
-    showCapabilityLinks = true
+    showCapabilityLinks = true,
+    image = {
+      slug: "home-contract-web-support",
+      basePath: "/images/heroes",
+      alt: "Contract web developer workspace with code, analytics dashboards, SEO notes, and technical website support tools",
+      width: 1280,
+      height: 720
+    }
   } = $props();
+
+  const imageBasePath = $derived(image.basePath || "/images/heroes");
+  const imageSlug = $derived(image.slug || "home-contract-web-support");
+  const imageAlt = $derived(image.alt || "Technical website support workspace with web development, SEO, tracking, and performance tools");
+  const imageWidth = $derived(image.width || 1280);
+  const imageHeight = $derived(image.height || 720);
+  const webpSrcset = $derived(`${imageBasePath}/${imageSlug}-640.webp 640w, ${imageBasePath}/${imageSlug}-960.webp 960w, ${imageBasePath}/${imageSlug}-1280.webp 1280w`);
+  const jpegSrcset = $derived(`${imageBasePath}/${imageSlug}-640.jpg 640w, ${imageBasePath}/${imageSlug}-960.jpg 960w, ${imageBasePath}/${imageSlug}-1280.jpg 1280w`);
+  const fallbackSrc = $derived(`${imageBasePath}/${imageSlug}-960.jpg`);
+  const preloadHref = $derived(`${imageBasePath}/${imageSlug}-960.webp`);
 
   const capabilityLinks = [
     ["WordPress", "/services/wordpress-support/"],
@@ -26,6 +43,18 @@
     return `View ${label}`;
   }
 </script>
+
+<svelte:head>
+  <link
+    rel="preload"
+    as="image"
+    href={preloadHref}
+    imagesrcset={webpSrcset}
+    imagesizes="(min-width: 1024px) 430px, (min-width: 720px) 74vw, 92vw"
+    type="image/webp"
+    fetchpriority="high"
+  />
+</svelte:head>
 
 <section class="hero effect effect-hero effect-high">
   <HeroParticles intensity="high" />
@@ -56,16 +85,16 @@
         <picture>
           <source
             type="image/webp"
-            srcset="/images/technical-web-support-hero-640.webp 640w, /images/technical-web-support-hero-960.webp 960w, /images/technical-web-support-hero-1280.webp 1280w"
+            srcset={webpSrcset}
             sizes="(min-width: 1024px) 430px, (min-width: 720px) 74vw, 92vw"
           />
           <img
-            src="/images/technical-web-support-hero-960.jpg"
-            srcset="/images/technical-web-support-hero-640.jpg 640w, /images/technical-web-support-hero-960.jpg 960w, /images/technical-web-support-hero-1280.jpg 1280w"
+            src={fallbackSrc}
+            srcset={jpegSrcset}
             sizes="(min-width: 1024px) 430px, (min-width: 720px) 74vw, 92vw"
-            width="1672"
-            height="941"
-            alt="Technical website support workspace with code, audit notes, analytics, and performance dashboards"
+            width={imageWidth}
+            height={imageHeight}
+            alt={imageAlt}
             loading="eager"
             fetchpriority="high"
             decoding="async"

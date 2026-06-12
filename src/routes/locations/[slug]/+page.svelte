@@ -12,6 +12,7 @@
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import ProofPanel from "$lib/components/ProofPanel.svelte";
   import { locationMap, locationUrl, serviceMap, serviceUrl, skillMap, skillUrl } from "$lib/data/content.js";
+  import { locationHeroImage } from "$lib/data/hero-images.js";
   import { proofForLocation } from "$lib/data/proof.js";
   import { breadcrumbSchema, faqSchema, locationServiceSchema, schemaList } from "$lib/data/schema.js";
 
@@ -190,6 +191,7 @@
     h1={`Local Website Support for ${location.city}, ${location.state} Businesses`}
     intro={`The Web Guy helps ${location.city}-area businesses with local-friendly hourly website support at $55/hr: WordPress support, website fixes, technical SEO, landing pages, tracking, ecommerce cleanup, and ongoing webmaster help.`}
     cta={`Request ${location.city} Web Support`}
+    image={locationHeroImage(location)}
   />
 
   <Breadcrumbs items={breadcrumbs} />

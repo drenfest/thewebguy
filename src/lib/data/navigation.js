@@ -66,6 +66,7 @@ export const megaMenus = {
     [
       group("Fix & Stabilize", [
         serviceLink("Website Fixes", "website-fixes"),
+        serviceLink("AI-Built Cleanup", "ai-built-website-cleanup"),
         serviceLink("WordPress Support", "wordpress-support"),
         serviceLink("Site Speed & Performance", "site-speed-performance"),
         serviceLink("Security, Hosting & Reliability", "security-hosting-reliability"),
@@ -180,6 +181,7 @@ export const mobileNavSections = [
     label: "Services",
     links: [
       serviceLink("Website Fixes", "website-fixes"),
+      serviceLink("AI-Built Website Cleanup", "ai-built-website-cleanup"),
       serviceLink("WordPress Support", "wordpress-support"),
       serviceLink("Technical SEO Implementation", "technical-seo-implementation"),
       serviceLink("Landing Pages", "landing-pages"),

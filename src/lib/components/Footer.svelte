@@ -49,6 +49,7 @@
   const serviceGroups = [
     subgroup("Fix & Stabilize", [
       serviceLink("Website Fixes", "website-fixes"),
+      serviceLink("AI-Built Website Cleanup", "ai-built-website-cleanup"),
       serviceLink("WordPress Support", "wordpress-support"),
       serviceLink("Site Speed & Performance", "site-speed-performance"),
       serviceLink("Security, Hosting & Reliability", "security-hosting-reliability"),

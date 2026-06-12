@@ -11,6 +11,7 @@
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import ProofReel from "$lib/components/ProofReel.svelte";
   import { faqs, locationPages, locationUrl, servicePages, serviceUrl } from "$lib/data/content.js";
+  import { staticHeroImages } from "$lib/data/hero-images.js";
   import { breadcrumbSchema, faqSchema, organizationSchema, schemaList, websiteSchema } from "$lib/data/schema.js";
 
   const breadcrumbs = [{ label: "Home", title: "Current page: The Web Guy homepage" }];
@@ -187,6 +188,7 @@
     cta="Send a Website Problem"
     secondary="View Services"
     showCapabilityLinks={false}
+    image={staticHeroImages.home}
   />
 
   <Breadcrumbs items={breadcrumbs} />
