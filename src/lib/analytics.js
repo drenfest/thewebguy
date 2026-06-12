@@ -1,0 +1,270 @@
+import { browser } from "$app/environment";
+
+export const gaMeasurementId = (import.meta.env.PUBLIC_GA_MEASUREMENT_ID || "").trim();
+
+const scrollThresholds = [25, 50, 75, 90];
+const trackedScrollDepths = new Set();
+let currentPageMeta = {};
+let initialized = false;
+
+function cleanPath(pathname = "/") {
+  if (!pathname || pathname === "/") return "/";
+  return pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
+}
+
+function titleFromSlug(slug = "") {
+  return slug
+    .split("-")
+    .filter(Boolean)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+function routeMeta(pathname = "/") {
+  const path = cleanPath(pathname);
+  const segments = path.split("/").filter(Boolean);
+  const root = segments[0] || "home";
+  const slug = segments[1] || "";
+  const topic = slug ? titleFromSlug(slug) : titleFromSlug(root);
+
+  if (path === "/") {
+    return {
+      page_type: "home",
+      content_group: "Home",
+      page_topic: "Contract web support",
+      conversion_stage: "discovery"
+    };
+  }
+
+  if (root === "services") {
+    return {
+      page_type: slug ? "service_detail" : "service_hub",
+      content_group: "Services",
+      page_topic: slug ? topic : "Web services",
+      service_slug: slug || "hub",
+      conversion_stage: slug ? "service_evaluation" : "service_discovery"
+    };
+  }
+
+  if (root === "skills") {
+    return {
+      page_type: slug ? "skill_detail" : "skill_hub",
+      content_group: "Skills",
+      page_topic: slug ? topic : "Core skills",
+      skill_slug: slug || "hub",
+      conversion_stage: "technical_fit"
+    };
+  }
+
+  if (root === "locations") {
+    return {
+      page_type: slug ? "location_detail" : "location_hub",
+      content_group: "Locations",
+      page_topic: slug ? topic : "Service area",
+      location_slug: slug || "hub",
+      conversion_stage: "local_fit"
+    };
+  }
+
+  if (root === "blog") {
+    return {
+      page_type: slug ? "blog_post" : "blog_hub",
+      content_group: "Blog",
+      page_topic: slug ? topic : "Troubleshooting notes",
+      blog_slug: slug || "hub",
+      conversion_stage: slug ? "education" : "content_discovery"
+    };
+  }
+
+  const singlePages = {
+    contact: ["contact", "Contact", "Request form", "lead_capture"],
+    rate: ["rate", "Rate", "Hourly contract rate", "pricing"],
+    faq: ["faq", "FAQ", "Questions before hiring", "objection_handling"],
+    about: ["about", "About", "Background and fit", "trust_building"]
+  };
+
+  if (singlePages[root]) {
+    const [page_type, content_group, page_topic, conversion_stage] = singlePages[root];
+    return { page_type, content_group, page_topic, conversion_stage };
+  }
+
+  return {
+    page_type: "other",
+    content_group: titleFromSlug(root),
+    page_topic: topic || "Other",
+    conversion_stage: "unknown"
+  };
+}
+
+function stringValue(value, maxLength = 120) {
+  if (value === undefined || value === null) return undefined;
+  const text = String(value).replace(/\s+/g, " ").trim();
+  if (!text) return undefined;
+  return text.length > maxLength ? `${text.slice(0, maxLength - 1)}...` : text;
+}
+
+function sanitizeParams(params = {}) {
+  return Object.fromEntries(
+    Object.entries(params)
+      .map(([key, value]) => {
+        if (typeof value === "boolean") return [key, value ? 1 : 0];
+        if (typeof value === "number") return [key, value];
+        return [key, stringValue(value, key.includes("url") || key.includes("location") ? 300 : 120)];
+      })
+      .filter(([, value]) => value !== undefined)
+  );
+}
+
+function activePageMeta() {
+  if (Object.keys(currentPageMeta).length) return currentPageMeta;
+  if (!browser) return {};
+  currentPageMeta = routeMeta(window.location.pathname);
+  return currentPageMeta;
+}
+
+export function analyticsEnabled() {
+  return browser && Boolean(gaMeasurementId);
+}
+
+export function initGoogleAnalytics() {
+  if (!analyticsEnabled()) return false;
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag =
+    window.gtag ||
+    function gtag() {
+      window.dataLayer.push(arguments);
+    };
+
+  if (!initialized) {
+    initialized = true;
+    window.gtag("js", new Date());
+    window.gtag("config", gaMeasurementId, { send_page_view: false });
+  }
+
+  return true;
+}
+
+export function trackEvent(eventName, params = {}) {
+  if (!analyticsEnabled()) return;
+  initGoogleAnalytics();
+  window.gtag("event", eventName, sanitizeParams({ ...activePageMeta(), ...params }));
+}
+
+export function trackPageView(url = window.location.href, pageTitle = document.title) {
+  if (!analyticsEnabled()) return;
+  initGoogleAnalytics();
+
+  const parsedUrl = new URL(url, window.location.origin);
+  currentPageMeta = routeMeta(parsedUrl.pathname);
+
+  window.gtag(
+    "event",
+    "page_view",
+    sanitizeParams({
+      ...currentPageMeta,
+      page_title: pageTitle,
+      page_location: parsedUrl.href,
+      page_path: parsedUrl.pathname
+    })
+  );
+}
+
+function areaName(element) {
+  const area = element.closest(
+    ".hero-actions, .cred-strip, .breadcrumbs, .service-nav, .topical-links, .contextual-support, .internal-link-copy, .faq-list, .footer-cta, .footer, .site-header, .contact-form, .cta-band, section, nav, header, footer, form"
+  );
+
+  if (!area) return "unknown";
+  if (area.classList.contains("hero-actions")) return "hero_cta";
+  if (area.classList.contains("cred-strip")) return "hero_capability_links";
+  if (area.classList.contains("breadcrumbs")) return "breadcrumbs";
+  if (area.classList.contains("service-nav")) return "service_nav";
+  if (area.classList.contains("topical-links")) return "topical_links";
+  if (area.classList.contains("contextual-support")) return "contextual_support";
+  if (area.classList.contains("internal-link-copy")) return "body_copy";
+  if (area.classList.contains("faq-list")) return "faq";
+  if (area.classList.contains("footer-cta")) return "footer_cta";
+  if (area.classList.contains("footer")) return "footer";
+  if (area.classList.contains("site-header")) return "header";
+  if (area.classList.contains("contact-form")) return "contact_form";
+  if (area.classList.contains("cta-band")) return "cta_band";
+  if (area.tagName === "HEADER") return "header";
+  if (area.tagName === "FOOTER") return "footer";
+  if (area.tagName === "NAV") return "navigation";
+  if (area.tagName === "FORM") return "form";
+  if (area.tagName === "SECTION") {
+    const eyebrow = area.querySelector(".eyebrow")?.textContent;
+    const heading = area.querySelector("h2, h1, h3")?.textContent;
+    return stringValue(eyebrow || heading, 80) || "section";
+  }
+  return "unknown";
+}
+
+function classifyLink(link, destination) {
+  const isButton = link.classList.contains("button") || link.classList.contains("cta-animated");
+  const isRequestForm = destination.pathname === "/contact/" || destination.pathname === "/contact" || destination.hash === "#request-form";
+
+  if (isRequestForm) return "contact_intent";
+  if (isButton) return "cta_click";
+  if (destination.origin !== window.location.origin) return "outbound_link_click";
+  return "internal_link_click";
+}
+
+export function trackLinkClick(link) {
+  if (!analyticsEnabled() || !link?.href) return;
+
+  const destination = new URL(link.href, window.location.origin);
+  const linkText = link.textContent || link.getAttribute("aria-label") || link.getAttribute("title") || destination.pathname;
+  const eventName = classifyLink(link, destination);
+
+  trackEvent(eventName, {
+    link_text: linkText,
+    link_title: link.getAttribute("title"),
+    link_url: destination.href,
+    destination_path: destination.pathname,
+    destination_hash: destination.hash,
+    link_area: areaName(link),
+    link_role: link.classList.contains("button") || link.classList.contains("cta-animated") ? "button_link" : "text_link",
+    is_same_page: destination.pathname === window.location.pathname
+  });
+}
+
+export function trackButtonClick(button) {
+  if (!analyticsEnabled()) return;
+
+  trackEvent(button.type === "submit" ? "form_submit_click" : "button_click", {
+    button_text: button.textContent || button.getAttribute("aria-label") || "button",
+    button_type: button.type || "button",
+    button_area: areaName(button),
+    form_id: button.form?.id
+  });
+}
+
+export function trackFaqOpen(details) {
+  if (!analyticsEnabled() || !details.open) return;
+  const question = details.querySelector("summary")?.textContent;
+
+  trackEvent("faq_open", {
+    faq_question: question,
+    faq_area: areaName(details)
+  });
+}
+
+export function resetScrollTracking() {
+  trackedScrollDepths.clear();
+}
+
+export function trackScrollDepth() {
+  if (!analyticsEnabled()) return;
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  if (scrollable <= 0) return;
+
+  const percent = Math.min(100, Math.round((window.scrollY / scrollable) * 100));
+  const threshold = scrollThresholds.find((value) => percent >= value && !trackedScrollDepths.has(value));
+  if (!threshold) return;
+
+  trackedScrollDepths.add(threshold);
+  trackEvent("scroll_depth", { scroll_percent: threshold });
+}
+

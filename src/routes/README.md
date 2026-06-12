@@ -1,0 +1,48 @@
+# `src/routes`
+
+SvelteKit route tree. Every directory here maps to a URL segment or server endpoint.
+
+## Files
+
+- `+layout.svelte`: global layout. Imports `Header`, `Footer`, `GoogleAnalytics`, `MotionObserver`, and `app.css`, then renders the active route through `<slot />`.
+- `+page.svelte`: homepage. Builds the main conversion path: hero, problem chooser, service clusters, featured services, technical depth, local/remote support, rate, process, FAQ, and internal links.
+
+## Directories
+
+- `about/`: about/positioning page.
+- `api/`: server endpoints.
+- `blog/`: blog index and dynamic article route.
+- `contact/`: contact/request form page.
+- `faq/`: global FAQ page.
+- `locations/`: location index and dynamic local pages.
+- `rate/`: rate/pricing page.
+- `robots.txt/`: dynamic robots.txt endpoint.
+- `services/`: services index and dynamic service pages.
+- `sitemap.xml/`: dynamic sitemap endpoint.
+- `skills/`: skills index and dynamic skill pages.
+
+## Common Patterns
+
+- Static route pages are usually single `+page.svelte` files.
+- Dynamic pages use `+page.js` to load a record by slug, then `+page.svelte` renders that record.
+- Server endpoints use `+server.js`.
+- Shared components and content are imported from `$lib`.
+- Global GA4 pageview and interaction tracking is mounted in the root layout and disabled unless `PUBLIC_GA_MEASUREMENT_ID` is set.
+
+## How It Is Used
+
+SvelteKit turns this tree into pages and endpoints. The global layout wraps every page with shared navigation and footer CTA.
+
+The analytics layer reads each route path to classify page type, content group, topic, and conversion stage for GA4 reporting.
+
+## How To Extend
+
+- Add a new static page by creating a folder with `+page.svelte`.
+- Add a new dynamic collection by pairing a data map with `[slug]/+page.js` and `[slug]/+page.svelte`.
+- Add a server endpoint with `+server.js` under the target route folder.
+
+## Suggested Improvements
+
+- Add route-specific metadata conventions if more page types are added.
+- Add endpoint tests for `api/contact`, `robots.txt`, and `sitemap.xml`.
+- Keep CTAs away from directly-above-footer positions unless the footer CTA is removed.

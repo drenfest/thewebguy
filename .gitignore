@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+
+# SvelteKit / Vite output
+.svelte-kit/
+build/
+dist/
+.vite/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Local logs and temporary output
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+preview-*.log
+preview-*.err.log
+
+# Local crawler/audit output
+crawls/
+site_audit_report.html
+site_audit_report.json
+logo-preview-large.*
+
+# Test and coverage output
+coverage/
+test-results/
+playwright-report/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Misc local caches
+.cache/
+.tmp/
+tmp/
