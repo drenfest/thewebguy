@@ -53,7 +53,24 @@
         <strong>Open</strong>
       </div>
       <div class="hero-image-frame">
-        <img src="/images/technical-web-support-hero.png" alt="Technical website support workspace with code, audit notes, analytics, and performance dashboards" />
+        <picture>
+          <source
+            type="image/webp"
+            srcset="/images/technical-web-support-hero-640.webp 640w, /images/technical-web-support-hero-960.webp 960w, /images/technical-web-support-hero-1280.webp 1280w"
+            sizes="(min-width: 1024px) 430px, (min-width: 720px) 74vw, 92vw"
+          />
+          <img
+            src="/images/technical-web-support-hero-960.jpg"
+            srcset="/images/technical-web-support-hero-640.jpg 640w, /images/technical-web-support-hero-960.jpg 960w, /images/technical-web-support-hero-1280.jpg 1280w"
+            sizes="(min-width: 1024px) 430px, (min-width: 720px) 74vw, 92vw"
+            width="1672"
+            height="941"
+            alt="Technical website support workspace with code, audit notes, analytics, and performance dashboards"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
       </div>
       <div class="rate-badge"><span>Contract rate</span><strong>$55/hr</strong></div>
       <p>Practical hourly web support for fixes, implementation, cleanup, and ongoing website work.</p>

@@ -2,11 +2,13 @@ import { browser } from "$app/environment";
 import { env } from "$env/dynamic/public";
 
 export const gaMeasurementId = (env.PUBLIC_GA_MEASUREMENT_ID || "").trim();
+export const gaScriptSrc = gaMeasurementId ? `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(gaMeasurementId)}` : "";
 
 const scrollThresholds = [25, 50, 75, 90];
 const trackedScrollDepths = new Set();
 let currentPageMeta = {};
 let initialized = false;
+let scriptLoadPromise;
 
 function cleanPath(pathname = "/") {
   if (!pathname || pathname === "/") return "/";
@@ -149,6 +151,26 @@ export function initGoogleAnalytics() {
   }
 
   return true;
+}
+
+export function loadGoogleAnalyticsScript() {
+  if (!analyticsEnabled() || !initGoogleAnalytics()) return Promise.resolve(false);
+  if (!gaScriptSrc) return Promise.resolve(false);
+
+  const existingScript = document.getElementById("the-web-guy-gtag");
+  if (existingScript) return scriptLoadPromise || Promise.resolve(true);
+
+  scriptLoadPromise = new Promise((resolve) => {
+    const script = document.createElement("script");
+    script.id = "the-web-guy-gtag";
+    script.async = true;
+    script.src = gaScriptSrc;
+    script.onload = () => resolve(true);
+    script.onerror = () => resolve(false);
+    document.head.append(script);
+  });
+
+  return scriptLoadPromise;
 }
 
 export function trackEvent(eventName, params = {}) {

@@ -16,6 +16,7 @@ Local dev runs Vite on `127.0.0.1`. Production output is built with the SvelteKi
 Useful commands:
 
 ```bash
+npm run optimize:images
 npm run check
 npm run build
 npm run preview
@@ -29,7 +30,7 @@ Render settings:
 
 - Runtime: Node
 - Build command: `npm install && npm run build`
-- Start command: `node build`
+- Start command: `node server.js`
 - Node version: `20`
 - Public URL: `https://thewebguy.app`
 
@@ -78,7 +79,7 @@ Important email note: Render free web services block outbound SMTP ports, so Gma
 
 ## Analytics
 
-GA4 is optional and controlled by `PUBLIC_GA_MEASUREMENT_ID`. When the variable is blank, no GA script is loaded and tracking helpers become no-ops. When configured, the standard `gtag.js` script is rendered into the page head and custom page interaction events are sent through the shared analytics helper.
+GA4 is optional and controlled by `PUBLIC_GA_MEASUREMENT_ID`. When the variable is blank, no GA script is loaded and tracking helpers become no-ops. When configured, analytics commands are queued immediately, then the external `gtag.js` script is loaded after page load during idle time so it does not compete with the hero image, CSS, or fonts.
 
 On Render, set `PUBLIC_GA_MEASUREMENT_ID` and trigger a manual redeploy or service restart after changing it. The app reads the public value through SvelteKit runtime env and renders the tag into the page head.
 
@@ -103,9 +104,11 @@ The site exposes AI-friendly discovery files at `/llms.txt` and `/llms-full.txt`
 ## Project Structure
 
 - `src/`: SvelteKit app shell, routes, shared components, content data, config, and client state.
+- `scripts/`: build-time maintenance scripts, including responsive image optimization.
 - `static/`: assets served directly from the site root, including fonts, icons, favicon files, PWA manifest, and images.
 - `styles.css`: global design system, layout primitives, card styles, route-specific polish, animation, and responsive behavior.
 - `site-content.js`: exported content snapshot / helper data kept at the project root.
+- `server.js`: production Node entry that sets long-lived cache headers for static images, fonts, icons, and immutable build assets before passing requests to SvelteKit.
 - `render.yaml`: Render Blueprint config for the Node web service.
 - `svelte.config.js`: SvelteKit adapter and alias config.
 - `vite.config.js`: Vite plugin setup for SvelteKit.
@@ -116,6 +119,7 @@ The site exposes AI-friendly discovery files at `/llms.txt` and `/llms-full.txt`
 
 - Content-first routes pull from `src/lib/data/content.js` and render through shared components.
 - `src/routes/+layout.js` keeps trailing slash behavior consistent for canonical page URLs.
+- `npm run build` runs `npm run optimize:images` first, generating responsive hero JPEG/WebP variants before Vite tree-shakes, minifies, and builds the app.
 - Dynamic service, skill, location, and blog routes use slug maps plus `+page.js` load functions.
 - SEO is handled per page with `Seo.svelte`.
 - PWA install metadata lives in `static/site.webmanifest`, favicon/app icons live in `static/`, and the cache strategy lives in `src/service-worker.js`.

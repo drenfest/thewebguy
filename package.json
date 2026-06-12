@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1",
-    "build": "svelte-kit sync && vite build",
+    "optimize:images": "node scripts/optimize-images.js",
+    "build": "npm run optimize:images && svelte-kit sync && vite build",
     "preview": "vite preview --host 127.0.0.1",
     "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json"
   },
@@ -18,6 +19,7 @@
   },
   "devDependencies": {
     "@types/node": "^25.9.2",
+    "sharp": "^0.35.1",
     "svelte-check": "^4.2.1"
   },
   "overrides": {

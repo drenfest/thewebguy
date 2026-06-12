@@ -6,9 +6,9 @@
 
   const intensityPresets = {
     low: {
-      desktopCount: 48,
-      tabletCount: 34,
-      mobileCount: 22,
+      desktopCount: 34,
+      tabletCount: 26,
+      mobileCount: 16,
       maxDistance: 116,
       lineAlpha: 0.11,
       nodeAlpha: 0.34,
@@ -18,9 +18,9 @@
       glowAlpha: 0.08
     },
     medium: {
-      desktopCount: 68,
-      tabletCount: 46,
-      mobileCount: 28,
+      desktopCount: 46,
+      tabletCount: 34,
+      mobileCount: 20,
       maxDistance: 132,
       lineAlpha: 0.15,
       nodeAlpha: 0.42,
@@ -30,9 +30,9 @@
       glowAlpha: 0.12
     },
     high: {
-      desktopCount: 86,
-      tabletCount: 58,
-      mobileCount: 32,
+      desktopCount: 58,
+      tabletCount: 42,
+      mobileCount: 24,
       maxDistance: 148,
       lineAlpha: 0.18,
       nodeAlpha: 0.5,
@@ -249,30 +249,55 @@
       }
     }
 
-    const resizeObserver = new ResizeObserver(resize);
-    const intersectionObserver = new IntersectionObserver(([entry]) => {
-      visible = entry.isIntersecting;
-      if (visible) {
-        start();
-      } else {
-        cancelAnimationFrame(frame);
-      }
-    });
+    let startup;
+    let startupMode = "timeout";
+    let mounted = true;
+    let resizeObserver;
+    let intersectionObserver;
 
-    resizeObserver.observe(canvas);
-    intersectionObserver.observe(canvas);
-    window.addEventListener("pointermove", handlePointerMove, { passive: true });
-    window.addEventListener("pointerleave", handlePointerLeave, { passive: true });
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    reduceMotion.addEventListener("change", start);
-    mobileQuery.addEventListener("change", resize);
-    resize();
-    start();
+    function boot() {
+      if (!mounted || resizeObserver) return;
+
+      resizeObserver = new ResizeObserver(resize);
+      intersectionObserver = new IntersectionObserver(([entry]) => {
+        visible = entry.isIntersecting;
+        if (visible) {
+          start();
+        } else {
+          cancelAnimationFrame(frame);
+        }
+      });
+
+      resizeObserver.observe(canvas);
+      intersectionObserver.observe(canvas);
+      window.addEventListener("pointermove", handlePointerMove, { passive: true });
+      window.addEventListener("pointerleave", handlePointerLeave, { passive: true });
+      window.addEventListener("scroll", handleScroll, { passive: true });
+      reduceMotion.addEventListener("change", start);
+      mobileQuery.addEventListener("change", resize);
+      resize();
+      start();
+    }
+
+    if ("requestIdleCallback" in window) {
+      startupMode = "idle";
+      startup = window.requestIdleCallback(boot, { timeout: 1400 });
+    } else {
+      startup = window.setTimeout(boot, 900);
+    }
 
     return () => {
+      mounted = false;
+      if (!resizeObserver && startup) {
+        if (startupMode === "idle") {
+          window.cancelIdleCallback(startup);
+        } else {
+          window.clearTimeout(startup);
+        }
+      }
       cancelAnimationFrame(frame);
-      resizeObserver.disconnect();
-      intersectionObserver.disconnect();
+      resizeObserver?.disconnect();
+      intersectionObserver?.disconnect();
       window.removeEventListener("pointermove", handlePointerMove);
       window.removeEventListener("pointerleave", handlePointerLeave);
       window.removeEventListener("scroll", handleScroll);

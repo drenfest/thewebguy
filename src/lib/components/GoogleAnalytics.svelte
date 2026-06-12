@@ -5,6 +5,7 @@
   import {
     gaMeasurementId,
     initGoogleAnalytics,
+    loadGoogleAnalyticsScript,
     resetScrollTracking,
     trackButtonClick,
     trackEvent,
@@ -14,20 +15,6 @@
     trackScrollDepth
   } from "$lib/analytics.js";
 
-  const gaScriptSrc = $derived(`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(gaMeasurementId)}`);
-
-  function gaInlineSnippet() {
-    const id = JSON.stringify(gaMeasurementId);
-    return `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      window.gtag = window.gtag || gtag;
-      window.__theWebGuyGaInitialized = true;
-      gtag('js', new Date());
-      gtag('config', ${id}, { send_page_view: false });
-    `;
-  }
-
   function closestElement(target, selector) {
     return target instanceof Element ? target.closest(selector) : null;
   }
@@ -36,6 +23,29 @@
     if (!gaMeasurementId) return;
 
     initGoogleAnalytics();
+    let loadTimer;
+    let idleHandle;
+    let loadStarted = false;
+
+    const runWhenIdle = () => {
+      if ("requestIdleCallback" in window) {
+        idleHandle = window.requestIdleCallback(() => loadGoogleAnalyticsScript(), { timeout: 2000 });
+      } else {
+        loadGoogleAnalyticsScript();
+      }
+    };
+
+    const scheduleScriptLoad = () => {
+      if (loadStarted) return;
+      loadStarted = true;
+      loadTimer = window.setTimeout(runWhenIdle, 3000);
+    };
+
+    if (document.readyState === "complete") {
+      scheduleScriptLoad();
+    } else {
+      window.addEventListener("load", scheduleScriptLoad, { once: true });
+    }
 
     const focusedFields = new Set();
 
@@ -74,6 +84,11 @@
     window.addEventListener("scroll", trackScrollDepth, { passive: true });
 
     return () => {
+      window.removeEventListener("load", scheduleScriptLoad);
+      window.clearTimeout(loadTimer);
+      if (idleHandle && "cancelIdleCallback" in window) {
+        window.cancelIdleCallback(idleHandle);
+      }
       document.removeEventListener("click", handleClick, { capture: true });
       document.removeEventListener("toggle", handleToggle, true);
       document.removeEventListener("focusin", handleFocusIn);
@@ -89,10 +104,3 @@
     queueMicrotask(() => trackPageView(window.location.href, document.title));
   });
 </script>
-
-<svelte:head>
-  {#if gaMeasurementId}
-    <script async src={gaScriptSrc}></script>
-    {@html `<script>${gaInlineSnippet()}</script>`}
-  {/if}
-</svelte:head>
