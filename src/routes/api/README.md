@@ -14,7 +14,7 @@ Server-only API route namespace.
 
 ## How It Is Used
 
-The contact page posts form data to `/api/contact`, which validates the request and sends email through the configured server-side SMTP settings.
+The contact page posts form data to `/api/contact`, which validates the request and sends email through the configured server-side Gmail API or SMTP settings.
 
 ## How To Extend
 
@@ -25,4 +25,4 @@ The contact page posts form data to `/api/contact`, which validates the request 
 ## Suggested Improvements
 
 - Add rate limiting or spam protection for public endpoints.
-- Add tests that mock SMTP success and failure cases.
+- Add tests that mock Gmail API and SMTP success/failure cases.

@@ -86,6 +86,61 @@ function buildMessage({ from, to, replyTo, subject, text, html }) {
   ].join("\r\n");
 }
 
+function base64Url(value) {
+  return Buffer.from(value)
+    .toString("base64")
+    .replace(/\+/g, "-")
+    .replace(/\//g, "_")
+    .replace(/=+$/g, "");
+}
+
+async function getGmailAccessToken({ clientId, clientSecret, refreshToken }) {
+  const response = await fetch("https://oauth2.googleapis.com/token", {
+    method: "POST",
+    headers: {
+      "content-type": "application/x-www-form-urlencoded"
+    },
+    body: new URLSearchParams({
+      client_id: clientId,
+      client_secret: clientSecret,
+      refresh_token: refreshToken,
+      grant_type: "refresh_token"
+    })
+  });
+  const result = await response.json().catch(() => ({}));
+
+  if (!response.ok || !result.access_token) {
+    throw new Error(`Gmail OAuth token request failed (${response.status}): ${result.error_description || result.error || "Unknown error"}`);
+  }
+
+  return result.access_token;
+}
+
+async function sendGmailApiMail({ clientId, clientSecret, refreshToken, userId, from, to, replyTo, subject, text, html }) {
+  if (!clientId || !clientSecret || !refreshToken || !from || !to) {
+    throw new Error("Gmail API is missing required configuration.");
+  }
+
+  const message = buildMessage({ from, to, replyTo, subject, text, html });
+  const accessToken = await getGmailAccessToken({ clientId, clientSecret, refreshToken });
+  const response = await fetch(`https://gmail.googleapis.com/gmail/v1/users/${encodeURIComponent(userId || "me")}/messages/send`, {
+    method: "POST",
+    headers: {
+      authorization: `Bearer ${accessToken}`,
+      "content-type": "application/json"
+    },
+    body: JSON.stringify({ raw: base64Url(message) })
+  });
+  const result = await response.json().catch(() => ({}));
+
+  if (!response.ok) {
+    const errorMessage = result.error?.message || result.error_description || "Unknown error";
+    throw new Error(`Gmail API send failed (${response.status}): ${errorMessage}`);
+  }
+
+  return result;
+}
+
 async function sendSmtpMail({ host, port, secure, startTls, username, password, from, to, replyTo, subject, text, html }) {
   const envelopeFrom = extractEmail(from);
   const envelopeTo = extractEmail(to);
@@ -172,6 +227,21 @@ async function sendSmtpMail({ host, port, secure, startTls, username, password, 
   }
 }
 
+function gmailApiConfig() {
+  return {
+    clientId: clean(env.GMAIL_CLIENT_ID, 1000),
+    clientSecret: clean(env.GMAIL_CLIENT_SECRET, 1000),
+    refreshToken: clean(env.GMAIL_REFRESH_TOKEN, 2000),
+    userId: clean(env.GMAIL_USER_ID, 500) || "me",
+    from: clean(env.CONTACT_FROM_EMAIL, 500),
+    to: clean(env.CONTACT_TO_EMAIL, 500)
+  };
+}
+
+function gmailApiConfigured(config) {
+  return Boolean(config.clientId && config.clientSecret && config.refreshToken && config.from && config.to);
+}
+
 function smtpConfig() {
   const secure = smtpSecureEnabled();
   const port = Number(clean(env.SMTP_PORT) || (secure ? 465 : 587));
@@ -186,6 +256,17 @@ function smtpConfig() {
     from: clean(env.CONTACT_FROM_EMAIL, 500),
     to: clean(env.CONTACT_TO_EMAIL, 500)
   };
+}
+
+function smtpConfigured(config) {
+  return Boolean(config.to && config.from && config.host && config.username && config.password);
+}
+
+function preferredProvider() {
+  const provider = clean(env.CONTACT_EMAIL_PROVIDER, 40).toLowerCase();
+  if (["gmail", "gmail-api", "google"].includes(provider)) return "gmail";
+  if (["smtp", "mail"].includes(provider)) return "smtp";
+  return "";
 }
 
 export async function POST({ request }) {
@@ -235,10 +316,38 @@ export async function POST({ request }) {
 
   const subjectText = "Website work request - The Web Guy";
   const bodyText = lines.join("\n");
+  const gmailConfig = gmailApiConfig();
   const config = smtpConfig();
+  const provider = preferredProvider();
 
-  if (!config.to || !config.from || !config.host || !config.username || !config.password) {
-    console.error("Contact email is not configured. Set CONTACT_TO_EMAIL, CONTACT_FROM_EMAIL, SMTP_HOST, SMTP_USER, and SMTP_PASSWORD.");
+  if (provider === "gmail" || (!provider && gmailApiConfigured(gmailConfig))) {
+    if (!gmailApiConfigured(gmailConfig)) {
+      console.error("Contact email is not configured. Set CONTACT_TO_EMAIL, CONTACT_FROM_EMAIL, GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET, and GMAIL_REFRESH_TOKEN.");
+      return json({ message: "The contact form email is not configured yet." }, { status: 503 });
+    }
+
+    try {
+      await sendGmailApiMail({
+        ...gmailConfig,
+        replyTo: normalized.email,
+        subject: subjectText,
+        text: bodyText,
+        html: buildHtml(lines)
+      });
+
+      return json({
+        ok: true,
+        mode: "gmail-api-email",
+        request: normalized
+      });
+    } catch (error) {
+      console.error("Contact Gmail API delivery failed", error);
+      return json({ message: "The request could not be sent. Please try again in a moment." }, { status: 502 });
+    }
+  }
+
+  if (!smtpConfigured(config)) {
+    console.error("Contact email is not configured. Set Gmail API variables or set CONTACT_TO_EMAIL, CONTACT_FROM_EMAIL, SMTP_HOST, SMTP_USER, and SMTP_PASSWORD.");
     return json({ message: "The contact form email is not configured yet." }, { status: 503 });
   }
 
