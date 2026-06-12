@@ -12,7 +12,6 @@ npm run dev
 ```
 
 Local dev runs Vite on `127.0.0.1`. Production output is built with the SvelteKit Node adapter.
-The site is configured as SSR-first: routes render HTML from the server, and internal links use full document navigation instead of SvelteKit SPA-style client routing.
 
 Useful commands:
 
@@ -85,7 +84,7 @@ On Render, set `PUBLIC_GA_MEASUREMENT_ID` and trigger a manual redeploy or servi
 
 Tracked interactions include:
 
-- Manual `page_view` events for server-rendered page loads.
+- Manual `page_view` events for initial load and SvelteKit route changes.
 - Page context such as page type, content group, topic, route slug, and conversion stage.
 - CTA, contact-intent, internal-link, outbound-link, and button clicks with link text, title, destination, and page area.
 - FAQ opens and scroll-depth milestones at 25%, 50%, 75%, and 90%.
@@ -116,7 +115,7 @@ The site exposes AI-friendly discovery files at `/llms.txt` and `/llms-full.txt`
 ## Common Patterns
 
 - Content-first routes pull from `src/lib/data/content.js` and render through shared components.
-- `src/routes/+layout.js` keeps SSR enabled and `src/routes/+layout.svelte` applies a reload boundary so links request full server-rendered documents.
+- `src/routes/+layout.js` keeps trailing slash behavior consistent for canonical page URLs.
 - Dynamic service, skill, location, and blog routes use slug maps plus `+page.js` load functions.
 - SEO is handled per page with `Seo.svelte`.
 - PWA install metadata lives in `static/site.webmanifest`, favicon/app icons live in `static/`, and the cache strategy lives in `src/service-worker.js`.

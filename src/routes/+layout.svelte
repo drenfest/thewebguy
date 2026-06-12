@@ -6,10 +6,8 @@
   import "../app.css";
 </script>
 
-<div data-sveltekit-reload>
-  <Header />
-  <GoogleAnalytics />
-  <MotionObserver />
-  <slot />
-  <Footer />
-</div>
+<Header />
+<GoogleAnalytics />
+<MotionObserver />
+<slot />
+<Footer />
