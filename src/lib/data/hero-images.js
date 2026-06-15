@@ -1,4 +1,5 @@
 const heroBasePath = "/images/heroes";
+const pageSpecificLocationSlugs = new Set(["freeport-il", "rockford-il"]);
 
 export function heroImage(slug, alt) {
   return {
@@ -72,6 +73,13 @@ export function skillHeroImage(skill) {
 }
 
 export function locationHeroImage(location) {
+  if (!pageSpecificLocationSlugs.has(location.slug)) {
+    return {
+      ...staticHeroImages.locations,
+      alt: `Local website support hero photo for ${location.city}, ${location.state} businesses needing WordPress, SEO, tracking, and website fixes`
+    };
+  }
+
   return heroImage(
     `location-${location.slug}`,
     `Local website support hero photo for ${location.city}, ${location.state} businesses needing WordPress, SEO, tracking, and website fixes`

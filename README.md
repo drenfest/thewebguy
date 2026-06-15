@@ -106,6 +106,7 @@ The site exposes AI-friendly discovery files at `/llms.txt` and `/llms-full.txt`
 - `src/`: SvelteKit app shell, routes, shared components, content data, config, and client state.
 - `scripts/`: build-time maintenance scripts, including responsive image optimization.
 - `static/`: assets served directly from the site root, including fonts, icons, favicon files, PWA manifest, and images.
+- `tools/`: outreach support files for legitimate directory submissions, citation tracking, and IndexNow URL pings.
 - `styles.css`: global design system, layout primitives, card styles, route-specific polish, animation, and responsive behavior.
 - `site-content.js`: exported content snapshot / helper data kept at the project root.
 - `server.js`: production Node entry that sets long-lived cache headers for static images, fonts, icons, and immutable build assets before passing requests to SvelteKit.

@@ -1,6 +1,8 @@
 import { mkdir, readdir, stat } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
+import { servicePages, skillPages, locationPages, blogPosts } from "../src/lib/data/content.js";
+import { staticHeroImages, serviceHeroImage, skillHeroImage, locationHeroImage, blogHeroImage } from "../src/lib/data/hero-images.js";
 
 const root = process.cwd();
 const heroSource = path.join(root, "static/images/technical-web-support-hero.png");
@@ -12,6 +14,7 @@ const heroVariants = [
   { width: 960, jpegQuality: 78, webpQuality: 74 },
   { width: 1280, jpegQuality: 78, webpQuality: 76 }
 ];
+const requiredVariantFiles = heroVariants.flatMap(({ width }) => [`${width}.jpg`, `${width}.webp`]);
 
 async function fileMtime(filePath) {
   try {
@@ -25,6 +28,10 @@ async function needsUpdate(sourcePath, outputPath) {
   const outputTime = await fileMtime(outputPath);
   if (!outputTime) return true;
   return (await fileMtime(sourcePath)) > outputTime;
+}
+
+async function fileExists(filePath) {
+  return (await fileMtime(filePath)) > 0;
 }
 
 async function writeVariant({ sourcePath, outputPath, width, format, quality }) {
@@ -113,6 +120,32 @@ async function optimizePageHeroes() {
   return Promise.all(jobs);
 }
 
+async function validateHeroAssets() {
+  const heroConfigs = [
+    ...Object.entries(staticHeroImages).map(([key, image]) => ({ label: `static:${key}`, image })),
+    ...servicePages.map((service) => ({ label: `service:${service.slug}`, image: serviceHeroImage(service) })),
+    ...skillPages.map((skill) => ({ label: `skill:${skill.slug}`, image: skillHeroImage(skill) })),
+    ...locationPages.map((location) => ({ label: `location:${location.slug}`, image: locationHeroImage(location) })),
+    ...blogPosts.map((post) => ({ label: `blog:${post.slug}`, image: blogHeroImage(post) }))
+  ];
+
+  const missing = [];
+
+  for (const { label, image } of heroConfigs) {
+    for (const variantFile of requiredVariantFiles) {
+      const assetPath = path.join(root, "static", image.basePath.replace(/^\//, ""), `${image.slug}-${variantFile}`);
+
+      if (!(await fileExists(assetPath))) {
+        missing.push(`${label} -> ${image.basePath}/${image.slug}-${variantFile}`);
+      }
+    }
+  }
+
+  if (missing.length) {
+    throw new Error(`Missing responsive hero image assets:\n${missing.join("\n")}`);
+  }
+}
+
 const results = [...await optimizeHero(), ...await optimizePageHeroes()];
 const optimized = results.filter((result) => result.status === "optimized");
 
@@ -121,3 +154,6 @@ if (optimized.length) {
 } else {
   console.log("Responsive hero image assets are already optimized.");
 }
+
+await validateHeroAssets();
+console.log("Validated responsive hero image assets.");

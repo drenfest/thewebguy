@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "optimize:images": "node scripts/optimize-images.js",
+    "codes:gmail": "node tools/read-gmail-codes.mjs",
+    "ping:indexnow": "node tools/ping-indexnow.mjs",
     "build": "npm run optimize:images && svelte-kit sync && vite build",
     "preview": "vite preview --host 127.0.0.1",
     "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json"
@@ -14,12 +16,12 @@
     "@sveltejs/adapter-node": "^5.5.4",
     "@sveltejs/kit": "^2.65.0",
     "@sveltejs/vite-plugin-svelte": "^5.1.0",
+    "sharp": "^0.35.1",
     "svelte": "^5.33.14",
     "vite": "^6.3.5"
   },
   "devDependencies": {
     "@types/node": "^25.9.2",
-    "sharp": "^0.35.1",
     "svelte-check": "^4.2.1"
   },
   "overrides": {
