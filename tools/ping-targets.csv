@@ -1,6 +1,0 @@
-status,target,type,endpoint,when_to_use,notes
-ready,IndexNow via Bing,search indexing ping,https://www.bing.com/indexnow,"After new, updated, or deleted public URLs deploy","Requires the key file at https://thewebguy.app/thewebguy-indexnow-20260613.txt. IndexNow shares submitted URLs with participating search engines."
-manual,Bing Webmaster Tools,sitemap/indexing console,https://www.bing.com/webmasters/,"After site ownership is verified","Use for sitemap monitoring, crawl diagnostics, and IndexNow reporting."
-manual,Google Search Console,sitemap/indexing console,https://search.google.com/search-console,"After site ownership is verified","Google does not currently use IndexNow for normal web pages. Submit sitemap and inspect important URLs manually."
-optional,Ping-O-Matic,blog XML-RPC ping,https://rpc.pingomatic.com/,"Only if the site publishes an RSS/Atom blog feed","Legacy blog ping service. Not suitable as a general directory submission endpoint."
-optional,Twingly Blog Ping,blog ping,https://ping.twingly.com/,"Only if the site publishes an RSS/Atom blog feed","Blog-specific discovery, not a business directory listing."
