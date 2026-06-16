@@ -88,7 +88,7 @@ export function locationHeroImage(location) {
 
 export function blogHeroImage(post) {
   return heroImage(
-    `blog-${post.slug}`,
+    post.heroImageSlug || `blog-${post.slug}`,
     `${post.eyebrow} hero photo for article about ${post.h1 || post.title}`
   );
 }

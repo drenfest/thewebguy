@@ -8,6 +8,7 @@
   import TopicalLinks from "$lib/components/TopicalLinks.svelte";
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
+  import SortableTable from "$lib/components/SortableTable.svelte";
   import { staticHeroImages } from "$lib/data/hero-images.js";
   import { breadcrumbSchema, schemaList } from "$lib/data/schema.js";
 
@@ -79,6 +80,44 @@
       "."
     ]
   ];
+  const aboutTableColumns = [
+    { key: "area", label: "Work area" },
+    { key: "tools", label: "Common tools" },
+    { key: "siteProblem", label: "Site problem" },
+    { key: "route", label: "Related route" }
+  ];
+  const aboutRows = [
+    {
+      area: "CMS and page builders",
+      tools: "WordPress, Elementor, themes, plugins, PHP templates",
+      siteProblem: "Content changes, broken layouts, plugin conflicts, page builder cleanup",
+      route: { text: "WordPress Support", href: "/services/wordpress-support/" }
+    },
+    {
+      area: "Front-end implementation",
+      tools: "HTML, CSS, JavaScript, SvelteKit, React-style static builds",
+      siteProblem: "Landing pages, responsive issues, UI bugs, generated-site cleanup",
+      route: { text: "React / Static Sites", href: "/services/react-static-sites/" }
+    },
+    {
+      area: "SEO implementation",
+      tools: "Crawlers, schema, metadata, redirects, internal links, templates",
+      siteProblem: "Audit items sitting in a spreadsheet instead of the website",
+      route: { text: "Technical SEO", href: "/services/technical-seo-implementation/" }
+    },
+    {
+      area: "Measurement",
+      tools: "GA4, Google Tag Manager, pixels, events, campaign URLs",
+      siteProblem: "Conversions, forms, and reports do not match real user behavior",
+      route: { text: "Analytics & Tracking", href: "/services/analytics-tracking/" }
+    },
+    {
+      area: "Infrastructure and data",
+      tools: "Cloudflare, DNS, SSL, APIs, webhooks, JSON, CSV, CRON",
+      siteProblem: "Systems do not connect or the site is unstable below the page",
+      route: { text: "API Integrations", href: "/services/api-integrations/" }
+    }
+  ];
 </script>
 
 <Seo
@@ -123,6 +162,7 @@
         ["Infrastructure and data", "Cloudflare, DNS, SSL/TLS, cPanel/WHM, Linux hosting, Apache/Nginx, MySQL, REST APIs, webhooks, Postman, JSON, CSV, CRON, and automation.", "/services/api-integrations/", "View API integrations", "api-integrations"]
       ]}
     />
+    <SortableTable caption="Practical website support context table" columns={aboutTableColumns} rows={aboutRows} />
   </section>
 
   <ContextualSupport

@@ -16,7 +16,9 @@ function normalizeSiteOrigin(value) {
   const originWithProtocol = /^[a-z][a-z\d+\-.]*:\/\//i.test(rawOrigin) ? rawOrigin : `https://${rawOrigin}`;
 
   try {
-    return new URL(originWithProtocol).origin;
+    const url = new URL(originWithProtocol);
+    url.hostname = url.hostname.replace(/^www\./i, "");
+    return url.origin;
   } catch {
     return fallbackOrigin;
   }
@@ -42,6 +44,7 @@ export function withCanonicalTrailingSlash(pathname = "/") {
 
 export function absoluteUrl(pathOrUrl = "/") {
   const url = new URL(pathOrUrl, `${siteOrigin}/`);
+  url.hostname = url.hostname.replace(/^www\./i, "");
 
   if (url.origin === siteOrigin && shouldUseTrailingSlash(url.pathname)) {
     url.pathname = withCanonicalTrailingSlash(url.pathname);

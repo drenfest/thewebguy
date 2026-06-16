@@ -4,7 +4,7 @@
   import { webPageSchema } from "$lib/data/schema.js";
 
   let { title = "", description = "", canonical = "", schema = [] } = $props();
-  const pageUrl = $derived(canonical || absoluteUrl($page.url.pathname));
+  const pageUrl = $derived(absoluteUrl(canonical || $page.url.pathname));
   const schemaItems = $derived([
     webPageSchema({ title, description, url: pageUrl }),
     ...(Array.isArray(schema) ? schema : [schema])

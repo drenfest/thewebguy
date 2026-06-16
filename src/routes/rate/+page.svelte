@@ -8,14 +8,19 @@
   import TopicalLinks from "$lib/components/TopicalLinks.svelte";
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
+  import SortableTable from "$lib/components/SortableTable.svelte";
+  import { servicePages } from "$lib/data/content.js";
   import { staticHeroImages } from "$lib/data/hero-images.js";
-  import { breadcrumbSchema, schemaList } from "$lib/data/schema.js";
+  import { breadcrumbSchema, schemaList, serviceCatalogFromPages } from "$lib/data/schema.js";
 
   const breadcrumbs = [
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
     { label: "Rate", title: "Current page: Contract website help at $55/hr" }
   ];
-  const seoSchema = schemaList(breadcrumbSchema(breadcrumbs, "/rate/"));
+  const seoSchema = schemaList(
+    breadcrumbSchema(breadcrumbs, "/rate/"),
+    serviceCatalogFromPages(servicePages, "/rate/")
+  );
 
   const rateTopicalLinks = [
     {
@@ -79,6 +84,44 @@
       " when the scope is clear enough to move without a bloated process."
     ]
   ];
+  const rateTableColumns = [
+    { key: "scope", label: "Scope" },
+    { key: "range", label: "Common range" },
+    { key: "fits", label: "Good fit" },
+    { key: "needs", label: "What helps it move" }
+  ];
+  const rateRows = [
+    {
+      scope: "Quick website fix",
+      range: "1 to 5 hours",
+      fits: "Broken CSS, JavaScript errors, form issues, tracking checks, small WordPress edits",
+      needs: "Exact URL, symptom, screenshot, and what changed recently"
+    },
+    {
+      scope: "Focused implementation batch",
+      range: "5 to 15 hours",
+      fits: "SEO audit items, page cleanup, redirect work, schema fixes, landing page updates",
+      needs: "Prioritized task list, source notes, access, and definition of done"
+    },
+    {
+      scope: "Messy site cleanup",
+      range: "15 to 40 hours",
+      fits: "WordPress bloat, ecommerce cleanup, performance issues, tracking rebuilds",
+      needs: "Platform context, known risks, staging preference, and approval points"
+    },
+    {
+      scope: "Ongoing webmaster support",
+      range: "Monthly range",
+      fits: "Recurring updates, SEO implementation, technical fixes, reporting support",
+      needs: "Backlog, cadence, communication channel, and priority rules"
+    },
+    {
+      scope: "Agency overflow",
+      range: "As needed",
+      fits: "Client production work, QA cleanup, page builds, SEO implementation support",
+      needs: "Ticket details, client standards, due dates, review process"
+    }
+  ];
 </script>
 
 <Seo
@@ -111,6 +154,7 @@
         ["What is included", "Time spent reviewing, implementing, troubleshooting, testing, communicating updates, and documenting practical next steps.", "/contact/", "Send a request", "website-fixes"]
       ]}
     />
+    <SortableTable caption="$55/hr scope planning table" columns={rateTableColumns} rows={rateRows} />
   </section>
 
   <ContextualSupport

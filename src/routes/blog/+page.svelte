@@ -8,15 +8,19 @@
   import TopicalLinks from "$lib/components/TopicalLinks.svelte";
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
+  import SortableTable from "$lib/components/SortableTable.svelte";
   import { blogPosts, blogUrl, somethingBrokePosts } from "$lib/data/content.js";
   import { staticHeroImages } from "$lib/data/hero-images.js";
-  import { breadcrumbSchema, schemaList } from "$lib/data/schema.js";
+  import { blogPostListSchema, breadcrumbSchema, schemaList } from "$lib/data/schema.js";
 
   const breadcrumbs = [
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
     { label: "Blog", title: "Current page: Website troubleshooting blog" }
   ];
-  const seoSchema = schemaList(breadcrumbSchema(breadcrumbs, "/blog/"));
+  const seoSchema = schemaList(
+    breadcrumbSchema(breadcrumbs, "/blog/"),
+    blogPostListSchema(blogPosts, "/blog/")
+  );
 
   const startHerePosts = blogPosts.filter((post) => post.problemType === "Start here");
   const blogHubLinks = [
@@ -98,6 +102,18 @@
       " before deciding whether the request belongs in Website Fixes, WordPress Support, tracking, or front-end cleanup."
     ]
   ];
+  const blogTableColumns = [
+    { key: "topic", label: "Topic" },
+    { key: "symptom", label: "Symptom" },
+    { key: "service", label: "Service path" },
+    { key: "read", label: "Read" }
+  ];
+  const blogRows = blogPosts.map((post) => ({
+    topic: post.eyebrow,
+    symptom: post.summary,
+    service: blogHubLinks.find((item) => item.href.includes(post.relatedService))?.title || "Website Fixes",
+    read: { text: post.title.replace(" | The Web Guy", ""), href: blogUrl(post.slug) }
+  }));
 </script>
 
 <Seo
@@ -136,6 +152,7 @@
         post.relatedService
       ])}
     />
+    <SortableTable caption="Troubleshooting article routing table" columns={blogTableColumns} rows={blogRows} />
   </section>
 
   <section class="section soft-section section-effect section-effect--signals section-effect--low">

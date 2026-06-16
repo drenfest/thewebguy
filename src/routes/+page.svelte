@@ -10,14 +10,16 @@
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import ProofReel from "$lib/components/ProofReel.svelte";
+  import SortableTable from "$lib/components/SortableTable.svelte";
   import { faqs, locationPages, locationUrl, servicePages, serviceUrl } from "$lib/data/content.js";
   import { staticHeroImages } from "$lib/data/hero-images.js";
-  import { breadcrumbSchema, faqSchema, organizationSchema, schemaList, websiteSchema } from "$lib/data/schema.js";
+  import { breadcrumbSchema, faqSchema, organizationSchema, schemaList, serviceCatalogFromPages, websiteSchema } from "$lib/data/schema.js";
 
   const breadcrumbs = [{ label: "Home", title: "Current page: The Web Guy homepage" }];
   const homeSchema = schemaList(
     organizationSchema(),
     websiteSchema(),
+    serviceCatalogFromPages(servicePages, "/"),
     breadcrumbSchema(breadcrumbs, "/"),
     faqSchema(faqs)
   );
@@ -100,6 +102,50 @@
       label: "Track, connect & automate",
       title: "GA4, GTM, forms, pixels, APIs, webhooks, dashboards, product data, and internal tools.",
       links: [["Analytics & Tracking", "/services/analytics-tracking/"], ["API Integrations", "/services/api-integrations/"], ["Automation", "/services/automation-internal-tools/"]]
+    }
+  ];
+  const homepageTableColumns = [
+    { key: "problem", label: "Problem" },
+    { key: "bestPath", label: "Best path" },
+    { key: "send", label: "What to send" },
+    { key: "outcome", label: "Useful outcome" }
+  ];
+  const homepageRows = [
+    {
+      problem: "Broken page, form, modal, embed, or mobile layout",
+      bestPath: { text: "Website Fixes", href: "/services/website-fixes/" },
+      send: "URL, screenshot, device, what should happen, recent changes",
+      outcome: "Reproduce the bug, identify the layer, fix or document the next move"
+    },
+    {
+      problem: "WordPress, Elementor, plugin, theme, or content backlog",
+      bestPath: { text: "WordPress Support", href: "/services/wordpress-support/" },
+      send: "Admin context, plugin/theme notes, task list, priority pages",
+      outcome: "Clean updates, safer edits, fewer mystery CMS problems"
+    },
+    {
+      problem: "SEO audit recommendations waiting for implementation",
+      bestPath: { text: "Technical SEO Implementation", href: "/services/technical-seo-implementation/" },
+      send: "Audit, crawl export, spreadsheet, CMS access notes, priority URLs",
+      outcome: "Metadata, headings, redirects, schema, internal links, and crawl fixes applied"
+    },
+    {
+      problem: "A page needs to launch for a service, city, offer, or campaign",
+      bestPath: { text: "Landing Pages", href: "/services/landing-pages/" },
+      send: "Offer, audience, CTA, source copy, tracking needs, target launch date",
+      outcome: "Page structure, mobile QA, form/CTA checks, launch-ready tracking"
+    },
+    {
+      problem: "GA4, GTM, pixels, forms, or dashboards do not match reality",
+      bestPath: { text: "Analytics & Tracking", href: "/services/analytics-tracking/" },
+      send: "Events needed, sample user actions, access notes, reporting issue",
+      outcome: "Cleaner conversion events and a mapped path from action to report"
+    },
+    {
+      problem: "Recurring updates and small technical tasks keep piling up",
+      bestPath: { text: "Ongoing Webmaster Support", href: "/services/ongoing-webmaster-support/" },
+      send: "Backlog, monthly range, access limits, recurring deadlines",
+      outcome: "Steady updates, issue triage, SEO support, and site maintenance"
     }
   ];
 
@@ -209,6 +255,7 @@
         </a>
       {/each}
     </div>
+    <SortableTable caption="Website request routing table" columns={homepageTableColumns} rows={homepageRows} />
   </section>
 
   <section class="section soft-section section-effect section-effect--signals section-effect--medium">

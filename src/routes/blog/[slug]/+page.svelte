@@ -9,6 +9,8 @@
   import TopicalLinks from "$lib/components/TopicalLinks.svelte";
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
+  import SortableTable from "$lib/components/SortableTable.svelte";
+  import TopoRankInfographic from "$lib/components/TopoRankInfographic.svelte";
   import { blogPosts, blogUrl } from "$lib/data/content.js";
   import { blogHeroImage } from "$lib/data/hero-images.js";
   import { articleSchema, breadcrumbSchema, faqSchema, schemaList } from "$lib/data/schema.js";
@@ -48,7 +50,8 @@
     ],
     "seo-audit-done-now-implement-it": [
       { text: "CMS, plugin, and theme weirdness", href: "/blog/cms-plugin-theme-weirdness/", title: "Read about CMS, plugin, and theme issues that can block SEO implementation" },
-      { text: "tracking scripts and pixels", href: "/blog/tracking-scripts-pixels-broken/", title: "Read about tracking scripts and pixels that can affect SEO measurement" }
+      { text: "tracking scripts and pixels", href: "/blog/tracking-scripts-pixels-broken/", title: "Read about tracking scripts and pixels that can affect SEO measurement" },
+      { text: "topological relevance and vector SEO", href: "/blog/topological-relevance-vector-seo/", title: "Read the TopoRank case study on topological relevance and vector SEO" }
     ],
     "need-a-page-live-fast": [
       { text: "forms and modals not working", href: "/blog/forms-modals-not-working/", title: "Read about form and modal issues before launching a page" },
@@ -56,7 +59,8 @@
     ],
     "website-data-systems-not-connecting": [
       { text: "tracking scripts and pixels", href: "/blog/tracking-scripts-pixels-broken/", title: "Read about tracking scripts and pixels when data does not match" },
-      { text: "forms and modals not working", href: "/blog/forms-modals-not-working/", title: "Read about forms and modals when leads do not arrive" }
+      { text: "forms and modals not working", href: "/blog/forms-modals-not-working/", title: "Read about forms and modals when leads do not arrive" },
+      { text: "topological relevance and vector SEO", href: "/blog/topological-relevance-vector-seo/", title: "Read the TopoRank case study on topological relevance and vector SEO" }
     ],
     "broken-layouts-mobile-website-fixes": [
       { text: "embeds, iframes, and widgets breaking pages", href: "/blog/embeds-iframes-widgets-breaking-pages/", title: "Read about embeds, iframes, and widgets breaking layouts" },
@@ -76,7 +80,8 @@
     ],
     "tracking-scripts-pixels-broken": [
       { text: "forms and modals not working", href: "/blog/forms-modals-not-working/", title: "Read about forms and modals not working with tracking" },
-      { text: "embeds, iframes, and widgets breaking pages", href: "/blog/embeds-iframes-widgets-breaking-pages/", title: "Read about embeds, iframes, and widgets affecting tracking" }
+      { text: "embeds, iframes, and widgets breaking pages", href: "/blog/embeds-iframes-widgets-breaking-pages/", title: "Read about embeds, iframes, and widgets affecting tracking" },
+      { text: "topological relevance and vector SEO", href: "/blog/topological-relevance-vector-seo/", title: "Read the TopoRank case study on topological relevance and vector SEO" }
     ],
     "cms-plugin-theme-weirdness": [
       { text: "forms and modals not working", href: "/blog/forms-modals-not-working/", title: "Read about forms and modals when CMS issues are involved" },
@@ -121,6 +126,18 @@
       " once you have the URL, symptom, timeline, and what should happen instead."
     ]
   ]);
+  const articleTableColumns = [
+    { key: "section", label: "Section" },
+    { key: "whyItMatters", label: "Why it matters" },
+    { key: "check", label: "What to check" },
+    { key: "supportPath", label: "Support path" }
+  ];
+  const articleRows = $derived(post.sections.map((section) => ({
+    section: sectionHeading(section),
+    whyItMatters: sectionBody(section)[0] || post.summary,
+    check: sectionList(section).slice(0, 2).join(", ") || "URL, symptom, expected behavior, and recent changes",
+    supportPath: articleSupportLinks[0] ? { text: articleSupportLinks[0][0], href: articleSupportLinks[0][1] } : { text: "Website Fixes", href: "/services/website-fixes/" }
+  })));
   const otherCards = $derived((post.otherItems || relatedPosts.map((item) => [
     item.title,
     item.summary,
@@ -245,6 +262,8 @@
 
         <InternalLinkCopy paragraphs={articleInternalParagraphs} className="internal-link-copy--compact" />
 
+        <SortableTable caption={`${post.eyebrow} troubleshooting table`} columns={articleTableColumns} rows={articleRows} />
+
         {#each post.sections as section}
           <section id={sectionId(section)} class="article-section">
             <h2>{sectionHeading(section)}</h2>
@@ -253,7 +272,23 @@
               <p>{paragraph}</p>
             {/each}
 
-            {#if !Array.isArray(section) && section.flow}
+            {#if !Array.isArray(section) && section.figures}
+              <div class="article-figure-grid">
+                {#each section.figures as figure}
+                  <figure class="article-figure">
+                    <img src={figure.src} alt={figure.alt} loading="lazy" decoding="async" />
+                    <figcaption>
+                      <strong>{figure.title}</strong>
+                      <span>{figure.caption}</span>
+                    </figcaption>
+                  </figure>
+                {/each}
+              </div>
+            {/if}
+
+            {#if !Array.isArray(section) && section.infographic}
+              <TopoRankInfographic {...section.infographic} />
+            {:else if !Array.isArray(section) && section.flow}
               <div class="article-flow" aria-label="Flow map">
                 {#each section.flow as step, index}
                   <span>{step}</span>

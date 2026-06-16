@@ -4,13 +4,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite --host 127.0.0.1",
+    "dev": "npm run generate:sitemap-lastmod && vite --host 127.0.0.1",
     "optimize:images": "node scripts/optimize-images.js",
+    "generate:sitemap-lastmod": "node scripts/generate-sitemap-lastmod.js",
     "codes:gmail": "node tools/read-gmail-codes.mjs",
     "ping:indexnow": "node tools/ping-indexnow.mjs",
-    "build": "npm run optimize:images && svelte-kit sync && vite build",
+    "build": "npm run optimize:images && npm run generate:sitemap-lastmod && svelte-kit sync && vite build",
     "preview": "vite preview --host 127.0.0.1",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json"
+    "check": "npm run generate:sitemap-lastmod && svelte-kit sync && svelte-check --tsconfig ./jsconfig.json"
   },
   "dependencies": {
     "@sveltejs/adapter-node": "^5.5.4",

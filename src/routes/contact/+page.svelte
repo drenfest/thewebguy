@@ -7,7 +7,7 @@
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import { onMount } from "svelte";
-  import { trackEvent } from "$lib/analytics.js";
+  import { journeySnapshot, trackContactEvent, trackEvent } from "$lib/analytics.js";
   import { locationPages, servicePages, skillPages } from "$lib/data/content.js";
   import { staticHeroImages } from "$lib/data/hero-images.js";
   import { breadcrumbSchema, schemaList } from "$lib/data/schema.js";
@@ -128,6 +128,7 @@
 
   onMount(() => {
     formLoadedAt = String(Date.now());
+    trackContactEvent("contact_page_view", { form_id: "request-form", is_form_fill: false });
   });
 
   async function submitRequest(event) {
@@ -139,7 +140,8 @@
     const formData = { ...contactState.draft, websiteCompany: botTrap, formLoadedAt };
     const trackingPayload = contactTrackingPayload(formData);
     let responseStatus = "network";
-    trackEvent("contact_form_submit", trackingPayload);
+    trackEvent("contact_form_submit", { ...trackingPayload, ...journeySnapshot() });
+    trackContactEvent("contact_form_submit", { ...trackingPayload, ...journeySnapshot() });
 
     try {
       const response = await fetch("/api/contact", {
@@ -154,13 +156,22 @@
       contactState.lastSubmittedAt = new Date().toISOString();
       contactState.lastService = formData.service;
 
-      trackEvent("contact_form_success", { ...trackingPayload, response_status: responseStatus });
+      trackEvent("contact_form_success", { ...trackingPayload, response_status: responseStatus, ...journeySnapshot() });
+      trackContactEvent("contact_form_success", { ...trackingPayload, response_status: responseStatus, ...journeySnapshot() });
+      trackEvent("generate_lead", { ...trackingPayload, response_status: responseStatus, ...journeySnapshot() });
       status = { type: "success", message: "Request sent. I will review the details and follow up." };
     } catch (error) {
       trackEvent("contact_form_error", {
         ...trackingPayload,
         response_status: responseStatus,
-        error_type: responseStatus === "network" ? "network_or_client" : "server_response"
+        error_type: responseStatus === "network" ? "network_or_client" : "server_response",
+        ...journeySnapshot()
+      });
+      trackContactEvent("contact_form_error", {
+        ...trackingPayload,
+        response_status: responseStatus,
+        error_type: responseStatus === "network" ? "network_or_client" : "server_response",
+        ...journeySnapshot()
       });
       status = { type: "error", message: error.message || "The request could not be sent. Please try again in a moment." };
     }

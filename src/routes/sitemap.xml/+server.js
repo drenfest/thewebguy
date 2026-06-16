@@ -1,7 +1,8 @@
 import { blogPosts, blogUrl, locationPages, locationUrl, servicePages, serviceUrl, skillPages, skillUrl } from "$lib/data/content.js";
 import { absoluteUrl } from "$lib/config/site.js";
+import sitemapLastmod from "$lib/data/sitemap-lastmod.json";
 
-const lastmod = "2026-06-12";
+const fallbackLastmod = "2026-06-12";
 
 export function GET() {
   const urls = [
@@ -24,7 +25,7 @@ export function GET() {
 
   const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map((url) => `  <url><loc>${absoluteUrl(url)}</loc><lastmod>${lastmod}</lastmod></url>`).join("\n")}
+${urls.map((url) => `  <url><loc>${absoluteUrl(url)}</loc><lastmod>${sitemapLastmod[url] || fallbackLastmod}</lastmod></url>`).join("\n")}
 </urlset>`;
 
   return new Response(body, {

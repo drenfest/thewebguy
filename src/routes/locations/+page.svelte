@@ -9,16 +9,20 @@
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import ProofPanel from "$lib/components/ProofPanel.svelte";
+  import SortableTable from "$lib/components/SortableTable.svelte";
   import { locationPages, locationUrl } from "$lib/data/content.js";
   import { staticHeroImages } from "$lib/data/hero-images.js";
   import { locationsHubProof } from "$lib/data/proof.js";
-  import { breadcrumbSchema, schemaList } from "$lib/data/schema.js";
+  import { breadcrumbSchema, locationListSchema, schemaList } from "$lib/data/schema.js";
 
   const breadcrumbs = [
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
     { label: "Locations", title: "Current page: web support service area" }
   ];
-  const seoSchema = schemaList(breadcrumbSchema(breadcrumbs, "/locations/"));
+  const seoSchema = schemaList(
+    breadcrumbSchema(breadcrumbs, "/locations/"),
+    locationListSchema(locationPages, "/locations/")
+  );
 
   const regions = [...new Set(locationPages.map((location) => location.region))];
   const effectVariants = ["section-effect--grid", "section-effect--signals", "section-effect--traces"];
@@ -99,6 +103,18 @@
       " when the site needs regional context plus practical WordPress, tracking, SEO, and webmaster support."
     ]
   ];
+  const locationTableColumns = [
+    { key: "city", label: "City" },
+    { key: "region", label: "Region" },
+    { key: "support", label: "Common support fit" },
+    { key: "page", label: "City page" }
+  ];
+  const locationRows = locationPages.map((location) => ({
+    city: `${location.city}, ${location.state}`,
+    region: location.region,
+    support: "WordPress, website fixes, technical SEO, tracking, and ongoing webmaster support",
+    page: { text: `View ${location.city}`, href: locationUrl(location.slug) }
+  }));
 </script>
 
 <Seo
@@ -161,6 +177,15 @@
     intro="Use these city pages when you want local-friendly website support near Freeport without a full agency handoff."
     items={locationHubContextualItems}
   />
+
+  <section class="section section-effect section-effect--grid section-effect--low">
+    <SectionHeading
+      eyebrow="Service area details"
+      h2="Compare local website support pages by city and region"
+      body="The city pages are entry points into the same practical website work: fixes, WordPress support, SEO implementation, tracking, landing pages, and recurring webmaster help."
+    />
+    <SortableTable caption="Local website support city table" columns={locationTableColumns} rows={locationRows} />
+  </section>
 
   <TopicalLinks
     eyebrow="Local website support paths"

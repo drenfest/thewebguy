@@ -101,12 +101,22 @@ The site exposes AI-friendly discovery files at `/llms.txt` and `/llms-full.txt`
 - `/llms-full.txt`: fuller Markdown context with service summaries, skill summaries, blog guide summaries, FAQs, location pages, and guardrails.
 - `/robots.txt`: links to the LLM files, points to the sitemap, and blocks `/api/` from crawlers.
 
+## IndexNow
+
+The IndexNow key file is committed under `static/` so it deploys at the site root:
+
+- Key file: `/70a004fc5cee483aaaef7d2b98043fd0.txt`
+- Key value: `70a004fc5cee483aaaef7d2b98043fd0`
+- Key URL: `https://thewebguy.app/70a004fc5cee483aaaef7d2b98043fd0.txt`
+- URL source: `https://thewebguy.app/sitemap.xml`
+
+After a deploy, submit the live sitemap URLs to IndexNow with the current key. Local helper scripts may live in an ignored `tools/` directory, but `tools/` is not part of the tracked project.
+
 ## Project Structure
 
 - `src/`: SvelteKit app shell, routes, shared components, content data, config, and client state.
 - `scripts/`: build-time maintenance scripts, including responsive image optimization.
 - `static/`: assets served directly from the site root, including fonts, icons, favicon files, PWA manifest, and images.
-- `tools/`: outreach support files for legitimate directory submissions, citation tracking, and IndexNow URL pings.
 - `styles.css`: global design system, layout primitives, card styles, route-specific polish, animation, and responsive behavior.
 - `site-content.js`: exported content snapshot / helper data kept at the project root.
 - `server.js`: production Node entry that sets long-lived cache headers for static images, fonts, icons, and immutable build assets before passing requests to SvelteKit.

@@ -9,16 +9,21 @@
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import ProofPanel from "$lib/components/ProofPanel.svelte";
+  import SortableTable from "$lib/components/SortableTable.svelte";
   import { blogUrl, servicePages, serviceUrl, somethingBrokePosts } from "$lib/data/content.js";
   import { staticHeroImages } from "$lib/data/hero-images.js";
   import { servicesHubProof } from "$lib/data/proof.js";
-  import { breadcrumbSchema, schemaList } from "$lib/data/schema.js";
+  import { breadcrumbSchema, schemaList, serviceCatalogFromPages, serviceListSchema } from "$lib/data/schema.js";
 
   const breadcrumbs = [
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
     { label: "Services", title: "Current page: Website services" }
   ];
-  const seoSchema = schemaList(breadcrumbSchema(breadcrumbs, "/services/"));
+  const seoSchema = schemaList(
+    breadcrumbSchema(breadcrumbs, "/services/"),
+    serviceCatalogFromPages(servicePages, "/services/"),
+    serviceListSchema(servicePages, "/services/")
+  );
 
   const painCards = [
     ["Something broke", "Start here when the issue is visible, urgent, or hard to explain: broken layouts, failed forms, mobile bugs, server trouble, tracking scripts, or plugin weirdness.", "/blog/something-broke-on-your-website/", "Diagnose a broken site"],
@@ -87,6 +92,50 @@
       "."
     ]
   ];
+  const serviceTableColumns = [
+    { key: "service", label: "Service" },
+    { key: "bestFor", label: "Best for" },
+    { key: "inputs", label: "Helpful inputs" },
+    { key: "deliverable", label: "Typical output" }
+  ];
+  const serviceRows = [
+    {
+      service: { text: "Website Fixes", href: "/services/website-fixes/" },
+      bestFor: "Visible bugs, broken layouts, forms, scripts, embeds, and odd behavior",
+      inputs: "URL, screenshot, browser/device, recent changes, expected behavior",
+      deliverable: "Reproduced issue, fix path, implemented repair, or a clear technical next step"
+    },
+    {
+      service: { text: "WordPress Support", href: "/services/wordpress-support/" },
+      bestFor: "Themes, plugins, Elementor, PHP templates, page edits, and CMS cleanup",
+      inputs: "Admin access notes, plugin/theme context, task list, affected pages",
+      deliverable: "Safer updates, template cleanup, content fixes, and reduced CMS friction"
+    },
+    {
+      service: { text: "Technical SEO Implementation", href: "/services/technical-seo-implementation/" },
+      bestFor: "Crawl issues, schema, redirects, metadata, headings, and internal links",
+      inputs: "Audit export, crawl notes, priority URLs, CMS limits, target recommendations",
+      deliverable: "Implemented SEO changes that can be crawled, tested, and reviewed"
+    },
+    {
+      service: { text: "Analytics & Tracking", href: "/services/analytics-tracking/" },
+      bestFor: "GA4, GTM, form events, pixels, ecommerce data, and conversion verification",
+      inputs: "Measurement plan, event list, current tags, sample conversions, access notes",
+      deliverable: "Cleaner event tracking and documented user actions that match reports"
+    },
+    {
+      service: { text: "Ecommerce Support", href: "/services/ecommerce-support/" },
+      bestFor: "Shopify, WooCommerce, product data, checkout, product pages, and revenue tracking",
+      inputs: "Platform, product URLs, checkout symptom, feed notes, tracking issue",
+      deliverable: "Product/page fixes, data cleanup, and ecommerce measurement checks"
+    },
+    {
+      service: { text: "Agency Overflow", href: "/services/agency-overflow/" },
+      bestFor: "Client-site production, QA cleanup, implementation tasks, and busy teams",
+      inputs: "Task queue, client constraints, deadlines, access process, review workflow",
+      deliverable: "Completed production work with plain status updates and handoff notes"
+    }
+  ];
 </script>
 
 <Seo
@@ -122,6 +171,7 @@
         service.slug
       ])}
     />
+    <SortableTable caption="Service comparison and handoff table" columns={serviceTableColumns} rows={serviceRows} />
   </section>
 
   <ProofPanel proof={servicesHubProof} />

@@ -13,6 +13,7 @@
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import FaqList from "$lib/components/FaqList.svelte";
   import ProofPanel from "$lib/components/ProofPanel.svelte";
+  import SortableTable from "$lib/components/SortableTable.svelte";
   import { serviceMap, serviceSkillMap, serviceUrl, skillMap, skillUrl } from "$lib/data/content.js";
   import { serviceHeroImage } from "$lib/data/hero-images.js";
   import { proofForService } from "$lib/data/proof.js";
@@ -113,7 +114,8 @@
     ],
     "technical-seo-implementation": [
       { text: "tracking scripts and pixels", href: "/blog/tracking-scripts-pixels-broken/", title: "Read about broken tracking scripts and pixels" },
-      { text: "CMS, plugin, and theme weirdness", href: "/blog/cms-plugin-theme-weirdness/", title: "Read about CMS, plugin, and theme weirdness affecting SEO work" }
+      { text: "CMS, plugin, and theme weirdness", href: "/blog/cms-plugin-theme-weirdness/", title: "Read about CMS, plugin, and theme weirdness affecting SEO work" },
+      { text: "topological relevance and vector SEO", href: "/blog/topological-relevance-vector-seo/", title: "Read the TopoRank case study on topological relevance and vector SEO" }
     ],
     "landing-pages": [
       { text: "forms and modals not working", href: "/blog/forms-modals-not-working/", title: "Read about forms and modals not working before launch" },
@@ -121,7 +123,8 @@
     ],
     "site-speed-performance": [
       { text: "embeds, iframes, and widgets breaking pages", href: "/blog/embeds-iframes-widgets-breaking-pages/", title: "Read about embeds, iframes, and widgets breaking pages" },
-      { text: "tracking scripts and pixels", href: "/blog/tracking-scripts-pixels-broken/", title: "Read about tracking scripts and pixels affecting site behavior" }
+      { text: "tracking scripts and pixels", href: "/blog/tracking-scripts-pixels-broken/", title: "Read about tracking scripts and pixels affecting site behavior" },
+      { text: "topological relevance and vector SEO", href: "/blog/topological-relevance-vector-seo/", title: "Read the TopoRank case study on topological relevance and vector SEO" }
     ],
     "website-fixes": [
       { text: "CMS, plugin, and theme weirdness", href: "/blog/cms-plugin-theme-weirdness/", title: "Read about CMS, plugin, and theme weirdness" },
@@ -141,7 +144,8 @@
     ],
     "analytics-tracking": [
       { text: "tracking scripts and pixels", href: "/blog/tracking-scripts-pixels-broken/", title: "Read about broken tracking scripts and pixels" },
-      { text: "forms and modals not working", href: "/blog/forms-modals-not-working/", title: "Read about form and modal issues that affect tracking" }
+      { text: "forms and modals not working", href: "/blog/forms-modals-not-working/", title: "Read about form and modal issues that affect tracking" },
+      { text: "topological relevance and vector SEO", href: "/blog/topological-relevance-vector-seo/", title: "Read the TopoRank case study on topological relevance and vector SEO" }
     ],
     "api-integrations": [
       { text: "forms and modals not working", href: "/blog/forms-modals-not-working/", title: "Read about forms and modals not working before data reaches another system" },
@@ -157,7 +161,8 @@
     ],
     "ongoing-webmaster-support": [
       { text: "CMS, plugin, and theme weirdness", href: "/blog/cms-plugin-theme-weirdness/", title: "Read about CMS, plugin, and theme weirdness in ongoing website support" },
-      { text: "tracking scripts and pixels", href: "/blog/tracking-scripts-pixels-broken/", title: "Read about tracking scripts and pixels in recurring website support" }
+      { text: "tracking scripts and pixels", href: "/blog/tracking-scripts-pixels-broken/", title: "Read about tracking scripts and pixels in recurring website support" },
+      { text: "topological relevance and vector SEO", href: "/blog/topological-relevance-vector-seo/", title: "Read the TopoRank case study on internal link topology" }
     ],
     "react-static-sites": [
       { text: "embeds, iframes, and widgets breaking pages", href: "/blog/embeds-iframes-widgets-breaking-pages/", title: "Read about embeds, iframes, and widgets breaking pages" },
@@ -288,6 +293,18 @@
     ]
   };
   const allServiceInternalParagraphs = $derived([...(serviceFocusParagraphs[service.slug] || []), ...serviceSupportingParagraphs, ...serviceInternalParagraphs]);
+  const serviceDetailTableColumns = [
+    { key: "area", label: "Work area" },
+    { key: "whatItMeans", label: "What it means" },
+    { key: "proof", label: "Helpful evidence" },
+    { key: "nextStep", label: "Next step" }
+  ];
+  const serviceDetailRows = $derived(service.sections.map((section) => ({
+    area: serviceSectionHeading(section),
+    whatItMeans: section.body || `${section.cards?.length || section.bullets?.length || 0} related ${service.eyebrow.toLowerCase()} items to review.`,
+    proof: section.bullets?.slice(0, 2).join(", ") || section.cards?.slice(0, 2).map((card) => card[0]).join(", ") || "URL, access context, screenshot, task list, or audit note",
+    nextStep: service.cta
+  })));
   const serviceHeadingOverrides = {
     "What can be implemented": "Technical SEO tasks that can be implemented",
     "Send the crawl notes, audit spreadsheet, or task list": "How to hand off technical SEO implementation work",
@@ -348,6 +365,15 @@
   </section>
 
   <ProofPanel proof={serviceProof} />
+
+  <section class="section soft-section section-effect section-effect--signals section-effect--low">
+    <SectionHeading
+      eyebrow={`${service.eyebrow} details`}
+      h2={`${service.eyebrow} scope, evidence, and next steps`}
+      body="Use this table to compare the parts of the service, sort the work by priority, and gather the right context before sending a request."
+    />
+    <SortableTable caption={`${service.eyebrow} planning table`} columns={serviceDetailTableColumns} rows={serviceDetailRows} />
+  </section>
 
   {#each service.sections as section, index}
     <section class={sectionEffect(index + 1, index % 2 === 1 ? "low" : "medium", index % 2 === 1 ? "soft-section" : "")}>

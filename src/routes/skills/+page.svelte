@@ -12,13 +12,16 @@
   import { skillPages, skillUrl } from "$lib/data/content.js";
   import { staticHeroImages } from "$lib/data/hero-images.js";
   import { skillsHubProof } from "$lib/data/proof.js";
-  import { breadcrumbSchema, schemaList } from "$lib/data/schema.js";
+  import { breadcrumbSchema, schemaList, skillListSchema } from "$lib/data/schema.js";
 
   const breadcrumbs = [
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
     { label: "Skills", title: "Current page: Technical web skills" }
   ];
-  const seoSchema = schemaList(breadcrumbSchema(breadcrumbs, "/skills/"));
+  const seoSchema = schemaList(
+    breadcrumbSchema(breadcrumbs, "/skills/"),
+    skillListSchema(skillPages, "/skills/")
+  );
 
   const groups = [
     ["Platforms", ["shopify-plus-liquid", "wordpress-plugin-development", "wordpress-theme-development"]],

@@ -884,6 +884,366 @@ export const blogPosts = [
       ["WordPress Plugin Development", "Use this when site-specific functionality, shortcodes, admin workflows, data capture, hooks, or custom plugin code need repair.", "/skills/wordpress-plugin-development/", "View WordPress plugin development support"],
       ["Security, Hosting & Reliability", "Use this when cache, Cloudflare, SSL, hosting, redirects, or server behavior makes the CMS look broken even when content is correct.", "/services/security-hosting-reliability/", "View hosting, DNS, SSL, cache, and reliability support"]
     ]
+  },
+  {
+    slug: "topological-relevance-vector-seo",
+    title: "Topological Relevance and Vector SEO: A TopoRank Case Study",
+    meta: "A technical case study on TopoRank, vector SEO, boilerplate stripping, URL hierarchy weighting, semantic clusters, and internal link topology using thewebguy.app crawl data.",
+    h1: "Topological Relevance and Vector SEO: How TopoRank Maps Internal Link Weight",
+    eyebrow: "TopoRank case study",
+    heroImageSlug: "skill-crawl-analysis-internal-linking",
+    summary: "A technical look at how TopoRank crawls a site, strips template noise, discovers semantic clusters, scores link support, and turns internal linking into a measurable optimization loop.",
+    problemType: "Technical SEO systems",
+    relatedService: "technical-seo-implementation",
+    heroCta: "Send a Crawl Problem",
+    heroSecondary: "View Crawl Analysis",
+    heroSecondaryHref: "/skills/crawl-analysis-internal-linking/",
+    intro: [
+      "Most internal linking advice still sounds like a spreadsheet exercise: find a keyword, find a matching page, add an anchor, repeat until the export looks busy. That is not how modern retrieval systems understand a site. Search systems parse a website as a graph of documents, templates, topical neighborhoods, entity relationships, and semantic intent.",
+      "TopoRank was built around that graph-shaped problem. It is a proprietary tool built and used by The Web Guy for crawl analysis, semantic topology review, internal link planning, and implementation QA. It does not begin with a static keyword list. It crawls the site, removes global boilerplate, embeds the remaining main content, discovers the semantic clusters that already exist, and then asks whether the physical URL structure and internal links support or contradict those clusters.",
+      "The version shown here is the internal working dashboard, not a public SaaS product. A public-facing variant of TopoRank is expected in late 2026 or early 2027 after the reporting, permissions, project setup, export flows, and re-harvest workflow are packaged for outside users.",
+      "The June 12, 2026 crawl of thewebguy.app produced the first useful proof point: 56 crawled pages, 2 discovered clusters, 69.7% average combined topology, 58.8% semantic resonance, 36 weak pages, 9 strong pages, and 448 suggested link opportunities. After the TopoRank update, a June 16 local re-harvest requested and retained 7 populated pillar profiles across 58 crawled pages, with 72.2% average combined topology, 61.5% semantic resonance, 27 weak pages, 11 strong pages, and 464 suggested link opportunities. The interesting part was not that the site had no links. It was that many links were template-heavy, so important pages needed more body-level support."
+    ],
+    sections: [
+      {
+        heading: "What TopoRank is today",
+        body: [
+          "TopoRank is currently an internal technical SEO and content topology workbench. The Web Guy uses it to crawl a site, queue and compare dated harvests, inspect page-level topology scores, review cluster placement, find weak contextual support, and test whether edits improve the site graph.",
+          "The public version is not live yet. The internal dashboard is useful because it shows the workflow before it is polished into a product: start a crawl, watch queue status, open a dated report, inspect the pages that need support, move between scoring panels, and use the editing workbench to preview link and content changes.",
+          "That matters for client work because TopoRank is not being described as theory. It is already part of The Web Guy's implementation process for internal link cleanup, technical SEO planning, content architecture checks, and re-harvest comparisons."
+        ],
+        figures: [
+          {
+            src: "/images/toporank/dashboard-crawl-queue.png",
+            alt: "TopoRank local dashboard showing crawl inputs, queue status, crawl settings, and report list.",
+            title: "Crawl dashboard and report queue",
+            caption: "The internal dashboard accepts domains or URLs, crawl limits, worker settings, and force-refresh options, then lists available dated reports for review."
+          },
+          {
+            src: "/images/toporank/report-overview.png",
+            alt: "TopoRank report overview showing page cards, score summaries, filters, history controls, and report metadata.",
+            title: "Interactive report overview",
+            caption: "The report view turns a crawl into page-level cards with topology scores, history controls, filters, cluster context, and links to the saved HTML or JSON report."
+          }
+        ],
+        listTitle: "Current internal capabilities",
+        checklist: [
+          "Queue local crawls and store dated report snapshots.",
+          "Open report views for a domain, local build, or historical crawl folder.",
+          "Compare page-level topology, lexical, vector, and authority/support signals.",
+          "Filter by range, pillar, subpillar, and score category.",
+          "Review suggested contextual links before editing the site.",
+          "Preview content changes and re-harvest pages after implementation."
+        ],
+        calloutTitle: "Availability",
+        callout: "TopoRank is proprietary and currently used by The Web Guy internally. A public-facing version is expected late 2026 or early 2027."
+      },
+      {
+        heading: "The shift from keyword string matching to vector topology",
+        body: [
+          "Legacy internal linking treats pages as bags of keywords. If a source page says analytics and a target page says analytics, the rule says to connect them. That can still catch obvious opportunities, but it misses the real structure of a site: whether a page supports a pillar, bridges two subtopics, or accidentally bleeds into a different silo.",
+          "Vector topology starts from the document neighborhood instead. Each page becomes a point in semantic space. Pages that explain related intent sit closer together even when they do not repeat the same exact phrase. That matters for sites where a business problem crosses terms: GA4, forms, CRM handoffs, tracking scripts, webhooks, dashboards, and conversion reporting can all describe the same operational failure.",
+          "TopoRank's job is to compare those semantic coordinates against the site's actual link graph. A page can have many incoming links and still have weak support if those links are mostly navigation, footer, cards, or global template elements. The crawl therefore separates link count from contextual support."
+        ],
+        listTitle: "Why plain keyword matching breaks down",
+        checklist: [
+          "It cannot distinguish body-level editorial links from repeated template links.",
+          "It misses pages whose meaning is close but whose vocabulary is different.",
+          "It treats every link as equal even when placement changes the signal.",
+          "It cannot see structural dissonance between URL paths and semantic clusters.",
+          "It optimizes anchor insertion without checking whether the page moved closer to the right topic neighborhood."
+        ],
+        calloutTitle: "Core idea",
+        callout: "Internal linking is not just anchor text. It is graph routing between semantically related documents."
+      },
+      {
+        heading: "The math behind TopoRank",
+        body: [
+          "TopoRank starts with autonomous cluster discovery. The crawler harvests pages, extracts main content, creates vector representations, and lets the site reveal its own topical clusters instead of forcing every page into a third-party keyword taxonomy.",
+          "The updated June 16 local crawl requested 7 main pillars and retained all 7 as populated profiles: Website Support Services, Website Troubleshooting Resources, Local Website Support, Local Website Support — Landing Webmaster, Analytics and Tracking, Performance and Reliability, and Ecommerce and Product Data. That behavior is useful because it shows the updated TopoRank model producing a more granular site structure instead of collapsing the site back into only a few broad clusters.",
+          "URL hierarchy is then used as a structural weight. A page under /services/ has a different declared role than a page under /blog/ or /skills/. If the vector engine says a page belongs near a business-service cluster but the URL and link graph isolate it as a loose article, TopoRank flags the mismatch as structural dissonance or silo bleed.",
+          "The tool also strips boilerplate before scoring. Header menus, footer columns, repeated CTAs, global sidebars, and common navigation can overwhelm the text if they are treated as page-specific meaning. TopoRank uses fuzzy thresholding across pages to suppress those repeated blocks and analyze the semantic content that is actually unique to the page."
+        ],
+        infographic: {
+          title: "Understanding topical ranking and link support",
+          subtitle: "The working sequence that turns a crawl into a semantic topology report and an internal-link plan.",
+          image: "/images/toporank/understanding-topical-ranking-and-link-support.png",
+          alt: "Infographic explaining the TopoRank process from crawl, boilerplate stripping, embedding main content, cluster discovery, URL structure weighting, and link support scoring.",
+          steps: [
+            "crawl",
+            "strip boilerplate",
+            "embed main content",
+            "discover clusters",
+            "weight URL structure",
+            "score link support"
+          ]
+        },
+        listTitle: "Scores used in the report",
+        checklist: [
+          "Lexical score compares page vocabulary against expected cluster terms.",
+          "Vector score compares page embeddings to the cluster or topic embedding.",
+          "Authority/support score measures contextual internal link support, not just link count.",
+          "Combined topology score blends lexical, vector, and support signals.",
+          "Semantic resonance summarizes whether the site's pages reinforce each other as a coherent topical graph."
+        ],
+        figures: [
+          {
+            src: "/images/toporank/topology-fit-panel.png",
+            alt: "TopoRank topology fit panel showing lexical fit, vector fit, cluster fit, intent fit, URL fit, and subpillar scores.",
+            title: "Topology fit scoring panel",
+            caption: "The topology fit tab breaks a page into lexical, vector, cluster, intent, URL, subpillar, and blended fit signals so the problem is more specific than weak page or strong page."
+          }
+        ]
+      },
+      {
+        heading: "The thewebguy.app crawl baseline",
+        body: [
+          "The first TopoRank report for thewebguy.app was generated on June 12, 2026 at 01:54:51. It crawled 56 pages and found 448 suggested link opportunities. The average vector score was high at 93.2%, which means pages were semantically close to the site's topic space. The average lexical score was much lower at 43.8%, which means the vocabulary and page-specific wording were not always reinforcing the discovered clusters.",
+          "The average authority/support score was 74.7%, but the report repeatedly marked technical pages as boilerplate-heavy. That is the important distinction. A page can show 55 incoming internal links because it appears in navigation and footer structures, but still lack enough contextual support in paragraphs, article bodies, or related explanatory sections.",
+          "The crawl labeled semantic resonance as weak at 58.8%. That does not mean the site was off-topic. It means the relationships between pages were not strong enough yet. TopoRank's recommendation pattern was consistent: add more contextual same-topic links and reduce reliance on repeated template links."
+        ],
+        listTitle: "Baseline crawl numbers",
+        checklist: [
+          "56 pages crawled",
+          "2 primary clusters discovered",
+          "69.7% average combined topology",
+          "43.8% average lexical score",
+          "93.2% average vector score",
+          "74.7% average authority/support score",
+          "58.8% semantic resonance",
+          "36 weak pages and 9 strong pages in the initial production crawl",
+          "448 suggested link opportunities"
+        ],
+        calloutTitle: "Search Console context",
+        callout: "The project notes referenced an early Search Console baseline of 24 impressions, 2 clicks, and 3.7 average position. That baseline is useful context, but TopoRank's crawl scores should be treated as topology diagnostics, not as a substitute for live Search Console trend attribution."
+      },
+      {
+        heading: "Implementation details that keep the graph honest",
+        body: [
+          "The biggest risk in a topology score is accidentally measuring the template instead of the document. A crawler that treats the header, footer, sticky CTA, service nav, card grid, and repeated FAQ modules as unique page text will overestimate topical alignment because every page starts to look like every other page.",
+          "TopoRank avoids that by isolating canonical URLs, normalizing internal links, suppressing repeated blocks, and scoring the remaining main content against the discovered semantic cluster. The result is a cleaner read on page-specific meaning: the title, H1, intro, section headings, body copy, contextual anchors, and nearby explanatory links.",
+          "The link graph then separates raw internal link count from weighted support. A footer link and a sentence-level link are both internal links, but they do not carry the same semantic signal. Body links surrounded by relevant language are more useful because they tell the crawler why the source page and target page belong near each other."
+        ],
+        listTitle: "Signals the implementation should preserve",
+        checklist: [
+          "Canonical URL normalization so slash variants and duplicate paths do not split page authority.",
+          "Boilerplate stripping so navigation, footer, and repeated CTA text do not dominate semantic scoring.",
+          "URL hierarchy weighting so service pages, skill pages, blog posts, and location pages keep their declared roles.",
+          "Contextual anchor extraction so body links are treated differently from global template links.",
+          "Cluster drift detection so a page that starts as vector SEO does not accidentally become only a tracking or campaign article.",
+          "Re-harvest comparison so each implementation pass can be judged against the prior crawl snapshot."
+        ]
+      },
+      {
+        heading: "Turning weak pages into stronger pages",
+        body: [
+          "The remediation pass did not stop at this article. The site now includes route-aware TopoRank support paths that add contextual links from weak or borderline pages toward related services, skills, blog posts, FAQ, rate, and implementation pages. The goal is to turn repeated template support into page-specific support that a crawler can explain.",
+          "The June 16 re-harvest shows movement, not completion. Weak pages dropped from the original 36-page baseline to 27 in the latest TopoRank summary, while strong pages increased from 9 to 11. At the row threshold level, 23 pages were still below 70% combined topology and 11 pages were at or above 80%. That means the site is stronger, but the remaining weak pages still need more body copy, clearer page identity, and better same-cluster routes.",
+          "That distinction matters. A responsible topology workflow should not mark a page strong just because a support module exists. It should re-harvest the site, check the new score distribution, and keep extending pages that still have weak lexical fit or boilerplate-heavy support."
+        ],
+        listTitle: "Remediation added in this pass",
+        checklist: [
+          "Route-aware contextual support links for service, skill, blog, contact, and index pages that TopoRank marked as useful bridge routes.",
+          "A dedicated topology bridge section that appears only when a page has page-specific recommendations.",
+          "A richer TopoRank infographic with a local lightbox so the workflow is easier to understand without loading outside scripts.",
+          "A fresh 7-pillar-request crawl that validated the current site graph after implementation.",
+          "Updated article language that separates the initial production baseline from the latest local re-harvest."
+        ],
+        calloutTitle: "Current status",
+        callout: "The weak-page count improved, but it is not finished. The remaining weak pages need deeper page-level content and more contextual same-cluster links before they can honestly be called strong pages."
+      },
+      {
+        heading: "Low-weight pages were not always orphaned",
+        body: [
+          "The report surfaced an implementation detail that many audits miss: the weak pages were not necessarily isolated by raw link count. They were weak because the strongest links were often global or repeated. TopoRank distinguishes incoming count from semantic support.",
+          "For example, the Crawl Analysis and Internal Linking skill page had a 59.2% combined topology score, 66.0% support score, 23.4% lexical score, and 91.6% vector score. That shape says the page belongs in the right semantic neighborhood, but the copy and body-level routing need more reinforcement.",
+          "The Website Tracking and Data Troubleshooting post had the weakest combined score in the sampled report at 55.0%, with a 12.4% lexical score and 92.9% vector score. That is a classic vector-topology finding: the page is semantically near the right topic, but the visible wording and contextual link routes are not carrying enough explicit signal."
+        ],
+        listTitle: "Pages worth reinforcing",
+        checklist: [
+          "Website Tracking and Data Troubleshooting: 55.0% combined, 64.3% support, 12.4% lexical, 92.9% vector.",
+          "SEO Audit Implementation Help: 57.6% combined, 77.3% support, 12.5% lexical, 92.9% vector.",
+          "Crawl Analysis and Internal Linking: 59.2% combined, 66.0% support, 23.4% lexical, 91.6% vector.",
+          "Programmatic SEO: 59.8% combined, 70.7% support, 20.9% lexical, 93.2% vector.",
+          "Site Speed and Performance Cleanup: 62.0% combined, 79.6% support, 21.9% lexical, 93.2% vector."
+        ],
+        figures: [
+          {
+            src: "/images/toporank/support-panel.png",
+            alt: "TopoRank support panel showing incoming and outgoing internal link support details.",
+            title: "Support panel",
+            caption: "The support view separates raw internal links from meaningful support so repeated navigation links do not hide weak body-level relationships."
+          },
+          {
+            src: "/images/toporank/suggested-links-panel.png",
+            alt: "TopoRank suggested links panel showing recommended contextual internal link targets and add link controls.",
+            title: "Suggested contextual links",
+            caption: "The suggested links panel lists candidate targets, supporting scores, and add-link controls so the implementation step stays close to the diagnostic evidence."
+          }
+        ]
+      },
+      {
+        heading: "The optimization loop",
+        body: [
+          "TopoRank's report viewer is not just a static audit. It includes an editing workbench that loads the isolated main content for a page. The user can inspect the page's current cluster fit, view recommended link targets, highlight text in the editor, and inject an anchor around the selected phrase.",
+          "The important piece is the re-harvest loop. After inserting a contextual link, the page can be re-scored against the same topology model. That gives a developer immediate feedback on whether the edit improved the page's combined topology, support, lexical fit, or vector alignment.",
+          "This changes internal linking from opinion to instrumentation. Instead of asking whether an anchor feels relevant, the workflow asks whether the source page, target page, and cluster centroid became more coherent after the link was added."
+        ],
+        flow: [
+          "choose weak page",
+          "review suggested target",
+          "select body text",
+          "inject anchor",
+          "simulate or re-harvest",
+          "compare topology scores"
+        ],
+        listTitle: "Developer workflow",
+        checklist: [
+          "Open the report for the crawl snapshot.",
+          "Filter by weak combined score or weak semantic link support.",
+          "Review the suggested incoming and outgoing link candidates.",
+          "Add links inside body copy, not only cards or templates.",
+          "Re-harvest the page and compare score movement."
+        ],
+        figures: [
+          {
+            src: "/images/toporank/editor-workbench.png",
+            alt: "TopoRank editing workbench showing page content editor, display/code tabs, and scoring preview controls.",
+            title: "Editing and preview workbench",
+            caption: "The internal editor loads isolated page content, supports display and code views, lets selected text become a contextual link, and can rerun scoring before a real re-harvest."
+          }
+        ]
+      },
+      {
+        heading: "How this post routes link weight",
+        body: [
+          "This article is itself a topology node. It is not useful if it only describes the system and sits disconnected from the pages that need support. The post therefore points into the technical pages that TopoRank identified as needing more contextual reinforcement.",
+          "The outbound links are intentionally specific: crawl analysis and internal linking for the method, production debugging for live-page verification, performance engineering for speed and rendering work, GA4/GTM measurement integrity for conversion-flow validation, REST API and webhook integrations for data handoffs, and WordPress plugin development for site-specific functionality.",
+          "The inbound links are also intentional. Site speed, ongoing webmaster support, performance engineering, production debugging, and crawl analysis pages can all naturally reference the TopoRank workflow because those pages already talk about real site behavior, recurring QA, crawl paths, and technical cleanup."
+        ],
+        listTitle: "Routing rules applied",
+        checklist: [
+          "Use contextual body links instead of only navigation links.",
+          "Link from service and skill pages where the topic naturally overlaps.",
+          "Use specific anchor text like topological relevance and vector SEO.",
+          "Route the case study back to the technical pages that need stronger topical support.",
+          "Keep the post tied to crawl analysis, internal linking, tracking, performance, and debugging rather than broad SEO slogans."
+        ]
+      },
+      {
+        heading: "What the local re-harvest changed",
+        body: [
+          "After the route-aware support pass and TopoRank update, I re-harvested the local thewebguy.app build with TopoRank set to request 7 main pillars. The crawl finished on June 16, 2026 at 13:45:38. It crawled 58 pages and retained all 7 requested pillar profiles in the report.",
+          "The sitewide numbers moved in the right direction. Average combined topology rose to 72.2%, average lexical fit rose to 52.5%, average vector fit held at 94.0%, average authority/support settled at 67.9%, and semantic resonance rose to 61.5%. Weak pages dropped to 27 and strong pages held at 11.",
+          "The new TopoRank post stayed in the Website Troubleshooting Resources pillar. That is a stricter and more useful placement for this article because the piece behaves like an explanatory troubleshooting resource rather than a pure service page. The article still needs better topical outgoing links: it scored 54.3% combined topology, 32.7% lexical fit, 85.5% vector fit, and 35.3% authority/support in this updated 7-pillar report."
+        ],
+        listTitle: "Second-pass crawl numbers",
+        checklist: [
+          "58 local pages crawled in the re-harvest.",
+          "7 main pillars requested and 7 populated pillar profiles retained in the final report.",
+          "72.2% average combined topology.",
+          "52.5% average lexical fit and 94.0% average vector fit.",
+          "67.9% average authority/support.",
+          "61.5% semantic resonance.",
+          "27 weak pages and 11 strong pages in the latest TopoRank summary.",
+          "464 suggested link opportunities."
+        ],
+        calloutTitle: "How to read the movement",
+        callout: "The local crawl includes new development pages and measurement features, so it should be used as an implementation diagnostic. Live ranking impact still has to be checked later in Search Console."
+      },
+      {
+        heading: "Why sitewide scores can dip while the target page improves",
+        body: [
+          "A topology audit can feel counterintuitive because the target URL may improve while the sitewide average barely moves or even softens. That is not automatically a failed edit. A fresh harvest can include new pages, changed templates, different crawl depth, more discovered links, and new sections that alter the denominator.",
+          "For this pass, the production baseline and local crawl were not identical inputs. The June 12 production crawl had 56 pages. The local re-harvest had 58 pages because the development site had new functionality and the new case study itself. Comparing those totals as if they were the same sample would be sloppy.",
+          "The honest read is page-level first, cluster-level second, sitewide third. The target article became more topically explicit and better supported. The Measurement Integrity neighborhood now has another explanatory node. The sitewide resonance score still says the broader graph needs more contextual same-topic links across older pages."
+        ],
+        listTitle: "Guardrails for interpreting TopoRank",
+        checklist: [
+          "Compare identical crawl scopes when making sitewide claims.",
+          "Use page-level score movement to judge a specific edit.",
+          "Use cluster placement to check whether the page landed in the right neighborhood.",
+          "Use semantic resonance to find whether the whole site is reinforcing its topic graph.",
+          "Do not treat topology scores as live ranking attribution without Search Console or analytics follow-up."
+        ]
+      },
+      {
+        heading: "How FAQ questions and GA4 journeys feed the content loop",
+        body: [
+          "The analytics work on the site turns this from a one-time internal-linking exercise into a feedback loop. Search input, scroll-section visibility, button clicks, navigation context, exit-intent responses, contact form fills, and FAQ questions can all become evidence about what visitors were trying to understand before they converted or left.",
+          "That matters for TopoRank because visitor questions often reveal missing semantic bridges. If several people ask a question from a tracking page, the answer may belong as an FAQ on that page. If the question keeps appearing from multiple pages, it may deserve a full blog post with contextual links back into the pages where the question was asked.",
+          "The choice between FAQ and blog post should be based on scope. A short clarification belongs on the page that produced the question. A repeated question that crosses GA4, forms, CRM handoff, search, crawl paths, or content architecture should become a deeper article that supports the whole cluster."
+        ],
+        flow: [
+          "visitor searches or asks",
+          "GA4 stores page context",
+          "question is reviewed",
+          "answer as FAQ or blog",
+          "TopoRank re-harvests",
+          "links are adjusted"
+        ],
+        listTitle: "Decision rules",
+        checklist: [
+          "Answer as an FAQ when the question is specific to one service, skill, or troubleshooting page.",
+          "Answer as a blog post when the same question appears across several pages or describes a broader workflow.",
+          "Use the page where the question was asked as the first internal link source.",
+          "Re-harvest after publishing so the new answer is scored inside the site's actual topology.",
+          "Watch GA4 conversion journeys to see whether the new answer appears before contact events or form fills."
+        ]
+      }
+    ],
+    links: [
+      ["Crawl Analysis & Internal Linking", "/skills/crawl-analysis-internal-linking/", "Use this when crawl exports, orphaned pages, crawl paths, internal link modules, and semantic link support need implementation."],
+      ["Technical SEO Implementation", "/services/technical-seo-implementation/", "Use this when topology findings need to become metadata, headings, redirects, schema, internal links, and site changes."],
+      ["Production Debugging", "/skills/production-debugging/", "Use this when crawl findings need to be verified against real browser behavior, scripts, routes, forms, or production state."],
+      ["Performance Engineering", "/skills/performance-engineering/", "Use this when topology findings overlap with script weight, rendering, layout shift, caching, or Core Web Vitals cleanup."],
+      ["GA4/GTM Measurement Integrity", "/skills/ga4-gtm-measurement-integrity/", "Use this when the same user journey has to be verified in analytics events, conversions, and reports."],
+      ["REST API & Webhook Integrations", "/skills/rest-api-webhook-integrations/", "Use this when forms, CRMs, dashboards, webhooks, and APIs need to line up with the page flow being measured."],
+      ["WordPress Plugin Development", "/skills/wordpress-plugin-development/", "Use this when site-specific functionality or admin workflows need durable implementation instead of fragile snippets."],
+      ["Schema & Structured Data", "/skills/schema-structured-data/", "Use this when topology findings need structured data that matches visible page content, services, FAQs, products, and templates."],
+      ["Automation & Internal Tools", "/services/automation-internal-tools/", "Use this when repeated crawl checks, report comparisons, QA workflows, or link reviews should become an internal tool."],
+      ["Analytics & Tracking", "/services/analytics-tracking/", "Use this when topology, search, scroll, click, form, and FAQ-question events need to be measured in the same user journey."],
+      ["Website Data Troubleshooting", "/blog/website-data-systems-not-connecting/", "Use this when GA4, forms, CRMs, APIs, dashboards, and conversion records do not match the user's real path."],
+      ["Tracking Scripts and Pixels", "/blog/tracking-scripts-pixels-broken/", "Use this when the crawl or conversion path depends on scripts, pixels, events, and browser behavior being trustworthy."],
+      ["Site Speed and Performance Cleanup", "/services/site-speed-performance/", "Use this when crawl findings overlap with slow rendering, heavy scripts, Core Web Vitals, or template weight."],
+      ["Security, Hosting & Reliability", "/services/security-hosting-reliability/", "Use this when redirects, cache, SSL, Cloudflare, hosting, uptime, or reliability problems affect crawl and measurement trust."],
+      ["Ongoing Webmaster Support", "/services/ongoing-webmaster-support/", "Use this when topology checks, content updates, analytics QA, and recurring site maintenance need a steady implementation loop."]
+    ],
+    contextHeading: "Topology work connects to implementation work",
+    contextIntro: "TopoRank points at the graph problem. These pages are where the recommendations usually become practical website changes.",
+    contextCards: [
+      ["Crawl Analysis & Internal Linking", "Use this for the core crawl topology work: weak internal link paths, orphaned pages, boilerplate-heavy support, and context-level link routing.", "/skills/crawl-analysis-internal-linking/", "View crawl analysis and internal linking support"],
+      ["Technical SEO Implementation", "Use this when a topology report turns into implementation work: metadata, headings, schema, redirects, canonicals, crawl cleanup, and internal links.", "/services/technical-seo-implementation/", "View technical SEO implementation"],
+      ["Production Debugging", "Use this when topology issues need to be checked against live browser behavior, scripts, forms, route state, cache, and deployment reality.", "/skills/production-debugging/", "View production debugging support"],
+      ["GA4/GTM Measurement Integrity", "Use this when the same flow must be mapped in analytics so content, clicks, form fills, and conversions match real user behavior.", "/skills/ga4-gtm-measurement-integrity/", "View GA4 and GTM measurement integrity"],
+      ["Performance Engineering", "Use this when the crawl shows that slow scripts, rendering, third-party embeds, layout shift, or Core Web Vitals are part of the topology problem.", "/skills/performance-engineering/", "View performance engineering support"],
+      ["WordPress Plugin Development", "Use this when stronger site architecture requires durable WordPress functionality, admin workflows, or custom link/content modules.", "/skills/wordpress-plugin-development/", "View WordPress plugin development support"],
+      ["Schema & Structured Data", "Use this when topology work exposes schema output, FAQ markup, breadcrumbs, service data, or template-level structured data that needs to match the page.", "/skills/schema-structured-data/", "View schema and structured data support"],
+      ["Automation & Internal Tools", "Use this when recurring crawl reviews, internal link checks, and topology reports should become repeatable tooling instead of one-off exports.", "/services/automation-internal-tools/", "View automation and internal tool support"],
+      ["Analytics & Tracking", "Use this when the same content and conversion path needs GA4 events for search, scroll depth, link context, form fills, FAQ questions, and contact journeys.", "/services/analytics-tracking/", "View analytics and tracking support"],
+      ["Ongoing Webmaster Support", "Use this when the topology loop becomes recurring site maintenance: publish, link, harvest, measure, answer questions, and improve the next weak page.", "/services/ongoing-webmaster-support/", "View ongoing webmaster support"]
+    ],
+    otherHeading: "Related technical SEO paths",
+    otherIntro: "These pages cover the nearby work that usually follows a topology audit.",
+    otherItems: [
+      ["Technical SEO Implementation", "Turn audit and topology findings into real site changes.", "/services/technical-seo-implementation/", "View technical SEO", "technical-seo-implementation"],
+      ["Crawl Analysis & Internal Linking", "Find weak crawl paths, orphaned pages, and contextual link gaps.", "/skills/crawl-analysis-internal-linking/", "View crawl analysis", "technical-seo-implementation"],
+      ["Programmatic SEO", "Design scalable pages without creating thin isolated URL sets.", "/skills/programmatic-seo/", "View programmatic SEO", "technical-seo-implementation"],
+      ["GA4/GTM Measurement Integrity", "Verify whether the journey and conversion flow are measured correctly.", "/skills/ga4-gtm-measurement-integrity/", "View measurement integrity", "analytics-tracking"]
+    ],
+    faqs: [
+      ["Is TopoRank just a keyword tool?", "No. It crawls the site, strips repeated template content, embeds main content, discovers semantic clusters, and scores whether URL structure and internal links support those clusters."],
+      ["Why does boilerplate stripping matter?", "Global navigation, footer links, and repeated modules can make every page look more similar than it really is. Stripping boilerplate helps the tool analyze page-specific meaning."],
+      ["Can a page have many links and still need support?", "Yes. A page can have many template links but weak contextual support. TopoRank separates raw link count from body-level semantic support."],
+      ["Does a higher topology score guarantee rankings?", "No. It is a diagnostic signal for site structure, semantic alignment, and internal links. Rankings still depend on search demand, competition, content quality, technical health, and many external signals."]
+    ],
+    finalCta: {
+      heading: "Need a crawl topology review?",
+      copy: "Send the site, the crawl problem, or the pages that feel isolated. I can help turn topology findings into practical internal links, technical SEO edits, and implementation work.",
+      label: "Send a Crawl Problem",
+      secondaryLabel: "View Crawl Analysis",
+      secondaryHref: "/skills/crawl-analysis-internal-linking/"
+    }
   }
 ];
 

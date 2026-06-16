@@ -12,6 +12,7 @@
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import ProofPanel from "$lib/components/ProofPanel.svelte";
+  import SortableTable from "$lib/components/SortableTable.svelte";
   import { serviceMap, serviceUrl, skillMap, skillUrl } from "$lib/data/content.js";
   import { skillHeroImage } from "$lib/data/hero-images.js";
   import { proofForSkill } from "$lib/data/proof.js";
@@ -185,11 +186,13 @@
     ],
     "performance-engineering": [
       { text: "embeds, iframes, and widgets breaking pages", href: "/blog/embeds-iframes-widgets-breaking-pages/", title: "Read about embeds, iframes, and widgets affecting pages" },
-      { text: "tracking scripts and pixels", href: "/blog/tracking-scripts-pixels-broken/", title: "Read about tracking scripts and pixels affecting site behavior" }
+      { text: "tracking scripts and pixels", href: "/blog/tracking-scripts-pixels-broken/", title: "Read about tracking scripts and pixels affecting site behavior" },
+      { text: "topological relevance and vector SEO", href: "/blog/topological-relevance-vector-seo/", title: "Read the TopoRank case study on vector SEO and internal links" }
     ],
     "production-debugging": [
       { text: "forms and modals not working", href: "/blog/forms-modals-not-working/", title: "Read about forms and modals not working" },
-      { text: "CMS, plugin, and theme weirdness", href: "/blog/cms-plugin-theme-weirdness/", title: "Read about CMS, plugin, and theme weirdness" }
+      { text: "CMS, plugin, and theme weirdness", href: "/blog/cms-plugin-theme-weirdness/", title: "Read about CMS, plugin, and theme weirdness" },
+      { text: "topological relevance and vector SEO", href: "/blog/topological-relevance-vector-seo/", title: "Read the TopoRank case study on crawl topology and link support" }
     ],
     "ga4-gtm-measurement-integrity": [
       { text: "tracking scripts and pixels", href: "/blog/tracking-scripts-pixels-broken/", title: "Read about broken tracking scripts and pixels" },
@@ -209,7 +212,8 @@
     ],
     "crawl-analysis-internal-linking": [
       { text: "CMS, plugin, and theme weirdness", href: "/blog/cms-plugin-theme-weirdness/", title: "Read about CMS, plugin, and theme issues that can affect crawl output" },
-      { text: "embeds, iframes, and widgets breaking pages", href: "/blog/embeds-iframes-widgets-breaking-pages/", title: "Read about embeds, iframes, and widgets that affect crawlable pages" }
+      { text: "embeds, iframes, and widgets breaking pages", href: "/blog/embeds-iframes-widgets-breaking-pages/", title: "Read about embeds, iframes, and widgets that affect crawlable pages" },
+      { text: "topological relevance and vector SEO", href: "/blog/topological-relevance-vector-seo/", title: "Read the TopoRank case study on crawl analysis and internal linking" }
     ],
     "google-merchant-center-product-data": [
       { text: "tracking scripts and pixels", href: "/blog/tracking-scripts-pixels-broken/", title: "Read about tracking scripts and pixels in ecommerce measurement" },
@@ -257,6 +261,21 @@
     ]
   ]);
   const allSkillInternalParagraphs = $derived([...(skillFocusParagraphs[skill.slug] || []), ...skillSupportingParagraphs, ...skillInternalParagraphs]);
+  const skillTableColumns = [
+    { key: "need", label: "Need" },
+    { key: "implementation", label: "Implementation focus" },
+    { key: "service", label: "Service route" },
+    { key: "evidence", label: "Useful evidence" }
+  ];
+  const skillRows = $derived(skill.problems.map((problem, index) => {
+    const relatedService = relatedServiceCards[index % Math.max(relatedServiceCards.length, 1)];
+    return {
+      need: problem,
+      implementation: skill.tasks[index % Math.max(skill.tasks.length, 1)] || skill.connection,
+      service: relatedService ? { text: relatedService.eyebrow, href: serviceUrl(relatedService.slug) } : { text: "Website Services", href: "/services/" },
+      evidence: "URL, reproduction steps, access context, current output, and desired result"
+    };
+  }));
 </script>
 
 <Seo title={skill.title} description={skill.meta} schema={seoSchema} />
@@ -282,6 +301,15 @@
   </section>
 
   <ProofPanel proof={skillProof} />
+
+  <section class="section section-effect section-effect--traces section-effect--low">
+    <SectionHeading
+      eyebrow={`${skill.eyebrow} planning`}
+      h2={`How to turn ${skill.eyebrow} into a website task`}
+      body="Use this table to compare the problem, implementation focus, related service path, and evidence that makes the technical work easier to scope."
+    />
+    <SortableTable caption={`${skill.eyebrow} implementation table`} columns={skillTableColumns} rows={skillRows} />
+  </section>
 
   <section class="section soft-section section-effect section-effect--signals section-effect--medium">
     <SectionHeading eyebrow={`${skill.eyebrow} in service work`} h2={`Where ${skill.eyebrow} fits into website support`} body={skill.connection} />

@@ -12,11 +12,30 @@
     trackFaqOpen,
     trackLinkClick,
     trackPageView,
+    trackSectionView,
     trackScrollDepth
   } from "$lib/analytics.js";
 
   function closestElement(target, selector) {
     return target instanceof Element ? target.closest(selector) : null;
+  }
+
+  let sectionObserver;
+
+  function observeSections() {
+    sectionObserver?.disconnect();
+    if (!browser || !("IntersectionObserver" in window)) return;
+
+    sectionObserver = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) trackSectionView(entry.target);
+        }
+      },
+      { rootMargin: "-20% 0px -45% 0px", threshold: 0.01 }
+    );
+
+    document.querySelectorAll("main .hero, main section").forEach((section) => sectionObserver.observe(section));
   }
 
   onMount(() => {
@@ -83,6 +102,8 @@
     document.addEventListener("focusin", handleFocusIn);
     window.addEventListener("scroll", trackScrollDepth, { passive: true });
 
+    observeSections();
+
     return () => {
       window.removeEventListener("load", scheduleScriptLoad);
       window.clearTimeout(loadTimer);
@@ -93,6 +114,7 @@
       document.removeEventListener("toggle", handleToggle, true);
       document.removeEventListener("focusin", handleFocusIn);
       window.removeEventListener("scroll", trackScrollDepth);
+      sectionObserver?.disconnect();
     };
   });
 
@@ -101,6 +123,9 @@
 
     initGoogleAnalytics();
     resetScrollTracking();
-    queueMicrotask(() => trackPageView(window.location.href, document.title));
+    queueMicrotask(() => {
+      trackPageView(window.location.href, document.title);
+      observeSections();
+    });
   });
 </script>

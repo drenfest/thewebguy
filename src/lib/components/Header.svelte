@@ -2,6 +2,8 @@
   import { onMount } from "svelte";
   import { fade, fly } from "svelte/transition";
   import LogoMark from "./LogoMark.svelte";
+  import { trackEvent } from "$lib/analytics.js";
+  import { searchPages } from "$lib/data/search-index.js";
   import { headerCta, mainNavItems, megaMenus, mobileNavSections, utilityNavItems } from "$lib/data/navigation.js";
 
   let scrolled = $state(false);
@@ -9,8 +11,13 @@
   let mobileOpen = $state(false);
   let mobilePanels = $state({});
   let reduceMotion = $state(false);
+  let searchQuery = $state("");
+  let searchFocused = $state(false);
+  let lastTrackedSearch = "";
   let headerRoot;
   let navRoot;
+  const searchResults = $derived(searchPages(searchQuery));
+  const showSearchResults = $derived(searchFocused && searchQuery.trim().length >= 4);
 
   function openDesktopMenu(key) {
     if (!mobileOpen && megaMenus[key]) {
@@ -47,6 +54,30 @@
     if (href === "/") return "View The Web Guy homepage";
     if (href === "/contact/") return "Open the contact request form";
     return `View ${label}`;
+  }
+
+  function handleSearchInput() {
+    const query = searchQuery.trim();
+    if (query.length < 4 || query === lastTrackedSearch) return;
+
+    lastTrackedSearch = query;
+    trackEvent("site_search", {
+      search_term: query,
+      search_term_length: query.length,
+      search_results_count: searchResults.length
+    });
+  }
+
+  function handleSearchResultClick(result, index) {
+    trackEvent("site_search_result_click", {
+      search_term: searchQuery.trim(),
+      search_result_title: result.title,
+      search_result_url: result.href,
+      search_result_type: result.type,
+      search_result_position: index + 1
+    });
+    searchFocused = false;
+    closeMobileMenu();
   }
 
   function handleFocusOut(event) {
@@ -178,6 +209,39 @@
     {/each}
   </div>
 
+  <div class="site-search" role="search">
+    <label class="sr-only" for="site-search-input">Search pages</label>
+    <input
+      id="site-search-input"
+      bind:value={searchQuery}
+      type="search"
+      autocomplete="off"
+      placeholder="Search site"
+      oninput={handleSearchInput}
+      onfocus={() => (searchFocused = true)}
+      onblur={() => window.setTimeout(() => (searchFocused = false), 140)}
+    />
+    {#if showSearchResults}
+      <div class="site-search-results" aria-label="Search results">
+        {#if searchResults.length}
+          {#each searchResults as result, index}
+            <a
+              href={result.href}
+              title={`Open ${result.title}`}
+              onclick={() => handleSearchResultClick(result, index)}
+            >
+              <span>{result.type}</span>
+              <strong>{result.title}</strong>
+              <small>{result.description}</small>
+            </a>
+          {/each}
+        {:else}
+          <p>No matching pages yet.</p>
+        {/if}
+      </div>
+    {/if}
+  </div>
+
   <a class="button button-small button-primary header-cta" href={headerCta.href} title={linkTitle(headerCta.label, headerCta.href)}>{headerCta.label}</a>
 
   <button
@@ -217,6 +281,38 @@
       </div>
 
       <nav class="mobile-nav-content" aria-label="Mobile navigation">
+        <div class="site-search mobile-site-search" role="search">
+          <label class="sr-only" for="mobile-site-search-input">Search pages</label>
+          <input
+            id="mobile-site-search-input"
+            bind:value={searchQuery}
+            type="search"
+            autocomplete="off"
+            placeholder="Search site"
+            oninput={handleSearchInput}
+            onfocus={() => (searchFocused = true)}
+          />
+          {#if showSearchResults}
+            <div class="site-search-results mobile-search-results" aria-label="Search results">
+              {#if searchResults.length}
+                {#each searchResults as result, index}
+                  <a
+                    href={result.href}
+                    title={`Open ${result.title}`}
+                    onclick={() => handleSearchResultClick(result, index)}
+                  >
+                    <span>{result.type}</span>
+                    <strong>{result.title}</strong>
+                    <small>{result.description}</small>
+                  </a>
+                {/each}
+              {:else}
+                <p>No matching pages yet.</p>
+              {/if}
+            </div>
+          {/if}
+        </div>
+
         {#each mobileNavSections as section}
           <section class="mobile-accordion">
             <button

@@ -86,8 +86,8 @@
   <section class="section split-section section-effect section-effect--grid section-effect--low">
     <div>
       <SectionHeading eyebrow="Analytics" h2="Website usage data" />
-      <p class="wide-copy">The site may use Google Analytics 4 to understand how visitors use the site, which pages are viewed, which links or calls to action are clicked, FAQ interactions, scroll depth, and broad contact form interaction events.</p>
-      <p class="wide-copy">Analytics events are designed to avoid private contact form content. Names, email addresses, website URLs, and detailed message text are not intentionally sent to analytics.</p>
+      <p class="wide-copy">The site may use Google Analytics 4 to understand how visitors use the site, which pages are viewed, which links or calls to action are clicked, FAQ interactions, FAQ questions submitted through the ask-a-question form, scroll depth, site search, and broad contact form interaction events.</p>
+      <p class="wide-copy">Analytics events are designed to avoid private contact form content. Names, email addresses, website URLs, and detailed contact request message text are not intentionally sent to analytics. FAQ question text and site search terms may be sent to analytics so unanswered questions and content gaps can be reviewed.</p>
     </div>
     <div>
       <SectionHeading eyebrow="Technical data" h2="Hosting, logs, and browser behavior" />

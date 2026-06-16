@@ -6,6 +6,9 @@ export const gaScriptSrc = gaMeasurementId ? `https://www.googletagmanager.com/g
 
 const scrollThresholds = [25, 50, 75, 90];
 const trackedScrollDepths = new Set();
+const viewedSections = new Set();
+const journeyStorageKey = "theWebGuyJourney";
+const maxJourneyItems = 30;
 let currentPageMeta = {};
 let initialized = false;
 let scriptLoadPromise;
@@ -112,7 +115,8 @@ function sanitizeParams(params = {}) {
       .map(([key, value]) => {
         if (typeof value === "boolean") return [key, value ? 1 : 0];
         if (typeof value === "number") return [key, value];
-        return [key, stringValue(value, key.includes("url") || key.includes("location") ? 300 : 120)];
+        const maxLength = key.includes("flow") || key.includes("journey") || key.includes("question_text") ? 500 : key.includes("url") || key.includes("location") ? 300 : 120;
+        return [key, stringValue(value, maxLength)];
       })
       .filter(([, value]) => value !== undefined)
   );
@@ -176,7 +180,16 @@ export function loadGoogleAnalyticsScript() {
 export function trackEvent(eventName, params = {}) {
   if (!analyticsEnabled()) return;
   initGoogleAnalytics();
-  window.gtag("event", eventName, sanitizeParams({ ...activePageMeta(), ...params }));
+  window.gtag(
+    "event",
+    eventName,
+    sanitizeParams({
+      ...activePageMeta(),
+      source_page_path: window.location.pathname,
+      source_page_title: document.title,
+      ...params
+    })
+  );
 }
 
 export function trackPageView(url = window.location.href, pageTitle = document.title) {
@@ -185,6 +198,11 @@ export function trackPageView(url = window.location.href, pageTitle = document.t
 
   const parsedUrl = new URL(url, window.location.origin);
   currentPageMeta = routeMeta(parsedUrl.pathname);
+  recordJourneyItem({
+    type: "page",
+    label: currentPageMeta.page_topic || pageTitle,
+    path: parsedUrl.pathname
+  });
 
   window.gtag(
     "event",
@@ -198,19 +216,60 @@ export function trackPageView(url = window.location.href, pageTitle = document.t
   );
 }
 
+function readJourney() {
+  if (!browser) return [];
+  try {
+    return JSON.parse(window.sessionStorage.getItem(journeyStorageKey) || "[]");
+  } catch {
+    return [];
+  }
+}
+
+function writeJourney(items) {
+  if (!browser) return;
+  window.sessionStorage.setItem(journeyStorageKey, JSON.stringify(items.slice(-maxJourneyItems)));
+}
+
+function recordJourneyItem(item) {
+  const journey = readJourney();
+  const key = `${item.type}:${item.path || ""}:${item.label || ""}`;
+  const last = journey[journey.length - 1];
+  if (`${last?.type}:${last?.path || ""}:${last?.label || ""}` !== key) {
+    journey.push({ ...item, at: Date.now() });
+    writeJourney(journey);
+  }
+}
+
+export function journeySnapshot() {
+  const journey = readJourney();
+  const pages = journey.filter((item) => item.type === "page").map((item) => `${item.label} (${item.path})`);
+  const sections = journey.filter((item) => item.type === "section").map((item) => `${item.label} (${item.path})`);
+
+  return {
+    journey_page_count: pages.length,
+    journey_section_count: sections.length,
+    journey_page_flow: pages.join(" > "),
+    journey_section_flow: sections.join(" > ")
+  };
+}
+
 function areaName(element) {
   const area = element.closest(
-    ".hero-actions, .cred-strip, .breadcrumbs, .service-nav, .topical-links, .contextual-support, .internal-link-copy, .faq-list, .footer-cta, .footer, .site-header, .contact-form, .cta-band, section, nav, header, footer, form"
+    ".hero-actions, .cred-strip, .breadcrumb-nav, .breadcrumbs, .service-nav, .topical-links, .contextual-support, .internal-link-copy, .faq-list, .footer-cta, .footer, .site-header, .contact-form, .cta-band, .card, .topic-link, .topical-link-list, .mega-menu, .mobile-nav-drawer, section, nav, header, footer, form"
   );
 
   if (!area) return "unknown";
   if (area.classList.contains("hero-actions")) return "hero_cta";
   if (area.classList.contains("cred-strip")) return "hero_capability_links";
-  if (area.classList.contains("breadcrumbs")) return "breadcrumbs";
+  if (area.classList.contains("breadcrumbs") || area.classList.contains("breadcrumb-nav")) return "breadcrumbs";
   if (area.classList.contains("service-nav")) return "service_nav";
+  if (area.classList.contains("mega-menu")) return "mega_menu";
+  if (area.classList.contains("mobile-nav-drawer")) return "mobile_navigation";
   if (area.classList.contains("topical-links")) return "topical_links";
   if (area.classList.contains("contextual-support")) return "contextual_support";
   if (area.classList.contains("internal-link-copy")) return "body_copy";
+  if (area.classList.contains("card")) return "card";
+  if (area.classList.contains("topic-link") || area.classList.contains("topical-link-list")) return "card_or_topic_link";
   if (area.classList.contains("faq-list")) return "faq";
   if (area.classList.contains("footer-cta")) return "footer_cta";
   if (area.classList.contains("footer")) return "footer";
@@ -227,6 +286,22 @@ function areaName(element) {
     return stringValue(eyebrow || heading, 80) || "section";
   }
   return "unknown";
+}
+
+function sectionName(element) {
+  const heading = element.querySelector("h1, h2, h3, .section-heading h2")?.textContent;
+  const eyebrow = element.querySelector(".eyebrow")?.textContent;
+  return stringValue(eyebrow && heading ? `${eyebrow}: ${heading}` : heading || eyebrow, 100) || "Unnamed section";
+}
+
+function linkContext(link) {
+  const area = areaName(link);
+  if (area === "header" || area === "navigation" || area === "mega_menu" || area === "mobile_navigation" || area === "service_nav") return "navigation";
+  if (area === "breadcrumbs") return "breadcrumbs";
+  if (area === "card" || area === "card_or_topic_link" || area === "contextual_support" || area === "topical_links") return "card";
+  if (area === "body_copy" || link.closest("main section")) return "internal_content";
+  if (area === "footer" || area === "footer_cta") return "footer";
+  return area;
 }
 
 function classifyLink(link, destination) {
@@ -253,6 +328,7 @@ export function trackLinkClick(link) {
     destination_path: destination.pathname,
     destination_hash: destination.hash,
     link_area: areaName(link),
+    link_context: linkContext(link),
     link_role: link.classList.contains("button") || link.classList.contains("cta-animated") ? "button_link" : "text_link",
     is_same_page: destination.pathname === window.location.pathname
   });
@@ -269,6 +345,15 @@ export function trackButtonClick(button) {
   });
 }
 
+export function trackContactEvent(action, params = {}) {
+  trackEvent("contact_event", {
+    contact_action: action,
+    is_form_fill: action.includes("form"),
+    ...journeySnapshot(),
+    ...params
+  });
+}
+
 export function trackFaqOpen(details) {
   if (!analyticsEnabled() || !details.open) return;
   const question = details.querySelector("summary")?.textContent;
@@ -281,6 +366,7 @@ export function trackFaqOpen(details) {
 
 export function resetScrollTracking() {
   trackedScrollDepths.clear();
+  viewedSections.clear();
 }
 
 export function trackScrollDepth() {
@@ -293,5 +379,25 @@ export function trackScrollDepth() {
   if (!threshold) return;
 
   trackedScrollDepths.add(threshold);
-  trackEvent("scroll_depth", { scroll_percent: threshold });
+  const currentSection = [...document.querySelectorAll("main section, main .hero")]
+    .filter((section) => section.getBoundingClientRect().top <= window.innerHeight * 0.45)
+    .at(-1);
+  trackEvent("scroll_depth", {
+    scroll_percent: threshold,
+    section_name: currentSection ? sectionName(currentSection) : undefined
+  });
+}
+
+export function trackSectionView(section) {
+  if (!analyticsEnabled() || !section) return;
+  const name = sectionName(section);
+  const key = `${window.location.pathname}:${name}`;
+  if (viewedSections.has(key)) return;
+
+  viewedSections.add(key);
+  recordJourneyItem({ type: "section", label: name, path: window.location.pathname });
+  trackEvent("section_view", {
+    section_name: name,
+    section_index: [...document.querySelectorAll("main .hero, main section")].indexOf(section) + 1
+  });
 }
