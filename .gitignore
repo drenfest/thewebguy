@@ -26,6 +26,7 @@ crawls/
 site_audit_report.html
 site_audit_report.json
 logo-preview-large.*
+tools/
 
 # Test and coverage output
 coverage/
