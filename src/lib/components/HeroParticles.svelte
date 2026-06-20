@@ -58,7 +58,8 @@
     let nodes = [];
     let visible = true;
     let pointer = { x: 0, y: 0, active: false };
-    let scrollDrift = 0;
+    let pointerListenersActive = false;
+    let lastMobileFrame = 0;
 
     function settings() {
       return intensityPresets[intensity] || intensityPresets.medium;
@@ -74,14 +75,21 @@
 
     function resetNodes() {
       const activeSettings = settings();
-      nodes = Array.from({ length: particleCount() }, () => ({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.2 * activeSettings.speed,
-        vy: (Math.random() - 0.5) * 0.2 * activeSettings.speed,
-        r: 1.1 + Math.random() * 1.9,
-        pulse: Math.random() * Math.PI * 2
-      }));
+      nodes = Array.from({ length: particleCount() }, () => {
+        const baseX = Math.random() * width;
+        const baseY = Math.random() * height;
+        return {
+          x: baseX,
+          y: baseY,
+          baseX,
+          baseY,
+          vx: (Math.random() - 0.5) * 0.2 * activeSettings.speed,
+          vy: (Math.random() - 0.5) * 0.2 * activeSettings.speed,
+          r: 1.1 + Math.random() * 1.9,
+          pulse: Math.random() * Math.PI * 2,
+          drift: 5 + Math.random() * 13
+        };
+      });
     }
 
     function resize() {
@@ -178,13 +186,24 @@
     function update(time) {
       if (!visible) return;
 
+      const isMobile = mobileQuery.matches;
+      if (isMobile && time - lastMobileFrame < 82) {
+        frame = requestAnimationFrame(update);
+        return;
+      }
+      if (isMobile) lastMobileFrame = time;
+
       for (const node of nodes) {
-        if (!reduceMotion.matches) {
+        if (isMobile) {
+          const driftTime = time * 0.00022 + node.pulse;
+          node.x = node.baseX + Math.cos(driftTime) * node.drift;
+          node.y = node.baseY + Math.sin(driftTime * 0.86) * node.drift;
+        } else if (!reduceMotion.matches) {
           node.x += node.vx;
-          node.y += node.vy + scrollDrift;
+          node.y += node.vy;
         }
 
-        if (!mobileQuery.matches && pointer.active) {
+        if (!isMobile && pointer.active) {
           const dx = pointer.x - node.x;
           const dy = pointer.y - node.y;
           const distance = Math.max(1, Math.hypot(dx, dy));
@@ -243,9 +262,18 @@
       pointer.active = false;
     }
 
-    function handleScroll() {
-      if (mobileQuery.matches && !reduceMotion.matches) {
-        scrollDrift = Math.sin(window.scrollY * 0.006) * 0.03;
+    function syncPointerListeners() {
+      const shouldListen = !mobileQuery.matches;
+      if (shouldListen === pointerListenersActive) return;
+
+      pointerListenersActive = shouldListen;
+      if (shouldListen) {
+        window.addEventListener("pointermove", handlePointerMove, { passive: true });
+        window.addEventListener("pointerleave", handlePointerLeave, { passive: true });
+      } else {
+        pointer.active = false;
+        window.removeEventListener("pointermove", handlePointerMove);
+        window.removeEventListener("pointerleave", handlePointerLeave);
       }
     }
 
@@ -270,11 +298,10 @@
 
       resizeObserver.observe(canvas);
       intersectionObserver.observe(canvas);
-      window.addEventListener("pointermove", handlePointerMove, { passive: true });
-      window.addEventListener("pointerleave", handlePointerLeave, { passive: true });
-      window.addEventListener("scroll", handleScroll, { passive: true });
+      syncPointerListeners();
       reduceMotion.addEventListener("change", start);
       mobileQuery.addEventListener("change", resize);
+      mobileQuery.addEventListener("change", syncPointerListeners);
       resize();
       start();
     }
@@ -300,9 +327,9 @@
       intersectionObserver?.disconnect();
       window.removeEventListener("pointermove", handlePointerMove);
       window.removeEventListener("pointerleave", handlePointerLeave);
-      window.removeEventListener("scroll", handleScroll);
       reduceMotion.removeEventListener("change", start);
       mobileQuery.removeEventListener("change", resize);
+      mobileQuery.removeEventListener("change", syncPointerListeners);
     };
   });
 </script>

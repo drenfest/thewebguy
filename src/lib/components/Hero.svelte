@@ -1,4 +1,5 @@
 <script>
+  import HeroFireworks from "./HeroFireworks.svelte";
   import HeroParticles from "./HeroParticles.svelte";
 
   let {
@@ -42,6 +43,15 @@
     if (href === "/contact/" || href === "#request-form") return "Open the contact request form";
     return `View ${label}`;
   }
+
+  function isFireworksSeason(date = new Date()) {
+    const year = date.getFullYear();
+    const starts = new Date(year, 5, 15);
+    const ends = new Date(year, 6, 5);
+    return date >= starts && date < ends;
+  }
+
+  const useSeasonalFireworks = isFireworksSeason();
 </script>
 
 <svelte:head>
@@ -57,7 +67,11 @@
 </svelte:head>
 
 <section class="hero effect effect-hero effect-high">
-  <HeroParticles intensity="high" />
+  {#if useSeasonalFireworks}
+    <HeroFireworks intensity="high" />
+  {:else}
+    <HeroParticles intensity="high" />
+  {/if}
   <div class="hero-grid">
     <div>
       <p class="eyebrow">{eyebrow}</p>

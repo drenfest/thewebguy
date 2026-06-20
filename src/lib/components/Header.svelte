@@ -3,7 +3,6 @@
   import { fade, fly } from "svelte/transition";
   import LogoMark from "./LogoMark.svelte";
   import { trackEvent } from "$lib/analytics.js";
-  import { searchPages } from "$lib/data/search-index.js";
   import { headerCta, mainNavItems, megaMenus, mobileNavSections, utilityNavItems } from "$lib/data/navigation.js";
 
   let scrolled = $state(false);
@@ -13,11 +12,13 @@
   let reduceMotion = $state(false);
   let searchQuery = $state("");
   let searchFocused = $state(false);
+  let searchResults = $state([]);
+  let searchWorker;
+  let searchRequestId = 0;
   let lastTrackedSearch = "";
   let closeMenuTimer;
   let headerRoot;
   let navRoot;
-  const searchResults = $derived(searchPages(searchQuery));
   const showSearchResults = $derived(searchFocused && searchQuery.trim().length >= 4);
 
   function openDesktopMenu(key) {
@@ -83,16 +84,80 @@
     return item ? `View All ${item.label}` : "";
   }
 
-  function handleSearchInput() {
-    const query = searchQuery.trim();
-    if (query.length < 4 || query === lastTrackedSearch) return;
+  function getSearchWorker() {
+    if (searchWorker) return searchWorker;
+
+    searchWorker = new Worker(new URL("../workers/search.worker.js", import.meta.url), { type: "module" });
+    return searchWorker;
+  }
+
+  async function updateSearchResults(event) {
+    const rawQuery = event?.currentTarget?.value ?? searchQuery;
+    const query = rawQuery.trim();
+    searchQuery = rawQuery;
+    searchFocused = true;
+    if (query.length < 4) {
+      searchResults = [];
+      return;
+    }
+
+    const worker = getSearchWorker();
+    const requestId = ++searchRequestId;
+    const results = await new Promise((resolve) => {
+      function handleMessage(event) {
+        if (event.data?.id !== requestId) return;
+        worker.removeEventListener("message", handleMessage);
+        resolve(event.data.results || []);
+      }
+
+      worker.addEventListener("message", handleMessage);
+      worker.postMessage({ id: requestId, query });
+    });
+
+    if (query !== searchQuery.trim() || requestId !== searchRequestId) return;
+
+    searchResults = results;
+    if (query === lastTrackedSearch) return;
 
     lastTrackedSearch = query;
     trackEvent("site_search", {
       search_term: query,
       search_term_length: query.length,
-      search_results_count: searchResults.length
+      search_results_count: results.length
     });
+  }
+
+  function handleSearchFocus() {
+    searchFocused = true;
+    if (searchQuery.trim().length >= 4) {
+      updateSearchResults();
+    }
+  }
+
+  function siteSearchInput(node) {
+    function handleInput(event) {
+      updateSearchResults(event);
+    }
+
+    function handleFocus() {
+      handleSearchFocus();
+    }
+
+    function handleBlur() {
+      window.setTimeout(() => (searchFocused = false), 140);
+    }
+
+    node.addEventListener("input", handleInput);
+    node.addEventListener("focus", handleFocus);
+    node.addEventListener("blur", handleBlur);
+
+    return {
+      destroy() {
+        node.removeEventListener("input", handleInput);
+        node.removeEventListener("focus", handleFocus);
+        node.removeEventListener("blur", handleBlur);
+      }
+    };
   }
 
   function handleSearchResultClick(result, index) {
@@ -162,6 +227,7 @@
       document.removeEventListener("keydown", handleKeydown);
       document.removeEventListener("pointerdown", handlePointerDown);
       document.body.classList.remove("nav-open");
+      searchWorker?.terminate();
     };
   });
 </script>
@@ -257,9 +323,7 @@
       type="search"
       autocomplete="off"
       placeholder="Search site"
-      oninput={handleSearchInput}
-      onfocus={() => (searchFocused = true)}
-      onblur={() => window.setTimeout(() => (searchFocused = false), 140)}
+      use:siteSearchInput
     />
     {#if showSearchResults}
       <div class="site-search-results" aria-label="Search results">
@@ -329,8 +393,7 @@
             type="search"
             autocomplete="off"
             placeholder="Search site"
-            oninput={handleSearchInput}
-            onfocus={() => (searchFocused = true)}
+            use:siteSearchInput
           />
           {#if showSearchResults}
             <div class="site-search-results mobile-search-results" aria-label="Search results">
