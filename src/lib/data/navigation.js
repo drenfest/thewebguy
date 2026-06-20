@@ -81,10 +81,39 @@ export const megaMenus = {
       ]),
       group("SEO, Tracking & Systems", [
         serviceLink("Technical SEO Implementation", "technical-seo-implementation"),
+        serviceLink("SEO Audit Implementation", "seo-audit-implementation"),
+        serviceLink("Technical SEO Developer", "technical-seo-developer"),
+        serviceLink("Schema Implementation", "schema-implementation-service"),
+        serviceLink("GA4/GTM Setup Help", "ga4-gtm-setup-help"),
+        serviceLink("Conversion Tracking Troubleshooting", "conversion-tracking-troubleshooting"),
         serviceLink("Analytics & Tracking", "analytics-tracking"),
         serviceLink("Agency Overflow", "agency-overflow"),
         serviceLink("Ecommerce Support", "ecommerce-support"),
         serviceLink("API Integrations", "api-integrations")
+      ]),
+      group("Focused WordPress Help", [
+        serviceLink("WordPress Help", "wordpress-help"),
+        serviceLink("WordPress Website Support", "wordpress-website-support"),
+        serviceLink("WordPress Maintenance", "wordpress-maintenance"),
+        serviceLink("WordPress Troubleshooting", "wordpress-troubleshooting"),
+        serviceLink("Fix a WordPress Issue", "fix-wordpress-issue"),
+        serviceLink("Broken WordPress Site", "fix-broken-wordpress-site"),
+        serviceLink("WordPress Emergency Support", "wordpress-emergency-support"),
+        serviceLink("White Screen of Death Fix", "wordpress-white-screen-of-death-fix"),
+        serviceLink("Contact Form Not Working", "contact-form-not-working-wordpress"),
+        serviceLink("Elementor Layout Broken", "elementor-layout-broken"),
+        serviceLink("Plugin Conflict Help", "wordpress-plugin-conflict-help"),
+        serviceLink("WordPress Small Tasks", "wordpress-developer-for-small-tasks"),
+        serviceLink("Hourly WordPress Developer", "hourly-wordpress-developer")
+      ]),
+      group("Agency & Ecommerce Support", [
+        serviceLink("Agency Overflow Developer", "agency-overflow-developer"),
+        serviceLink("White Label WordPress Support", "white-label-wordpress-support"),
+        serviceLink("Website Maintenance for Agencies", "website-maintenance-for-agencies"),
+        serviceLink("Website Support for Agencies", "website-support-for-agencies"),
+        serviceLink("Shopify Liquid Support", "shopify-liquid-support"),
+        serviceLink("WooCommerce Support", "woocommerce-support"),
+        serviceLink("WooCommerce Checkout Fix", "woocommerce-checkout-error-fix")
       ])
     ],
     {
@@ -180,34 +209,59 @@ export const mobileNavSections = [
     key: "services",
     label: "Services",
     links: [
+      pageLink("View All Services", "/services/"),
       serviceLink("Website Fixes", "website-fixes"),
       serviceLink("AI-Built Website Cleanup", "ai-built-website-cleanup"),
       serviceLink("WordPress Support", "wordpress-support"),
+      serviceLink("WordPress Help", "wordpress-help"),
+      serviceLink("WordPress Website Support", "wordpress-website-support"),
+      serviceLink("WordPress Maintenance", "wordpress-maintenance"),
+      serviceLink("WordPress Troubleshooting", "wordpress-troubleshooting"),
+      serviceLink("Fix WordPress Issue", "fix-wordpress-issue"),
+      serviceLink("Broken WordPress Site", "fix-broken-wordpress-site"),
+      serviceLink("WordPress Emergency Support", "wordpress-emergency-support"),
+      serviceLink("White Screen of Death Fix", "wordpress-white-screen-of-death-fix"),
+      serviceLink("Contact Form Not Working", "contact-form-not-working-wordpress"),
+      serviceLink("Elementor Layout Broken", "elementor-layout-broken"),
+      serviceLink("Plugin Conflict Help", "wordpress-plugin-conflict-help"),
+      serviceLink("WordPress Small Tasks", "wordpress-developer-for-small-tasks"),
+      serviceLink("Hourly WordPress Developer", "hourly-wordpress-developer"),
       serviceLink("Technical SEO Implementation", "technical-seo-implementation"),
+      serviceLink("SEO Audit Implementation", "seo-audit-implementation"),
+      serviceLink("Technical SEO Developer", "technical-seo-developer"),
+      serviceLink("Schema Implementation", "schema-implementation-service"),
+      serviceLink("GA4/GTM Setup Help", "ga4-gtm-setup-help"),
+      serviceLink("Conversion Tracking Troubleshooting", "conversion-tracking-troubleshooting"),
       serviceLink("Landing Pages", "landing-pages"),
       serviceLink("Site Speed & Performance", "site-speed-performance"),
       serviceLink("Ecommerce Support", "ecommerce-support"),
+      serviceLink("Shopify Liquid Support", "shopify-liquid-support"),
+      serviceLink("WooCommerce Support", "woocommerce-support"),
       serviceLink("Analytics & Tracking", "analytics-tracking"),
       serviceLink("API Integrations", "api-integrations"),
-      serviceLink("Ongoing Webmaster Support", "ongoing-webmaster-support"),
-      pageLink("View All Services", "/services/")
+      serviceLink("Agency Overflow Developer", "agency-overflow-developer"),
+      serviceLink("White Label WordPress Support", "white-label-wordpress-support"),
+      serviceLink("Website Maintenance for Agencies", "website-maintenance-for-agencies"),
+      serviceLink("Website Support for Agencies", "website-support-for-agencies"),
+      serviceLink("Ongoing Webmaster Support", "ongoing-webmaster-support")
     ].filter(Boolean)
   },
   {
     key: "blog",
     label: "Blog",
     links: [
+      pageLink("View Blog", "/blog/"),
       blogLink("Something Broke on Your Website?", "something-broke-on-your-website"),
       blogLink("SEO Audit Done But Not Implemented", "seo-audit-done-now-implement-it"),
       blogLink("Need a Page Live Fast", "need-a-page-live-fast"),
-      blogLink("Website Data Does Not Match Reality", "website-data-systems-not-connecting"),
-      pageLink("View Blog", "/blog/")
+      blogLink("Website Data Does Not Match Reality", "website-data-systems-not-connecting")
     ].filter(Boolean)
   },
   {
     key: "skills",
     label: "Skills",
     links: [
+      pageLink("View All Skills", "/skills/"),
       skillLink("Shopify Plus & Liquid", "shopify-plus-liquid"),
       skillLink("WordPress Plugin Development", "wordpress-plugin-development"),
       skillLink("Performance Engineering", "performance-engineering"),
@@ -215,22 +269,21 @@ export const mobileNavSections = [
       skillLink("GA4/GTM Measurement Integrity", "ga4-gtm-measurement-integrity"),
       skillLink("Programmatic SEO", "programmatic-seo"),
       skillLink("Cloudflare, DNS & SSL", "cloudflare-dns-ssl"),
-      skillLink("REST API & Webhook Integrations", "rest-api-webhook-integrations"),
-      pageLink("View All Skills", "/skills/")
+      skillLink("REST API & Webhook Integrations", "rest-api-webhook-integrations")
     ].filter(Boolean)
   },
   {
     key: "locations",
     label: "Locations",
     links: [
+      pageLink("View All Locations", "/locations/"),
       locationLink("Freeport, IL", "freeport-il"),
       locationLink("Rockford, IL", "rockford-il"),
       locationLink("Monroe, WI", "monroe-wi"),
       locationLink("Beloit, WI", "beloit-wi"),
       locationLink("Janesville, WI", "janesville-wi"),
       locationLink("Dubuque, IA", "dubuque-ia"),
-      locationLink("Madison, WI", "madison-wi"),
-      pageLink("View All Locations", "/locations/")
+      locationLink("Madison, WI", "madison-wi")
     ].filter(Boolean)
   }
 ];

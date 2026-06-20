@@ -14,6 +14,7 @@
   let searchQuery = $state("");
   let searchFocused = $state(false);
   let lastTrackedSearch = "";
+  let closeMenuTimer;
   let headerRoot;
   let navRoot;
   const searchResults = $derived(searchPages(searchQuery));
@@ -21,12 +22,28 @@
 
   function openDesktopMenu(key) {
     if (!mobileOpen && megaMenus[key]) {
+      clearCloseMenuTimer();
       openMenu = key;
     }
   }
 
   function closeDesktopMenu() {
+    clearCloseMenuTimer();
     openMenu = "";
+  }
+
+  function clearCloseMenuTimer() {
+    if (!closeMenuTimer) return;
+    window.clearTimeout(closeMenuTimer);
+    closeMenuTimer = undefined;
+  }
+
+  function queueDesktopMenuClose() {
+    clearCloseMenuTimer();
+    closeMenuTimer = window.setTimeout(() => {
+      openMenu = "";
+      closeMenuTimer = undefined;
+    }, 180);
   }
 
   function handleDesktopTriggerKeydown(event, key) {
@@ -56,6 +73,16 @@
     return `View ${label}`;
   }
 
+  function getMenuOverviewHref(key) {
+    const item = mainNavItems.find((navItem) => navItem.menuKey === key);
+    return item?.href;
+  }
+
+  function getMenuOverviewLabel(key) {
+    const item = mainNavItems.find((navItem) => navItem.menuKey === key);
+    return item ? `View All ${item.label}` : "";
+  }
+
   function handleSearchInput() {
     const query = searchQuery.trim();
     if (query.length < 4 || query === lastTrackedSearch) return;
@@ -82,7 +109,7 @@
 
   function handleFocusOut(event) {
     if (!navRoot?.contains(event.relatedTarget)) {
-      closeDesktopMenu();
+      queueDesktopMenuClose();
     }
   }
 
@@ -129,6 +156,7 @@
     document.addEventListener("pointerdown", handlePointerDown);
 
     return () => {
+      clearCloseMenuTimer();
       window.removeEventListener("scroll", updateScrollState);
       reduceMotionQuery.removeEventListener("change", updateMotionPreference);
       document.removeEventListener("keydown", handleKeydown);
@@ -148,7 +176,8 @@
     bind:this={navRoot}
     class="nav-shell"
     role="presentation"
-    onmouseleave={closeDesktopMenu}
+    onmouseleave={queueDesktopMenuClose}
+    onmouseenter={clearCloseMenuTimer}
     onfocusout={handleFocusOut}
   >
     <nav class="nav-links desktop-nav" aria-label="Primary navigation">
@@ -180,12 +209,23 @@
         <div
           id={`mega-menu-${key}`}
           class="mega-menu"
+          class:mega-menu--services={key === "services"}
           role="region"
           aria-label={`${key} menu`}
           onmouseenter={() => openDesktopMenu(key)}
+          onmouseleave={queueDesktopMenuClose}
         >
           <div class="mega-menu-grid">
             <div class="mega-menu-columns">
+              {#if getMenuOverviewHref(key)}
+                <a
+                  class="mega-menu-overview"
+                  href={getMenuOverviewHref(key)}
+                  title={linkTitle(getMenuOverviewLabel(key), getMenuOverviewHref(key))}
+                >
+                  {getMenuOverviewLabel(key)}
+                </a>
+              {/if}
               {#each menu.groups as group}
                 <section class="mega-menu-group">
                   <h2>{group.title}</h2>

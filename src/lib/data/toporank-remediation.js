@@ -116,5 +116,130 @@ export const topologyBridgeMap = {
     { title: "Website Troubleshooting Blog", href: "/blog/", anchor: "website troubleshooting blog" },
     { title: "Cloudflare, DNS & SSL Website Support", href: "/skills/cloudflare-dns-ssl/", anchor: "Cloudflare, DNS, and SSL support" },
     { title: "Ongoing Webmaster Support", href: "/services/ongoing-webmaster-support/", anchor: "ongoing webmaster support" }
+  ],
+  "/services/wordpress-help/": [
+    { title: "WordPress Support", href: "/services/wordpress-support/", anchor: "WordPress support" },
+    { title: "Website Fixes", href: "/services/website-fixes/", anchor: "website fixes" },
+    { title: "WordPress Troubleshooting", href: "/services/wordpress-troubleshooting/", anchor: "WordPress troubleshooting" }
+  ],
+  "/services/wordpress-website-support/": [
+    { title: "WordPress Support", href: "/services/wordpress-support/", anchor: "WordPress support" },
+    { title: "Ongoing Webmaster Support", href: "/services/ongoing-webmaster-support/", anchor: "ongoing webmaster support" },
+    { title: "Website Maintenance for Agencies", href: "/services/website-maintenance-for-agencies/", anchor: "website maintenance for agencies" }
+  ],
+  "/services/wordpress-maintenance/": [
+    { title: "Ongoing Webmaster Support", href: "/services/ongoing-webmaster-support/", anchor: "ongoing webmaster support" },
+    { title: "WordPress Support", href: "/services/wordpress-support/", anchor: "WordPress support" },
+    { title: "Security, Hosting & Reliability", href: "/services/security-hosting-reliability/", anchor: "security, hosting, and reliability" }
+  ],
+  "/services/wordpress-troubleshooting/": [
+    { title: "WordPress Support", href: "/services/wordpress-support/", anchor: "WordPress support" },
+    { title: "Website Fixes", href: "/services/website-fixes/", anchor: "website fixes" },
+    { title: "Production Debugging", href: "/skills/production-debugging/", anchor: "production debugging" }
+  ],
+  "/services/fix-wordpress-issue/": [
+    { title: "Website Fixes", href: "/services/website-fixes/", anchor: "website fixes" },
+    { title: "WordPress Troubleshooting", href: "/services/wordpress-troubleshooting/", anchor: "WordPress troubleshooting" },
+    { title: "Fix a Broken WordPress Site", href: "/services/fix-broken-wordpress-site/", anchor: "fix a broken WordPress site" }
+  ],
+  "/services/fix-broken-wordpress-site/": [
+    { title: "Website Fixes", href: "/services/website-fixes/", anchor: "website fixes" },
+    { title: "WordPress Emergency Support", href: "/services/wordpress-emergency-support/", anchor: "WordPress emergency support" },
+    { title: "WordPress White Screen of Death Fix", href: "/services/wordpress-white-screen-of-death-fix/", anchor: "WordPress white screen of death fix" }
+  ],
+  "/services/wordpress-emergency-support/": [
+    { title: "Fix a Broken WordPress Site", href: "/services/fix-broken-wordpress-site/", anchor: "fix a broken WordPress site" },
+    { title: "Website Fixes", href: "/services/website-fixes/", anchor: "website fixes" },
+    { title: "Production Debugging", href: "/skills/production-debugging/", anchor: "production debugging" }
+  ],
+  "/services/wordpress-white-screen-of-death-fix/": [
+    { title: "WordPress Emergency Support", href: "/services/wordpress-emergency-support/", anchor: "WordPress emergency support" },
+    { title: "Fix a Broken WordPress Site", href: "/services/fix-broken-wordpress-site/", anchor: "fix a broken WordPress site" },
+    { title: "Cloudflare, DNS & SSL Website Support", href: "/skills/cloudflare-dns-ssl/", anchor: "Cloudflare, DNS, and SSL support" }
+  ],
+  "/services/contact-form-not-working-wordpress/": [
+    { title: "Website Fixes", href: "/services/website-fixes/", anchor: "website fixes" },
+    { title: "Analytics and Tracking Support", href: "/services/analytics-tracking/", anchor: "analytics and tracking support" },
+    { title: "Conversion Tracking Troubleshooting", href: "/services/conversion-tracking-troubleshooting/", anchor: "conversion tracking troubleshooting" }
+  ],
+  "/services/elementor-layout-broken/": [
+    { title: "WordPress Support", href: "/services/wordpress-support/", anchor: "WordPress support" },
+    { title: "Website Fixes", href: "/services/website-fixes/", anchor: "website fixes" },
+    { title: "WordPress Theme Development", href: "/skills/wordpress-theme-development/", anchor: "WordPress theme development" }
+  ],
+  "/services/wordpress-plugin-conflict-help/": [
+    { title: "WordPress Support", href: "/services/wordpress-support/", anchor: "WordPress support" },
+    { title: "WordPress Plugin Development", href: "/skills/wordpress-plugin-development/", anchor: "WordPress plugin development" },
+    { title: "WordPress Troubleshooting", href: "/services/wordpress-troubleshooting/", anchor: "WordPress troubleshooting" }
+  ],
+  "/services/wordpress-developer-for-small-tasks/": [
+    { title: "Hourly WordPress Developer", href: "/services/hourly-wordpress-developer/", anchor: "hourly WordPress developer" },
+    { title: "WordPress Support", href: "/services/wordpress-support/", anchor: "WordPress support" },
+    { title: "Agency Overflow Developer", href: "/services/agency-overflow-developer/", anchor: "agency overflow developer" }
+  ],
+  "/services/hourly-wordpress-developer/": [
+    { title: "WordPress Developer for Small Tasks", href: "/services/wordpress-developer-for-small-tasks/", anchor: "WordPress developer for small tasks" },
+    { title: "WordPress Support", href: "/services/wordpress-support/", anchor: "WordPress support" },
+    { title: "Agency Overflow Developer", href: "/services/agency-overflow-developer/", anchor: "agency overflow developer" }
+  ],
+  "/services/seo-audit-implementation/": [
+    { title: "Technical SEO Implementation", href: "/services/technical-seo-implementation/", anchor: "technical SEO implementation" },
+    { title: "Technical SEO Developer", href: "/services/technical-seo-developer/", anchor: "technical SEO developer" },
+    { title: "Schema Implementation Service", href: "/services/schema-implementation-service/", anchor: "schema implementation service" }
+  ],
+  "/services/technical-seo-developer/": [
+    { title: "Technical SEO Implementation", href: "/services/technical-seo-implementation/", anchor: "technical SEO implementation" },
+    { title: "SEO Audit Implementation", href: "/services/seo-audit-implementation/", anchor: "SEO audit implementation" },
+    { title: "Crawl Analysis & Internal Linking", href: "/skills/crawl-analysis-internal-linking/", anchor: "crawl analysis and internal linking" }
+  ],
+  "/services/schema-implementation-service/": [
+    { title: "Technical SEO Implementation", href: "/services/technical-seo-implementation/", anchor: "technical SEO implementation" },
+    { title: "Schema & Structured Data", href: "/skills/schema-structured-data/", anchor: "schema and structured data" },
+    { title: "SEO Audit Implementation", href: "/services/seo-audit-implementation/", anchor: "SEO audit implementation" }
+  ],
+  "/services/ga4-gtm-setup-help/": [
+    { title: "Analytics and Tracking Support", href: "/services/analytics-tracking/", anchor: "analytics and tracking support" },
+    { title: "GA4 & GTM Measurement Integrity", href: "/skills/ga4-gtm-measurement-integrity/", anchor: "GA4 and GTM measurement integrity" },
+    { title: "Conversion Tracking Troubleshooting", href: "/services/conversion-tracking-troubleshooting/", anchor: "conversion tracking troubleshooting" }
+  ],
+  "/services/conversion-tracking-troubleshooting/": [
+    { title: "Analytics and Tracking Support", href: "/services/analytics-tracking/", anchor: "analytics and tracking support" },
+    { title: "GA4 and GTM Setup Help", href: "/services/ga4-gtm-setup-help/", anchor: "GA4 and GTM setup help" },
+    { title: "Contact Form Not Working in WordPress", href: "/services/contact-form-not-working-wordpress/", anchor: "contact form not working in WordPress" }
+  ],
+  "/services/agency-overflow-developer/": [
+    { title: "Agency Overflow", href: "/services/agency-overflow/", anchor: "agency overflow" },
+    { title: "White Label WordPress Support", href: "/services/white-label-wordpress-support/", anchor: "white label WordPress support" },
+    { title: "Website Support for Agencies", href: "/services/website-support-for-agencies/", anchor: "website support for agencies" }
+  ],
+  "/services/white-label-wordpress-support/": [
+    { title: "Agency Overflow", href: "/services/agency-overflow/", anchor: "agency overflow" },
+    { title: "Agency Overflow Developer", href: "/services/agency-overflow-developer/", anchor: "agency overflow developer" },
+    { title: "Website Maintenance for Agencies", href: "/services/website-maintenance-for-agencies/", anchor: "website maintenance for agencies" }
+  ],
+  "/services/website-maintenance-for-agencies/": [
+    { title: "Agency Overflow", href: "/services/agency-overflow/", anchor: "agency overflow" },
+    { title: "Website Support for Agencies", href: "/services/website-support-for-agencies/", anchor: "website support for agencies" },
+    { title: "White Label WordPress Support", href: "/services/white-label-wordpress-support/", anchor: "white label WordPress support" }
+  ],
+  "/services/website-support-for-agencies/": [
+    { title: "Agency Overflow", href: "/services/agency-overflow/", anchor: "agency overflow" },
+    { title: "Agency Overflow Developer", href: "/services/agency-overflow-developer/", anchor: "agency overflow developer" },
+    { title: "Technical SEO Implementation", href: "/services/technical-seo-implementation/", anchor: "technical SEO implementation" }
+  ],
+  "/services/shopify-liquid-support/": [
+    { title: "Ecommerce Support", href: "/services/ecommerce-support/", anchor: "ecommerce support" },
+    { title: "Shopify Plus & Liquid Contractor", href: "/skills/shopify-plus-liquid/", anchor: "Shopify Plus and Liquid support" },
+    { title: "Analytics and Tracking Support", href: "/services/analytics-tracking/", anchor: "analytics and tracking support" }
+  ],
+  "/services/woocommerce-support/": [
+    { title: "Ecommerce Support", href: "/services/ecommerce-support/", anchor: "ecommerce support" },
+    { title: "WooCommerce Checkout Error Fix", href: "/services/woocommerce-checkout-error-fix/", anchor: "WooCommerce checkout error fix" },
+    { title: "WordPress Support", href: "/services/wordpress-support/", anchor: "WordPress support" }
+  ],
+  "/services/woocommerce-checkout-error-fix/": [
+    { title: "WooCommerce Support", href: "/services/woocommerce-support/", anchor: "WooCommerce support" },
+    { title: "Ecommerce Support", href: "/services/ecommerce-support/", anchor: "ecommerce support" },
+    { title: "Conversion Tracking Troubleshooting", href: "/services/conversion-tracking-troubleshooting/", anchor: "conversion tracking troubleshooting" }
   ]
 };

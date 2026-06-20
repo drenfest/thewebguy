@@ -1,4 +1,4 @@
-export const servicePages = [
+export const coreServicePages = [
   {
     slug: "wordpress-support",
     title: "WordPress Support at $55/hr | The Web Guy",
@@ -800,6 +800,418 @@ export const servicePages = [
     related: ["landing-pages", "website-fixes", "site-speed-performance", "api-integrations"]
   }
 ];
+
+const keywordLandingSpecs = [
+  {
+    slug: "wordpress-help",
+    title: "WordPress Help at $55/hr | The Web Guy",
+    meta: "Get practical WordPress help for broken pages, plugin issues, Elementor cleanup, forms, theme edits, and small website tasks.",
+    h1: "WordPress Help at $55/hr",
+    eyebrow: "WordPress Help",
+    cluster: "WordPress support",
+    anchorSlug: "wordpress-support",
+    intent: "general WordPress help when the issue is not cleanly scoped yet",
+    problems: ["A WordPress page changed or broke", "A plugin, theme, form, or page builder is acting strange", "The task list is too technical for a nontechnical site owner"],
+    tasks: ["Review the WordPress issue", "Trace likely theme, plugin, builder, CSS, JavaScript, or hosting causes", "Make practical fixes or document the next move"],
+    related: ["wordpress-support", "website-fixes", "ongoing-webmaster-support", "wordpress-troubleshooting"],
+    skills: ["wordpress-theme-development", "wordpress-plugin-development", "production-debugging"]
+  },
+  {
+    slug: "wordpress-website-support",
+    title: "WordPress Website Support at $55/hr | The Web Guy",
+    meta: "Hourly WordPress website support for existing business sites, page edits, plugin issues, forms, SEO implementation, cleanup, and recurring tasks.",
+    h1: "WordPress Website Support at $55/hr",
+    eyebrow: "WordPress Website Support",
+    cluster: "WordPress support",
+    anchorSlug: "wordpress-support",
+    intent: "support for existing WordPress business sites that need steady technical attention",
+    problems: ["The site needs regular updates and fixes", "Small WordPress tasks keep piling up", "The site needs someone technical who can work inside the existing setup"],
+    tasks: ["Handle WordPress page and content updates", "Fix forms, layouts, plugins, and theme issues", "Support SEO, tracking, speed, and recurring cleanup tasks"],
+    related: ["wordpress-support", "ongoing-webmaster-support", "website-maintenance-for-agencies", "website-fixes"],
+    skills: ["wordpress-theme-development", "ga4-gtm-measurement-integrity", "performance-engineering"]
+  },
+  {
+    slug: "wordpress-maintenance",
+    title: "WordPress Maintenance Help at $55/hr | The Web Guy",
+    meta: "Get practical WordPress maintenance help for updates, backups context, plugin checks, content changes, security cleanup, and recurring website support.",
+    h1: "WordPress Maintenance Help at $55/hr",
+    eyebrow: "WordPress Maintenance",
+    cluster: "WordPress support",
+    anchorSlug: "wordpress-support",
+    intent: "maintenance tasks that keep an existing WordPress site stable and easier to manage",
+    problems: ["Plugins, themes, and content need regular attention", "Maintenance tasks are mixed with bug fixes and small edits", "Updates need review instead of blind automatic changes"],
+    tasks: ["Review plugin, theme, and content-update needs", "Handle practical maintenance tasks and small fixes", "Identify risks around backups, staging, cache, forms, and tracking"],
+    related: ["ongoing-webmaster-support", "wordpress-support", "security-hosting-reliability", "site-speed-performance"],
+    skills: ["wordpress-plugin-development", "cloudflare-dns-ssl", "performance-engineering"]
+  },
+  {
+    slug: "wordpress-troubleshooting",
+    title: "WordPress Troubleshooting at $55/hr | The Web Guy",
+    meta: "Troubleshoot WordPress problems including plugin conflicts, broken layouts, Elementor issues, forms, PHP errors, scripts, and update problems.",
+    h1: "WordPress Troubleshooting at $55/hr",
+    eyebrow: "WordPress Troubleshooting",
+    cluster: "WordPress support",
+    anchorSlug: "wordpress-support",
+    intent: "WordPress issues that need diagnosis before the right fix is obvious",
+    problems: ["The symptom is visible but the cause is unclear", "The problem started after updates, cache changes, or content edits", "WordPress admin settings do not match front-end behavior"],
+    tasks: ["Reproduce the issue", "Inspect plugin, theme, builder, cache, console, and server clues", "Fix the issue or narrow it to the right technical layer"],
+    related: ["wordpress-support", "website-fixes", "fix-wordpress-issue", "wordpress-plugin-conflict-help"],
+    skills: ["production-debugging", "wordpress-plugin-development", "wordpress-theme-development"]
+  },
+  {
+    slug: "fix-wordpress-issue",
+    title: "Fix a WordPress Issue at $55/hr | The Web Guy",
+    meta: "Need to fix a WordPress issue? Get hourly help with broken pages, forms, plugins, Elementor, theme behavior, scripts, and site errors.",
+    h1: "Fix a WordPress Issue at $55/hr",
+    eyebrow: "Fix WordPress Issue",
+    cluster: "WordPress support",
+    anchorSlug: "website-fixes",
+    intent: "one-off WordPress problems that need a practical fix path",
+    problems: ["Something on the WordPress site stopped working", "A page, form, menu, plugin, or layout is broken", "The site owner needs help without a full support plan"],
+    tasks: ["Start with the URL and symptom", "Find the likely WordPress layer", "Apply the fix or explain the blocker clearly"],
+    related: ["website-fixes", "wordpress-support", "wordpress-troubleshooting", "fix-broken-wordpress-site"],
+    skills: ["production-debugging", "wordpress-theme-development", "wordpress-plugin-development"]
+  },
+  {
+    slug: "fix-broken-wordpress-site",
+    title: "Fix a Broken WordPress Site at $55/hr | The Web Guy",
+    meta: "Get help fixing a broken WordPress site, including visible layout issues, plugin conflicts, white screens, failed forms, scripts, and urgent site behavior.",
+    h1: "Fix a Broken WordPress Site at $55/hr",
+    eyebrow: "Broken WordPress Site",
+    cluster: "WordPress support",
+    anchorSlug: "website-fixes",
+    intent: "broken WordPress sites where a visible or functional problem needs triage",
+    problems: ["A WordPress page or feature broke", "The site shows errors or blank screens", "A business-critical form, checkout, or page is affected"],
+    tasks: ["Triage the broken behavior", "Check recent changes, plugins, themes, PHP, cache, and scripts", "Stabilize the issue or define the safest next step"],
+    related: ["website-fixes", "wordpress-support", "wordpress-emergency-support", "wordpress-white-screen-of-death-fix"],
+    skills: ["production-debugging", "cloudflare-dns-ssl", "wordpress-plugin-development"]
+  },
+  {
+    slug: "wordpress-emergency-support",
+    title: "WordPress Emergency Support at $55/hr | The Web Guy",
+    meta: "WordPress emergency support for broken pages, white screens, failed forms, checkout issues, plugin conflicts, and urgent website problems.",
+    h1: "WordPress Emergency Support at $55/hr",
+    eyebrow: "WordPress Emergency Support",
+    cluster: "WordPress support",
+    anchorSlug: "website-fixes",
+    intent: "urgent WordPress problems where the first useful move matters more than a long proposal",
+    problems: ["A public page, lead form, checkout, or key feature is broken", "The site changed suddenly after an update or deployment", "The issue needs fast triage and plain communication"],
+    tasks: ["Assess severity and affected pages", "Look for recent changes and obvious failure points", "Fix what is safe or document what access/support is needed"],
+    related: ["website-fixes", "fix-broken-wordpress-site", "wordpress-support", "security-hosting-reliability"],
+    skills: ["production-debugging", "cloudflare-dns-ssl", "wordpress-plugin-development"]
+  },
+  {
+    slug: "wordpress-white-screen-of-death-fix",
+    title: "WordPress White Screen of Death Fix Help | The Web Guy",
+    meta: "Get help with WordPress white screen of death issues, fatal errors, plugin conflicts, PHP problems, theme issues, and recovery planning.",
+    h1: "WordPress White Screen of Death Fix Help at $55/hr",
+    eyebrow: "White Screen Fix",
+    cluster: "WordPress support",
+    anchorSlug: "website-fixes",
+    intent: "WordPress white screen or fatal-error situations that need careful troubleshooting",
+    problems: ["The site or admin loads as a blank screen", "A plugin, theme, PHP version, or update may have triggered a fatal error", "The site needs recovery without making the problem worse"],
+    tasks: ["Review the failure context", "Check likely plugin, theme, PHP, and hosting causes", "Recover access or define the safest restoration path"],
+    related: ["wordpress-emergency-support", "fix-broken-wordpress-site", "wordpress-troubleshooting", "security-hosting-reliability"],
+    skills: ["production-debugging", "wordpress-plugin-development", "cloudflare-dns-ssl"]
+  },
+  {
+    slug: "woocommerce-checkout-error-fix",
+    title: "WooCommerce Checkout Error Fix Help | The Web Guy",
+    meta: "Fix WooCommerce checkout errors, payment/shipping issues, broken cart behavior, plugin conflicts, tracking problems, and checkout page bugs.",
+    h1: "WooCommerce Checkout Error Fix Help at $55/hr",
+    eyebrow: "WooCommerce Checkout Fix",
+    cluster: "Ecommerce support",
+    anchorSlug: "ecommerce-support",
+    intent: "WooCommerce checkout failures that can block revenue or corrupt ecommerce tracking",
+    problems: ["Checkout fails, reloads, or shows confusing errors", "Payment, shipping, tax, coupon, or cart behavior is broken", "Purchase tracking does not match orders"],
+    tasks: ["Reproduce the checkout path", "Check WooCommerce plugins, payment settings, scripts, and conflicts", "Verify order flow and tracking after changes"],
+    related: ["ecommerce-support", "woocommerce-support", "wordpress-support", "conversion-tracking-troubleshooting"],
+    skills: ["ga4-gtm-measurement-integrity", "wordpress-plugin-development", "production-debugging"]
+  },
+  {
+    slug: "contact-form-not-working-wordpress",
+    title: "Contact Form Not Working in WordPress? | The Web Guy",
+    meta: "Fix WordPress contact forms that do not send, submit, redirect, track, or pass leads into email, CRM, GA4, or Google Tag Manager.",
+    h1: "Contact Form Not Working in WordPress?",
+    eyebrow: "WordPress Form Fixes",
+    cluster: "WordPress support",
+    anchorSlug: "website-fixes",
+    intent: "WordPress form problems where leads, notifications, redirects, or tracking fail",
+    problems: ["The form says success but no lead arrives", "Notifications, SMTP, spam protection, or CRM handoffs are failing", "GA4 or GTM does not record the form conversion correctly"],
+    tasks: ["Test the full form path", "Check form plugin settings, mail delivery, scripts, redirects, and tracking", "Verify the lead destination and conversion event"],
+    related: ["website-fixes", "analytics-tracking", "wordpress-support", "conversion-tracking-troubleshooting"],
+    skills: ["ga4-gtm-measurement-integrity", "production-debugging", "rest-api-webhook-integrations"]
+  },
+  {
+    slug: "elementor-layout-broken",
+    title: "Elementor Layout Broken? WordPress Help | The Web Guy",
+    meta: "Get help fixing broken Elementor layouts, mobile spacing, overlapping sections, CSS conflicts, page builder issues, and WordPress template problems.",
+    h1: "Elementor Layout Broken? WordPress Help at $55/hr",
+    eyebrow: "Elementor Layout Help",
+    cluster: "WordPress support",
+    anchorSlug: "wordpress-support",
+    intent: "Elementor and page-builder layouts that look wrong after edits, updates, or responsive changes",
+    problems: ["Sections overlap or spacing looks wrong", "The mobile layout no longer matches the intended design", "Theme CSS, widgets, cache, or builder settings are fighting the page"],
+    tasks: ["Inspect the affected Elementor sections", "Check responsive settings, CSS, theme output, cache, and plugin behavior", "Clean up the layout without rebuilding the whole site by default"],
+    related: ["wordpress-support", "website-fixes", "wordpress-troubleshooting", "wordpress-website-support"],
+    skills: ["wordpress-theme-development", "production-debugging", "performance-engineering"]
+  },
+  {
+    slug: "wordpress-plugin-conflict-help",
+    title: "WordPress Plugin Conflict Help | The Web Guy",
+    meta: "Troubleshoot WordPress plugin conflicts affecting forms, layouts, checkout, admin behavior, scripts, performance, or site stability.",
+    h1: "WordPress Plugin Conflict Help at $55/hr",
+    eyebrow: "Plugin Conflict Help",
+    cluster: "WordPress support",
+    anchorSlug: "wordpress-support",
+    intent: "plugin conflicts where updates or overlapping plugins break site behavior",
+    problems: ["A plugin update changed behavior", "Two plugins appear to fight over scripts, styles, forms, checkout, or admin features", "Disabling plugins randomly is too risky"],
+    tasks: ["Review the affected behavior and recent updates", "Isolate likely plugin, theme, cache, or script conflicts", "Fix settings, code, or handoff notes where practical"],
+    related: ["wordpress-support", "wordpress-troubleshooting", "fix-wordpress-issue", "woocommerce-checkout-error-fix"],
+    skills: ["wordpress-plugin-development", "production-debugging", "wordpress-theme-development"]
+  },
+  {
+    slug: "wordpress-developer-for-small-tasks",
+    title: "WordPress Developer for Small Tasks | The Web Guy",
+    meta: "Hire hourly WordPress help for small tasks, page edits, plugin fixes, Elementor cleanup, forms, SEO implementation, and technical website updates.",
+    h1: "WordPress Developer for Small Tasks at $55/hr",
+    eyebrow: "Small WordPress Tasks",
+    cluster: "WordPress support",
+    anchorSlug: "wordpress-support",
+    intent: "small WordPress tasks that need a developer but not a large project",
+    problems: ["The task is too technical for the site owner", "The agency or team has small WordPress tickets piling up", "A full rebuild or package would be overkill"],
+    tasks: ["Handle focused WordPress edits", "Fix small theme, plugin, layout, form, and content issues", "Provide plain status updates and next steps"],
+    related: ["hourly-wordpress-developer", "wordpress-support", "ongoing-webmaster-support", "agency-overflow"],
+    skills: ["wordpress-theme-development", "wordpress-plugin-development", "production-debugging"]
+  },
+  {
+    slug: "hourly-wordpress-developer",
+    title: "Hourly WordPress Developer at $55/hr | The Web Guy",
+    meta: "Hourly WordPress developer support for existing sites, small tasks, technical fixes, SEO implementation, page cleanup, plugins, and agency overflow.",
+    h1: "Hourly WordPress Developer at $55/hr",
+    eyebrow: "Hourly WordPress Developer",
+    cluster: "WordPress support",
+    anchorSlug: "wordpress-support",
+    intent: "hourly WordPress development support when task-based help is a better fit than a package",
+    problems: ["You need WordPress work without a large project wrapper", "Tasks vary across pages, plugins, themes, SEO, tracking, and fixes", "You want clear hourly execution and plain updates"],
+    tasks: ["Review and prioritize the task list", "Work through WordPress fixes, updates, cleanup, and implementation tasks", "Document what changed, what was found, and what remains"],
+    related: ["wordpress-developer-for-small-tasks", "wordpress-support", "agency-overflow-developer", "ongoing-webmaster-support"],
+    skills: ["wordpress-theme-development", "wordpress-plugin-development", "ga4-gtm-measurement-integrity"]
+  },
+  {
+    slug: "seo-audit-implementation",
+    title: "SEO Audit Implementation at $55/hr | The Web Guy",
+    meta: "Turn SEO audit recommendations into live website changes: metadata, headings, schema, redirects, internal links, crawl fixes, and technical QA.",
+    h1: "SEO Audit Implementation at $55/hr",
+    eyebrow: "SEO Audit Implementation",
+    cluster: "Technical SEO",
+    anchorSlug: "technical-seo-implementation",
+    intent: "SEO audit notes that need implementation inside the actual site",
+    problems: ["The audit is done but the fixes are not live", "The spreadsheet includes technical tasks the marketing team cannot safely do", "Recommendations need CMS, template, redirect, schema, or tracking work"],
+    tasks: ["Review audit notes and priority URLs", "Implement metadata, headings, internal links, schema, redirects, and crawl fixes", "Verify changes where practical"],
+    related: ["technical-seo-implementation", "technical-seo-developer", "schema-implementation-service", "agency-overflow"],
+    skills: ["schema-structured-data", "crawl-analysis-internal-linking", "programmatic-seo"]
+  },
+  {
+    slug: "technical-seo-developer",
+    title: "Technical SEO Developer at $55/hr | The Web Guy",
+    meta: "Technical SEO developer help for schema, crawl fixes, redirects, metadata, internal links, JavaScript rendering issues, WordPress, Shopify, and templates.",
+    h1: "Technical SEO Developer at $55/hr",
+    eyebrow: "Technical SEO Developer",
+    cluster: "Technical SEO",
+    anchorSlug: "technical-seo-implementation",
+    intent: "technical SEO tasks that require code, CMS, templates, redirects, or structured data support",
+    problems: ["SEO recommendations require developer-level changes", "Templates, JavaScript, schema, redirects, or crawl paths need cleanup", "The SEO team needs implementation help instead of another audit"],
+    tasks: ["Translate SEO recommendations into technical tasks", "Implement practical site, template, schema, redirect, and internal-link changes", "Document constraints and verification steps"],
+    related: ["technical-seo-implementation", "seo-audit-implementation", "schema-implementation-service", "agency-overflow-developer"],
+    skills: ["schema-structured-data", "crawl-analysis-internal-linking", "production-debugging"]
+  },
+  {
+    slug: "schema-implementation-service",
+    title: "Schema Implementation Service at $55/hr | The Web Guy",
+    meta: "Get schema implementation help for service pages, FAQs, articles, products, local pages, organization markup, WordPress, Shopify, and technical SEO.",
+    h1: "Schema Implementation Service at $55/hr",
+    eyebrow: "Schema Implementation",
+    cluster: "Technical SEO",
+    anchorSlug: "technical-seo-implementation",
+    intent: "structured data recommendations that need to be added, cleaned up, or validated",
+    problems: ["Schema is missing, duplicated, outdated, or mismatched", "SEO notes mention FAQ, service, local, product, article, or organization markup", "Plugin output needs review or template-level schema needs implementation"],
+    tasks: ["Review current structured data output", "Implement practical schema that matches visible page content", "Validate and document structured data changes"],
+    related: ["technical-seo-implementation", "seo-audit-implementation", "ecommerce-support", "technical-seo-developer"],
+    skills: ["schema-structured-data", "google-merchant-center-product-data", "programmatic-seo"]
+  },
+  {
+    slug: "ga4-gtm-setup-help",
+    title: "GA4 and GTM Setup Help at $55/hr | The Web Guy",
+    meta: "Get GA4 and Google Tag Manager setup help for form events, conversions, pixels, ecommerce tracking, button clicks, and measurement verification.",
+    h1: "GA4 and GTM Setup Help at $55/hr",
+    eyebrow: "GA4 / GTM Setup Help",
+    cluster: "Analytics and tracking",
+    anchorSlug: "analytics-tracking",
+    intent: "GA4 and Google Tag Manager setup that needs practical implementation and testing",
+    problems: ["GA4 or GTM is installed but events are missing or unclear", "Forms, buttons, phone clicks, ecommerce, or pixels need tracking", "The business needs reporting it can trust"],
+    tasks: ["Review the current GA4/GTM setup", "Create or clean up practical events and conversions", "Test user actions and document what fires"],
+    related: ["analytics-tracking", "conversion-tracking-troubleshooting", "contact-form-not-working-wordpress", "ecommerce-support"],
+    skills: ["ga4-gtm-measurement-integrity", "production-debugging", "rest-api-webhook-integrations"]
+  },
+  {
+    slug: "conversion-tracking-troubleshooting",
+    title: "Conversion Tracking Troubleshooting | The Web Guy",
+    meta: "Troubleshoot conversion tracking problems in GA4, GTM, forms, pixels, ecommerce events, thank-you pages, CRMs, and reporting dashboards.",
+    h1: "Conversion Tracking Troubleshooting at $55/hr",
+    eyebrow: "Conversion Tracking Troubleshooting",
+    cluster: "Analytics and tracking",
+    anchorSlug: "analytics-tracking",
+    intent: "tracking setups where conversions are missing, duplicated, or untrustworthy",
+    problems: ["Conversions do not match real leads or orders", "GA4, GTM, pixels, forms, or ecommerce events are missing or duplicated", "Reports disagree with what users actually did"],
+    tasks: ["Map the conversion path", "Test tags, triggers, forms, thank-you pages, pixels, and ecommerce events", "Document what fires, what fails, and what should change"],
+    related: ["analytics-tracking", "ga4-gtm-setup-help", "contact-form-not-working-wordpress", "woocommerce-checkout-error-fix"],
+    skills: ["ga4-gtm-measurement-integrity", "production-debugging", "rest-api-webhook-integrations"]
+  },
+  {
+    slug: "agency-overflow-developer",
+    title: "Agency Overflow Developer at $55/hr | The Web Guy",
+    meta: "Hourly agency overflow developer help for WordPress tasks, SEO implementation, landing pages, QA cleanup, tracking fixes, ecommerce, and client-site support.",
+    h1: "Agency Overflow Developer at $55/hr",
+    eyebrow: "Agency Overflow Developer",
+    cluster: "Agency support",
+    anchorSlug: "agency-overflow",
+    intent: "agency production backlogs that need a technical developer without hiring full-time",
+    problems: ["Client-site tickets are backing up", "SEO, WordPress, tracking, QA, and landing page tasks need technical execution", "The agency needs someone who can take a clear task and move it forward"],
+    tasks: ["Work from the agency task queue", "Handle WordPress, SEO, tracking, page, ecommerce, and QA tasks", "Return plain handoff notes and blockers"],
+    related: ["agency-overflow", "white-label-wordpress-support", "website-support-for-agencies", "hourly-wordpress-developer"],
+    skills: ["production-debugging", "wordpress-theme-development", "ga4-gtm-measurement-integrity"]
+  },
+  {
+    slug: "white-label-wordpress-support",
+    title: "White Label WordPress Support at $55/hr | The Web Guy",
+    meta: "White-label friendly WordPress support for agencies needing client-site fixes, updates, page edits, plugin troubleshooting, SEO implementation, and QA cleanup.",
+    h1: "White Label WordPress Support at $55/hr",
+    eyebrow: "White Label WordPress Support",
+    cluster: "Agency support",
+    anchorSlug: "agency-overflow",
+    intent: "agency-friendly WordPress support where communication, scope, and ownership need to stay clear",
+    problems: ["The agency needs WordPress execution without exposing process mess to the client", "Client sites need updates, fixes, SEO implementation, or cleanup", "White-label boundaries and handoff notes matter"],
+    tasks: ["Follow agency scope and communication expectations", "Handle WordPress support tasks quietly and clearly", "Provide concise status, blockers, and implementation notes"],
+    related: ["agency-overflow", "agency-overflow-developer", "website-maintenance-for-agencies", "wordpress-support"],
+    skills: ["wordpress-theme-development", "wordpress-plugin-development", "production-debugging"]
+  },
+  {
+    slug: "website-maintenance-for-agencies",
+    title: "Website Maintenance for Agencies | The Web Guy",
+    meta: "Agency website maintenance support for WordPress updates, client-site fixes, QA cleanup, SEO implementation, tracking checks, and recurring technical tasks.",
+    h1: "Website Maintenance for Agencies at $55/hr",
+    eyebrow: "Agency Website Maintenance",
+    cluster: "Agency support",
+    anchorSlug: "agency-overflow",
+    intent: "recurring agency maintenance tasks across client websites",
+    problems: ["Maintenance work is interrupting strategy and client management", "Updates, small fixes, tracking checks, and cleanup tasks need a steady technical owner", "The agency needs practical support without adding payroll"],
+    tasks: ["Work through recurring maintenance and support tasks", "Review updates, forms, tracking, pages, and client-site issues", "Flag risks, blockers, and larger repairs"],
+    related: ["agency-overflow", "website-support-for-agencies", "white-label-wordpress-support", "ongoing-webmaster-support"],
+    skills: ["wordpress-theme-development", "ga4-gtm-measurement-integrity", "cloudflare-dns-ssl"]
+  },
+  {
+    slug: "website-support-for-agencies",
+    title: "Website Support for Agencies at $55/hr | The Web Guy",
+    meta: "Website support for agencies that need help with WordPress, SEO implementation, tracking, ecommerce, landing pages, QA, and client-site fixes.",
+    h1: "Website Support for Agencies at $55/hr",
+    eyebrow: "Website Support for Agencies",
+    cluster: "Agency support",
+    anchorSlug: "agency-overflow",
+    intent: "technical website support for agencies with mixed client-site backlogs",
+    problems: ["The agency backlog mixes WordPress, SEO, tracking, ecommerce, and QA tasks", "Client work needs implementation support without a full project kickoff", "A technical helper needs to understand the handoff and move"],
+    tasks: ["Sort tasks by platform, symptom, and priority", "Implement practical fixes and updates", "Provide agency-friendly notes for review or client handoff"],
+    related: ["agency-overflow", "agency-overflow-developer", "website-maintenance-for-agencies", "technical-seo-implementation"],
+    skills: ["production-debugging", "ga4-gtm-measurement-integrity", "crawl-analysis-internal-linking"]
+  },
+  {
+    slug: "shopify-liquid-support",
+    title: "Shopify Liquid Support at $55/hr | The Web Guy",
+    meta: "Get Shopify Liquid support for theme edits, product templates, collection pages, schema, tracking, app cleanup, storefront fixes, and ecommerce support.",
+    h1: "Shopify Liquid Support at $55/hr",
+    eyebrow: "Shopify Liquid Support",
+    cluster: "Ecommerce support",
+    anchorSlug: "ecommerce-support",
+    intent: "Shopify storefront and Liquid tasks that need technical implementation",
+    problems: ["A Shopify theme or Liquid section needs edits", "Product or collection templates need cleanup", "Tracking, schema, apps, or storefront behavior needs technical review"],
+    tasks: ["Review Shopify theme and Liquid context", "Support product, collection, section, schema, and tracking tasks", "Fix practical storefront issues without bloating the theme"],
+    related: ["ecommerce-support", "analytics-tracking", "site-speed-performance", "technical-seo-implementation"],
+    skills: ["shopify-plus-liquid", "ga4-gtm-measurement-integrity", "schema-structured-data"]
+  },
+  {
+    slug: "woocommerce-support",
+    title: "WooCommerce Support at $55/hr | The Web Guy",
+    meta: "WooCommerce support for checkout issues, product pages, plugin conflicts, tracking, schema, product data, performance, and WordPress ecommerce cleanup.",
+    h1: "WooCommerce Support at $55/hr",
+    eyebrow: "WooCommerce Support",
+    cluster: "Ecommerce support",
+    anchorSlug: "ecommerce-support",
+    intent: "WooCommerce sites that need ecommerce cleanup inside WordPress",
+    problems: ["WooCommerce checkout, cart, product, or order behavior is unreliable", "Plugins, templates, tracking, schema, or performance issues are affecting the store", "The store needs WordPress and ecommerce support at the same time"],
+    tasks: ["Review WooCommerce symptoms and affected URLs", "Troubleshoot plugins, templates, checkout, tracking, and product data", "Coordinate fixes with WordPress support and ecommerce measurement"],
+    related: ["ecommerce-support", "woocommerce-checkout-error-fix", "wordpress-support", "conversion-tracking-troubleshooting"],
+    skills: ["wordpress-plugin-development", "ga4-gtm-measurement-integrity", "schema-structured-data"]
+  }
+];
+
+function buildKeywordLandingPage(spec) {
+  const anchor = coreServicePages.find((service) => service.slug === spec.anchorSlug) || coreServicePages[0];
+  const related = [...new Set((spec.related || [anchor.slug]).filter((slug) => slug !== spec.slug))];
+  return {
+    slug: spec.slug,
+    title: spec.title,
+    meta: spec.meta,
+    h1: spec.h1,
+    eyebrow: spec.eyebrow,
+    intro: `${spec.eyebrow} is a focused support path for ${spec.intent}. It connects back to ${anchor.eyebrow.toLowerCase()} when the request becomes broader than this exact search.`,
+    cta: spec.cta || "Send the Website Problem",
+    audience: `This page is for businesses, agencies, and site owners who know the symptom or task but need practical technical help. The work is billed hourly at $55/hr and starts with the URL, context, access limits, and the outcome you want.`,
+    audienceHeading: `${spec.eyebrow} fit`,
+    showInHub: false,
+    heroImageSlug: spec.heroImageSlug || anchor.slug,
+    keywordCluster: spec.cluster,
+    clusterAnchor: anchor.slug,
+    clusterLinks: related,
+    sections: [
+      {
+        h2: `${spec.eyebrow} problems this page targets`,
+        body: `Use this page when the search is more specific than the main ${anchor.eyebrow.toLowerCase()} page. The goal is to name the problem clearly, route it into the right topical cluster, and avoid turning a small technical task into an oversized project.`,
+        bullets: spec.problems
+      },
+      {
+        h2: `${spec.eyebrow} tasks`,
+        cards: spec.tasks.map((task) => [task, `${task} as part of practical hourly website support. The exact fix depends on the site, access, platform, and what can be reproduced safely.`])
+      },
+      {
+        h2: `${spec.eyebrow} topical cluster`,
+        cards: [
+          [anchor.eyebrow, `The main cluster page for this topic is ${anchor.eyebrow}. Use it when the request is broader than this exact task.`, `/services/${anchor.slug}/`, `View ${anchor.eyebrow}`],
+          ...(related.slice(0, 5).map((slug) => {
+            const relatedService = coreServicePages.find((service) => service.slug === slug) || keywordLandingSpecs.find((item) => item.slug === slug);
+            const title = relatedService?.eyebrow || slug.split("-").map((part) => part[0].toUpperCase() + part.slice(1)).join(" ");
+            return [title, `${spec.eyebrow} often overlaps with ${title.toLowerCase()} when one site issue touches more than one layer.`, `/services/${slug}/`, `View ${title}`];
+          }))
+        ]
+      },
+      {
+        h2: `How to hand off ${spec.eyebrow.toLowerCase()} work`,
+        body: `Send the URL, the exact symptom or task, what should happen, what happens now, when it started, and any relevant access notes. If this came from an audit, ticket, screenshot, Loom, crawl export, GA4/GTM issue, or client request, include that context up front.`
+      }
+    ],
+    related,
+    skillSlugs: spec.skills || [],
+    faqs: [
+      [`Is ${spec.eyebrow.toLowerCase()} different from ${anchor.eyebrow.toLowerCase()}?`, `This page targets a narrower search. If the task expands, it routes back into ${anchor.eyebrow}.`],
+      ["Can this be a one-off task?", "Yes. One-off fixes and small task lists are a strong fit when the issue is clear enough to start hourly."],
+      ["What should I send first?", "Send the URL, symptom, expected behavior, recent changes, screenshots or notes, and any access constraints."],
+      ["What does it cost?", "The Web Guy bills this work at $55/hr when the scope, access, and next step are clear."]
+    ]
+  };
+}
+
+export const keywordServicePages = keywordLandingSpecs.map(buildKeywordLandingPage);
+
+export const servicePages = [...coreServicePages, ...keywordServicePages];
 
 export const mainPages = [
   ["Home", "/"],

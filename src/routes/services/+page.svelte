@@ -76,6 +76,15 @@
     titleAttr: `View ${item.title} from the services hub`,
     copy: item.copy
   }));
+  const coreServicePages = servicePages.filter((service) => service.showInHub !== false);
+  const focusedSupportPages = servicePages.filter((service) => service.showInHub === false);
+  const focusedSupportGroups = [
+    ["WordPress support", focusedSupportPages.filter((service) => service.keywordCluster === "WordPress support")],
+    ["Technical SEO", focusedSupportPages.filter((service) => service.keywordCluster === "Technical SEO")],
+    ["Analytics and tracking", focusedSupportPages.filter((service) => service.keywordCluster === "Analytics and tracking")],
+    ["Agency support", focusedSupportPages.filter((service) => service.keywordCluster === "Agency support")],
+    ["Ecommerce support", focusedSupportPages.filter((service) => service.keywordCluster === "Ecommerce support")]
+  ].filter(([, pages]) => pages.length);
   const serviceHubInlineParagraphs = [
     [
       "Start with ",
@@ -163,7 +172,7 @@
     <InternalLinkCopy paragraphs={serviceHubInlineParagraphs} />
     <CardGrid
       className="card-grid service-grid"
-      items={servicePages.map((service) => [
+      items={coreServicePages.map((service) => [
         service.h1.replace(" at $55/hr", ""),
         service.intro,
         serviceUrl(service.slug),
@@ -175,6 +184,27 @@
   </section>
 
   <ProofPanel proof={servicesHubProof} />
+
+  <section class="section soft-section section-effect section-effect--signals section-effect--low">
+    <SectionHeading
+      eyebrow="Focused support pages"
+      h2="Specific website support paths by topical cluster"
+      body="These pages support narrower searches while pointing back into the main service paths for WordPress, SEO implementation, tracking, agency overflow, ecommerce, and website fixes."
+    />
+    {#each focusedSupportGroups as [group, pages]}
+      <SectionHeading eyebrow={group} h2={`${group} searches`} />
+      <CardGrid
+        className="card-grid service-grid"
+        items={pages.map((service) => [
+          service.eyebrow,
+          service.intro,
+          serviceUrl(service.slug),
+          `View ${service.eyebrow}`,
+          service.slug
+        ])}
+      />
+    {/each}
+  </section>
 
   <section class="section soft-section section-effect section-effect--signals section-effect--medium">
     <SectionHeading eyebrow="Website problem routing" h2="Start with the website pain, not the service label" />

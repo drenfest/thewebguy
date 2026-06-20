@@ -9,20 +9,42 @@
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import SortableTable from "$lib/components/SortableTable.svelte";
-  import { blogPosts, blogUrl, somethingBrokePosts } from "$lib/data/content.js";
+  import { blogPosts, blogUrl } from "$lib/data/content.js";
   import { staticHeroImages } from "$lib/data/hero-images.js";
   import { blogPostListSchema, breadcrumbSchema, schemaList } from "$lib/data/schema.js";
+  import sitemapLastmod from "$lib/data/sitemap-lastmod.json";
 
   const breadcrumbs = [
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
     { label: "Blog", title: "Current page: Website troubleshooting blog" }
   ];
+  const blogPostOrder = new Map(blogPosts.map((post, index) => [post.slug, index]));
+  const sortedBlogPosts = [...blogPosts].sort((a, b) => {
+    const aDate = sitemapLastmod[blogUrl(a.slug)] || "";
+    const bDate = sitemapLastmod[blogUrl(b.slug)] || "";
+    const dateSort = bDate.localeCompare(aDate);
+    if (dateSort) return dateSort;
+    return (blogPostOrder.get(b.slug) ?? 0) - (blogPostOrder.get(a.slug) ?? 0);
+  });
+
+  function formatArticleDate(post) {
+    const value = sitemapLastmod[blogUrl(post.slug)];
+    if (!value) return "Recently updated";
+    return new Intl.DateTimeFormat("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+      timeZone: "UTC"
+    }).format(new Date(`${value}T00:00:00Z`));
+  }
+  const sortedStartHerePosts = sortedBlogPosts.filter((post) => post.problemType === "Start here");
+  const sortedSomethingBrokePosts = sortedBlogPosts.filter((post) => post.problemType === "Something broke");
   const seoSchema = schemaList(
     breadcrumbSchema(breadcrumbs, "/blog/"),
-    blogPostListSchema(blogPosts, "/blog/")
+    blogPostListSchema(sortedBlogPosts, "/blog/")
   );
 
-  const startHerePosts = blogPosts.filter((post) => post.problemType === "Start here");
+  const startHerePosts = sortedStartHerePosts;
   const blogHubLinks = [
     {
       label: "Broken-site service",
@@ -68,7 +90,7 @@
       titleAttr: `View ${item.title} from the troubleshooting blog`,
       copy: item.copy
     })),
-    ...somethingBrokePosts.slice(0, 2).map((post) => ({
+    ...sortedSomethingBrokePosts.slice(0, 2).map((post) => ({
       title: post.title,
       href: blogUrl(post.slug),
       titleAttr: `Read ${post.title} from the troubleshooting blog`,
@@ -108,7 +130,7 @@
     { key: "service", label: "Service path" },
     { key: "read", label: "Read" }
   ];
-  const blogRows = blogPosts.map((post) => ({
+  const blogRows = sortedBlogPosts.map((post) => ({
     topic: post.eyebrow,
     symptom: post.summary,
     service: blogHubLinks.find((item) => item.href.includes(post.relatedService))?.title || "Website Fixes",
@@ -135,6 +157,28 @@
 
   <Breadcrumbs items={breadcrumbs} />
 
+  <section class="section section-effect section-effect--signals section-effect--low">
+    <SectionHeading
+      eyebrow="Latest articles"
+      h2="Newest website support articles"
+      body="Recent posts are listed newest first, using the article update date with the newest additions first when dates match."
+    />
+    <div class="latest-article-list">
+      {#each sortedBlogPosts as post}
+        <article class="latest-article-card">
+          <div>
+            <span>{formatArticleDate(post)}</span>
+            <h3>{post.title.replace(" | The Web Guy", "")}</h3>
+            <p>{post.summary}</p>
+          </div>
+          <a href={blogUrl(post.slug)} title={`Read ${post.title.replace(" | The Web Guy", "")}`}>
+            Read article
+          </a>
+        </article>
+      {/each}
+    </div>
+  </section>
+
   <section class="section section-effect section-effect--grid section-effect--low">
     <SectionHeading
       eyebrow="Broken website starting points"
@@ -159,7 +203,7 @@
     <SectionHeading eyebrow="Specific broken-site symptoms" h2="Specific website problems" />
     <CardGrid
       className="card-grid service-grid"
-      items={somethingBrokePosts.map((post) => [
+      items={sortedSomethingBrokePosts.map((post) => [
         post.title,
         post.summary,
         blogUrl(post.slug),
@@ -189,7 +233,7 @@
     <SectionHeading eyebrow="Website troubleshooting posts" h2="Practical website support articles" />
     <CardGrid
       className="card-grid service-grid"
-      items={blogPosts.map((post) => [
+      items={sortedBlogPosts.map((post) => [
         post.title,
         post.summary,
         blogUrl(post.slug),

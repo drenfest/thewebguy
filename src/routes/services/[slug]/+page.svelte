@@ -14,7 +14,7 @@
   import FaqList from "$lib/components/FaqList.svelte";
   import ProofPanel from "$lib/components/ProofPanel.svelte";
   import SortableTable from "$lib/components/SortableTable.svelte";
-  import { serviceMap, serviceSkillMap, serviceUrl, skillMap, skillUrl } from "$lib/data/content.js";
+  import { serviceMap, servicePages, serviceSkillMap, serviceUrl, skillMap, skillUrl } from "$lib/data/content.js";
   import { serviceHeroImage } from "$lib/data/hero-images.js";
   import { proofForService } from "$lib/data/proof.js";
   import { breadcrumbSchema, faqSchema, schemaList, serviceSchema } from "$lib/data/schema.js";
@@ -39,7 +39,8 @@
     faqSchema(serviceFaqs)
   ));
   const relatedServices = $derived(service.related.map((slug) => serviceMap[slug]).filter(Boolean));
-  const relatedSkills = $derived((serviceSkillMap[service.slug] || []).map((slug) => skillMap[slug]).filter(Boolean));
+  const relatedSkillSlugs = $derived(service.skillSlugs || serviceSkillMap[service.slug] || []);
+  const relatedSkills = $derived(relatedSkillSlugs.map((slug) => skillMap[slug]).filter(Boolean));
   const serviceProof = $derived(proofForService(service.slug));
   const fallbackAudienceHeading = $derived(`${service.audience.split(".")[0]}.`);
   const audienceHeading = $derived(service.audienceHeading || fallbackAudienceHeading);
@@ -78,6 +79,17 @@
       copy: related.intro
     }))
   ]);
+  const clusterAnchorSlug = $derived(service.clusterAnchor || service.slug);
+  const serviceClusterPages = $derived(servicePages.filter((page) => (
+    page.slug !== service.slug &&
+    (page.clusterAnchor === clusterAnchorSlug || page.slug === clusterAnchorSlug || (page.clusterLinks || []).includes(service.slug))
+  )).slice(0, 12));
+  const clusterTopicalItems = $derived(serviceClusterPages.map((page) => ({
+    label: page.keywordCluster || "Related path",
+    title: page.eyebrow,
+    copy: page.intro,
+    href: serviceUrl(page.slug)
+  })));
   const serviceInternalParagraphs = $derived([
     [
       `${service.eyebrow} often overlaps with `,
@@ -410,7 +422,15 @@
   </section>
 
   <RelatedServices {service} />
-  <RelatedSkills slugs={serviceSkillMap[service.slug] || []} />
+  <RelatedSkills slugs={relatedSkillSlugs} />
+  {#if clusterTopicalItems.length}
+    <TopicalLinks
+      eyebrow={service.keywordCluster ? `${service.keywordCluster} cluster` : `${service.eyebrow} keyword cluster`}
+      heading={`${service.eyebrow} supporting pages`}
+      intro="These supporting pages catch narrower searches and route them back into the right service cluster instead of leaving the topic isolated."
+      items={clusterTopicalItems}
+    />
+  {/if}
   <ContextualSupport
     eyebrow={`Related ${service.eyebrow.toLowerCase()} work`}
     heading={`Where ${service.eyebrow} work often expands`}

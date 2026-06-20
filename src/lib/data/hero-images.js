@@ -60,7 +60,7 @@ export const staticHeroImages = {
 
 export function serviceHeroImage(service) {
   return heroImage(
-    `service-${service.slug}`,
+    `service-${service.heroImageSlug || service.slug}`,
     `${service.eyebrow} hero photo showing practical website support for ${service.h1.replace(" at $55/hr", "").toLowerCase()}`
   );
 }
