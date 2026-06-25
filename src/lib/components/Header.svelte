@@ -1,6 +1,5 @@
 <script>
-  import { onMount } from "svelte";
-  import { fade, fly } from "svelte/transition";
+  import { onMount, tick } from "svelte";
   import LogoMark from "./LogoMark.svelte";
   import { trackEvent } from "$lib/analytics.js";
   import { headerCta, mainNavItems, megaMenus, mobileNavSections, utilityNavItems } from "$lib/data/navigation.js";
@@ -8,8 +7,6 @@
   let scrolled = $state(false);
   let openMenu = $state("");
   let mobileOpen = $state(false);
-  let mobilePanels = $state({});
-  let reduceMotion = $state(false);
   let searchQuery = $state("");
   let searchFocused = $state(false);
   let searchResults = $state([]);
@@ -19,12 +16,21 @@
   let closeMenuTimer;
   let headerRoot;
   let navRoot;
+  let mobileNavDetails;
+  let menuPlacement = $state({
+    left: "18px",
+    top: "84px",
+    width: "min(1040px, calc(100vw - 36px))",
+    maxHeight: "calc(100vh - 102px)"
+  });
   const showSearchResults = $derived(searchFocused && searchQuery.trim().length >= 4);
 
-  function openDesktopMenu(key) {
+  function openDesktopMenu(key, trigger) {
     if (!mobileOpen && megaMenus[key]) {
       clearCloseMenuTimer();
+      updateDesktopMenuPosition(key, trigger);
       openMenu = key;
+      void refreshDesktopMenuPosition();
     }
   }
 
@@ -37,6 +43,40 @@
     if (!closeMenuTimer) return;
     window.clearTimeout(closeMenuTimer);
     closeMenuTimer = undefined;
+  }
+
+  function getDesktopMenuTrigger(key) {
+    return navRoot?.querySelector(`[aria-controls="mega-menu-${key}"]`);
+  }
+
+  function updateDesktopMenuPosition(key = openMenu, trigger) {
+    if (typeof window === "undefined" || !key || !headerRoot) return;
+
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    const edgeGap = viewportWidth < 1120 ? 14 : 18;
+    const maxWidth = key === "services" ? 1180 : 1040;
+    const availableWidth = Math.max(320, viewportWidth - edgeGap * 2);
+    const width = Math.min(maxWidth, availableWidth);
+    const headerRect = headerRoot.getBoundingClientRect();
+    const triggerRect = (trigger || getDesktopMenuTrigger(key))?.getBoundingClientRect();
+    const center = triggerRect ? triggerRect.left + triggerRect.width / 2 : viewportWidth / 2;
+    const maxLeft = viewportWidth - width - edgeGap;
+    const left = Math.min(Math.max(center - width / 2, edgeGap), maxLeft);
+    const top = Math.max(12, headerRect.bottom + 10);
+    const maxHeight = Math.max(280, viewportHeight - top - edgeGap);
+
+    menuPlacement = {
+      left: `${Math.round(left)}px`,
+      top: `${Math.round(top)}px`,
+      width: `${Math.round(width)}px`,
+      maxHeight: `${Math.round(maxHeight)}px`
+    };
+  }
+
+  async function refreshDesktopMenuPosition() {
+    await tick();
+    updateDesktopMenuPosition();
   }
 
   function queueDesktopMenuClose() {
@@ -55,17 +95,13 @@
   }
 
   function closeMobileMenu() {
+    if (mobileNavDetails) mobileNavDetails.open = false;
     mobileOpen = false;
   }
 
-  function toggleMobileMenu() {
-    mobileOpen = !mobileOpen;
-    if (!mobileOpen) return;
-    closeDesktopMenu();
-  }
-
-  function toggleMobilePanel(key) {
-    mobilePanels = { ...mobilePanels, [key]: !mobilePanels[key] };
+  function handleMobileToggle() {
+    mobileOpen = !!mobileNavDetails?.open;
+    if (mobileOpen) closeDesktopMenu();
   }
 
   function linkTitle(label, href = "") {
@@ -188,15 +224,19 @@
     };
   });
 
-  onMount(() => {
-    const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  $effect(() => {
+    if (!openMenu) return;
+    void refreshDesktopMenuPosition();
+  });
 
+  onMount(() => {
     function updateScrollState() {
       scrolled = window.scrollY > 12;
+      if (openMenu) updateDesktopMenuPosition();
     }
 
-    function updateMotionPreference() {
-      reduceMotion = reduceMotionQuery.matches;
+    function handleViewportChange() {
+      updateDesktopMenuPosition();
     }
 
     function handleKeydown(event) {
@@ -214,16 +254,15 @@
     }
 
     updateScrollState();
-    updateMotionPreference();
     window.addEventListener("scroll", updateScrollState, { passive: true });
-    reduceMotionQuery.addEventListener("change", updateMotionPreference);
+    window.addEventListener("resize", handleViewportChange);
     document.addEventListener("keydown", handleKeydown);
     document.addEventListener("pointerdown", handlePointerDown);
 
     return () => {
       clearCloseMenuTimer();
       window.removeEventListener("scroll", updateScrollState);
-      reduceMotionQuery.removeEventListener("change", updateMotionPreference);
+      window.removeEventListener("resize", handleViewportChange);
       document.removeEventListener("keydown", handleKeydown);
       document.removeEventListener("pointerdown", handlePointerDown);
       document.body.classList.remove("nav-open");
@@ -249,21 +288,21 @@
     <nav class="nav-links desktop-nav" aria-label="Primary navigation">
       {#each mainNavItems as item}
         {#if item.menuKey}
-          <button
-            type="button"
+          <a
+            href={item.href}
+            title={linkTitle(item.label, item.href)}
             class:active={openMenu === item.menuKey}
             class="nav-trigger"
             aria-haspopup="true"
             aria-expanded={openMenu === item.menuKey}
             aria-controls={`mega-menu-${item.menuKey}`}
-            onmouseenter={() => openDesktopMenu(item.menuKey)}
-            onfocus={() => openDesktopMenu(item.menuKey)}
+            onmouseenter={(event) => openDesktopMenu(item.menuKey, event.currentTarget)}
+            onfocus={(event) => openDesktopMenu(item.menuKey, event.currentTarget)}
             onkeydown={(event) => handleDesktopTriggerKeydown(event, item.menuKey)}
-            onclick={() => openDesktopMenu(item.menuKey)}
           >
             <span>{item.label}</span>
             <span class="nav-chevron" aria-hidden="true">⌄</span>
-          </button>
+          </a>
         {:else}
           <a class="nav-link" href={item.href} title={linkTitle(item.label, item.href)}>{item.label}</a>
         {/if}
@@ -278,6 +317,7 @@
           class:mega-menu--services={key === "services"}
           role="region"
           aria-label={`${key} menu`}
+          style={`--mega-menu-left: ${menuPlacement.left}; --mega-menu-top: ${menuPlacement.top}; --mega-menu-width: ${menuPlacement.width}; --mega-menu-max-height: ${menuPlacement.maxHeight};`}
           onmouseenter={() => openDesktopMenu(key)}
           onmouseleave={queueDesktopMenuClose}
         >
@@ -348,40 +388,33 @@
 
   <a class="button button-small button-primary header-cta" href={headerCta.href} title={linkTitle(headerCta.label, headerCta.href)}>{headerCta.label}</a>
 
-  <button
-    type="button"
-    class="mobile-menu-button"
-    aria-label="Open navigation"
-    aria-expanded={mobileOpen}
-    aria-controls="mobile-navigation"
-    onclick={toggleMobileMenu}
-  >
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-
-  {#if mobileOpen}
+  <details bind:this={mobileNavDetails} class="mobile-nav-details" ontoggle={handleMobileToggle}>
+    <summary
+      class="mobile-menu-button"
+      aria-label="Site navigation"
+      aria-controls="mobile-navigation"
+    >
+      <span class="sr-only">Site navigation</span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </summary>
     <div
       class="mobile-nav-backdrop"
       aria-hidden="true"
       onclick={closeMobileMenu}
-      transition:fade={{ duration: reduceMotion ? 0 : 210 }}
     ></div>
     <div
       id="mobile-navigation"
       class="mobile-nav-drawer"
-      role="dialog"
-      aria-modal="true"
+      role="group"
       aria-label="Site navigation"
-      transition:fly={{ x: reduceMotion ? 0 : 18, duration: reduceMotion ? 0 : 220 }}
     >
       <div class="mobile-nav-header">
         <a class="brand" href="/" aria-label="The Web Guy home" title="View The Web Guy homepage" onclick={closeMobileMenu}>
           <LogoMark title="The Web Guy logo" idPrefix="mobile-logo" />
           <span>The Web Guy</span>
         </a>
-        <button type="button" class="mobile-close-button" aria-label="Close navigation" onclick={closeMobileMenu}>×</button>
       </div>
 
       <nav class="mobile-nav-content" aria-label="Mobile navigation">
@@ -417,33 +450,24 @@
         </div>
 
         {#each mobileNavSections as section}
-          <section class="mobile-accordion">
-            <button
-              type="button"
-              class="mobile-accordion-trigger"
-              aria-expanded={!!mobilePanels[section.key]}
-              aria-controls={`mobile-nav-${section.key}`}
-              onclick={() => toggleMobilePanel(section.key)}
-            >
+          <details class="mobile-accordion">
+            <summary class="mobile-accordion-trigger">
               <span>{section.label}</span>
               <span class="mobile-accordion-icon" aria-hidden="true">+</span>
-            </button>
+            </summary>
             <div
               id={`mobile-nav-${section.key}`}
               class="mobile-accordion-panel"
-              data-open={mobilePanels[section.key] ? "true" : "false"}
-              aria-hidden={!mobilePanels[section.key]}
-              inert={!mobilePanels[section.key]}
             >
               <div class="mobile-accordion-panel-inner">
                 {#each section.links as link}
-                  <a href={link.href} title={linkTitle(link.label, link.href)} tabindex={mobilePanels[section.key] ? undefined : -1} onclick={closeMobileMenu}>
+                  <a href={link.href} title={linkTitle(link.label, link.href)} onclick={closeMobileMenu}>
                     {link.label}
                   </a>
                 {/each}
               </div>
             </div>
-          </section>
+          </details>
         {/each}
 
         <div class="mobile-utility-links">
@@ -455,5 +479,5 @@
         <a class="button button-primary mobile-drawer-cta" href={headerCta.href} title={linkTitle(headerCta.label, headerCta.href)} onclick={closeMobileMenu}>{headerCta.label}</a>
       </nav>
     </div>
-  {/if}
+  </details>
 </header>

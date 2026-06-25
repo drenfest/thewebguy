@@ -220,7 +220,7 @@ export const blogPosts = [
   {
     slug: "seo-audit-done-now-implement-it",
     title: "SEO Audit Implementation Help | The Web Guy",
-    h1: "Your SEO Audit Is Done. Now Someone Has to Actually Implement It.",
+    h1: "SEO Audit Done? Now Implement It on the Website.",
     meta: "Have SEO audit recommendations sitting in a spreadsheet? The Web Guy helps turn technical SEO notes into real website changes at $55/hr.",
     eyebrow: "SEO work is stuck",
     summary: "SEO recommendations do not help much while they sit in a spreadsheet. Technical SEO implementation turns crawl notes, audit tasks, internal link gaps, schema needs, and template fixes into real site changes.",
@@ -230,6 +230,13 @@ export const blogPosts = [
     heroSecondary: "View SEO Implementation",
     heroSecondaryHref: "/services/technical-seo-implementation/",
     cta: "Send the audit, crawl notes, or spreadsheet. The goal is to turn useful recommendations into actual site changes.",
+    exampleBlock: {
+      heading: "Proof example: audit notes into shipped changes",
+      copy: "A useful implementation pass can turn crawl exports, title/meta gaps, heading cleanup, schema notes, redirect issues, and internal-link recommendations into live page and template changes instead of another untouched spreadsheet.",
+      href: "/contact/",
+      label: "Send the audit or crawl notes",
+      title: "Open the contact request form for SEO audit implementation"
+    },
     intro: [
       "The SEO audit exists. The spreadsheet is full. The crawl export is sitting in a folder. Everyone agrees the recommendations matter, but the website does not change. Next month, the same items appear again.",
       "This is one of the most common places SEO gets stuck. Strategy is written by one person, the site is controlled by another system, the developer is busy, the CMS is messy, and the business owner does not know which recommendation is safe to touch first. The result is a list of good ideas with no implementation path.",
@@ -350,10 +357,6 @@ export const blogPosts = [
       ["WordPress Support", "/services/wordpress-support/", "For SEO fixes that need WordPress themes, plugins, builders, templates, PHP, CSS, or content cleanup."],
       ["Ecommerce Support", "/services/ecommerce-support/", "For product pages, category pages, Merchant Center, schema, Shopify, WooCommerce, product data, and ecommerce tracking."],
       ["Analytics & Tracking", "/services/analytics-tracking/", "For GA4, GTM, conversions, event verification, and measurement checks after SEO changes go live."],
-      ["Agency Overflow", "/services/agency-overflow/", "For agencies with SEO recommendations that need technical production help without hiring full-time."],
-      ["Programmatic SEO", "/skills/programmatic-seo/", "For scalable page structures, metadata patterns, internal linking, data cleanup, and crawl-aware implementation."],
-      ["Schema & Structured Data", "/skills/schema-structured-data/", "For structured data patterns across service pages, local pages, ecommerce pages, FAQs, products, and templates."],
-      ["Crawl Analysis & Internal Linking", "/skills/crawl-analysis-internal-linking/", "For crawl exports, broken links, orphaned pages, crawl paths, internal link modules, and indexation cleanup."],
       ["Contact", "/contact/", "Send the spreadsheet, crawl notes, URLs, platform, and priority list to start the implementation pass."]
     ],
     contextHeading: "Turn the audit into the right implementation lane",
@@ -551,7 +554,7 @@ export const blogPosts = [
   {
     slug: "website-data-systems-not-connecting",
     title: "Website Tracking & Data Troubleshooting | The Web Guy",
-    h1: "Your Website Data Does Not Match Reality. Start by Mapping the Flow.",
+    h1: "Website Data and Systems Not Connecting? Map the Flow First.",
     meta: "Forms, GA4, GTM, ecommerce revenue, APIs, or dashboards not matching reality? Learn how to trace the flow and get hourly help at $55/hr.",
     eyebrow: "Data does not connect",
     summary: "When forms, analytics, ecommerce revenue, APIs, dashboards, and CRMs disagree, the fix starts by tracing the data path from user action to final destination.",
@@ -561,6 +564,13 @@ export const blogPosts = [
     heroSecondary: "View Analytics Help",
     heroSecondaryHref: "/services/analytics-tracking/",
     cta: "Send the page, the action, and where the data is supposed to go. The work starts by tracing the broken step.",
+    exampleBlock: {
+      heading: "Proof example: one action, every handoff",
+      copy: "A strong troubleshooting pass follows one real test action from the browser to the form record, GTM trigger, GA4 event, webhook payload, CRM field, ecommerce order, or dashboard metric until the broken handoff is visible.",
+      href: "/contact/",
+      label: "Send the data-flow problem",
+      title: "Open the contact request form for tracking and systems troubleshooting"
+    },
     intro: [
       "Leads are missing. GA4 numbers look wrong. Google Tag Manager preview is confusing. Forms say they submitted, but no email arrived. Ecommerce revenue does not match the store. CRM records are incomplete. A dashboard says one thing and the platform says another.",
       "These problems are frustrating because nothing looks obviously broken at first. The page may load. The form may show a success message. The order may exist. The chart may refresh. But somewhere between the user action and the final report, one step is missing, duplicated, renamed, blocked, or misunderstood.",
@@ -678,10 +688,8 @@ export const blogPosts = [
     links: [
       ["Analytics & Tracking", "/services/analytics-tracking/", "For GA4, GTM, form events, pixels, conversion tracking, ecommerce events, and measurement cleanup."],
       ["API Integrations", "/services/api-integrations/", "For REST APIs, webhooks, payloads, auth, endpoint issues, form handoffs, and systems that need to connect."],
-      ["AI-Built Website Cleanup", "/services/ai-built-website-cleanup/", "For AI-built forms, prototypes, apps, or landing pages where generated code skipped tracking, API handoffs, validation, or deployment details."],
       ["Ecommerce Support", "/services/ecommerce-support/", "For Shopify, WooCommerce, product data, purchase events, revenue mismatch, checkout tracking, and Merchant Center issues."],
       ["Automation & Internal Tools", "/services/automation-internal-tools/", "For practical workflows, dashboards, crawlers, checkers, scripts, and reporting helpers connected to website data."],
-      ["GA4/GTM Measurement Integrity", "/skills/ga4-gtm-measurement-integrity/", "For trigger cleanup, event verification, conversion checks, duplicate tags, and reporting QA."],
       ["Contact", "/contact/", "Send the page, action, destination system, and test example so the data flow can be traced."]
     ],
     contextHeading: "Trace the data problem through the right system",
@@ -711,12 +719,24 @@ export const blogPosts = [
   },
   {
     slug: "broken-layouts-mobile-website-fixes",
-    title: "Broken Website Layouts: What Usually Causes Them",
-    meta: "Learn why website layouts break on desktop or mobile, including CSS conflicts, page builders, missing image dimensions, embeds, and theme changes.",
+    title: "Broken Mobile Website Layout Fixes | The Web Guy",
+    h1: "Broken Mobile Website Layouts: What to Check First",
+    meta: "Get practical help for broken mobile website layouts, overlapping sections, CSS conflicts, page builder spacing, embeds, and responsive layout problems.",
     eyebrow: "Broken layouts",
-    summary: "Sections overlap, headers act strange, spacing disappears, or the mobile layout falls apart. Here is how those problems usually happen and what to check first.",
+    summary: "Sections overlap, headers act strange, spacing disappears, or the mobile layout falls apart. Start by reproducing the viewport, isolating the broken section, and tracing whether the issue comes from CSS, the builder, an embed, or a theme/plugin change.",
     problemType: "Something broke",
     relatedService: "website-fixes",
+    heroCta: "Send the Broken Layout",
+    heroSecondary: "View Website Fixes",
+    heroSecondaryHref: "/services/website-fixes/",
+    cta: "Send the URL, screenshot, device or browser, and what the layout should do instead.",
+    exampleBlock: {
+      heading: "Proof example: layout bugs are usually traceable",
+      copy: "A practical layout fix starts by reproducing the bad viewport, inspecting the affected element, checking recent theme, builder, plugin, or content changes, and applying the smallest CSS or template change that holds on mobile.",
+      href: "/contact/",
+      label: "Send the broken layout",
+      title: "Open the contact request form for broken layout help"
+    },
     sections: [
       ["Common signs", "The page looks fine in one viewport but breaks in another, content overlaps, sticky headers cover sections, columns stack badly, buttons drift out of place, or images stretch beyond their container."],
       ["Likely causes", "Most broken layouts come from CSS conflicts, page builder spacing, missing responsive rules, oversized images, uncontained embeds, theme updates, plugin styles, or old custom code fighting newer content."],
@@ -724,10 +744,11 @@ export const blogPosts = [
       ["Practical fix path", "A useful fix usually starts by reproducing the issue, checking the element styles, isolating the rule or component causing the break, and then applying the smallest durable CSS, template, or builder-level change."]
     ],
     links: [
-      ["Website Fixes", "/services/website-fixes/"],
-      ["AI-Built Cleanup", "/services/ai-built-website-cleanup/"],
-      ["WordPress Support", "/services/wordpress-support/"],
-      ["Front-End Help", "/services/react-static-sites/"]
+      ["Website Fixes", "/services/website-fixes/", "For broken mobile layouts, CSS issues, sticky headers, scripts, forms, embeds, and visible page bugs."],
+      ["AI-Built Cleanup", "/services/ai-built-website-cleanup/", "For generated pages or prototypes that look close but break across devices, routes, assets, or deployment details."],
+      ["WordPress Support", "/services/wordpress-support/", "For Elementor, page builders, cached CSS, theme output, plugins, and WordPress layout problems."],
+      ["Front-End Help", "/services/react-static-sites/", "For responsive CSS, component layout, static page cleanup, JavaScript behavior, and lightweight front-end fixes."],
+      ["Contact", "/contact/", "Send the URL, screenshot, viewport, and what should happen instead so the broken layout can be reproduced."]
     ],
     contextHeading: "Where broken layout work usually goes next",
     contextIntro: "Layout problems are usually visual symptoms with a technical cause. These paths cover the common places the fix lands after the broken section is reproduced.",
@@ -1286,7 +1307,7 @@ export const skillPages = [
     title: "WordPress Plugin Developer at $55/hr | The Web Guy",
     meta: "Get WordPress custom plugin development help for admin workflows, APIs, automation, data capture, integrations, and practical site-specific functionality.",
     h1: "WordPress Plugin Development at $55/hr",
-    eyebrow: "WordPress Plugins",
+    eyebrow: "WordPress Plugin Development",
     intro: "Custom WordPress plugin work for site-specific workflows, admin tools, data capture, API connections, automation, shortcodes, and functionality that does not belong hacked into a theme file.",
     problems: ["A plugin almost does what the site needs but not quite", "Admin workflows are manual or fragile", "Data needs to move between WordPress and another system", "Shortcodes or custom functionality are breaking", "Code is buried in theme files where it should not live"],
     tasks: ["Build small custom plugins", "Create admin workflow helpers", "Connect REST APIs and webhooks", "Add custom shortcodes or blocks where appropriate", "Clean up fragile theme-function code", "Debug plugin conflicts and data issues"],
@@ -1368,12 +1389,11 @@ export const skillPages = [
     connection: "Production debugging supports website fixes, API integrations, analytics cleanup, security/hosting reliability, and agency overflow work.",
     contextCards: [
       ["Website fixes", "Visible bugs, broken layouts, failed forms, and script conflicts usually need production debugging before the fix is obvious.", "/services/website-fixes/", "View website fixes", "website-fixes"],
-      ["AI-built cleanup", "Generated sites and vibe-coded apps often need production debugging when the live deploy, routing, forms, APIs, tracking, or environment variables fail.", "/services/ai-built-website-cleanup/", "View AI-built cleanup", "website-fixes"],
       ["API integrations", "Payload errors, failed webhooks, bad responses, and missing logs often connect debugging to integration work.", "/services/api-integrations/", "View API integrations", "api-integrations"],
       ["Analytics and tracking", "Missing events, duplicate tags, broken pixels, and unreliable form data often need debugging inside the live page flow.", "/services/analytics-tracking/", "View tracking support", "analytics-tracking"],
       ["Reliability support", "Redirect loops, SSL issues, cache behavior, and hosting errors can make a production bug a stability problem.", "/services/security-hosting-reliability/", "View reliability support", "security-hosting-reliability"]
     ],
-    relatedServices: ["website-fixes", "ai-built-website-cleanup", "api-integrations", "analytics-tracking", "security-hosting-reliability"],
+    relatedServices: ["website-fixes", "api-integrations", "analytics-tracking", "security-hosting-reliability"],
     relatedSkills: ["rest-api-webhook-integrations", "ga4-gtm-measurement-integrity", "php-javascript-node", "platform-reliability"],
     faqs: [
       ["What should I send for debugging?", "Send the URL, what should happen, what happens instead, screenshots if useful, and what changed recently."],

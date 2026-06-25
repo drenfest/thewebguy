@@ -1,6 +1,5 @@
 <script>
-  import HeroFireworks from "./HeroFireworks.svelte";
-  import HeroParticles from "./HeroParticles.svelte";
+  import { onMount } from "svelte";
 
   let {
     eyebrow = "The Web Guy",
@@ -52,6 +51,27 @@
   }
 
   const useSeasonalFireworks = isFireworksSeason();
+  let HeroEffect = $state(null);
+
+  onMount(() => {
+    let cancelled = false;
+    const isMobile = window.matchMedia("(max-width: 640px)").matches;
+    const delay = isMobile ? 3600 : 240;
+
+    async function loadHeroEffect() {
+      const module = useSeasonalFireworks ? await import("./HeroFireworks.svelte") : await import("./HeroParticles.svelte");
+      if (!cancelled) HeroEffect = module.default;
+    }
+
+    const timeout = window.setTimeout(() => {
+      loadHeroEffect().catch(() => {});
+    }, delay);
+
+    return () => {
+      cancelled = true;
+      window.clearTimeout(timeout);
+    };
+  });
 </script>
 
 <svelte:head>
@@ -62,15 +82,14 @@
     imagesrcset={webpSrcset}
     imagesizes="(min-width: 1024px) 430px, (min-width: 720px) 74vw, 92vw"
     type="image/webp"
+    media="(min-width: 641px)"
     fetchpriority="high"
   />
 </svelte:head>
 
 <section class="hero effect effect-hero effect-high">
-  {#if useSeasonalFireworks}
-    <HeroFireworks intensity="high" />
-  {:else}
-    <HeroParticles intensity="high" />
+  {#if HeroEffect}
+    <HeroEffect intensity="high" />
   {/if}
   <div class="hero-grid">
     <div>
@@ -109,8 +128,8 @@
             width={imageWidth}
             height={imageHeight}
             alt={imageAlt}
-            loading="eager"
-            fetchpriority="high"
+            loading="lazy"
+            fetchpriority="auto"
             decoding="async"
           />
         </picture>

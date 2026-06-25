@@ -33,6 +33,11 @@
     sortDirection = "asc";
   }
 
+  function sortButtonLabel(column) {
+    if (sortKey !== column.key) return `Sort by ${column.label}`;
+    return `Sort by ${column.label}, currently ${sortDirection === "asc" ? "ascending" : "descending"}`;
+  }
+
   const sortedRows = $derived([...rows].sort((a, b) => {
     const comparison = compareValues(cellText(a[sortKey]), cellText(b[sortKey]));
     return sortDirection === "asc" ? comparison : -comparison;
@@ -51,9 +56,12 @@
       <tr>
         {#each columns as column}
           <th aria-sort={ariaSort(column.key)}>
-            <button type="button" onclick={() => sortBy(column.key)}>
+            <button type="button" aria-label={sortButtonLabel(column)} onclick={() => sortBy(column.key)}>
               <span>{column.label}</span>
-              <span class="sort-indicator" aria-hidden="true">{sortKey === column.key ? (sortDirection === "asc" ? "Asc" : "Desc") : "Sort"}</span>
+              <span
+                class={`sort-indicator ${sortKey === column.key ? "sort-indicator--active" : ""} ${sortKey === column.key && sortDirection === "desc" ? "sort-indicator--desc" : ""}`}
+                aria-hidden="true"
+              ></span>
             </button>
           </th>
         {/each}

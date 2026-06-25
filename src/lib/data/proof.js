@@ -154,6 +154,25 @@ export const serviceProofBySlug = {
       }
     ]
   },
+  "fix-broken-wordpress-site": {
+    eyebrow: "Broken WordPress proof",
+    heading: "Proof of WordPress triage, recovery, and repair work",
+    intro: "Broken WordPress work starts by reproducing the failure, checking recent changes, and tracing the site layer that owns the symptom.",
+    items: [
+      {
+        label: "Plugin and theme conflicts",
+        copy: "Worked through plugin updates, theme output, page-builder behavior, PHP errors, cache mismatches, and admin-side failures."
+      },
+      {
+        label: "Visible site failures",
+        copy: "Fixed broken layouts, failed forms, missing assets, JavaScript errors, white-screen style failures, and front-end behavior that changed suddenly."
+      },
+      {
+        label: "Careful next steps",
+        copy: "Reviewed backup, hosting, cache, access, and recovery context before making changes that could hide the real cause or overwrite good work."
+      }
+    ]
+  },
   "ai-built-website-cleanup": {
     eyebrow: "AI cleanup proof",
     heading: "Proof of cleanup work across generated code, launch details, and messy site handoffs",

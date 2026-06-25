@@ -31,7 +31,7 @@
   ));
   const relatedPosts = $derived(blogPosts.filter((item) => item.slug !== post.slug).slice(0, 3));
   const topicalItems = $derived((post.links || []).map(([label, href, copy]) => ({
-    label: "Related page",
+    label: topicalLabel(href),
     title: label,
     href,
     copy: copy || "Use this page when the issue needs hands-on website support instead of another generic troubleshooting article."
@@ -177,6 +177,14 @@
     return "";
   }
 
+  function topicalLabel(href = "") {
+    if (href === "/contact/") return "Contact path";
+    if (href.startsWith("/services/")) return "Service path";
+    if (href.startsWith("/skills/")) return "Skill path";
+    if (href.startsWith("/blog/")) return "Related guide";
+    return "Support path";
+  }
+
   function contextLabel(item) {
     return Array.isArray(item) ? item[0] : item.label;
   }
@@ -261,6 +269,16 @@
         {/if}
 
         <InternalLinkCopy paragraphs={articleInternalParagraphs} className="internal-link-copy--compact" />
+
+        {#if post.exampleBlock}
+          <aside class="article-callout article-example-block">
+            <strong>{post.exampleBlock.heading || "Proof example"}</strong>
+            <p>{post.exampleBlock.copy}</p>
+            {#if post.exampleBlock.href}
+              <a class="text-link" href={post.exampleBlock.href} title={post.exampleBlock.title || `View ${post.exampleBlock.label || "related support"}`}>{post.exampleBlock.label || "View related support"}</a>
+            {/if}
+          </aside>
+        {/if}
 
         <SortableTable caption={`${post.eyebrow} troubleshooting table`} columns={articleTableColumns} rows={articleRows} />
 

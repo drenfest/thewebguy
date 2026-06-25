@@ -105,7 +105,7 @@ export const coreServicePages = [
           "The next step can be simple: send the URL, the notes, and the priorities. The Web Guy can help identify what should be handled first, what needs access, what requires a developer-level change, and what may need more caution before touching production."
       }
     ],
-    related: ["ai-built-website-cleanup", "wordpress-support", "analytics-tracking", "landing-pages", "agency-overflow"]
+    related: ["wordpress-support", "analytics-tracking", "landing-pages", "agency-overflow"]
   },
   {
     slug: "landing-pages",
@@ -213,7 +213,7 @@ export const coreServicePages = [
           "Performance work can improve a site, but nobody should promise perfect scores on every page. Some scripts are business requirements. Some themes are heavy. Some hosting is limiting. The useful goal is to identify the biggest drag, fix what is practical, and explain what remains."
       }
     ],
-    related: ["ai-built-website-cleanup", "wordpress-support", "website-fixes", "security-hosting-reliability", "ongoing-webmaster-support"]
+    related: ["wordpress-support", "website-fixes", "security-hosting-reliability", "ongoing-webmaster-support"]
   },
   {
     slug: "website-fixes",
@@ -881,8 +881,45 @@ const keywordLandingSpecs = [
     cluster: "WordPress support",
     anchorSlug: "website-fixes",
     intent: "broken WordPress sites where a visible or functional problem needs triage",
+    intro:
+      "Help for WordPress sites that suddenly show broken layouts, failed forms, white screens, plugin conflicts, checkout trouble, PHP errors, script problems, or other visible issues that need careful triage.",
+    cta: "Get Broken WordPress Help",
+    audience:
+      "This page is for site owners, agencies, and teams with a WordPress problem that needs someone to reproduce the symptom, check recent changes, inspect the likely layer, and make or recommend the safest next fix.",
+    audienceHeading: "WordPress problems that need triage",
     problems: ["A WordPress page or feature broke", "The site shows errors or blank screens", "A business-critical form, checkout, or page is affected"],
     tasks: ["Triage the broken behavior", "Check recent changes, plugins, themes, PHP, cache, and scripts", "Stabilize the issue or define the safest next step"],
+    sections: [
+      {
+        h2: "Broken WordPress problems this page targets",
+        body:
+          "Use this page when a WordPress site has a visible or functional failure and the first job is to understand what changed. The problem might be a plugin update, theme conflict, cache issue, PHP error, form failure, broken layout, checkout problem, or script conflict.",
+        bullets: ["A page, form, menu, checkout, or key feature stopped working", "The site shows errors, blank screens, or strange front-end behavior", "A recent plugin, theme, PHP, content, or cache change may be involved", "The safest next step is not obvious yet"]
+      },
+      {
+        h2: "What can be checked first",
+        cards: [
+          ["Recent changes", "Review plugin, theme, WordPress, PHP, cache, content, hosting, or deployment changes near the time the site broke."],
+          ["Front-end symptoms", "Check broken layouts, missing assets, JavaScript errors, failed forms, console warnings, and mobile-specific behavior."],
+          ["WordPress layers", "Inspect plugin conflicts, theme output, page builder sections, shortcodes, PHP notices, admin behavior, and cache mismatches."],
+          ["Recovery path", "Stabilize what can be fixed safely, identify access or hosting blockers, and document when backup restore, staging, or developer-level repair is the better move."]
+        ]
+      },
+      {
+        h2: "Related broken WordPress support paths",
+        cards: [
+          ["Website Fixes", "Use this when the WordPress problem appears as a broken layout, failed script, bad form, mobile issue, or visible website bug.", "/services/website-fixes/", "View Website Fixes"],
+          ["WordPress Support", "Use this when the fix belongs in themes, plugins, Elementor, page builders, content, admin settings, or recurring WordPress cleanup.", "/services/wordpress-support/", "View WordPress Support"],
+          ["WordPress Emergency Support", "Use this when a key page, checkout, form, or public feature is down and needs triage before a longer cleanup plan.", "/services/wordpress-emergency-support/", "View Emergency Support"],
+          ["White Screen Fix", "Use this when the site or admin is blank, fatal errors are likely, or recovery needs extra caution.", "/services/wordpress-white-screen-of-death-fix/", "View White Screen Help"]
+        ]
+      },
+      {
+        h2: "How to hand off broken WordPress work",
+        body:
+          "Send the URL, what broke, what should happen, when it started, recent plugin/theme/content/hosting changes, screenshots, and any access notes. If the issue affects leads, checkout, SEO, tracking, or a live campaign, include that priority up front."
+      }
+    ],
     related: ["website-fixes", "wordpress-support", "wordpress-emergency-support", "wordpress-white-screen-of-death-fix"],
     skills: ["production-debugging", "cloudflare-dns-ssl", "wordpress-plugin-development"]
   },
@@ -1163,19 +1200,19 @@ function buildKeywordLandingPage(spec) {
     meta: spec.meta,
     h1: spec.h1,
     eyebrow: spec.eyebrow,
-    intro: `${spec.eyebrow} is a focused support path for ${spec.intent}. It connects back to ${anchor.eyebrow.toLowerCase()} when the request becomes broader than this exact search.`,
+    intro: spec.intro || `${spec.eyebrow} help for ${spec.intent}. Start with the URL, the symptom, what should happen instead, and any recent changes; the work routes back to ${anchor.eyebrow.toLowerCase()} if the request becomes broader.`,
     cta: spec.cta || "Send the Website Problem",
-    audience: `This page is for businesses, agencies, and site owners who know the symptom or task but need practical technical help. The work is billed hourly at $55/hr and starts with the URL, context, access limits, and the outcome you want.`,
-    audienceHeading: `${spec.eyebrow} fit`,
+    audience: spec.audience || `This page is for businesses, agencies, and site owners who know the symptom or task but need practical technical help. The work is billed hourly at $55/hr and starts with the URL, context, access limits, and the outcome you want.`,
+    audienceHeading: spec.audienceHeading || `${spec.eyebrow} fit`,
     showInHub: false,
     heroImageSlug: spec.heroImageSlug || anchor.slug,
     keywordCluster: spec.cluster,
     clusterAnchor: anchor.slug,
     clusterLinks: related,
-    sections: [
+    sections: spec.sections || [
       {
         h2: `${spec.eyebrow} problems this page targets`,
-        body: `Use this page when the search is more specific than the main ${anchor.eyebrow.toLowerCase()} page. The goal is to name the problem clearly, route it into the right topical cluster, and avoid turning a small technical task into an oversized project.`,
+        body: `Use this page when the problem is more specific than the main ${anchor.eyebrow.toLowerCase()} page. The goal is to name the issue clearly, route it into the right service path, and avoid turning a small technical task into an oversized project.`,
         bullets: spec.problems
       },
       {
@@ -1183,9 +1220,9 @@ function buildKeywordLandingPage(spec) {
         cards: spec.tasks.map((task) => [task, `${task} as part of practical hourly website support. The exact fix depends on the site, access, platform, and what can be reproduced safely.`])
       },
       {
-        h2: `${spec.eyebrow} topical cluster`,
+        h2: `${spec.eyebrow} related support paths`,
         cards: [
-          [anchor.eyebrow, `The main cluster page for this topic is ${anchor.eyebrow}. Use it when the request is broader than this exact task.`, `/services/${anchor.slug}/`, `View ${anchor.eyebrow}`],
+          [anchor.eyebrow, `The main service page for this topic is ${anchor.eyebrow}. Use it when the request is broader than this exact task.`, `/services/${anchor.slug}/`, `View ${anchor.eyebrow}`],
           ...(related.slice(0, 5).map((slug) => {
             const relatedService = coreServicePages.find((service) => service.slug === slug) || keywordLandingSpecs.find((item) => item.slug === slug);
             const title = relatedService?.eyebrow || slug.split("-").map((part) => part[0].toUpperCase() + part.slice(1)).join(" ");

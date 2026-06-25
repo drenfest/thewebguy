@@ -382,7 +382,7 @@
     <SectionHeading
       eyebrow={`${service.eyebrow} details`}
       h2={`${service.eyebrow} scope, evidence, and next steps`}
-      body="Use this table to compare the parts of the service, sort the work by priority, and gather the right context before sending a request."
+      body="Use this table to compare the parts of the service, note priority, and gather the right context before sending a request."
     />
     <SortableTable caption={`${service.eyebrow} planning table`} columns={serviceDetailTableColumns} rows={serviceDetailRows} />
   </section>
@@ -425,9 +425,9 @@
   <RelatedSkills slugs={relatedSkillSlugs} />
   {#if clusterTopicalItems.length}
     <TopicalLinks
-      eyebrow={service.keywordCluster ? `${service.keywordCluster} cluster` : `${service.eyebrow} keyword cluster`}
+      eyebrow={service.keywordCluster ? `${service.keywordCluster} paths` : `${service.eyebrow} support paths`}
       heading={`${service.eyebrow} supporting pages`}
-      intro="These supporting pages catch narrower searches and route them back into the right service cluster instead of leaving the topic isolated."
+      intro="These supporting pages route narrower website problems into the right service path instead of leaving the visitor guessing."
       items={clusterTopicalItems}
     />
   {/if}
