@@ -3,7 +3,7 @@ services:
     name: thewebguy-app
     runtime: node
     plan: starter
-    buildCommand: npm install && npm run build
+    buildCommand: npm install && npm run verify:contact-email && npm run build
     startCommand: node server.js
     envVars:
       - key: NODE_VERSION
@@ -26,6 +26,14 @@ services:
         sync: false
       - key: GMAIL_USER_ID
         value: me
+      - key: CONTACT_OAUTH_SETUP_KEY
+        sync: false
+      - key: GMAIL_REDIRECT_URI
+        value: https://thewebguy.app/api/admin/gmail-oauth/callback
+      - key: RENDER_API_KEY
+        sync: false
+      - key: CONTACT_OAUTH_TRIGGER_DEPLOY
+        value: true
       - key: SMTP_HOST
         sync: false
       - key: SMTP_PORT

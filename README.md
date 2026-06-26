@@ -17,6 +17,7 @@ Useful commands:
 
 ```bash
 npm run optimize:images
+npm run verify:contact-email
 npm run check
 npm run build
 npm run preview
@@ -29,7 +30,7 @@ This project is configured for Render with `render.yaml`.
 Render settings:
 
 - Runtime: Node
-- Build command: `npm install && npm run build`
+- Build command: `npm install && npm run verify:contact-email && npm run build`
 - Start command: `node server.js`
 - Node version: `20`
 - Public URL: `https://thewebguy.app`
@@ -46,6 +47,10 @@ Required Render environment variables:
 - `GMAIL_CLIENT_SECRET`: OAuth client secret for the same Google OAuth client.
 - `GMAIL_REFRESH_TOKEN`: OAuth refresh token authorized with the `https://www.googleapis.com/auth/gmail.send` scope.
 - `GMAIL_USER_ID`: Gmail API user ID. Use `me` unless you have a reason to target a specific mailbox.
+- `CONTACT_OAUTH_SETUP_KEY`: long random secret used to protect the one-time Gmail OAuth setup route.
+- `GMAIL_REDIRECT_URI`: OAuth callback URL. Use `https://thewebguy.app/api/admin/gmail-oauth/callback` and add the same URL as an authorized redirect URI in Google Cloud.
+- `RENDER_API_KEY`: optional Render API key. When set, the OAuth callback can write `GMAIL_REFRESH_TOKEN` back to the current Render service.
+- `CONTACT_OAUTH_TRIGGER_DEPLOY`: set to `true` to trigger a Render redeploy after the OAuth callback updates `GMAIL_REFRESH_TOKEN`.
 - `SMTP_HOST`: SMTP server hostname. Use only for local dev, paid hosting, or hosts that allow outbound SMTP.
 - `SMTP_PORT`: SMTP port. Use `587` for STARTTLS in most cases, or `465` for implicit TLS.
 - `SMTP_SECURE`: `false` for port `587`, `true` for port `465`.
@@ -56,6 +61,7 @@ Contact form behavior:
 
 - On Render free hosting, set `CONTACT_EMAIL_PROVIDER=gmail` plus the Gmail API variables above. This sends over HTTPS instead of blocked SMTP ports.
 - On hosts that allow SMTP, set `CONTACT_EMAIL_PROVIDER=smtp`, `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`, `SMTP_HOST`, `SMTP_USER`, and `SMTP_PASSWORD`.
+- Render runs `npm run verify:contact-email` before building. For Gmail API delivery, this checks required variables and confirms the OAuth refresh token can mint an access token. It does not send a test email. If `GMAIL_REFRESH_TOKEN` is missing but `CONTACT_OAUTH_SETUP_KEY` is set, the build continues and logs a Gmail OAuth setup URL.
 - The endpoint sends server-side. There is no paid email API service and no background worker process.
 - Without email configuration, the endpoint returns a configuration error instead of exposing the private recipient address to the browser.
 - The sender email from the form is used as the `reply_to` value so replies go back to the requester.
@@ -71,9 +77,16 @@ Local environment setup:
 Gmail API setup:
 
 - Enable the Gmail API in a Google Cloud project.
-- Create OAuth credentials and authorize the sender mailbox with the `https://www.googleapis.com/auth/gmail.send` scope.
-- Store the resulting client ID, client secret, and refresh token in Render.
+- Create OAuth web application credentials.
+- Add `https://thewebguy.app/api/admin/gmail-oauth/callback` as an authorized redirect URI in Google Cloud.
+- Store `GMAIL_CLIENT_ID`, `GMAIL_CLIENT_SECRET`, `CONTACT_FROM_EMAIL`, `CONTACT_TO_EMAIL`, and a long random `CONTACT_OAUTH_SETUP_KEY` in Render.
+- Optional: store `RENDER_API_KEY` in Render so the OAuth callback can update `GMAIL_REFRESH_TOKEN` automatically through the Render API and trigger a redeploy.
+- Deploy once. If `GMAIL_REFRESH_TOKEN` is missing, the build/start logs include a setup URL under `/api/admin/gmail-oauth/start?key=...`.
+- Open that setup URL, approve Gmail access for the sender mailbox with the `https://www.googleapis.com/auth/gmail.send` scope, and return to the callback.
+- If `RENDER_API_KEY` is configured, the callback updates `GMAIL_REFRESH_TOKEN` on the Render service and triggers a redeploy. If it is not configured, the callback shows the refresh token so it can be copied into Render manually.
 - Keep `CONTACT_FROM_EMAIL` aligned with the Gmail account or an approved Gmail send-as alias.
+- OAuth consent is a one-time interactive setup step. After `GMAIL_REFRESH_TOKEN` is saved, the contact endpoint uses it to mint short-lived Gmail access tokens whenever it sends email.
+- The setup URL contains `CONTACT_OAUTH_SETUP_KEY`. Treat it like a temporary secret and rotate the key if the URL is exposed outside trusted Render logs.
 
 Important email note: Render free web services block outbound SMTP ports, so Gmail SMTP on ports `465` or `587` can time out even with correct credentials. Use Gmail API delivery on Render free hosting.
 

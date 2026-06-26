@@ -6,6 +6,7 @@ Build-time maintenance scripts for the site.
 
 - `optimize-images.js`: generates responsive JPEG and WebP hero image assets from the source hero PNG before the SvelteKit production build runs.
 - `generate-sitemap-lastmod.js`: generates `src/lib/data/sitemap-lastmod.json` before build so sitemap `<lastmod>` values follow the source files that define each page.
+- `verify-contact-email.js`: validates contact-form email environment variables during deploy. For Gmail API delivery, it refreshes the OAuth token without sending an email. If `GMAIL_REFRESH_TOKEN` is missing but `CONTACT_OAUTH_SETUP_KEY` exists, it logs the setup URL and lets the first OAuth setup deploy continue.
 
 ## Patterns
 
