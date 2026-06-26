@@ -820,8 +820,7 @@ body.nav-open {
   align-items: center;
 }
 
-main > :where(section, nav):not(.hero),
-.site-footer {
+main > :where(section, nav):not(.hero) {
   content-visibility: auto;
   contain-intrinsic-size: auto 760px;
 }

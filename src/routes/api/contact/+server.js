@@ -313,6 +313,12 @@ function gmailApiConfigured(config) {
   return Boolean(config.clientId && config.clientSecret && config.refreshToken && config.from && config.to);
 }
 
+function missingConfigKeys(config, keyMap) {
+  return Object.entries(keyMap)
+    .filter(([, configKey]) => !config[configKey])
+    .map(([envKey]) => envKey);
+}
+
 function smtpConfig() {
   const secure = smtpSecureEnabled();
   const port = Number(clean(env.SMTP_PORT) || (secure ? 465 : 587));
@@ -414,7 +420,17 @@ export async function POST({ request, getClientAddress }) {
   if (provider === "gmail" || (!provider && gmailApiConfigured(gmailConfig))) {
     if (!gmailApiConfigured(gmailConfig)) {
       releaseDuplicate(duplicateKey);
-      console.error("Contact email is not configured. Set CONTACT_TO_EMAIL, CONTACT_FROM_EMAIL, GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET, and GMAIL_REFRESH_TOKEN.");
+      const missing = missingConfigKeys(gmailConfig, {
+        CONTACT_TO_EMAIL: "to",
+        CONTACT_FROM_EMAIL: "from",
+        GMAIL_CLIENT_ID: "clientId",
+        GMAIL_CLIENT_SECRET: "clientSecret",
+        GMAIL_REFRESH_TOKEN: "refreshToken"
+      });
+      console.error("Contact Gmail API email is not configured.", {
+        provider: provider || "(auto)",
+        missing
+      });
       return json({ message: "The contact form email is not configured yet." }, { status: 503 });
     }
 
@@ -441,7 +457,17 @@ export async function POST({ request, getClientAddress }) {
 
   if (!smtpConfigured(config)) {
     releaseDuplicate(duplicateKey);
-    console.error("Contact email is not configured. Set Gmail API variables or set CONTACT_TO_EMAIL, CONTACT_FROM_EMAIL, SMTP_HOST, SMTP_USER, and SMTP_PASSWORD.");
+    const missing = missingConfigKeys(config, {
+      CONTACT_TO_EMAIL: "to",
+      CONTACT_FROM_EMAIL: "from",
+      SMTP_HOST: "host",
+      SMTP_USER: "username",
+      SMTP_PASSWORD: "password"
+    });
+    console.error("Contact SMTP email is not configured.", {
+      provider: provider || "(auto)",
+      missing
+    });
     return json({ message: "The contact form email is not configured yet." }, { status: 503 });
   }
 
