@@ -8,6 +8,7 @@ const scrollThresholds = [25, 50, 75, 90];
 const trackedScrollDepths = new Set();
 const viewedSections = new Set();
 const journeyStorageKey = "theWebGuyJourney";
+const attributionStorageKey = "theWebGuyAttribution";
 const maxJourneyItems = 30;
 let currentPageMeta = {};
 let initialized = false;
@@ -109,6 +110,109 @@ function stringValue(value, maxLength = 120) {
   return text.length > maxLength ? `${text.slice(0, maxLength - 1)}...` : text;
 }
 
+function readAttribution() {
+  if (!browser) return {};
+  try {
+    return JSON.parse(window.sessionStorage.getItem(attributionStorageKey) || "{}");
+  } catch {
+    return {};
+  }
+}
+
+function writeAttribution(value) {
+  if (!browser) return;
+  window.sessionStorage.setItem(attributionStorageKey, JSON.stringify(value));
+}
+
+function cleanHostname(hostname = "") {
+  return hostname.replace(/^www\./, "").toLowerCase();
+}
+
+function classifyReferrerHost(hostname = "") {
+  const host = cleanHostname(hostname);
+  if (!host) return "direct";
+  if (/(^|\.)google\./.test(host) || /(^|\.)bing\.com$/.test(host) || /(^|\.)duckduckgo\.com$/.test(host) || /(^|\.)yahoo\.com$/.test(host)) {
+    return "organic_search";
+  }
+  if (/(^|\.)facebook\.com$/.test(host) || /(^|\.)instagram\.com$/.test(host) || /(^|\.)linkedin\.com$/.test(host) || /(^|\.)x\.com$/.test(host) || /(^|\.)twitter\.com$/.test(host) || /(^|\.)t\.co$/.test(host)) {
+    return "organic_social";
+  }
+  return "referral";
+}
+
+function referrerContext() {
+  if (!browser || !document.referrer) return { session_referrer_type: "direct" };
+
+  try {
+    const referrerUrl = new URL(document.referrer);
+    if (referrerUrl.origin === window.location.origin) return { session_referrer_type: "internal" };
+
+    const host = cleanHostname(referrerUrl.hostname);
+    return {
+      session_referrer_host: host,
+      session_referrer_type: classifyReferrerHost(host)
+    };
+  } catch {
+    return { session_referrer_type: "unknown" };
+  }
+}
+
+function campaignContext(url) {
+  const campaignParams = {
+    utm_source: "session_utm_source",
+    utm_medium: "session_utm_medium",
+    utm_campaign: "session_utm_campaign",
+    utm_term: "session_utm_term",
+    utm_content: "session_utm_content"
+  };
+
+  return Object.fromEntries(
+    Object.entries(campaignParams)
+      .map(([param, key]) => [key, url.searchParams.get(param)])
+      .filter(([, value]) => Boolean(value))
+  );
+}
+
+function hasCampaignSignal(url) {
+  const clickIdParams = ["gclid", "gbraid", "wbraid", "msclkid"];
+  return Object.keys(campaignContext(url)).length > 0 || clickIdParams.some((param) => url.searchParams.has(param));
+}
+
+export function refreshAttribution(url = browser ? window.location.href : "") {
+  if (!browser || !url) return {};
+
+  const existing = readAttribution();
+
+  try {
+    const parsedUrl = new URL(url, window.location.origin);
+    const shouldRefresh = !existing.landing_page_path || hasCampaignSignal(parsedUrl);
+    if (!shouldRefresh) return existing;
+
+    const landingMeta = routeMeta(parsedUrl.pathname);
+    const campaign = campaignContext(parsedUrl);
+    const paidClickType = ["gclid", "gbraid", "wbraid", "msclkid"].find((param) => parsedUrl.searchParams.has(param));
+    const attribution = {
+      landing_page_path: parsedUrl.pathname,
+      landing_page_type: landingMeta.page_type,
+      landing_page_topic: landingMeta.page_topic,
+      session_has_utm: Object.keys(campaign).length ? 1 : 0,
+      session_has_paid_click_id: paidClickType ? 1 : 0,
+      session_paid_click_type: paidClickType,
+      ...referrerContext(),
+      ...campaign
+    };
+
+    writeAttribution(attribution);
+    return attribution;
+  } catch {
+    return existing;
+  }
+}
+
+function attributionContext() {
+  return refreshAttribution();
+}
+
 function sanitizeParams(params = {}) {
   return Object.fromEntries(
     Object.entries(params)
@@ -185,6 +289,7 @@ export function trackEvent(eventName, params = {}) {
     eventName,
     sanitizeParams({
       ...activePageMeta(),
+      ...attributionContext(),
       source_page_path: window.location.pathname,
       source_page_title: document.title,
       ...params
@@ -198,6 +303,7 @@ export function trackPageView(url = window.location.href, pageTitle = document.t
 
   const parsedUrl = new URL(url, window.location.origin);
   currentPageMeta = routeMeta(parsedUrl.pathname);
+  const attribution = refreshAttribution(parsedUrl.href);
   recordJourneyItem({
     type: "page",
     label: currentPageMeta.page_topic || pageTitle,
@@ -209,6 +315,7 @@ export function trackPageView(url = window.location.href, pageTitle = document.t
     "page_view",
     sanitizeParams({
       ...currentPageMeta,
+      ...attribution,
       page_title: pageTitle,
       page_location: parsedUrl.href,
       page_path: parsedUrl.pathname

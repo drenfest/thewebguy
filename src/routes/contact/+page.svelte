@@ -6,6 +6,7 @@
   import TopicalLinks from "$lib/components/TopicalLinks.svelte";
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
+  import { beforeNavigate } from "$app/navigation";
   import { onMount } from "svelte";
   import { journeySnapshot, trackContactEvent, trackEvent } from "$lib/analytics.js";
   import { locationPages, servicePages, skillPages } from "$lib/data/content.js";
@@ -16,6 +17,10 @@
   let status = $state({ type: "idle", message: "" });
   let botTrap = $state("");
   let formLoadedAt = $state("");
+  let formStarted = false;
+  let formStartedAt = 0;
+  let submissionAttempted = false;
+  let abandonTracked = false;
   const formLocked = $derived(status.type === "loading" || status.type === "success");
   const submitLabel = $derived(status.type === "loading" ? "Sending..." : status.type === "success" ? "Request Sent" : "Send Request");
   const breadcrumbs = [
@@ -118,6 +123,51 @@
     };
   }
 
+  function activeContactPayload() {
+    return contactTrackingPayload(contactState.draft);
+  }
+
+  function trackContactFormStart(startTrigger = "field_focus") {
+    if (formStarted) return;
+
+    formStarted = true;
+    formStartedAt = Date.now();
+
+    const payload = {
+      ...activeContactPayload(),
+      form_start_trigger: startTrigger,
+      ...journeySnapshot()
+    };
+
+    trackEvent("contact_form_start", payload);
+    trackContactEvent("contact_form_start", payload);
+  }
+
+  function handleContactFormFocus(event) {
+    if (event.target?.name === "websiteCompany") return;
+    trackContactFormStart("field_focus");
+  }
+
+  function handleContactFormInput(event) {
+    if (event.target?.name === "websiteCompany") return;
+    trackContactFormStart("field_input");
+  }
+
+  function trackContactFormAbandon(abandonReason) {
+    if (!formStarted || submissionAttempted || abandonTracked || status.type === "success") return;
+
+    abandonTracked = true;
+    const payload = {
+      ...activeContactPayload(),
+      abandon_reason: abandonReason,
+      form_age_seconds: formStartedAt ? Math.round((Date.now() - formStartedAt) / 1000) : 0,
+      ...journeySnapshot()
+    };
+
+    trackEvent("contact_form_abandon", payload);
+    trackContactEvent("contact_form_abandon", payload);
+  }
+
   function trackContactSelect(fieldName, value) {
     trackEvent("contact_form_select", {
       form_id: "request-form",
@@ -126,15 +176,28 @@
     });
   }
 
+  beforeNavigate(() => {
+    trackContactFormAbandon("navigation");
+  });
+
   onMount(() => {
     formLoadedAt = String(Date.now());
     trackContactEvent("contact_page_view", { form_id: "request-form", is_form_fill: false });
+
+    const handlePageHide = () => trackContactFormAbandon("left_page");
+    window.addEventListener("pagehide", handlePageHide);
+
+    return () => {
+      window.removeEventListener("pagehide", handlePageHide);
+    };
   });
 
   async function submitRequest(event) {
     event.preventDefault();
     if (formLocked) return;
 
+    trackContactFormStart("submit");
+    submissionAttempted = true;
     status = { type: "loading", message: "Preparing request..." };
 
     const formData = { ...contactState.draft, websiteCompany: botTrap, formLoadedAt };
@@ -211,7 +274,7 @@
         </div>
       </div>
 
-      <form id="request-form" class="contact-form" onsubmit={submitRequest}>
+      <form id="request-form" class="contact-form" onsubmit={submitRequest} onfocusin={handleContactFormFocus} oninput={handleContactFormInput}>
         <label>Name<input bind:value={contactState.draft.name} name="name" type="text" autocomplete="name" placeholder="Your name" /></label>
         <label>Email<input bind:value={contactState.draft.email} name="email" type="email" autocomplete="email" placeholder="you@example.com" required /></label>
         <label>Company or agency name<input bind:value={contactState.draft.company} name="company" type="text" autocomplete="organization" placeholder="Company, agency, or team" /></label>

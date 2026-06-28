@@ -46,9 +46,9 @@ export const practicalExamples = [
 export const blogPosts = [
   {
     slug: "something-broke-on-your-website",
-    title: "Website Broke? Troubleshooting Help | The Web Guy",
+    title: "Website Suddenly Broke? Practical Fix Help | The Web Guy",
     h1: "Something Broke on Your Website? Start With the Symptom, Not the Platform",
-    meta: "Website layout broken, forms failing, checkout stuck, or WordPress acting weird? Learn what to check first and get hourly website fix help at $55/hr.",
+    meta: "Website layout shifted, forms failed, checkout stuck, or scripts stopped working? Learn what to check first and get practical website fix help.",
     eyebrow: "Something broke",
     summary: "When a website breaks, the fastest path is not guessing the platform. It is describing the symptom, checking what changed, and tracing whether the problem is visual, functional, tracking-related, or server-side.",
     problemType: "Start here",
@@ -210,9 +210,9 @@ export const blogPosts = [
       ["WordPress CMS, plugin, or theme weirdness", "Plugins, templates, page builders, updates, or WordPress admin behavior are part of the problem.", "/blog/cms-plugin-theme-weirdness/", "Read the WordPress post"]
     ],
     finalCta: {
-      heading: "Need this fixed on a real site?",
-      copy: "Send the URL, what broke, and what should happen instead. I will help trace the issue and tell you the next move.",
-      label: "Send the Website Problem",
+      heading: "Something broken on your site?",
+      copy: "Send the URL, what broke, what should happen instead, and anything that changed recently. I will trace the symptom and identify the smallest practical next move.",
+      label: "Get Help Fixing This",
       secondaryLabel: "View Website Fixes",
       secondaryHref: "/services/website-fixes/"
     }
@@ -719,9 +719,9 @@ export const blogPosts = [
   },
   {
     slug: "broken-layouts-mobile-website-fixes",
-    title: "Broken Mobile Website Layout Fixes | The Web Guy",
+    title: "Broken Mobile Website Layout Fix Help | The Web Guy",
     h1: "Broken Mobile Website Layouts: What to Check First",
-    meta: "Get practical help for broken mobile website layouts, overlapping sections, CSS conflicts, page builder spacing, embeds, and responsive layout problems.",
+    meta: "Mobile website layout shifted, sections overlap, buttons drift, or embeds break the page? Get practical broken-layout fix help from The Web Guy.",
     eyebrow: "Broken layouts",
     summary: "Sections overlap, headers act strange, spacing disappears, or the mobile layout falls apart. Start by reproducing the viewport, isolating the broken section, and tracing whether the issue comes from CSS, the builder, an embed, or a theme/plugin change.",
     problemType: "Something broke",
@@ -731,7 +731,7 @@ export const blogPosts = [
     heroSecondaryHref: "/services/website-fixes/",
     cta: "Send the URL, screenshot, device or browser, and what the layout should do instead.",
     exampleBlock: {
-      heading: "Proof example: layout bugs are usually traceable",
+      heading: "Need this fixed instead of guessed at?",
       copy: "A practical layout fix starts by reproducing the bad viewport, inspecting the affected element, checking recent theme, builder, plugin, or content changes, and applying the smallest CSS or template change that holds on mobile.",
       href: "/contact/",
       label: "Send the broken layout",
@@ -758,16 +758,35 @@ export const blogPosts = [
       ["WordPress Support", "Use this when the layout issue is tied to WordPress, Elementor, page builder spacing, theme updates, plugins, or cached CSS.", "/services/wordpress-support/", "View WordPress support for layout and builder issues"],
       ["React & Static Sites", "Use this when the fix needs front-end structure, component cleanup, responsive CSS, JavaScript behavior, or static page work.", "/services/react-static-sites/", "View React and static front-end support"],
       ["Production Debugging", "Use this when the layout bug needs browser inspection, console checks, CSS isolation, deployment review, or a careful production-safe fix.", "/skills/production-debugging/", "View production debugging support for website layout issues"]
-    ]
+    ],
+    finalCta: {
+      heading: "Need this layout fixed?",
+      copy: "Send the URL, screenshot, viewport, and what the layout should do instead. I can reproduce the break and make the smallest practical CSS, template, or builder-level fix.",
+      label: "Fix My Website Layout",
+      secondaryLabel: "View Website Fixes",
+      secondaryHref: "/services/website-fixes/"
+    }
   },
   {
     slug: "css-javascript-errors-website-bugs",
-    title: "CSS and JavaScript Website Bugs: What to Check First",
-    meta: "A practical guide to CSS and JavaScript website bugs, console errors, broken interactions, script conflicts, and front-end behavior that suddenly stops working.",
+    title: "CSS and JavaScript Bug Fix Help | The Web Guy",
+    h1: "CSS and JavaScript Bugs Breaking Your Website? What to Check First",
+    meta: "Menus, buttons, layouts, forms, or scripts stopped working? Get practical CSS and JavaScript bug-fix help from The Web Guy.",
     eyebrow: "CSS and JavaScript",
     summary: "Menus stop opening, buttons do nothing, styles change unexpectedly, or interactive pieces work on one page and fail on another.",
     problemType: "Something broke",
     relatedService: "website-fixes",
+    heroCta: "Fix the Website Bug",
+    heroSecondary: "View Website Fixes",
+    heroSecondaryHref: "/services/website-fixes/",
+    cta: "Send the URL, what stopped working, what should happen instead, and any recent theme, plugin, script, or deployment changes.",
+    exampleBlock: {
+      heading: "Need this fixed on the real page?",
+      copy: "If a menu, button, form, layout, or script stopped working, send the URL and what should happen. I can trace the browser error and make the smallest practical fix.",
+      href: "/contact/",
+      label: "Send the CSS or JavaScript bug",
+      title: "Open the contact request form for CSS and JavaScript bug help"
+    },
     sections: [
       ["Common signs", "Dropdowns do not open, sliders freeze, modals fail, buttons stop responding, CSS looks different after an update, or console errors appear when the broken feature loads."],
       ["Likely causes", "JavaScript bugs often come from duplicate libraries, plugin updates, script order, missing dependencies, third-party snippets, minification, cache issues, or code written for an old template."],
@@ -788,7 +807,14 @@ export const blogPosts = [
       ["AI-Built Cleanup", "Use this when generated CSS, JavaScript, routing, components, or state logic are close but unreliable on the real site.", "/services/ai-built-website-cleanup/", "View AI-built website cleanup for CSS and JavaScript bugs"],
       ["React & Static Sites", "Use this when the bug lives in a component, static build, front-end route, JavaScript behavior, or lightweight site deployment.", "/services/react-static-sites/", "View React and static site front-end support"],
       ["WordPress Support", "Use this when CSS or JavaScript behavior is coming from a WordPress theme, plugin, page builder, shortcode, or injected script.", "/services/wordpress-support/", "View WordPress support for front-end bugs"]
-    ]
+    ],
+    finalCta: {
+      heading: "Need this CSS or JavaScript bug fixed?",
+      copy: "Send the page URL, what stopped working, and what should happen instead. I will check console errors, script conflicts, CSS rules, and recent changes before changing anything.",
+      label: "Fix My Website Issue",
+      secondaryLabel: "View Website Fixes",
+      secondaryHref: "/services/website-fixes/"
+    }
   },
   {
     slug: "forms-modals-not-working",
@@ -1354,16 +1380,16 @@ export const skillPages = [
   },
   {
     slug: "performance-engineering",
-    title: "Website Performance Engineering Support | The Web Guy",
-    meta: "Get practical website performance engineering support for slow pages, script bloat, caching, layout shift, WordPress performance, and platform speed issues.",
-    h1: "Website Performance Engineering at $55/hr",
+    title: "Website Performance Engineering Diagnostics | The Web Guy",
+    meta: "Get technical performance diagnostics for Core Web Vitals, Lighthouse, script bloat, bundle analysis, hydration issues, caching behavior, layout shift, and front-end optimization.",
+    h1: "Website Performance Engineering Diagnostics at $55/hr",
     eyebrow: "Performance Engineering",
-    intro: "Performance support for sites slowed down by scripts, plugins, oversized assets, layout shift, caching problems, hosting limits, front-end weight, and platform decisions that need a practical review.",
-    problems: ["Pages feel slow even when hosting seems fine", "Lighthouse points to scripts, images, or layout shift", "Plugins and third-party tools are bloating WordPress", "Shopify or ecommerce pages are overloaded", "Caching is helping some pages and breaking others"],
-    tasks: ["Review script and plugin bloat", "Clean up images and front-end assets", "Investigate layout shift", "Review caching and Cloudflare behavior", "Improve WordPress performance where practical", "Explain what cannot be fixed without larger platform changes"],
-    connection: "Performance engineering supports site speed cleanup, WordPress support, ecommerce support, platform reliability, and Core Web Vitals work.",
+    intro: "Technical diagnostics for performance problems that need more than a plugin setting: Core Web Vitals, Lighthouse findings, render-blocking scripts, bundle weight, hydration behavior, caching headers, layout shift, and front-end optimization tradeoffs.",
+    problems: ["Lighthouse or PageSpeed points to scripts, images, layout shift, or render delay", "A Svelte, React, Shopify, or WordPress page feels heavy after real browser inspection", "Bundle weight, hydration, third-party tags, or duplicated assets need review", "Caching helps some pages but creates stale or inconsistent behavior", "The team needs proof of what is actually slowing the page before changing production"],
+    tasks: ["Run Lighthouse and browser diagnostics against key pages", "Trace render-blocking scripts, third-party tags, and network weight", "Review bundle output, hydration behavior, and front-end asset loading", "Investigate Cumulative Layout Shift and unstable page elements", "Check cache headers, Cloudflare behavior, compression, and hosting constraints", "Document the practical fixes, tradeoffs, and limits"],
+    connection: "Performance engineering is the deeper diagnostic capability behind site speed cleanup, WordPress support, ecommerce support, platform reliability, and Core Web Vitals work.",
     contextCards: [
-      ["Site speed cleanup", "Performance engineering is the deeper skill behind practical speed cleanup for slow pages, heavy scripts, and layout shift.", "/services/site-speed-performance/", "View speed cleanup", "site-speed-performance"],
+      ["Site speed cleanup", "Use the service page for buyer-facing speed cleanup on important pages; use this skill when the work needs diagnostics, tooling, and technical proof.", "/services/site-speed-performance/", "View speed cleanup", "site-speed-performance"],
       ["WordPress support", "Plugin bloat, page builders, images, caching, and theme output often make performance work a WordPress support issue.", "/services/wordpress-support/", "View WordPress support", "wordpress-support"],
       ["Ecommerce support", "Product pages, collection pages, apps, tracking, and media-heavy templates can make ecommerce performance especially fragile.", "/services/ecommerce-support/", "View ecommerce support", "ecommerce-support"],
       ["Cloudflare and DNS", "Caching, proxy behavior, SSL settings, headers, and hosting limits often affect whether performance fixes stick.", "/skills/cloudflare-dns-ssl/", "View Cloudflare help", "security-hosting-reliability"]
@@ -1372,15 +1398,15 @@ export const skillPages = [
     relatedSkills: ["core-web-vitals-lighthouse", "platform-reliability", "cloudflare-dns-ssl", "production-debugging"],
     faqs: [
       ["Can you guarantee perfect speed scores?", "No. Performance depends on hosting, themes, plugins, scripts, and business requirements. The work focuses on practical improvement."],
-      ["Can you work from Lighthouse notes?", "Yes. Lighthouse and PageSpeed reports are useful diagnostics when paired with actual site inspection."],
+      ["Can you work from Lighthouse notes?", "Yes. Lighthouse and PageSpeed reports are useful diagnostics when paired with browser inspection, network traces, and page-specific context."],
       ["Can third-party scripts be fixed?", "Some can be deferred, cleaned up, or moved. Some are business requirements and need tradeoffs explained."],
-      ["Does performance work help SEO?", "It can support SEO and conversions, especially when slow pages, layout shift, and poor mobile UX are part of the problem."]
+      ["Does performance work help SEO?", "It can support SEO and conversions, especially when slow pages, layout shift, poor mobile UX, or Core Web Vitals issues are part of the problem."]
     ]
   },
   {
     slug: "production-debugging",
-    title: "Production Website Debugging Contractor | The Web Guy",
-    meta: "Get production website debugging help for broken layouts, scripts, forms, APIs, tracking, CMS issues, integrations, and unstable website behavior.",
+    title: "Production Website Debugging for Broken Sites | The Web Guy",
+    meta: "Get production debugging help for broken website layouts, JavaScript errors, forms, APIs, tracking, CMS issues, integrations, and unstable live-site behavior.",
     h1: "Production Website Debugging at $55/hr",
     eyebrow: "Production Debugging",
     intro: "Debugging support for real websites when something is broken, weird, unstable, or hard to trace across the CMS, front end, scripts, APIs, hosting, tracking, and third-party tools.",

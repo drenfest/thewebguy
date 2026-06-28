@@ -162,45 +162,45 @@ export const coreServicePages = [
   },
   {
     slug: "site-speed-performance",
-    title: "Site Speed and Performance Cleanup | The Web Guy",
-    meta: "Improve slow websites with practical speed cleanup, image optimization, script review, layout shift fixes, caching review, and WordPress performance support.",
+    title: "Site Speed Cleanup and Core Web Vitals Help | The Web Guy",
+    meta: "Improve slow WordPress, Svelte, React, Shopify, and static pages with practical speed cleanup, Core Web Vitals review, image optimization, script cleanup, caching checks, and conversion-focused performance support.",
     h1: "Site Speed and Performance Cleanup at $55/hr",
     eyebrow: "Site Speed",
     intro:
-      "Practical speed cleanup for slow WordPress sites, bloated pages, heavy scripts, oversized images, layout shift, caching confusion, and performance problems that make the site feel worse than it should.",
+      "Client-facing speed cleanup for slow WordPress, Shopify, Svelte, React, and static pages where heavy scripts, oversized images, layout shift, caching confusion, or front-end weight are hurting user experience, Core Web Vitals, and conversion paths.",
     cta: "Clean Up Site Speed",
     audience:
-      "This is for site owners and teams who want realistic performance improvement, not magic score guarantees. Hosting, theme quality, plugins, third-party scripts, ecommerce needs, and business requirements all affect what can be improved.",
+      "This is for site owners and teams who want realistic performance improvement on important pages, not magic score guarantees. Hosting, theme quality, plugins, third-party scripts, ecommerce needs, and business requirements all affect what can be improved.",
     audienceHeading: "Realistic performance cleanup",
     sections: [
       {
-        h2: "Why websites get slow",
+        h2: "Why client-facing pages get slow",
         body:
-          "Slow sites usually have layers of causes: oversized images, too many plugins, old themes, page builder weight, chat widgets, tracking scripts, ads, heavy fonts, unoptimized embeds, poor hosting, cache conflicts, and templates that were never built with performance in mind.",
+          "Slow pages usually have layers of causes: oversized images, too many plugins, old themes, page builder weight, chat widgets, tracking scripts, ads, heavy fonts, unoptimized embeds, poor hosting, cache conflicts, and templates that were never built with performance in mind. The business problem is not only the score; it is friction on pages that need visitors to read, trust, click, and send a request.",
         bullets: [
           "Image and asset cleanup",
           "Plugin and script bloat review",
           "Layout shift fixes",
           "Caching and hosting considerations",
-          "Core Web Vitals support",
-          "WordPress performance cleanup"
+          "Core Web Vitals and Lighthouse review",
+          "WordPress, Svelte, React, Shopify, and static-page performance cleanup"
         ]
       },
       {
         h2: "Practical speed cleanup",
         cards: [
-          ["Images and assets", "Find oversized images, missing dimensions, lazy-loading issues, heavy files, and front-end assets that can be cleaned up."],
-          ["Plugin and script review", "Review plugin weight, duplicated features, third-party scripts, GTM tags, widgets, embeds, and code that drags pages down."],
+          ["Images and assets", "Find oversized images, missing dimensions, lazy-loading issues, heavy files, and front-end assets that can be compressed, resized, deferred, or removed."],
+          ["Plugin and script review", "Review plugin weight, duplicated features, third-party scripts, GTM tags, widgets, embeds, and code that drags important pages down."],
           ["Layout shift", "Fix unstable images, embeds, fonts, banners, forms, and components that jump around as the page loads."],
           ["Caching and hosting", "Review caching behavior, Cloudflare, server headers, compression, DNS, hosting limitations, and cache conflicts."],
-          ["WordPress performance", "Theme cleanup, template review, plugin settings, page builder bloat, database considerations, and practical maintenance recommendations."],
-          ["Measurement", "Use Lighthouse/PageSpeed-style signals as diagnostics, then focus on what can realistically be changed."]
+          ["WordPress and front-end cleanup", "Review themes, templates, page builders, Svelte/React output, static assets, plugin settings, and practical maintenance recommendations."],
+          ["Core Web Vitals and conversion impact", "Use Lighthouse/PageSpeed-style signals as diagnostics, then focus on changes that help the pages visitors actually use."]
         ]
       },
       {
         h2: "Performance work often overlaps with",
         cards: [
-          ["Performance engineering", "Core Web Vitals, render-blocking assets, layout shift, and front-end weight often need more than a plugin setting.", "/skills/performance-engineering/", "View performance engineering"],
+          ["Performance engineering", "Use the skill page when the work needs diagnostics, tooling, bundle analysis, hydration review, caching traces, or deeper front-end optimization.", "/skills/performance-engineering/", "View performance engineering"],
           ["WordPress cleanup", "Theme weight, plugins, builders, image handling, and cache behavior often make speed work a WordPress support issue.", "/services/wordpress-support/", "View WordPress support"],
           ["Cloudflare and hosting", "Caching, DNS, SSL mode, server limits, and edge behavior can affect whether speed fixes actually hold.", "/skills/cloudflare-dns-ssl/", "View Cloudflare and DNS help"],
           ["Website fixes", "Slow pages sometimes hide visible layout bugs, script errors, broken embeds, and unstable components that need direct fixing.", "/services/website-fixes/", "View website fixes"],
