@@ -1,36 +1,4 @@
-import {
-  blogPosts,
-  blogUrl,
-  locationMap,
-  locationUrl,
-  serviceMap,
-  serviceUrl,
-  skillMap,
-  skillUrl
-} from "./content.js";
-
-const staticRoutes = new Set(["/", "/services/", "/blog/", "/skills/", "/locations/", "/rate/", "/about/", "/faq/", "/contact/"]);
-const blogMap = Object.fromEntries(blogPosts.map((post) => [post.slug, post]));
-
-function pageLink(label, href) {
-  return staticRoutes.has(href) ? { label, href } : null;
-}
-
-function serviceLink(label, slug) {
-  return serviceMap[slug] ? { label, href: serviceUrl(slug) } : null;
-}
-
-function blogLink(label, slug) {
-  return blogMap[slug] ? { label, href: blogUrl(slug) } : null;
-}
-
-function skillLink(label, slug) {
-  return skillMap[slug] ? { label, href: skillUrl(slug) } : null;
-}
-
-function locationLink(label, slug) {
-  return locationMap[slug] ? { label, href: locationUrl(slug) } : null;
-}
+import { blogLink, locationLink, pageLink, serviceLink, skillLink } from "./relationships.js";
 
 function group(title, links) {
   return { title, links: links.filter(Boolean) };
@@ -127,16 +95,21 @@ export const megaMenus = {
     [
       group("Troubleshooting", [
         blogLink("Something Broke on Your Website?", "something-broke-on-your-website"),
+        blogLink("WordPress Broken After Plugin Update", "wordpress-site-broken-after-plugin-update"),
         blogLink("WordPress Site Keeps Breaking", "cms-plugin-theme-weirdness"),
-        blogLink("CSS and JavaScript Issues", "css-javascript-errors-website-bugs")
+        blogLink("CSS and JavaScript Issues", "css-javascript-errors-website-bugs"),
+        blogLink("WooCommerce Checkout Not Working", "woocommerce-checkout-not-working")
       ]),
       group("SEO & Pages", [
         blogLink("SEO Audit Done But Not Implemented", "seo-audit-done-now-implement-it"),
-        blogLink("Need a Page Live Fast", "need-a-page-live-fast")
+        blogLink("Need a Page Live Fast", "need-a-page-live-fast"),
+        blogLink("AI-Built Website Launch Cleanup", "ai-built-website-not-ready-to-launch")
       ]),
       group("Tracking & Systems", [
         blogLink("Website Data Does Not Match Reality", "website-data-systems-not-connecting"),
-        blogLink("Analytics Verification", "tracking-scripts-pixels-broken")
+        blogLink("Analytics Verification", "tracking-scripts-pixels-broken"),
+        blogLink("GTM Form Tracking for GA4", "gtm-form-tracking-ga4"),
+        blogLink("Google Ads Conversion Tracking", "google-ads-conversion-tracking-not-working")
       ])
     ],
     {
@@ -237,6 +210,7 @@ export const mobileNavSections = [
       serviceLink("Ecommerce Support", "ecommerce-support"),
       serviceLink("Shopify Liquid Support", "shopify-liquid-support"),
       serviceLink("WooCommerce Support", "woocommerce-support"),
+      serviceLink("WooCommerce Checkout Fix", "woocommerce-checkout-error-fix"),
       serviceLink("Analytics & Tracking", "analytics-tracking"),
       serviceLink("API Integrations", "api-integrations"),
       serviceLink("Agency Overflow Developer", "agency-overflow-developer"),
@@ -252,9 +226,14 @@ export const mobileNavSections = [
     links: [
       pageLink("View Blog", "/blog/"),
       blogLink("Something Broke on Your Website?", "something-broke-on-your-website"),
+      blogLink("WordPress Broken After Plugin Update", "wordpress-site-broken-after-plugin-update"),
+      blogLink("WooCommerce Checkout Not Working", "woocommerce-checkout-not-working"),
       blogLink("SEO Audit Done But Not Implemented", "seo-audit-done-now-implement-it"),
       blogLink("Need a Page Live Fast", "need-a-page-live-fast"),
-      blogLink("Website Data Does Not Match Reality", "website-data-systems-not-connecting")
+      blogLink("Website Data Does Not Match Reality", "website-data-systems-not-connecting"),
+      blogLink("GTM Form Tracking for GA4", "gtm-form-tracking-ga4"),
+      blogLink("Google Ads Conversion Tracking", "google-ads-conversion-tracking-not-working"),
+      blogLink("AI-Built Website Launch Cleanup", "ai-built-website-not-ready-to-launch")
     ].filter(Boolean)
   },
   {

@@ -14,9 +14,18 @@
   import FaqList from "$lib/components/FaqList.svelte";
   import ProofPanel from "$lib/components/ProofPanel.svelte";
   import SortableTable from "$lib/components/SortableTable.svelte";
-  import { serviceMap, servicePages, serviceSkillMap, serviceUrl, skillMap, skillUrl } from "$lib/data/content.js";
+  import { serviceUrl, skillUrl } from "$lib/data/content.js";
   import { serviceHeroImage } from "$lib/data/hero-images.js";
   import { proofForService } from "$lib/data/proof.js";
+  import {
+    relatedServicesForService,
+    relatedSkillsForService,
+    relatedSkillSlugsForService,
+    serviceClusterPagesFor,
+    serviceClusterTopicalItems,
+    serviceContextualSupportItems,
+    serviceTopicalItems
+  } from "$lib/data/relationships.js";
   import { breadcrumbSchema, faqSchema, schemaList, serviceSchema } from "$lib/data/schema.js";
 
   let { data } = $props();
@@ -38,58 +47,17 @@
     serviceSchema(service, servicePath),
     faqSchema(serviceFaqs)
   ));
-  const relatedServices = $derived(service.related.map((slug) => serviceMap[slug]).filter(Boolean));
-  const relatedSkillSlugs = $derived(service.skillSlugs || serviceSkillMap[service.slug] || []);
-  const relatedSkills = $derived(relatedSkillSlugs.map((slug) => skillMap[slug]).filter(Boolean));
+  const relatedServices = $derived(relatedServicesForService(service));
+  const relatedSkillSlugs = $derived(relatedSkillSlugsForService(service));
+  const relatedSkills = $derived(relatedSkillsForService(service));
   const serviceProof = $derived(proofForService(service.slug));
   const fallbackAudienceHeading = $derived(`${service.audience.split(".")[0]}.`);
   const audienceHeading = $derived(service.audienceHeading || fallbackAudienceHeading);
   const audienceBody = $derived(service.audienceHeading ? service.audience : service.audience.split(".").slice(1).join(".").trim());
-  const topicalItems = $derived([
-    {
-      label: "Service hub",
-      title: "Website Services",
-      copy: "Use the full services hub when the problem crosses fixes, WordPress, SEO, tracking, ecommerce, speed, or ongoing support.",
-      href: "/services/"
-    },
-    ...relatedServices.slice(0, 3).map((related) => ({
-      label: "Related service",
-      title: related.h1.replace(" at $55/hr", ""),
-      copy: `${service.eyebrow} often overlaps with ${related.eyebrow.toLowerCase()} when the work touches the same site, template, tracking, or technical backlog.`,
-      href: serviceUrl(related.slug)
-    })),
-    ...relatedSkills.slice(0, 3).map((skill) => ({
-      label: "Related skill",
-      title: skill.eyebrow,
-      copy: skill.connection,
-      href: skillUrl(skill.slug)
-    }))
-  ]);
-  const contextualSupportItems = $derived([
-    ...relatedSkills.slice(0, 2).map((skill) => ({
-      title: skill.eyebrow,
-      href: skillUrl(skill.slug),
-      titleAttr: `View ${skill.eyebrow} from ${service.eyebrow}`,
-      copy: skill.connection
-    })),
-    ...relatedServices.slice(0, 2).map((related) => ({
-      title: related.h1.replace(" at $55/hr", ""),
-      href: serviceUrl(related.slug),
-      titleAttr: `View ${related.eyebrow} from ${service.eyebrow}`,
-      copy: related.intro
-    }))
-  ]);
-  const clusterAnchorSlug = $derived(service.clusterAnchor || service.slug);
-  const serviceClusterPages = $derived(servicePages.filter((page) => (
-    page.slug !== service.slug &&
-    (page.clusterAnchor === clusterAnchorSlug || page.slug === clusterAnchorSlug || (page.clusterLinks || []).includes(service.slug))
-  )).slice(0, 12));
-  const clusterTopicalItems = $derived(serviceClusterPages.map((page) => ({
-    label: page.keywordCluster || "Related path",
-    title: page.eyebrow,
-    copy: page.intro,
-    href: serviceUrl(page.slug)
-  })));
+  const topicalItems = $derived(serviceTopicalItems(service, relatedServices, relatedSkills));
+  const contextualSupportItems = $derived(serviceContextualSupportItems(service, relatedServices, relatedSkills));
+  const serviceClusterPages = $derived(serviceClusterPagesFor(service));
+  const clusterTopicalItems = $derived(serviceClusterTopicalItems(serviceClusterPages));
   const serviceInternalParagraphs = $derived([
     [
       `${service.eyebrow} often overlaps with `,
@@ -121,6 +89,7 @@
   ]);
   const supportingArticleLinks = {
     "wordpress-support": [
+      { text: "WordPress site broken after a plugin update", href: "/blog/wordpress-site-broken-after-plugin-update/", title: "Read what to check when a WordPress site breaks after a plugin update" },
       { text: "CMS, plugin, and theme weirdness", href: "/blog/cms-plugin-theme-weirdness/", title: "Read about CMS, plugin, and theme weirdness on existing sites" },
       { text: "forms and modals not working", href: "/blog/forms-modals-not-working/", title: "Read about forms and modals not working on websites" }
     ],
@@ -139,10 +108,12 @@
       { text: "topological relevance and vector SEO", href: "/blog/topological-relevance-vector-seo/", title: "Read the TopoRank case study on topological relevance and vector SEO" }
     ],
     "website-fixes": [
+      { text: "WordPress site broken after a plugin update", href: "/blog/wordpress-site-broken-after-plugin-update/", title: "Read what to check when a WordPress site breaks after a plugin update" },
       { text: "CMS, plugin, and theme weirdness", href: "/blog/cms-plugin-theme-weirdness/", title: "Read about CMS, plugin, and theme weirdness" },
       { text: "forms and modals not working", href: "/blog/forms-modals-not-working/", title: "Read about forms and modals not working" }
     ],
     "ai-built-website-cleanup": [
+      { text: "AI-built website not ready to launch", href: "/blog/ai-built-website-not-ready-to-launch/", title: "Read the AI-built website launch cleanup checklist" },
       { text: "CSS and JavaScript website bugs", href: "/blog/css-javascript-errors-website-bugs/", title: "Read about CSS and JavaScript bugs in generated or existing sites" },
       { text: "website data not connecting", href: "/blog/website-data-systems-not-connecting/", title: "Read about website data, forms, tracking, APIs, and systems not connecting" }
     ],
@@ -151,10 +122,13 @@
       { text: "forms and modals not working", href: "/blog/forms-modals-not-working/", title: "Read about forms and modals not working during production support" }
     ],
     "ecommerce-support": [
+      { text: "WooCommerce checkout not working", href: "/blog/woocommerce-checkout-not-working/", title: "Read what to check when WooCommerce checkout is not working" },
       { text: "tracking scripts and pixels", href: "/blog/tracking-scripts-pixels-broken/", title: "Read about broken tracking scripts and pixels in ecommerce measurement" },
       { text: "embeds, iframes, and widgets breaking pages", href: "/blog/embeds-iframes-widgets-breaking-pages/", title: "Read about embeds, iframes, and widgets breaking pages" }
     ],
     "analytics-tracking": [
+      { text: "GTM form tracking for GA4", href: "/blog/gtm-form-tracking-ga4/", title: "Read about GTM form tracking for GA4" },
+      { text: "Google Ads conversion tracking not working", href: "/blog/google-ads-conversion-tracking-not-working/", title: "Read what to check when Google Ads conversion tracking is not working" },
       { text: "tracking scripts and pixels", href: "/blog/tracking-scripts-pixels-broken/", title: "Read about broken tracking scripts and pixels" },
       { text: "forms and modals not working", href: "/blog/forms-modals-not-working/", title: "Read about form and modal issues that affect tracking" },
       { text: "topological relevance and vector SEO", href: "/blog/topological-relevance-vector-seo/", title: "Read the TopoRank case study on topological relevance and vector SEO" }

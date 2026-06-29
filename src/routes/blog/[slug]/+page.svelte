@@ -134,7 +134,7 @@
   ];
   const articleRows = $derived(post.sections.map((section) => ({
     section: sectionHeading(section),
-    whyItMatters: sectionBody(section)[0] || post.summary,
+    whyItMatters: paragraphText(sectionBody(section)[0]) || post.summary,
     check: sectionList(section).slice(0, 2).join(", ") || "URL, symptom, expected behavior, and recent changes",
     supportPath: articleSupportLinks[0] ? { text: articleSupportLinks[0][0], href: articleSupportLinks[0][1] } : { text: "Website Fixes", href: "/services/website-fixes/" }
   })));
@@ -163,6 +163,7 @@
 
   function sectionBody(section) {
     const body = Array.isArray(section) ? section[1] : section.body;
+    if (isLinkedParagraph(body)) return [body];
     return Array.isArray(body) ? body : [body].filter(Boolean);
   }
 
@@ -209,6 +210,26 @@
     return Array.isArray(item)
       ? item[3] || `View ${item[0]}`
       : item.title || `View ${item.label}`;
+  }
+
+  function paragraphParts(paragraph) {
+    return Array.isArray(paragraph) ? paragraph.filter(Boolean) : [paragraph].filter(Boolean);
+  }
+
+  function isLinkedParagraph(value) {
+    return Array.isArray(value) && value.some((part) => part && typeof part === "object" && part.href);
+  }
+
+  function paragraphText(paragraph) {
+    return paragraphParts(paragraph).map((part) => typeof part === "string" ? part : linkText(part)).join("");
+  }
+
+  function linkTitle(part) {
+    return part.title || `View ${part.text || part.label}`;
+  }
+
+  function linkText(part) {
+    return part.text || part.label;
   }
 
   function tocItems(post) {
@@ -263,7 +284,15 @@
         {#if post.intro}
           <div class="article-intro">
             {#each post.intro as paragraph}
-              <p>{paragraph}</p>
+              <p>
+                {#each paragraphParts(paragraph) as part}
+                  {#if typeof part === "string"}
+                    {part}
+                  {:else}
+                    <a class="text-link" href={part.href} title={linkTitle(part)}>{linkText(part)}</a>
+                  {/if}
+                {/each}
+              </p>
             {/each}
           </div>
         {/if}
@@ -287,7 +316,15 @@
             <h2>{sectionHeading(section)}</h2>
 
             {#each sectionBody(section) as paragraph}
-              <p>{paragraph}</p>
+              <p>
+                {#each paragraphParts(paragraph) as part}
+                  {#if typeof part === "string"}
+                    {part}
+                  {:else}
+                    <a class="text-link" href={part.href} title={linkTitle(part)}>{linkText(part)}</a>
+                  {/if}
+                {/each}
+              </p>
             {/each}
 
             {#if !Array.isArray(section) && section.figures}

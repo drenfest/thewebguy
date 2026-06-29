@@ -1,33 +1,9 @@
 <script>
-  import { blogPosts, blogUrl, locationPages, locationUrl, mainPages, servicePages, serviceUrl, skillPages, skillUrl } from "$lib/data/content.js";
+  import { mainPages } from "$lib/data/content.js";
+  import { blogLink, locationLink, routeLink, serviceLink, skillLink } from "$lib/data/relationships.js";
   import LogoMark from "./LogoMark.svelte";
 
   const year = new Date().getFullYear();
-
-  const serviceMap = Object.fromEntries(servicePages.map((service) => [service.slug, service]));
-  const skillMap = Object.fromEntries(skillPages.map((skill) => [skill.slug, skill]));
-  const locationMap = Object.fromEntries(locationPages.map((location) => [location.slug, location]));
-  const blogMap = Object.fromEntries(blogPosts.map((post) => [post.slug, post]));
-
-  function routeLink(label, href) {
-    return { label, href };
-  }
-
-  function serviceLink(label, slug) {
-    return serviceMap[slug] ? { label, href: serviceUrl(slug) } : null;
-  }
-
-  function skillLink(label, slug) {
-    return skillMap[slug] ? { label, href: skillUrl(slug) } : null;
-  }
-
-  function locationLink(label, slug) {
-    return locationMap[slug] ? { label, href: locationUrl(slug) } : null;
-  }
-
-  function blogLink(label, slug) {
-    return blogMap[slug] ? { label, href: blogUrl(slug) } : null;
-  }
 
   function linkTitle(label, href = "") {
     if (href === "/contact/") return "Open the contact request form";

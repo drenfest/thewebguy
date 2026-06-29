@@ -11,9 +11,18 @@
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import ProofPanel from "$lib/components/ProofPanel.svelte";
-  import { locationMap, locationUrl, serviceMap, serviceUrl, skillMap, skillUrl } from "$lib/data/content.js";
+  import { locationUrl, serviceUrl, skillUrl } from "$lib/data/content.js";
   import { locationHeroImage } from "$lib/data/hero-images.js";
   import { proofForLocation } from "$lib/data/proof.js";
+  import {
+    locationContextualSupportItems,
+    locationLinkSeries,
+    locationTopicalItems,
+    nearbyLocationsForLocation,
+    regionalLinkLocationsForLocation,
+    relatedServicesForLocation,
+    relatedSkillsForLocation
+  } from "$lib/data/relationships.js";
   import { breadcrumbSchema, faqSchema, locationServiceSchema, schemaList } from "$lib/data/schema.js";
 
   let { data } = $props();
@@ -24,32 +33,12 @@
     { label: "Locations", href: "/locations/", title: "View all service area locations" },
     { label: `${location.city}, ${location.state}`, title: `Current page: web support for ${location.city}, ${location.state}` }
   ]);
-  const relatedServices = $derived(location.relatedServices.map((slug) => serviceMap[slug]).filter(Boolean));
-  const relatedSkills = $derived(location.relatedSkills.map((slug) => skillMap[slug]).filter(Boolean));
-  const nearbyLocations = $derived(location.nearby.map((slug) => locationMap[slug]).filter(Boolean));
+  const relatedServices = $derived(relatedServicesForLocation(location));
+  const relatedSkills = $derived(relatedSkillsForLocation(location));
+  const nearbyLocations = $derived(nearbyLocationsForLocation(location));
   const locationProof = $derived(proofForLocation(location.slug));
-  const regionalSupportSlugs = ["freeport-il", "rockford-il", "monroe-wi", "beloit-wi", "janesville-wi", "madison-wi"];
-  const regionalLinkLocations = $derived(regionalSupportSlugs.map((slug) => locationMap[slug]).filter((nearby) => nearby && nearby.slug !== location.slug));
-  const topicalItems = $derived([
-    {
-      label: "Service area hub",
-      title: "Local Website Support Near Freeport, IL",
-      copy: "Use the locations hub to compare nearby service areas and understand how local-friendly remote web support is organized.",
-      href: "/locations/"
-    },
-    ...relatedServices.slice(0, 3).map((service) => ({
-      label: `${location.city} service fit`,
-      title: service.h1.replace(" at $55/hr", ""),
-      copy: `${location.city}-area sites often need ${service.eyebrow.toLowerCase()} when local pages, lead forms, tracking, or platform cleanup are part of the work.`,
-      href: serviceUrl(service.slug)
-    })),
-    ...relatedSkills.slice(0, 3).map((skill) => ({
-      label: "Useful capability",
-      title: skill.eyebrow,
-      copy: skill.connection,
-      href: skillUrl(skill.slug)
-    }))
-  ]);
+  const regionalLinkLocations = $derived(regionalLinkLocationsForLocation(location));
+  const topicalItems = $derived(locationTopicalItems(location, relatedServices, relatedSkills));
   const locationFaqs = $derived([
     [`Do you work with ${location.city} businesses remotely?`, `Yes. The Web Guy provides remote-friendly hourly website support for ${location.city}-area businesses and teams.`],
     [`What do you charge for website help in ${location.city}?`, `Contract web help starts at $55/hr for practical website fixes, updates, SEO implementation, tracking, and webmaster support.`],
@@ -62,30 +51,7 @@
     locationServiceSchema(location, locationPath),
     faqSchema(locationFaqs)
   ));
-  const contextualSupportItems = $derived([
-    ...nearbyLocations.slice(0, 3).map((nearby) => ({
-      title: `Local Website Support in ${nearby.city}, ${nearby.state}`,
-      href: locationUrl(nearby.slug),
-      titleAttr: `View web support for ${nearby.city}, ${nearby.state} from ${location.city}, ${location.state}`,
-      copy: `for nearby regional context when the visitor is comparing local-friendly website support around ${location.city}.`
-    })),
-    ...relatedServices.slice(0, 2).map((service) => ({
-      title: service.h1.replace(" at $55/hr", ""),
-      href: serviceUrl(service.slug),
-      titleAttr: `View ${service.eyebrow} for ${location.city}, ${location.state}`,
-      copy: `${location.city}-area sites often need this when local pages, forms, tracking, platform cleanup, or SEO implementation become part of the request.`
-    }))
-  ]);
-  function locationLinkSeries(locations) {
-    return locations.flatMap((nearby, index) => [
-      index === 0 ? "" : index === locations.length - 1 ? ", and " : ", ",
-      {
-        text: `${nearby.city}, ${nearby.state}`,
-        href: locationUrl(nearby.slug),
-        title: `View local website support for ${nearby.city}, ${nearby.state}`
-      }
-    ]);
-  }
+  const contextualSupportItems = $derived(locationContextualSupportItems(location, nearbyLocations, relatedServices));
   const localTroubleLinks = {
     "freeport-il": [
       { text: "CMS, plugin, and theme weirdness", href: "/blog/cms-plugin-theme-weirdness/", title: "Read about CMS, plugin, and theme issues for existing local sites" },

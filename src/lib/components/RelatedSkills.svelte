@@ -1,10 +1,11 @@
 <script>
   import CardGrid from "./CardGrid.svelte";
   import SectionHeading from "./SectionHeading.svelte";
-  import { skillMap, skillUrl } from "$lib/data/content.js";
+  import { skillUrl } from "$lib/data/content.js";
+  import { resolveSkills } from "$lib/data/relationships.js";
 
   let { slugs = [] } = $props();
-  const skills = $derived(slugs.map((slug) => skillMap[slug]).filter(Boolean));
+  const skills = $derived(resolveSkills(slugs));
 </script>
 
 {#if skills.length}

@@ -13,9 +13,15 @@
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import ProofPanel from "$lib/components/ProofPanel.svelte";
   import SortableTable from "$lib/components/SortableTable.svelte";
-  import { serviceMap, serviceUrl, skillMap, skillUrl } from "$lib/data/content.js";
+  import { serviceUrl, skillUrl } from "$lib/data/content.js";
   import { skillHeroImage } from "$lib/data/hero-images.js";
   import { proofForSkill } from "$lib/data/proof.js";
+  import {
+    relatedServicesForSkill,
+    relatedSkillsForSkill,
+    skillContextualSupportItems,
+    skillTopicalItems
+  } from "$lib/data/relationships.js";
   import { breadcrumbSchema, faqSchema, schemaList, skillPageSchema } from "$lib/data/schema.js";
 
   let { data } = $props();
@@ -31,43 +37,11 @@
     skillPageSchema(skill, skillPath),
     faqSchema(skill.faqs || [])
   ));
-  const relatedServiceCards = $derived(skill.relatedServices.map((slug) => serviceMap[slug]).filter(Boolean));
-  const relatedSkills = $derived(skill.relatedSkills.map((slug) => skillMap[slug]).filter(Boolean));
+  const relatedServiceCards = $derived(relatedServicesForSkill(skill));
+  const relatedSkills = $derived(relatedSkillsForSkill(skill));
   const skillProof = $derived(proofForSkill(skill.slug));
-  const topicalItems = $derived([
-    {
-      label: "Skill hub",
-      title: "Technical Web Skills",
-      copy: "Use the skills hub when the issue is easier to describe by platform, tool, integration, debugging path, or implementation detail.",
-      href: "/skills/"
-    },
-    ...relatedServiceCards.slice(0, 3).map((service) => ({
-      label: "Service connection",
-      title: service.h1.replace(" at $55/hr", ""),
-      copy: `${skill.eyebrow} usually becomes useful during ${service.eyebrow.toLowerCase()}, especially when implementation has to happen inside an existing website.`,
-      href: serviceUrl(service.slug)
-    })),
-    ...relatedSkills.slice(0, 3).map((related) => ({
-      label: "Nearby skill",
-      title: related.eyebrow,
-      copy: related.connection,
-      href: skillUrl(related.slug)
-    }))
-  ]);
-  const contextualSupportItems = $derived([
-    ...relatedServiceCards.slice(0, 3).map((service) => ({
-      title: service.h1.replace(" at $55/hr", ""),
-      href: serviceUrl(service.slug),
-      titleAttr: `View ${service.eyebrow} from ${skill.eyebrow}`,
-      copy: `${skill.eyebrow} usually matters here when the work needs to become a finished site change instead of a technical note.`
-    })),
-    ...relatedSkills.slice(0, 1).map((related) => ({
-      title: related.eyebrow,
-      href: skillUrl(related.slug),
-      titleAttr: `View ${related.eyebrow} from ${skill.eyebrow}`,
-      copy: related.connection
-    }))
-  ]);
+  const topicalItems = $derived(skillTopicalItems(skill, relatedServiceCards, relatedSkills));
+  const contextualSupportItems = $derived(skillContextualSupportItems(skill, relatedServiceCards, relatedSkills));
   const skillFocusParagraphs = {
     "rest-api-webhook-integrations": [
       [

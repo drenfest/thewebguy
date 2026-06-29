@@ -50,37 +50,39 @@
 </script>
 
 <div class="sortable-table-wrap">
-  <table class="sortable-table">
-    {#if caption}<caption>{caption}</caption>{/if}
-    <thead>
-      <tr>
-        {#each columns as column}
-          <th aria-sort={ariaSort(column.key)}>
-            <button type="button" aria-label={sortButtonLabel(column)} onclick={() => sortBy(column.key)}>
-              <span>{column.label}</span>
-              <span
-                class={`sort-indicator ${sortKey === column.key ? "sort-indicator--active" : ""} ${sortKey === column.key && sortDirection === "desc" ? "sort-indicator--desc" : ""}`}
-                aria-hidden="true"
-              ></span>
-            </button>
-          </th>
-        {/each}
-      </tr>
-    </thead>
-    <tbody>
-      {#each sortedRows as row}
+  <div class="sortable-table-scroll">
+    <table class="sortable-table">
+      {#if caption}<caption>{caption}</caption>{/if}
+      <thead>
         <tr>
           {#each columns as column}
-            <td>
-              {#if cellHref(row[column.key])}
-                <a href={cellHref(row[column.key])} title={`View ${cellText(row[column.key])}`}>{cellText(row[column.key])}</a>
-              {:else}
-                {cellText(row[column.key])}
-              {/if}
-            </td>
+            <th aria-sort={ariaSort(column.key)}>
+              <button type="button" aria-label={sortButtonLabel(column)} onclick={() => sortBy(column.key)}>
+                <span>{column.label}</span>
+                <span
+                  class={`sort-indicator ${sortKey === column.key ? "sort-indicator--active" : ""} ${sortKey === column.key && sortDirection === "desc" ? "sort-indicator--desc" : ""}`}
+                  aria-hidden="true"
+                ></span>
+              </button>
+            </th>
           {/each}
         </tr>
-      {/each}
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        {#each sortedRows as row}
+          <tr>
+            {#each columns as column}
+              <td data-label={column.label}>
+                {#if cellHref(row[column.key])}
+                  <a href={cellHref(row[column.key])} title={`View ${cellText(row[column.key])}`}>{cellText(row[column.key])}</a>
+                {:else}
+                  {cellText(row[column.key])}
+                {/if}
+              </td>
+            {/each}
+          </tr>
+        {/each}
+      </tbody>
+    </table>
+  </div>
 </div>

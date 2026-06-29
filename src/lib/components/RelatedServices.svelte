@@ -1,10 +1,11 @@
 <script>
   import CardGrid from "./CardGrid.svelte";
   import SectionHeading from "./SectionHeading.svelte";
-  import { serviceMap, serviceUrl } from "$lib/data/content.js";
+  import { serviceUrl } from "$lib/data/content.js";
+  import { relatedServicesForService } from "$lib/data/relationships.js";
 
   let { service = { related: [] } } = $props();
-  const related = $derived(service.related.map((slug) => serviceMap[slug]).filter(Boolean));
+  const related = $derived(relatedServicesForService(service));
 </script>
 
 <section class="section related-section section-effect section-effect--traces section-effect--low">

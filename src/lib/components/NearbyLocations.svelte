@@ -1,10 +1,11 @@
 <script>
   import CardGrid from "./CardGrid.svelte";
   import SectionHeading from "./SectionHeading.svelte";
-  import { locationMap, locationUrl } from "$lib/data/content.js";
+  import { locationUrl } from "$lib/data/content.js";
+  import { resolveLocations } from "$lib/data/relationships.js";
 
   let { slugs = [] } = $props();
-  const locations = $derived(slugs.map((slug) => locationMap[slug]).filter(Boolean));
+  const locations = $derived(resolveLocations(slugs));
 </script>
 
 {#if locations.length}
