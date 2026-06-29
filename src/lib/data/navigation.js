@@ -1,4 +1,5 @@
-import { blogLink, locationLink, pageLink, serviceLink, skillLink } from "./relationships.js";
+import { blogCategories, blogCategoryUrl, blogTags, blogTagUrl } from "./content.js";
+import { locationLink, pageLink, serviceLink, skillLink } from "./relationships.js";
 
 function group(title, links) {
   return { title, links: links.filter(Boolean) };
@@ -10,6 +11,19 @@ function menu(groups, featured) {
     featured
   };
 }
+
+function taxonomyLink(label, href) {
+  return { label, href };
+}
+
+const blogTagMenuGroupNames = ["Troubleshooting Tags", "Tracking & Data Tags", "Platform Tags", "SEO & Launch Tags"];
+const blogCategoryLinks = blogCategories.map((category) => taxonomyLink(category.label, blogCategoryUrl(category.slug)));
+const blogTagGroups = blogTagMenuGroupNames.map((title) => group(
+  title,
+  blogTags
+    .filter((tag) => tag.menuGroup === title)
+    .map((tag) => taxonomyLink(tag.label, blogTagUrl(tag.slug)))
+));
 
 export const headerCta = {
   label: "Send a Website Problem",
@@ -93,28 +107,12 @@ export const megaMenus = {
   ),
   blog: menu(
     [
-      group("Troubleshooting", [
-        blogLink("Something Broke on Your Website?", "something-broke-on-your-website"),
-        blogLink("WordPress Broken After Plugin Update", "wordpress-site-broken-after-plugin-update"),
-        blogLink("WordPress Site Keeps Breaking", "cms-plugin-theme-weirdness"),
-        blogLink("CSS and JavaScript Issues", "css-javascript-errors-website-bugs"),
-        blogLink("WooCommerce Checkout Not Working", "woocommerce-checkout-not-working")
-      ]),
-      group("SEO & Pages", [
-        blogLink("SEO Audit Done But Not Implemented", "seo-audit-done-now-implement-it"),
-        blogLink("Need a Page Live Fast", "need-a-page-live-fast"),
-        blogLink("AI-Built Website Launch Cleanup", "ai-built-website-not-ready-to-launch")
-      ]),
-      group("Tracking & Systems", [
-        blogLink("Website Data Does Not Match Reality", "website-data-systems-not-connecting"),
-        blogLink("Analytics Verification", "tracking-scripts-pixels-broken"),
-        blogLink("GTM Form Tracking for GA4", "gtm-form-tracking-ga4"),
-        blogLink("Google Ads Conversion Tracking", "google-ads-conversion-tracking-not-working")
-      ])
+      group("Categories", blogCategoryLinks),
+      ...blogTagGroups
     ],
     {
-      heading: "Start with the problem",
-      text: "Read practical posts based on the situations that usually lead to hourly website help.",
+      heading: "Browse by category or tag",
+      text: "Use the category and tag map to jump into the kind of website problem you are trying to name.",
       label: "View Blog",
       href: "/blog/"
     }
@@ -224,17 +222,12 @@ export const mobileNavSections = [
     key: "blog",
     label: "Blog",
     links: [
-      pageLink("View Blog", "/blog/"),
-      blogLink("Something Broke on Your Website?", "something-broke-on-your-website"),
-      blogLink("WordPress Broken After Plugin Update", "wordpress-site-broken-after-plugin-update"),
-      blogLink("WooCommerce Checkout Not Working", "woocommerce-checkout-not-working"),
-      blogLink("SEO Audit Done But Not Implemented", "seo-audit-done-now-implement-it"),
-      blogLink("Need a Page Live Fast", "need-a-page-live-fast"),
-      blogLink("Website Data Does Not Match Reality", "website-data-systems-not-connecting"),
-      blogLink("GTM Form Tracking for GA4", "gtm-form-tracking-ga4"),
-      blogLink("Google Ads Conversion Tracking", "google-ads-conversion-tracking-not-working"),
-      blogLink("AI-Built Website Launch Cleanup", "ai-built-website-not-ready-to-launch")
-    ].filter(Boolean)
+      pageLink("View Blog", "/blog/")
+    ].filter(Boolean),
+    groups: [
+      group("Categories", blogCategoryLinks),
+      ...blogTagGroups
+    ]
   },
   {
     key: "skills",

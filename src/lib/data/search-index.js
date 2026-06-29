@@ -98,7 +98,7 @@ export const searchIndex = [
       description: post.meta || post.summary,
       href: blogUrl(post.slug),
       type: "Blog",
-      body: flatten([post.eyebrow, post.summary, post.problemType, post.sections, post.faqs, post.links, post.contextCards])
+      body: flatten([post.eyebrow, post.summary, post.problemType, post.category, post.tags, post.sections, post.faqs, post.links, post.contextCards])
     })
   ),
   ...skillPages.map((skill) =>

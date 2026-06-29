@@ -465,6 +465,18 @@
                     {link.label}
                   </a>
                 {/each}
+                {#if section.groups}
+                  {#each section.groups as group}
+                    <div class="mobile-link-group">
+                      <strong>{group.title}</strong>
+                      {#each group.links as link}
+                        <a href={link.href} title={linkTitle(link.label, link.href)} onclick={closeMobileMenu}>
+                          {link.label}
+                        </a>
+                      {/each}
+                    </div>
+                  {/each}
+                {/if}
               </div>
             </div>
           </details>

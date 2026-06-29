@@ -22,7 +22,7 @@
   let submissionAttempted = false;
   let abandonTracked = false;
   const formLocked = $derived(status.type === "loading" || status.type === "success");
-  const submitLabel = $derived(status.type === "loading" ? "Sending..." : status.type === "success" ? "Request Sent" : "Send Request");
+  const submitLabel = $derived(status.type === "loading" ? "Sending..." : status.type === "success" ? "Quote Request Sent" : "Get a Free Quote");
   const breadcrumbs = [
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
     { label: "Contact", title: "Current page: Send a website support request" }
@@ -222,7 +222,7 @@
       trackEvent("contact_form_success", { ...trackingPayload, response_status: responseStatus, ...journeySnapshot() });
       trackContactEvent("contact_form_success", { ...trackingPayload, response_status: responseStatus, ...journeySnapshot() });
       trackEvent("generate_lead", { ...trackingPayload, response_status: responseStatus, ...journeySnapshot() });
-      status = { type: "success", message: "Request sent. I will review the details and follow up." };
+      status = { type: "success", message: "Free quote request sent. I will review the details and follow up." };
     } catch (error) {
       trackEvent("contact_form_error", {
         ...trackingPayload,
@@ -242,17 +242,17 @@
 </script>
 
 <Seo
-  title="Contact The Web Guy | Send the Website Problem"
-  description="Send The Web Guy your website issue, WordPress task, SEO implementation need, landing page request, tracking problem, or agency overflow work."
+  title="Contact The Web Guy | Get a Free Website Quote"
+  description="Get a free quote from The Web Guy for a website issue, WordPress task, SEO implementation need, landing page request, tracking problem, or agency overflow work."
   schema={seoSchema}
 />
 
 <main>
   <Hero
-    eyebrow="Website support request"
-    h1="Send The Web Guy the Problem"
-    intro="Tell me what is broken, what needs built, or what keeps getting pushed off. Include the URL, timeline, and what a useful outcome looks like."
-    cta="Use the Request Form"
+    eyebrow="Free website quote"
+    h1="Get a Free Quote From The Web Guy"
+    intro="Tell me what is broken, what needs built, or what keeps getting pushed off. Include the URL, timeline, and what a useful outcome looks like. There is no charge to send the request or ask for a quote."
+    cta="Get a Free Quote"
     ctaHref="#request-form"
     image={staticHeroImages.contact}
   />
@@ -263,14 +263,14 @@
     <div class="contact-grid">
       <div>
         <SectionHeading
-          eyebrow="Website support request form"
-          h2="Send a website support request"
-          body="Include the URL, what should happen, what is happening now, timeline, and whether this is one-time or ongoing. If you have an audit, screenshots, crawl notes, or a task list, mention that too."
+          eyebrow="Free quote request form"
+          h2="Get a free quote for website support"
+          body="Include the URL, what should happen, what is happening now, timeline, and whether this is one-time or ongoing. If you have an audit, screenshots, crawl notes, or a task list, mention that too. I will review the request and reply with the best next step before any paid work begins."
         />
         <div class="rate-callout light">
           <span>Contract rate</span>
           <strong>$55/hr</strong>
-          <p>Good for quick fixes, small projects, ongoing support, and agency overflow.</p>
+          <p>Quotes are free. Approved work is billed hourly for quick fixes, small projects, ongoing support, and agency overflow.</p>
         </div>
       </div>
 
@@ -279,7 +279,7 @@
         <label>Email<input bind:value={contactState.draft.email} name="email" type="email" autocomplete="email" placeholder="you@example.com" required /></label>
         <label>Company or agency name<input bind:value={contactState.draft.company} name="company" type="text" autocomplete="organization" placeholder="Company, agency, or team" /></label>
         <label>Website URL<input bind:value={contactState.draft.url} name="url" type="url" placeholder="https://example.com" /></label>
-        <label>What do you need help with?<textarea bind:value={contactState.draft.details} name="details" rows="6" placeholder="Tell me what is broken, what needs built, or what keeps getting pushed off." required></textarea></label>
+        <label>What do you need a free quote for?<textarea bind:value={contactState.draft.details} name="details" rows="6" placeholder="Tell me what is broken, what needs built, or what keeps getting pushed off." required></textarea></label>
         <div class="form-row">
           <label>What service does this fit?
             <select bind:value={contactState.draft.service} name="service" onchange={() => trackContactSelect("service", contactState.draft.service)}>
@@ -319,7 +319,7 @@
         </div>
         <label class="bot-field" aria-hidden="true" tabindex="-1">Leave this field blank<input bind:value={botTrap} name="websiteCompany" type="text" autocomplete="off" tabindex="-1" /></label>
         <input type="hidden" name="formLoadedAt" value={formLoadedAt} />
-        <p class="form-note">Requests send through the private contact route. Your email is used as the reply-to address.</p>
+        <p class="form-note">Free quote requests send through the private contact route. Your email is used as the reply-to address, and paid work only starts after scope and rate are clear.</p>
         {#if status.message}<p class={`form-status ${status.type}`}>{status.message}</p>{/if}
         <button class="button button-primary cta-animated cta-animated--primary" type="submit" disabled={formLocked} aria-disabled={formLocked}>{submitLabel}</button>
       </form>

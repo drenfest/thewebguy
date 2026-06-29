@@ -9,7 +9,7 @@
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import SortableTable from "$lib/components/SortableTable.svelte";
-  import { blogPosts, blogUrl } from "$lib/data/content.js";
+  import { blogCategories, blogCategoryMap, blogPosts, blogTagMap, blogTags, blogTagUrl, blogUrl } from "$lib/data/content.js";
   import { staticHeroImages } from "$lib/data/hero-images.js";
   import { blogPostListSchema, breadcrumbSchema, schemaList } from "$lib/data/schema.js";
   import sitemapLastmod from "$lib/data/sitemap-lastmod.json";
@@ -39,6 +39,14 @@
   }
   const sortedStartHerePosts = sortedBlogPosts.filter((post) => post.problemType === "Start here");
   const sortedSomethingBrokePosts = sortedBlogPosts.filter((post) => post.problemType === "Something broke");
+  const categorySections = blogCategories.map((category) => ({
+    ...category,
+    posts: sortedBlogPosts.filter((post) => post.category === category.slug)
+  })).filter((category) => category.posts.length);
+  const tagSections = blogTags.map((tag) => ({
+    ...tag,
+    posts: sortedBlogPosts.filter((post) => (post.tags || []).includes(tag.slug))
+  })).filter((tag) => tag.posts.length);
   const seoSchema = schemaList(
     breadcrumbSchema(breadcrumbs, "/blog/"),
     blogPostListSchema(sortedBlogPosts, "/blog/")
@@ -131,11 +139,23 @@
     { key: "read", label: "Read" }
   ];
   const blogRows = sortedBlogPosts.map((post) => ({
-    topic: post.eyebrow,
+    topic: categoryLabel(post.category),
     symptom: post.summary,
     service: blogHubLinks.find((item) => item.href.includes(post.relatedService))?.title || "Website Fixes",
     read: { text: post.title.replace(" | The Web Guy", ""), href: blogUrl(post.slug) }
   }));
+
+  function categoryLabel(slug) {
+    return blogCategoryMap[slug]?.label || "Website Troubleshooting";
+  }
+
+  function tagLinksForPost(post, limit = 4) {
+    return (post.tags || []).map((slug) => blogTagMap[slug]).filter(Boolean).slice(0, limit);
+  }
+
+  function featuredTagsForCategory(category) {
+    return (category.featuredTags || []).map((slug) => blogTagMap[slug]).filter(Boolean);
+  }
 </script>
 
 <Seo
@@ -157,6 +177,59 @@
 
   <Breadcrumbs items={breadcrumbs} />
 
+  <section class="section section-effect section-effect--grid section-effect--low">
+    <SectionHeading
+      eyebrow="Categories and tags"
+      h2="Browse website troubleshooting by topic"
+      body="The blog is grouped by the practical problem type first, then by tags for platform, symptom, tracking, SEO, and implementation details."
+    />
+    <div class="blog-taxonomy-grid">
+      {#each categorySections as category}
+        <article id={`category-${category.slug}`} class="blog-taxonomy-card">
+          <div>
+            <span class="blog-taxonomy-count">{category.posts.length} articles</span>
+            <h3>{category.label}</h3>
+            <p>{category.description}</p>
+          </div>
+          <div class="blog-taxonomy-tags" aria-label={`${category.label} tags`}>
+            {#each featuredTagsForCategory(category) as tag}
+              <a href={blogTagUrl(tag.slug)} title={`View ${tag.label} tagged posts`}>{tag.label}</a>
+            {/each}
+          </div>
+          <ul class="blog-taxonomy-posts">
+            {#each category.posts.slice(0, 4) as post}
+              <li><a href={blogUrl(post.slug)} title={`Read ${post.title.replace(" | The Web Guy", "")}`}>{post.title.replace(" | The Web Guy", "")}</a></li>
+            {/each}
+          </ul>
+        </article>
+      {/each}
+    </div>
+  </section>
+
+  <section id="blog-tags" class="section soft-section section-effect section-effect--signals section-effect--low">
+    <SectionHeading
+      eyebrow="Tags"
+      h2="Find posts by symptom, platform, or implementation detail"
+      body="Tags connect related posts across categories when the same problem shows up as a form issue, tracking issue, WordPress issue, SEO task, or front-end bug."
+    />
+    <div class="blog-tag-grid">
+      {#each tagSections as tag}
+        <article id={`tag-${tag.slug}`} class="blog-tag-card">
+          <div>
+            <span class="blog-taxonomy-count">{tag.posts.length} posts</span>
+            <h3>{tag.label}</h3>
+            <p>{tag.description}</p>
+          </div>
+          <div class="blog-tag-posts">
+            {#each tag.posts.slice(0, 4) as post}
+              <a href={blogUrl(post.slug)} title={`Read ${post.title.replace(" | The Web Guy", "")}`}>{post.title.replace(" | The Web Guy", "")}</a>
+            {/each}
+          </div>
+        </article>
+      {/each}
+    </div>
+  </section>
+
   <section class="section section-effect section-effect--signals section-effect--low">
     <SectionHeading
       eyebrow="Latest articles"
@@ -167,9 +240,14 @@
       {#each sortedBlogPosts as post}
         <article class="latest-article-card">
           <div>
-            <span>{formatArticleDate(post)}</span>
+            <span>{formatArticleDate(post)} · {categoryLabel(post.category)}</span>
             <h3>{post.title.replace(" | The Web Guy", "")}</h3>
             <p>{post.summary}</p>
+            <div class="blog-card-tags" aria-label={`${post.title.replace(" | The Web Guy", "")} tags`}>
+              {#each tagLinksForPost(post, 4) as tag}
+                <a href={blogTagUrl(tag.slug)} title={`View ${tag.label} tagged posts`}>{tag.label}</a>
+              {/each}
+            </div>
           </div>
           <a href={blogUrl(post.slug)} title={`Read ${post.title.replace(" | The Web Guy", "")}`}>
             Read article

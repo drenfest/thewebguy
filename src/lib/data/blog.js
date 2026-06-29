@@ -7,6 +7,75 @@ export const practicalExamples = [
   ["Agency backlog is too full", "Page edits, production tasks, SEO implementation, technical QA, and client-site fixes without hiring full-time."]
 ];
 
+export const blogCategoryDefinitions = [
+  {
+    slug: "start-here",
+    label: "Start Here",
+    description: "Broad diagnostic posts for turning a vague website problem into the right first path.",
+    featuredTags: ["website-fixes", "technical-seo", "landing-pages", "analytics-tracking"]
+  },
+  {
+    slug: "front-end-layout",
+    label: "Front-End & Layout",
+    description: "Visible page problems: layouts, CSS, JavaScript, embeds, widgets, and mobile behavior.",
+    featuredTags: ["css", "javascript", "mobile-layout", "embeds-iframes", "site-speed"]
+  },
+  {
+    slug: "forms-tracking-data",
+    label: "Forms, Tracking & Data",
+    description: "Lead flow, GA4, GTM, pixels, dashboards, APIs, CRMs, and conversion reporting.",
+    featuredTags: ["forms", "ga4-gtm", "conversion-tracking", "api-integrations", "dashboards"]
+  },
+  {
+    slug: "wordpress-cms",
+    label: "WordPress & CMS",
+    description: "WordPress, plugin updates, themes, page builders, admin behavior, and recovery paths.",
+    featuredTags: ["wordpress", "plugin-conflicts", "themes", "page-builders", "emergency-support"]
+  },
+  {
+    slug: "seo-pages-ai",
+    label: "SEO, Pages & AI Launches",
+    description: "SEO implementation, landing pages, AI-built cleanup, internal links, and crawl topology.",
+    featuredTags: ["seo-audit", "internal-links", "ai-built", "technical-seo", "crawl-analysis"]
+  },
+  {
+    slug: "ecommerce-checkout",
+    label: "Ecommerce & Checkout",
+    description: "WooCommerce, checkout failures, product data, purchase tracking, and revenue reporting.",
+    featuredTags: ["woocommerce", "checkout", "ecommerce", "conversion-tracking"]
+  }
+];
+
+export const blogTagDefinitions = [
+  { slug: "website-fixes", label: "Website Fixes", description: "General broken-site symptoms and practical website repair paths.", menuGroup: "Troubleshooting Tags" },
+  { slug: "css", label: "CSS", description: "Style conflicts, responsive rules, and layout-specific fixes.", menuGroup: "Troubleshooting Tags" },
+  { slug: "javascript", label: "JavaScript", description: "Browser errors, script order, broken interactions, and front-end behavior.", menuGroup: "Troubleshooting Tags" },
+  { slug: "mobile-layout", label: "Mobile Layout", description: "Responsive layout problems, overlapping sections, and viewport-specific bugs.", menuGroup: "Troubleshooting Tags" },
+  { slug: "embeds-iframes", label: "Embeds & Iframes", description: "Maps, widgets, videos, calendars, iframes, and third-party embeds.", menuGroup: "Troubleshooting Tags" },
+  { slug: "forms", label: "Forms", description: "Lead forms, validation, notifications, success states, and broken submissions.", menuGroup: "Tracking & Data Tags" },
+  { slug: "ga4-gtm", label: "GA4 & GTM", description: "Google Analytics, Google Tag Manager, events, triggers, and DebugView work.", menuGroup: "Tracking & Data Tags" },
+  { slug: "conversion-tracking", label: "Conversion Tracking", description: "Missing, duplicated, delayed, or unreliable conversion reporting.", menuGroup: "Tracking & Data Tags" },
+  { slug: "analytics-tracking", label: "Analytics & Tracking", description: "Measurement cleanup across forms, pixels, ecommerce events, and reports.", menuGroup: "Tracking & Data Tags" },
+  { slug: "api-integrations", label: "APIs & Integrations", description: "Webhooks, CRMs, payloads, dashboards, and data moving between systems.", menuGroup: "Tracking & Data Tags" },
+  { slug: "dashboards", label: "Dashboards", description: "Reporting views, source data, definitions, and workflow visibility.", menuGroup: "Tracking & Data Tags" },
+  { slug: "wordpress", label: "WordPress", description: "WordPress support, plugin stacks, themes, builders, PHP, CSS, and cleanup.", menuGroup: "Platform Tags" },
+  { slug: "plugin-conflicts", label: "Plugin Conflicts", description: "Plugin updates, overlapping behavior, shortcodes, hooks, and compatibility issues.", menuGroup: "Platform Tags" },
+  { slug: "themes", label: "Themes", description: "Theme output, child themes, templates, overrides, and layout structure.", menuGroup: "Platform Tags" },
+  { slug: "page-builders", label: "Page Builders", description: "Elementor, builder spacing, reusable sections, and CMS-generated layouts.", menuGroup: "Platform Tags" },
+  { slug: "woocommerce", label: "WooCommerce", description: "WooCommerce checkout, product data, templates, extensions, and store behavior.", menuGroup: "Platform Tags" },
+  { slug: "ecommerce", label: "Ecommerce", description: "Product pages, checkout, product data, revenue tracking, and store cleanup.", menuGroup: "Platform Tags" },
+  { slug: "checkout", label: "Checkout", description: "Payment, shipping, tax, cart, session, and purchase-flow failures.", menuGroup: "Platform Tags" },
+  { slug: "landing-pages", label: "Landing Pages", description: "Service pages, campaign pages, local pages, forms, CTAs, and launch structure.", menuGroup: "SEO & Launch Tags" },
+  { slug: "technical-seo", label: "Technical SEO", description: "Metadata, headings, schema, redirects, crawl cleanup, and implementation.", menuGroup: "SEO & Launch Tags" },
+  { slug: "seo-audit", label: "SEO Audit", description: "Audit notes, crawl exports, spreadsheets, and implementation priorities.", menuGroup: "SEO & Launch Tags" },
+  { slug: "internal-links", label: "Internal Links", description: "Contextual links, crawl paths, link support, and content graph cleanup.", menuGroup: "SEO & Launch Tags" },
+  { slug: "crawl-analysis", label: "Crawl Analysis", description: "Crawl reports, topology, weak pages, and internal-link diagnostics.", menuGroup: "SEO & Launch Tags" },
+  { slug: "ai-built", label: "AI-Built Cleanup", description: "Generated sites, launch QA, routing, forms, tracking, SEO, and maintainability.", menuGroup: "SEO & Launch Tags" },
+  { slug: "site-speed", label: "Site Speed", description: "Heavy scripts, embeds, images, layout shift, and performance cleanup.", menuGroup: "SEO & Launch Tags" },
+  { slug: "automation", label: "Automation", description: "Repeatable crawl checks, reporting helpers, dashboards, and QA workflows.", menuGroup: "SEO & Launch Tags" },
+  { slug: "emergency-support", label: "Emergency Support", description: "Public failures, broken WordPress paths, white screens, and recovery planning.", menuGroup: "Platform Tags" }
+];
+
 export const blogPosts = [
   {
     slug: "something-broke-on-your-website",
@@ -17,6 +86,8 @@ export const blogPosts = [
     summary: "When a website breaks, the fastest path is not guessing the platform. It is describing the symptom, checking what changed, and tracing whether the problem is visual, functional, tracking-related, or server-side.",
     problemType: "Start here",
     relatedService: "website-fixes",
+    category: "start-here",
+    tags: ["website-fixes", "wordpress", "forms", "analytics-tracking", "ecommerce", "site-speed"],
     heroCta: "Send the Website Problem",
     heroSecondary: "View Website Fixes",
     heroSecondaryHref: "/services/website-fixes/",
@@ -202,6 +273,8 @@ export const blogPosts = [
     summary: "SEO recommendations do not help much while they sit in a spreadsheet. Technical SEO implementation turns crawl notes, audit tasks, internal link gaps, schema needs, and template fixes into real site changes.",
     problemType: "Start here",
     relatedService: "technical-seo-implementation",
+    category: "seo-pages-ai",
+    tags: ["technical-seo", "seo-audit", "internal-links", "wordpress", "ecommerce", "analytics-tracking"],
     heroCta: "Send the SEO Audit",
     heroSecondary: "View SEO Implementation",
     heroSecondaryHref: "/services/technical-seo-implementation/",
@@ -385,6 +458,8 @@ export const blogPosts = [
     summary: "A useful page is not just a headline and a button. It needs a clear job, the right sections, mobile structure, forms, tracking, internal links, and enough polish to launch without turning into a giant process.",
     problemType: "Start here",
     relatedService: "landing-pages",
+    category: "seo-pages-ai",
+    tags: ["landing-pages", "wordpress", "analytics-tracking", "technical-seo", "site-speed"],
     heroCta: "Send the Page Request",
     heroSecondary: "View Landing Pages",
     heroSecondaryHref: "/services/landing-pages/",
@@ -568,6 +643,8 @@ export const blogPosts = [
     summary: "When forms, analytics, ecommerce revenue, APIs, dashboards, and CRMs disagree, the fix starts by tracing the data path from user action to final destination.",
     problemType: "Start here",
     relatedService: "analytics-tracking",
+    category: "forms-tracking-data",
+    tags: ["analytics-tracking", "ga4-gtm", "forms", "api-integrations", "ecommerce", "dashboards"],
     heroCta: "Send the Tracking Problem",
     heroSecondary: "View Analytics Help",
     heroSecondaryHref: "/services/analytics-tracking/",
@@ -748,6 +825,8 @@ export const blogPosts = [
     summary: "Sections overlap, headers act strange, spacing disappears, or the mobile layout falls apart. Start by reproducing the viewport, isolating the broken section, and tracing whether the issue comes from CSS, the builder, an embed, or a theme/plugin change.",
     problemType: "Something broke",
     relatedService: "website-fixes",
+    category: "front-end-layout",
+    tags: ["website-fixes", "mobile-layout", "css", "page-builders", "wordpress", "ai-built"],
     heroCta: "Send the Broken Layout",
     heroSecondary: "View Website Fixes",
     heroSecondaryHref: "/services/website-fixes/",
@@ -810,6 +889,8 @@ export const blogPosts = [
     summary: "Menus stop opening, buttons do nothing, styles change unexpectedly, or interactive pieces work on one page and fail on another.",
     problemType: "Something broke",
     relatedService: "website-fixes",
+    category: "front-end-layout",
+    tags: ["website-fixes", "css", "javascript", "plugin-conflicts", "wordpress"],
     heroCta: "Fix the Website Bug",
     heroSecondary: "View Website Fixes",
     heroSecondaryHref: "/services/website-fixes/",
@@ -870,6 +951,8 @@ export const blogPosts = [
     summary: "The form submits but nobody gets the lead, validation fails, a popup will not open, or the thank-you flow no longer tracks correctly.",
     problemType: "Something broke",
     relatedService: "website-fixes",
+    category: "forms-tracking-data",
+    tags: ["forms", "conversion-tracking", "api-integrations", "analytics-tracking", "wordpress"],
     sections: [
       ["Common signs", [
         "Leads never arrive, ",
@@ -912,6 +995,8 @@ export const blogPosts = [
     summary: "Maps, videos, calendars, chat tools, CRM widgets, and iframes are useful until they break layout, slow the page, or fail on mobile.",
     problemType: "Something broke",
     relatedService: "website-fixes",
+    category: "front-end-layout",
+    tags: ["embeds-iframes", "website-fixes", "mobile-layout", "site-speed", "javascript"],
     sections: [
       ["Common signs", [
         "An ",
@@ -952,6 +1037,8 @@ export const blogPosts = [
     summary: "Analytics looks wrong, conversions disappear, tags fire twice, pixels are missing, or a tracking script is pasted in three different places.",
     problemType: "Something broke",
     relatedService: "analytics-tracking",
+    category: "forms-tracking-data",
+    tags: ["analytics-tracking", "ga4-gtm", "conversion-tracking", "forms", "landing-pages"],
     sections: [
       ["Common signs", [
         { text: "GA4 conversions are missing", href: "/services/conversion-tracking-troubleshooting/", title: "View conversion tracking troubleshooting help" },
@@ -993,6 +1080,8 @@ export const blogPosts = [
     summary: "The site behaves differently after an update, one page ignores the template, the builder output is strange, or a plugin almost works but not quite.",
     problemType: "Something broke",
     relatedService: "wordpress-support",
+    category: "wordpress-cms",
+    tags: ["wordpress", "plugin-conflicts", "themes", "page-builders", "site-speed"],
     sections: [
       ["Common signs", [
         "Admin settings do not match the front end, a ",
@@ -1035,6 +1124,8 @@ export const blogPosts = [
     summary: "A WooCommerce checkout problem can be a payment issue, JavaScript conflict, cache problem, session failure, plugin conflict, shipping/tax setting, or tracking mismatch. The first job is to identify where checkout fails.",
     problemType: "Ecommerce troubleshooting",
     relatedService: "ecommerce-support",
+    category: "ecommerce-checkout",
+    tags: ["woocommerce", "checkout", "ecommerce", "conversion-tracking", "wordpress"],
     heroCta: "Fix WooCommerce Checkout",
     heroSecondary: "View Checkout Fix Help",
     heroSecondaryHref: "/services/woocommerce-checkout-error-fix/",
@@ -1121,6 +1212,8 @@ export const blogPosts = [
     summary: "When a WordPress site breaks after a plugin update, the goal is to isolate the affected behavior, identify the plugin/theme/cache layer involved, and avoid making production worse.",
     problemType: "WordPress troubleshooting",
     relatedService: "wordpress-support",
+    category: "wordpress-cms",
+    tags: ["wordpress", "plugin-conflicts", "emergency-support", "page-builders", "themes"],
     heroCta: "Fix Broken WordPress",
     heroSecondary: "View Broken WordPress Help",
     heroSecondaryHref: "/services/fix-broken-wordpress-site/",
@@ -1209,6 +1302,8 @@ export const blogPosts = [
     summary: "Form tracking fails when the tracking method does not match the way the form actually submits. GTM setup needs to follow the real form behavior.",
     problemType: "Tracking implementation",
     relatedService: "analytics-tracking",
+    category: "forms-tracking-data",
+    tags: ["ga4-gtm", "forms", "conversion-tracking", "api-integrations", "analytics-tracking"],
     heroCta: "Set Up Form Tracking",
     heroSecondary: "View GA4/GTM Help",
     heroSecondaryHref: "/services/ga4-gtm-setup-help/",
@@ -1298,6 +1393,8 @@ export const blogPosts = [
     summary: "Google Ads conversion tracking can fail because the tag never fires, fires too late, fires twice, imports the wrong GA4 event, loses attribution, or triggers on the wrong page.",
     problemType: "Tracking troubleshooting",
     relatedService: "analytics-tracking",
+    category: "forms-tracking-data",
+    tags: ["conversion-tracking", "ga4-gtm", "analytics-tracking", "landing-pages", "dashboards"],
     heroCta: "Troubleshoot Conversions",
     heroSecondary: "View Conversion Tracking",
     heroSecondaryHref: "/services/conversion-tracking-troubleshooting/",
@@ -1382,6 +1479,8 @@ export const blogPosts = [
     summary: "AI-built sites can look close while missing the production details that make a site usable: forms, tracking, routing, metadata, deployment settings, accessibility, and maintainable structure.",
     problemType: "AI-built cleanup",
     relatedService: "ai-built-website-cleanup",
+    category: "seo-pages-ai",
+    tags: ["ai-built", "landing-pages", "forms", "analytics-tracking", "technical-seo", "site-speed"],
     heroCta: "Clean Up an AI-Built Site",
     heroSecondary: "View AI-Built Cleanup",
     heroSecondaryHref: "/services/ai-built-website-cleanup/",
@@ -1468,6 +1567,8 @@ export const blogPosts = [
     summary: "A technical look at how TopoRank crawls a site, strips template noise, discovers semantic clusters, scores link support, and turns internal linking into a measurable optimization loop.",
     problemType: "Technical SEO systems",
     relatedService: "technical-seo-implementation",
+    category: "seo-pages-ai",
+    tags: ["technical-seo", "internal-links", "crawl-analysis", "analytics-tracking", "automation"],
     heroCta: "Send a Crawl Problem",
     heroSecondary: "View Crawl Analysis",
     heroSecondaryHref: "/skills/crawl-analysis-internal-linking/",
@@ -1845,9 +1946,29 @@ export const blogPosts = [
 ];
 
 export const blogMap = Object.fromEntries(blogPosts.map((post) => [post.slug, post]));
+export const blogCategoryMap = Object.fromEntries(blogCategoryDefinitions.map((category) => [category.slug, category]));
+export const blogTagMap = Object.fromEntries(blogTagDefinitions.map((tag) => [tag.slug, tag]));
+
+export const blogCategories = blogCategoryDefinitions.map((category) => ({
+  ...category,
+  posts: blogPosts.filter((post) => post.category === category.slug)
+}));
+
+export const blogTags = blogTagDefinitions.map((tag) => ({
+  ...tag,
+  posts: blogPosts.filter((post) => (post.tags || []).includes(tag.slug))
+})).filter((tag) => tag.posts.length);
 
 export function blogUrl(slug) {
   return `/blog/${slug}/`;
+}
+
+export function blogCategoryUrl(slug) {
+  return `/blog/#category-${slug}`;
+}
+
+export function blogTagUrl(slug) {
+  return `/blog/#tag-${slug}`;
 }
 
 export const somethingBrokePosts = blogPosts.filter((post) => post.problemType === "Something broke");

@@ -4,7 +4,21 @@ import { keywordServicePages } from "./keyword-services.js";
 export { coreServicePages, serviceUrl } from "./services.js";
 export { keywordLandingSpecs, buildKeywordLandingPage, keywordServicePages } from "./keyword-services.js";
 export { faqs } from "./faqs.js";
-export { practicalExamples, blogPosts, blogMap, blogUrl, somethingBrokePosts } from "./blog.js";
+export {
+  practicalExamples,
+  blogCategoryDefinitions,
+  blogCategories,
+  blogCategoryMap,
+  blogCategoryUrl,
+  blogPosts,
+  blogMap,
+  blogTagDefinitions,
+  blogTags,
+  blogTagMap,
+  blogTagUrl,
+  blogUrl,
+  somethingBrokePosts
+} from "./blog.js";
 export { skillPages, skillMap, skillUrl, serviceSkillMap } from "./skills.js";
 export { locationPages, locationMap, locationUrl } from "./locations.js";
 
