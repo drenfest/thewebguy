@@ -12,6 +12,8 @@ This app loads the tawk.to widget from a client-only Svelte component. Render on
 - If the Tawk script fails to load, the loader retries when the browser is online, with capped exponential backoff.
 - `PUBLIC_TAWK_ALLOWED_HOSTS` prevents the widget from loading on unexpected hostnames if the public widget IDs are copied elsewhere.
 - Tawk's `onPrechatSubmit` event is tracked as a lifecycle event and tagged as `prechat-contact-captured` without logging the submitted name, email, phone, or message contents.
+- Tawk JavaScript API callbacks are wired for load, status, window state, chat lifecycle, offline/pre-chat forms, messages, agent activity, satisfaction, file uploads, tag updates, and unread counts. Message text, visitor names, email addresses, phone numbers, uploaded file URLs, and transcripts are not sent to site analytics.
+- Tawk `customStyle` is configured before the embed script loads so the widget sits bottom right and below the site menu layers.
 - Chat lifecycle events are sent to the existing analytics helper without message text, names, emails, or chat transcripts.
 - The installed public widget script is `https://embed.tawk.to/6a43edcd82c4e81d44ac79af/1jsclhqsd`.
 
@@ -85,16 +87,27 @@ Add these variables to the Render web service:
 
 ```txt
 PUBLIC_TAWK_ENABLED=true
+PUBLIC_TAWK_AUTO_START=true
 PUBLIC_TAWK_PROPERTY_ID=6a43edcd82c4e81d44ac79af
 PUBLIC_TAWK_WIDGET_ID=1jsclhqsd
 PUBLIC_TAWK_HIDE_WHEN_OFFLINE=true
 PUBLIC_TAWK_ALLOWED_HOSTS=thewebguy.app,www.thewebguy.app
+PUBLIC_TAWK_Z_INDEX=70
+PUBLIC_TAWK_DESKTOP_POSITION=br
+PUBLIC_TAWK_DESKTOP_X_OFFSET=18
+PUBLIC_TAWK_DESKTOP_Y_OFFSET=18
+PUBLIC_TAWK_MOBILE_POSITION=br
+PUBLIC_TAWK_MOBILE_X_OFFSET=12
+PUBLIC_TAWK_MOBILE_Y_OFFSET=12
 ```
 
 Notes:
 
 - These are public client-side IDs, not secrets.
+- `PUBLIC_TAWK_AUTO_START=true` lets Tawk start the socket connection after the script loads. Set it to `false` only if you plan to call `window.theWebGuyLiveChat.start()` manually.
 - `PUBLIC_TAWK_WIDGET_ID` must match the widget ID from the Tawk embed script.
+- `PUBLIC_TAWK_Z_INDEX=70` keeps the widget above the page content but below the mobile navigation overlay.
+- `PUBLIC_TAWK_*_POSITION` must be one of `br`, `bl`, `cr`, `cl`, `tr`, or `tl`.
 - Leave `PUBLIC_TAWK_ENABLED=false` to disable live chat without removing code.
 - `PUBLIC_TAWK_ALLOWED_HOSTS` is a comma-separated list. Use production hostnames on Render; include `localhost,127.0.0.1` only for local testing.
 - Render must redeploy after these values change because the client bundle needs the public values.
@@ -105,10 +118,18 @@ Copy `.env.example` to `.env.local` and add the same public values:
 
 ```txt
 PUBLIC_TAWK_ENABLED=true
+PUBLIC_TAWK_AUTO_START=true
 PUBLIC_TAWK_PROPERTY_ID=6a43edcd82c4e81d44ac79af
 PUBLIC_TAWK_WIDGET_ID=1jsclhqsd
 PUBLIC_TAWK_HIDE_WHEN_OFFLINE=true
 PUBLIC_TAWK_ALLOWED_HOSTS=thewebguy.app,www.thewebguy.app,localhost,127.0.0.1
+PUBLIC_TAWK_Z_INDEX=70
+PUBLIC_TAWK_DESKTOP_POSITION=br
+PUBLIC_TAWK_DESKTOP_X_OFFSET=18
+PUBLIC_TAWK_DESKTOP_Y_OFFSET=18
+PUBLIC_TAWK_MOBILE_POSITION=br
+PUBLIC_TAWK_MOBILE_X_OFFSET=12
+PUBLIC_TAWK_MOBILE_Y_OFFSET=12
 ```
 
 The component includes those public IDs as defaults, so local dev can load the real widget unless `PUBLIC_TAWK_ENABLED=false` or the local hostname is removed from `PUBLIC_TAWK_ALLOWED_HOSTS`.

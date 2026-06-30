@@ -41,10 +41,12 @@ Required Render environment variables:
 - `PUBLIC_SITE_URL`: canonical site origin used by robots, sitemap, schema, and LLM routes. Use `https://thewebguy.app`; the app normalizes a bare `thewebguy.app` value, but the full origin is preferred.
 - `PUBLIC_GA_MEASUREMENT_ID`: public GA4 measurement ID, such as `G-XXXXXXXXXX`. Leave blank to disable analytics. Restart/redeploy the Render service after changing it so the Node app reads the new runtime value.
 - `PUBLIC_TAWK_ENABLED`: set to `true` to load tawk.to live chat, or `false` to disable it without removing code.
+- `PUBLIC_TAWK_AUTO_START`: set to `true` so Tawk starts its chat connection automatically after the widget script loads.
 - `PUBLIC_TAWK_PROPERTY_ID`: public tawk.to property ID for the site chat widget. The installed widget uses `6a43edcd82c4e81d44ac79af`.
 - `PUBLIC_TAWK_WIDGET_ID`: public tawk.to widget ID. The installed widget uses `1jsclhqsd`.
 - `PUBLIC_TAWK_HIDE_WHEN_OFFLINE`: set to `true` so the app hides the widget unless Tawk reports the widget status as `online`.
 - `PUBLIC_TAWK_ALLOWED_HOSTS`: comma-separated hostnames allowed to load the widget, for example `thewebguy.app,www.thewebguy.app`. This is a code-side backup to Tawk's dashboard domain restriction.
+- `PUBLIC_TAWK_Z_INDEX`, `PUBLIC_TAWK_DESKTOP_POSITION`, `PUBLIC_TAWK_DESKTOP_X_OFFSET`, `PUBLIC_TAWK_DESKTOP_Y_OFFSET`, `PUBLIC_TAWK_MOBILE_POSITION`, `PUBLIC_TAWK_MOBILE_X_OFFSET`, `PUBLIC_TAWK_MOBILE_Y_OFFSET`: public Tawk JavaScript API `customStyle` controls. Defaults keep the widget at bottom right and below the site menu layers.
 - `CONTACT_EMAIL_PROVIDER`: set to `gmail` on Render free hosting. Use `smtp` only on hosts that allow outbound SMTP.
 - `CONTACT_TO_EMAIL`: private contact form destination address. Set this in Render; do not commit the real value.
 - `CONTACT_FROM_EMAIL`: sender address, for example `The Web Guy <sender@example.com>`. For Gmail API delivery, this must be the Gmail account or an approved Gmail send-as alias.
@@ -114,9 +116,9 @@ Contact form analytics avoid private content. Names, emails, URLs, and message t
 
 ## Live Chat
 
-Live chat is handled by tawk.to through `src/lib/components/TawkLiveChat.svelte`. The component loads `https://embed.tawk.to/6a43edcd82c4e81d44ac79af/1jsclhqsd` client-side, uses Tawk's JavaScript API to react to `online`, `away`, and `offline` status changes, and keeps the widget hidden unless the status is `online`.
+Live chat is handled by tawk.to through `src/lib/components/TawkLiveChat.svelte`. The component loads `https://embed.tawk.to/6a43edcd82c4e81d44ac79af/1jsclhqsd` client-side, uses Tawk's JavaScript API callbacks, reacts to `online`, `away`, and `offline` status changes, and keeps the widget hidden unless the status is `online`.
 
-The integration watches browser connection state, keeps the Tawk widget mounted during temporary network loss, retries failed script loads when the browser comes back online, and shows a short connection notice while the visitor is offline. Message queuing and transcript sync remain inside Tawk's widget and service; the site does not read or store chat message content.
+The integration watches browser connection state, keeps the Tawk widget mounted during temporary network loss, retries failed script loads when the browser comes back online, applies Tawk `customStyle` placement/z-index values before the embed script loads, and exposes a small `window.theWebGuyLiveChat` bridge for future site controls. Message queuing and transcript sync remain inside Tawk's widget and service; the site does not read or store chat message content.
 
 Configure the Tawk dashboard to hide the widget when offline, mark the widget offline when all agents are offline, restrict allowed domains, require a Pre-Chat form with `Name` plus `Email or phone`, and use Tawk's ban list/IP ban tools for spam. Then set the public Tawk IDs in Render and redeploy.
 
