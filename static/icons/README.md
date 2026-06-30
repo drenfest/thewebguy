@@ -6,9 +6,9 @@ Public icon source files and references.
 
 - `apple-touch-icon.png`: copy of the 180px app icon kept with icon exports.
 - `favicon-16x16.png` and `favicon-32x32.png`: small favicon PNG copies.
-- `webguy-icon.svg`: source SVG for standard app icons.
+- `webguy-icon.svg`: generated copy of the modern Web Guy mark used for standard app icons.
 - `webguy-icon-48.png`, `webguy-icon-96.png`, `webguy-icon-180.png`, `webguy-icon-192.png`, and `webguy-icon-512.png`: generated standard icon exports.
-- `webguy-maskable.svg`: source SVG for maskable PWA icons with a full-bleed dark background and safe-zone logo.
+- `webguy-maskable.svg`: generated maskable source with a safe-zone modern Web Guy mark.
 - `webguy-maskable-192.png` and `webguy-maskable-512.png`: generated maskable icon exports referenced by `site.webmanifest`.
 - `wordpress-logo-source.svg`: source WordPress mark used as the basis for the customized WordPress service icon in `ServiceIcon.svelte`.
 
@@ -20,14 +20,14 @@ Public icon source files and references.
 
 ## How It Is Used
 
-The WordPress SVG source documents where the WordPress icon geometry came from. The rendered card icon is customized inline in `src/lib/components/ServiceIcon.svelte`. The Web Guy icon exports are linked from `src/app.html` and `static/site.webmanifest`.
+The WordPress SVG source documents where the WordPress icon geometry came from. The rendered card icon is customized inline in `src/lib/components/ServiceIcon.svelte`. The Web Guy icon exports are generated from `static/brand/thewebguy-modern-icon.svg`, then linked from `src/app.html` and `static/site.webmanifest`.
 
 ## How To Extend
 
 - Add source SVGs here when a real brand/platform logo is needed.
 - Convert final themed icons to inline SVG if they need CSS styling or animation.
 - Keep filenames clear about source and purpose.
-- Regenerate the PNG exports from `webguy-icon.svg` and `webguy-maskable.svg` after changing the logo.
+- Regenerate the PNG exports from `static/brand/thewebguy-modern-icon.svg` after changing the logo.
 
 ## Suggested Improvements
 

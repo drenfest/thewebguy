@@ -214,7 +214,7 @@
 
   <Breadcrumbs items={breadcrumbs} />
 
-  <section class="section section-effect section-effect--grid section-effect--medium">
+  <section class="section section-effect section-effect--hex section-effect--medium">
     <SectionHeading
       eyebrow="Website service routing"
       h2="Choose the website service closest to the actual problem"
@@ -239,7 +239,7 @@
     {/each}
   </section>
 
-  <section class="section soft-section section-effect section-effect--signals section-effect--medium">
+  <section class="section soft-section section-effect section-effect--hex section-effect--medium">
     <SectionHeading eyebrow="Website problem routing" h2="Start with the website pain, not the service label" />
     <CardGrid
       className="card-grid compact-grid"
@@ -280,7 +280,7 @@
     items={serviceHubLinks}
   />
 
-  <section class="section section-effect section-effect--traces section-effect--medium">
+  <section class="section section-effect section-effect--hex section-effect--medium">
     <SectionHeading
       eyebrow="Broken website symptoms"
       h2="Pick the broken thing that sounds closest"

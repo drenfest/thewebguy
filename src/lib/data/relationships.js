@@ -1,15 +1,10 @@
-import {
-  blogMap,
-  blogUrl,
-  locationMap,
-  locationUrl,
-  serviceMap,
-  servicePages,
-  serviceSkillMap,
-  serviceUrl,
-  skillMap,
-  skillUrl
-} from "./content.js";
+import { locationMap, locationUrl } from "./locations.js";
+import { keywordServicePages } from "./keyword-services.js";
+import { coreServicePages, serviceUrl } from "./services.js";
+import { serviceSkillMap, skillMap, skillUrl } from "./skills.js";
+
+const servicePages = [...coreServicePages, ...keywordServicePages];
+const serviceMap = Object.fromEntries(servicePages.map((service) => [service.slug, service]));
 
 export const staticRoutes = new Set(["/", "/services/", "/blog/", "/fix-notes/", "/skills/", "/locations/", "/rate/", "/about/", "/faq/", "/contact/"]);
 export const regionalSupportSlugs = ["freeport-il", "rockford-il", "monroe-wi", "beloit-wi", "janesville-wi", "madison-wi"];
@@ -27,7 +22,7 @@ export function serviceLink(label, slug) {
 }
 
 export function blogLink(label, slug) {
-  return blogMap[slug] ? { label, href: blogUrl(slug) } : null;
+  return slug ? { label, href: `/blog/${slug}/` } : null;
 }
 
 export function skillLink(label, slug) {

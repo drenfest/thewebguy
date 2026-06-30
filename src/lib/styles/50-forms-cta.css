@@ -22,10 +22,12 @@
   background:
     radial-gradient(circle at 78% 28%, rgba(48, 199, 149, 0.22), transparent 28%),
     radial-gradient(circle at 18% 74%, rgba(79, 124, 255, 0.10), transparent 26%),
+    linear-gradient(60deg, rgba(48, 199, 149, 0.09) 1px, transparent 1px),
+    linear-gradient(120deg, rgba(79, 124, 255, 0.07) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
     linear-gradient(180deg, rgba(255, 255, 255, 0.042) 1px, transparent 1px),
     linear-gradient(118deg, transparent 0 52%, rgba(48, 199, 149, 0.14) 52.2% 52.65%, transparent 53% 100%);
-  background-size: auto, auto, 76px 76px, 76px 76px, 560px 360px;
+  background-size: auto, auto, 118px 118px, 118px 118px, 76px 76px, 76px 76px, 560px 360px;
   opacity: 0.8;
   animation: dark-signal-flow 34s linear infinite;
   pointer-events: none;
@@ -63,6 +65,7 @@
 }
 
 .rate-callout {
+  position: relative;
   align-self: stretch;
   display: grid;
   align-content: center;
@@ -71,15 +74,50 @@
   background:
     linear-gradient(155deg, rgba(48, 199, 149, 0.12), rgba(255, 255, 255, 0.045)),
     var(--dark);
+  clip-path: var(--notch-clip);
   box-shadow: 0 18px 42px rgba(16, 23, 34, 0.14), inset 0 0 0 1px rgba(255, 255, 255, 0.045);
+  overflow: hidden;
 }
 
 .rate-card {
+  position: relative;
   border-color: rgba(48, 199, 149, 0.22);
   background:
     linear-gradient(180deg, rgba(48, 199, 149, 0.10), rgba(255, 255, 255, 0.045)),
     rgba(255, 255, 255, 0.07);
+  clip-path: var(--notch-clip);
   box-shadow: 0 22px 50px rgba(0, 0, 0, 0.20), inset 0 0 0 1px rgba(255, 255, 255, 0.045);
+  overflow: hidden;
+}
+
+.rate-card::after,
+.rate-callout::after {
+  content: "";
+  position: absolute;
+  right: -32px;
+  bottom: -36px;
+  z-index: 0;
+  width: clamp(96px, 12vw, 154px);
+  aspect-ratio: 1;
+  clip-path: var(--hex-clip);
+  background:
+    linear-gradient(60deg, rgba(255, 255, 255, 0.16) 1px, transparent 1px),
+    linear-gradient(120deg, rgba(48, 199, 149, 0.20) 1px, transparent 1px),
+    radial-gradient(circle at 50% 50%, rgba(48, 199, 149, 0.18), transparent 62%);
+  background-size: 18px 18px, 18px 18px, auto;
+  opacity: 0.44;
+  pointer-events: none;
+  transform: rotate(-8deg);
+}
+
+.rate-card > *,
+.rate-callout > * {
+  position: relative;
+  z-index: 1;
+}
+
+.rate-callout:not(.light) p {
+  color: #dce5ef;
 }
 
 .rate-callout.light {
@@ -117,16 +155,61 @@
 }
 
 .process-grid article {
+  position: relative;
   padding: clamp(22px, 2.4vw, 28px);
-  border-left: 4px solid var(--accent);
-  background: var(--panel);
+  border: 1px solid rgba(17, 24, 39, 0.10);
+  border-left: 0;
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 253, 250, 0.98), rgba(241, 251, 247, 0.72)),
+    var(--panel);
+  clip-path: var(--notch-clip-soft);
   box-shadow: var(--shadow-soft);
+  overflow: hidden;
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.process-grid article::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 7px;
+  background: linear-gradient(180deg, var(--accent), rgba(79, 124, 255, 0.34), rgba(48, 199, 149, 0.58));
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 18px), 0 100%);
+}
+
+.process-grid article::after {
+  content: "";
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  width: 42px;
+  aspect-ratio: 1;
+  clip-path: var(--hex-clip);
+  background:
+    linear-gradient(60deg, rgba(8, 112, 82, 0.13) 1px, transparent 1px),
+    linear-gradient(120deg, rgba(79, 124, 255, 0.09) 1px, transparent 1px),
+    rgba(241, 251, 247, 0.72);
+  background-size: 12px 12px, 12px 12px, auto;
+  opacity: 0.28;
+  pointer-events: none;
+  transform: rotate(10deg);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.process-grid article > * {
+  position: relative;
+  z-index: 1;
 }
 
 .process-grid article:hover {
   transform: translateY(-3px);
   box-shadow: var(--glow);
+}
+
+.process-grid article:hover::after {
+  opacity: 0.76;
+  transform: rotate(0deg);
 }
 
 .process-grid span {
@@ -148,44 +231,76 @@
   gap: 12px;
 }
 
-details {
+.faq-list details {
+  position: relative;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
+  clip-path: var(--notch-clip-soft);
   box-shadow: 0 10px 26px rgba(16, 23, 34, 0.06);
+  overflow: hidden;
   transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
-details[open] {
+.faq-list details::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  width: 28px;
+  aspect-ratio: 1;
+  clip-path: var(--hex-clip);
+  background:
+    linear-gradient(60deg, rgba(8, 112, 82, 0.16) 1px, transparent 1px),
+    linear-gradient(120deg, rgba(79, 124, 255, 0.10) 1px, transparent 1px),
+    rgba(241, 251, 247, 0.52);
+  background-size: 10px 10px, 10px 10px, auto;
+  opacity: 0.24;
+  pointer-events: none;
+  transform: rotate(10deg);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.faq-list details > * {
+  position: relative;
+  z-index: 1;
+}
+
+.faq-list details[open] {
   border-color: rgba(8, 112, 82, 0.28);
   background: #fffdfa;
   box-shadow: 0 14px 30px rgba(16, 23, 34, 0.09);
 }
 
-summary {
+.faq-list details[open]::after {
+  opacity: 0.58;
+  transform: rotate(0deg);
+}
+
+.faq-list summary {
   cursor: pointer;
   padding: 18px 20px;
   font-weight: 700;
   transition: color 180ms ease;
 }
 
-summary:hover,
-details[open] summary {
+.faq-list summary:hover,
+.faq-list details[open] summary {
   color: var(--accent-dark);
 }
 
-details p,
-details .text-link {
+.faq-list details p,
+.faq-list details .text-link {
   margin: 0;
   padding: 0 20px 18px;
   color: var(--muted);
 }
 
-details[open] p {
+.faq-list details[open] p {
   animation: details-in 180ms ease both;
 }
 
-details .text-link {
+.faq-list details .text-link {
   display: inline-block;
   color: var(--accent-dark);
 }
@@ -201,6 +316,7 @@ details .text-link {
 }
 
 .faq-question-form {
+  position: relative;
   display: grid;
   gap: 14px;
   padding: clamp(18px, 3vw, 26px);
@@ -209,7 +325,9 @@ details .text-link {
   background:
     linear-gradient(180deg, rgba(255, 253, 250, 0.98), rgba(255, 253, 250, 0.92)),
     var(--panel);
+  clip-path: var(--notch-clip-soft);
   box-shadow: var(--shadow-soft);
+  overflow: hidden;
 }
 
 .faq-question-form .eyebrow,
@@ -252,6 +370,7 @@ details .text-link {
 }
 
 .contact-form {
+  position: relative;
   display: grid;
   gap: 14px;
   scroll-margin-top: 96px;
@@ -261,7 +380,9 @@ details .text-link {
   background:
     linear-gradient(180deg, rgba(255, 253, 250, 0.98), rgba(255, 253, 250, 0.92)),
     var(--panel);
+  clip-path: var(--notch-clip-soft);
   box-shadow: 0 18px 44px rgba(16, 23, 34, 0.12);
+  overflow: hidden;
 }
 
 .contact-form label {
@@ -392,6 +513,7 @@ select:focus {
   background:
     linear-gradient(180deg, rgba(255, 253, 250, 0.99), rgba(255, 253, 250, 0.94)),
     var(--panel);
+  clip-path: var(--notch-clip-soft);
   box-shadow: 0 28px 80px rgba(16, 23, 34, 0.28);
 }
 
@@ -538,6 +660,7 @@ select:focus {
   border: 1px solid rgba(17, 24, 39, 0.14);
   border-radius: 8px;
   background: #ffffff;
+  clip-path: var(--notch-clip-soft);
   box-shadow: 0 24px 70px rgba(16, 23, 34, 0.26);
 }
 

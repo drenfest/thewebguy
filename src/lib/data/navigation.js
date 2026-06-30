@@ -1,6 +1,3 @@
-import { blogCategories, blogCategoryUrl, blogTags, blogTagUrl, fixNoteCategories, fixNoteCategoryUrl } from "./content.js";
-import { locationLink, pageLink, serviceLink, skillLink } from "./relationships.js";
-
 function group(title, links) {
   return { title, links: links.filter(Boolean) };
 }
@@ -16,14 +13,83 @@ function taxonomyLink(label, href) {
   return { label, href };
 }
 
+function routeLink(label, href) {
+  return { label, href };
+}
+
+function pageLink(label, href) {
+  return routeLink(label, href);
+}
+
+function serviceLink(label, slug) {
+  return routeLink(label, `/services/${slug}/`);
+}
+
+function skillLink(label, slug) {
+  return routeLink(label, `/skills/${slug}/`);
+}
+
+function locationLink(label, slug) {
+  return routeLink(label, `/locations/${slug}/`);
+}
+
 const blogTagMenuGroupNames = ["Troubleshooting Tags", "Tracking & Data Tags", "Platform Tags", "SEO & Launch Tags"];
-const blogCategoryLinks = blogCategories.map((category) => taxonomyLink(category.label, blogCategoryUrl(category.slug)));
-const fixNoteCategoryLinks = fixNoteCategories.map((category) => taxonomyLink(category.label, fixNoteCategoryUrl(category.slug)));
+const blogCategories = [
+  ["Start Here", "/blog/category/start-here/"],
+  ["Front-End & Layout", "/blog/category/front-end-layout/"],
+  ["Forms, Tracking & Data", "/blog/category/forms-tracking-data/"],
+  ["WordPress & CMS", "/blog/category/wordpress-cms/"],
+  ["SEO, Pages & AI Launches", "/blog/category/seo-pages-ai/"],
+  ["Ecommerce & Checkout", "/blog/category/ecommerce-checkout/"]
+];
+const fixNoteCategories = [
+  ["Website Fixes", "/fix-notes/category/website-fixes/"],
+  ["Page Speed", "/fix-notes/category/page-speed/"],
+  ["Technical SEO", "/fix-notes/category/technical-seo/"],
+  ["WordPress Support", "/fix-notes/category/wordpress-support/"],
+  ["AI Website Cleanup", "/fix-notes/category/ai-website-cleanup/"],
+  ["Tracking & Analytics", "/fix-notes/category/tracking-analytics/"],
+  ["API Integrations", "/fix-notes/category/api-integrations/"],
+  ["Ecommerce Support", "/fix-notes/category/ecommerce-support/"],
+  ["Landing Pages", "/fix-notes/category/landing-pages/"],
+  ["Production Debugging", "/fix-notes/category/production-debugging/"]
+];
+const blogTags = [
+  ["Website Fixes", "/blog/tag/website-fixes/", "Troubleshooting Tags"],
+  ["CSS", "/blog/tag/css/", "Troubleshooting Tags"],
+  ["JavaScript", "/blog/tag/javascript/", "Troubleshooting Tags"],
+  ["Mobile Layout", "/blog/tag/mobile-layout/", "Troubleshooting Tags"],
+  ["Embeds & Iframes", "/blog/tag/embeds-iframes/", "Troubleshooting Tags"],
+  ["Forms", "/blog/tag/forms/", "Tracking & Data Tags"],
+  ["GA4 & GTM", "/blog/tag/ga4-gtm/", "Tracking & Data Tags"],
+  ["Conversion Tracking", "/blog/tag/conversion-tracking/", "Tracking & Data Tags"],
+  ["Analytics & Tracking", "/blog/tag/analytics-tracking/", "Tracking & Data Tags"],
+  ["APIs & Integrations", "/blog/tag/api-integrations/", "Tracking & Data Tags"],
+  ["Dashboards", "/blog/tag/dashboards/", "Tracking & Data Tags"],
+  ["WordPress", "/blog/tag/wordpress/", "Platform Tags"],
+  ["Plugin Conflicts", "/blog/tag/plugin-conflicts/", "Platform Tags"],
+  ["Themes", "/blog/tag/themes/", "Platform Tags"],
+  ["Page Builders", "/blog/tag/page-builders/", "Platform Tags"],
+  ["WooCommerce", "/blog/tag/woocommerce/", "Platform Tags"],
+  ["Ecommerce", "/blog/tag/ecommerce/", "Platform Tags"],
+  ["Checkout", "/blog/tag/checkout/", "Platform Tags"],
+  ["Emergency Support", "/blog/tag/emergency-support/", "Platform Tags"],
+  ["Landing Pages", "/blog/tag/landing-pages/", "SEO & Launch Tags"],
+  ["Technical SEO", "/blog/tag/technical-seo/", "SEO & Launch Tags"],
+  ["SEO Audit", "/blog/tag/seo-audit/", "SEO & Launch Tags"],
+  ["Internal Links", "/blog/tag/internal-links/", "SEO & Launch Tags"],
+  ["Crawl Analysis", "/blog/tag/crawl-analysis/", "SEO & Launch Tags"],
+  ["AI-Built Cleanup", "/blog/tag/ai-built/", "SEO & Launch Tags"],
+  ["Site Speed", "/blog/tag/site-speed/", "SEO & Launch Tags"],
+  ["Automation", "/blog/tag/automation/", "SEO & Launch Tags"]
+];
+const blogCategoryLinks = blogCategories.map(([label, href]) => taxonomyLink(label, href));
+const fixNoteCategoryLinks = fixNoteCategories.map(([label, href]) => taxonomyLink(label, href));
 const blogTagGroups = blogTagMenuGroupNames.map((title) => group(
   title,
   blogTags
-    .filter((tag) => tag.menuGroup === title)
-    .map((tag) => taxonomyLink(tag.label, blogTagUrl(tag.slug)))
+    .filter(([, , menuGroup]) => menuGroup === title)
+    .map(([label, href]) => taxonomyLink(label, href))
 ));
 
 export const headerCta = {
@@ -36,9 +102,7 @@ export const mainNavItems = [
   { label: "Blog", href: "/blog/", menuKey: "blog" },
   { label: "Skills", href: "/skills/", menuKey: "skills" },
   { label: "Locations", href: "/locations/", menuKey: "locations" },
-  { label: "Rate", href: "/rate/" },
-  { label: "About", href: "/about/" },
-  { label: "FAQ", href: "/faq/" },
+  { label: "About", href: "/about/", menuKey: "about", overviewLabel: "About The Web Guy" },
   { label: "Contact", href: "/contact/" }
 ];
 
@@ -177,6 +241,20 @@ export const megaMenus = {
       label: "View Locations",
       href: "/locations/"
     }
+  ),
+  about: menu(
+    [
+      group("The Basics", [
+        pageLink("Rate", "/rate/"),
+        pageLink("FAQ", "/faq/")
+      ])
+    ],
+    {
+      heading: "Straightforward contract web help",
+      text: "Learn how the hourly rate works, what to send, and the kinds of website problems that fit best.",
+      label: "Send a Website Problem",
+      href: "/contact/"
+    }
   )
 };
 
@@ -195,5 +273,6 @@ export const mobileNavSections = [
   mobileSectionFromMenu("services", "Services", "View All Services", "/services/"),
   mobileSectionFromMenu("blog", "Blog", "View Blog", "/blog/"),
   mobileSectionFromMenu("skills", "Skills", "View All Skills", "/skills/"),
-  mobileSectionFromMenu("locations", "Locations", "View All Locations", "/locations/")
+  mobileSectionFromMenu("locations", "Locations", "View All Locations", "/locations/"),
+  mobileSectionFromMenu("about", "About", "About The Web Guy", "/about/")
 ];

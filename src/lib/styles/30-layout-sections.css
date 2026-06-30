@@ -140,7 +140,7 @@
 }
 
 .section-effect {
-  --effect-opacity: 0.20;
+  --effect-opacity: 0.34;
   --effect-speed: 36s;
   --effect-shift: 82px;
   width: 100%;
@@ -149,22 +149,25 @@
   overflow: hidden;
   padding-right: max(clamp(18px, 4vw, 56px), calc((100vw - 1160px) / 2));
   padding-left: max(clamp(18px, 4vw, 56px), calc((100vw - 1160px) / 2));
+  box-shadow:
+    inset 0 1px rgba(255, 255, 255, 0.62),
+    inset 0 -1px rgba(17, 24, 39, 0.055);
 }
 
 .section-effect--low {
-  --effect-opacity: 0.12;
+  --effect-opacity: 0.22;
   --effect-speed: 46s;
   --effect-shift: 54px;
 }
 
 .section-effect--medium {
-  --effect-opacity: 0.18;
+  --effect-opacity: 0.42;
   --effect-speed: 34s;
   --effect-shift: 88px;
 }
 
 .section-effect--high {
-  --effect-opacity: 0.24;
+  --effect-opacity: 0.54;
   --effect-speed: 28s;
   --effect-shift: 118px;
 }
@@ -176,7 +179,8 @@
 
 .section.section-effect--grid,
 .section.section-effect--signals,
-.section.section-effect--traces {
+.section.section-effect--traces,
+.section.section-effect--hex {
   background:
     linear-gradient(180deg, rgba(255, 253, 250, 0.88), rgba(246, 242, 233, 0.78)),
     var(--paper);
@@ -184,28 +188,58 @@
 
 .section.section-effect--grid {
   background:
+    radial-gradient(circle at 10% 16%, rgba(48, 199, 149, 0.13), transparent 18rem),
+    radial-gradient(circle at 88% 78%, rgba(79, 124, 255, 0.095), transparent 20rem),
+    linear-gradient(142deg, transparent 0 58%, rgba(48, 199, 149, 0.075) 58.12% 58.5%, transparent 58.82% 100%),
+    linear-gradient(28deg, transparent 0 42%, rgba(240, 184, 75, 0.055) 42.12% 42.5%, transparent 42.82% 100%),
+    linear-gradient(60deg, rgba(8, 112, 82, 0.034) 1px, transparent 1px),
+    linear-gradient(120deg, rgba(79, 124, 255, 0.026) 1px, transparent 1px),
     linear-gradient(90deg, rgba(16, 23, 34, 0.026) 1px, transparent 1px),
     linear-gradient(180deg, rgba(16, 23, 34, 0.018) 1px, transparent 1px),
     linear-gradient(180deg, rgba(255, 253, 250, 0.90), rgba(246, 242, 233, 0.82)),
     var(--paper);
-  background-size: 68px 68px, 68px 68px, auto, auto;
+  background-size: auto, auto, 620px 380px, 520px 340px, 118px 118px, 118px 118px, 68px 68px, 68px 68px, auto, auto;
 }
 
 .section.section-effect--signals {
   background:
+    radial-gradient(circle at 16% 74%, rgba(48, 199, 149, 0.12), transparent 17rem),
+    radial-gradient(circle at 88% 24%, rgba(240, 184, 75, 0.085), transparent 18rem),
+    conic-gradient(from 30deg at 80% 30%, rgba(48, 199, 149, 0.085) 0 60deg, transparent 60deg 120deg, rgba(79, 124, 255, 0.055) 120deg 180deg, transparent 180deg 360deg),
+    linear-gradient(60deg, rgba(48, 199, 149, 0.028) 1px, transparent 1px),
+    linear-gradient(120deg, rgba(240, 184, 75, 0.020) 1px, transparent 1px),
     linear-gradient(90deg, rgba(48, 199, 149, 0.028) 1px, transparent 1px),
     linear-gradient(180deg, rgba(79, 124, 255, 0.018) 1px, transparent 1px),
     linear-gradient(180deg, rgba(255, 253, 250, 0.88), rgba(246, 242, 233, 0.80)),
     var(--paper);
-  background-size: 96px 96px, 96px 96px, auto, auto;
+  background-size: auto, auto, auto, 128px 128px, 128px 128px, 96px 96px, 96px 96px, auto, auto;
 }
 
 .section.section-effect--traces {
   background:
+    radial-gradient(circle at 14% 18%, rgba(79, 124, 255, 0.08), transparent 18rem),
+    radial-gradient(circle at 86% 72%, rgba(48, 199, 149, 0.12), transparent 20rem),
+    linear-gradient(102deg, transparent 0 21%, rgba(8, 112, 82, 0.075) 21.12% 21.48%, transparent 21.8% 100%),
+    linear-gradient(18deg, transparent 0 76%, rgba(79, 124, 255, 0.058) 76.12% 76.48%, transparent 76.8% 100%),
+    linear-gradient(60deg, rgba(8, 112, 82, 0.026) 1px, transparent 1px),
+    linear-gradient(120deg, rgba(79, 124, 255, 0.022) 1px, transparent 1px),
     linear-gradient(135deg, rgba(8, 112, 82, 0.028) 1px, transparent 1px),
     linear-gradient(180deg, rgba(255, 253, 250, 0.90), rgba(246, 242, 233, 0.82)),
     var(--paper);
-  background-size: 118px 118px, auto, auto;
+  background-size: auto, auto, 540px 320px, 620px 360px, 136px 136px, 136px 136px, 118px 118px, auto, auto;
+}
+
+.section.section-effect--hex {
+  background:
+    radial-gradient(circle at 12% 20%, rgba(48, 199, 149, 0.15), transparent 22rem),
+    radial-gradient(circle at 88% 78%, rgba(79, 124, 255, 0.11), transparent 24rem),
+    conic-gradient(from 60deg at 16% 72%, rgba(48, 199, 149, 0.10) 0 60deg, transparent 60deg 120deg, rgba(240, 184, 75, 0.055) 120deg 180deg, transparent 180deg 360deg),
+    conic-gradient(from 30deg at 88% 24%, rgba(79, 124, 255, 0.075) 0 60deg, transparent 60deg 120deg, rgba(48, 199, 149, 0.07) 120deg 180deg, transparent 180deg 360deg),
+    linear-gradient(60deg, rgba(8, 112, 82, 0.040) 1px, transparent 1px),
+    linear-gradient(120deg, rgba(8, 112, 82, 0.034) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 253, 250, 0.90), rgba(246, 242, 233, 0.78)),
+    var(--paper);
+  background-size: auto, auto, 360px 360px, 420px 420px, 104px 104px, 104px 104px, auto, auto;
 }
 
 .section-effect::after {
@@ -213,9 +247,9 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  opacity: calc(var(--effect-opacity) * 0.82);
+  opacity: calc(var(--effect-opacity) * 0.98);
   pointer-events: none;
-  animation-play-state: paused;
+  animation-play-state: running;
   will-change: transform, opacity, background-position;
 }
 
@@ -226,29 +260,33 @@
 .section-effect--grid::after {
   inset: 3% -7%;
   background:
+    conic-gradient(from 30deg at 12% 28%, rgba(48, 199, 149, 0.24) 0 60deg, transparent 60deg 120deg, rgba(79, 124, 255, 0.12) 120deg 180deg, transparent 180deg 360deg),
+    conic-gradient(from 60deg at 88% 62%, rgba(240, 184, 75, 0.14) 0 60deg, transparent 60deg 120deg, rgba(48, 199, 149, 0.18) 120deg 180deg, transparent 180deg 360deg),
     linear-gradient(90deg, rgba(8, 112, 82, 0.12) 1px, transparent 1px),
     linear-gradient(180deg, rgba(8, 112, 82, 0.085) 1px, transparent 1px),
     linear-gradient(112deg, transparent 0 39%, rgba(8, 112, 82, 0.16) 39.18% 39.48%, transparent 39.7% 100%),
     linear-gradient(68deg, transparent 0 61%, rgba(79, 124, 255, 0.11) 61.18% 61.52%, transparent 61.76% 100%),
     radial-gradient(circle at 18% 34%, rgba(48, 199, 149, 0.34) 0 2px, transparent 3px),
     radial-gradient(circle at 78% 64%, rgba(240, 184, 75, 0.22) 0 2px, transparent 3px);
-  background-size: 52px 52px, 52px 52px, 420px 280px, 470px 300px, 128px 128px, 164px 164px;
+  background-size: 260px 260px, 320px 320px, 52px 52px, 52px 52px, 420px 280px, 470px 300px, 128px 128px, 164px 164px;
   mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
   animation: blueprint-grid-drift var(--effect-speed) linear infinite;
-  animation-play-state: paused;
+  animation-play-state: running;
 }
 
 .section-effect--signals::after {
   inset: 6% -6%;
   background:
+    conic-gradient(from 30deg at 16% 30%, rgba(48, 199, 149, 0.22) 0 60deg, transparent 60deg 120deg, rgba(79, 124, 255, 0.11) 120deg 180deg, transparent 180deg 360deg),
+    conic-gradient(from 60deg at 84% 72%, rgba(240, 184, 75, 0.16) 0 60deg, transparent 60deg 120deg, rgba(48, 199, 149, 0.15) 120deg 180deg, transparent 180deg 360deg),
     radial-gradient(circle at 10% 18%, rgba(48, 199, 149, 0.54) 0 1.6px, transparent 2.8px),
     radial-gradient(circle at 24% 86%, rgba(48, 199, 149, 0.30) 0 1.4px, transparent 2.7px),
     radial-gradient(circle at 82% 18%, rgba(79, 124, 255, 0.36) 0 1.5px, transparent 2.8px),
     radial-gradient(circle at 92% 72%, rgba(240, 184, 75, 0.26) 0 1.4px, transparent 2.7px),
     linear-gradient(28deg, transparent 0 49%, rgba(8, 112, 82, 0.14) 49.18% 49.52%, transparent 49.8% 100%),
     linear-gradient(146deg, transparent 0 54%, rgba(79, 124, 255, 0.10) 54.18% 54.5%, transparent 54.78% 100%);
-  background-size: 148px 122px, 190px 156px, 168px 138px, 212px 172px, 430px 270px, 510px 320px;
+  background-size: 280px 280px, 340px 340px, 148px 122px, 190px 156px, 168px 138px, 212px 172px, 430px 270px, 510px 320px;
   mask-image:
     radial-gradient(circle at 0 0, #000 0 36%, transparent 58%),
     radial-gradient(circle at 100% 0, #000 0 34%, transparent 58%),
@@ -261,19 +299,21 @@
     radial-gradient(circle at 100% 100%, #000 0 36%, transparent 60%);
   mask-composite: add;
   animation: signal-sparks var(--effect-speed) linear infinite;
-  animation-play-state: paused;
+  animation-play-state: running;
 }
 
 .section-effect--traces::after {
   inset: 0;
   background:
+    conic-gradient(from 60deg at 10% 78%, rgba(48, 199, 149, 0.18) 0 60deg, transparent 60deg 120deg, rgba(79, 124, 255, 0.10) 120deg 180deg, transparent 180deg 360deg),
+    conic-gradient(from 30deg at 92% 18%, rgba(79, 124, 255, 0.14) 0 60deg, transparent 60deg 120deg, rgba(240, 184, 75, 0.10) 120deg 180deg, transparent 180deg 360deg),
     linear-gradient(90deg, transparent 0 9%, rgba(8, 112, 82, 0.20) 9.12% 9.35%, transparent 9.55% 100%),
     linear-gradient(0deg, transparent 0 18%, rgba(8, 112, 82, 0.16) 18.1% 18.36%, transparent 18.58% 100%),
     linear-gradient(135deg, transparent 0 24%, rgba(79, 124, 255, 0.12) 24.1% 24.42%, transparent 24.7% 100%),
     linear-gradient(45deg, transparent 0 72%, rgba(48, 199, 149, 0.13) 72.12% 72.44%, transparent 72.72% 100%),
     radial-gradient(circle at 14% 22%, rgba(48, 199, 149, 0.38) 0 2px, transparent 3px),
     radial-gradient(circle at 86% 76%, rgba(79, 124, 255, 0.26) 0 2px, transparent 3px);
-  background-size: 360px 220px, 320px 240px, 440px 300px, 520px 330px, 180px 132px, 210px 156px;
+  background-size: 300px 300px, 360px 360px, 360px 220px, 320px 240px, 440px 300px, 520px 330px, 180px 132px, 210px 156px;
   mask-image:
     linear-gradient(90deg, #000 0 24%, transparent 42% 58%, #000 76% 100%),
     linear-gradient(180deg, #000 0 30%, transparent 48% 58%, #000 76% 100%);
@@ -281,7 +321,26 @@
     linear-gradient(90deg, #000 0 24%, transparent 42% 58%, #000 76% 100%),
     linear-gradient(180deg, #000 0 30%, transparent 48% 58%, #000 76% 100%);
   animation: circuit-trace-drift var(--effect-speed) ease-in-out infinite alternate;
-  animation-play-state: paused;
+  animation-play-state: running;
+}
+
+.section-effect--hex::after {
+  inset: 5% -8%;
+  background:
+    conic-gradient(from 30deg at 16% 34%, rgba(48, 199, 149, 0.28) 0 60deg, transparent 60deg 120deg, rgba(79, 124, 255, 0.14) 120deg 180deg, transparent 180deg 360deg),
+    conic-gradient(from 60deg at 84% 68%, rgba(240, 184, 75, 0.16) 0 60deg, transparent 60deg 120deg, rgba(48, 199, 149, 0.18) 120deg 180deg, transparent 180deg 360deg),
+    linear-gradient(60deg, rgba(8, 112, 82, 0.16) 1px, transparent 1px),
+    linear-gradient(120deg, rgba(8, 112, 82, 0.13) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(79, 124, 255, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 18% 32%, rgba(48, 199, 149, 0.34) 0 2px, transparent 3px),
+    radial-gradient(circle at 78% 66%, rgba(240, 184, 75, 0.24) 0 2px, transparent 3px),
+    radial-gradient(circle at 52% 50%, rgba(48, 199, 149, 0.16), transparent 38%);
+  background-size: 280px 280px, 340px 340px, 88px 88px, 88px 88px, 88px 88px, 172px 132px, 214px 164px, auto;
+  clip-path: polygon(6% 0, 94% 0, 100% 50%, 94% 100%, 6% 100%, 0 50%);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  animation: hex-field-drift var(--effect-speed) ease-in-out infinite alternate;
+  animation-play-state: running;
 }
 
 .section.effect-light-lines::after,
@@ -289,7 +348,8 @@
 .section.effect-dark-grid::before,
 .section-effect--grid::after,
 .section-effect--signals::after,
-.section-effect--traces::after {
+.section-effect--traces::after,
+.section-effect--hex::after {
   left: calc(50% - 50vw);
   right: auto;
   width: 100vw;
@@ -300,7 +360,7 @@
 .effect-dark-grid::before,
 .rate-section::after,
 .cta-band::after {
-  animation-play-state: paused;
+  animation-play-state: running;
 }
 
 .effect-active.effect-light-lines::after,
@@ -318,11 +378,16 @@
   padding-left: clamp(18px, 4vw, 56px);
   border-block: 1px solid rgba(17, 24, 39, 0.08);
   background:
+    radial-gradient(circle at 8% 18%, rgba(48, 199, 149, 0.10), transparent 18rem),
+    radial-gradient(circle at 94% 72%, rgba(79, 124, 255, 0.075), transparent 20rem),
+    linear-gradient(138deg, transparent 0 64%, rgba(48, 199, 149, 0.055) 64.12% 64.5%, transparent 64.82% 100%),
+    linear-gradient(60deg, rgba(8, 112, 82, 0.026) 1px, transparent 1px),
+    linear-gradient(120deg, rgba(79, 124, 255, 0.020) 1px, transparent 1px),
     linear-gradient(90deg, rgba(16, 23, 34, 0.018) 1px, transparent 1px),
     linear-gradient(180deg, rgba(16, 23, 34, 0.014) 1px, transparent 1px),
     linear-gradient(180deg, rgba(255, 253, 250, 0.88), rgba(246, 242, 233, 0.78)),
     var(--paper);
-  background-size: 72px 72px, 72px 72px, auto, auto;
+  background-size: auto, auto, 580px 340px, 124px 124px, 124px 124px, 72px 72px, 72px 72px, auto, auto;
 }
 
 .section-effect.soft-section {
@@ -448,8 +513,42 @@
 }
 
 .section-heading {
+  position: relative;
   max-width: 860px;
   margin-bottom: clamp(30px, 4vw, 42px);
+  padding-left: clamp(22px, 3vw, 34px);
+}
+
+.section-heading::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+  width: clamp(12px, 1.4vw, 18px);
+  height: clamp(36px, 5vw, 58px);
+  background:
+    linear-gradient(180deg, rgba(48, 199, 149, 0.96), rgba(79, 124, 255, 0.34)),
+    var(--accent);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 13px), 50% 100%, 0 calc(100% - 13px));
+  box-shadow: 0 0 22px rgba(48, 199, 149, 0.16);
+}
+
+.section-heading::after {
+  content: "";
+  position: absolute;
+  left: clamp(32px, 4vw, 50px);
+  top: clamp(4px, 0.7vw, 10px);
+  width: clamp(42px, 5vw, 72px);
+  aspect-ratio: 1;
+  clip-path: var(--hex-clip);
+  background:
+    linear-gradient(60deg, rgba(8, 112, 82, 0.16) 1px, transparent 1px),
+    linear-gradient(120deg, rgba(79, 124, 255, 0.12) 1px, transparent 1px),
+    rgba(48, 199, 149, 0.07);
+  background-size: 13px 13px, 13px 13px, auto;
+  opacity: 0.62;
+  pointer-events: none;
+  transform: translateY(-42%) rotate(8deg);
 }
 
 .section > .section-heading {

@@ -162,7 +162,7 @@
 
   <Breadcrumbs items={breadcrumbs} />
 
-  <section class="section split-section section-effect section-effect--grid section-effect--low">
+  <section class="section split-section section-effect section-effect--hex section-effect--low">
     <div>
       <SectionHeading eyebrow={`${location.city} website support`} h2={`Website support for businesses near ${location.city}, ${location.state}`} />
       {#each location.context as paragraph}<p>{paragraph}</p>{/each}
@@ -192,7 +192,7 @@
     />
   </section>
 
-  <section class="section split-section section-effect section-effect--grid section-effect--low">
+  <section class="section split-section section-effect section-effect--hex section-effect--low">
     <div>
       <SectionHeading
         eyebrow={`Route ${location.city} web requests`}

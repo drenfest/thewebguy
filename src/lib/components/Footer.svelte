@@ -1,9 +1,37 @@
 <script>
-  import { mainPages } from "$lib/data/content.js";
-  import { blogLink, locationLink, routeLink, serviceLink, skillLink } from "$lib/data/relationships.js";
-  import LogoMark from "./LogoMark.svelte";
-
   const year = new Date().getFullYear();
+  const mainPages = [
+    ["Home", "/"],
+    ["Services", "/services/"],
+    ["Blog", "/blog/"],
+    ["Fix Notes", "/fix-notes/"],
+    ["Skills", "/skills/"],
+    ["Locations", "/locations/"],
+    ["Rate", "/rate/"],
+    ["About", "/about/"],
+    ["FAQ", "/faq/"],
+    ["Contact", "/contact/"]
+  ];
+
+  function routeLink(label, href) {
+    return { label, href };
+  }
+
+  function serviceLink(label, slug) {
+    return routeLink(label, `/services/${slug}/`);
+  }
+
+  function skillLink(label, slug) {
+    return routeLink(label, `/skills/${slug}/`);
+  }
+
+  function locationLink(label, slug) {
+    return routeLink(label, `/locations/${slug}/`);
+  }
+
+  function blogLink(label, slug) {
+    return routeLink(label, `/blog/${slug}/`);
+  }
 
   function linkTitle(label, href = "") {
     if (href === "/contact/") return "Open the contact request form";
@@ -115,8 +143,16 @@
     <section class="footer-brand-row" aria-label="The Web Guy footer summary">
       <div class="footer-brand-copy">
         <div class="footer-brand-heading">
-          <LogoMark size={54} title="Animated The Web Guy logo" idPrefix="footer-logo" animated={true} />
-          <h2>The Web Guy</h2>
+          <img
+            class="footer-wordmark"
+            src="/brand/thewebguy-modern-color-wordmark.png"
+            width="1476"
+            height="253"
+            alt="The Web Guy.app"
+            loading="lazy"
+            decoding="async"
+          />
+          <h2 class="sr-only">The Web Guy</h2>
         </div>
         <p>Contract web development, WordPress support, Shopify/Liquid help, technical SEO implementation, tracking cleanup, automation, performance, and platform support at $55/hr.</p>
         <div class="footer-mini-grid footer-brand-pills" aria-label="Core support areas">

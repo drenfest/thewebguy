@@ -4,14 +4,14 @@ Local font files used by the site.
 
 ## Files
 
-- `inter-latin-400-600.woff2`: body font range for normal to medium text.
-- `space-grotesk-latin-600-700.woff2`: display font range for headings, labels, and heavier UI text.
+- `oxanium-latin-400-800.woff2`: body/UI font range for paragraphs, forms, lists, and smaller interface text.
+- `orbitron-latin-400-900.woff2`: compact printable-ASCII display font range for logo-adjacent typography, headings, nav, buttons, badges, and card titles.
 
 ## Common Patterns
 
 - Fonts are loaded locally through `@font-face` in `styles.css`.
 - `font-display: optional` is used so text remains visible and mobile LCP is not delayed by font swaps.
-- Font preloads in `src/app.html` are desktop-only; mobile uses the system font stack through the `max-width: 640px` CSS override.
+- `src/app.html` preloads Oxanium for first-view body/UI text plus the compact Orbitron display file so logo-adjacent text, nav, buttons, badges, cards, and headings do not double-fetch display fonts.
 - Limited weight ranges keep font payloads smaller.
 
 ## How It Is Used
@@ -27,4 +27,4 @@ Global CSS maps these files to `--font-body` and `--font-display`, then shared c
 ## Suggested Improvements
 
 - Document the original font source and license.
-- Keep preloads scoped to viewports where the custom fonts are part of the active font stack.
+- Keep preloads limited to font files used in first-view content.

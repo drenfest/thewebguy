@@ -11,6 +11,7 @@
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import SortableTable from "$lib/components/SortableTable.svelte";
   import TopoRankInfographic from "$lib/components/TopoRankInfographic.svelte";
+  import "$lib/styles/80-blog-articles.css";
   import { blogPosts, blogUrl } from "$lib/data/content.js";
   import { blogHeroImage } from "$lib/data/hero-images.js";
   import { articleSchema, breadcrumbSchema, faqSchema, schemaList } from "$lib/data/schema.js";

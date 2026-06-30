@@ -264,7 +264,7 @@
 
   <Breadcrumbs items={breadcrumbs} />
 
-  <section class="section split-section section-effect section-effect--grid section-effect--medium">
+  <section class="section split-section section-effect section-effect--hex section-effect--medium">
     <div>
       <SectionHeading eyebrow={`${skill.eyebrow} problem fit`} h2={`${skill.eyebrow} problems this helps solve`} />
       <ul class="check-list">
@@ -290,7 +290,7 @@
     <SortableTable caption={`${skill.eyebrow} implementation table`} columns={skillTableColumns} rows={skillRows} />
   </section>
 
-  <section class="section soft-section section-effect section-effect--signals section-effect--medium">
+  <section class="section soft-section section-effect section-effect--hex section-effect--medium">
     <SectionHeading eyebrow={`${skill.eyebrow} in service work`} h2={`Where ${skill.eyebrow} fits into website support`} body={skill.connection} />
     <InternalLinkCopy paragraphs={allSkillInternalParagraphs} />
     <CardGrid

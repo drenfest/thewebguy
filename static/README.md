@@ -5,6 +5,7 @@ Public asset directory. Files here are served directly from the site root and ca
 ## Directories
 
 - `fonts/`: local web fonts used by the global design system.
+- `brand/`: public The Web Guy logo assets used by the header, footer, and icon generation workflow.
 - `icons/`: source/reference icon files plus PWA icon exports.
 - `images/`: bitmap imagery used by the site.
 
@@ -24,11 +25,12 @@ Public asset directory. Files here are served directly from the site root and ca
 
 ## How It Is Used
 
-The Svelte app references these assets directly from markup and CSS. For example, the hero image uses `/images/technical-web-support-hero.png`, font faces in `styles.css` use `/fonts/...`, and `src/app.html` links the favicon and PWA manifest assets.
+The Svelte app references these assets directly from markup and CSS. For example, the hero image uses `/images/technical-web-support-hero.png`, brand components use `/brand/...`, font faces in `styles.css` use `/fonts/...`, and `src/app.html` links the favicon and PWA manifest assets.
 
 ## How To Extend
 
 - Add images to `static/images`.
+- Add logo/wordmark source assets to `static/brand`.
 - Add SVG sources or public icon files to `static/icons`.
 - Add local fonts to `static/fonts`, then update `@font-face` declarations in `styles.css`.
 - Update `site.webmanifest` and regenerate PNG exports when the app icon changes.

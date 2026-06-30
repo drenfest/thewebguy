@@ -72,6 +72,29 @@
   }
 }
 
+@keyframes hero-hex-float {
+  0% {
+    opacity: 0.66;
+    transform: translate3d(0, 0, 0) rotate(12deg) scale(0.98);
+  }
+  100% {
+    opacity: 0.86;
+    transform: translate3d(-1.6%, -2.2%, 0) rotate(17deg) scale(1.03);
+  }
+}
+
+@keyframes panel-hex-pulse {
+  0%,
+  100% {
+    opacity: 0.42;
+    transform: rotate(8deg) scale(0.96);
+  }
+  50% {
+    opacity: 0.68;
+    transform: rotate(2deg) scale(1.04);
+  }
+}
+
 @keyframes page-fade-out {
   from {
     opacity: 1;
@@ -91,6 +114,28 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes hex-field-drift {
+  0% {
+    opacity: calc(var(--effect-opacity) * 0.70);
+    background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 50% 50%;
+    transform: translate3d(-0.4%, 0, 0) rotate(-0.2deg);
+  }
+  48% {
+    opacity: var(--effect-opacity);
+  }
+  100% {
+    opacity: calc(var(--effect-opacity) * 0.82);
+    background-position:
+      calc(var(--effect-shift) * 0.65) 0,
+      calc(var(--effect-shift) * -0.45) 0,
+      0 calc(var(--effect-shift) * 0.42),
+      calc(var(--effect-shift) * 0.38) calc(var(--effect-shift) * -0.22),
+      calc(var(--effect-shift) * -0.46) calc(var(--effect-shift) * 0.28),
+      50% 50%;
+    transform: translate3d(0.4%, -0.7%, 0) rotate(0.2deg);
   }
 }
 

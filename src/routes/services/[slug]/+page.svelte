@@ -176,7 +176,7 @@
     ]),
     " before it becomes a clean service request."
   ]] : []);
-  const effectVariants = ["section-effect--grid", "section-effect--signals", "section-effect--traces"];
+  const effectVariants = ["section-effect--grid", "section-effect--signals", "section-effect--hex", "section-effect--traces"];
   const serviceFocusParagraphs = {
     "website-fixes": [
       [
@@ -346,7 +346,7 @@
   <Breadcrumbs items={breadcrumbs} />
   <ServiceNav current={service.slug} services={relatedServices} />
 
-  <section class="section split-section audience-section section-effect section-effect--grid section-effect--medium">
+  <section class="section split-section audience-section section-effect section-effect--hex section-effect--medium">
     <div>
       <SectionHeading eyebrow={`${service.eyebrow} fit`} h2={audienceHeading} body={audienceBody} />
       {#if service.audienceItems}
@@ -365,7 +365,7 @@
 
   <ProofPanel proof={serviceProof} />
 
-  <section class="section soft-section section-effect section-effect--signals section-effect--low">
+  <section class="section soft-section section-effect section-effect--hex section-effect--low">
     <SectionHeading
       eyebrow={`${service.eyebrow} details`}
       h2={`${service.eyebrow} scope, evidence, and next steps`}
@@ -394,7 +394,7 @@
     </section>
   {/each}
 
-  <section class="section no-overpromise section-effect section-effect--signals section-effect--low">
+  <section class="section no-overpromise section-effect section-effect--hex section-effect--low">
     <SectionHeading eyebrow={`${service.eyebrow} fit and limits`} h2={`What ${service.eyebrow} includes, and where the limits are`} />
     <div class="split-section tight">
       <p>This is practical contract execution. The Web Guy can inspect the site, make changes, troubleshoot issues, explain tradeoffs, and keep work moving. Some problems depend on hosting, platform limits, third-party tools, access, business requirements, or existing code quality.</p>

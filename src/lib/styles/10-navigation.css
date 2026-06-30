@@ -27,6 +27,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  min-height: 44px;
   font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
@@ -35,7 +36,9 @@
 .logo-mark {
   display: block;
   flex: 0 0 auto;
-  border-radius: 10px;
+  aspect-ratio: 1;
+  border-radius: 0;
+  object-fit: contain;
 }
 
 .brand .logo-mark {
@@ -71,8 +74,12 @@
   min-width: 170px;
 }
 
+.header-cta {
+  flex: 0 0 auto;
+}
+
 .site-search input {
-  min-height: 42px;
+  min-height: 44px;
   padding: 9px 12px;
   border-color: rgba(17, 24, 39, 0.16);
   background: rgba(255, 255, 255, 0.74);
@@ -138,7 +145,14 @@
 }
 
 .nav-links a,
-.service-nav a,
+.service-nav a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  text-decoration: none;
+}
+
 .text-link {
   position: relative;
   text-decoration: none;
@@ -149,6 +163,7 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
+  min-height: 44px;
   padding: 0;
   border: 0;
   background: transparent;

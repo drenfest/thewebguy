@@ -56,7 +56,7 @@
   onMount(() => {
     let cancelled = false;
     const isMobile = window.matchMedia("(max-width: 640px)").matches;
-    const delay = isMobile ? 3600 : 240;
+    const delay = isMobile ? 4200 : 3600;
 
     async function loadHeroEffect() {
       const module = useSeasonalFireworks ? await import("./HeroFireworks.svelte") : await import("./HeroParticles.svelte");
@@ -64,6 +64,11 @@
     }
 
     const timeout = window.setTimeout(() => {
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(() => loadHeroEffect().catch(() => {}), { timeout: 1800 });
+        return;
+      }
+
       loadHeroEffect().catch(() => {});
     }, delay);
 

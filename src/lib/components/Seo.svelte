@@ -9,6 +9,13 @@
     webPageSchema({ title, description, url: pageUrl }),
     ...(Array.isArray(schema) ? schema : [schema])
   ].filter(Boolean));
+  const schemaGraph = $derived({
+    "@context": "https://schema.org",
+    "@graph": schemaItems.map((schemaItem) => {
+      const { "@context": _context, ...item } = schemaItem;
+      return item;
+    })
+  });
 
   function jsonLd(schemaItem) {
     return JSON.stringify(schemaItem).replace(/</g, "\\u003c");
@@ -24,7 +31,5 @@
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:url" content={pageUrl} />
-  {#each schemaItems as schemaItem}
-    {@html `<script type="application/ld+json">${jsonLd(schemaItem)}</script>`}
-  {/each}
+  {@html `<script type="application/ld+json">${jsonLd(schemaGraph)}</script>`}
 </svelte:head>

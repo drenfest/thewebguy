@@ -17,15 +17,21 @@
 }
 
 .article-shell {
+  position: relative;
   width: 100%;
   min-width: 0;
   padding: clamp(32px, 4vw, 56px);
   border: 1px solid var(--line);
   border-radius: 8px;
   background:
+    linear-gradient(60deg, rgba(8, 112, 82, 0.024) 1px, transparent 1px),
+    linear-gradient(120deg, rgba(79, 124, 255, 0.020) 1px, transparent 1px),
     linear-gradient(180deg, rgba(255, 253, 250, 0.94), rgba(255, 253, 250, 0.82)),
     var(--panel);
+  background-size: 132px 132px, 132px 132px, auto, auto;
+  clip-path: var(--notch-clip);
   box-shadow: var(--shadow-soft);
+  overflow: hidden;
 }
 
 .article-shell::before {
@@ -35,6 +41,29 @@
   margin: clamp(-56px, -4vw, -32px) clamp(-56px, -4vw, -32px) clamp(22px, 3vw, 30px);
   border-radius: 8px 8px 0 0;
   background: linear-gradient(90deg, var(--accent), rgba(79, 124, 255, 0.55), var(--gold));
+}
+
+.article-shell::after {
+  content: "";
+  position: absolute;
+  top: clamp(28px, 4vw, 52px);
+  right: clamp(-54px, -4vw, -32px);
+  width: clamp(106px, 12vw, 164px);
+  aspect-ratio: 1;
+  clip-path: var(--hex-clip);
+  background:
+    linear-gradient(60deg, rgba(8, 112, 82, 0.13) 1px, transparent 1px),
+    linear-gradient(120deg, rgba(79, 124, 255, 0.09) 1px, transparent 1px),
+    rgba(48, 199, 149, 0.06);
+  background-size: 18px 18px, 18px 18px, auto;
+  opacity: 0.42;
+  pointer-events: none;
+  transform: rotate(10deg);
+}
+
+.article-shell > * {
+  position: relative;
+  z-index: 1;
 }
 
 .article-intro {
@@ -62,8 +91,12 @@
   border: 1px solid rgba(8, 112, 82, 0.20);
   border-radius: 8px;
   background:
+    linear-gradient(60deg, rgba(8, 112, 82, 0.032) 1px, transparent 1px),
+    linear-gradient(120deg, rgba(79, 124, 255, 0.022) 1px, transparent 1px),
     linear-gradient(180deg, rgba(255, 253, 250, 0.94), rgba(241, 251, 247, 0.88)),
     #f1fbf7;
+  background-size: 96px 96px, 96px 96px, auto, auto;
+  clip-path: var(--notch-clip-soft);
   box-shadow: var(--shadow-soft);
 }
 
@@ -134,13 +167,19 @@
 }
 
 .article-checklist {
+  position: relative;
   padding: clamp(22px, 3vw, 28px);
   border: 1px solid rgba(8, 112, 82, 0.20);
   border-left: 5px solid var(--accent-dark);
   background:
+    linear-gradient(60deg, rgba(8, 112, 82, 0.030) 1px, transparent 1px),
+    linear-gradient(120deg, rgba(79, 124, 255, 0.022) 1px, transparent 1px),
     linear-gradient(135deg, rgba(48, 199, 149, 0.10), rgba(255, 253, 250, 0.88) 48%),
     #fffdfa;
+  background-size: 96px 96px, 96px 96px, auto, auto;
+  clip-path: var(--notch-clip-soft);
   box-shadow: 0 12px 30px rgba(16, 23, 34, 0.07);
+  overflow: hidden;
 }
 
 .article-checklist h3 {
@@ -170,19 +209,26 @@
   top: 0.72em;
   width: 9px;
   height: 9px;
-  border-radius: 3px;
+  border-radius: 0;
+  clip-path: var(--hex-clip);
   background: var(--accent);
   box-shadow: 0 0 0 4px rgba(48, 199, 149, 0.10);
 }
 
 .article-callout {
+  position: relative;
   padding: clamp(20px, 3vw, 28px);
   border: 1px solid rgba(240, 184, 75, 0.24);
   border-left: 5px solid var(--gold);
   background:
+    linear-gradient(60deg, rgba(240, 184, 75, 0.045) 1px, transparent 1px),
+    linear-gradient(120deg, rgba(79, 124, 255, 0.020) 1px, transparent 1px),
     linear-gradient(135deg, rgba(240, 184, 75, 0.20), rgba(255, 253, 250, 0.84) 54%),
     rgba(240, 184, 75, 0.13);
+  background-size: 104px 104px, 104px 104px, auto, auto;
+  clip-path: var(--notch-clip-soft);
   box-shadow: 0 12px 30px rgba(16, 23, 34, 0.07), inset 0 0 0 1px rgba(240, 184, 75, 0.10);
+  overflow: hidden;
 }
 
 .article-callout strong {

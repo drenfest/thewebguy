@@ -44,7 +44,7 @@
       }));
   }
 
-  const effectVariants = ["section-effect--grid", "section-effect--signals", "section-effect--traces"];
+  const effectVariants = ["section-effect--grid", "section-effect--signals", "section-effect--hex", "section-effect--traces"];
 
   const skillHubLinks = [
     {

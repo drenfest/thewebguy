@@ -25,7 +25,7 @@
   );
 
   const regions = [...new Set(locationPages.map((location) => location.region))];
-  const effectVariants = ["section-effect--grid", "section-effect--signals", "section-effect--traces"];
+  const effectVariants = ["section-effect--grid", "section-effect--signals", "section-effect--hex", "section-effect--traces"];
   const locationHubLinks = [
     {
       label: "Local WordPress help",
@@ -149,7 +149,7 @@
 
   <Breadcrumbs items={breadcrumbs} />
 
-  <section class="section split-section section-effect section-effect--grid section-effect--low">
+  <section class="section split-section section-effect section-effect--hex section-effect--low">
     <div>
       <SectionHeading
         eyebrow="Freeport-area website support"

@@ -8,19 +8,62 @@
   padding: 0;
   border-top: 1px solid rgba(17, 24, 39, 0.11);
   background:
-    radial-gradient(circle at 10% 0%, rgba(48, 199, 149, 0.07), transparent 24vw),
-    linear-gradient(90deg, rgba(16, 23, 34, 0.012) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(16, 23, 34, 0.010) 1px, transparent 1px),
+    radial-gradient(circle at 10% 0%, rgba(48, 199, 149, 0.13), transparent 24vw),
+    radial-gradient(circle at 88% 18%, rgba(79, 124, 255, 0.085), transparent 24vw),
+    conic-gradient(from 30deg at 82% 12%, rgba(48, 199, 149, 0.09) 0 60deg, transparent 60deg 120deg, rgba(79, 124, 255, 0.055) 120deg 180deg, transparent 180deg 360deg),
+    linear-gradient(60deg, rgba(8, 112, 82, 0.032) 1px, transparent 1px),
+    linear-gradient(120deg, rgba(79, 124, 255, 0.026) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 23, 34, 0.016) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(16, 23, 34, 0.012) 1px, transparent 1px),
     linear-gradient(180deg, rgba(255, 255, 255, 0.68), rgba(246, 242, 233, 0.96)),
     var(--paper);
-  background-size: auto, 128px 128px, 128px 128px, auto, auto;
+  background-size: auto, auto, 360px 360px, 128px 128px, 128px 128px, 76px 76px, 76px 76px, auto, auto;
   color: var(--muted);
   overflow-x: clip;
+}
+
+.site-footer::before,
+.site-footer::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.site-footer::before {
+  left: max(22px, calc((100vw - 1160px) / 2 - 54px));
+  top: clamp(74px, 8vw, 116px);
+  width: clamp(120px, 14vw, 190px);
+  aspect-ratio: 1;
+  clip-path: var(--hex-clip);
+  background:
+    linear-gradient(60deg, rgba(8, 112, 82, 0.14) 1px, transparent 1px),
+    linear-gradient(120deg, rgba(79, 124, 255, 0.10) 1px, transparent 1px),
+    rgba(48, 199, 149, 0.06);
+  background-size: 20px 20px, 20px 20px, auto;
+  opacity: 0.46;
+  transform: rotate(10deg);
+}
+
+.site-footer::after {
+  right: 0;
+  bottom: 14%;
+  width: min(42vw, 520px);
+  height: 42%;
+  background:
+    linear-gradient(116deg, transparent 0 42%, rgba(48, 199, 149, 0.10) 42.2% 42.8%, transparent 43.1% 100%),
+    linear-gradient(64deg, transparent 0 58%, rgba(79, 124, 255, 0.08) 58.2% 58.8%, transparent 59.1% 100%),
+    radial-gradient(circle at 72% 42%, rgba(48, 199, 149, 0.16), transparent 34%);
+  mask-image: linear-gradient(90deg, transparent, #000 18%, #000 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 18%, #000 100%);
+  opacity: 0.68;
 }
 
 .footer-cta,
 .footer-inner,
 .footer-bottom {
+  position: relative;
+  z-index: 1;
   width: min(1160px, calc(100% - clamp(36px, 8vw, 112px)));
   margin-right: auto;
   margin-left: auto;
@@ -37,8 +80,12 @@
   padding: clamp(17px, 2vw, 22px);
   border-radius: 8px;
   background:
+    linear-gradient(60deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(120deg, rgba(48, 199, 149, 0.09) 1px, transparent 1px),
     linear-gradient(120deg, rgba(79, 124, 255, 0.18), transparent 42%),
     linear-gradient(135deg, #101722, #143025);
+  background-size: 94px 94px, 94px 94px, auto, auto;
+  clip-path: var(--notch-clip);
   color: var(--white);
   box-shadow: 0 20px 42px rgba(16, 23, 34, 0.18);
   overflow: hidden;
@@ -49,9 +96,10 @@
   position: absolute;
   inset: 0;
   background:
+    conic-gradient(from 30deg at 82% 34%, rgba(48, 199, 149, 0.22) 0 60deg, transparent 60deg 120deg, rgba(79, 124, 255, 0.11) 120deg 180deg, transparent 180deg 360deg),
     radial-gradient(circle at 78% 34%, rgba(48, 199, 149, 0.18), transparent 24%),
     linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
-  background-size: auto, 72px 72px;
+  background-size: 240px 240px, auto, 72px 72px;
   pointer-events: none;
 }
 
@@ -114,27 +162,21 @@
 }
 
 .footer-brand-heading {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  justify-content: flex-start;
-  margin-bottom: 10px;
+  display: block;
+  margin-bottom: 12px;
 }
 
 .footer-brand-heading .logo-mark {
   filter: drop-shadow(0 14px 24px rgba(16, 23, 34, 0.16));
 }
 
-.logo-mark.animated .logo-gear {
-  animation: logo-gear-spin 9s linear infinite;
-  transform-box: view-box;
-  transform-origin: 31px 21.1px;
-}
-
-.logo-mark.animated .logo-person-head {
-  animation: logo-head-tilt 4.8s ease-in-out infinite;
-  transform-box: view-box;
-  transform-origin: 15.7px 27px;
+.footer-wordmark {
+  display: block;
+  width: min(360px, 100%);
+  height: auto;
+  object-fit: contain;
+  object-position: left center;
+  filter: drop-shadow(0 14px 24px rgba(16, 23, 34, 0.12));
 }
 
 .footer-brand-heading .logo-mark.animated {
@@ -175,23 +217,6 @@
   text-align: right;
 }
 
-@keyframes logo-gear-spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes logo-head-tilt {
-  0%,
-  100% {
-    transform: rotate(-2deg);
-  }
-
-  45% {
-    transform: rotate(3deg);
-  }
-}
-
 @keyframes logo-footer-settle {
   0%,
   100% {
@@ -204,8 +229,7 @@
 }
 
 html.reduced-motion .logo-mark.animated,
-html.reduced-motion .logo-mark.animated .logo-gear,
-html.reduced-motion .logo-mark.animated .logo-person-head {
+html.reduced-motion .footer-brand-heading .logo-mark.animated {
   animation: none;
 }
 

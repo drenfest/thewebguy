@@ -9,6 +9,9 @@
   overflow: hidden;
   background:
     linear-gradient(120deg, rgba(255, 255, 255, 0.06) 0 1px, transparent 1px 82px),
+    linear-gradient(60deg, rgba(48, 199, 149, 0.10) 0 1px, transparent 1px 118px),
+    linear-gradient(120deg, rgba(79, 124, 255, 0.08) 0 1px, transparent 1px 118px),
+    conic-gradient(from 30deg at 84% 26%, rgba(48, 199, 149, 0.18) 0 60deg, transparent 60deg 120deg, rgba(79, 124, 255, 0.10) 120deg 180deg, transparent 180deg 360deg),
     linear-gradient(30deg, rgba(79, 124, 255, 0.24), transparent 38%),
     radial-gradient(circle at 78% 46%, rgba(48, 199, 149, 0.18), transparent 32%),
     linear-gradient(155deg, var(--dark) 0%, #0b111a 54%, #12332a 100%);
@@ -36,16 +39,20 @@
   right: -10vw;
   bottom: -24vw;
   z-index: 0;
-  width: 64vw;
+  width: 60vw;
   max-width: 780px;
   aspect-ratio: 1;
   border: 1px solid rgba(48, 199, 149, 0.34);
+  clip-path: var(--hex-clip);
   background:
+    linear-gradient(60deg, rgba(48, 199, 149, 0.13) 1px, transparent 1px),
+    linear-gradient(120deg, rgba(79, 124, 255, 0.10) 1px, transparent 1px),
     linear-gradient(90deg, rgba(48, 199, 149, 0.08) 1px, transparent 1px),
     linear-gradient(180deg, rgba(79, 124, 255, 0.08) 1px, transparent 1px);
-  background-size: 42px 42px;
+  background-size: 72px 72px, 72px 72px, 42px 42px, 42px 42px;
   opacity: 0.82;
-  transform: rotate(18deg);
+  transform: rotate(12deg);
+  animation: hero-hex-float 15s ease-in-out infinite alternate;
 }
 
 .hero::before {
@@ -68,6 +75,25 @@
 .hero-grid {
   position: relative;
   z-index: 1;
+}
+
+.hero-grid::before {
+  content: "";
+  position: absolute;
+  left: min(48%, 520px);
+  top: 50%;
+  z-index: -1;
+  width: clamp(240px, 34vw, 520px);
+  aspect-ratio: 1;
+  clip-path: var(--hex-clip);
+  background:
+    linear-gradient(60deg, rgba(48, 199, 149, 0.18) 1px, transparent 1px),
+    linear-gradient(120deg, rgba(79, 124, 255, 0.14) 1px, transparent 1px),
+    radial-gradient(circle at 50% 50%, rgba(48, 199, 149, 0.18), transparent 60%);
+  background-size: 34px 34px, 34px 34px, auto;
+  opacity: 0.36;
+  transform: translate(-50%, -50%) rotate(8deg);
+  pointer-events: none;
 }
 
 .hero-grid,
@@ -223,6 +249,7 @@ h3 {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.095), rgba(255, 255, 255, 0.045)),
     rgba(255, 255, 255, 0.07);
+  clip-path: var(--notch-clip);
   box-shadow: 0 26px 70px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(48, 199, 149, 0.12), 0 0 54px rgba(48, 199, 149, 0.12);
 }
 
@@ -238,6 +265,26 @@ h3 {
   pointer-events: none;
 }
 
+.hero-panel::after {
+  content: "";
+  position: absolute;
+  top: -28px;
+  right: -24px;
+  z-index: 0;
+  width: clamp(82px, 8vw, 120px);
+  aspect-ratio: 1;
+  clip-path: var(--hex-clip);
+  background:
+    linear-gradient(60deg, rgba(255, 255, 255, 0.16) 1px, transparent 1px),
+    linear-gradient(120deg, rgba(48, 199, 149, 0.22) 1px, transparent 1px),
+    radial-gradient(circle at 50% 50%, rgba(48, 199, 149, 0.22), transparent 62%);
+  background-size: 18px 18px, 18px 18px, auto;
+  opacity: 0.62;
+  pointer-events: none;
+  transform: rotate(8deg);
+  animation: panel-hex-pulse 6.8s ease-in-out infinite;
+}
+
 .hero-panel > * {
   position: relative;
   z-index: 1;
@@ -249,6 +296,7 @@ h3 {
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 8px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%);
   background: #0b111a;
   box-shadow: 0 24px 42px rgba(0, 0, 0, 0.28);
 }
@@ -334,7 +382,8 @@ h3 {
   top: 0.72em;
   width: 8px;
   height: 8px;
-  border-radius: 3px;
+  border-radius: 0;
+  clip-path: var(--hex-clip);
   background: var(--gold);
 }
 

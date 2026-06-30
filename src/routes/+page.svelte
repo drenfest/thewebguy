@@ -10,17 +10,30 @@
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import ProofReel from "$lib/components/ProofReel.svelte";
   import SortableTable from "$lib/components/SortableTable.svelte";
-  import { faqs, locationPages, locationUrl, servicePages, serviceUrl } from "$lib/data/content.js";
+  import { faqs } from "$lib/data/faqs.js";
   import { staticHeroImages } from "$lib/data/hero-images.js";
+  import { locationPages, locationUrl } from "$lib/data/locations.js";
   import { breadcrumbSchema, faqSchema, organizationSchema, schemaList, serviceCatalogFromPages, websiteSchema } from "$lib/data/schema.js";
+  import { coreServicePages, serviceUrl } from "$lib/data/services.js";
 
   const breadcrumbs = [{ label: "Home", title: "Current page: The Web Guy homepage" }];
+  const servicePages = coreServicePages;
+  const homepageFaqs = faqs.slice(0, 6);
+  const homepageSchemaServiceSlugs = new Set([
+    "website-fixes",
+    "wordpress-support",
+    "technical-seo-implementation",
+    "landing-pages",
+    "analytics-tracking",
+    "ecommerce-support"
+  ]);
+  const homepageSchemaServices = servicePages.filter((service) => homepageSchemaServiceSlugs.has(service.slug));
   const homeSchema = schemaList(
     organizationSchema(),
     websiteSchema(),
-    serviceCatalogFromPages(servicePages, "/"),
+    serviceCatalogFromPages(homepageSchemaServices, "/"),
     breadcrumbSchema(breadcrumbs, "/"),
-    faqSchema(faqs)
+    faqSchema(homepageFaqs)
   );
 
   const serviceBySlug = Object.fromEntries(servicePages.map((service) => [service.slug, service]));
@@ -256,7 +269,7 @@
     <SortableTable caption="Website request routing table" columns={homepageTableColumns} rows={homepageRows} />
   </section>
 
-  <section class="section soft-section section-effect section-effect--signals section-effect--medium">
+  <section class="section soft-section section-effect section-effect--hex section-effect--medium">
     <SectionHeading
       eyebrow="Website service categories"
       h2="The work usually falls into four buckets"
@@ -277,7 +290,7 @@
     </div>
   </section>
 
-  <section class="section section-effect section-effect--traces section-effect--medium">
+  <section class="section section-effect section-effect--hex section-effect--medium">
     <SectionHeading
       eyebrow="High-value website support"
       h2="High-value website help you can hand off"
@@ -339,7 +352,7 @@
     </div>
   </section>
 
-  <section class="section section-effect section-effect--signals section-effect--medium">
+  <section class="section section-effect section-effect--hex section-effect--medium">
     <SectionHeading eyebrow="Website support process" h2="A simple way to start contract web work" />
     <div class="process-grid">
       {#each [
@@ -376,6 +389,6 @@
       </div>
       <a class="button button-secondary dark-button faq-more-button" href="/faq/" title="View more contract website support FAQs">Read More FAQs</a>
     </div>
-    <FaqList items={faqs.slice(0, 6)} />
+    <FaqList items={homepageFaqs} />
   </section>
 </main>

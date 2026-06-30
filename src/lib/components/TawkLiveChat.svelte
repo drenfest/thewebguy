@@ -285,6 +285,8 @@
     const previousUnreadCountChanged = api.onUnreadCountChanged;
     let loadAttempts = 0;
     let retryTimer;
+    let initialLoadTimer;
+    let initialLoadQueued = false;
 
     const callApi = (method, ...args) => {
       if (typeof api[method] !== "function") return undefined;
@@ -347,6 +349,32 @@
         scheduleScriptRetry();
       };
       document.body.appendChild(script);
+    };
+
+    const initialLoadEvents = ["pointerdown", "keydown", "touchstart"];
+    const initialLoadDelay = Number(publicEnv("PUBLIC_TAWK_LOAD_DELAY_MS", "30000")) || 30000;
+
+    const removeInitialLoadListeners = () => {
+      for (const eventName of initialLoadEvents) {
+        window.removeEventListener(eventName, startInitialLoad);
+      }
+    };
+
+    function startInitialLoad() {
+      removeInitialLoadListeners();
+      window.clearTimeout(initialLoadTimer);
+      initialLoadQueued = false;
+      ensureTawkScript();
+    }
+
+    const queueInitialLoad = () => {
+      if (initialLoadQueued || document.getElementById(scriptId)) return;
+
+      initialLoadQueued = true;
+      for (const eventName of initialLoadEvents) {
+        window.addEventListener(eventName, startInitialLoad, { once: true, passive: eventName !== "keydown" });
+      }
+      initialLoadTimer = window.setTimeout(startInitialLoad, initialLoadDelay);
     };
 
     api.onBeforeLoad = () => {
@@ -484,7 +512,11 @@
       networkOnline = true;
       document.documentElement.dataset.liveChatNetwork = "online";
       trackLiveChatEvent("network_online");
-      ensureTawkScript({ force: status === "error" });
+      if (status === "error") {
+        ensureTawkScript({ force: true });
+      } else {
+        queueInitialLoad();
+      }
       setLiveChatStatus(normalizeStatus(api.getStatus?.()));
       applyAvailability(status);
     };
@@ -501,7 +533,7 @@
     window.addEventListener("offline", handleOffline);
 
     if (networkOnline) {
-      ensureTawkScript();
+      queueInitialLoad();
     } else {
       setLiveChatStatus("connection-lost");
       trackLiveChatEvent("initial_network_offline");
@@ -509,6 +541,8 @@
 
     return () => {
       window.clearTimeout(retryTimer);
+      window.clearTimeout(initialLoadTimer);
+      removeInitialLoadListeners();
       window.removeEventListener("online", handleOnline);
       window.removeEventListener("offline", handleOffline);
       api.onBeforeLoad = previousBeforeLoad;

@@ -13,7 +13,7 @@
   }
 </script>
 
-<section class="section cta-band effect effect-dark-grid effect-medium">
+<section class="section cta-band effect effect-dark-grid effect-medium effect-parallax">
   <div>
     <h2>{heading}</h2>
     <p>{copy}</p>

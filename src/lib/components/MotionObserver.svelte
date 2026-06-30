@@ -46,19 +46,30 @@
     const selectors = [
       ".section-heading",
       ".card",
+      ".summary-link-card",
       ".decision-card",
       ".cluster-panel",
       ".depth-card",
       ".process-grid article",
       ".topic-link",
       ".topical-link-list li",
+      ".topical-panel",
+      ".contextual-support-panel",
+      ".proof-panel",
+      ".proof-reel-shell",
       ".article-shell",
       ".article-callout",
       ".article-checklist",
+      ".summary-copy-panel",
+      ".sortable-table-wrap",
       ".rate-card",
+      ".rate-callout",
       ".rate-layout",
       ".breadcrumb-nav",
       ".service-nav-panel",
+      ".faq-list details",
+      ".faq-question-form",
+      ".contact-form",
       ".cta-band",
       ".cta-animated",
       ".footer-cta",
@@ -69,6 +80,20 @@
 
     let observer;
     let effectObserver;
+    let idleHandle;
+    let setupTimer;
+
+    function clearScheduledSetup() {
+      if (setupTimer) {
+        window.clearTimeout(setupTimer);
+        setupTimer = undefined;
+      }
+
+      if (idleHandle && "cancelIdleCallback" in window) {
+        window.cancelIdleCallback(idleHandle);
+        idleHandle = undefined;
+      }
+    }
 
     function setup() {
       document.documentElement.classList.toggle("reduced-motion", reduceMotion.matches);
@@ -126,14 +151,38 @@
       });
     }
 
-    refresh = () => setTimeout(setup, 0);
-    setup();
-    reduceMotion.addEventListener("change", setup);
+    function scheduleSetup(delay = 0) {
+      clearScheduledSetup();
+
+      setupTimer = window.setTimeout(() => {
+        setupTimer = undefined;
+
+        if ("requestIdleCallback" in window) {
+          idleHandle = window.requestIdleCallback(() => {
+            idleHandle = undefined;
+            setup();
+          }, { timeout: 1200 });
+          return;
+        }
+
+        setup();
+      }, delay);
+    }
+
+    function handleMotionPreferenceChange() {
+      scheduleSetup();
+    }
+
+    document.documentElement.classList.toggle("reduced-motion", reduceMotion.matches);
+    refresh = () => scheduleSetup(160);
+    scheduleSetup(900);
+    reduceMotion.addEventListener("change", handleMotionPreferenceChange);
 
     return () => {
+      clearScheduledSetup();
       if (observer) observer.disconnect();
       if (effectObserver) effectObserver.disconnect();
-      reduceMotion.removeEventListener("change", setup);
+      reduceMotion.removeEventListener("change", handleMotionPreferenceChange);
     };
   });
 </script>

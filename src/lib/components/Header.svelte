@@ -120,7 +120,7 @@
 
   function getMenuOverviewLabel(key) {
     const item = mainNavItems.find((navItem) => navItem.menuKey === key);
-    return item ? `View All ${item.label}` : "";
+    return item?.overviewLabel || (item ? `View All ${item.label}` : "");
   }
 
   function getSearchWorker() {
