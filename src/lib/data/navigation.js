@@ -1,4 +1,4 @@
-import { blogCategories, blogCategoryUrl, blogTags, blogTagUrl } from "./content.js";
+import { blogCategories, blogCategoryUrl, blogTags, blogTagUrl, fixNoteCategories, fixNoteCategoryUrl } from "./content.js";
 import { locationLink, pageLink, serviceLink, skillLink } from "./relationships.js";
 
 function group(title, links) {
@@ -18,6 +18,7 @@ function taxonomyLink(label, href) {
 
 const blogTagMenuGroupNames = ["Troubleshooting Tags", "Tracking & Data Tags", "Platform Tags", "SEO & Launch Tags"];
 const blogCategoryLinks = blogCategories.map((category) => taxonomyLink(category.label, blogCategoryUrl(category.slug)));
+const fixNoteCategoryLinks = fixNoteCategories.map((category) => taxonomyLink(category.label, fixNoteCategoryUrl(category.slug)));
 const blogTagGroups = blogTagMenuGroupNames.map((title) => group(
   title,
   blogTags
@@ -107,14 +108,18 @@ export const megaMenus = {
   ),
   blog: menu(
     [
+      group("Fix Notes", [
+        taxonomyLink("View Fix Notes", "/fix-notes/"),
+        ...fixNoteCategoryLinks.slice(0, 6)
+      ]),
       group("Categories", blogCategoryLinks),
       ...blogTagGroups
     ],
     {
-      heading: "Browse by category or tag",
-      text: "Use the category and tag map to jump into the kind of website problem you are trying to name.",
-      label: "View Blog",
-      href: "/blog/"
+      heading: "Recent Fix Notes",
+      text: "Short work notes from related cleanup, debugging, implementation, and support tasks.",
+      label: "View Fix Notes",
+      href: "/fix-notes/"
     }
   ),
   skills: menu(

@@ -13,6 +13,7 @@
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import FaqList from "$lib/components/FaqList.svelte";
   import ProofPanel from "$lib/components/ProofPanel.svelte";
+  import FixNotesPanel from "$lib/components/FixNotesPanel.svelte";
   import SortableTable from "$lib/components/SortableTable.svelte";
   import { serviceUrl, skillUrl } from "$lib/data/content.js";
   import { serviceHeroImage } from "$lib/data/hero-images.js";
@@ -58,6 +59,18 @@
   const contextualSupportItems = $derived(serviceContextualSupportItems(service, relatedServices, relatedSkills));
   const serviceClusterPages = $derived(serviceClusterPagesFor(service));
   const clusterTopicalItems = $derived(serviceClusterTopicalItems(serviceClusterPages));
+  const fixNoteCategoryByService = {
+    "site-speed-performance": "Page Speed",
+    "technical-seo-implementation": "Technical SEO",
+    "website-fixes": "Website Fixes",
+    "wordpress-support": "WordPress Support",
+    "ai-built-website-cleanup": "AI Website Cleanup",
+    "analytics-tracking": "Tracking & Analytics",
+    "api-integrations": "API Integrations",
+    "ecommerce-support": "Ecommerce Support",
+    "landing-pages": "Landing Pages"
+  };
+  const fixNoteCategory = $derived(fixNoteCategoryByService[service.slug] || "");
   const serviceInternalParagraphs = $derived([
     [
       `${service.eyebrow} often overlaps with `,
@@ -417,6 +430,9 @@
     intro="If this service is close but not the whole problem, these related pages help route the work by platform, symptom, technical task, or next practical step."
     items={topicalItems}
   />
+  {#if fixNoteCategory}
+    <FixNotesPanel category={fixNoteCategory} serviceSlug={service.slug} />
+  {/if}
   <CtaBand heading={service.cta} copy="Send the URL, the task list, or the thing that keeps getting pushed off. The Web Guy will help turn it into actual website work." label={service.cta} />
   <section class="section section-effect section-effect--traces section-effect--low">
     <SectionHeading eyebrow="FAQ" h2={`${service.eyebrow} questions`} />

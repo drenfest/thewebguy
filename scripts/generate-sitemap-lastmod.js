@@ -7,6 +7,10 @@ const contentModule = await import(pathToFileURL(resolve(root, "src/lib/data/con
 const {
   blogPosts,
   blogUrl,
+  fixNoteCategories,
+  fixNoteCategoryUrl,
+  fixNotes,
+  fixNoteUrl,
   locationPages,
   locationUrl,
   servicePages,
@@ -17,6 +21,7 @@ const {
 
 const generatedPath = resolve(root, "src/lib/data/sitemap-lastmod.json");
 const contentDataPath = "src/lib/data/content.js";
+const fixNotesDataPath = "src/lib/data/fix-notes.js";
 
 function fileDate(path) {
   const fullPath = resolve(root, path);
@@ -38,6 +43,7 @@ const lastmod = {};
 add(lastmod, "/", ["src/routes/+page.svelte", contentDataPath]);
 add(lastmod, "/services/", ["src/routes/services/+page.svelte", contentDataPath]);
 add(lastmod, "/blog/", ["src/routes/blog/+page.svelte", contentDataPath]);
+add(lastmod, "/fix-notes/", ["src/routes/fix-notes/+page.svelte", contentDataPath, fixNotesDataPath]);
 add(lastmod, "/skills/", ["src/routes/skills/+page.svelte", contentDataPath]);
 add(lastmod, "/locations/", ["src/routes/locations/+page.svelte", contentDataPath]);
 add(lastmod, "/about/", ["src/routes/about/+page.svelte"]);
@@ -60,6 +66,22 @@ for (const post of blogPosts) {
     "src/routes/blog/[slug]/+page.svelte",
     "src/routes/blog/[slug]/+page.js",
     contentDataPath
+  ]);
+}
+
+for (const note of fixNotes) {
+  add(lastmod, fixNoteUrl(note.slug), [
+    "src/routes/fix-notes/[slug]/+page.svelte",
+    "src/routes/fix-notes/[slug]/+page.js",
+    fixNotesDataPath
+  ]);
+}
+
+for (const category of fixNoteCategories) {
+  add(lastmod, fixNoteCategoryUrl(category.slug), [
+    "src/routes/fix-notes/category/[slug]/+page.svelte",
+    "src/routes/fix-notes/category/[slug]/+page.js",
+    fixNotesDataPath
   ]);
 }
 

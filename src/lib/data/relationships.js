@@ -11,7 +11,7 @@ import {
   skillUrl
 } from "./content.js";
 
-export const staticRoutes = new Set(["/", "/services/", "/blog/", "/skills/", "/locations/", "/rate/", "/about/", "/faq/", "/contact/"]);
+export const staticRoutes = new Set(["/", "/services/", "/blog/", "/fix-notes/", "/skills/", "/locations/", "/rate/", "/about/", "/faq/", "/contact/"]);
 export const regionalSupportSlugs = ["freeport-il", "rockford-il", "monroe-wi", "beloit-wi", "janesville-wi", "madison-wi"];
 
 export function routeLink(label, href) {

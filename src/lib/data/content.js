@@ -19,6 +19,22 @@ export {
   blogUrl,
   somethingBrokePosts
 } from "./blog.js";
+export {
+  fixNoteCategories,
+  fixNoteCategoryDefinitions,
+  fixNoteCategoryMap,
+  fixNoteCategorySlug,
+  fixNoteCategoryUrl,
+  fixNoteDisplayDate,
+  fixNoteLastUpdatedDate,
+  fixNotes,
+  fixNotesDescription,
+  fixNoteMap,
+  fixNoteUrl,
+  getFixNotes,
+  getRelatedFixNotes,
+  sortedFixNotes
+} from "./fix-notes.js";
 export { skillPages, skillMap, skillUrl, serviceSkillMap } from "./skills.js";
 export { locationPages, locationMap, locationUrl } from "./locations.js";
 
@@ -29,6 +45,7 @@ export const mainPages = [
   ["Home", "/"],
   ["Services", "/services/"],
   ["Blog", "/blog/"],
+  ["Fix Notes", "/fix-notes/"],
   ["Skills", "/skills/"],
   ["Locations", "/locations/"],
   ["Rate", "/rate/"],

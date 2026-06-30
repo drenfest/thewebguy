@@ -8,6 +8,7 @@
   import FaqList from "$lib/components/FaqList.svelte";
   import RelatedServices from "$lib/components/RelatedServices.svelte";
   import RelatedSkills from "$lib/components/RelatedSkills.svelte";
+  import FixNotesPanel from "$lib/components/FixNotesPanel.svelte";
   import TopicalLinks from "$lib/components/TopicalLinks.svelte";
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
@@ -42,6 +43,10 @@
   const skillProof = $derived(proofForSkill(skill.slug));
   const topicalItems = $derived(skillTopicalItems(skill, relatedServiceCards, relatedSkills));
   const contextualSupportItems = $derived(skillContextualSupportItems(skill, relatedServiceCards, relatedSkills));
+  const fixNoteCategoryBySkill = {
+    "production-debugging": "Production Debugging"
+  };
+  const fixNoteCategory = $derived(fixNoteCategoryBySkill[skill.slug] || "");
   const skillFocusParagraphs = {
     "rest-api-webhook-integrations": [
       [
@@ -320,6 +325,10 @@
     intro="Use these links when the skill is only one part of the work and you need the surrounding service, platform, or technical implementation context."
     items={topicalItems}
   />
+
+  {#if fixNoteCategory}
+    <FixNotesPanel category={fixNoteCategory} serviceSlug={skill.slug} />
+  {/if}
 
   <CtaBand heading={`Need ${skill.eyebrow} help?`} copy="Send the URL, technical context, what changed recently, and what should happen next." label={`Get ${skill.eyebrow} Help`} />
 

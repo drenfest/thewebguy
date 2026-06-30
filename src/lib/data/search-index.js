@@ -2,6 +2,8 @@ import {
   blogPosts,
   blogUrl,
   faqs,
+  fixNotes,
+  fixNoteUrl,
   locationPages,
   locationUrl,
   servicePages,
@@ -24,6 +26,11 @@ const mainPageMeta = {
   "/blog/": {
     title: "Website Troubleshooting Blog",
     description: "Practical notes for broken websites, forms, tracking scripts, WordPress weirdness, SEO audits, and fast page launches.",
+    type: "Hub"
+  },
+  "/fix-notes/": {
+    title: "Fix Notes",
+    description: "Short work notes from website cleanup, debugging, implementation, and support tasks.",
     type: "Hub"
   },
   "/skills/": {
@@ -99,6 +106,15 @@ export const searchIndex = [
       href: blogUrl(post.slug),
       type: "Blog",
       body: flatten([post.eyebrow, post.summary, post.problemType, post.category, post.tags, post.sections, post.faqs, post.links, post.contextCards])
+    })
+  ),
+  ...fixNotes.map((note) =>
+    entry({
+      title: note.title,
+      description: note.metaDescription || note.excerpt,
+      href: fixNoteUrl(note.slug),
+      type: "Fix Note",
+      body: flatten([note.category, note.serviceSlug, note.excerpt, note.problemSummary, note.whatIChecked, note.whatIChanged, note.resultSummary, note.whatToWatchNext, note.toolsUsed, note.tags, note.relatedServices])
     })
   ),
   ...skillPages.map((skill) =>

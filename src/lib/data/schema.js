@@ -302,6 +302,38 @@ export function blogPostListSchema(posts = [], path = "/blog/") {
   });
 }
 
+export function fixNoteArticleSchema(note, path) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${absoluteUrl(path)}#fix-note`,
+    mainEntityOfPage: absoluteUrl(path),
+    headline: asText(note.title),
+    description: asText(note.metaDescription || note.excerpt),
+    author: { "@id": PROVIDER_ID },
+    publisher: { "@id": PROVIDER_ID },
+    datePublished: note.date,
+    dateModified: note.lastUpdated || note.date,
+    about: asText(note.category),
+    image: absoluteUrl("/images/technical-web-support-hero.png")
+  };
+}
+
+export function fixNoteListSchema(notes = [], path = "/fix-notes/") {
+  return itemListSchema({
+    id: path,
+    name: "Fix Notes",
+    description: "Short practical website work notes from The Web Guy covering cleanup, debugging, implementation, and support tasks.",
+    itemType: "BlogPosting",
+    items: notes.map((note) => ({
+      type: "BlogPosting",
+      name: note.title,
+      description: note.metaDescription || note.excerpt,
+      url: `/fix-notes/${note.slug}/`
+    }))
+  });
+}
+
 export function skillListSchema(skills = [], path = "/skills/") {
   return itemListSchema({
     id: path,

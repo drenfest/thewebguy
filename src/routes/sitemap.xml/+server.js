@@ -1,4 +1,17 @@
-import { blogPosts, blogUrl, locationPages, locationUrl, servicePages, serviceUrl, skillPages, skillUrl } from "$lib/data/content.js";
+import {
+  blogPosts,
+  blogUrl,
+  fixNoteCategories,
+  fixNoteCategoryUrl,
+  fixNotes,
+  fixNoteUrl,
+  locationPages,
+  locationUrl,
+  servicePages,
+  serviceUrl,
+  skillPages,
+  skillUrl
+} from "$lib/data/content.js";
 import { absoluteUrl } from "$lib/config/site.js";
 import sitemapLastmod from "$lib/data/sitemap-lastmod.json";
 
@@ -11,6 +24,9 @@ export function GET() {
     ...servicePages.map((service) => serviceUrl(service.slug)),
     "/blog/",
     ...blogPosts.map((post) => blogUrl(post.slug)),
+    "/fix-notes/",
+    ...fixNotes.map((note) => fixNoteUrl(note.slug)),
+    ...fixNoteCategories.map((category) => fixNoteCategoryUrl(category.slug)),
     "/skills/",
     ...skillPages.map((skill) => skillUrl(skill.slug)),
     "/locations/",

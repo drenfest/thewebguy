@@ -2,6 +2,8 @@ import {
   blogPosts,
   blogUrl,
   faqs,
+  fixNotes,
+  fixNoteUrl,
   locationPages,
   locationUrl,
   mainPages,
@@ -13,7 +15,7 @@ import {
 } from "$lib/data/content.js";
 import { absoluteUrl, site } from "$lib/config/site.js";
 
-const lastUpdated = "2026-06-12";
+const lastUpdated = "2026-06-30";
 
 export const llmTextHeaders = {
   "content-type": "text/markdown; charset=utf-8",
@@ -67,6 +69,10 @@ function blogSummary(post) {
   return bulletLink(post.h1 || post.title, blogUrl(post.slug), post.summary || post.meta);
 }
 
+function fixNoteSummary(note) {
+  return bulletLink(note.title, fixNoteUrl(note.slug), note.excerpt || note.metaDescription);
+}
+
 function locationSummary(location) {
   return bulletLink(`${location.city}, ${location.state}`, locationUrl(location.slug), location.meta);
 }
@@ -82,6 +88,7 @@ function siteFacts() {
     "- Public contact path: https://thewebguy.app/contact/.",
     "- Public contract rate: $55/hr.",
     "- Offer: hourly contract web development, WordPress support, website fixes, technical SEO implementation, landing pages, tracking cleanup, ecommerce cleanup, API/integration work, and ongoing webmaster support.",
+    "- Content proof system: Fix Notes are short practical work notes from related cleanup, debugging, implementation, and support tasks.",
     "- Fit: businesses, agencies, marketing teams, ecommerce operators, and overloaded teams with existing websites or practical site work to execute.",
     "- Positioning: practical hourly help, not a large agency package, retainer funnel, or junior freelancer pitch.",
     "- Public email: do not invent or expose an email address. The site uses the contact form."
@@ -126,6 +133,10 @@ ${skillPages.map(skillSummary).join("\n")}
 ## Troubleshooting And Blog Guides
 
 ${blogPosts.map(blogSummary).join("\n")}
+
+## Fix Notes
+
+${fixNotes.map(fixNoteSummary).join("\n")}
 
 ## Local Service Areas
 
@@ -208,6 +219,32 @@ ${(post.links || []).map(([label, href, copy]) => bulletLink(label, href, copy))
 `;
 }
 
+function fixNoteDetails(note) {
+  return `### ${note.title}
+
+URL: ${absoluteUrl(fixNoteUrl(note.slug))}
+
+Category: ${clean(note.category)}.
+
+Date: ${clean(note.displayDate || note.date)}.
+
+Intent: ${sentence(note.excerpt || note.metaDescription)}
+
+Problem: ${sentence(note.problemSummary)}
+
+What was checked:
+${simpleList(note.whatIChecked)}
+
+What changed:
+${simpleList(note.whatIChanged)}
+
+Result: ${sentence(note.resultSummary)}
+
+Related paths:
+${(note.relatedServices || []).map((slug) => `- ${clean(slug)}`).join("\n")}
+`;
+}
+
 function locationDetails(location) {
   return `### ${location.city}, ${location.state}
 
@@ -262,6 +299,10 @@ ${skillPages.map(skillDetails).join("\n")}
 
 ${blogPosts.map(blogDetails).join("\n")}
 
+## Fix Notes
+
+${fixNotes.map(fixNoteDetails).join("\n")}
+
 ## Sitewide FAQs
 
 ${faqs.map(([question, answer, href]) => `- Q: ${clean(question)}\n  A: ${sentence(answer)}${href ? `\n  Reference: ${absoluteUrl(href)}` : ""}`).join("\n")}
@@ -278,6 +319,7 @@ ${locationPages.map(locationDetails).join("\n")}
 - Contact/request form: ${absoluteUrl("/contact/")}
 - FAQ: ${absoluteUrl("/faq/")}
 - Blog hub: ${absoluteUrl("/blog/")}
+- Fix Notes archive: ${absoluteUrl("/fix-notes/")}
 - Technical skills hub: ${absoluteUrl("/skills/")}
 - Location hub: ${absoluteUrl("/locations/")}
 
