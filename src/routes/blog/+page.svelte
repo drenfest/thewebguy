@@ -3,7 +3,7 @@
   import Hero from "$lib/components/Hero.svelte";
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
   import SectionHeading from "$lib/components/SectionHeading.svelte";
-  import CardGrid from "$lib/components/CardGrid.svelte";
+  import SummaryLinkGrid from "$lib/components/SummaryLinkGrid.svelte";
   import CtaBand from "$lib/components/CtaBand.svelte";
   import TopicalLinks from "$lib/components/TopicalLinks.svelte";
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
@@ -156,6 +156,28 @@
   function featuredTagsForCategory(category) {
     return (category.featuredTags || []).map((slug) => blogTagMap[slug]).filter(Boolean);
   }
+
+  function articleSummaryItems(posts, bullets) {
+    return posts.map((post) => ({
+      label: categoryLabel(post.category),
+      title: post.title.replace(" | The Web Guy", ""),
+      copy: post.summary,
+      bullets,
+      href: blogUrl(post.slug),
+      linkLabel: `Read ${post.eyebrow.toLowerCase()}`
+    }));
+  }
+
+  const startHereArticleBullets = [
+    "Name the website problem before choosing a service",
+    "Collect the URL, symptom, device, and recent changes",
+    "Route the issue into fixes, WordPress, SEO, tracking, or launch work"
+  ];
+  const brokenSymptomArticleBullets = [
+    "Use when a specific visible symptom is blocking the site",
+    "Good background before sending a website fix request",
+    "Links into the service path that usually handles the repair"
+  ];
 </script>
 
 <Seo
@@ -264,30 +286,18 @@
       body="These posts are built for the moment when the site is acting weird and you need a sharper name for the problem before asking for help."
     />
     <InternalLinkCopy paragraphs={blogHubInlineParagraphs} />
-    <CardGrid
-      className="card-grid service-grid"
-      items={startHerePosts.map((post) => [
-        post.title,
-        post.summary,
-        blogUrl(post.slug),
-        `Read ${post.eyebrow.toLowerCase()}`,
-        post.relatedService
-      ])}
+    <SummaryLinkGrid
+      className="summary-link-grid summary-link-grid--compact"
+      items={articleSummaryItems(startHerePosts, startHereArticleBullets)}
     />
     <SortableTable caption="Troubleshooting article routing table" columns={blogTableColumns} rows={blogRows} />
   </section>
 
   <section class="section soft-section section-effect section-effect--signals section-effect--low">
     <SectionHeading eyebrow="Specific broken-site symptoms" h2="Specific website problems" />
-    <CardGrid
-      className="card-grid service-grid"
-      items={sortedSomethingBrokePosts.map((post) => [
-        post.title,
-        post.summary,
-        blogUrl(post.slug),
-        `Read about ${post.eyebrow.toLowerCase()}`,
-        post.relatedService
-      ])}
+    <SummaryLinkGrid
+      className="summary-link-grid summary-link-grid--compact"
+      items={articleSummaryItems(sortedSomethingBrokePosts, brokenSymptomArticleBullets)}
     />
   </section>
 
@@ -307,17 +317,4 @@
 
   <CtaBand heading="Know what broke?" copy="Send the URL, symptoms, what should happen, and what changed recently. That is enough to start a useful conversation." label="Send the Website Problem" />
 
-  <section class="section section-effect section-effect--traces section-effect--low">
-    <SectionHeading eyebrow="Website troubleshooting posts" h2="Practical website support articles" />
-    <CardGrid
-      className="card-grid service-grid"
-      items={sortedBlogPosts.map((post) => [
-        post.title,
-        post.summary,
-        blogUrl(post.slug),
-        "Read the post",
-        post.relatedService
-      ])}
-    />
-  </section>
 </main>

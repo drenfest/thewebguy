@@ -4,6 +4,7 @@
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
   import SectionHeading from "$lib/components/SectionHeading.svelte";
   import CardGrid from "$lib/components/CardGrid.svelte";
+  import SummaryLinkGrid from "$lib/components/SummaryLinkGrid.svelte";
   import CtaBand from "$lib/components/CtaBand.svelte";
   import TopicalLinks from "$lib/components/TopicalLinks.svelte";
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
@@ -85,6 +86,56 @@
     ["Agency support", focusedSupportPages.filter((service) => service.keywordCluster === "Agency support")],
     ["Ecommerce support", focusedSupportPages.filter((service) => service.keywordCluster === "Ecommerce support")]
   ].filter(([, pages]) => pages.length);
+  const serviceSummaryBullets = {
+    "wordpress-support": ["Themes, plugins, page builders, and PHP templates", "Content updates, cleanup, and admin friction", "Useful when the site already exists"],
+    "technical-seo-implementation": ["Audit notes, crawl exports, and SEO task lists", "Metadata, headings, redirects, schema, and internal links", "Implementation that can be tested on the site"],
+    "landing-pages": ["Service, campaign, paid traffic, and local pages", "Forms, CTAs, tracking, and mobile checks", "Launch-focused structure without a rebuild"],
+    "site-speed-performance": ["Images, scripts, cache, fonts, and layout shift", "WordPress, Shopify, static, and front-end cleanup", "Realistic performance improvements for important pages"],
+    "website-fixes": ["Broken layouts, forms, scripts, modals, and embeds", "CSS, JavaScript, CMS, plugin, and hosting clues", "Start with the URL, symptom, and expected behavior"],
+    "ai-built-website-cleanup": ["Generated pages that are close but not launch-ready", "Layout, SEO, tracking, forms, and deployment gaps", "Cleanup before more AI-generated changes pile up"],
+    "agency-overflow": ["Client production work and QA cleanup", "SEO implementation, landing pages, tracking, and WordPress tasks", "A practical extra set of hands for busy teams"],
+    "ecommerce-support": ["Shopify, WooCommerce, product pages, and checkout issues", "Product data, feeds, schema, and tracking cleanup", "Support for revenue-critical workflows"],
+    "analytics-tracking": ["GA4, GTM, pixels, form events, and ecommerce data", "Conversion checks across forms, CTAs, phones, and dashboards", "Measurement that matches real user actions"],
+    "api-integrations": ["REST APIs, webhooks, forms, CRMs, and ecommerce handoffs", "Payload testing, data cleanup, and error handling", "Useful when site systems need to connect"],
+    "security-hosting-reliability": ["DNS, SSL, Cloudflare, hosting, cache, and redirects", "WordPress hardening, backups, and suspicious script cleanup", "Practical stability support, not broad security promises"],
+    "automation-internal-tools": ["Crawlers, checkers, dashboards, CRON jobs, and scripts", "CSV, JSON, API, product data, and reporting cleanup", "Best when the task has repeatable inputs and outputs"],
+    "ongoing-webmaster-support": ["Recurring updates, page edits, SEO tasks, and fixes", "Tracking, performance, WordPress, and reliability support", "A webmaster option without hiring full-time"],
+    "react-static-sites": ["Static pages, React-style components, forms, and embeds", "JavaScript cleanup and responsive front-end fixes", "Lightweight builds when a full CMS is not needed"]
+  };
+
+  function summaryForService(service, label = service.eyebrow) {
+    return {
+      label,
+      title: service.h1.replace(" at $55/hr", ""),
+      copy: service.intro,
+      bullets: serviceSummaryBullets[service.slug] || [
+        service.keywordCluster || service.eyebrow,
+        "Dedicated page for this narrower support request",
+        "Routes back into the right core service path"
+      ],
+      href: serviceUrl(service.slug),
+      linkLabel: `View ${service.eyebrow}`
+    };
+  }
+
+  const coreServiceSummaryItems = coreServicePages.map((service) => summaryForService(service));
+  const focusedSupportSummaryGroups = focusedSupportGroups.map(([group, pages]) => [
+    group,
+    pages.map((service) => summaryForService(service, group))
+  ]);
+  const symptomSummaryBullets = [
+    "Name the symptom before choosing a service",
+    "Collect URL, screenshot, device, and recent change details",
+    "Route the issue into website fixes, WordPress, tracking, or front-end work"
+  ];
+  const brokenSymptomItems = somethingBrokePosts.slice(0, 6).map((post) => ({
+    label: post.eyebrow,
+    title: post.title.replace(" | The Web Guy", ""),
+    copy: post.summary,
+    bullets: symptomSummaryBullets,
+    href: blogUrl(post.slug),
+    linkLabel: `Read ${post.eyebrow.toLowerCase()}`
+  }));
   const serviceHubInlineParagraphs = [
     [
       "Start with ",
@@ -170,16 +221,7 @@
       body="If you are not sure where the work fits, start with the problem. The categories below are here to help you route the request, not force you into a package."
     />
     <InternalLinkCopy paragraphs={serviceHubInlineParagraphs} />
-    <CardGrid
-      className="card-grid service-grid"
-      items={coreServicePages.map((service) => [
-        service.h1.replace(" at $55/hr", ""),
-        service.intro,
-        serviceUrl(service.slug),
-        `Go to ${service.eyebrow}`,
-        service.slug
-      ])}
-    />
+    <SummaryLinkGrid items={coreServiceSummaryItems} />
     <SortableTable caption="Service comparison and handoff table" columns={serviceTableColumns} rows={serviceRows} />
   </section>
 
@@ -189,20 +231,11 @@
     <SectionHeading
       eyebrow="Focused support pages"
       h2="Specific website support paths by topical cluster"
-      body="These pages support narrower searches while pointing back into the main service paths for WordPress, SEO implementation, tracking, agency overflow, ecommerce, and website fixes."
+      body="These narrower pages are useful for search and routing, but they stay visually secondary to the main service paths."
     />
-    {#each focusedSupportGroups as [group, pages]}
+    {#each focusedSupportSummaryGroups as [group, pages]}
       <SectionHeading eyebrow={group} h2={`${group} searches`} />
-      <CardGrid
-        className="card-grid service-grid"
-        items={pages.map((service) => [
-          service.eyebrow,
-          service.intro,
-          serviceUrl(service.slug),
-          `View ${service.eyebrow}`,
-          service.slug
-        ])}
-      />
+      <SummaryLinkGrid className="summary-link-grid summary-link-grid--compact" items={pages} />
     {/each}
   </section>
 
@@ -253,15 +286,7 @@
       h2="Pick the broken thing that sounds closest"
       body="If the issue is visible, urgent, or hard to explain, these posts help name the problem and route it to the right kind of website fix."
     />
-    <CardGrid
-      className="card-grid service-grid"
-      items={somethingBrokePosts.map((post) => [
-        post.eyebrow,
-        post.summary,
-        blogUrl(post.slug),
-        `Read about ${post.eyebrow.toLowerCase()}`
-      ])}
-    />
+    <SummaryLinkGrid className="summary-link-grid summary-link-grid--compact" items={brokenSymptomItems} />
   </section>
 
   <section class="section split-section section-effect section-effect--grid section-effect--low">

@@ -3,11 +3,10 @@
   import Hero from "$lib/components/Hero.svelte";
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
   import SectionHeading from "$lib/components/SectionHeading.svelte";
-  import CardGrid from "$lib/components/CardGrid.svelte";
+  import SummaryLinkGrid from "$lib/components/SummaryLinkGrid.svelte";
   import CtaBand from "$lib/components/CtaBand.svelte";
   import FaqList from "$lib/components/FaqList.svelte";
   import TopicalLinks from "$lib/components/TopicalLinks.svelte";
-  import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import ProofReel from "$lib/components/ProofReel.svelte";
   import SortableTable from "$lib/components/SortableTable.svelte";
@@ -25,23 +24,28 @@
   );
 
   const serviceBySlug = Object.fromEntries(servicePages.map((service) => [service.slug, service]));
-  const featuredServices = [
-    "wordpress-support",
-    "technical-seo-implementation",
-    "website-fixes",
-    "landing-pages",
-    "ecommerce-support",
-    "analytics-tracking"
+  const primaryServiceSummaries = [
+    ["website-fixes", ["Visible bugs and broken page behavior", "CSS, JavaScript, forms, modals, and embeds", "A clear path from symptom to fix"]],
+    ["wordpress-support", ["Theme, plugin, and page-builder cleanup", "Content, template, CSS, JavaScript, and PHP tasks", "Useful help for existing WordPress sites"]],
+    ["technical-seo-implementation", ["Audit notes turned into site changes", "Metadata, headings, redirects, schema, and internal links", "Implementation support for SEO teams and site owners"]],
+    ["landing-pages", ["Service, campaign, local, and paid traffic pages", "Forms, CTAs, mobile checks, and launch support", "Tracking and SEO structure before the page goes live"]],
+    ["analytics-tracking", ["GA4, GTM, pixels, and conversion events", "Form, phone-click, ecommerce, and CRM handoff checks", "Cleaner reports tied to real user actions"]],
+    ["ecommerce-support", ["Shopify, WooCommerce, product pages, and checkout issues", "Product data, feeds, schema, and tracking cleanup", "Practical support for revenue-critical pages"]]
   ]
-    .map((slug) => serviceBySlug[slug])
-    .filter(Boolean)
-    .map((service) => [
-      service.h1.replace(" at $55/hr", ""),
-      service.intro,
-      serviceUrl(service.slug),
-      `View ${service.eyebrow}`,
-      service.slug
-    ]);
+    .map(([slug, bullets]) => {
+      const service = serviceBySlug[slug];
+      if (!service) return null;
+
+      return {
+        label: service.eyebrow,
+        title: service.h1.replace(" at $55/hr", ""),
+        copy: service.intro,
+        bullets,
+        href: serviceUrl(service.slug),
+        linkLabel: `View ${service.eyebrow}`
+      };
+    })
+    .filter(Boolean);
 
   const problemCards = [
     {
@@ -149,11 +153,11 @@
     }
   ];
 
-  const depthBlocks = [
-    ["Debugging & stabilization", "Comfortable tracing issues across WordPress, page builders, PHP, JavaScript, CSS, plugins, forms, modals, embeds, hosting, cache, and production behavior."],
-    ["Performance & reliability", "Practical cleanup for script bloat, slow templates, image weight, caching, Cloudflare, DNS, SSL, hosting limits, and Core Web Vitals notes."],
-    ["Measurement integrity", "GA4, GTM, pixels, form events, ecommerce tracking, conversion verification, campaign URLs, and reporting flows that need to match reality."],
-    ["APIs & internal tools", "REST APIs, webhooks, JSON/CSV cleanup, Postman-style testing, crawlers, checkers, dashboards, CRON jobs, and lightweight automation."]
+  const technicalDepthBullets = [
+    "Production debugging across CMS, scripts, forms, embeds, hosting, cache, and browser behavior",
+    "Performance and reliability cleanup for heavy pages, scripts, images, Cloudflare, DNS, SSL, and hosting limits",
+    "Measurement integrity for GA4, GTM, pixels, ecommerce events, campaign URLs, and reporting flows",
+    "API, webhook, crawler, checker, dashboard, CRON, JSON, CSV, and lightweight automation support"
   ];
 
   const homeTopicalLinks = [
@@ -194,12 +198,6 @@
       copy: "Use this when you want to understand how $55/hr contract support fits quick fixes, small projects, and ongoing website work."
     }
   ];
-  const homeContextualItems = homeTopicalLinks.slice(0, 4).map((item) => ({
-    title: item.title,
-    href: item.href,
-    titleAttr: `View ${item.title} from the homepage`,
-    copy: item.copy
-  }));
   const homeInlineParagraphs = [
     [
       "If the site is visibly broken, start with ",
@@ -283,32 +281,25 @@
     <SectionHeading
       eyebrow="High-value website support"
       h2="High-value website help you can hand off"
-      body="These are the core service pages most visitors will recognize first. Each one is built around a specific problem and points to the relevant deeper skills."
+      body="These topics are broad enough to have their own pages, so the homepage keeps them short and routes you to the deeper service path."
     />
-    <CardGrid className="card-grid service-grid" items={featuredServices} />
+    <SummaryLinkGrid items={primaryServiceSummaries} />
     <p class="center-link"><a class="button button-primary" href="/services/" title="View all website services">View all services</a></p>
   </section>
-
-  <ContextualSupport
-    eyebrow="Common website starting points"
-    heading="Core service paths from the homepage"
-    intro="These are the most common next pages when a website problem needs more than a quick explanation."
-    items={homeContextualItems}
-  />
 
   <section class="section soft-section technical-depth-section effect effect-dark-grid effect-medium">
     <SectionHeading
       eyebrow="Technical execution depth"
       h2="Built for the work behind the visible page"
-      body="A lot of web work looks simple until it touches the CMS, templates, scripts, tracking, APIs, cache, product data, or reporting. That is the work this site is positioned around."
+      body="The full skill pages explain the implementation layer. The homepage only needs the short version: practical technical cleanup behind real website tasks."
     />
-    <div class="depth-grid">
-      {#each depthBlocks as [title, copy]}
-        <article class="depth-card">
-          <h3>{title}</h3>
-          <p>{copy}</p>
-        </article>
-      {/each}
+    <div class="summary-copy-panel summary-copy-panel--dark">
+      <ul class="check-list">
+        {#each technicalDepthBullets as bullet}
+          <li>{bullet}</li>
+        {/each}
+      </ul>
+      <a class="button button-primary" href="/skills/" title="View technical web skills">View technical skills</a>
     </div>
   </section>
 

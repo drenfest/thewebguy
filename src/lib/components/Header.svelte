@@ -99,7 +99,10 @@
     mobileOpen = false;
   }
 
-  function handleMobileToggle() {
+  async function handleMobileToggle(event) {
+    if (event?.target !== mobileNavDetails) return;
+
+    await tick();
     mobileOpen = !!mobileNavDetails?.open;
     if (mobileOpen) closeDesktopMenu();
   }

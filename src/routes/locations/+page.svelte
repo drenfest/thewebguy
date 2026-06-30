@@ -3,7 +3,7 @@
   import Hero from "$lib/components/Hero.svelte";
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
   import SectionHeading from "$lib/components/SectionHeading.svelte";
-  import CardGrid from "$lib/components/CardGrid.svelte";
+  import SummaryLinkGrid from "$lib/components/SummaryLinkGrid.svelte";
   import CtaBand from "$lib/components/CtaBand.svelte";
   import TopicalLinks from "$lib/components/TopicalLinks.svelte";
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
@@ -115,6 +115,21 @@
     support: "WordPress, website fixes, technical SEO, tracking, and ongoing webmaster support",
     page: { text: `View ${location.city}`, href: locationUrl(location.slug) }
   }));
+
+  function locationSummaryItem(location) {
+    return {
+      label: location.region,
+      title: `${location.city}, ${location.state}`,
+      copy: `Hourly WordPress, SEO, tracking, website fixes, and webmaster support for businesses in and around ${location.city}.`,
+      bullets: [
+        "Local-friendly city page",
+        "Remote-friendly support at $55/hr",
+        "Routes into WordPress, fixes, SEO, tracking, and webmaster help"
+      ],
+      href: locationUrl(location.slug),
+      linkLabel: `View ${location.city} support`
+    };
+  }
 </script>
 
 <Seo
@@ -199,17 +214,11 @@
   {#each regions as region, index}
     <section class={`section section-effect ${effectVariants[(index + 1) % effectVariants.length]} section-effect--low`}>
       <SectionHeading eyebrow={`${region} website support cities`} h2={`${region} local website support service area`} />
-      <CardGrid
-        className="card-grid service-grid"
+      <SummaryLinkGrid
+        className="summary-link-grid summary-link-grid--compact"
         items={locationPages
           .filter((location) => location.region === region)
-          .map((location) => [
-            `${location.city}, ${location.state}`,
-            `Hourly WordPress, SEO, tracking, website fixes, and webmaster support for businesses in and around ${location.city}.`,
-            locationUrl(location.slug),
-            `View ${location.city} support`,
-            "ongoing-webmaster-support"
-          ])}
+          .map(locationSummaryItem)}
       />
     </section>
   {/each}

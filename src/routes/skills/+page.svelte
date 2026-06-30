@@ -3,7 +3,7 @@
   import Hero from "$lib/components/Hero.svelte";
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
   import SectionHeading from "$lib/components/SectionHeading.svelte";
-  import CardGrid from "$lib/components/CardGrid.svelte";
+  import SummaryLinkGrid from "$lib/components/SummaryLinkGrid.svelte";
   import CtaBand from "$lib/components/CtaBand.svelte";
   import TopicalLinks from "$lib/components/TopicalLinks.svelte";
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
@@ -30,11 +30,18 @@
     ["Integrations", ["rest-api-webhook-integrations"]]
   ];
 
-  function cardsFor(slugs) {
+  function summariesFor(slugs) {
     return slugs
       .map((slug) => skillPages.find((skill) => skill.slug === slug))
       .filter(Boolean)
-      .map((skill) => [skill.h1.replace(" at $55/hr", ""), skill.intro, skillUrl(skill.slug), `View ${skill.eyebrow}`, skill.slug]);
+      .map((skill) => ({
+        label: skill.eyebrow,
+        title: skill.h1.replace(" at $55/hr", ""),
+        copy: skill.intro,
+        bullets: [...(skill.problems || []).slice(0, 2), ...(skill.tasks || []).slice(0, 2)].slice(0, 4),
+        href: skillUrl(skill.slug),
+        linkLabel: `View ${skill.eyebrow}`
+      }));
   }
 
   const effectVariants = ["section-effect--grid", "section-effect--signals", "section-effect--traces"];
@@ -132,7 +139,7 @@
   {#each groups as [label, slugs], index}
     <section class={`section section-effect ${effectVariants[index % effectVariants.length]} section-effect--medium`}>
       <SectionHeading eyebrow={`${label} skills`} h2={`${label} implementation skills`} />
-      <CardGrid className="card-grid service-grid" items={cardsFor(slugs)} />
+      <SummaryLinkGrid className="summary-link-grid summary-link-grid--compact" items={summariesFor(slugs)} />
     </section>
   {/each}
 
