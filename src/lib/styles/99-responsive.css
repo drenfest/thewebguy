@@ -840,4 +840,23 @@
     padding-top: 30px;
   }
 
+  .live-chat-preview {
+    right: 12px;
+    bottom: 12px;
+    width: min(336px, calc(100vw - 24px));
+  }
+
+  .live-chat-network-notice {
+    right: 12px;
+    bottom: 78px;
+    width: min(336px, calc(100vw - 24px));
+  }
+
+  .live-chat-preview-panel {
+    width: min(336px, calc(100vw - 24px));
+  }
+
+  .live-chat-preview-button {
+    min-width: 158px;
+  }
 }

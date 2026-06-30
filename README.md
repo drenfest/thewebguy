@@ -40,6 +40,11 @@ Required Render environment variables:
 - `NODE_VERSION`: `20`
 - `PUBLIC_SITE_URL`: canonical site origin used by robots, sitemap, schema, and LLM routes. Use `https://thewebguy.app`; the app normalizes a bare `thewebguy.app` value, but the full origin is preferred.
 - `PUBLIC_GA_MEASUREMENT_ID`: public GA4 measurement ID, such as `G-XXXXXXXXXX`. Leave blank to disable analytics. Restart/redeploy the Render service after changing it so the Node app reads the new runtime value.
+- `PUBLIC_TAWK_ENABLED`: set to `true` to load tawk.to live chat, or `false` to disable it without removing code.
+- `PUBLIC_TAWK_PROPERTY_ID`: public tawk.to property ID for the site chat widget. The installed widget uses `6a43edcd82c4e81d44ac79af`.
+- `PUBLIC_TAWK_WIDGET_ID`: public tawk.to widget ID. The installed widget uses `1jsclhqsd`.
+- `PUBLIC_TAWK_HIDE_WHEN_OFFLINE`: set to `true` so the app hides the widget unless Tawk reports the widget status as `online`.
+- `PUBLIC_TAWK_ALLOWED_HOSTS`: comma-separated hostnames allowed to load the widget, for example `thewebguy.app,www.thewebguy.app`. This is a code-side backup to Tawk's dashboard domain restriction.
 - `CONTACT_EMAIL_PROVIDER`: set to `gmail` on Render free hosting. Use `smtp` only on hosts that allow outbound SMTP.
 - `CONTACT_TO_EMAIL`: private contact form destination address. Set this in Render; do not commit the real value.
 - `CONTACT_FROM_EMAIL`: sender address, for example `The Web Guy <sender@example.com>`. For Gmail API delivery, this must be the Gmail account or an approved Gmail send-as alias.
@@ -71,6 +76,7 @@ Local environment setup:
 - Copy `.env.example` to `.env.local`.
 - Put the real `CONTACT_TO_EMAIL` value in `.env.local`.
 - Put your GA4 measurement ID in `PUBLIC_GA_MEASUREMENT_ID` only when you want local analytics enabled.
+- Keep the public Tawk IDs from `.env.example` when you want local live-chat testing, or set `PUBLIC_TAWK_ENABLED=false` to disable the widget locally.
 - Add Gmail API or SMTP values only on your local machine and in Render environment variables. `.env.local` is ignored by Git.
 - For Gmail SMTP, use an app password, not the normal account password.
 
@@ -106,6 +112,16 @@ Tracked interactions include:
 
 Contact form analytics avoid private content. Names, emails, URLs, and message text are not sent to GA4; only category selections, booleans, and length/timeline buckets are tracked.
 
+## Live Chat
+
+Live chat is handled by tawk.to through `src/lib/components/TawkLiveChat.svelte`. The component loads `https://embed.tawk.to/6a43edcd82c4e81d44ac79af/1jsclhqsd` client-side, uses Tawk's JavaScript API to react to `online`, `away`, and `offline` status changes, and keeps the widget hidden unless the status is `online`.
+
+The integration watches browser connection state, keeps the Tawk widget mounted during temporary network loss, retries failed script loads when the browser comes back online, and shows a short connection notice while the visitor is offline. Message queuing and transcript sync remain inside Tawk's widget and service; the site does not read or store chat message content.
+
+Configure the Tawk dashboard to hide the widget when offline, mark the widget offline when all agents are offline, restrict allowed domains, require a Pre-Chat form with `Name` plus `Email or phone`, and use Tawk's ban list/IP ban tools for spam. Then set the public Tawk IDs in Render and redeploy.
+
+Setup details are in `docs/tawk-live-chat/README.md`.
+
 ## AI And LLM Discovery
 
 The site exposes AI-friendly discovery files at `/llms.txt` and `/llms-full.txt`. They are generated from `src/lib/data/llm-context.js`, which pulls from the same service, skill, blog, FAQ, and location content used by the public pages.
@@ -128,6 +144,7 @@ After a deploy, submit the live sitemap URLs to IndexNow with the current key. L
 ## Project Structure
 
 - `src/`: SvelteKit app shell, routes, shared components, content data, config, and client state.
+- `docs/tawk-live-chat/README.md`: tawk.to dashboard and Render setup notes for online-only live chat.
 - `scripts/`: build-time maintenance scripts, including responsive image optimization.
 - `static/`: assets served directly from the site root, including fonts, icons, favicon files, PWA manifest, and images.
 - `styles.css`: global stylesheet manifest that imports ordered section files from `src/lib/styles/`.

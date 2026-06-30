@@ -12,6 +12,16 @@ services:
         value: https://thewebguy.app
       - key: PUBLIC_GA_MEASUREMENT_ID
         sync: false
+      - key: PUBLIC_TAWK_ENABLED
+        value: true
+      - key: PUBLIC_TAWK_PROPERTY_ID
+        value: 6a43edcd82c4e81d44ac79af
+      - key: PUBLIC_TAWK_WIDGET_ID
+        value: 1jsclhqsd
+      - key: PUBLIC_TAWK_HIDE_WHEN_OFFLINE
+        value: true
+      - key: PUBLIC_TAWK_ALLOWED_HOSTS
+        value: thewebguy.app,www.thewebguy.app
       - key: CONTACT_EMAIL_PROVIDER
         value: gmail
       - key: CONTACT_TO_EMAIL

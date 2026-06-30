@@ -25,6 +25,7 @@ Reusable Svelte components for the site UI.
 - `Seo.svelte`: page title, description, canonical, and social metadata.
 - `ServiceIcon.svelte`: inline SVG icon system for service and skill cards.
 - `ServiceNav.svelte`: compact related-service aside used after breadcrumbs on service detail pages.
+- `TawkLiveChat.svelte`: client-only tawk.to loader with installed public widget defaults, optional Render env overrides, online-only visibility, script retry handling after network loss, and optional hostname restrictions.
 - `TopicalLinks.svelte`: contextual internal-link panel used for SEO and topical relevance.
 
 ## Common Patterns
@@ -34,6 +35,7 @@ Reusable Svelte components for the site UI.
 - Related-link components use slugs from `content.js` and convert them into URLs.
 - Icons are inline SVG so site colors, sizing, and card layout can control them.
 - `GoogleAnalytics.svelte` mounts once in the root layout and delegates event naming/metadata to `src/lib/analytics.js`.
+- `TawkLiveChat.svelte` mounts once in the root layout and should not collect raw chat contents or visitor contact details for analytics.
 - Carousel-style proof should stay sparse, below the fold, and implemented without heavy slider libraries.
 - Proof panels should stay evidence-focused: real categories of handled work, no invented client names, testimonials, or guaranteed outcomes.
 
