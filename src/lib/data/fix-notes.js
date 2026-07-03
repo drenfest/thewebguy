@@ -50,10 +50,918 @@ export const fixNoteCategoryDefinitions = [
     slug: "production-debugging",
     label: "Production Debugging",
     description: "Live-site behavior, cache confusion, browser checks, deployment issues, and hard-to-reproduce bugs."
+  },
+  {
+    slug: "security-hosting",
+    label: "Security & Hosting",
+    description: "Malware cleanup, suspicious users, file hardening, recovery staging, DNS, mail, hosting, and cache layers."
+  },
+  {
+    slug: "automation-internal-tools",
+    label: "Automation & Internal Tools",
+    description: "Dashboards, utility scripts, admin workflows, import helpers, static-safe forms, and operational tooling."
   }
 ];
 
 export const fixNotes = [
+  {
+    title: "Optimized a Shopify Theme for Page Speed and Core Web Vitals",
+    slug: "optimized-shopify-theme-page-speed-core-web-vitals",
+    date: "2026-07-01",
+    displayDate: "July 1, 2026",
+    lastUpdated: null,
+    category: "Page Speed",
+    serviceSlug: "ecommerce-support",
+    excerpt: "A Shopify performance note about auditing theme files, app embeds, LCP behavior, and third-party scripts before applying staging-theme speed improvements.",
+    problemSummary: "The storefront had performance friction from theme assets, app embeds, render-blocking resources, product-page scripts, and third-party support widgets that needed a careful staging pass.",
+    whatIChecked: [
+      "Shopify theme source files and Liquid layout",
+      "App embeds and third-party script loading",
+      "JavaScript bundles and CSS delivery",
+      "Image and LCP behavior",
+      "Product and cart behavior tied to delivery fields"
+    ],
+    whatIChanged: [
+      "Deferred non-critical third-party and support-app loaders",
+      "Adjusted stylesheet loading so key page rendering was less blocked",
+      "Added priority hints for the likely LCP image path",
+      "Scoped delivery-related scripts more tightly to the sections that needed them",
+      "Verified product and cart behavior after the performance changes"
+    ],
+    resultSummary: "The staging theme had clearer performance wins without breaking product, cart, or delivery-field behavior.",
+    whatToWatchNext: [
+      "Whether new app embeds add blocking scripts later",
+      "Whether image swaps keep LCP dimensions and priority intact",
+      "Whether checkout-adjacent scripts still behave after theme updates"
+    ],
+    toolsUsed: ["Shopify", "Liquid", "Lighthouse", "Real-browser testing"],
+    tags: ["Shopify", "Page Speed", "Core Web Vitals", "Third-Party Scripts"],
+    relatedServices: ["ecommerce-support", "site-speed-performance", "technical-seo-implementation"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "Shopify Page Speed Fix Note | The Web Guy",
+    metaDescription: "Short fix note about optimizing a Shopify staging theme for page speed, Core Web Vitals, and safer third-party script loading."
+  },
+  {
+    title: "Cleaned a WordPress Install and Database After Malware",
+    slug: "cleaned-wordpress-install-database-after-malware",
+    date: "2026-07-01",
+    displayDate: "July 1, 2026",
+    lastUpdated: null,
+    category: "Security & Hosting",
+    serviceSlug: "security-hosting-reliability",
+    excerpt: "A WordPress security note about scanning files and database records, packaging clean deployable files, and removing a malicious user from the database.",
+    problemSummary: "The site needed a malware cleanup pass that covered both the downloaded WordPress files and the database records where persistence could hide.",
+    whatIChecked: [
+      "Downloaded WordPress file copy",
+      "Database user and usermeta records",
+      "Suspicious PHP and upload-folder executables",
+      "Redirect rules and hidden persistence patterns",
+      "Old backup, staging, cache, and dump folders"
+    ],
+    whatIChanged: [
+      "Scanned files for common backdoor and malware patterns",
+      "Built clean deployable core and content packages while preserving required active assets",
+      "Excluded stale backup, staging, cache, and runtime dump folders from the clean package",
+      "Used a temporary cleanup tool to inspect and remove a malicious database user",
+      "Documented cleanup findings and remaining follow-up steps"
+    ],
+    resultSummary: "The recovery path separated active production assets from risky leftovers and removed the confirmed malicious user from the database.",
+    whatToWatchNext: [
+      "Whether administrator passwords and salts are rotated after cleanup",
+      "Whether stale backups return through future uploads",
+      "Whether security scans stay clean after redeployment"
+    ],
+    toolsUsed: ["WordPress", "Database review", "File scanning", "Cleanup tooling"],
+    tags: ["WordPress", "Malware Cleanup", "Database", "Security"],
+    relatedServices: ["security-hosting-reliability", "wordpress-support", "production-debugging"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "WordPress Malware Database Cleanup Fix Note | The Web Guy",
+    metaDescription: "Short fix note about cleaning a WordPress install and database after malware, including file scanning and malicious user removal."
+  },
+  {
+    title: "Traced a Live WordPress Display Problem to Host Cache",
+    slug: "traced-live-wordpress-display-problem-host-cache",
+    date: "2026-07-01",
+    displayDate: "July 1, 2026",
+    lastUpdated: null,
+    category: "Production Debugging",
+    serviceSlug: "production-debugging",
+    excerpt: "A production debugging note about plugin updates, frontend display checks, and a live-site mismatch caused by cache beyond WordPress.",
+    problemSummary: "The site looked corrected in the local copy after updates, but the public page still served older processed assets.",
+    whatIChecked: [
+      "Updated WordPress plugins",
+      "Frontend display after the update pass",
+      "Available WordPress cache controls",
+      "Client-side CSS and JavaScript optimization settings",
+      "Local output compared with the live site"
+    ],
+    whatIChanged: [
+      "Retested the affected frontend display after plugin updates",
+      "Cleared or disabled the cache and optimization controls available inside WordPress",
+      "Confirmed the corrected site output worked outside the live cache layer",
+      "Documented that hosting, CDN, or server-side optimization cache still needed purged"
+    ],
+    resultSummary: "The issue was narrowed to an upstream cache layer, which kept the work focused on cache purging instead of unnecessary template edits.",
+    whatToWatchNext: [
+      "Whether hosting has a reliable purge process",
+      "Whether CDN and server optimization tools are documented",
+      "Whether future plugin updates should be checked from an uncached path"
+    ],
+    toolsUsed: ["WordPress", "Browser testing", "Cache review", "Local comparison"],
+    tags: ["WordPress", "Cache", "Production Debugging", "Plugin Updates"],
+    relatedServices: ["production-debugging", "wordpress-support", "security-hosting-reliability"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "WordPress Host Cache Debugging Fix Note | The Web Guy",
+    metaDescription: "Short production debugging note about tracing a live WordPress display issue to a host or CDN cache layer."
+  },
+  {
+    title: "Fixed Contact Form Email Delivery With Authenticated Sending",
+    slug: "fixed-contact-form-email-delivery-authenticated-sending",
+    date: "2026-07-01",
+    displayDate: "July 1, 2026",
+    lastUpdated: null,
+    category: "WordPress Support",
+    serviceSlug: "wordpress-support",
+    excerpt: "A WordPress support note about a contact form that appeared to submit but failed notification delivery until authenticated mail sending was configured.",
+    problemSummary: "The frontend form showed an error after submission, and testing pointed toward server mail delivery rather than page caching or spam filtering.",
+    whatIChecked: [
+      "Reported frontend form behavior",
+      "Live form submission flow",
+      "Cache and spam-filtering assumptions",
+      "Server mail delivery path",
+      "Backend mail test results"
+    ],
+    whatIChanged: [
+      "Added and configured a mail delivery plugin",
+      "Connected an authenticated API-based sending path",
+      "Ran backend mail delivery tests",
+      "Verified the frontend form returned successful submissions after the change"
+    ],
+    resultSummary: "The contact form could send successfully through an authenticated mail route instead of depending on unreliable default server mail.",
+    whatToWatchNext: [
+      "Whether API credentials or account permissions expire",
+      "Whether form plugin updates change notification behavior",
+      "Whether SPF, DKIM, or DMARC should be tightened later"
+    ],
+    toolsUsed: ["WordPress", "Mail delivery plugin", "Gmail API", "Form testing"],
+    tags: ["WordPress", "Forms", "Email Delivery", "SMTP"],
+    relatedServices: ["wordpress-support", "website-fixes", "analytics-tracking"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "Contact Form Email Delivery Fix Note | The Web Guy",
+    metaDescription: "Short WordPress support note about fixing contact form email delivery with authenticated sending."
+  },
+  {
+    title: "Resolved an Unused Instagram Feed Plugin Issue",
+    slug: "resolved-unused-instagram-feed-plugin-issue",
+    date: "2026-07-01",
+    displayDate: "July 1, 2026",
+    lastUpdated: null,
+    category: "WordPress Support",
+    serviceSlug: "wordpress-support",
+    excerpt: "A WordPress plugin note about updating an Instagram feed plugin, tracing the remaining issue to authentication, and removing it when the feed was no longer needed.",
+    problemSummary: "An Instagram feed plugin still had a display or connection issue after updating because the integration needed to be reauthorized.",
+    whatIChecked: [
+      "Instagram feed plugin version",
+      "Frontend display behavior",
+      "Plugin connection and authentication state",
+      "Whether the feed was still part of the current site workflow"
+    ],
+    whatIChanged: [
+      "Updated the affected plugin",
+      "Confirmed the remaining issue was tied to reinitializing the Instagram connection",
+      "Verified the feed was no longer being used",
+      "Deactivated the plugin instead of keeping an unused integration active"
+    ],
+    resultSummary: "The site avoided carrying a broken, unused social feed integration and reduced one more plugin maintenance surface.",
+    whatToWatchNext: [
+      "Whether the feed should be rebuilt before being reactivated",
+      "Whether unused plugins are reviewed during future maintenance",
+      "Whether social API token changes affect other integrations"
+    ],
+    toolsUsed: ["WordPress", "Plugin review", "Frontend testing", "Integration settings"],
+    tags: ["WordPress", "Plugin Cleanup", "Instagram", "Maintenance"],
+    relatedServices: ["wordpress-support", "website-fixes", "ongoing-webmaster-support"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "Instagram Plugin Cleanup Fix Note | The Web Guy",
+    metaDescription: "Short WordPress support note about resolving an unused Instagram feed plugin issue by updating, checking authentication, and deactivating it."
+  },
+  {
+    title: "Added Floating Click-to-Call and Review Badge Support",
+    slug: "added-floating-click-to-call-review-badge-support",
+    date: "2026-07-01",
+    displayDate: "July 1, 2026",
+    lastUpdated: null,
+    category: "Tracking & Analytics",
+    serviceSlug: "analytics-tracking",
+    excerpt: "A site support note about adding a persistent phone CTA, review badges, cached rating data, and click tracking inside a static export workflow.",
+    problemSummary: "The site needed easier phone access and stronger review proof without breaking the existing static route setup.",
+    whatIChecked: [
+      "Shared layout shell",
+      "Mobile and desktop CTA placement",
+      "Review badge display areas",
+      "Cached rating and review-count behavior",
+      "Static export compatibility"
+    ],
+    whatIChanged: [
+      "Added a floating click-to-call button across the site",
+      "Wired the phone CTA into the shared layout so it appeared consistently",
+      "Set up homepage and footer review badge support",
+      "Added cached fallback handling for review rating and count data",
+      "Verified phone-click tracking within the static export flow"
+    ],
+    resultSummary: "Visitors had a more persistent phone path and the site could show review proof while keeping the static build stable.",
+    whatToWatchNext: [
+      "Whether review API credentials are configured on the server side",
+      "Whether phone-click events remain visible in analytics",
+      "Whether mobile CTA placement conflicts with future widgets"
+    ],
+    toolsUsed: ["Next.js", "GA4", "Google Places API", "Yelp API"],
+    tags: ["Tracking", "CTA", "Reviews", "Static Site"],
+    relatedServices: ["analytics-tracking", "landing-pages", "react-static-sites"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "Click-to-Call and Review Badge Fix Note | The Web Guy",
+    metaDescription: "Short support note about adding a floating phone CTA, review badge support, cached review data, and tracking to a static site."
+  },
+  {
+    title: "Fixed Mobile Bio Popup Scrolling and Project Image Quality",
+    slug: "fixed-mobile-bio-popup-scrolling-project-image-quality",
+    date: "2026-07-01",
+    displayDate: "July 1, 2026",
+    lastUpdated: null,
+    category: "Website Fixes",
+    serviceSlug: "website-fixes",
+    excerpt: "A frontend fix note about repairing a mobile popup scroll issue, adding a project card, and correcting blurry responsive image output.",
+    problemSummary: "The page had a bio popup that showed scrollbars but would not scroll properly on affected views, and new project imagery exposed a responsive image sizing problem.",
+    whatIChecked: [
+      "Mobile and laptop popup behavior",
+      "Lightbox content scrolling",
+      "Panel positioning and overflow rules",
+      "Project card listing output",
+      "Responsive image sizes compared with viewport width"
+    ],
+    whatIChanged: [
+      "Adjusted mobile CSS so the popup content could scroll normally",
+      "Added the requested project card and matching detail page",
+      "Removed an unrelated extra card from the listing",
+      "Reoptimized affected project images",
+      "Added a larger default image size for cleaner card and project display"
+    ],
+    resultSummary: "The popup became usable on smaller views and project images loaded at a size that better matched their display area.",
+    whatToWatchNext: [
+      "Whether future popup content exceeds the available mobile height",
+      "Whether new project images include appropriate generated sizes",
+      "Whether builder or lightbox updates change overflow behavior"
+    ],
+    toolsUsed: ["WordPress", "CSS review", "GLightbox", "Responsive image testing"],
+    tags: ["Mobile Layout", "CSS", "Images", "WordPress"],
+    relatedServices: ["website-fixes", "wordpress-support", "landing-pages"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "Mobile Popup and Image Quality Fix Note | The Web Guy",
+    metaDescription: "Short website fix note about repairing mobile popup scrolling and correcting blurry responsive project images."
+  },
+  {
+    title: "Built a Static-Site Lead Handler and Contact Popup Flow",
+    slug: "built-static-site-lead-handler-contact-popup-flow",
+    date: "2026-06-15",
+    displayDate: "June 15, 2026",
+    lastUpdated: null,
+    category: "API Integrations",
+    serviceSlug: "api-integrations",
+    excerpt: "An integration note about building a standalone lead submission service, documenting deployment settings, and later routing requests through an embedded CRM popup.",
+    problemSummary: "The static site needed a lead handling path that could support form posts, validation, email delivery, attachments, and a fallback CRM-oriented contact flow.",
+    whatIChecked: [
+      "Static site form requirements",
+      "CORS origin needs",
+      "JSON, form, and multipart submission behavior",
+      "Transactional email delivery requirements",
+      "Existing CRM popup and tracking expectations"
+    ],
+    whatIChanged: [
+      "Created a standalone Node and Express lead submission service",
+      "Added validation, honeypot handling, CORS allowlisting, file attachment support, and a health route",
+      "Documented local setup, environment variables, deployment settings, endpoint usage, and security notes",
+      "Restored a third-party CRM form inside a popup modal",
+      "Tracked the sticky contact click and verified the static export still built successfully"
+    ],
+    resultSummary: "The site had both a documented custom lead handler and a practical CRM popup route while keeping static deployment intact.",
+    whatToWatchNext: [
+      "Whether the custom lead endpoint remains needed if CRM routing owns the flow",
+      "Whether CORS origins stay current after domain changes",
+      "Whether analytics still separates popup opens from completed leads"
+    ],
+    toolsUsed: ["Node.js", "Express", "Next.js", "GA4"],
+    tags: ["API Integrations", "Forms", "Static Site", "CRM"],
+    relatedServices: ["api-integrations", "analytics-tracking", "react-static-sites"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "Static Site Lead Handler Fix Note | The Web Guy",
+    metaDescription: "Short API integration note about building a static-site lead handler and contact popup flow."
+  },
+  {
+    title: "Cleaned Up FAQ Sections Across WordPress Pages",
+    slug: "cleaned-up-faq-sections-across-wordpress-pages",
+    date: "2026-06-15",
+    displayDate: "June 15, 2026",
+    lastUpdated: null,
+    category: "WordPress Support",
+    serviceSlug: "wordpress-support",
+    excerpt: "A WordPress content cleanup note about reviewing affected pages, fixing FAQ sections, and tightening visible layout details.",
+    problemSummary: "Several pages had FAQ areas and surrounding page sections that were inconsistent or did not match the expected presentation.",
+    whatIChecked: [
+      "Affected page set",
+      "FAQ section content",
+      "Visible layout consistency",
+      "Page areas that did not look correct",
+      "Frontend output after edits"
+    ],
+    whatIChanged: [
+      "Reviewed the pages that needed FAQ cleanup",
+      "Fixed FAQ sections across the affected pages",
+      "Adjusted visible content and layout details",
+      "Retested the updated page output for consistency"
+    ],
+    resultSummary: "The FAQ sections and nearby content blocks read more consistently across the affected WordPress pages.",
+    whatToWatchNext: [
+      "Whether new FAQs follow the same structure",
+      "Whether schema output should be checked after content edits",
+      "Whether page builder updates alter spacing again"
+    ],
+    toolsUsed: ["WordPress", "Page review", "Content cleanup", "Frontend QA"],
+    tags: ["WordPress", "FAQ", "Content Cleanup", "Page Layout"],
+    relatedServices: ["wordpress-support", "landing-pages", "website-fixes"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "WordPress FAQ Cleanup Fix Note | The Web Guy",
+    metaDescription: "Short WordPress support note about cleaning up FAQ sections and visible page layout details."
+  },
+  {
+    title: "Staged and Cleaned a WordPress Recovery Backup Locally",
+    slug: "staged-cleaned-wordpress-recovery-backup-locally",
+    date: "2026-06-15",
+    displayDate: "June 15, 2026",
+    lastUpdated: null,
+    category: "Security & Hosting",
+    serviceSlug: "security-hosting-reliability",
+    excerpt: "A WordPress recovery note about staging an original backup locally, cleaning import files, refreshing core, and quarantining suspicious inactive assets.",
+    problemSummary: "The recovery needed to preserve active production content while separating the working site from stale, risky, or malware-like files.",
+    whatIChecked: [
+      "Original site backup and database dump",
+      "Local WordPress configuration",
+      "Active themes, plugins, uploads, and security rules",
+      "Old staging, backup, cache, and platform artifact folders",
+      "Suspicious top-level PHP and displaced plugin or theme files"
+    ],
+    whatIChanged: [
+      "Staged the backup and database dump in a local WordPress environment",
+      "Cleaned the SQL dump into import-ready database files",
+      "Configured local database connection and import tooling",
+      "Refreshed core WordPress files while preserving active content",
+      "Created quarantine areas for inactive, stale, risky, and malware-like files"
+    ],
+    resultSummary: "The recovery environment became easier to inspect because active site assets were preserved while questionable leftovers were isolated.",
+    whatToWatchNext: [
+      "Whether quarantined files are needed before final removal",
+      "Whether production upload limits and security rules need mirrored during deployment",
+      "Whether fresh scans stay clean after restoring the cleaned package"
+    ],
+    toolsUsed: ["XAMPP", "WordPress", "SQL cleanup", "File quarantine"],
+    tags: ["WordPress", "Recovery", "Malware Cleanup", "Local Staging"],
+    relatedServices: ["security-hosting-reliability", "wordpress-support", "production-debugging"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "WordPress Backup Recovery Fix Note | The Web Guy",
+    metaDescription: "Short WordPress recovery note about staging a backup locally, cleaning database imports, refreshing core files, and quarantining suspicious assets."
+  },
+  {
+    title: "Built a Role-Aware Operations Dashboard Prototype",
+    slug: "built-role-aware-operations-dashboard-prototype",
+    date: "2026-06-15",
+    displayDate: "June 15, 2026",
+    lastUpdated: null,
+    category: "Automation & Internal Tools",
+    serviceSlug: "automation-internal-tools",
+    excerpt: "An internal tools note about building a dashboard prototype with role-aware views, activity data, charts, map previews, and installation documentation.",
+    problemSummary: "The project needed a reviewable dashboard prototype that could show field activity, approvals, users, settings, admin views, and public-facing embed behavior.",
+    whatIChecked: [
+      "Dashboard and public page structure",
+      "Role-specific access expectations",
+      "Activity data fields and location metadata",
+      "Responsive behavior across desktop, tablet, and mobile",
+      "Build readiness and documentation coverage"
+    ],
+    whatIChanged: [
+      "Built public pages, dashboard pages, admin views, API routes, mock data, and shared components",
+      "Added role-aware behavior for admins, owners, team members, and workers",
+      "Created activity views with filters, date ranges, charts, map previews, and installation snippets",
+      "Added install and embed documentation",
+      "Verified responsive layout and production build behavior"
+    ],
+    resultSummary: "The prototype gave stakeholders a realistic way to review the operational workflow before connecting the dashboard to live data.",
+    whatToWatchNext: [
+      "Whether mock roles map cleanly to real auth rules",
+      "Whether installation snippets need versioning",
+      "Whether chart and map data should be paginated as volume grows"
+    ],
+    toolsUsed: ["Next.js", "Database schema", "Charts", "Responsive QA"],
+    tags: ["Internal Tools", "Dashboard", "Next.js", "Prototype"],
+    relatedServices: ["automation-internal-tools", "api-integrations", "react-static-sites"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "Operations Dashboard Prototype Fix Note | The Web Guy",
+    metaDescription: "Short internal tools note about building a role-aware operations dashboard prototype."
+  },
+  {
+    title: "Completed Requested Site Modifications and Output Review",
+    slug: "completed-requested-site-modifications-output-review",
+    date: "2026-06-15",
+    displayDate: "June 15, 2026",
+    lastUpdated: null,
+    category: "Website Fixes",
+    serviceSlug: "website-fixes",
+    excerpt: "A small support note about completing requested site edits and reviewing the updated page output afterward.",
+    problemSummary: "The site needed a focused set of requested modifications and a quick review to confirm the edits appeared correctly.",
+    whatIChecked: [
+      "Requested modification list",
+      "Affected page output",
+      "Visible presentation after edits",
+      "Basic browser behavior"
+    ],
+    whatIChanged: [
+      "Completed the requested site modifications",
+      "Reviewed the updated page output",
+      "Confirmed the visible changes were applied correctly"
+    ],
+    resultSummary: "The requested changes were applied and checked against the updated frontend output.",
+    whatToWatchNext: [
+      "Whether additional follow-up edits are grouped into a clearer task list",
+      "Whether future changes need screenshots before and after",
+      "Whether any cache layer delays the visible update"
+    ],
+    toolsUsed: ["Browser testing", "Frontend review", "Site editor"],
+    tags: ["Website Fixes", "Frontend QA", "Content Updates", "Support"],
+    relatedServices: ["website-fixes", "ongoing-webmaster-support", "production-debugging"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "Site Modification Review Fix Note | The Web Guy",
+    metaDescription: "Short website support note about completing requested site modifications and reviewing the updated output."
+  },
+  {
+    title: "Refactored a Next.js Site for Static Hosting",
+    slug: "refactored-nextjs-site-static-hosting",
+    date: "2026-06-15",
+    displayDate: "June 15, 2026",
+    lastUpdated: null,
+    category: "Production Debugging",
+    serviceSlug: "react-static-sites",
+    excerpt: "A static-site deployment note about converting a Next.js app for static export, removing server-only integrations, and preserving form and analytics behavior.",
+    problemSummary: "The app needed to move toward static hosting, but it still contained server-only routes, private-key integrations, and deployment assumptions that would not work in a static export.",
+    whatIChecked: [
+      "Next.js export configuration",
+      "Old API routes and server-only packages",
+      "Form submission paths",
+      "Analytics and conversion snippets",
+      "Sitemap, robots, and hosting configuration"
+    ],
+    whatIChanged: [
+      "Configured static export and verified the build output directory",
+      "Removed old API routes and unused server-only dependencies",
+      "Replaced forms with a shared static-safe form system",
+      "Added a public lead endpoint configuration and clear missing-endpoint errors",
+      "Added GA4 support for successful submissions and contact clicks"
+    ],
+    resultSummary: "The project became deployable as a static site while keeping lead capture and analytics behavior explicit.",
+    whatToWatchNext: [
+      "Whether the external lead endpoint is monitored",
+      "Whether old server-only integrations are reintroduced",
+      "Whether deployment docs stay aligned with the actual hosting target"
+    ],
+    toolsUsed: ["Next.js", "Render", "GA4", "Static export"],
+    tags: ["Next.js", "Static Site", "Deployment", "Forms"],
+    relatedServices: ["react-static-sites", "api-integrations", "analytics-tracking"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "Next.js Static Hosting Refactor Fix Note | The Web Guy",
+    metaDescription: "Short fix note about refactoring a Next.js app for static hosting while preserving forms and analytics."
+  },
+  {
+    title: "Removed WordPress Backdoors and Hardened File Access",
+    slug: "removed-wordpress-backdoors-hardened-file-access",
+    date: "2026-06-15",
+    displayDate: "June 15, 2026",
+    lastUpdated: null,
+    category: "Security & Hosting",
+    serviceSlug: "security-hosting-reliability",
+    excerpt: "A WordPress security note about removing malicious plugin directories, injected theme code, cache payloads, and hardening sensitive file access.",
+    problemSummary: "The affected WordPress sites shared malware patterns across plugin directories, theme files, cache artifacts, and hard-coded admin persistence.",
+    whatIChecked: [
+      "Malicious plugin-like directories",
+      "Theme payload files",
+      "Cache artifacts containing malware payloads",
+      "Injected script tags and admin backdoor logic",
+      "File access rules and WordPress configuration hardening"
+    ],
+    whatIChanged: [
+      "Removed malicious plugin directories and related injected files",
+      "Cleaned modified theme files by removing injected scripts and backdoor code",
+      "Cleared malicious cache artifacts",
+      "Updated access rules to restrict sensitive files, executable upload paths, backup files, logs, XML-RPC, and direct access to sensitive paths",
+      "Updated WordPress configuration hardening settings"
+    ],
+    resultSummary: "The cleanup removed confirmed backdoors and added file-level hardening to reduce the same compromise paths from staying exposed.",
+    whatToWatchNext: [
+      "Whether all administrator accounts and passwords are reset",
+      "Whether plugin and theme updates close the original entry point",
+      "Whether future scans detect the same payload family"
+    ],
+    toolsUsed: ["WordPress", "File review", ".htaccess", "Security scanning"],
+    tags: ["WordPress", "Malware Cleanup", "Hardening", "Backdoors"],
+    relatedServices: ["security-hosting-reliability", "wordpress-support", "production-debugging"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "WordPress Backdoor Cleanup Fix Note | The Web Guy",
+    metaDescription: "Short security fix note about removing WordPress backdoors, malware payloads, and hardening sensitive file access."
+  },
+  {
+    title: "Updated a Static Promotion Page and Chat Script",
+    slug: "updated-static-promotion-page-chat-script",
+    date: "2026-06-15",
+    displayDate: "June 15, 2026",
+    lastUpdated: null,
+    category: "Landing Pages",
+    serviceSlug: "landing-pages",
+    excerpt: "A static-site update note about replacing an old promotion, fixing print-page routing, updating share copy, and adding a chat script behind cookie approval.",
+    problemSummary: "The static site needed a new promotion to replace an older offer, plus chat support that depended on cookie/script approval before firing publicly.",
+    whatIChecked: [
+      "Promotion listing order",
+      "Print-page route behavior",
+      "Text and email share copy",
+      "Static HTML pages that needed the chat script",
+      "Cookie approval requirements for the chat provider"
+    ],
+    whatIChanged: [
+      "Added the new promotion in the requested position",
+      "Removed the old promotion and matching print page",
+      "Fixed the print link by routing it through the static print redirect map",
+      "Updated promo, print, text, and email share wording",
+      "Added the chat script across the static HTML site and documented the remaining cookie approval step"
+    ],
+    resultSummary: "The promotion flow and print route matched the new offer, and the chat script was installed pending public cookie-script approval.",
+    whatToWatchNext: [
+      "Whether cookie consent settings allow the chat script to load",
+      "Whether old promotion URLs need redirects",
+      "Whether future offers update print and share copy together"
+    ],
+    toolsUsed: ["Static HTML", "Browser testing", "Cookie consent review", "Routing review"],
+    tags: ["Landing Pages", "Static Site", "Promotions", "Chat Script"],
+    relatedServices: ["landing-pages", "website-fixes", "react-static-sites"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "Static Promotion Page Fix Note | The Web Guy",
+    metaDescription: "Short landing page fix note about updating a static promotion page, print route, share copy, and chat script."
+  },
+  {
+    title: "Repaired Custom Permalinks for Location-Based Service Pages",
+    slug: "repaired-custom-permalinks-location-based-service-pages",
+    date: "2026-06-15",
+    displayDate: "June 15, 2026",
+    lastUpdated: null,
+    category: "WordPress Support",
+    serviceSlug: "wordpress-support",
+    excerpt: "A WordPress note about investigating location-based page hierarchy, building an admin linking utility, and resolving custom permalink 404s.",
+    problemSummary: "New location-based service pages needed to resolve through a custom URL structure, but normal page parent fields did not explain or repair the relationship.",
+    whatIChecked: [
+      "WordPress dashboard page settings",
+      "Elementor page settings",
+      "Custom post type entries and ACF fields",
+      "SEO plugin settings, snippets, child theme files, and plugin-accessible files",
+      "REST API data for working pages"
+    ],
+    whatIChanged: [
+      "Confirmed the builder was not controlling the parent and page hierarchy",
+      "Identified that normal pages were linked to location records through their parent value",
+      "Built a custom admin utility to match unparented pages with the right location records",
+      "Added rewrite and request-resolution logic for the custom URL format",
+      "Updated location pages to link visitors to the new child service pages"
+    ],
+    resultSummary: "Previously failing custom service URLs resolved correctly, and future pages could be linked to their location parent from a safer dashboard tool.",
+    whatToWatchNext: [
+      "Whether new location pages follow the same parent-linking workflow",
+      "Whether rewrite rules need flushed after deployment",
+      "Whether canonical URLs and internal links stay aligned"
+    ],
+    toolsUsed: ["WordPress", "Elementor", "ACF", "REST API"],
+    tags: ["WordPress", "Permalinks", "Custom Post Types", "Elementor"],
+    relatedServices: ["wordpress-support", "technical-seo-implementation", "landing-pages"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "WordPress Custom Permalink Fix Note | The Web Guy",
+    metaDescription: "Short WordPress support note about repairing custom permalinks for location-based service pages."
+  },
+  {
+    title: "Reviewed Builder-Based Site Performance and Design Constraints",
+    slug: "reviewed-builder-based-site-performance-design-constraints",
+    date: "2026-05-26",
+    displayDate: "May 26, 2026",
+    lastUpdated: null,
+    category: "Page Speed",
+    serviceSlug: "site-speed-performance",
+    excerpt: "A performance review note about auditing a builder-based WordPress site, tightening visible spacing, and documenting deeper structural speed limits.",
+    problemSummary: "The site had design and performance concerns tied to builder output, theme architecture, repeated assets, and main-thread constraints.",
+    whatIChecked: [
+      "Theme and plugin architecture",
+      "Builder-driven layout behavior",
+      "Loaded assets and repeated background images",
+      "Lighthouse performance and accessibility audit results",
+      "Frontend spacing, sizing, and visual consistency"
+    ],
+    whatIChanged: [
+      "Tightened homepage spacing and sizing for a more consistent layout",
+      "Identified repeated oversized background image usage",
+      "Reviewed main-thread performance constraints",
+      "Documented which gains were limited by the current builder and theme structure",
+      "Outlined that major Lighthouse improvements would require deeper structural rebuilding"
+    ],
+    resultSummary: "The immediate layout polish improved while the larger performance limits were documented before overpromising small theme tweaks.",
+    whatToWatchNext: [
+      "Whether repeated background assets can be replaced or resized",
+      "Whether critical pages deserve a lighter rebuild",
+      "Whether plugin updates add more global assets"
+    ],
+    toolsUsed: ["Lighthouse", "WordPress", "Blocksy", "Frontend review"],
+    tags: ["Page Speed", "WordPress", "Builder Cleanup", "Performance Review"],
+    relatedServices: ["site-speed-performance", "wordpress-support", "website-fixes"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "Builder-Based Performance Review Fix Note | The Web Guy",
+    metaDescription: "Short page speed note about reviewing a builder-based WordPress site and documenting structural performance constraints."
+  },
+  {
+    title: "Prepared Bulk Location Page Imports and Elementor Templates",
+    slug: "prepared-bulk-location-page-imports-elementor-templates",
+    date: "2026-05-26",
+    displayDate: "May 26, 2026",
+    lastUpdated: null,
+    category: "Landing Pages",
+    serviceSlug: "landing-pages",
+    excerpt: "A WordPress implementation note about preparing draft location-page imports, metadata, schema, map embeds, and Elementor template JSON for review.",
+    problemSummary: "A multi-location page set needed safer import tooling that could create draft pages, preserve metadata, avoid overwriting live slugs, and prepare builder-ready content.",
+    whatIChecked: [
+      "WordPress export files",
+      "Local service and location HTML folders",
+      "Available PHP and Node.js import options",
+      "Existing live slugs and parent path mappings",
+      "Elementor template structure"
+    ],
+    whatIChanged: [
+      "Shifted import tooling to Node.js after PHP access was ruled out",
+      "Built draft-only import workflows to avoid overwriting live pages",
+      "Generated metadata-only draft imports with schema, map embeds, SEO fields, image IDs, source tracking, and parent IDs",
+      "Converted service HTML content into Elementor-compatible JSON outputs",
+      "Uploaded generated drafts and reviewed pages individually in the builder"
+    ],
+    resultSummary: "The location page import became safer and more reviewable, with generated drafts and builder templates prepared before final internal linking and image updates.",
+    whatToWatchNext: [
+      "Whether generated pages receive final internal links",
+      "Whether images are replaced before launch",
+      "Whether future imports keep draft-only safeguards"
+    ],
+    toolsUsed: ["WordPress", "Elementor", "Node.js", "Schema validation"],
+    tags: ["WordPress", "Elementor", "Landing Pages", "Bulk Import"],
+    relatedServices: ["landing-pages", "wordpress-support", "technical-seo-implementation"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "WordPress Location Page Import Fix Note | The Web Guy",
+    metaDescription: "Short WordPress implementation note about preparing bulk location page imports and Elementor templates."
+  },
+  {
+    title: "Uploaded and Structured Blog Posts With Schema Output",
+    slug: "uploaded-structured-blog-posts-schema-output",
+    date: "2026-05-26",
+    displayDate: "May 26, 2026",
+    lastUpdated: null,
+    category: "Technical SEO",
+    serviceSlug: "technical-seo-implementation",
+    excerpt: "A WordPress content note about uploading blog posts, matching formatting, configuring metadata, and validating schema output.",
+    problemSummary: "The provided blog content needed to be imported into WordPress with consistent formatting, indexable metadata, and working structured data.",
+    whatIChecked: [
+      "Provided HTML and content package",
+      "Existing blog formatting",
+      "Slug and canonical requirements",
+      "Author, category, and indexation settings",
+      "Schema output behavior"
+    ],
+    whatIChanged: [
+      "Uploaded and formatted the blog posts",
+      "Matched the existing blog presentation",
+      "Configured slugs and canonicals from the provided file naming",
+      "Added Open Graph and meta considerations",
+      "Resolved schema injection issues by moving schema output through a controlled field and validating it"
+    ],
+    resultSummary: "The posts were published in a consistent format with metadata and schema output that could be checked cleanly.",
+    whatToWatchNext: [
+      "Whether future content packages keep consistent naming",
+      "Whether schema fields are filled before publishing",
+      "Whether indexation settings match the content plan"
+    ],
+    toolsUsed: ["WordPress", "ACF", "Schema validator", "Content QA"],
+    tags: ["Technical SEO", "WordPress", "Schema", "Blog Content"],
+    relatedServices: ["technical-seo-implementation", "wordpress-support", "landing-pages"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "Blog Schema Upload Fix Note | The Web Guy",
+    metaDescription: "Short technical SEO note about uploading WordPress blog content and validating schema output."
+  },
+  {
+    title: "Audited a WordPress Site for Remaining Malware Indicators",
+    slug: "audited-wordpress-site-remaining-malware-indicators",
+    date: "2026-05-26",
+    displayDate: "May 26, 2026",
+    lastUpdated: null,
+    category: "Security & Hosting",
+    serviceSlug: "security-hosting-reliability",
+    excerpt: "A security audit note about scanning for infected pages, reviewing malware indicators, and identifying where deeper filesystem access was still needed.",
+    problemSummary: "After earlier cleanup work, the site still needed a pass for unresolved malware signs and a clear boundary around what could be verified without deeper access.",
+    whatIChecked: [
+      "Still-infected page indicators",
+      "Injected content patterns",
+      "Remaining malware signals",
+      "Available WordPress-level evidence",
+      "Need for deeper filesystem verification"
+    ],
+    whatIChanged: [
+      "Scanned for pages that still appeared infected",
+      "Reviewed remaining malware indicators",
+      "Checked for unresolved injected content",
+      "Documented that FTP or filesystem access was required for a deeper verification pass"
+    ],
+    resultSummary: "The audit clarified what looked clean from available access and what still required filesystem-level review.",
+    whatToWatchNext: [
+      "Whether FTP access is available for the next pass",
+      "Whether security scans stay quiet after cache clears",
+      "Whether suspicious files return after cleanup"
+    ],
+    toolsUsed: ["WordPress", "Security audit", "Malware scan", "Access review"],
+    tags: ["WordPress", "Malware Audit", "Security", "Filesystem Access"],
+    relatedServices: ["security-hosting-reliability", "wordpress-support", "production-debugging"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "WordPress Malware Audit Fix Note | The Web Guy",
+    metaDescription: "Short security note about auditing a WordPress site for remaining malware indicators and access needs."
+  },
+  {
+    title: "Migrated Site Content Between Domains Without a Rebuild",
+    slug: "migrated-site-content-between-domains-without-rebuild",
+    date: "2026-05-26",
+    displayDate: "May 26, 2026",
+    lastUpdated: null,
+    category: "Website Fixes",
+    serviceSlug: "website-fixes",
+    excerpt: "A small migration note about transferring requested site content from an older domain to a newer one and verifying the move.",
+    problemSummary: "Content needed to move from one domain to another without turning a small migration request into a larger rebuild.",
+    whatIChecked: [
+      "Source content on the old domain",
+      "Destination page content",
+      "Requested transfer scope",
+      "Visible output after migration"
+    ],
+    whatIChanged: [
+      "Moved the requested content to the new domain",
+      "Checked the destination output",
+      "Verified the requested content transfer was complete"
+    ],
+    resultSummary: "The content moved cleanly and the destination page reflected the requested transfer.",
+    whatToWatchNext: [
+      "Whether redirects are needed from the old URLs",
+      "Whether internal links point to the new domain",
+      "Whether metadata should be updated after the content move"
+    ],
+    toolsUsed: ["Content review", "Browser testing", "Migration QA"],
+    tags: ["Website Fixes", "Content Migration", "Domain Move", "QA"],
+    relatedServices: ["website-fixes", "landing-pages", "technical-seo-implementation"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "Small Content Migration Fix Note | The Web Guy",
+    metaDescription: "Short website fix note about migrating content between domains and verifying the transfer."
+  },
+  {
+    title: "Reviewed a WordPress Site for Suspicious Plugin-Like Files",
+    slug: "reviewed-wordpress-site-suspicious-plugin-like-files",
+    date: "2026-05-26",
+    displayDate: "May 26, 2026",
+    lastUpdated: null,
+    category: "Security & Hosting",
+    serviceSlug: "security-hosting-reliability",
+    excerpt: "A WordPress security note about reviewing a compromised-looking site from dashboard access only and outlining the deeper cleanup path.",
+    problemSummary: "The initial access was limited to wp-admin, but suspicious files and theme compromise indicators still needed to be reviewed and documented.",
+    whatIChecked: [
+      "Available WordPress admin access",
+      "Backup plugin export options",
+      "Security scan results",
+      "Suspicious plugin-like files with misleading names",
+      "Active theme compromise indicators"
+    ],
+    whatIChanged: [
+      "Downloaded the available backup for offline review",
+      "Started security scanning from the dashboard",
+      "Identified suspicious injected files using misleading names",
+      "Reviewed active theme compromise indicators",
+      "Outlined the clean-file replacement path for core, themes, plugins, permissions, database, and users"
+    ],
+    resultSummary: "The review established the likely compromise pattern and made clear which cleanup work required FTP or full filesystem access.",
+    whatToWatchNext: [
+      "Whether full filesystem access is provided",
+      "Whether clean core, theme, and plugin copies can replace modified files",
+      "Whether user access and database records are reviewed after file cleanup"
+    ],
+    toolsUsed: ["WordPress", "WPVivid", "Wordfence", "Security review"],
+    tags: ["WordPress", "Security Review", "Malware", "Access Limits"],
+    relatedServices: ["security-hosting-reliability", "wordpress-support", "production-debugging"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "Suspicious WordPress File Review Fix Note | The Web Guy",
+    metaDescription: "Short WordPress security note about reviewing suspicious plugin-like files with limited dashboard access."
+  },
+  {
+    title: "Recovered Multiple WordPress Sites After Malware Injection",
+    slug: "recovered-multiple-wordpress-sites-after-malware-injection",
+    date: "2026-05-26",
+    displayDate: "May 26, 2026",
+    lastUpdated: null,
+    category: "Security & Hosting",
+    serviceSlug: "security-hosting-reliability",
+    excerpt: "A malware recovery note about restoring down sites, removing injected scripts, reviewing suspicious users, replacing core files, and starting hardening.",
+    problemSummary: "Multiple WordPress sites were affected by active injection scripts, suspicious admin users, compromised files, and at least one visible down or error state.",
+    whatIChecked: [
+      "Active injection scripts",
+      "Suspicious WordPress administrator users",
+      "Modified theme and core files",
+      "Downloaded site files scanned locally",
+      "Database malware patterns and live security scan results"
+    ],
+    whatIChanged: [
+      "Restored an affected site from a down or error state back to live status",
+      "Removed unknown backup or administrator access after review",
+      "Replaced compromised WordPress core directories with clean copies where needed",
+      "Cleaned injected code patterns from files and database records",
+      "Updated a supporting plugin and resolved a related chat widget display issue"
+    ],
+    resultSummary: "The urgent recovery work brought the affected sites back into a cleaner, usable state and started the post-cleanup hardening path.",
+    whatToWatchNext: [
+      "Whether all credentials and security salts are rotated",
+      "Whether remaining plugins and themes are fully updated",
+      "Whether scheduled scans confirm no reinfection"
+    ],
+    toolsUsed: ["WordPress", "Wordfence", "Local file scanning", "Database scan"],
+    tags: ["WordPress", "Malware Recovery", "Security", "Database Cleanup"],
+    relatedServices: ["security-hosting-reliability", "wordpress-support", "production-debugging"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "WordPress Malware Recovery Fix Note | The Web Guy",
+    metaDescription: "Short security fix note about recovering multiple WordPress sites after malware injection."
+  },
+  {
+    title: "Added Location-Specific Proof Content to Service Pages",
+    slug: "added-location-specific-proof-content-service-pages",
+    date: "2026-05-26",
+    displayDate: "May 26, 2026",
+    lastUpdated: null,
+    category: "Landing Pages",
+    serviceSlug: "landing-pages",
+    excerpt: "A landing page implementation note about adding location-specific proof content so the right local item could render on the right pages.",
+    problemSummary: "Location pages needed supporting proof content, but the content had to be placed so the correct local item appeared only where it belonged.",
+    whatIChecked: [
+      "Location page placement requirements",
+      "Proof content fields",
+      "Page and location matching logic",
+      "Frontend rendering expectations"
+    ],
+    whatIChanged: [
+      "Added the requested local proof content",
+      "Matched content to the appropriate location pages",
+      "Reviewed placement so unrelated locations would not show the wrong proof",
+      "Checked that the integration content could render through the existing page setup"
+    ],
+    resultSummary: "The location pages had targeted proof content ready to support the local page experience.",
+    whatToWatchNext: [
+      "Whether new locations get matching proof content",
+      "Whether empty widget sections stay hidden when no content exists",
+      "Whether location matching rules still work after page changes"
+    ],
+    toolsUsed: ["WordPress", "Widget content review", "Location page QA"],
+    tags: ["Landing Pages", "Local Pages", "Proof Content", "Content Setup"],
+    relatedServices: ["landing-pages", "wordpress-support", "technical-seo-implementation"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "Location Proof Content Fix Note | The Web Guy",
+    metaDescription: "Short landing page note about adding location-specific proof content to service pages."
+  },
   {
     title: "Cleaned Up WordPress Assets Slowing Down a Service Page",
     slug: "cleaned-up-wordpress-assets-slowing-down-service-page",

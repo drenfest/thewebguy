@@ -28,6 +28,7 @@
   const jpegSrcset = $derived(`${imageBasePath}/${imageSlug}-640.jpg 640w, ${imageBasePath}/${imageSlug}-960.jpg 960w, ${imageBasePath}/${imageSlug}-1280.jpg 1280w`);
   const fallbackSrc = $derived(`${imageBasePath}/${imageSlug}-960.jpg`);
   const preloadHref = $derived(`${imageBasePath}/${imageSlug}-960.webp`);
+  const imageSizes = "(max-width: 640px) 46vw, (min-width: 1024px) 430px, (min-width: 720px) 74vw, 92vw";
 
   const capabilityLinks = [
     ["WordPress", "/services/wordpress-support/"],
@@ -80,12 +81,28 @@
 </script>
 
 <svelte:head>
+  {#if useSeasonalFireworks}
+    <script>
+      (() => {
+        if (window.__webGuyFireworksQueued) return;
+        window.__webGuyFireworksQueued = true;
+        const delay = window.matchMedia("(max-width: 640px)").matches ? 5200 : 4800;
+        window.setTimeout(() => {
+          if (!document.querySelector("[data-standalone-fireworks]")) return;
+          const script = document.createElement("script");
+          script.src = "/scripts/hero-fireworks.js";
+          script.async = true;
+          document.head.append(script);
+        }, delay);
+      })();
+    </script>
+  {/if}
   <link
     rel="preload"
     as="image"
     href={preloadHref}
     imagesrcset={webpSrcset}
-    imagesizes="(min-width: 1024px) 430px, (min-width: 720px) 74vw, 92vw"
+    imagesizes={imageSizes}
     type="image/webp"
     media="(min-width: 641px)"
     fetchpriority="high"
@@ -95,6 +112,8 @@
 <section class="hero effect effect-hero effect-high">
   {#if HeroEffect}
     <HeroEffect intensity="high" />
+  {:else if useSeasonalFireworks}
+    <canvas class="hero-particles hero-fireworks hero-fireworks--hero hero-fireworks--high" data-standalone-fireworks aria-hidden="true"></canvas>
   {/if}
   <div class="hero-grid">
     <div>
@@ -124,12 +143,12 @@
           <source
             type="image/webp"
             srcset={webpSrcset}
-            sizes="(min-width: 1024px) 430px, (min-width: 720px) 74vw, 92vw"
+            sizes={imageSizes}
           />
           <img
             src={fallbackSrc}
             srcset={jpegSrcset}
-            sizes="(min-width: 1024px) 430px, (min-width: 720px) 74vw, 92vw"
+            sizes={imageSizes}
             width={imageWidth}
             height={imageHeight}
             alt={imageAlt}
