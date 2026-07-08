@@ -867,13 +867,8 @@ body,
     text-wrap: pretty;
   }
 
-  .hero-particles:not(.hero-fireworks) {
+  .hero-particles {
     display: none;
-  }
-
-  .hero-fireworks {
-    display: block;
-    opacity: 0.72;
   }
 
   .availability-pill span,

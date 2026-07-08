@@ -29,10 +29,6 @@
   mix-blend-mode: screen;
 }
 
-.hero-fireworks {
-  opacity: 0.86;
-}
-
 .hero::after {
   content: "";
   position: absolute;

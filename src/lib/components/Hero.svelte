@@ -56,14 +56,6 @@
     return `View ${label}`;
   }
 
-  function isFireworksSeason(date = new Date()) {
-    const year = date.getFullYear();
-    const starts = new Date(year, 5, 15);
-    const ends = new Date(year, 6, 5);
-    return date >= starts && date < ends;
-  }
-
-  const useSeasonalFireworks = isFireworksSeason();
   let HeroEffect = $state(null);
 
   onMount(() => {
@@ -72,7 +64,7 @@
     const delay = isMobile ? 4200 : 3600;
 
     async function loadHeroEffect() {
-      const module = useSeasonalFireworks ? await import("./HeroFireworks.svelte") : await import("./HeroParticles.svelte");
+      const module = await import("./HeroParticles.svelte");
       if (!cancelled) HeroEffect = module.default;
     }
 
@@ -93,22 +85,6 @@
 </script>
 
 <svelte:head>
-  {#if useSeasonalFireworks}
-    <script>
-      (() => {
-        if (window.__webGuyFireworksQueued) return;
-        window.__webGuyFireworksQueued = true;
-        const delay = window.matchMedia("(max-width: 640px)").matches ? 5200 : 4800;
-        window.setTimeout(() => {
-          if (!document.querySelector("[data-standalone-fireworks]")) return;
-          const script = document.createElement("script");
-          script.src = "/scripts/hero-fireworks.js";
-          script.async = true;
-          document.head.append(script);
-        }, delay);
-      })();
-    </script>
-  {/if}
   <link
     rel="preload"
     as="image"
@@ -124,8 +100,6 @@
 <section class="hero effect effect-hero effect-high">
   {#if HeroEffect}
     <HeroEffect intensity="high" />
-  {:else if useSeasonalFireworks}
-    <canvas class="hero-particles hero-fireworks hero-fireworks--hero hero-fireworks--high" data-standalone-fireworks aria-hidden="true"></canvas>
   {/if}
   <div class="hero-grid">
     <div>
