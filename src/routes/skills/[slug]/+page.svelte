@@ -334,7 +334,7 @@
     <FixNotesPanel category={fixNoteCategory} serviceSlug={skill.slug} />
   {/if}
 
-  <CtaBand heading={`Need ${skill.eyebrow} help?`} copy="Send the URL, technical context, what changed recently, and what should happen next." label={`Get ${skill.eyebrow} Help`} />
+  <CtaBand heading={`Need ${skill.eyebrow} help?`} copy="Send the URL, technical context, what changed recently, and what should happen next." label={`Get ${skill.eyebrow} Help`} sourceTitle={skill.h1} />
 
   <section class="section section-effect section-effect--traces section-effect--low">
     <SectionHeading eyebrow="FAQ" h2={`${skill.eyebrow} questions`} />

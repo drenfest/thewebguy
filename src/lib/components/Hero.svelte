@@ -1,5 +1,7 @@
 <script>
   import { onMount } from "svelte";
+  import { page } from "$app/state";
+  import { contactHrefWithContext, isContactTarget } from "$lib/contact-context.js";
 
   let {
     eyebrow = "The Web Guy",
@@ -29,6 +31,16 @@
   const fallbackSrc = $derived(`${imageBasePath}/${imageSlug}-960.jpg`);
   const preloadHref = $derived(`${imageBasePath}/${imageSlug}-960.webp`);
   const imageSizes = "(max-width: 640px) 46vw, (min-width: 1024px) 430px, (min-width: 720px) 74vw, 92vw";
+  const contextualCtaHref = $derived(contactHrefWithContext(ctaHref, {
+    sourcePath: page.url.pathname,
+    sourceTitle: h1,
+    sourceCta: cta
+  }));
+  const contextualSecondaryHref = $derived(contactHrefWithContext(secondaryHref, {
+    sourcePath: page.url.pathname,
+    sourceTitle: h1,
+    sourceCta: secondary
+  }));
 
   const capabilityLinks = [
     ["WordPress", "/services/wordpress-support/"],
@@ -40,7 +52,7 @@
   ];
 
   function linkTitle(label, href = "") {
-    if (href === "/contact/" || href === "#request-form") return "Open the contact request form";
+    if (isContactTarget(href) || href === "#request-form") return "Open the contact request form";
     return `View ${label}`;
   }
 
@@ -122,8 +134,8 @@
       <h1>{h1}</h1>
       <p class="hero-lede">{intro}</p>
       <div class="hero-actions">
-        <a class="button button-primary cta-animated cta-animated--primary" href={ctaHref} title={linkTitle(cta, ctaHref)}>{cta}</a>
-        <a class="button button-secondary cta-animated" href={secondaryHref} title={linkTitle(secondary, secondaryHref)}>{secondary}</a>
+        <a class="button button-primary cta-animated cta-animated--primary" href={contextualCtaHref} title={linkTitle(cta, contextualCtaHref)}>{cta}</a>
+        <a class="button button-secondary cta-animated" href={contextualSecondaryHref} title={linkTitle(secondary, contextualSecondaryHref)}>{secondary}</a>
       </div>
       {#if showCapabilityLinks}
         <nav class="cred-strip" aria-label="Common website support paths">

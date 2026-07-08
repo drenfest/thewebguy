@@ -385,7 +385,11 @@ export async function POST({ request, getClientAddress }) {
     timeline: clean(payload.timeline),
     workType: clean(payload.workType),
     hours: clean(payload.hours),
-    details
+    details,
+    sourcePagePath: clean(payload.sourcePagePath, 300),
+    sourcePageTitle: clean(payload.sourcePageTitle, 220),
+    sourcePageType: clean(payload.sourcePageType, 80),
+    sourceCta: clean(payload.sourceCta, 160)
   };
 
   const duplicateKey = `${clientKey}:${normalized.email.toLowerCase()}:${hashValue(`${normalized.url}|${normalized.service}|${normalized.details}`)}`;
@@ -407,11 +411,18 @@ export async function POST({ request, getClientAddress }) {
     `One-time or ongoing: ${normalized.workType}`,
     `Approximate monthly hours: ${normalized.hours}`,
     "",
+    "Source context:",
+    `Source page: ${normalized.sourcePageTitle}`,
+    `Source path: ${normalized.sourcePagePath}`,
+    `Source type: ${normalized.sourcePageType}`,
+    `Source CTA: ${normalized.sourceCta}`,
+    "",
     "What needs help:",
     normalized.details
   ];
 
-  const subjectText = "Website work request - The Web Guy";
+  const subjectContext = normalized.sourcePageTitle || normalized.service || normalized.skill || normalized.location || "The Web Guy";
+  const subjectText = `Website work request - ${cleanHeader(subjectContext).slice(0, 96)}`;
   const bodyText = lines.join("\n");
   const gmailConfig = gmailApiConfig();
   const config = smtpConfig();

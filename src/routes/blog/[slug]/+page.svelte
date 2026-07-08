@@ -426,6 +426,7 @@
     label={post.finalCta?.label || "Send This Website Problem"}
     secondaryLabel={post.finalCta?.secondaryLabel || ""}
     secondaryHref={post.finalCta?.secondaryHref || ""}
+    sourceTitle={post.h1 || post.title}
   />
 
   <section class="section section-effect section-effect--grid section-effect--low">

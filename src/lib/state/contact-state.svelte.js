@@ -12,6 +12,10 @@ export const contactState = $state({
     timeline: "",
     workType: "",
     hours: "",
-    details: ""
+    details: "",
+    sourcePagePath: "",
+    sourcePageTitle: "",
+    sourcePageType: "",
+    sourceCta: ""
   }
 });
