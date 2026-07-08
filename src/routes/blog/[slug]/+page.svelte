@@ -46,8 +46,14 @@
   const articleSupportLinks = $derived((post.links || (post.contextCards || []).map((card) => [contextLabel(card), contextHref(card), contextCopy(card)])).filter(Boolean));
   const articleBridgeLinks = {
     "something-broke-on-your-website": [
+      { text: "fix my broken website triage", href: "/blog/fix-my-broken-website/", title: "Read the fix my broken website triage guide" },
       { text: "forms and modals not working", href: "/blog/forms-modals-not-working/", title: "Read about forms and modals not working" },
       { text: "CMS, plugin, and theme weirdness", href: "/blog/cms-plugin-theme-weirdness/", title: "Read about CMS, plugin, and theme weirdness" }
+    ],
+    "fix-my-broken-website": [
+      { text: "something broke on your website", href: "/blog/something-broke-on-your-website/", title: "Read the parent broken website troubleshooting guide" },
+      { text: "JavaScript issues on websites", href: "/blog/javascript-issues-website-troubleshooting/", title: "Read about JavaScript issues on websites" },
+      { text: "forms and modals not working", href: "/blog/forms-modals-not-working/", title: "Read about forms and modals not working" }
     ],
     "seo-audit-done-now-implement-it": [
       { text: "CMS, plugin, and theme weirdness", href: "/blog/cms-plugin-theme-weirdness/", title: "Read about CMS, plugin, and theme issues that can block SEO implementation" },
@@ -68,8 +74,14 @@
       { text: "CMS, plugin, and theme weirdness", href: "/blog/cms-plugin-theme-weirdness/", title: "Read about CMS, plugin, and theme layout issues" }
     ],
     "css-javascript-errors-website-bugs": [
+      { text: "JavaScript issues on websites", href: "/blog/javascript-issues-website-troubleshooting/", title: "Read about JavaScript issues on websites" },
       { text: "forms and modals not working", href: "/blog/forms-modals-not-working/", title: "Read about forms and modals failing because of front-end issues" },
       { text: "embeds, iframes, and widgets breaking pages", href: "/blog/embeds-iframes-widgets-breaking-pages/", title: "Read about embeds, iframes, and widgets breaking pages" }
+    ],
+    "javascript-issues-website-troubleshooting": [
+      { text: "CSS and JavaScript website bugs", href: "/blog/css-javascript-errors-website-bugs/", title: "Read the parent CSS and JavaScript bug guide" },
+      { text: "forms and modals not working", href: "/blog/forms-modals-not-working/", title: "Read about forms and modals failing because of JavaScript issues" },
+      { text: "tracking scripts and pixels", href: "/blog/tracking-scripts-pixels-broken/", title: "Read about tracking scripts and pixels breaking website behavior" }
     ],
     "forms-modals-not-working": [
       { text: "tracking scripts and pixels", href: "/blog/tracking-scripts-pixels-broken/", title: "Read about tracking scripts and pixels around forms and modals" },

@@ -79,9 +79,9 @@ export const blogTagDefinitions = [
 export const blogPosts = [
   {
     slug: "something-broke-on-your-website",
-    title: "Website Suddenly Broke? Practical Fix Help | The Web Guy",
-    h1: "Something Broke on Your Website? Start With the Symptom, Not the Platform",
-    meta: "Website layout shifted, forms failed, checkout stuck, or scripts stopped working? Learn what to check first and get practical website fix help.",
+    title: "Fix My Broken Website: Practical Triage Help | The Web Guy",
+    h1: "Fix My Broken Website: Start With the Symptom, Not the Platform",
+    meta: "Need to fix a broken website? Learn how to triage broken layouts, forms, checkout, scripts, tracking, WordPress issues, cache, hosting, and recent changes.",
     eyebrow: "Something broke",
     summary: "When a website breaks, the fastest path is not guessing the platform. It is describing the symptom, checking what changed, and tracing whether the problem is visual, functional, tracking-related, or server-side.",
     problemType: "Start here",
@@ -195,6 +195,22 @@ export const blogPosts = [
         checklist: ["URL", "Screenshot or screen recording", "Device and browser", "What should happen", "What is happening instead", "When it started", "Recent updates or edits", "Platform, plugin, builder, or hosting notes", "Login/access details if work is ready to begin"]
       },
       {
+        heading: "When the real request is fix my broken website",
+        body: [
+          [
+            "A search like ",
+            { text: "fix my broken website", href: "/blog/fix-my-broken-website/", title: "Read the deeper broken website triage guide" },
+            " usually means the site owner has moved past curiosity. Something public is failing, the business impact is unclear, and the next step needs to be safer than changing random settings."
+          ],
+          "The useful split is urgency versus scope. A public lead form, checkout path, paid landing page, or high-value SEO page deserves faster triage than a low-priority design annoyance. But urgency does not mean changing five systems at once. The fix path still starts with reproducing the problem, checking recent changes, protecting the current state, and choosing the smallest repair that can be verified.",
+          "If the problem is bigger than one symptom, group the failures by page and behavior. A broken menu, failed form, missing styles, and bad tracking event might share one JavaScript cause. They might also be separate issues exposed by the same update. Grouping keeps the work from becoming a vague rebuild request."
+        ],
+        listTitle: "Triage before repair",
+        checklist: ["Name the page or user path that is broken", "Decide whether leads, checkout, SEO, ads, or trust are affected", "Check recent edits, updates, cache changes, DNS changes, and added scripts", "Capture a screenshot or recording before changing the site", "Fix one reproducible symptom at a time", "Verify the repaired path from the visitor's point of view"],
+        calloutTitle: "Good broken-site triage",
+        callout: "The first goal is not to prove who caused it. The first goal is to make the failure reproducible, reversible, and fixable."
+      },
+      {
         heading: "When to stop DIYing it",
         body: [
           "DIY is fine when the issue is low-risk and you know how to undo your work. It gets dangerous when you are guessing in production, changing multiple things at once, or trying fixes from random forum threads without a backup.",
@@ -232,6 +248,7 @@ export const blogPosts = [
     relatedIntro: "Broken-site requests often move into one of these hands-on service areas after the first symptom is clear.",
     links: [
       ["Website Fixes", "/services/website-fixes/", "Start here for broken layouts, forms, modals, embeds, mobile issues, scripts, and bugs that need practical debugging."],
+      ["Fix My Broken Website", "/blog/fix-my-broken-website/", "Use this deeper triage guide when the site is already broken and you need to decide what to check, protect, and fix first."],
       ["AI-Built Website Cleanup", "/services/ai-built-website-cleanup/", "Use this when ChatGPT, Codex, Lovable, Bolt, Cursor, Replit, v0, or another AI builder produced something close but fragile, broken, or not ready to launch."],
       ["WordPress Support", "/services/wordpress-support/", "Use this when the issue involves WordPress, plugins, themes, Elementor, PHP, CSS, JavaScript, or page builder cleanup."],
       ["Security, Hosting & Reliability", "/services/security-hosting-reliability/", "Use this when the symptom points toward DNS, SSL, redirects, Cloudflare, caching, hosting, or server reliability."],
@@ -243,6 +260,7 @@ export const blogPosts = [
     contextIntro: "A broken-site request usually gets clearer after the first symptom is sorted. These paths help route visible, functional, tracking, and infrastructure problems into the right kind of hands-on help.",
     contextCards: [
       ["Website Fixes", "Use this for broken layouts, failed forms, modals, embeds, JavaScript errors, CSS issues, and other visible website bugs.", "/services/website-fixes/", "View website fixes for broken layouts, forms, modals, embeds, and website bugs"],
+      ["Fix My Broken Website", "Use this when the request is urgent enough that you need triage, risk control, and a practical repair order before touching production.", "/blog/fix-my-broken-website/", "Read the fix my broken website triage guide"],
       ["AI-Built Website Cleanup", "Use this when the broken page or prototype came from an AI builder and now needs routing, code, deployment, tracking, forms, or SEO cleanup.", "/services/ai-built-website-cleanup/", "View AI-built website cleanup"],
       ["WordPress Support", "Use this when the problem lives in WordPress, Elementor, a theme, a plugin update, PHP, page builder settings, or cached assets.", "/services/wordpress-support/", "View WordPress support for plugins, themes, Elementor, PHP, and site cleanup"],
       ["Security, Hosting & Reliability", "Use this when the symptom points to DNS, SSL, redirects, Cloudflare, cache, hosting, downtime, or server-level behavior.", "/services/security-hosting-reliability/", "View hosting, DNS, SSL, cache, and reliability support"],
@@ -251,6 +269,7 @@ export const blogPosts = [
     otherHeading: "Not the broken-site problem you meant?",
     otherIntro: "These narrower notes route common symptoms into more specific fix paths.",
     otherItems: [
+      ["Fix my broken website", "A deeper triage guide for deciding what to check, protect, and fix first when the site is already failing.", "/blog/fix-my-broken-website/", "Read the broken-site triage guide"],
       ["Broken layouts or mobile issues", "Sections overlap, spacing shifts, buttons move, or the mobile view falls apart.", "/blog/broken-layouts-mobile-website-fixes/", "Read the layout post"],
       ["Forms and modals not working", "Interactive pieces stop working, tracking interferes, or third-party widgets behave strangely.", "/blog/forms-modals-not-working/", "Read the forms post"],
       ["Security, hosting, DNS, SSL, and cache", "The site is not loading, redirects loop, SSL warnings show, or Cloudflare/cache behavior is confusing.", "/services/security-hosting-reliability/", "View reliability support"],
@@ -260,6 +279,145 @@ export const blogPosts = [
       heading: "Something broken on your site?",
       copy: "Send the URL, what broke, what should happen instead, and anything that changed recently. I will trace the symptom and identify the smallest practical next move.",
       label: "Get Help Fixing This",
+      secondaryLabel: "View Website Fixes",
+      secondaryHref: "/services/website-fixes/"
+    }
+  },
+  {
+    slug: "fix-my-broken-website",
+    title: "Fix My Broken Website: Triage Order and Repair Notes",
+    h1: "Fix My Broken Website: What to Check Before You Change Anything",
+    meta: "A practical broken website triage guide covering broken pages, forms, checkout, WordPress, JavaScript, CSS, cache, DNS, hosting, tracking, and safe repair order.",
+    eyebrow: "Broken website triage",
+    summary: "When the site is already broken, the useful move is to protect the current state, reproduce the symptom, identify the affected business path, and fix the smallest verified cause.",
+    problemType: "Something broke",
+    relatedService: "website-fixes",
+    category: "start-here",
+    tags: ["website-fixes", "production-debugging", "wordpress", "javascript", "forms", "ecommerce"],
+    heroCta: "Get Broken Website Help",
+    heroSecondary: "Start With the Parent Guide",
+    heroSecondaryHref: "/blog/something-broke-on-your-website/",
+    cta: "Send the broken URL, what should happen, what happens now, when it started, and anything that changed recently.",
+    exampleBlock: {
+      heading: "Broken-site repair should have an order",
+      copy: "The safest path is usually capture, reproduce, isolate, change one thing, verify the user path, then document what still needs watching.",
+      href: "/contact/",
+      label: "Send the broken website details",
+      title: "Open the contact request form for broken website repair help"
+    },
+    intro: [
+      [
+        "If you are searching for ",
+        { text: "fix my broken website", href: "/services/website-fixes/", title: "View hands-on website fix help" },
+        ", the site probably does not need another generic checklist. It needs a careful first move. The page may look broken, a form may be failing, checkout may be stuck, WordPress may have changed after an update, or a script may be breaking only on one device."
+      ],
+      "The mistake is treating every broken-site issue like the same problem. A page with missing CSS, a checkout that cannot submit, a lead form that says success but sends nothing, and a site that redirects in a loop all need different checks. They also carry different business risk.",
+      [
+        "This guide is the focused child of ",
+        { text: "Something Broke on Your Website", href: "/blog/something-broke-on-your-website/", title: "Read the broader broken website troubleshooting guide" },
+        ". Use the parent guide to understand the broad symptom buckets. Use this page when you need a practical repair order and a cleaner handoff to a website fixer."
+      ]
+    ],
+    sections: [
+      {
+        heading: "Protect the current state first",
+        body: [
+          "Before making changes, capture what is happening now. That does not have to be complicated: take screenshots, record the failed action, copy the exact URL, note the browser and device, and write down the time you saw the issue. If the site has backups, staging, Git, hosting snapshots, or a recent export, identify what restore points exist before editing production.",
+          "This matters because broken websites often get worse when people try several fixes at once. A cache purge, plugin rollback, page edit, DNS change, and script removal may each be reasonable in isolation, but together they destroy the trail. When the fix fails, nobody knows which change helped or hurt."
+        ],
+        listTitle: "Capture before touching the site",
+        checklist: ["Exact URL and affected page path", "Screenshot or screen recording", "Device, browser, and logged-in/logged-out state", "Time the issue started or was noticed", "Recent plugin, theme, CMS, hosting, DNS, cache, content, or script changes", "Backup, staging, deployment, or rollback options"],
+        calloutTitle: "Production rule",
+        callout: "If you cannot explain how to undo the next change, slow down before making it."
+      },
+      {
+        heading: "Separate public risk from annoyance",
+        body: [
+          "A broken website does not always mean emergency. The right response depends on what the failure affects. A slightly awkward spacing issue on a low-traffic page is not the same as a dead lead form, broken checkout, indexable SEO page returning an error, or paid campaign page with a failed CTA.",
+          "Sort the issue by business path first. If the site can still take leads, accept orders, load important pages, and track critical actions, the repair can be calmer. If the failure blocks revenue, paid traffic, organic landing pages, customer trust, or reporting, the first fix should stabilize the path that matters most."
+        ],
+        listTitle: "Prioritize broken paths",
+        checklist: ["Lead form or quote request path", "Checkout, cart, booking, or payment flow", "Homepage or high-value service page", "Paid traffic landing page", "Organic page that earns impressions or clicks", "Tracking, CRM, or reporting handoff", "Visible layout issue that harms trust"]
+      },
+      {
+        heading: "Use the symptom to pick the first tool",
+        body: [
+          "The first tool depends on the symptom. A layout problem usually starts with CSS inspection, template output, builder settings, and cached assets. A button or menu that does nothing usually starts with browser console errors, JavaScript order, plugin conflicts, or blocked scripts. A form failure starts with submission testing, email or CRM destination checks, validation, redirects, spam protection, and tracking.",
+          "Server-level failures need a different lane: HTTP status codes, redirect chains, SSL mode, DNS records, hosting logs, Cloudflare cache, and whether the issue changes by network or device. Pulling a WordPress plugin is not helpful if the real issue is DNS or SSL; changing DNS is not helpful if a page builder section is hiding a button on mobile."
+        ],
+        listTitle: "Match symptom to diagnostic lane",
+        checklist: ["Layout: CSS, template, builder, image constraints, responsive rules", "Interaction: console errors, failed requests, script order, plugins, third-party snippets", "Forms: validation, notifications, SMTP, CRM, webhooks, redirects, thank-you state", "Checkout: cart session, payment gateway, shipping/tax, JavaScript, plugin conflicts", "Tracking: GTM preview, GA4 DebugView, duplicate scripts, event triggers", "Infrastructure: DNS, SSL, redirects, cache, hosting logs, server status"]
+      },
+      {
+        heading: "Check the change timeline",
+        body: [
+          "Most broken-site repairs get easier when the timeline is honest. What changed within the last day, week, or release cycle? A plugin update can change markup or scripts. A cache plugin can serve mismatched assets. A theme update can overwrite style assumptions. A third-party widget can ship a breaking change without anyone touching your site.",
+          "If there is no obvious change, still look for hidden ones: automatic updates, hosting upgrades, expired SSL certificates, browser policy changes, ad or tracking snippets, CRM form edits, DNS changes, or a page builder saving different markup after a small edit."
+        ],
+        listTitle: "Timeline clues",
+        checklist: ["CMS, plugin, theme, app, or extension updates", "Page content, builder, menu, or template edits", "Cache, CDN, Cloudflare, or optimization changes", "Tracking, pixel, chat, widget, iframe, or embed changes", "Hosting, PHP, SSL, DNS, redirect, or deployment changes", "CRM, form, email, payment, shipping, or API changes"]
+      },
+      {
+        heading: "Fix one layer and verify the user path",
+        body: [
+          "A broken-site fix is not done when the first visible symptom disappears. It is done when the user path works again. If the issue was a form, submit the form and confirm the destination. If it was checkout, test the cart and order path as far as safely possible. If it was a menu, check desktop and mobile. If tracking mattered, verify the event instead of assuming it fired.",
+          [
+            "This is where ",
+            { text: "production debugging", href: "/skills/production-debugging/", title: "View production debugging support" },
+            " matters. Browser console errors, network requests, logs, cache behavior, plugin output, and tracking tools can show whether the fix actually reached the live visitor path."
+          ]
+        ],
+        listTitle: "Verification checks",
+        checklist: ["Retest the exact URL and action that failed", "Check affected mobile and desktop views", "Confirm forms, checkout, menus, modals, or widgets work end to end", "Clear or bypass cache when stale assets are possible", "Check console and network errors after the fix", "Verify GA4, GTM, pixels, CRM, or email delivery if the business depends on it"],
+        calloutTitle: "Do not stop at looks fixed",
+        callout: "A page can look repaired while forms, tracking, checkout, or CRM handoff are still broken."
+      },
+      {
+        heading: "What to send when you want help",
+        body: [
+          "A strong repair request is short, specific, and evidence-based. It does not need a perfect diagnosis. It needs the broken URL, expected behavior, current behavior, affected devices, timeline, recent changes, and why the issue matters.",
+          "If the site has sensitive client or customer data, avoid sending credentials in the first message. Start with the public symptom, platform context, and priority. Access can be handled once the repair path is clear enough to begin."
+        ],
+        listTitle: "Best first message",
+        checklist: ["The broken URL", "What should happen", "What happens instead", "Screenshot or recording", "Device and browser", "When it started", "Recent changes", "Business impact", "Platform and known plugins/tools", "Whether staging, backups, or hosting access exist"]
+      }
+    ],
+    faqs: [
+      ["How do I fix my broken website first?", "Start by capturing the exact symptom, URL, device, expected behavior, recent changes, and business impact. Then choose the diagnostic lane: layout, interaction, form, checkout, tracking, or infrastructure."],
+      ["Should I update plugins to fix a broken site?", "Only if the evidence points there and you know how to roll back. Updating several plugins blindly can hide the cause or create a second problem."],
+      ["Should I restore a backup?", "A backup can help, but only after you understand what it will overwrite. If leads, orders, content edits, or database changes happened after the backup, restoring can create new damage."],
+      ["Why does my broken website work for me but not visitors?", "That often points to cache, logged-in versus logged-out state, browser differences, device-specific layout, geography/CDN behavior, or a script that loads differently for visitors."],
+      ["What is the fastest useful thing to send a website fixer?", "Send the URL, what should happen, what happens now, when it started, recent changes, and a screenshot or recording."],
+      ["Can The Web Guy fix a broken website without rebuilding it?", "Often, yes. Many broken-site problems are smaller than a rebuild: CSS, JavaScript, plugin, template, form, cache, tracking, API, or hosting fixes."]
+    ],
+    links: [
+      ["Parent Broken Website Guide", "/blog/something-broke-on-your-website/", "Use the broader guide to compare visual, functional, tracking, and infrastructure symptoms."],
+      ["Website Fixes", "/services/website-fixes/", "Use this when the broken site needs hands-on debugging and repair."],
+      ["Production Debugging", "/skills/production-debugging/", "Use this when console errors, network failures, live scripts, cache, or real browser behavior need inspection."],
+      ["WordPress Support", "/services/wordpress-support/", "Use this when the broken behavior lives inside WordPress, plugins, themes, page builders, or PHP/CSS/JavaScript."],
+      ["Security, Hosting & Reliability", "/services/security-hosting-reliability/", "Use this when DNS, SSL, redirects, cache, Cloudflare, hosting, or server behavior may be involved."]
+    ],
+    contextHeading: "Broken website repair paths",
+    contextIntro: "Use the path that matches what failed. Most repairs get easier once the symptom is routed to the right layer.",
+    contextCards: [
+      ["Website Fixes", "Best fit for broken pages, layouts, CSS, JavaScript, forms, modals, embeds, mobile issues, and visible bugs.", "/services/website-fixes/", "View website fixes"],
+      ["Production Debugging", "Best fit when the repair needs console errors, network requests, logs, cache checks, script isolation, and careful live-site verification.", "/skills/production-debugging/", "View production debugging"],
+      ["WordPress Plugin Conflict Help", "Best fit when the problem started after a plugin update or two plugins appear to fight over scripts, forms, checkout, styles, or admin behavior.", "/services/wordpress-plugin-conflict-help/", "View plugin conflict help"],
+      ["API & Integrations", "Best fit when forms, CRMs, webhooks, ecommerce systems, or data handoffs are part of what broke.", "/services/api-integrations/", "View API integration help"],
+      ["Analytics & Tracking", "Best fit when the page looks repaired but GA4, GTM, pixels, conversion events, or reports still cannot be trusted.", "/services/analytics-tracking/", "View analytics and tracking help"]
+    ],
+    otherHeading: "Related broken-site notes",
+    otherIntro: "If the symptom is narrower than a whole broken website, these pages route the issue more precisely.",
+    otherItems: [
+      ["JavaScript issues on websites", "Menus, buttons, forms, scripts, and interactive pieces that fail because browser JavaScript is broken.", "/blog/javascript-issues-website-troubleshooting/", "Read JavaScript issue troubleshooting"],
+      ["CSS and JavaScript bugs", "Front-end bug notes for CSS conflicts, console errors, script order, and browser behavior.", "/blog/css-javascript-errors-website-bugs/", "Read CSS and JavaScript bug help"],
+      ["Forms and modals not working", "Lead forms, popups, validation, redirects, hidden fields, and thank-you states that fail.", "/blog/forms-modals-not-working/", "Read forms and modals help"],
+      ["Broken layouts or mobile issues", "Responsive layout, overlapping sections, mobile spacing, and visual breakage.", "/blog/broken-layouts-mobile-website-fixes/", "Read layout troubleshooting"]
+    ],
+    finalCta: {
+      heading: "Need a broken website fixed?",
+      copy: "Send the broken URL, what should happen, what happens now, when it started, and what changed recently. I will trace the issue in the safest practical order.",
+      label: "Get Broken Website Help",
       secondaryLabel: "View Website Fixes",
       secondaryHref: "/services/website-fixes/"
     }
@@ -882,9 +1040,9 @@ export const blogPosts = [
   },
   {
     slug: "css-javascript-errors-website-bugs",
-    title: "CSS and JavaScript Bug Fix Help | The Web Guy",
-    h1: "CSS and JavaScript Bugs Breaking Your Website? What to Check First",
-    meta: "Menus, buttons, layouts, forms, or scripts stopped working? Get practical CSS and JavaScript bug-fix help from The Web Guy.",
+    title: "JavaScript Issues and CSS Bug Fix Help | The Web Guy",
+    h1: "JavaScript Issues and CSS Bugs Breaking Your Website? What to Check First",
+    meta: "Troubleshoot JavaScript issues, CSS bugs, broken menus, failed buttons, layout problems, forms, console errors, script conflicts, and front-end website bugs.",
     eyebrow: "CSS and JavaScript",
     summary: "Menus stop opening, buttons do nothing, styles change unexpectedly, or interactive pieces work on one page and fail on another.",
     problemType: "Something broke",
@@ -906,12 +1064,17 @@ export const blogPosts = [
       ["Common signs", [
         "Dropdowns do not open, sliders freeze, modals fail, buttons stop responding, ",
         { text: "CSS looks different after an update", href: "/services/website-fixes/", title: "View website fixes for CSS, JavaScript, menus, modals, and visible bugs" },
-        ", or console errors appear when the broken feature loads."
+        ", scripts throw console errors, or one page behaves differently than the rest of the site."
       ]],
       ["Likely causes", [
         "JavaScript bugs often come from duplicate libraries, ",
         { text: "plugin updates", href: "/services/wordpress-plugin-conflict-help/", title: "View WordPress plugin conflict help" },
-        ", script order, missing dependencies, third-party snippets, minification, cache issues, or code written for an old template."
+        ", script order, missing dependencies, third-party snippets, minification, cache issues, blocked files, or code written for an old template. CSS bugs often come from specificity conflicts, stale assets, missing wrappers, responsive breakpoints, injected styles, or builder output that changed shape."
+      ]],
+      ["When it is really a JavaScript issue", [
+        "A layout can look like a CSS bug when JavaScript never finished running. If the script that opens a menu, sizes a carousel, validates a form, mounts a widget, or swaps a class fails early, the page may freeze in a half-styled state. For that specific path, use the deeper ",
+        { text: "JavaScript issues troubleshooting guide", href: "/blog/javascript-issues-website-troubleshooting/", title: "Read the JavaScript issues troubleshooting guide" },
+        " before rewriting CSS."
       ]],
       ["What to send", "Send the page URL, the expected behavior, the broken behavior, recent changes, and screenshots or screen recordings if the bug is interaction-based."],
       ["Practical fix path", [
@@ -922,6 +1085,7 @@ export const blogPosts = [
     ],
     links: [
       ["Website Fixes", "/services/website-fixes/"],
+      ["JavaScript Issue Troubleshooting", "/blog/javascript-issues-website-troubleshooting/"],
       ["Production Debugging", "/skills/production-debugging/"],
       ["AI-Built Cleanup", "/services/ai-built-website-cleanup/"],
       ["Front-End Help", "/services/react-static-sites/"]
@@ -930,6 +1094,7 @@ export const blogPosts = [
     contextIntro: "Front-end bugs can be visual, functional, script-related, or deployment-related. These pages route the issue based on what is actually failing in the browser.",
     contextCards: [
       ["Website Fixes", "Use this for broken menus, modals, buttons, CSS conflicts, page-specific bugs, and scripts that stop a normal site action.", "/services/website-fixes/", "View website fixes for CSS, JavaScript, menus, modals, and bugs"],
+      ["JavaScript Issue Troubleshooting", "Use this when the browser console, failed requests, script order, duplicate libraries, or third-party snippets are likely behind the symptom.", "/blog/javascript-issues-website-troubleshooting/", "Read JavaScript issue troubleshooting"],
       ["Production Debugging", "Use this when the problem needs console errors, network checks, script isolation, cache review, or production-safe troubleshooting.", "/skills/production-debugging/", "View production debugging for CSS and JavaScript website bugs"],
       ["AI-Built Cleanup", "Use this when generated CSS, JavaScript, routing, components, or state logic are close but unreliable on the real site.", "/services/ai-built-website-cleanup/", "View AI-built website cleanup for CSS and JavaScript bugs"],
       ["React & Static Sites", "Use this when the bug lives in a component, static build, front-end route, JavaScript behavior, or lightweight site deployment.", "/services/react-static-sites/", "View React and static site front-end support"],
@@ -939,6 +1104,144 @@ export const blogPosts = [
       heading: "Need this CSS or JavaScript bug fixed?",
       copy: "Send the page URL, what stopped working, and what should happen instead. I will check console errors, script conflicts, CSS rules, and recent changes before changing anything.",
       label: "Fix My Website Issue",
+      secondaryLabel: "View Website Fixes",
+      secondaryHref: "/services/website-fixes/"
+    }
+  },
+  {
+    slug: "javascript-issues-website-troubleshooting",
+    title: "JavaScript Issues on Websites: Practical Troubleshooting",
+    h1: "JavaScript Issues on Websites: How to Find the Break Without Guessing",
+    meta: "Troubleshoot JavaScript issues on websites, including console errors, failed requests, script order, duplicate libraries, plugins, third-party snippets, forms, menus, and cache.",
+    eyebrow: "JavaScript issues",
+    summary: "JavaScript issues usually show up as broken menus, dead buttons, forms that never finish, widgets that fail to load, or features that work on one page and fail on another.",
+    problemType: "Something broke",
+    relatedService: "website-fixes",
+    category: "front-end-layout",
+    tags: ["javascript", "website-fixes", "production-debugging", "forms", "plugin-conflicts"],
+    heroCta: "Fix the JavaScript Issue",
+    heroSecondary: "View CSS and JS Bug Help",
+    heroSecondaryHref: "/blog/css-javascript-errors-website-bugs/",
+    cta: "Send the URL, broken action, expected action, browser/device, console error if available, and anything that changed recently.",
+    exampleBlock: {
+      heading: "JavaScript issues leave evidence",
+      copy: "The browser usually gives clues: console errors, failed network requests, missing files, blocked third-party scripts, duplicate libraries, or event handlers that never attach.",
+      href: "/contact/",
+      label: "Send the JavaScript issue",
+      title: "Open the contact request form for JavaScript troubleshooting help"
+    },
+    intro: [
+      "JavaScript issues are frustrating because the page can look mostly fine while the important action fails. A menu will not open. A form spins forever. A booking widget never loads. A button looks clickable but does nothing. A checkout step freezes. A tracking event disappears. The visual page is there, but the behavior is broken.",
+      [
+        "This page is a focused child of ",
+        { text: "CSS and JavaScript bug fix help", href: "/blog/css-javascript-errors-website-bugs/", title: "Read the broader CSS and JavaScript bug guide" },
+        ". Use that parent page when the issue could be CSS or JavaScript. Use this guide when the symptom points more directly at browser behavior, scripts, events, requests, plugins, or third-party code."
+      ],
+      "The goal is not to rewrite every script. The goal is to reproduce the broken action, find the first failing layer, and change the smallest piece that restores the user path without creating a second bug."
+    ],
+    sections: [
+      {
+        heading: "Start with the action that fails",
+        body: [
+          "JavaScript troubleshooting should begin with a verb, not a vague page label. What action fails? Open the menu. Submit the form. Click the tab. Add to cart. Load the map. Advance checkout. Fire the tracking event. That action gives you a repeatable test.",
+          "Once the action is repeatable, check whether the failure is global or local. If every menu on the site fails, look at global scripts, theme files, cached assets, optimization settings, and shared dependencies. If one page fails, look at page-specific embeds, form markup, builder output, custom snippets, or content that changed."
+        ],
+        listTitle: "Define the failing action",
+        checklist: ["What action should the visitor be able to take?", "What happens instead?", "Does the failure happen on every page or one URL?", "Does it happen on mobile, desktop, or both?", "Does it happen logged out?", "Did the action work before a recent update, edit, deployment, or script change?"],
+        calloutTitle: "Useful test",
+        callout: "If you cannot repeat the broken action, you cannot confidently verify the repair."
+      },
+      {
+        heading: "Read the browser console carefully",
+        body: [
+          "The console is not a magic answer, but it is often the fastest clue. A single uncaught error can stop later scripts from running. A missing dependency can prevent a plugin from initializing. A blocked third-party script can break an embedded form or widget. A syntax error can mean minification or deployment changed the file.",
+          "Do not copy the first red line and assume it is the root cause. Look for the earliest relevant error on page load and the error that appears when you perform the broken action. Separate harmless warnings from errors that stop execution."
+        ],
+        listTitle: "Console clues",
+        checklist: ["Uncaught TypeError or ReferenceError", "Missing function or undefined variable", "Duplicate library warnings", "Content Security Policy blocks", "Mixed-content blocks", "Syntax errors from minified files", "Third-party script failures", "Errors that appear only after clicking or submitting"]
+      },
+      {
+        heading: "Check network requests and missing assets",
+        body: [
+          "Many JavaScript issues are not inside the script logic. The browser may be trying to load a file that returns 404, 403, 500, blocked, or the wrong MIME type. A plugin or build system might reference an old hashed filename. A CDN may serve stale JavaScript while the HTML expects a newer version.",
+          "Network inspection also helps with forms, APIs, and widgets. If a form never finishes, check whether the request is sent, what response comes back, whether validation fails, and whether a redirect or CORS issue stops the handoff."
+        ],
+        listTitle: "Network checks",
+        checklist: ["404 or 500 JavaScript files", "Blocked scripts or wrong MIME type", "Old cached assets with new HTML", "Failed API or form submission requests", "CORS, authentication, or forbidden responses", "Slow third-party scripts delaying behavior", "Redirects that change the expected endpoint"]
+      },
+      {
+        heading: "Watch for script order and duplicate libraries",
+        body: [
+          "Script order matters. A custom script that expects jQuery, a slider library, a form object, or a tracking object will fail if it runs before that dependency exists. The reverse can also happen: optimization plugins defer, combine, or move scripts in a way that changes the order that used to work.",
+          "Duplicate libraries create quieter failures. Two versions of jQuery, two form scripts, multiple slider bundles, or duplicate tracking snippets can overwrite handlers, reset state, or attach events twice. The page may half-work until a specific interaction exposes the conflict."
+        ],
+        listTitle: "Order and duplication clues",
+        checklist: ["Optimization plugin changed defer/combine settings", "Theme or plugin update moved scripts", "A custom snippet runs before dependencies load", "Two versions of the same library appear", "Duplicate GTM, pixel, chat, or widget snippets exist", "Event handlers fire twice or not at all", "Only pages with a certain embed break"]
+      },
+      {
+        heading: "Separate WordPress/plugin issues from custom code",
+        body: [
+          [
+            "On WordPress sites, JavaScript issues often come from themes, plugins, page builders, shortcodes, cache tools, and snippets interacting. A ",
+            { text: "plugin conflict", href: "/services/wordpress-plugin-conflict-help/", title: "View WordPress plugin conflict help" },
+            " can break front-end behavior without showing a dramatic error in the admin."
+          ],
+          "The safer path is to identify the owner of the failing script before changing settings. Is the file from the theme, a plugin, a builder, GTM, a CDN, a custom snippet, or a third-party widget? Once ownership is clear, the fix can be targeted: update a selector, change load order, adjust an optimization exclusion, repair markup, or escalate to the plugin/vendor if the script itself is broken."
+        ],
+        listTitle: "Find the owner",
+        checklist: ["Theme or child theme file", "Plugin asset", "Page builder output", "Custom code snippet", "GTM or pixel script", "CRM, chat, booking, map, video, or widget embed", "CDN or optimization-generated file"]
+      },
+      {
+        heading: "When JavaScript makes CSS look broken",
+        body: [
+          "Some problems that look like CSS are actually failed JavaScript. Carousels may show all slides stacked because the slider never initialized. Menus may stay hidden because a class was never toggled. Accordions may show collapsed content because the event listener failed. Sticky headers may cover content because scroll calculations did not run.",
+          "Before rewriting styles, confirm whether the script that controls state ran successfully. If CSS is only reflecting the wrong state, changing styles can mask the symptom without fixing the broken behavior."
+        ],
+        listTitle: "JavaScript-controlled layout symptoms",
+        checklist: ["Menu state classes never change", "Carousel or slider markup is uninitialized", "Modal is present but never receives an open class", "Accordion buttons do not toggle ARIA or class state", "Form validation never attaches", "Lazy-loaded images or embeds never initialize", "Sticky or scroll behavior fails after a script error"]
+      },
+      {
+        heading: "Verify the repair like a visitor",
+        body: [
+          "The repair should be checked through the action that failed, not just by refreshing the page once. If the menu failed on mobile, test mobile. If the form failed after submission, submit the form and check the destination. If a script failed only on one service page, test that page and nearby pages that share the same template.",
+          [
+            "For live-site issues, pair the repair with ",
+            { text: "production debugging", href: "/skills/production-debugging/", title: "View production debugging support" },
+            " habits: clear the relevant cache, check console and network again, confirm no new errors appeared, and document the exact change that fixed the behavior."
+          ]
+        ],
+        listTitle: "After-fix checks",
+        checklist: ["Retest the original action", "Check desktop and mobile where relevant", "Confirm console errors are gone or understood", "Check network requests after the action", "Verify form, checkout, widget, or tracking destination", "Clear/bypass cache when assets were involved", "Document what changed and what still needs monitoring"]
+      }
+    ],
+    faqs: [
+      ["What are common JavaScript issues on websites?", "Common issues include console errors, failed network requests, duplicate libraries, script order problems, plugin conflicts, blocked third-party scripts, stale cache, and code that expects old markup."],
+      ["Why does a button do nothing when clicked?", "The click handler may not be attached, a script may have failed earlier, another element may cover the button, a plugin may have changed markup, or a third-party script may be blocking behavior."],
+      ["Can cache cause JavaScript issues?", "Yes. Cache can serve old JavaScript with new HTML or old HTML with new JavaScript, especially after builds, plugin updates, minification, CDN changes, or optimization settings."],
+      ["Can tracking scripts break JavaScript?", "Yes. Duplicated or poorly placed tracking scripts can interfere with events, forms, performance, redirects, and other scripts."],
+      ["Should I disable plugins to find a JavaScript issue?", "Only with caution. Disabling plugins randomly on production can create more damage. It is better to identify the script owner and use staging or a controlled troubleshooting path when possible."],
+      ["What should I send for JavaScript troubleshooting?", "Send the URL, broken action, expected action, browser/device, screenshots or recording, console error if available, and recent changes."]
+    ],
+    links: [
+      ["CSS and JavaScript Bug Help", "/blog/css-javascript-errors-website-bugs/", "Use the parent page when the issue could be visual CSS, browser JavaScript, or both."],
+      ["Website Fixes", "/services/website-fixes/", "Use this when the JavaScript issue needs a hands-on repair on the actual site."],
+      ["Production Debugging", "/skills/production-debugging/", "Use this when the issue needs console, network, cache, script, and live behavior inspection."],
+      ["WordPress Plugin Conflict Help", "/services/wordpress-plugin-conflict-help/", "Use this when a plugin update or conflict may be breaking front-end scripts."],
+      ["API & Integrations", "/services/api-integrations/", "Use this when failed JavaScript requests involve forms, CRMs, webhooks, or third-party data handoffs."]
+    ],
+    contextHeading: "Where JavaScript troubleshooting usually leads",
+    contextIntro: "Script failures can be a front-end bug, a WordPress/plugin issue, an integration problem, or a tracking conflict.",
+    contextCards: [
+      ["Website Fixes", "Use this for buttons, menus, modals, forms, embeds, and page behavior that needs direct repair.", "/services/website-fixes/", "View website fixes"],
+      ["Production Debugging", "Use this for console errors, network inspection, script isolation, cache behavior, and live-site troubleshooting.", "/skills/production-debugging/", "View production debugging"],
+      ["WordPress Support", "Use this when the script issue comes from a theme, plugin, page builder, shortcode, optimization plugin, or injected snippet.", "/services/wordpress-support/", "View WordPress support"],
+      ["Forms and Modals Not Working", "Use this when JavaScript is breaking lead forms, popups, validation, redirects, or thank-you states.", "/blog/forms-modals-not-working/", "Read forms and modal troubleshooting"],
+      ["Tracking Scripts and Pixels", "Use this when GA4, GTM, pixels, or conversion scripts interfere with page behavior or fail to measure it.", "/blog/tracking-scripts-pixels-broken/", "Read tracking script troubleshooting"]
+    ],
+    finalCta: {
+      heading: "Need a JavaScript issue fixed?",
+      copy: "Send the URL, broken action, expected action, browser/device, console error if you have it, and recent changes. I will trace the failure before changing code.",
+      label: "Fix the JavaScript Issue",
       secondaryLabel: "View Website Fixes",
       secondaryHref: "/services/website-fixes/"
     }

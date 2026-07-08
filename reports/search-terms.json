@@ -1,0 +1,5155 @@
+{
+  "generatedAt": "2026-07-08T06:43:37.605Z",
+  "extractionDate": "2026-07-08",
+  "source": {
+    "tool": "Google Search Console Performance report",
+    "property": "sc-domain:thewebguy.app",
+    "searchType": "Web",
+    "metrics": [
+      "clicks",
+      "impressions",
+      "ctr",
+      "position"
+    ],
+    "scoreDateDescription": "Search Console data end date is recorded on each query as scoreDate. Extraction ran on 2026-07-08."
+  },
+  "pages": [
+    {
+      "path": "/",
+      "url": "https://thewebguy.app/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 3,
+        "impressions": 195,
+        "ctr": 1.5,
+        "position": 8.3
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 7,
+        "total": 7
+      },
+      "queries": [
+        {
+          "query": "web guy",
+          "clicks": 1,
+          "impressions": 12,
+          "ctr": 8.3,
+          "position": 16.2,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "the web guy",
+          "clicks": 0,
+          "impressions": 69,
+          "ctr": 0,
+          "position": 7.2,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "thewebguy",
+          "clicks": 0,
+          "impressions": 42,
+          "ctr": 0,
+          "position": 4.5,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "the website guy",
+          "clicks": 0,
+          "impressions": 5,
+          "ctr": 0,
+          "position": 52.8,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "webguy",
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 19.2,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "the web guys",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 35.5,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "louisville web guy",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 38,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 7,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/about/",
+      "url": "https://thewebguy.app/about/",
+      "sitemapLastmod": "2026-06-16",
+      "totals": {
+        "clicks": 2,
+        "impressions": 36,
+        "ctr": 5.6,
+        "position": 19.2
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 6,
+        "total": 6
+      },
+      "queries": [
+        {
+          "query": "the web guy",
+          "clicks": 1,
+          "impressions": 8,
+          "ctr": 12.5,
+          "position": 5.8,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "the website guy",
+          "clicks": 0,
+          "impressions": 8,
+          "ctr": 0,
+          "position": 52.1,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "thewebguy",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 2.7,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "webguy",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 30,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "web guy",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 3,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "your wp guy",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 73,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 6,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/blog/",
+      "url": "https://thewebguy.app/blog/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 9.6
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/contact/",
+      "url": "https://thewebguy.app/contact/",
+      "sitemapLastmod": "2026-06-29",
+      "totals": {
+        "clicks": 0,
+        "impressions": 11,
+        "ctr": 0,
+        "position": 4.9
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 1,
+        "total": 1
+      },
+      "queries": [
+        {
+          "query": "thewebguy",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 9,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 1,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/faq/",
+      "url": "https://thewebguy.app/faq/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0,
+        "position": 4.1
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/",
+      "url": "https://thewebguy.app/fix-notes/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 1,
+        "total": 1
+      },
+      "queries": [
+        {
+          "query": "fix notes",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 10,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 1,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/locations/",
+      "url": "https://thewebguy.app/locations/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 13,
+        "ctr": 0,
+        "position": 17.6
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 2,
+        "total": 2
+      },
+      "queries": [
+        {
+          "query": "website guy in rockford",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 85,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "central il web maintenance",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 92,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 2,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/privacy/",
+      "url": "https://thewebguy.app/privacy/",
+      "sitemapLastmod": "2026-06-16",
+      "totals": {
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/rate/",
+      "url": "https://thewebguy.app/rate/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 3.7
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/",
+      "url": "https://thewebguy.app/services/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 5.8
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/skills/",
+      "url": "https://thewebguy.app/skills/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 12,
+        "ctr": 0,
+        "position": 12.4
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/terms/",
+      "url": "https://thewebguy.app/terms/",
+      "sitemapLastmod": "2026-06-12",
+      "totals": {
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/blog/ai-built-website-not-ready-to-launch/",
+      "url": "https://thewebguy.app/blog/ai-built-website-not-ready-to-launch/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/blog/broken-layouts-mobile-website-fixes/",
+      "url": "https://thewebguy.app/blog/broken-layouts-mobile-website-fixes/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 3,
+        "impressions": 43,
+        "ctr": 7,
+        "position": 9.3
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 4,
+        "total": 4
+      },
+      "queries": [
+        {
+          "query": "is it okay?",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 6,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "nu",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 6,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "fix layout",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 37,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "technical seo issues caused by flat site structure",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 77,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 4,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/blog/cms-plugin-theme-weirdness/",
+      "url": "https://thewebguy.app/blog/cms-plugin-theme-weirdness/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/blog/css-javascript-errors-website-bugs/",
+      "url": "https://thewebguy.app/blog/css-javascript-errors-website-bugs/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 100,
+        "ctr": 0,
+        "position": 28.4
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 11,
+        "end": 16,
+        "total": 16
+      },
+      "queries": [
+        {
+          "query": "javascript issues",
+          "clicks": 0,
+          "impressions": 35,
+          "ctr": 0,
+          "position": 32.1,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "css bugs",
+          "clicks": 0,
+          "impressions": 6,
+          "ctr": 0,
+          "position": 33.2,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "javascript browser issues",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 29,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "css bug",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 10,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "css troubleshooting",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 17,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "fixing crawling issues in javascript applications",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 43,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "css errors",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 54,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "issues with broken external javascript and css files",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 23,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "issues with broken internal javascript and css files",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 26,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "js bug",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 27,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "css issues",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 28,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "javascript bug",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 29,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "issues with javascript",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 34,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "css error sorry",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 38,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "css problems",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 45,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "css problems and solutions",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 49,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 16,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/blog/embeds-iframes-widgets-breaking-pages/",
+      "url": "https://thewebguy.app/blog/embeds-iframes-widgets-breaking-pages/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/blog/forms-modals-not-working/",
+      "url": "https://thewebguy.app/blog/forms-modals-not-working/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/blog/google-ads-conversion-tracking-not-working/",
+      "url": "https://thewebguy.app/blog/google-ads-conversion-tracking-not-working/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/blog/gtm-form-tracking-ga4/",
+      "url": "https://thewebguy.app/blog/gtm-form-tracking-ga4/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/blog/need-a-page-live-fast/",
+      "url": "https://thewebguy.app/blog/need-a-page-live-fast/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0,
+        "position": 10.9
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/blog/seo-audit-done-now-implement-it/",
+      "url": "https://thewebguy.app/blog/seo-audit-done-now-implement-it/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 1,
+        "impressions": 17,
+        "ctr": 5.9,
+        "position": 22.5
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 2,
+        "total": 2
+      },
+      "queries": [
+        {
+          "query": "seo audit fix",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 77,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "seo audit report and fix",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 88,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 2,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/blog/something-broke-on-your-website/",
+      "url": "https://thewebguy.app/blog/something-broke-on-your-website/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 97,
+        "ctr": 0,
+        "position": 27.4
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 9,
+        "total": 9
+      },
+      "queries": [
+        {
+          "query": "fix my broken website",
+          "clicks": 0,
+          "impressions": 30,
+          "ctr": 0,
+          "position": 38.4,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "my site breaks on www",
+          "clicks": 0,
+          "impressions": 6,
+          "ctr": 0,
+          "position": 10.2,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "website is broken",
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 44,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "my website is broken",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 33,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "broken website",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 45.3,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "page has broken javascript",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 38.5,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "broken web",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 47,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "no still not working",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 10,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "broken webpage",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 36,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 9,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/blog/topological-relevance-vector-seo/",
+      "url": "https://thewebguy.app/blog/topological-relevance-vector-seo/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/blog/tracking-scripts-pixels-broken/",
+      "url": "https://thewebguy.app/blog/tracking-scripts-pixels-broken/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/blog/website-data-systems-not-connecting/",
+      "url": "https://thewebguy.app/blog/website-data-systems-not-connecting/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 1,
+        "impressions": 23,
+        "ctr": 4.3,
+        "position": 10.7
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 1,
+        "total": 1
+      },
+      "queries": [
+        {
+          "query": "troubleshooting broken ecommerce tracking",
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 14.2,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 1,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/blog/woocommerce-checkout-not-working/",
+      "url": "https://thewebguy.app/blog/woocommerce-checkout-not-working/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/blog/wordpress-site-broken-after-plugin-update/",
+      "url": "https://thewebguy.app/blog/wordpress-site-broken-after-plugin-update/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/added-floating-click-to-call-review-badge-support/",
+      "url": "https://thewebguy.app/fix-notes/added-floating-click-to-call-review-badge-support/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/added-location-specific-proof-content-service-pages/",
+      "url": "https://thewebguy.app/fix-notes/added-location-specific-proof-content-service-pages/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/audited-wordpress-site-remaining-malware-indicators/",
+      "url": "https://thewebguy.app/fix-notes/audited-wordpress-site-remaining-malware-indicators/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/built-role-aware-operations-dashboard-prototype/",
+      "url": "https://thewebguy.app/fix-notes/built-role-aware-operations-dashboard-prototype/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/built-static-site-lead-handler-contact-popup-flow/",
+      "url": "https://thewebguy.app/fix-notes/built-static-site-lead-handler-contact-popup-flow/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/checked-suspicious-wordpress-users-after-site-compromise/",
+      "url": "https://thewebguy.app/fix-notes/checked-suspicious-wordpress-users-after-site-compromise/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/cleaned-up-ai-built-page-easier-to-use-maintain/",
+      "url": "https://thewebguy.app/fix-notes/cleaned-up-ai-built-page-easier-to-use-maintain/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/cleaned-up-crawl-paths-google-slow-to-index/",
+      "url": "https://thewebguy.app/fix-notes/cleaned-up-crawl-paths-google-slow-to-index/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/cleaned-up-faq-sections-across-wordpress-pages/",
+      "url": "https://thewebguy.app/fix-notes/cleaned-up-faq-sections-across-wordpress-pages/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/cleaned-up-mobile-page-too-many-competing-sections/",
+      "url": "https://thewebguy.app/fix-notes/cleaned-up-mobile-page-too-many-competing-sections/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/cleaned-up-wordpress-assets-slowing-down-service-page/",
+      "url": "https://thewebguy.app/fix-notes/cleaned-up-wordpress-assets-slowing-down-service-page/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/cleaned-wordpress-install-database-after-malware/",
+      "url": "https://thewebguy.app/fix-notes/cleaned-wordpress-install-database-after-malware/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/completed-requested-site-modifications-output-review/",
+      "url": "https://thewebguy.app/fix-notes/completed-requested-site-modifications-output-review/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/fixed-contact-form-email-delivery-authenticated-sending/",
+      "url": "https://thewebguy.app/fix-notes/fixed-contact-form-email-delivery-authenticated-sending/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/fixed-lead-tracking-contact-form-hard-to-measure/",
+      "url": "https://thewebguy.app/fix-notes/fixed-lead-tracking-contact-form-hard-to-measure/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/fixed-mobile-bio-popup-scrolling-project-image-quality/",
+      "url": "https://thewebguy.app/fix-notes/fixed-mobile-bio-popup-scrolling-project-image-quality/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/fixed-mobile-layout-below-tablet-width/",
+      "url": "https://thewebguy.app/fix-notes/fixed-mobile-layout-below-tablet-width/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/improved-internal-links-service-pages-supporting-content/",
+      "url": "https://thewebguy.app/fix-notes/improved-internal-links-service-pages-supporting-content/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/migrated-site-content-between-domains-without-rebuild/",
+      "url": "https://thewebguy.app/fix-notes/migrated-site-content-between-domains-without-rebuild/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/optimized-shopify-theme-page-speed-core-web-vitals/",
+      "url": "https://thewebguy.app/fix-notes/optimized-shopify-theme-page-speed-core-web-vitals/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/prepared-bulk-location-page-imports-elementor-templates/",
+      "url": "https://thewebguy.app/fix-notes/prepared-bulk-location-page-imports-elementor-templates/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/recovered-multiple-wordpress-sites-after-malware-injection/",
+      "url": "https://thewebguy.app/fix-notes/recovered-multiple-wordpress-sites-after-malware-injection/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/refactored-nextjs-site-static-hosting/",
+      "url": "https://thewebguy.app/fix-notes/refactored-nextjs-site-static-hosting/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/removed-wordpress-backdoors-hardened-file-access/",
+      "url": "https://thewebguy.app/fix-notes/removed-wordpress-backdoors-hardened-file-access/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/repaired-custom-permalinks-location-based-service-pages/",
+      "url": "https://thewebguy.app/fix-notes/repaired-custom-permalinks-location-based-service-pages/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/resolved-unused-instagram-feed-plugin-issue/",
+      "url": "https://thewebguy.app/fix-notes/resolved-unused-instagram-feed-plugin-issue/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/reviewed-builder-based-site-performance-design-constraints/",
+      "url": "https://thewebguy.app/fix-notes/reviewed-builder-based-site-performance-design-constraints/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/reviewed-shopify-theme-files-before-template-changes/",
+      "url": "https://thewebguy.app/fix-notes/reviewed-shopify-theme-files-before-template-changes/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/reviewed-wordpress-site-suspicious-plugin-like-files/",
+      "url": "https://thewebguy.app/fix-notes/reviewed-wordpress-site-suspicious-plugin-like-files/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/stabilized-contact-form-email-sending-without-overcomplicating/",
+      "url": "https://thewebguy.app/fix-notes/stabilized-contact-form-email-sending-without-overcomplicating/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/staged-cleaned-wordpress-recovery-backup-locally/",
+      "url": "https://thewebguy.app/fix-notes/staged-cleaned-wordpress-recovery-backup-locally/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/traced-live-wordpress-display-problem-host-cache/",
+      "url": "https://thewebguy.app/fix-notes/traced-live-wordpress-display-problem-host-cache/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/tracked-live-site-display-issue-server-side-cache/",
+      "url": "https://thewebguy.app/fix-notes/tracked-live-site-display-issue-server-side-cache/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/updated-static-promotion-page-chat-script/",
+      "url": "https://thewebguy.app/fix-notes/updated-static-promotion-page-chat-script/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/uploaded-structured-blog-posts-schema-output/",
+      "url": "https://thewebguy.app/fix-notes/uploaded-structured-blog-posts-schema-output/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/verified-form-to-crm-api-handoff-dropping-fields/",
+      "url": "https://thewebguy.app/fix-notes/verified-form-to-crm-api-handoff-dropping-fields/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/locations/beloit-wi/",
+      "url": "https://thewebguy.app/locations/beloit-wi/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0,
+        "position": 66.4
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 2,
+        "total": 2
+      },
+      "queries": [
+        {
+          "query": "beloit wordpress development company",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 86.3,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "seo beloit wi",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 39,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 2,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/locations/dixon-il/",
+      "url": "https://thewebguy.app/locations/dixon-il/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 27.5
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 1,
+        "total": 1
+      },
+      "queries": [
+        {
+          "query": "thedixon.shopity.com",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 48.5,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 1,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/locations/dubuque-ia/",
+      "url": "https://thewebguy.app/locations/dubuque-ia/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 18,
+        "ctr": 0,
+        "position": 54.4
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 7,
+        "total": 7
+      },
+      "queries": [
+        {
+          "query": "seo services in dubuque",
+          "clicks": 0,
+          "impressions": 5,
+          "ctr": 0,
+          "position": 50,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "affordable seo company dubuque",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 88.7,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "dubuque seo company",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 47,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "best seo for small business in dubuque",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 93.5,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "seo dubuque ia",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 32,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "dubuque seo",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 41,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "seo services dubuque",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 87,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 7,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/locations/freeport-il/",
+      "url": "https://thewebguy.app/locations/freeport-il/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 1,
+        "impressions": 12,
+        "ctr": 8.3,
+        "position": 69.5
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 2,
+        "total": 2
+      },
+      "queries": [
+        {
+          "query": "freeport seo",
+          "clicks": 0,
+          "impressions": 9,
+          "ctr": 0,
+          "position": 90.8,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "seo services in freeport il",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 10,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 2,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/locations/galena-il/",
+      "url": "https://thewebguy.app/locations/galena-il/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 6
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/locations/janesville-wi/",
+      "url": "https://thewebguy.app/locations/janesville-wi/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 17,
+        "ctr": 0,
+        "position": 36.8
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 2,
+        "total": 2
+      },
+      "queries": [
+        {
+          "query": "janesville seo",
+          "clicks": 0,
+          "impressions": 14,
+          "ctr": 0,
+          "position": 37.9,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "seo services in janesville",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 87,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 2,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/locations/madison-wi/",
+      "url": "https://thewebguy.app/locations/madison-wi/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 40.2
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 3,
+        "total": 3
+      },
+      "queries": [
+        {
+          "query": "wordpress help in madison wisconsin",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 47,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "website maintenance madison",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 51,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "website maintenance services madison",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 91,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 3,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/locations/monroe-wi/",
+      "url": "https://thewebguy.app/locations/monroe-wi/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 8.7
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/locations/rockford-il/",
+      "url": "https://thewebguy.app/locations/rockford-il/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 26,
+        "ctr": 0,
+        "position": 46.3
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 5,
+        "total": 5
+      },
+      "queries": [
+        {
+          "query": "rockford il debugging",
+          "clicks": 0,
+          "impressions": 15,
+          "ctr": 0,
+          "position": 33.5,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "seo rockford",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 80,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "search engine optimization rockford",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 97,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "website guy in rockford",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 42,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "seo rockford il",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 71,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 5,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/locations/sterling-il/",
+      "url": "https://thewebguy.app/locations/sterling-il/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/agency-overflow-developer/",
+      "url": "https://thewebguy.app/services/agency-overflow-developer/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 10.6
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/agency-overflow/",
+      "url": "https://thewebguy.app/services/agency-overflow/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 14,
+        "ctr": 0,
+        "position": 23.5
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 1,
+        "total": 1
+      },
+      "queries": [
+        {
+          "query": "what wordpress development agencies can handle our project overflow?",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 46,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 1,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/ai-built-website-cleanup/",
+      "url": "https://thewebguy.app/services/ai-built-website-cleanup/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/analytics-tracking/",
+      "url": "https://thewebguy.app/services/analytics-tracking/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 29
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 1,
+        "total": 1
+      },
+      "queries": [
+        {
+          "query": "web analytics support",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 77,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 1,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/api-integrations/",
+      "url": "https://thewebguy.app/services/api-integrations/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 19,
+        "ctr": 0,
+        "position": 24.8
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 1,
+        "total": 1
+      },
+      "queries": [
+        {
+          "query": "website integration help",
+          "clicks": 0,
+          "impressions": 14,
+          "ctr": 0,
+          "position": 21.7,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 1,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/automation-internal-tools/",
+      "url": "https://thewebguy.app/services/automation-internal-tools/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 35,
+        "ctr": 0,
+        "position": 64.5
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 3,
+        "total": 3
+      },
+      "queries": [
+        {
+          "query": "web services automation",
+          "clicks": 0,
+          "impressions": 29,
+          "ctr": 0,
+          "position": 70.4,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "how to automate web services",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 56.5,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "automated web intelligence",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 89,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 3,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/contact-form-not-working-wordpress/",
+      "url": "https://thewebguy.app/services/contact-form-not-working-wordpress/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/conversion-tracking-troubleshooting/",
+      "url": "https://thewebguy.app/services/conversion-tracking-troubleshooting/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/ecommerce-support/",
+      "url": "https://thewebguy.app/services/ecommerce-support/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 9,
+        "ctr": 0,
+        "position": 20.2
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 1,
+        "total": 1
+      },
+      "queries": [
+        {
+          "query": "hi. i am working with a client who needs help resetting their login to the backend of the site. (romeomeats.com). the site also need to have the shopping cart feature enabled. please let me know how much you charge for this.",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 64,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 1,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/elementor-layout-broken/",
+      "url": "https://thewebguy.app/services/elementor-layout-broken/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 3
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/fix-broken-wordpress-site/",
+      "url": "https://thewebguy.app/services/fix-broken-wordpress-site/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 41
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 3,
+        "total": 3
+      },
+      "queries": [
+        {
+          "query": "fix broken wordpress site",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 33.7,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "wordpress page repair",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 44,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "fix broken wordpress",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 60,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 3,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/fix-wordpress-issue/",
+      "url": "https://thewebguy.app/services/fix-wordpress-issue/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/ga4-gtm-setup-help/",
+      "url": "https://thewebguy.app/services/ga4-gtm-setup-help/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 94
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 1,
+        "total": 1
+      },
+      "queries": [
+        {
+          "query": "how to set up ga4 in gtm",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 94,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 1,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/hourly-wordpress-developer/",
+      "url": "https://thewebguy.app/services/hourly-wordpress-developer/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 30.5
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/landing-pages/",
+      "url": "https://thewebguy.app/services/landing-pages/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 4.1
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/ongoing-webmaster-support/",
+      "url": "https://thewebguy.app/services/ongoing-webmaster-support/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 1,
+        "impressions": 13,
+        "ctr": 7.7,
+        "position": 23
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 2,
+        "total": 2
+      },
+      "queries": [
+        {
+          "query": "part time webmaster services",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 37.3,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "webmaster support",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 61.5,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 2,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/react-static-sites/",
+      "url": "https://thewebguy.app/services/react-static-sites/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 22
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 3,
+        "total": 3
+      },
+      "queries": [
+        {
+          "query": "react statics",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 19,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "static website react",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 27,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "react static website",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 32,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 3,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/schema-implementation-service/",
+      "url": "https://thewebguy.app/services/schema-implementation-service/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 13,
+        "ctr": 0,
+        "position": 60.2
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 3,
+        "total": 3
+      },
+      "queries": [
+        {
+          "query": "schema implementation services",
+          "clicks": 0,
+          "impressions": 10,
+          "ctr": 0,
+          "position": 54.2,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "schema service",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 78.5,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "where can i find a list of services that implement content schema?",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 84,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 3,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/security-hosting-reliability/",
+      "url": "https://thewebguy.app/services/security-hosting-reliability/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/seo-audit-implementation/",
+      "url": "https://thewebguy.app/services/seo-audit-implementation/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/shopify-liquid-support/",
+      "url": "https://thewebguy.app/services/shopify-liquid-support/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/site-speed-performance/",
+      "url": "https://thewebguy.app/services/site-speed-performance/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 13,
+        "ctr": 0,
+        "position": 28.2
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 1,
+        "total": 1
+      },
+      "queries": [
+        {
+          "query": "cross-site cleaning performance comparison",
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 82,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 1,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/technical-seo-developer/",
+      "url": "https://thewebguy.app/services/technical-seo-developer/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 29,
+        "ctr": 0,
+        "position": 35.3
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 6,
+        "total": 6
+      },
+      "queries": [
+        {
+          "query": "seo developer",
+          "clicks": 0,
+          "impressions": 20,
+          "ctr": 0,
+          "position": 30,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "tech seo guy",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 36,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "seo programmer",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 43,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "seo web developer",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 73,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "web developer who does seo",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 86,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "web developer and seo expert",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 91,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 6,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/technical-seo-implementation/",
+      "url": "https://thewebguy.app/services/technical-seo-implementation/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 26,
+        "ctr": 0,
+        "position": 46.3
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 3,
+        "total": 3
+      },
+      "queries": [
+        {
+          "query": "seo the technical guys",
+          "clicks": 0,
+          "impressions": 17,
+          "ctr": 0,
+          "position": 41.5,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "the seo guy",
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 53.8,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "tech seo guy",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 49.5,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 3,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/website-fixes/",
+      "url": "https://thewebguy.app/services/website-fixes/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 28,
+        "ctr": 0,
+        "position": 59.2
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 1,
+        "total": 1
+      },
+      "queries": [
+        {
+          "query": "website fixer",
+          "clicks": 0,
+          "impressions": 19,
+          "ctr": 0,
+          "position": 78.2,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 1,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/website-maintenance-for-agencies/",
+      "url": "https://thewebguy.app/services/website-maintenance-for-agencies/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 6.5
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/website-support-for-agencies/",
+      "url": "https://thewebguy.app/services/website-support-for-agencies/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/white-label-wordpress-support/",
+      "url": "https://thewebguy.app/services/white-label-wordpress-support/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 6
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/woocommerce-checkout-error-fix/",
+      "url": "https://thewebguy.app/services/woocommerce-checkout-error-fix/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/woocommerce-support/",
+      "url": "https://thewebguy.app/services/woocommerce-support/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/wordpress-developer-for-small-tasks/",
+      "url": "https://thewebguy.app/services/wordpress-developer-for-small-tasks/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 53
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 1,
+        "total": 1
+      },
+      "queries": [
+        {
+          "query": "wordpress developer for small business",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 77.5,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 1,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/wordpress-emergency-support/",
+      "url": "https://thewebguy.app/services/wordpress-emergency-support/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/wordpress-help/",
+      "url": "https://thewebguy.app/services/wordpress-help/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/wordpress-maintenance/",
+      "url": "https://thewebguy.app/services/wordpress-maintenance/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 14,
+        "ctr": 0,
+        "position": 84.6
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "3 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 5,
+        "total": 5
+      },
+      "queries": [
+        {
+          "query": "wordpress support maintenance",
+          "clicks": 0,
+          "impressions": 6,
+          "ctr": 0,
+          "position": 85.2,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "wordpress support & maintenance",
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 96,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "wordpress website repair",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 89,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "wordpress support and maintenance",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 96,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "wordpress maintenance and support",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 100,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 5,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/wordpress-plugin-conflict-help/",
+      "url": "https://thewebguy.app/services/wordpress-plugin-conflict-help/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 42,
+        "ctr": 0,
+        "position": 57.3
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 9,
+        "total": 9
+      },
+      "queries": [
+        {
+          "query": "fix wordpress plugin conflict",
+          "clicks": 0,
+          "impressions": 10,
+          "ctr": 0,
+          "position": 72.9,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "fix wordpress plugin conflicts",
+          "clicks": 0,
+          "impressions": 9,
+          "ctr": 0,
+          "position": 72.8,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "plugin conflict oplossen",
+          "clicks": 0,
+          "impressions": 5,
+          "ctr": 0,
+          "position": 37.2,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "wordpress plugin conflicts",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 73,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "wordpress plugin help",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 18,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "wordpress troubleshooting plugin",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 61,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "plugin conflict wordpress",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 72,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "wordpress plugin conflict detector",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 72,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "wordpress plugin conflict",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 84,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 9,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/wordpress-support/",
+      "url": "https://thewebguy.app/services/wordpress-support/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 32,
+        "ctr": 0,
+        "position": 45.3
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 6,
+        "total": 6
+      },
+      "queries": [
+        {
+          "query": "wordpress support technician",
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 57.2,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "wordpress service",
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 78.2,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "paid wordpress support",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 67.7,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "wordpress support engineer",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 81,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "wordpress technician",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 63,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "support engineer wordpress",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 74,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 6,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/wordpress-troubleshooting/",
+      "url": "https://thewebguy.app/services/wordpress-troubleshooting/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/wordpress-website-support/",
+      "url": "https://thewebguy.app/services/wordpress-website-support/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 49.4
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 3,
+        "total": 3
+      },
+      "queries": [
+        {
+          "query": "wordpress website fix service support",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 44,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "wordpress website support service",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 53,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "paid wordpress support",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 58,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 3,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/services/wordpress-white-screen-of-death-fix/",
+      "url": "https://thewebguy.app/services/wordpress-white-screen-of-death-fix/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 43.6
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 3,
+        "total": 3
+      },
+      "queries": [
+        {
+          "query": "wordpress white screen of death fix",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 34.3,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "how to fix the wordpress white screen of death",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 29,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "wordpress white screen of death",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 86,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 3,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/skills/cloudflare-dns-ssl/",
+      "url": "https://thewebguy.app/skills/cloudflare-dns-ssl/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 8
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/skills/crawl-analysis-internal-linking/",
+      "url": "https://thewebguy.app/skills/crawl-analysis-internal-linking/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 18.7
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 1,
+        "total": 1
+      },
+      "queries": [
+        {
+          "query": "crawl analysis",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 36,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 1,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/skills/ga4-gtm-measurement-integrity/",
+      "url": "https://thewebguy.app/skills/ga4-gtm-measurement-integrity/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 25.7
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 1,
+        "total": 1
+      },
+      "queries": [
+        {
+          "query": "pass ga4 variables into gtm",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 90,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 1,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/skills/google-merchant-center-product-data/",
+      "url": "https://thewebguy.app/skills/google-merchant-center-product-data/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 10.5
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/skills/performance-engineering/",
+      "url": "https://thewebguy.app/skills/performance-engineering/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 38
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/skills/production-debugging/",
+      "url": "https://thewebguy.app/skills/production-debugging/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 22,
+        "ctr": 0,
+        "position": 16
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 3,
+        "total": 3
+      },
+      "queries": [
+        {
+          "query": "\"the skills hub\" -site:reddit.com -site:twitter.com -site:x.com -site:wykop.pl -site:tripadvisor.com -site:youtube.com -site:yelp.com -site:booking.com -site:facebook.com -site:instagram.com -site:tiktok.com",
+          "clicks": 0,
+          "impressions": 5,
+          "ctr": 0,
+          "position": 2.2,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "how to debug in production",
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 59,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "debug production",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 39,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 3,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/skills/programmatic-seo/",
+      "url": "https://thewebguy.app/skills/programmatic-seo/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 59,
+        "ctr": 0,
+        "position": 77.6
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 6,
+        "total": 6
+      },
+      "queries": [
+        {
+          "query": "programmatic seo job description",
+          "clicks": 0,
+          "impressions": 20,
+          "ctr": 0,
+          "position": 94.8,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "programmatic seo expert",
+          "clicks": 0,
+          "impressions": 10,
+          "ctr": 0,
+          "position": 75.1,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "seo programmer",
+          "clicks": 0,
+          "impressions": 6,
+          "ctr": 0,
+          "position": 56.5,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "technical seo growmatic",
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 82,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "programmatic seo specialist",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 73,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "seo programmers",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 65,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 6,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/skills/rest-api-webhook-integrations/",
+      "url": "https://thewebguy.app/skills/rest-api-webhook-integrations/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 19,
+        "ctr": 0,
+        "position": 14.7
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 1,
+        "total": 1
+      },
+      "queries": [
+        {
+          "query": "does the api support rest and webhooks?",
+          "clicks": 0,
+          "impressions": 7,
+          "ctr": 0,
+          "position": 24,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 1,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/skills/schema-structured-data/",
+      "url": "https://thewebguy.app/skills/schema-structured-data/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 13,
+        "ctr": 0,
+        "position": 50.8
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 1,
+        "total": 1
+      },
+      "queries": [
+        {
+          "query": "structured data implementation",
+          "clicks": 0,
+          "impressions": 10,
+          "ctr": 0,
+          "position": 63.8,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 1,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/skills/shopify-plus-liquid/",
+      "url": "https://thewebguy.app/skills/shopify-plus-liquid/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 6.3
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/skills/wordpress-plugin-development/",
+      "url": "https://thewebguy.app/skills/wordpress-plugin-development/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 1,
+        "impressions": 46,
+        "ctr": 2.2,
+        "position": 46.7
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 6,
+        "total": 6
+      },
+      "queries": [
+        {
+          "query": "wordpress plugin developer las vegas",
+          "clicks": 0,
+          "impressions": 15,
+          "ctr": 0,
+          "position": 83.9,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "wp plugin developer",
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 51.2,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "\"the skills hub\" -site:reddit.com -site:twitter.com -site:x.com -site:wykop.pl -site:tripadvisor.com -site:youtube.com -site:yelp.com -site:booking.com -site:facebook.com -site:instagram.com -site:tiktok.com",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 3,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "the wordpress guy",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 34,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "wordpress developer plugin",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 41,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "wordpress plugin specialist",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 74,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 6,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/skills/wordpress-theme-development/",
+      "url": "https://thewebguy.app/skills/wordpress-theme-development/",
+      "sitemapLastmod": "2026-06-30",
+      "totals": {
+        "clicks": 0,
+        "impressions": 24,
+        "ctr": 0,
+        "position": 46.7
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 3,
+        "total": 3
+      },
+      "queries": [
+        {
+          "query": "wordpress theme developer",
+          "clicks": 0,
+          "impressions": 15,
+          "ctr": 0,
+          "position": 52.2,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "scss - wordpress theme development - wordpress plugin development - seo (off-page & on-page) - reporting",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 24.3,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        },
+        {
+          "query": "wordpress theme developers",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 83,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 3,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/category/ai-website-cleanup/",
+      "url": "https://thewebguy.app/fix-notes/category/ai-website-cleanup/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 7
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/category/api-integrations/",
+      "url": "https://thewebguy.app/fix-notes/category/api-integrations/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/category/automation-internal-tools/",
+      "url": "https://thewebguy.app/fix-notes/category/automation-internal-tools/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/category/ecommerce-support/",
+      "url": "https://thewebguy.app/fix-notes/category/ecommerce-support/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/category/landing-pages/",
+      "url": "https://thewebguy.app/fix-notes/category/landing-pages/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/category/page-speed/",
+      "url": "https://thewebguy.app/fix-notes/category/page-speed/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/category/production-debugging/",
+      "url": "https://thewebguy.app/fix-notes/category/production-debugging/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/category/security-hosting/",
+      "url": "https://thewebguy.app/fix-notes/category/security-hosting/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/category/technical-seo/",
+      "url": "https://thewebguy.app/fix-notes/category/technical-seo/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 12.5
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": {
+        "start": 1,
+        "end": 1,
+        "total": 1
+      },
+      "queries": [
+        {
+          "query": "tech seo guy",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 12.5,
+          "scoreDate": "2026-07-06",
+          "dataStartDate": "2026-04-07",
+          "dataEndDate": "2026-07-06"
+        }
+      ],
+      "rawNoData": false,
+      "paginationComplete": true,
+      "queryCount": 1,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/category/tracking-analytics/",
+      "url": "https://thewebguy.app/fix-notes/category/tracking-analytics/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/category/website-fixes/",
+      "url": "https://thewebguy.app/fix-notes/category/website-fixes/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    },
+    {
+      "path": "/fix-notes/category/wordpress-support/",
+      "url": "https://thewebguy.app/fix-notes/category/wordpress-support/",
+      "sitemapLastmod": "2026-07-02",
+      "totals": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "dataRange": {
+        "start": "2026-04-07",
+        "end": "2026-07-06",
+        "startLabel": "April 7, 2026",
+        "endLabel": "July 6, 2026"
+      },
+      "lastUpdateLabel": "2.5 hours ago",
+      "rowRange": null,
+      "queries": [],
+      "rawNoData": true,
+      "paginationComplete": true,
+      "queryCount": 0,
+      "extractionStatus": "ok"
+    }
+  ],
+  "summary": {
+    "pageCount": 137,
+    "pagesProcessed": 137,
+    "pagesWithQueries": 46,
+    "totalQueryRows": 151,
+    "pagesWithoutQueries": 91,
+    "incompletePages": []
+  },
+  "indexing": {
+    "reportLastUpdate": "2026-06-29",
+    "discoveredCurrentlyNotIndexed": [
+      {
+        "url": "https://thewebguy.app/services/ai-built-website-cleanup/",
+        "lastCrawled": null,
+        "reason": "Discovered - currently not indexed"
+      },
+      {
+        "url": "https://thewebguy.app/services/contact-form-not-working-wordpress/",
+        "lastCrawled": null,
+        "reason": "Discovered - currently not indexed"
+      },
+      {
+        "url": "https://thewebguy.app/services/conversion-tracking-troubleshooting/",
+        "lastCrawled": null,
+        "reason": "Discovered - currently not indexed"
+      },
+      {
+        "url": "https://thewebguy.app/services/shopify-liquid-support/",
+        "lastCrawled": null,
+        "reason": "Discovered - currently not indexed"
+      },
+      {
+        "url": "https://thewebguy.app/services/wordpress-emergency-support/",
+        "lastCrawled": null,
+        "reason": "Discovered - currently not indexed"
+      }
+    ],
+    "crawledCurrentlyNotIndexed": [
+      {
+        "url": "https://thewebguy.app/blog/topological-relevance-vector-seo/",
+        "lastCrawled": "2026-06-16",
+        "reason": "Crawled - currently not indexed",
+        "validationStarted": "2026-06-17"
+      }
+    ],
+    "redirectsNotSubmitted": [
+      {
+        "url": "https://www.thewebguy.app/",
+        "lastCrawled": "2026-07-01",
+        "reason": "Page with redirect"
+      },
+      {
+        "url": "http://www.thewebguy.app/",
+        "lastCrawled": "2026-06-26",
+        "reason": "Page with redirect"
+      }
+    ],
+    "selectionNotes": "Submitted all substantive non-redirect URLs that were not indexed. Redirect variants were intentionally excluded.",
+    "submissions": [
+      {
+        "submittedAt": "2026-07-08T06:59:45.073Z",
+        "url": "https://thewebguy.app/services/contact-form-not-working-wordpress/",
+        "inspectedStatus": "URL is not on Google",
+        "canRequest": true,
+        "submissionStatus": "indexing_requested",
+        "messageDetected": "URL was added to a priority crawl queue."
+      },
+      {
+        "submittedAt": "2026-07-08T06:59:45.073Z",
+        "url": "https://thewebguy.app/services/shopify-liquid-support/",
+        "inspectedStatus": "URL is not on Google",
+        "canRequest": true,
+        "submissionStatus": "indexing_requested",
+        "messageDetected": "URL was added to a priority crawl queue."
+      },
+      {
+        "submittedAt": "2026-07-08T06:59:45.073Z",
+        "url": "https://thewebguy.app/services/wordpress-emergency-support/",
+        "inspectedStatus": "URL is not on Google",
+        "canRequest": true,
+        "submissionStatus": "indexing_requested",
+        "messageDetected": "URL was added to a priority crawl queue."
+      },
+      {
+        "submittedAt": "2026-07-08T06:59:45.073Z",
+        "url": "https://thewebguy.app/services/conversion-tracking-troubleshooting/",
+        "inspectedStatus": "URL is not on Google",
+        "canRequest": true,
+        "submissionStatus": "indexing_requested",
+        "messageDetected": "URL was added to a priority crawl queue."
+      },
+      {
+        "submittedAt": "2026-07-08T06:59:45.073Z",
+        "url": "https://thewebguy.app/services/ai-built-website-cleanup/",
+        "inspectedStatus": "URL is not on Google",
+        "canRequest": true,
+        "submissionStatus": "indexing_requested",
+        "messageDetected": "URL was added to a priority crawl queue."
+      },
+      {
+        "submittedAt": "2026-07-08T06:59:45.073Z",
+        "url": "https://thewebguy.app/blog/topological-relevance-vector-seo/",
+        "inspectedStatus": "URL is not on Google",
+        "canRequest": true,
+        "submissionStatus": "indexing_requested",
+        "messageDetected": "URL was added to a priority crawl queue."
+      }
+    ]
+  }
+}

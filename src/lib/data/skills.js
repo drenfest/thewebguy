@@ -101,13 +101,13 @@ export const skillPages = [
   },
   {
     slug: "production-debugging",
-    title: "Production Website Debugging for Broken Sites | The Web Guy",
-    meta: "Get production debugging help for broken website layouts, JavaScript errors, forms, APIs, tracking, CMS issues, integrations, and unstable live-site behavior.",
+    title: "Production Website Debugging and Live-Site Debug Help | The Web Guy",
+    meta: "Debug production website issues including broken layouts, JavaScript errors, forms, APIs, tracking, CMS issues, integrations, cache, and unstable live-site behavior.",
     h1: "Production Website Debugging at $55/hr",
     eyebrow: "Production Debugging",
-    intro: "Debugging support for real websites when something is broken, weird, unstable, or hard to trace across the CMS, front end, scripts, APIs, hosting, tracking, and third-party tools.",
-    problems: ["A form submits but leads do not arrive", "A script works on one page and fails on another", "An API or webhook changed behavior", "Tracking is missing or duplicated", "A CMS update broke visible layouts"],
-    tasks: ["Inspect browser console and network errors", "Trace form and script behavior", "Test API payloads in Postman", "Review CMS/theme/plugin interactions", "Check tracking events and pixels", "Document what changed and what still needs attention"],
+    intro: "Debugging support for real production websites when something is broken, weird, unstable, or hard to trace across the CMS, front end, scripts, APIs, hosting, tracking, cache, and third-party tools.",
+    problems: ["A form submits but leads do not arrive", "A script works on one page and fails on another", "An API or webhook changed behavior", "Tracking is missing or duplicated", "A CMS update broke visible layouts", "A bug only appears on the live site"],
+    tasks: ["Inspect browser console and network errors", "Trace form and script behavior", "Test API payloads in Postman", "Review CMS/theme/plugin interactions", "Check tracking events and pixels", "Compare cache, live markup, and deployment behavior", "Document what changed and what still needs attention"],
     connection: "Production debugging supports website fixes, API integrations, analytics cleanup, security/hosting reliability, and agency overflow work.",
     contextCards: [
       ["Website fixes", "Visible bugs, broken layouts, failed forms, and script conflicts usually need production debugging before the fix is obvious.", "/services/website-fixes/", "View website fixes", "website-fixes"],
@@ -120,6 +120,7 @@ export const skillPages = [
     faqs: [
       ["What should I send for debugging?", "Send the URL, what should happen, what happens instead, screenshots if useful, and what changed recently."],
       ["Can you debug live production issues?", "Yes, when access and scope are clear. Some urgent work depends on availability."],
+      ["How do you debug in production without making it worse?", "Start by reproducing the issue, capturing evidence, checking browser and network clues, understanding rollback options, and making the smallest practical change that can be verified."],
       ["Can you debug APIs and webhooks?", "Yes. Payloads, responses, logs, and Postman checks can help trace integration issues."],
       ["Can you debug tracking problems?", "Yes. GA4/GTM events, pixels, duplicated tags, and missing conversions are common debugging tasks."]
     ]
@@ -151,9 +152,9 @@ export const skillPages = [
   },
   {
     slug: "rest-api-webhook-integrations",
-    title: "API & Webhook Integration Contractor | The Web Guy",
-    meta: "Get REST API and webhook integration help for forms, CRMs, CMS platforms, ecommerce systems, background jobs, Postman testing, and data cleanup.",
-    h1: "REST API & Webhook Integrations at $55/hr",
+    title: "REST API and Webhook Integration Help | The Web Guy",
+    meta: "REST API and webhook integration help for forms, CRMs, CMS platforms, ecommerce systems, background jobs, Postman testing, payloads, and data cleanup.",
+    h1: "REST API and Webhook Integrations at $55/hr",
     eyebrow: "APIs & Webhooks",
     intro: "API and webhook support for websites that need to connect forms, CRMs, CMS platforms, ecommerce systems, data workflows, background jobs, and automation without becoming fragile.",
     problems: ["A webhook is firing but the receiving system is failing", "A form needs to send lead data somewhere useful", "API payloads need tested before launch", "Product or customer data needs cleanup", "Background jobs fail silently"],
@@ -168,6 +169,7 @@ export const skillPages = [
     relatedServices: ["api-integrations", "automation-internal-tools", "ecommerce-support", "analytics-tracking"],
     relatedSkills: ["wordpress-plugin-development", "php-javascript-node", "data-cleanup-json-csv", "production-debugging"],
     faqs: [
+      ["Does the API support REST and webhooks?", "That depends on the platform, but many website integrations use REST APIs for request/response work and webhooks for event-based handoffs. The practical task is confirming endpoint docs, auth, payload shape, response behavior, and retry/logging support."],
       ["Can you connect forms to another system?", "Yes. CRM, email, webhook, and API handoff work is a common fit."],
       ["Do you use Postman?", "Yes. Postman-style testing is useful for payloads, auth, responses, and debugging."],
       ["Can you build enterprise integrations?", "The public offer is practical website integration work, not large enterprise platform architecture."],

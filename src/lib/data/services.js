@@ -217,9 +217,9 @@ export const coreServicePages = [
   },
   {
     slug: "website-fixes",
-    title: "Website Fixes at $55/hr | The Web Guy",
-    meta: "Fix broken website layouts, CSS issues, JavaScript bugs, forms, modals, embeds, tracking scripts, mobile problems, and other visible site issues.",
-    h1: "Website Fixes at $55/hr",
+    title: "Website Fixes and Website Fixer Help | The Web Guy",
+    meta: "Website fixer help for broken layouts, CSS issues, JavaScript bugs, forms, modals, embeds, tracking scripts, mobile problems, and broken site issues.",
+    h1: "Website Fixes and Website Fixer Help at $55/hr",
     eyebrow: "Website Fixes",
     intro:
       "Send the URL and the problem. Broken layouts, CSS bugs, JavaScript errors, forms not working, modals, embeds, iframe issues, tracking scripts, mobile layout problems, WordPress weirdness, checkout symptoms, and CMS problems all fit here.",
@@ -266,6 +266,8 @@ export const coreServicePages = [
         h2: "Where broken-site fixes usually lead",
         cards: [
           ["Start with the symptom", "A broken website request is easier to fix when the issue is described by what changed, what should happen, and where it fails.", "/blog/something-broke-on-your-website/", "Read the troubleshooting guide"],
+          ["Fix my broken website", "Use this when the site is already failing and the first job is to protect the current state, reproduce the issue, and choose a safe repair order.", "/blog/fix-my-broken-website/", "Read the broken-site triage guide"],
+          ["JavaScript issues", "Use this when menus, buttons, forms, widgets, or tracking behavior fail because browser scripts, requests, cache, or plugin assets are breaking.", "/blog/javascript-issues-website-troubleshooting/", "Read JavaScript troubleshooting"],
           ["Production debugging", "Console errors, network failures, script conflicts, and weird browser behavior often need production debugging rather than guesswork.", "/skills/production-debugging/", "View debugging help"],
           ["AI-built cleanup", "When ChatGPT, Codex, Lovable, Bolt, Cursor, Replit, v0, or another builder got the site close but fragile, cleanup can turn the output into something safer to edit.", "/services/ai-built-website-cleanup/", "View AI-built website cleanup"],
           ["Forms and tracking", "Broken forms, modals, pixels, and conversion events often connect website fixes to analytics and tracking cleanup.", "/services/analytics-tracking/", "View tracking support"],
@@ -551,11 +553,11 @@ export const coreServicePages = [
   {
     slug: "api-integrations",
     title: "API and Website Integration Help | The Web Guy",
-    meta: "Get practical support for REST APIs, webhooks, forms, CRM connections, ecommerce integrations, data cleanup, scripts, and automation.",
+    meta: "Website integration help for REST APIs, webhooks, forms, CRM connections, ecommerce integrations, data cleanup, scripts, tracking handoffs, and automation.",
     h1: "API and Website Integration Help at $55/hr",
     eyebrow: "API & Integrations",
     intro:
-      "Practical integration work for forms, CRMs, CMS platforms, ecommerce systems, webhooks, scripts, feeds, background jobs, and data that needs to move reliably.",
+      "Practical website integration help for forms, CRMs, CMS platforms, ecommerce systems, webhooks, scripts, feeds, background jobs, tracking handoffs, and data that needs to move reliably.",
     cta: "Connect Systems",
     audience:
       "This is not enterprise platform architecture. It is useful contract help when a website needs to send, receive, clean up, test, or automate data between tools.",
@@ -589,6 +591,7 @@ export const coreServicePages = [
       {
         h2: "Integration work often touches",
         cards: [
+          ["Website integration help", "When the problem starts as a broken handoff between a website action and another system, this narrower page maps the visitor action, payload, destination, response, and measurement layer.", "/services/website-integration-help/", "View website integration help"],
           ["Webhook implementation", "When the issue is payload format, authentication, endpoint behavior, or logging, the work maps to API and webhook integration skills.", "/skills/rest-api-webhook-integrations/", "View webhook skills"],
           ["Ecommerce data", "Product feeds, order flows, checkout data, and catalog updates connect integrations to ecommerce support.", "/services/ecommerce-support/", "View ecommerce support"],
           ["Tracking and events", "Form submissions, conversion events, hidden fields, and CRM handoffs often need analytics verification too.", "/services/analytics-tracking/", "View tracking support"],
@@ -602,7 +605,7 @@ export const coreServicePages = [
           "Good integration work includes checking what happens when something fails. The Web Guy can help test payloads in Postman, inspect responses, review logs, and explain what needs to change so the workflow is less fragile."
       }
     ],
-    related: ["ai-built-website-cleanup", "automation-internal-tools", "analytics-tracking", "ecommerce-support", "website-fixes"]
+    related: ["website-integration-help", "ai-built-website-cleanup", "automation-internal-tools", "analytics-tracking", "ecommerce-support", "website-fixes"]
   },
   {
     slug: "security-hosting-reliability",
@@ -661,12 +664,12 @@ export const coreServicePages = [
   },
   {
     slug: "automation-internal-tools",
-    title: "Automation and Internal Web Tools | The Web Guy",
-    meta: "Save time with crawlers, SEO QA scripts, reporting helpers, dashboards, cron jobs, data cleanup, APIs, and internal web tools.",
+    title: "Automation, Web Services Automation, and Internal Tools | The Web Guy",
+    meta: "Web services automation help for crawlers, SEO QA scripts, reporting helpers, dashboards, cron jobs, data cleanup, APIs, tracking checks, and internal web tools.",
     h1: "Automation and Internal Web Tools at $55/hr",
     eyebrow: "Automation",
     intro:
-      "Crawlers, checkers, SEO QA scripts, reporting helpers, dashboards, CRON jobs, JSON/CSV cleanup, API-based workflows, and internal tools for repetitive web operations.",
+      "Web services automation for crawlers, checkers, SEO QA scripts, reporting helpers, dashboards, CRON jobs, JSON/CSV cleanup, API-based workflows, and internal tools for repetitive web operations.",
     cta: "Automate Web Work",
     audience:
       "This service is for agencies, site owners, ecommerce teams, and marketing teams that keep repeating the same website tasks by hand: checking pages, cleaning product data, reviewing audit output, validating tracking, comparing crawl results, or building reports manually.",
@@ -708,6 +711,7 @@ export const coreServicePages = [
       {
         h2: "Automation projects often start from",
         cards: [
+          ["Web services automation", "Use this narrower path when recurring website operations need scheduled reports, comparison windows, watched signals, recommendations, and practical next actions.", "/services/web-services-automation/", "View web services automation"],
           ["Crawl and link analysis", "A crawler, checker, or QA script can turn recurring crawl exports and internal link reviews into repeatable work.", "/skills/crawl-analysis-internal-linking/", "View crawl analysis help"],
           ["Programmatic SEO", "Data-driven pages, metadata patterns, scalable internal links, and page generation often need automation thinking.", "/skills/programmatic-seo/", "View programmatic SEO"],
           ["API and webhooks", "Internal tools often need REST APIs, webhook handlers, payload cleanup, logging, and scheduled data movement.", "/skills/rest-api-webhook-integrations/", "View API/webhook skills"],
@@ -720,7 +724,7 @@ export const coreServicePages = [
           "Automation is useful when it saves time, reduces mistakes, or makes a recurring problem visible. It is not worth building a tool for everything. The Web Guy can help decide whether a script, dashboard, or simple process change is the practical move."
       }
     ],
-    related: ["api-integrations", "technical-seo-implementation", "analytics-tracking", "agency-overflow"]
+    related: ["web-services-automation", "api-integrations", "technical-seo-implementation", "analytics-tracking", "agency-overflow"]
   },
   {
     slug: "ongoing-webmaster-support",

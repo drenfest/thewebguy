@@ -51,6 +51,8 @@
     "rest-api-webhook-integrations": [
       [
         "API and webhook work usually supports ",
+        { text: "Website Integration Help", href: "/services/website-integration-help/", title: "View website integration help for form, CRM, webhook, ecommerce, tracking, and data handoffs" },
+        ", ",
         { text: "API Integrations", href: "/services/api-integrations/", title: "View API integration support for websites, forms, CRMs, ecommerce systems, and data workflows" },
         ", ",
         { text: "Automation & Internal Tools", href: "/services/automation-internal-tools/", title: "View automation and internal tool support for connected website workflows" },
@@ -169,6 +171,8 @@
       { text: "topological relevance and vector SEO", href: "/blog/topological-relevance-vector-seo/", title: "Read the TopoRank case study on vector SEO and internal links" }
     ],
     "production-debugging": [
+      { text: "fix my broken website triage", href: "/blog/fix-my-broken-website/", title: "Read the fix my broken website triage guide" },
+      { text: "JavaScript issues on websites", href: "/blog/javascript-issues-website-troubleshooting/", title: "Read about JavaScript issues on websites" },
       { text: "forms and modals not working", href: "/blog/forms-modals-not-working/", title: "Read about forms and modals not working" },
       { text: "CMS, plugin, and theme weirdness", href: "/blog/cms-plugin-theme-weirdness/", title: "Read about CMS, plugin, and theme weirdness" },
       { text: "topological relevance and vector SEO", href: "/blog/topological-relevance-vector-seo/", title: "Read the TopoRank case study on crawl topology and link support" }

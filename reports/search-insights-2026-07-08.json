@@ -1,0 +1,121 @@
+{
+  "date": "2026-07-08",
+  "source_file": "reports/search-terms.json",
+  "summary": {
+    "pages_processed": 137,
+    "pages_with_query_rows": 46,
+    "query_rows": 151,
+    "pages_without_query_rows": 91,
+    "incomplete_pages": 0
+  },
+  "signals": [
+    {
+      "page": "/blog/broken-layouts-mobile-website-fixes/",
+      "signal": "Strong early proof page",
+      "evidence": "3 clicks, 43 impressions, 7% CTR, average position around 9.3.",
+      "watch": "Use this as the model for practical troubleshooting pages with specific symptoms and strong internal links."
+    },
+    {
+      "page": "/blog/css-javascript-errors-website-bugs/",
+      "signal": "High-impression front-end issue cluster",
+      "evidence": "100 impressions, 0 clicks, average position around 28.4. Query rows include javascript issues and CSS bug terms.",
+      "watch": "Track whether richer JavaScript issue content and the new child page improve impressions, position, and CTR."
+    },
+    {
+      "page": "/blog/something-broke-on-your-website/",
+      "signal": "Broken-site triage cluster",
+      "evidence": "97 impressions, 0 clicks, average position around 27.4. Query rows include fix my broken website and website-is-broken variants.",
+      "watch": "Track whether the new fix-my-broken-website child page captures the narrower intent while reinforcing the parent."
+    },
+    {
+      "page": "/services/api-integrations/",
+      "signal": "Integration intent deserves a child service page",
+      "evidence": "19 impressions, average position around 24.8. Query row includes website integration help.",
+      "watch": "Track new child page discovery, impressions, and whether parent impressions hold or improve."
+    },
+    {
+      "page": "/services/automation-internal-tools/",
+      "signal": "Automation query is broader than the parent wording",
+      "evidence": "35 impressions, average position around 64.5. Query row includes web services automation.",
+      "watch": "Track whether the web-services-automation child page gives the cluster a clearer answer for recurring report and workflow automation."
+    },
+    {
+      "page": "/services/wordpress-plugin-conflict-help/",
+      "signal": "Existing page matches intent but needed more depth",
+      "evidence": "42 impressions, average position around 57.3. Query rows include fix wordpress plugin conflict variants.",
+      "watch": "Track query position after stronger title, meta, sections, FAQs, and safer triage language."
+    },
+    {
+      "page": "/services/technical-seo-developer/",
+      "signal": "Existing page should absorb SEO developer intent",
+      "evidence": "29 impressions, average position around 35.3. Query rows include seo developer.",
+      "watch": "Track whether richer SEO developer language improves position without splitting the intent into another thin URL."
+    }
+  ],
+  "implemented": [
+    {
+      "type": "child_blog_page",
+      "page": "/blog/fix-my-broken-website/",
+      "parent": "/blog/something-broke-on-your-website/",
+      "reason": "The query has urgent repair intent and deserves a focused triage page with safety, priority, and handoff depth."
+    },
+    {
+      "type": "child_blog_page",
+      "page": "/blog/javascript-issues-website-troubleshooting/",
+      "parent": "/blog/css-javascript-errors-website-bugs/",
+      "reason": "JavaScript issues have a distinct diagnostic path involving console, network, script order, plugins, cache, and verification."
+    },
+    {
+      "type": "child_service_page",
+      "page": "/services/website-integration-help/",
+      "parent": "/services/api-integrations/",
+      "reason": "Website integration help is narrower than the API parent and focuses on practical website handoffs between forms, CRMs, webhooks, tracking, ecommerce, and reports."
+    },
+    {
+      "type": "child_service_page",
+      "page": "/services/web-services-automation/",
+      "parent": "/services/automation-internal-tools/",
+      "reason": "Web services automation is a recurring-operations intent tied to reports, crawlers, QA checks, APIs, dashboards, and scheduled comparisons."
+    },
+    {
+      "type": "existing_page_improvement",
+      "page": "/services/wordpress-plugin-conflict-help/",
+      "reason": "The existing page already matches fix WordPress plugin conflict intent, so it was improved instead of splitting authority."
+    },
+    {
+      "type": "existing_page_improvement",
+      "page": "/services/technical-seo-developer/",
+      "reason": "The existing page can absorb SEO developer intent with stronger implementation detail and does not need a duplicate child page."
+    }
+  ],
+  "watching": [
+    "New impressions and indexed status for the four created child pages.",
+    "Parent-page impressions after child pages are linked from contextual copy and cards.",
+    "CTR changes for pages that already rank between positions 8 and 20.",
+    "Queries with impressions but no clicks where the title/meta may not match the searcher's urgency.",
+    "Queries that look informational or job-oriented and should not create service pages unless buyer intent appears.",
+    "Pages submitted for indexing that move from discovered/crawled not indexed into indexed status."
+  ],
+  "possible_gaps": [
+    {
+      "query_theme": "rockford il debugging",
+      "current_page": "/locations/rockford-il/",
+      "recommendation": "Watch before creating a child page. The query is local and narrow, but current volume is not enough to justify a separate page unless impressions repeat."
+    },
+    {
+      "query_theme": "programmatic seo job description",
+      "current_page": "/skills/programmatic-seo/",
+      "recommendation": "Do not create a service child page now. The query appears job-description oriented and may not match buyer intent."
+    },
+    {
+      "query_theme": "does the api support rest and webhooks",
+      "current_page": "/skills/rest-api-webhook-integrations/",
+      "recommendation": "Improve existing FAQ and watch. The skill page can answer this without creating a thin informational page."
+    },
+    {
+      "query_theme": "website fixer",
+      "current_page": "/services/website-fixes/",
+      "recommendation": "Improve existing service language and watch. The query belongs on the main Website Fixes page unless future data shows a distinct searcher need."
+    }
+  ]
+}

@@ -121,6 +121,8 @@
       { text: "topological relevance and vector SEO", href: "/blog/topological-relevance-vector-seo/", title: "Read the TopoRank case study on topological relevance and vector SEO" }
     ],
     "website-fixes": [
+      { text: "fix my broken website triage", href: "/blog/fix-my-broken-website/", title: "Read the fix my broken website triage guide" },
+      { text: "JavaScript issues on websites", href: "/blog/javascript-issues-website-troubleshooting/", title: "Read about JavaScript issues on websites" },
       { text: "WordPress site broken after a plugin update", href: "/blog/wordpress-site-broken-after-plugin-update/", title: "Read what to check when a WordPress site breaks after a plugin update" },
       { text: "CMS, plugin, and theme weirdness", href: "/blog/cms-plugin-theme-weirdness/", title: "Read about CMS, plugin, and theme weirdness" },
       { text: "forms and modals not working", href: "/blog/forms-modals-not-working/", title: "Read about forms and modals not working" }
@@ -147,6 +149,7 @@
       { text: "topological relevance and vector SEO", href: "/blog/topological-relevance-vector-seo/", title: "Read the TopoRank case study on topological relevance and vector SEO" }
     ],
     "api-integrations": [
+      { text: "website integration help", href: "/services/website-integration-help/", title: "View website integration help for forms, CRMs, APIs, webhooks, ecommerce systems, and data handoffs" },
       { text: "forms and modals not working", href: "/blog/forms-modals-not-working/", title: "Read about forms and modals not working before data reaches another system" },
       { text: "tracking scripts and pixels", href: "/blog/tracking-scripts-pixels-broken/", title: "Read about tracking scripts and pixels around data handoffs" }
     ],
@@ -155,6 +158,7 @@
       { text: "embeds, iframes, and widgets breaking pages", href: "/blog/embeds-iframes-widgets-breaking-pages/", title: "Read about third-party embeds and widgets breaking pages" }
     ],
     "automation-internal-tools": [
+      { text: "web services automation", href: "/services/web-services-automation/", title: "View web services automation for recurring reports, checks, dashboards, APIs, and website operations" },
       { text: "tracking scripts and pixels", href: "/blog/tracking-scripts-pixels-broken/", title: "Read about tracking scripts and pixels before automating reporting" },
       { text: "forms and modals not working", href: "/blog/forms-modals-not-working/", title: "Read about form and modal issues before automating data flow" }
     ],
@@ -181,6 +185,10 @@
     "website-fixes": [
       [
         "Broken-site work often starts with a symptom like ",
+        { text: "fix my broken website", href: "/blog/fix-my-broken-website/", title: "Read the broken website triage guide" },
+        ", ",
+        { text: "JavaScript issues", href: "/blog/javascript-issues-website-troubleshooting/", title: "Read about JavaScript issues on websites" },
+        ", ",
         { text: "embeds, iframes, and widgets breaking pages", href: "/blog/embeds-iframes-widgets-breaking-pages/", title: "Read about embeds, iframes, and widgets breaking website pages" },
         ", ",
         { text: "tracking scripts and pixels", href: "/blog/tracking-scripts-pixels-broken/", title: "Read about broken tracking scripts and pixels" },
@@ -192,6 +200,8 @@
     "automation-internal-tools": [
       [
         "Automation work usually sits between ",
+        { text: "Web Services Automation", href: "/services/web-services-automation/", title: "View web services automation support for scheduled reports, QA checks, dashboards, API checks, and recurring web operations" },
+        ", ",
         { text: "API Integrations", href: "/services/api-integrations/", title: "View API integration support for forms, CRMs, webhooks, ecommerce systems, and data workflows" },
         ", ",
         { text: "REST API & Webhook Integrations", href: "/skills/rest-api-webhook-integrations/", title: "View REST API and webhook integration skills for payloads, endpoints, authentication, and retries" },
@@ -203,6 +213,8 @@
     "api-integrations": [
       [
         "API integration requests usually need ",
+        { text: "Website Integration Help", href: "/services/website-integration-help/", title: "View website integration help for form, CRM, webhook, ecommerce, tracking, and data handoffs" },
+        " for practical website handoffs, ",
         { text: "REST API & Webhook Integrations", href: "/skills/rest-api-webhook-integrations/", title: "View REST API and webhook integration support for payloads, endpoints, authentication, and retry behavior" },
         " for the technical connection, ",
         { text: "Automation & Internal Tools", href: "/services/automation-internal-tools/", title: "View automation and internal web tool support" },

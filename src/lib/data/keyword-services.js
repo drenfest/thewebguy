@@ -241,17 +241,71 @@ export const keywordLandingSpecs = [
   },
   {
     slug: "wordpress-plugin-conflict-help",
-    title: "WordPress Plugin Conflict Help | The Web Guy",
-    meta: "Troubleshoot WordPress plugin conflicts affecting forms, layouts, checkout, admin behavior, scripts, performance, or site stability.",
-    h1: "WordPress Plugin Conflict Help at $55/hr",
+    title: "Fix WordPress Plugin Conflict Issues | The Web Guy",
+    meta: "Fix WordPress plugin conflict issues affecting forms, layouts, checkout, admin behavior, scripts, performance, updates, or site stability.",
+    h1: "Fix WordPress Plugin Conflict Issues at $55/hr",
     eyebrow: "Plugin Conflict Help",
     cluster: "WordPress support",
     anchorSlug: "wordpress-support",
     intent: "plugin conflicts where updates or overlapping plugins break site behavior",
+    intro:
+      "WordPress plugin conflict help for sites where an update, new plugin, cache tool, security plugin, form plugin, checkout extension, page builder, or theme interaction changed public behavior and the safest fix is not obvious yet.",
+    cta: "Fix the Plugin Conflict",
+    audience:
+      "This page is for site owners, agencies, and WordPress teams that need to fix a WordPress plugin conflict without blindly disabling production features. The work starts with the affected URL, the symptom, recent changes, and which business path is at risk.",
+    audienceHeading: "WordPress plugin conflicts that need careful triage",
     problems: ["A plugin update changed behavior", "Two plugins appear to fight over scripts, styles, forms, checkout, or admin features", "Disabling plugins randomly is too risky"],
     tasks: ["Review the affected behavior and recent updates", "Isolate likely plugin, theme, cache, or script conflicts", "Fix settings, code, or handoff notes where practical"],
+    sections: [
+      {
+        h2: "Plugin conflict symptoms this page targets",
+        body:
+          "A WordPress plugin conflict usually shows up as a visible or functional change: a form stops sending, a checkout step fails, a layout shifts, a shortcode disappears, a page builder section breaks, a JavaScript error appears, or the admin starts behaving differently after an update.",
+        bullets: [
+          "Forms, popups, checkout, menus, filters, or buttons stop working",
+          "Layout, CSS, page builder, or shortcode output changes after an update",
+          "JavaScript errors appear on pages that load specific plugin assets",
+          "Admin screens, settings pages, or editor features become unreliable",
+          "Caching, optimization, security, or consent plugins interfere with front-end behavior",
+          "Two plugins try to control the same scripts, fields, checkout steps, redirects, or tracking events"
+        ]
+      },
+      {
+        h2: "How plugin conflicts should be isolated",
+        cards: [
+          ["Start with the symptom", "Name the URL, action, expected behavior, broken behavior, browser/device, and when the problem started before changing plugin settings."],
+          ["Review recent changes", "Check plugin, theme, WordPress core, PHP, cache, security, form, checkout, builder, and tracking updates near the failure."],
+          ["Identify the owning layer", "Find whether the broken output belongs to a plugin, theme, page builder, shortcode, custom snippet, optimization layer, or third-party embed."],
+          ["Use safer testing when possible", "Prefer staging, backups, logs, browser tools, and controlled tests over disabling random production plugins during business-critical paths."],
+          ["Repair the narrow cause", "Adjust settings, exclusions, script order, markup, cache behavior, template output, or plugin-specific configuration before escalating."],
+          ["Verify the business path", "Retest the form, checkout, page, admin workflow, tracking event, or visitor action that was broken, not just the plugin settings screen."]
+        ]
+      },
+      {
+        h2: "Related WordPress conflict paths",
+        cards: [
+          ["WordPress Troubleshooting", "Use this when the symptom is unclear and needs broader WordPress diagnosis across plugins, themes, cache, and admin behavior.", "/services/wordpress-troubleshooting/", "View WordPress Troubleshooting"],
+          ["Fix a WordPress Issue", "Use this when the plugin conflict is part of a one-off WordPress fix request.", "/services/fix-wordpress-issue/", "View WordPress Issue Help"],
+          ["WooCommerce Checkout Error Fix", "Use this when plugin conflicts affect cart, checkout, payments, shipping, tax, coupons, or purchase tracking.", "/services/woocommerce-checkout-error-fix/", "View Checkout Fix Help"],
+          ["Production Debugging", "Use this when console errors, network requests, scripts, cache, or live browser behavior need inspection.", "/skills/production-debugging/", "View Production Debugging"],
+          ["WordPress Plugin Development", "Use this when the conflict requires plugin-level code, hooks, filters, shortcodes, or custom functionality review.", "/skills/wordpress-plugin-development/", "View Plugin Development"]
+        ]
+      },
+      {
+        h2: "How to hand off a plugin conflict",
+        body:
+          "Send the affected URL, what broke, what should happen, recent plugin/theme/core/PHP/cache changes, plugin names involved if known, screenshots or recordings, and whether the issue affects leads, checkout, SEO pages, tracking, or admin access."
+      }
+    ],
     related: ["wordpress-support", "wordpress-troubleshooting", "fix-wordpress-issue", "woocommerce-checkout-error-fix"],
-    skills: ["wordpress-plugin-development", "production-debugging", "wordpress-theme-development"]
+    skills: ["wordpress-plugin-development", "production-debugging", "wordpress-theme-development"],
+    faqs: [
+      ["How do I fix a WordPress plugin conflict?", "Start by identifying the symptom, recent changes, affected URL, and business impact. Then isolate the plugin, theme, cache, script, or setting involved before changing production."],
+      ["Should I disable every plugin to test?", "Not on a live site unless you understand the risk. Staging, backups, browser evidence, logs, and controlled tests are safer than randomly disabling production features."],
+      ["Can cache look like a plugin conflict?", "Yes. Cache and optimization plugins can serve stale assets, change script order, combine files, or hide the effect of a real plugin change."],
+      ["Can plugin conflicts break forms or checkout?", "Yes. Form, checkout, security, cache, optimization, payment, and tracking plugins often overlap around scripts, redirects, validation, and user actions."],
+      ["What should I send first?", "Send the URL, symptom, expected behavior, when it started, recent updates, plugin names if known, and screenshots or a recording."]
+    ]
   },
   {
     slug: "wordpress-developer-for-small-tasks",
@@ -297,17 +351,71 @@ export const keywordLandingSpecs = [
   },
   {
     slug: "technical-seo-developer",
-    title: "Technical SEO Developer at $55/hr | The Web Guy",
-    meta: "Technical SEO developer help for schema, crawl fixes, redirects, metadata, internal links, JavaScript rendering issues, WordPress, Shopify, and templates.",
-    h1: "Technical SEO Developer at $55/hr",
+    title: "Technical SEO Developer and SEO Developer Help | The Web Guy",
+    meta: "SEO developer help for technical SEO implementation, schema, crawl fixes, redirects, metadata, internal links, JavaScript rendering, WordPress, Shopify, and templates.",
+    h1: "Technical SEO Developer and SEO Developer Help at $55/hr",
     eyebrow: "Technical SEO Developer",
     cluster: "Technical SEO",
     anchorSlug: "technical-seo-implementation",
     intent: "technical SEO tasks that require code, CMS, templates, redirects, or structured data support",
+    intro:
+      "SEO developer help for the implementation gap between recommendations and a live website: templates that need cleaner headings, schema that needs to match real content, redirects that need to work, internal links that need to be added in context, and JavaScript-rendered pages that need practical review.",
+    cta: "Get SEO Developer Help",
+    audience:
+      "This page is for SEO teams, agencies, marketers, and site owners who already have a direction but need a developer who can touch the CMS, templates, redirects, schema, page structure, internal links, tracking, or crawl blockers without turning every task into a full rebuild.",
+    audienceHeading: "SEO work that needs a developer",
     problems: ["SEO recommendations require developer-level changes", "Templates, JavaScript, schema, redirects, or crawl paths need cleanup", "The SEO team needs implementation help instead of another audit"],
     tasks: ["Translate SEO recommendations into technical tasks", "Implement practical site, template, schema, redirect, and internal-link changes", "Document constraints and verification steps"],
+    sections: [
+      {
+        h2: "SEO developer tasks this page targets",
+        body:
+          "An SEO developer is useful when the recommendation cannot be completed by editing a title field alone. The work may sit in WordPress templates, Shopify Liquid, static routes, Svelte/React output, redirect rules, schema components, navigation modules, internal links, tracking scripts, or crawl/indexation settings.",
+        bullets: [
+          "Template-level title, heading, canonical, schema, and internal-link cleanup",
+          "Redirects, broken links, indexation controls, sitemap checks, and crawl-path fixes",
+          "Service, blog, location, ecommerce, and programmatic page structure improvements",
+          "JavaScript rendering, hydration, route, and front-end output issues that affect SEO",
+          "Schema implementation that matches visible page content and real business context",
+          "SEO audit tasks moved from a spreadsheet into the CMS or codebase"
+        ]
+      },
+      {
+        h2: "How SEO developer work is prioritized",
+        cards: [
+          ["Page value", "Prioritize pages with business intent, impressions, ranking movement, qualified traffic potential, or conversion value before polishing low-impact pages."],
+          ["Template leverage", "Fix reusable templates when one change improves many pages, but avoid scaling weak copy or duplicate page patterns."],
+          ["Crawlability", "Check whether important URLs have crawlable links, clean status codes, sensible canonicals, sitemap support, and indexation blockers removed."],
+          ["Content fit", "Use query data to strengthen pages where the intent already matches, and create child pages only when a term deserves its own useful answer."],
+          ["Implementation risk", "Separate safe content edits from redirect, schema, JavaScript, deployment, or platform changes that need careful QA."],
+          ["Verification", "Document what changed and how it can be checked in crawl output, Search Console, browser tools, structured data tests, or analytics."]
+        ]
+      },
+      {
+        h2: "Related SEO implementation paths",
+        cards: [
+          ["Technical SEO Implementation", "Use the parent service when the work includes broader metadata, headings, redirects, schema, internal links, and crawl cleanup.", "/services/technical-seo-implementation/", "View Technical SEO"],
+          ["SEO Audit Implementation", "Use this when the audit is already done and the main need is moving recommendations into the live site.", "/services/seo-audit-implementation/", "View SEO Audit Implementation"],
+          ["Schema Implementation Service", "Use this when structured data is the main technical SEO gap.", "/services/schema-implementation-service/", "View Schema Implementation"],
+          ["Crawl Analysis & Internal Linking", "Use this skill path when page topology, internal link support, orphan pages, and crawl paths are the core issue.", "/skills/crawl-analysis-internal-linking/", "View Crawl Analysis"],
+          ["Programmatic SEO", "Use this when the SEO developer work involves reusable page patterns, data-driven pages, and safeguards against thin duplicate URLs.", "/skills/programmatic-seo/", "View Programmatic SEO"]
+        ]
+      },
+      {
+        h2: "How to hand off SEO developer work",
+        body:
+          "Send the priority URLs, audit notes, target queries if available, CMS/platform context, crawl export or screenshots, implementation constraints, and the result you need verified. The strongest handoff separates must-fix items from ideas that still need strategy."
+      }
+    ],
     related: ["technical-seo-implementation", "seo-audit-implementation", "schema-implementation-service", "agency-overflow-developer"],
-    skills: ["schema-structured-data", "crawl-analysis-internal-linking", "production-debugging"]
+    skills: ["schema-structured-data", "crawl-analysis-internal-linking", "production-debugging"],
+    faqs: [
+      ["What does an SEO developer do?", "An SEO developer implements technical SEO recommendations inside the actual site: templates, schema, metadata, headings, redirects, internal links, crawl controls, JavaScript output, and platform-specific fixes."],
+      ["Is this different from an SEO audit?", "Yes. An audit identifies recommendations. SEO developer work turns the approved recommendations into live website changes and checks the result."],
+      ["Can this help WordPress or Shopify?", "Yes. WordPress, Shopify, static sites, Svelte/React-style front ends, and template-driven sites can all need SEO developer help."],
+      ["Can you create new SEO pages from query data?", "Yes, when the query deserves its own useful page. The better path is to create child pages for distinct intent and link them from the parent cluster instead of making thin duplicates."],
+      ["What should I send first?", "Send priority URLs, audit notes, target queries, platform context, crawl exports if available, and what needs to be implemented or verified."]
+    ]
   },
   {
     slug: "schema-implementation-service",
@@ -322,6 +430,166 @@ export const keywordLandingSpecs = [
     tasks: ["Review current structured data output", "Implement practical schema that matches visible page content", "Validate and document structured data changes"],
     related: ["technical-seo-implementation", "seo-audit-implementation", "ecommerce-support", "technical-seo-developer"],
     skills: ["schema-structured-data", "google-merchant-center-product-data", "programmatic-seo"]
+  },
+  {
+    slug: "website-integration-help",
+    title: "Website Integration Help at $55/hr | The Web Guy",
+    meta: "Website integration help for forms, CRMs, webhooks, REST APIs, ecommerce data, tracking handoffs, scripts, and systems that need to connect reliably.",
+    h1: "Website Integration Help at $55/hr",
+    eyebrow: "Website Integration Help",
+    cluster: "API and integration support",
+    anchorSlug: "api-integrations",
+    heroImageSlug: "website-integration-help",
+    intent: "website integration issues where forms, CRMs, APIs, webhooks, ecommerce systems, tracking, or data handoffs need practical debugging",
+    intro:
+      "Website integration help for the messy middle between a public site and the systems around it: forms that should create leads, webhooks that should reach another tool, ecommerce data that should stay clean, tracking that should verify the action, and scripts that should fail loudly instead of silently.",
+    cta: "Get Integration Help",
+    audience:
+      "This page is for business sites, agencies, ecommerce teams, and marketers who know the website needs to connect to something else but need help tracing where the handoff breaks: browser, form plugin, API payload, webhook endpoint, CRM, tracking tool, import/export, or scheduled job.",
+    audienceHeading: "Website handoffs that need practical troubleshooting",
+    problems: ["A form submits but the lead does not reach the CRM, inbox, or automation", "A webhook, API request, feed, or script fails without a clear explanation", "Website data, tracking, and reporting disagree after a user action"],
+    tasks: ["Map the website handoff from user action to destination", "Inspect payloads, responses, logs, field names, redirects, and failure states", "Repair or document the smallest practical integration fix"],
+    sections: [
+      {
+        h2: "Website integration problems this page targets",
+        body:
+          "Use this page when the website action is only one piece of the job. A visitor fills out a form, starts checkout, clicks a booking link, submits a quote request, downloads a file, or triggers an embedded tool, and then another system is supposed to receive or measure that action.",
+        bullets: [
+          "Forms to CRM, email, spreadsheet, webhook, or automation tool handoffs",
+          "REST API requests, JSON payloads, authentication, and response handling",
+          "Webhook delivery, endpoint behavior, missing fields, retries, and logs",
+          "Ecommerce product, order, cart, feed, or purchase-data handoffs",
+          "GA4, GTM, pixels, hidden fields, and source tracking around integrations",
+          "CSV, JSON, import/export, and scheduled script cleanup for website data"
+        ]
+      },
+      {
+        h2: "What gets checked before changing the integration",
+        cards: [
+          ["The visitor action", "Confirm the form, checkout, button, embed, or user path actually runs on the page and is not blocked by JavaScript, validation, cache, or a broken redirect."],
+          ["The payload", "Review submitted fields, hidden campaign fields, JSON shape, required values, timestamps, IDs, empty fields, and values that changed after a form or template edit."],
+          ["The destination", "Check the CRM, endpoint, inbox, webhook receiver, ecommerce platform, dashboard, or automation tool for rejected, delayed, duplicated, or partially accepted records."],
+          ["The response", "Inspect status codes, API errors, validation messages, authentication failures, CORS behavior, rate limits, timeouts, and whether the site handles failure clearly."],
+          ["The measurement layer", "Verify whether GA4, GTM, pixels, conversion tags, and reporting events match the real handoff instead of counting page views or failed submissions."],
+          ["The recovery path", "Document what can be fixed in the website, what belongs to the receiving tool, and what needs logging, retry logic, field cleanup, or vendor escalation."]
+        ]
+      },
+      {
+        h2: "Common website integration repair paths",
+        cards: [
+          ["Form-to-CRM repair", "Fix field names, hidden fields, validation, redirects, webhook destinations, notifications, duplicate submissions, and source data capture."],
+          ["Webhook debugging", "Review payload shape, endpoint URL, authentication, delivery logs, retry behavior, response codes, and what the receiving system expects."],
+          ["API request cleanup", "Test requests in Postman-style flows, confirm auth, parse responses, handle errors, normalize data, and avoid silent failures."],
+          ["Ecommerce data handoff", "Trace order, product, checkout, feed, purchase event, or inventory data when storefront behavior and reports do not agree."],
+          ["Tracking and attribution handoff", "Keep UTM values, source fields, thank-you states, GA4/GTM events, and ad-platform conversions aligned with the real user action."],
+          ["Reporting workflow repair", "Clean CSV/JSON exports, scheduled checks, dashboards, and recurring reports when website data has to be usable outside the site."]
+        ]
+      },
+      {
+        h2: "Related integration support paths",
+        cards: [
+          ["API & Integrations", "Use the parent service when the request is broader than one handoff or includes multiple systems.", "/services/api-integrations/", "View API & Integrations"],
+          ["REST API & Webhook Integrations", "Use this skill path when payloads, endpoints, authentication, retries, and logs are the core technical layer.", "/skills/rest-api-webhook-integrations/", "View API/Webhook Skills"],
+          ["Automation & Internal Tools", "Use this when the handoff should become a scheduled report, checker, dashboard, cleanup script, or repeatable workflow.", "/services/automation-internal-tools/", "View Automation"],
+          ["Analytics & Tracking", "Use this when conversion events, pixels, source fields, and reporting must be verified alongside the integration.", "/services/analytics-tracking/", "View Analytics & Tracking"],
+          ["Website Data Systems Not Connecting", "Use this article when the symptom is that forms, tracking, APIs, CRMs, and reports disagree.", "/blog/website-data-systems-not-connecting/", "Read Data Systems Guide"]
+        ]
+      },
+      {
+        h2: "How to hand off website integration work",
+        body:
+          "Send the page URL, the user action, where the data should go, what currently happens, sample non-sensitive payload details if available, recent changes, destination tool names, and any test record timestamps. Do not send private customer data in the first message."
+      }
+    ],
+    related: ["api-integrations", "automation-internal-tools", "analytics-tracking", "contact-form-not-working-wordpress", "conversion-tracking-troubleshooting"],
+    skills: ["rest-api-webhook-integrations", "production-debugging", "ga4-gtm-measurement-integrity"],
+    faqs: [
+      ["What counts as website integration help?", "Anything where the website needs to send, receive, measure, clean, or verify data with another system: forms, CRMs, APIs, webhooks, ecommerce platforms, tracking tools, feeds, dashboards, or scripts."],
+      ["Can you fix forms that do not reach a CRM?", "Yes. The work usually checks the page action, form plugin, hidden fields, webhook/API payload, CRM response, redirects, notifications, and tracking events."],
+      ["Can you troubleshoot webhooks?", "Yes. Payload shape, endpoint behavior, authentication, status codes, delivery logs, retries, and receiving-system expectations can be reviewed."],
+      ["Can this include tracking?", "Yes. Integrations often need GA4, GTM, pixels, hidden fields, source data, and conversion events checked so reports match real actions."],
+      ["What should I send first?", "Send the URL, user action, destination system, what should happen, what happens now, recent changes, and any safe test timestamps or error messages."]
+    ]
+  },
+  {
+    slug: "web-services-automation",
+    title: "Web Services Automation at $55/hr | The Web Guy",
+    meta: "Web services automation help for crawlers, scheduled reports, SEO QA checks, API workflows, dashboards, data cleanup, tracking checks, and recurring website operations.",
+    h1: "Web Services Automation at $55/hr",
+    eyebrow: "Web Services Automation",
+    cluster: "Automation and internal tools",
+    anchorSlug: "automation-internal-tools",
+    heroImageSlug: "web-services-automation",
+    intent: "repeatable website, SEO, tracking, reporting, integration, and data tasks that can be automated without building an oversized platform",
+    intro:
+      "Web services automation for recurring website work that should not depend on someone remembering to export, compare, clean, paste, check, and summarize the same data by hand every week.",
+    cta: "Automate Web Work",
+    audience:
+      "This page is for agencies, marketers, site owners, ecommerce teams, and operators who have recurring web tasks with repeatable inputs and outputs: crawl checks, Search Console tracking, report comparisons, form QA, API checks, product data cleanup, dashboard prep, or scheduled website operations.",
+    audienceHeading: "Recurring web tasks that need structure",
+    problems: ["Website checks and reports are being repeated manually", "SEO, analytics, API, form, or ecommerce data needs comparison over time", "The team needs a script, checker, dashboard, or scheduled workflow instead of another spreadsheet chore"],
+    tasks: ["Define the repeatable input and output", "Build a practical script, checker, dashboard, or scheduled workflow", "Document what the automation watches, recommends, and flags as gaps"],
+    sections: [
+      {
+        h2: "Web services automation problems this page targets",
+        body:
+          "Automation is strongest when the task already has a pattern. The work may not need a full application. It may need a small crawler, a Search Console report, a dashboard, a CSV normalizer, a scheduled API check, or a daily summary that shows what changed and what needs attention.",
+        bullets: [
+          "Search Console, analytics, crawl, and ranking-style report comparisons",
+          "SEO QA checks for titles, meta descriptions, headings, schema, internal links, redirects, and indexation clues",
+          "Form, tracking, GTM, conversion, and thank-you path verification",
+          "REST API, webhook, feed, and data-handoff checks",
+          "CSV, JSON, product feed, and import/export cleanup",
+          "Dashboards, scheduled summaries, alerts, and operational status reports"
+        ]
+      },
+      {
+        h2: "What useful automation needs before code",
+        cards: [
+          ["A stable question", "Define what the automation should answer: what changed, what broke, what improved, what needs review, or what should be done next."],
+          ["A repeatable input", "Use a file export, API response, crawl output, report, sitemap, database table, webhook, form result, or page list that can be collected consistently."],
+          ["A clear comparison window", "Decide whether the report compares yesterday, last week, last month, last quarter, last year, or a custom campaign period."],
+          ["A decision rule", "Name the thresholds that matter: new impressions, lost clicks, CTR drops, position movement, broken links, missing events, failed forms, or stale pages."],
+          ["A human-readable output", "Summaries should include recommendations, watched signals, gaps, confidence, and the next practical action, not just raw rows."],
+          ["A maintenance path", "Automations should explain what failed, what data was missing, and what access or source changed so they can be trusted over time."]
+        ]
+      },
+      {
+        h2: "Common web services automation builds",
+        cards: [
+          ["Search Console reporting", "Track page/query impressions, clicks, CTR, position, new terms, lost terms, and URL opportunities across daily, weekly, monthly, quarterly, and yearly windows."],
+          ["SEO QA crawlers", "Check page titles, meta descriptions, headings, canonicals, schema, internal links, status codes, sitemap inclusion, and content gaps."],
+          ["Tracking QA checks", "Verify whether GA4/GTM scripts, conversion events, pixels, forms, and thank-you paths still exist after page or template changes."],
+          ["Integration monitors", "Check API endpoints, webhook responses, feed freshness, payload fields, scheduled jobs, and failure logs before silent issues pile up."],
+          ["Data cleanup scripts", "Normalize CSV/JSON, repair product data, compare exports, dedupe rows, prepare imports, and create readable exception reports."],
+          ["Internal dashboards", "Turn recurring status, crawl, SEO, tracking, ecommerce, or workflow data into a small dashboard or report that makes decisions easier."]
+        ]
+      },
+      {
+        h2: "Related automation support paths",
+        cards: [
+          ["Automation & Internal Tools", "Use the parent service when the automation request spans several operational workflows.", "/services/automation-internal-tools/", "View Automation"],
+          ["API & Integrations", "Use this when the automation depends on APIs, webhooks, payloads, authentication, or data moving between systems.", "/services/api-integrations/", "View API & Integrations"],
+          ["Website Integration Help", "Use this when the recurring issue starts as a broken handoff between a site action and another tool.", "/services/website-integration-help/", "View Website Integration Help"],
+          ["Programmatic SEO", "Use this when automation supports page generation, scalable templates, crawlable internal links, schema, or data-driven SEO pages.", "/skills/programmatic-seo/", "View Programmatic SEO"],
+          ["Crawl Analysis & Internal Linking", "Use this when automation needs to inspect crawl paths, orphan pages, internal links, page groups, or site topology.", "/skills/crawl-analysis-internal-linking/", "View Crawl Analysis"]
+        ]
+      },
+      {
+        h2: "How to hand off web services automation work",
+        body:
+          "Send the recurring task, input source, expected output, comparison windows, current manual process, sample export if safe, required decisions, and what should happen when data is missing. A good first version can often be smaller than a dashboard and more useful than a one-time report."
+      }
+    ],
+    related: ["automation-internal-tools", "api-integrations", "website-integration-help", "analytics-tracking", "technical-seo-implementation"],
+    skills: ["programmatic-seo", "crawl-analysis-internal-linking", "rest-api-webhook-integrations", "ga4-gtm-measurement-integrity"],
+    faqs: [
+      ["What is web services automation?", "Practical automation for recurring website operations: reports, crawlers, QA checks, API workflows, dashboards, data cleanup, scheduled jobs, and alerts."],
+      ["Can automation compare Search Console results over time?", "Yes. A useful report can compare impressions, clicks, CTR, and average position by page and query against yesterday, last week, last month, last quarter, and last year when data is available."],
+      ["Does this need a full app?", "Not always. Many useful automations start as a script, scheduled report, small dashboard, or structured JSON summary before becoming a larger tool."],
+      ["Can this include recommendations?", "Yes. The report should name what it is watching, what changed, likely reasons, gaps, confidence, and the next action instead of only listing numbers."],
+      ["What should I send first?", "Send the recurring task, data source, comparison window, current manual process, desired output, and decisions the automation should support."]
+    ]
   },
   {
     slug: "ga4-gtm-setup-help",
@@ -671,7 +939,7 @@ export function buildKeywordLandingPage(spec) {
     ],
     related,
     skillSlugs: spec.skills || [],
-    faqs: [
+    faqs: spec.faqs || [
       [`Is ${spec.eyebrow.toLowerCase()} different from ${anchor.eyebrow.toLowerCase()}?`, `This page targets a narrower search. If the task expands, it routes back into ${anchor.eyebrow}.`],
       ["Can this be a one-off task?", "Yes. One-off fixes and small task lists are a strong fit when the issue is clear enough to start hourly."],
       ["What should I send first?", "Send the URL, symptom, expected behavior, recent changes, screenshots or notes, and any access constraints."],
