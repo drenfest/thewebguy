@@ -351,18 +351,18 @@ export const keywordLandingSpecs = [
   },
   {
     slug: "technical-seo-developer",
-    title: "Technical SEO Developer and SEO Developer Help | The Web Guy",
-    meta: "SEO developer help for technical SEO implementation, schema, crawl fixes, redirects, metadata, internal links, JavaScript rendering, WordPress, Shopify, and templates.",
-    h1: "Technical SEO Developer and SEO Developer Help at $55/hr",
+    title: "SEO Developer Help for Technical SEO Implementation | The Web Guy",
+    meta: "Need an SEO developer? Get technical SEO implementation help for schema, crawl fixes, redirects, metadata, internal links, JavaScript rendering, WordPress, Shopify, and templates.",
+    h1: "SEO Developer Help for Technical SEO Implementation at $55/hr",
     eyebrow: "Technical SEO Developer",
     cluster: "Technical SEO",
     anchorSlug: "technical-seo-implementation",
     intent: "technical SEO tasks that require code, CMS, templates, redirects, or structured data support",
     intro:
-      "SEO developer help for the implementation gap between recommendations and a live website: templates that need cleaner headings, schema that needs to match real content, redirects that need to work, internal links that need to be added in context, and JavaScript-rendered pages that need practical review.",
+      "Need an SEO developer to turn recommendations into live changes? This page covers the implementation gap between an SEO plan and the real website: templates that need cleaner headings, schema that needs to match visible content, redirects that need to work, internal links that need to be added in context, and JavaScript-rendered pages that need practical review.",
     cta: "Get SEO Developer Help",
     audience:
-      "This page is for SEO teams, agencies, marketers, and site owners who already have a direction but need a developer who can touch the CMS, templates, redirects, schema, page structure, internal links, tracking, or crawl blockers without turning every task into a full rebuild.",
+      "This page is for SEO teams, agencies, marketers, and site owners who already have a direction but need an SEO developer who can touch the CMS, templates, redirects, schema, page structure, internal links, tracking, or crawl blockers without turning every task into a full rebuild.",
     audienceHeading: "SEO work that needs a developer",
     problems: ["SEO recommendations require developer-level changes", "Templates, JavaScript, schema, redirects, or crawl paths need cleanup", "The SEO team needs implementation help instead of another audit"],
     tasks: ["Translate SEO recommendations into technical tasks", "Implement practical site, template, schema, redirect, and internal-link changes", "Document constraints and verification steps"],
@@ -370,7 +370,7 @@ export const keywordLandingSpecs = [
       {
         h2: "SEO developer tasks this page targets",
         body:
-          "An SEO developer is useful when the recommendation cannot be completed by editing a title field alone. The work may sit in WordPress templates, Shopify Liquid, static routes, Svelte/React output, redirect rules, schema components, navigation modules, internal links, tracking scripts, or crawl/indexation settings.",
+          "An SEO developer is useful when the recommendation cannot be completed by editing a title field alone. The work may sit in WordPress templates, Shopify Liquid, static routes, Svelte/React output, redirect rules, schema components, navigation modules, internal links, tracking scripts, or crawl and indexation settings that need code-aware implementation.",
         bullets: [
           "Template-level title, heading, canonical, schema, and internal-link cleanup",
           "Redirects, broken links, indexation controls, sitemap checks, and crawl-path fixes",

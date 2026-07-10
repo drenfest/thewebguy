@@ -1,7 +1,7 @@
 {
-  "runId": "2026-07-10T18-19-00-000Z",
-  "runTimestamp": "2026-07-10T18:19:00.000Z",
-  "generatedAt": "2026-07-10T15:42:59.847Z",
+  "runId": "2026-07-10T11-32-08-949Z",
+  "runTimestamp": "2026-07-10T11:32:08.949Z",
+  "generatedAt": "2026-07-10T11:32:15.647Z",
   "extractionDate": "2026-07-10",
   "source": {
     "tool": "Google Search Console API",
@@ -17,7 +17,7 @@
       "position"
     ],
     "scoreDateDescription": "Search Console data end date is recorded on each query as scoreDate. Extraction ran on 2026-07-10.",
-    "runTimestamp": "2026-07-10T18:19:00.000Z",
+    "runTimestamp": "2026-07-10T11:32:08.949Z",
     "googleAnalytics": {
       "enabled": true,
       "available": true,
@@ -1618,7 +1618,7 @@
       "title": null,
       "meta": null,
       "qualification": null,
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-06-30",
       "totals": {
         "clicks": 3,
         "impressions": 214,
@@ -1897,13 +1897,13 @@
       "path": "/services/technical-seo-developer/",
       "url": "https://thewebguy.app/services/technical-seo-developer/",
       "type": "Service",
-      "title": "SEO Developer Help for Technical SEO Implementation at $55/hr",
-      "meta": "Need an SEO developer? Get technical SEO implementation help for schema, crawl fixes, redirects, metadata, internal links, JavaScript rendering, WordPress, Shopify, and templates.",
+      "title": "Technical SEO Developer and SEO Developer Help at $55/hr",
+      "meta": "SEO developer help for technical SEO implementation, schema, crawl fixes, redirects, metadata, internal links, JavaScript rendering, WordPress, Shopify, and templates.",
       "qualification": {
         "qualifies": true,
         "blockers": [],
         "strengths": [
-          "Substantive copy is present (706 words).",
+          "Substantive copy is present (685 words).",
           "Structured content depth is present (4 sections).",
           "Meta copy exists.",
           "Internal linking signals exist (5 references)."
@@ -1915,7 +1915,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 0,
         "impressions": 115,
@@ -2104,12 +2104,12 @@
       "url": "https://thewebguy.app/blog/something-broke-on-your-website/",
       "type": "Blog",
       "title": "Fix My Broken Website: Start With the Symptom, Not the Platform",
-      "meta": "Need help because your website is broken? Use this practical triage guide for broken layouts, forms, checkout, scripts, tracking, WordPress issues, cache, hosting, and recent changes.",
+      "meta": "Need to fix a broken website? Learn how to triage broken layouts, forms, checkout, scripts, tracking, WordPress issues, cache, hosting, and recent changes.",
       "qualification": {
         "qualifies": true,
         "blockers": [],
         "strengths": [
-          "Substantive copy is present (2590 words).",
+          "Substantive copy is present (2583 words).",
           "Structured content depth is present (12 sections).",
           "Meta copy exists.",
           "Internal linking signals exist (8 references)."
@@ -2350,12 +2350,12 @@
       "url": "https://thewebguy.app/blog/css-javascript-errors-website-bugs/",
       "type": "Blog",
       "title": "JavaScript Issues and CSS Bugs Breaking Your Website? What to Check First",
-      "meta": "Need help with JavaScript issues or CSS bugs? Troubleshoot broken menus, failed buttons, layout problems, forms, console errors, script conflicts, and front-end website bugs.",
+      "meta": "Troubleshoot JavaScript issues, CSS bugs, broken menus, failed buttons, layout problems, forms, console errors, script conflicts, and front-end website bugs.",
       "qualification": {
         "qualifies": true,
         "blockers": [],
         "strengths": [
-          "Substantive copy is present (522 words).",
+          "Substantive copy is present (510 words).",
           "Structured content depth is present (5 sections).",
           "Meta copy exists.",
           "Internal linking signals exist (7 references)."
@@ -3189,7 +3189,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 0,
         "impressions": 49,
@@ -3744,7 +3744,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 0,
         "impressions": 36,
@@ -3850,7 +3850,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 0,
         "impressions": 32,
@@ -4163,7 +4163,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 0,
         "impressions": 28,
@@ -4290,7 +4290,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 0,
         "impressions": 28,
@@ -4468,13 +4468,13 @@
       "path": "/services/api-integrations/",
       "url": "https://thewebguy.app/services/api-integrations/",
       "type": "Service",
-      "title": "Website Integration Help for APIs, Forms, and CRMs at $55/hr",
-      "meta": "Need website integration help? Get practical support for REST APIs, webhooks, forms, CRM connections, ecommerce integrations, data cleanup, tracking handoffs, and automation.",
+      "title": "API and Website Integration Help at $55/hr",
+      "meta": "Website integration help for REST APIs, webhooks, forms, CRM connections, ecommerce integrations, data cleanup, scripts, tracking handoffs, and automation.",
       "qualification": {
         "qualifies": true,
         "blockers": [],
         "strengths": [
-          "Substantive copy is present (461 words).",
+          "Substantive copy is present (442 words).",
           "Structured content depth is present (4 sections).",
           "Meta copy exists.",
           "Internal linking signals exist (6 references)."
@@ -4486,7 +4486,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 0,
         "impressions": 25,
@@ -5149,7 +5149,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 0,
         "impressions": 17,
@@ -5275,7 +5275,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 1,
         "impressions": 14,
@@ -5361,7 +5361,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 0,
         "impressions": 14,
@@ -5447,7 +5447,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 0,
         "impressions": 14,
@@ -5795,7 +5795,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 0,
         "impressions": 13,
@@ -6317,7 +6317,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 0,
         "impressions": 11,
@@ -6601,7 +6601,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 0,
         "impressions": 10,
@@ -6707,7 +6707,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 0,
         "impressions": 9,
@@ -6880,7 +6880,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 0,
         "impressions": 8,
@@ -6924,7 +6924,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 0,
         "impressions": 7,
@@ -6968,7 +6968,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 0,
         "impressions": 7,
@@ -7108,7 +7108,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 0,
         "impressions": 6,
@@ -7457,7 +7457,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 0,
         "impressions": 5,
@@ -7563,7 +7563,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 0,
         "impressions": 5,
@@ -7837,7 +7837,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 0,
         "impressions": 4,
@@ -8119,7 +8119,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 0,
         "impressions": 3,
@@ -8230,7 +8230,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 0,
         "impressions": 2,
@@ -8274,7 +8274,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 0,
         "impressions": 2,
@@ -8318,7 +8318,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 0,
         "impressions": 2,
@@ -8362,7 +8362,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 0,
         "impressions": 2,
@@ -8684,7 +8684,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 0,
         "impressions": 1,
@@ -8750,7 +8750,7 @@
         },
         "score": 4
       },
-      "sitemapLastmod": "2026-07-10",
+      "sitemapLastmod": "2026-07-08",
       "totals": {
         "clicks": 0,
         "impressions": 1,
@@ -11077,8 +11077,8 @@
       "inspectionErrorCount": 0,
       "indexedCount": 107,
       "nonIndexedCount": 10,
-      "qualifyingNonIndexedCount": 10,
-      "nonQualifyingCount": 0
+      "qualifyingNonIndexedCount": 6,
+      "nonQualifyingCount": 4
     },
     "nonIndexedPages": [
       {
@@ -11331,20 +11331,21 @@
         },
         "inspectionError": null,
         "qualification": {
-          "qualifies": true,
-          "blockers": [],
+          "qualifies": false,
+          "blockers": [
+            "The page only exposes about 168 content words; it needs more substantive copy.",
+            "The page does not show a strong enough internal-link path in local content data."
+          ],
           "strengths": [
-            "Substantive copy is present (171 words).",
             "Structured content depth is present (4 sections).",
-            "Meta copy exists.",
-            "Internal linking signals exist (3 references)."
+            "Meta copy exists."
           ],
           "thresholds": {
             "minWords": 170,
             "minSections": 1,
             "minLinks": 1
           },
-          "score": 4
+          "score": 0
         },
         "submission": {
           "status": "needs_work_first",
@@ -11366,20 +11367,21 @@
         },
         "inspectionError": null,
         "qualification": {
-          "qualifies": true,
-          "blockers": [],
+          "qualifies": false,
+          "blockers": [
+            "The page does not show a strong enough internal-link path in local content data."
+          ],
           "strengths": [
-            "Substantive copy is present (185 words).",
+            "Substantive copy is present (182 words).",
             "Structured content depth is present (4 sections).",
-            "Meta copy exists.",
-            "Internal linking signals exist (3 references)."
+            "Meta copy exists."
           ],
           "thresholds": {
             "minWords": 170,
             "minSections": 1,
             "minLinks": 1
           },
-          "score": 4
+          "score": 2
         },
         "submission": {
           "status": "needs_work_first",
@@ -11408,20 +11410,21 @@
         },
         "inspectionError": null,
         "qualification": {
-          "qualifies": true,
-          "blockers": [],
+          "qualifies": false,
+          "blockers": [
+            "The page does not show a strong enough internal-link path in local content data."
+          ],
           "strengths": [
-            "Substantive copy is present (188 words).",
+            "Substantive copy is present (185 words).",
             "Structured content depth is present (4 sections).",
-            "Meta copy exists.",
-            "Internal linking signals exist (3 references)."
+            "Meta copy exists."
           ],
           "thresholds": {
             "minWords": 170,
             "minSections": 1,
             "minLinks": 1
           },
-          "score": 4
+          "score": 2
         },
         "submission": {
           "status": "needs_work_first",
@@ -11443,20 +11446,21 @@
         },
         "inspectionError": null,
         "qualification": {
-          "qualifies": true,
-          "blockers": [],
+          "qualifies": false,
+          "blockers": [
+            "The page does not show a strong enough internal-link path in local content data."
+          ],
           "strengths": [
-            "Substantive copy is present (179 words).",
+            "Substantive copy is present (176 words).",
             "Structured content depth is present (4 sections).",
-            "Meta copy exists.",
-            "Internal linking signals exist (3 references)."
+            "Meta copy exists."
           ],
           "thresholds": {
             "minWords": 170,
             "minSections": 1,
             "minLinks": 1
           },
-          "score": 4
+          "score": 2
         },
         "submission": {
           "status": "needs_work_first",
@@ -11476,6 +11480,59 @@
       "usedBeforeRun": 0,
       "remainingAfterRun": 10
     },
-    "recommendations": []
+    "recommendations": [
+      {
+        "id": "indexing-qualification-fix__page__fix-notes-fixed-contact-form-email-delivery-authenticated-sending",
+        "targetType": "page",
+        "executionType": "codex",
+        "statusHint": null,
+        "kind": "indexing_qualification_fix",
+        "targetId": "/fix-notes/fixed-contact-form-email-delivery-authenticated-sending/",
+        "title": "Strengthen /fix-notes/fixed-contact-form-email-delivery-authenticated-sending/ before another indexing request",
+        "rationale": "/fix-notes/fixed-contact-form-email-delivery-authenticated-sending/ is not indexed, and the local page data still fails qualification checks: The page only exposes about 168 content words; it needs more substantive copy. The page does not show a strong enough internal-link path in local content data.",
+        "expectedEffect": "Improve the page so a future indexing request points to a clearer, richer, better-linked asset.",
+        "confidence": "high",
+        "actionPrompt": "Review /fix-notes/fixed-contact-form-email-delivery-authenticated-sending/ and improve it until it clearly qualifies for indexing submission. Current blockers: The page only exposes about 168 content words; it needs more substantive copy. The page does not show a strong enough internal-link path in local content data. Focus on substantive content, better structure, and explicit internal links from strong parent pages. Do not create a thin child page just to chase indexing."
+      },
+      {
+        "id": "indexing-qualification-fix__page__fix-notes-resolved-unused-instagram-feed-plugin-issue",
+        "targetType": "page",
+        "executionType": "codex",
+        "statusHint": null,
+        "kind": "indexing_qualification_fix",
+        "targetId": "/fix-notes/resolved-unused-instagram-feed-plugin-issue/",
+        "title": "Strengthen /fix-notes/resolved-unused-instagram-feed-plugin-issue/ before another indexing request",
+        "rationale": "/fix-notes/resolved-unused-instagram-feed-plugin-issue/ is not indexed, and the local page data still fails qualification checks: The page does not show a strong enough internal-link path in local content data.",
+        "expectedEffect": "Improve the page so a future indexing request points to a clearer, richer, better-linked asset.",
+        "confidence": "high",
+        "actionPrompt": "Review /fix-notes/resolved-unused-instagram-feed-plugin-issue/ and improve it until it clearly qualifies for indexing submission. Current blockers: The page does not show a strong enough internal-link path in local content data. Focus on substantive content, better structure, and explicit internal links from strong parent pages. Do not create a thin child page just to chase indexing."
+      },
+      {
+        "id": "indexing-qualification-fix__page__fix-notes-refactored-nextjs-site-static-hosting",
+        "targetType": "page",
+        "executionType": "codex",
+        "statusHint": null,
+        "kind": "indexing_qualification_fix",
+        "targetId": "/fix-notes/refactored-nextjs-site-static-hosting/",
+        "title": "Strengthen /fix-notes/refactored-nextjs-site-static-hosting/ before another indexing request",
+        "rationale": "/fix-notes/refactored-nextjs-site-static-hosting/ is not indexed, and the local page data still fails qualification checks: The page does not show a strong enough internal-link path in local content data.",
+        "expectedEffect": "Improve the page so a future indexing request points to a clearer, richer, better-linked asset.",
+        "confidence": "high",
+        "actionPrompt": "Review /fix-notes/refactored-nextjs-site-static-hosting/ and improve it until it clearly qualifies for indexing submission. Current blockers: The page does not show a strong enough internal-link path in local content data. Focus on substantive content, better structure, and explicit internal links from strong parent pages. Do not create a thin child page just to chase indexing."
+      },
+      {
+        "id": "indexing-qualification-fix__page__fix-notes-reviewed-builder-based-site-performance-design-constraints",
+        "targetType": "page",
+        "executionType": "codex",
+        "statusHint": null,
+        "kind": "indexing_qualification_fix",
+        "targetId": "/fix-notes/reviewed-builder-based-site-performance-design-constraints/",
+        "title": "Strengthen /fix-notes/reviewed-builder-based-site-performance-design-constraints/ before another indexing request",
+        "rationale": "/fix-notes/reviewed-builder-based-site-performance-design-constraints/ is not indexed, and the local page data still fails qualification checks: The page does not show a strong enough internal-link path in local content data.",
+        "expectedEffect": "Improve the page so a future indexing request points to a clearer, richer, better-linked asset.",
+        "confidence": "high",
+        "actionPrompt": "Review /fix-notes/reviewed-builder-based-site-performance-design-constraints/ and improve it until it clearly qualifies for indexing submission. Current blockers: The page does not show a strong enough internal-link path in local content data. Focus on substantive content, better structure, and explicit internal links from strong parent pages. Do not create a thin child page just to chase indexing."
+      }
+    ]
   }
 }

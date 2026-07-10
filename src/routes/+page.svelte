@@ -232,8 +232,8 @@
 </script>
 
 <Seo
-  title="The Web Guy | Contract Web Developer & SEO Support"
-  description="Hire The Web Guy for contract WordPress, web development, technical SEO, landing pages, tracking, ecommerce, and website support at $55/hr."
+  title="The Web Guy | Contract Web Developer for WordPress, SEO, Tracking, and Fixes"
+  description="Need The Web Guy to fix a website, implement SEO, launch a page, or troubleshoot tracking? Contract web development support at $55/hr for WordPress, ecommerce, APIs, and technical cleanup."
   schema={homeSchema}
 />
 
@@ -241,7 +241,7 @@
   <Hero
     eyebrow="Contract web developer and SEO support"
     h1="Contract Web Help for Broken, Slow, Stuck, or Unfinished Websites"
-    intro="The Web Guy is a contract web developer for businesses and agencies that need WordPress issues fixed, SEO work implemented, landing pages built, tracking troubleshot, ecommerce stabilized, systems connected, and technical web work finished."
+    intro="The Web Guy fixes broken websites, implements SEO changes, builds landing pages, troubleshoots tracking, stabilizes ecommerce, connects systems, and finishes technical web work without turning every task into a rebuild."
     cta="Send a Website Problem"
     secondary="View Services"
     showCapabilityLinks={false}

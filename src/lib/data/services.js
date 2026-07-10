@@ -552,12 +552,12 @@ export const coreServicePages = [
   },
   {
     slug: "api-integrations",
-    title: "API and Website Integration Help | The Web Guy",
-    meta: "Website integration help for REST APIs, webhooks, forms, CRM connections, ecommerce integrations, data cleanup, scripts, tracking handoffs, and automation.",
-    h1: "API and Website Integration Help at $55/hr",
+    title: "Website Integration Help for APIs, Forms, and CRMs | The Web Guy",
+    meta: "Need website integration help? Get practical support for REST APIs, webhooks, forms, CRM connections, ecommerce integrations, data cleanup, tracking handoffs, and automation.",
+    h1: "Website Integration Help for APIs, Forms, and CRMs at $55/hr",
     eyebrow: "API & Integrations",
     intro:
-      "Practical website integration help for forms, CRMs, CMS platforms, ecommerce systems, webhooks, scripts, feeds, background jobs, tracking handoffs, and data that needs to move reliably.",
+      "Need website integration help for forms, CRMs, CMS platforms, ecommerce systems, webhooks, scripts, feeds, background jobs, tracking handoffs, or data that needs to move reliably? This page is for the practical debugging and implementation work behind those handoffs.",
     cta: "Connect Systems",
     audience:
       "This is not enterprise platform architecture. It is useful contract help when a website needs to send, receive, clean up, test, or automate data between tools.",

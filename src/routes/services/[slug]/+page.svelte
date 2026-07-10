@@ -267,6 +267,17 @@
         " when audit notes need to become actual site changes."
       ]
     ],
+    "technical-seo-developer": [
+      [
+        "SEO developer work usually connects to ",
+        { text: "Technical SEO Implementation", href: "/services/technical-seo-implementation/", title: "View technical SEO implementation for headings, schema, redirects, crawl cleanup, and internal links" },
+        ", ",
+        { text: "SEO Audit Implementation", href: "/services/seo-audit-implementation/", title: "View SEO audit implementation for approved recommendations that need to go live" },
+        ", and ",
+        { text: "Crawl Analysis & Internal Linking", href: "/skills/crawl-analysis-internal-linking/", title: "View crawl analysis and internal linking support" },
+        " when the SEO recommendation needs real template, CMS, schema, redirect, or internal-link work instead of another audit."
+      ]
+    ],
     "ai-built-website-cleanup": [
       [
         "AI-built website cleanup often starts with ",

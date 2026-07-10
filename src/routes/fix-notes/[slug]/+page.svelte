@@ -9,7 +9,11 @@
     fixNoteCategoryUrl,
     fixNoteDisplayDate,
     fixNoteLastUpdatedDate,
-    fixNoteUrl
+    fixNoteUrl,
+    serviceMap,
+    serviceUrl,
+    skillMap,
+    skillUrl
   } from "$lib/data/content.js";
   import { breadcrumbSchema, fixNoteArticleSchema, schemaList } from "$lib/data/schema.js";
 
@@ -27,6 +31,25 @@
     breadcrumbSchema(breadcrumbs, notePath),
     fixNoteArticleSchema(note, notePath)
   ));
+  const relatedSupportLinks = $derived((note.relatedServices || []).map((slug) => {
+    const service = serviceMap[slug];
+    if (service) {
+      return {
+        label: service.eyebrow || service.h1,
+        href: serviceUrl(service.slug),
+        title: `View ${service.eyebrow || service.h1}`
+      };
+    }
+    const skill = skillMap[slug];
+    if (skill) {
+      return {
+        label: skill.eyebrow || skill.h1,
+        href: skillUrl(skill.slug),
+        title: `View ${skill.eyebrow || skill.h1}`
+      };
+    }
+    return null;
+  }).filter(Boolean));
 </script>
 
 <Seo
@@ -88,6 +111,27 @@
         <h2>Result</h2>
         <p>{note.resultSummary}</p>
       </section>
+
+      {#if relatedSupportLinks.length}
+        <section class="fix-note-section">
+          <h2>Where this fix usually leads next</h2>
+          <p>
+            This kind of work usually connects back to
+            {#each relatedSupportLinks as item, index}
+              {#if index === 0}
+                <a class="text-link" href={item.href} title={item.title}>{item.label}</a>
+              {:else if index === relatedSupportLinks.length - 1}
+                {" and "}
+                <a class="text-link" href={item.href} title={item.title}>{item.label}</a>
+              {:else}
+                {", "}
+                <a class="text-link" href={item.href} title={item.title}>{item.label}</a>
+              {/if}
+            {/each}
+            so the fix note can lead into a clearer support path instead of staying as an isolated one-off task.
+          </p>
+        </section>
+      {/if}
 
       <section class="fix-note-section">
         <h2>What I'd watch next</h2>

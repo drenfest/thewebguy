@@ -79,11 +79,11 @@ export const blogTagDefinitions = [
 export const blogPosts = [
   {
     slug: "something-broke-on-your-website",
-    title: "Fix My Broken Website: Practical Triage Help | The Web Guy",
+    title: "Fix My Broken Website: What to Check First | The Web Guy",
     h1: "Fix My Broken Website: Start With the Symptom, Not the Platform",
-    meta: "Need to fix a broken website? Learn how to triage broken layouts, forms, checkout, scripts, tracking, WordPress issues, cache, hosting, and recent changes.",
+    meta: "Need help because your website is broken? Use this practical triage guide for broken layouts, forms, checkout, scripts, tracking, WordPress issues, cache, hosting, and recent changes.",
     eyebrow: "Something broke",
-    summary: "When a website breaks, the fastest path is not guessing the platform. It is describing the symptom, checking what changed, and tracing whether the problem is visual, functional, tracking-related, or server-side.",
+    summary: "When a website breaks, the fastest path is not guessing the platform. It is describing the symptom, checking what changed, and tracing whether the problem is visual, functional, tracking-related, or server-side before the damage spreads.",
     problemType: "Start here",
     relatedService: "website-fixes",
     category: "start-here",
@@ -94,7 +94,7 @@ export const blogPosts = [
     cta: "Send the URL, what broke, and what should happen instead. The first useful move is usually easier to find once the symptom is clear.",
     intro: [
       [
-        "Most people search for WordPress help, web developer, or ",
+        "If you are searching for help because your website is broken, start with the visible symptom before guessing the platform. Most people search for WordPress help, web developer, or ",
         { text: "website bug help", href: "/services/website-fixes/", title: "View website fixes for broken layouts, scripts, forms, and site bugs" },
         " when what they actually have is a symptom. The page looks wrong. A button disappeared. A form says it submitted but no lead arrived. A mobile layout is doing something strange. Checkout is stuck. A page that worked yesterday suddenly does not load."
       ],
@@ -1042,9 +1042,9 @@ export const blogPosts = [
     slug: "css-javascript-errors-website-bugs",
     title: "JavaScript Issues and CSS Bug Fix Help | The Web Guy",
     h1: "JavaScript Issues and CSS Bugs Breaking Your Website? What to Check First",
-    meta: "Troubleshoot JavaScript issues, CSS bugs, broken menus, failed buttons, layout problems, forms, console errors, script conflicts, and front-end website bugs.",
+    meta: "Need help with JavaScript issues or CSS bugs? Troubleshoot broken menus, failed buttons, layout problems, forms, console errors, script conflicts, and front-end website bugs.",
     eyebrow: "CSS and JavaScript",
-    summary: "Menus stop opening, buttons do nothing, styles change unexpectedly, or interactive pieces work on one page and fail on another.",
+    summary: "Need help with JavaScript issues or CSS bugs? Menus stop opening, buttons do nothing, styles change unexpectedly, or interactive pieces work on one page and fail on another.",
     problemType: "Something broke",
     relatedService: "website-fixes",
     category: "front-end-layout",
@@ -1053,6 +1053,19 @@ export const blogPosts = [
     heroSecondary: "View Website Fixes",
     heroSecondaryHref: "/services/website-fixes/",
     cta: "Send the URL, what stopped working, what should happen instead, and any recent theme, plugin, script, or deployment changes.",
+    intro: [
+      "If a menu, button, layout, form, or widget suddenly broke, the first useful move is to decide whether you are looking at a JavaScript issue, a CSS bug, or a front-end symptom caused by something else. Start with the exact page, action, and browser behavior instead of blaming the whole theme or platform.",
+      [
+        "A lot of CSS and JavaScript bug requests begin with a visible symptom: a menu does not open, a class never toggles, a script error freezes the page, a form submit hangs, or an update changed the markup that the CSS expected. That is why ",
+        { text: "website fixes", href: "/services/website-fixes/", title: "View website fixes for broken layouts, scripts, forms, modals, and visible bugs" },
+        " and production debugging often overlap here."
+      ],
+      [
+        "If the browser console already shows errors, or the issue only appears after a plugin, theme, snippet, or deployment change, compare this guide with the deeper ",
+        { text: "JavaScript issues troubleshooting guide", href: "/blog/javascript-issues-website-troubleshooting/", title: "Read the JavaScript issues troubleshooting guide" },
+        " before changing CSS that may not be the real cause."
+      ]
+    ],
     exampleBlock: {
       heading: "Need this fixed on the real page?",
       copy: "If a menu, button, form, layout, or script stopped working, send the URL and what should happen. I can trace the browser error and make the smallest practical fix.",
