@@ -351,15 +351,15 @@ export const keywordLandingSpecs = [
   },
   {
     slug: "technical-seo-developer",
-    title: "SEO Developer Help for Technical SEO Implementation | The Web Guy",
-    meta: "Need an SEO developer? Get technical SEO implementation help for schema, crawl fixes, redirects, metadata, internal links, JavaScript rendering, WordPress, Shopify, and templates.",
-    h1: "SEO Developer Help for Technical SEO Implementation at $55/hr",
+    title: "SEO Developer at $55/hr | Technical SEO Implementation Help | The Web Guy",
+    meta: "Need an SEO developer? Get technical SEO developer help for schema, crawl fixes, redirects, metadata, internal links, JavaScript rendering, WordPress, Shopify, and template-level implementation.",
+    h1: "SEO Developer Help at $55/hr for Technical SEO Implementation",
     eyebrow: "Technical SEO Developer",
     cluster: "Technical SEO",
     anchorSlug: "technical-seo-implementation",
     intent: "technical SEO tasks that require code, CMS, templates, redirects, or structured data support",
     intro:
-      "Need an SEO developer to turn recommendations into live changes? This page covers the implementation gap between an SEO plan and the real website: templates that need cleaner headings, schema that needs to match visible content, redirects that need to work, internal links that need to be added in context, and JavaScript-rendered pages that need practical review.",
+      "Need an SEO developer to turn recommendations into live changes? This page covers the technical SEO implementation gap between an SEO plan and the real website: templates that need cleaner headings, schema that must match visible content, redirects that need to hold, internal links that need to be added in context, and JavaScript-rendered pages that need practical review.",
     cta: "Get SEO Developer Help",
     audience:
       "This page is for SEO teams, agencies, marketers, and site owners who already have a direction but need an SEO developer who can touch the CMS, templates, redirects, schema, page structure, internal links, tracking, or crawl blockers without turning every task into a full rebuild.",
@@ -387,6 +387,7 @@ export const keywordLandingSpecs = [
           ["Template leverage", "Fix reusable templates when one change improves many pages, but avoid scaling weak copy or duplicate page patterns."],
           ["Crawlability", "Check whether important URLs have crawlable links, clean status codes, sensible canonicals, sitemap support, and indexation blockers removed."],
           ["Content fit", "Use query data to strengthen pages where the intent already matches, and create child pages only when a term deserves its own useful answer."],
+          ["Topology support", "Use crawl topology and contextual internal-link evidence to decide where body-level links, supporting copy, and related technical pages should reinforce the parent page."],
           ["Implementation risk", "Separate safe content edits from redirect, schema, JavaScript, deployment, or platform changes that need careful QA."],
           ["Verification", "Document what changed and how it can be checked in crawl output, Search Console, browser tools, structured data tests, or analytics."]
         ]
@@ -398,6 +399,7 @@ export const keywordLandingSpecs = [
           ["SEO Audit Implementation", "Use this when the audit is already done and the main need is moving recommendations into the live site.", "/services/seo-audit-implementation/", "View SEO Audit Implementation"],
           ["Schema Implementation Service", "Use this when structured data is the main technical SEO gap.", "/services/schema-implementation-service/", "View Schema Implementation"],
           ["Crawl Analysis & Internal Linking", "Use this skill path when page topology, internal link support, orphan pages, and crawl paths are the core issue.", "/skills/crawl-analysis-internal-linking/", "View Crawl Analysis"],
+          ["TopoRank Case Study", "Use this when you want to see how topological relevance, vector SEO, and contextual link support guide real internal-link decisions before implementation.", "/blog/topological-relevance-vector-seo/", "View TopoRank Case Study"],
           ["Programmatic SEO", "Use this when the SEO developer work involves reusable page patterns, data-driven pages, and safeguards against thin duplicate URLs.", "/skills/programmatic-seo/", "View Programmatic SEO"]
         ]
       },
@@ -407,6 +409,14 @@ export const keywordLandingSpecs = [
           "Send the priority URLs, audit notes, target queries if available, CMS/platform context, crawl export or screenshots, implementation constraints, and the result you need verified. The strongest handoff separates must-fix items from ideas that still need strategy."
       }
     ],
+    midPageCta: {
+      afterSectionIndex: 1,
+      heading: "Need an SEO developer who can prove the internal-link logic?",
+      copy: "The TopoRank case study shows how I use crawl topology, semantic clusters, and contextual link support before changing templates, schema, redirects, or internal links on live pages.",
+      label: "Get SEO Developer Help",
+      secondaryLabel: "View the TopoRank Case Study",
+      secondaryHref: "/blog/topological-relevance-vector-seo/"
+    },
     related: ["technical-seo-implementation", "seo-audit-implementation", "schema-implementation-service", "agency-overflow-developer"],
     skills: ["schema-structured-data", "crawl-analysis-internal-linking", "production-debugging"],
     faqs: [

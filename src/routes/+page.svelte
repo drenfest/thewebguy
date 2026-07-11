@@ -69,8 +69,8 @@
     },
     {
       label: "SEO is stuck",
-      title: "The audit is done, but the website still needs the fixes",
-      copy: "Turn crawl notes, headings, schema, redirects, and internal links into real changes.",
+      title: "The audit is done, but the website still needs an SEO developer",
+      copy: "Turn crawl notes, headings, schema, redirects, and internal links into real site changes.",
       href: "/blog/seo-audit-done-now-implement-it/"
     },
     {
@@ -113,7 +113,7 @@
     {
       label: "SEO & visibility",
       title: "Audit implementation, schema, internal links, page structure, product data, and crawl cleanup.",
-      links: [["Technical SEO", "/services/technical-seo-implementation/"], ["Schema", "/skills/schema-structured-data/"], ["Crawl & Links", "/skills/crawl-analysis-internal-linking/"]]
+      links: [["Technical SEO", "/services/technical-seo-implementation/"], ["SEO Developer", "/services/technical-seo-developer/"], ["Schema", "/skills/schema-structured-data/"], ["Crawl & Links", "/skills/crawl-analysis-internal-linking/"]]
     },
     {
       label: "Track, connect & automate",
@@ -219,7 +219,9 @@
       { text: "WordPress Support", href: "/services/wordpress-support/", title: "View WordPress support for themes, plugins, page builders, PHP, CSS, and JavaScript" },
       ". Audit notes, schema, redirects, headings, and internal links belong in ",
       { text: "Technical SEO Implementation", href: "/services/technical-seo-implementation/", title: "View technical SEO implementation for crawl notes, schema, redirects, headings, and internal links" },
-      "."
+      ". If the work specifically needs an ",
+      { text: "SEO developer", href: "/services/technical-seo-developer/", title: "View SEO developer help for templates, schema, redirects, internal links, and technical SEO implementation" },
+      ", start there."
     ],
     [
       "When the numbers do not match reality, ",
@@ -232,16 +234,16 @@
 </script>
 
 <Seo
-  title="The Web Guy | Contract Web Developer for WordPress, SEO, Tracking, and Fixes"
-  description="Need The Web Guy to fix a website, implement SEO, launch a page, or troubleshoot tracking? Contract web development support at $55/hr for WordPress, ecommerce, APIs, and technical cleanup."
+  title="The Web Guy | thewebguy.app Contract Web Developer for SEO, WordPress, Tracking, and Fixes"
+  description="The Web Guy at thewebguy.app fixes broken websites, implements SEO, launches pages, and troubleshoots tracking at $55/hr for WordPress, ecommerce, APIs, and technical cleanup."
   schema={homeSchema}
 />
 
 <main>
   <Hero
-    eyebrow="Contract web developer and SEO support"
-    h1="Contract Web Help for Broken, Slow, Stuck, or Unfinished Websites"
-    intro="The Web Guy fixes broken websites, implements SEO changes, builds landing pages, troubleshoots tracking, stabilizes ecommerce, connects systems, and finishes technical web work without turning every task into a rebuild."
+    eyebrow="The Web Guy | Contract web developer and SEO support"
+    h1="The Web Guy: Contract Web Help for Broken, Slow, Stuck, or Unfinished Websites"
+    intro="The Web Guy at thewebguy.app fixes broken websites, implements technical SEO, builds landing pages, troubleshoots tracking, stabilizes ecommerce, connects systems, and finishes technical web work without turning every task into a rebuild."
     cta="Send a Website Problem"
     secondary="View Services"
     showCapabilityLinks={false}

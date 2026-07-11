@@ -79,11 +79,11 @@ export const blogTagDefinitions = [
 export const blogPosts = [
   {
     slug: "something-broke-on-your-website",
-    title: "Fix My Broken Website: What to Check First | The Web Guy",
-    h1: "Fix My Broken Website: Start With the Symptom, Not the Platform",
-    meta: "Need help because your website is broken? Use this practical triage guide for broken layouts, forms, checkout, scripts, tracking, WordPress issues, cache, hosting, and recent changes.",
+    title: "Fix My Broken Website Help | What to Check First | The Web Guy",
+    h1: "Fix My Broken Website: Start With the Symptom, Then Check What Changed",
+    meta: "Need help fixing a broken website? Use this practical broken-website triage guide for layouts, forms, checkout, scripts, tracking, WordPress issues, cache, hosting, and recent changes.",
     eyebrow: "Something broke",
-    summary: "When a website breaks, the fastest path is not guessing the platform. It is describing the symptom, checking what changed, and tracing whether the problem is visual, functional, tracking-related, or server-side before the damage spreads.",
+    summary: "If you are thinking fix my broken website, start by describing the symptom, checking what changed, and tracing whether the problem is visual, functional, tracking-related, or server-side before the damage spreads.",
     problemType: "Start here",
     relatedService: "website-fixes",
     category: "start-here",
@@ -94,7 +94,7 @@ export const blogPosts = [
     cta: "Send the URL, what broke, and what should happen instead. The first useful move is usually easier to find once the symptom is clear.",
     intro: [
       [
-        "If you are searching for help because your website is broken, start with the visible symptom before guessing the platform. Most people search for WordPress help, web developer, or ",
+        "If you are searching fix my broken website, start with the visible symptom before guessing the platform. Most people search for WordPress help, web developer, or ",
         { text: "website bug help", href: "/services/website-fixes/", title: "View website fixes for broken layouts, scripts, forms, and site bugs" },
         " when what they actually have is a symptom. The page looks wrong. A button disappeared. A form says it submitted but no lead arrived. A mobile layout is doing something strange. Checkout is stuck. A page that worked yesterday suddenly does not load."
       ],
@@ -103,7 +103,11 @@ export const blogPosts = [
         { text: "broken WordPress site", href: "/services/fix-broken-wordpress-site/", title: "View help for fixing a broken WordPress site" },
         " might be a plugin conflict, a theme template issue, a cache problem, a JavaScript error, a DNS issue, or a third-party script changing behavior. A custom site can break for the same reasons. The label is less useful than the symptom."
       ],
-      "A good first pass does not require panic or a full rebuild. It starts with what changed, where the issue appears, whether it is visual or functional, and whether it affects revenue, leads, SEO pages, tracking, or trust. That is enough to decide whether this is a small fix, a platform issue, or something that needs deeper debugging."
+      [
+        "A good first pass does not require panic or a full rebuild. It starts with what changed, where the issue appears, whether it is visual or functional, and whether it affects revenue, leads, SEO pages, tracking, or trust. If the visible symptom looks front-end specific, compare this guide with ",
+        { text: "CSS and JavaScript website bugs", href: "/blog/css-javascript-errors-website-bugs/", title: "Read the CSS and JavaScript website bug guide" },
+        " before changing the wrong layer."
+      ]
     ],
     sections: [
       {
@@ -1040,11 +1044,11 @@ export const blogPosts = [
   },
   {
     slug: "css-javascript-errors-website-bugs",
-    title: "JavaScript Issues and CSS Bug Fix Help | The Web Guy",
-    h1: "JavaScript Issues and CSS Bugs Breaking Your Website? What to Check First",
-    meta: "Need help with JavaScript issues or CSS bugs? Troubleshoot broken menus, failed buttons, layout problems, forms, console errors, script conflicts, and front-end website bugs.",
+    title: "JavaScript Issues and CSS Bugs on Your Website | The Web Guy",
+    h1: "JavaScript Issues and CSS Bugs on Your Website: What to Check First",
+    meta: "Need help with JavaScript issues or CSS bugs on a website? Troubleshoot broken menus, failed buttons, layout problems, forms, console errors, script conflicts, and front-end website bugs.",
     eyebrow: "CSS and JavaScript",
-    summary: "Need help with JavaScript issues or CSS bugs? Menus stop opening, buttons do nothing, styles change unexpectedly, or interactive pieces work on one page and fail on another.",
+    summary: "JavaScript issues and CSS bugs can make menus stop opening, buttons do nothing, styles change unexpectedly, or interactive pieces work on one page and fail on another.",
     problemType: "Something broke",
     relatedService: "website-fixes",
     category: "front-end-layout",
@@ -1054,7 +1058,7 @@ export const blogPosts = [
     heroSecondaryHref: "/services/website-fixes/",
     cta: "Send the URL, what stopped working, what should happen instead, and any recent theme, plugin, script, or deployment changes.",
     intro: [
-      "If a menu, button, layout, form, or widget suddenly broke, the first useful move is to decide whether you are looking at a JavaScript issue, a CSS bug, or a front-end symptom caused by something else. Start with the exact page, action, and browser behavior instead of blaming the whole theme or platform.",
+      "If you are searching for JavaScript issues or CSS bugs on a website, the first useful move is to decide whether you are looking at a JavaScript issue, a CSS bug, or a front-end symptom caused by something else. Start with the exact page, action, and browser behavior instead of blaming the whole theme or platform.",
       [
         "A lot of CSS and JavaScript bug requests begin with a visible symptom: a menu does not open, a class never toggles, a script error freezes the page, a form submit hangs, or an update changed the markup that the CSS expected. That is why ",
         { text: "website fixes", href: "/services/website-fixes/", title: "View website fixes for broken layouts, scripts, forms, modals, and visible bugs" },
@@ -1063,7 +1067,9 @@ export const blogPosts = [
       [
         "If the browser console already shows errors, or the issue only appears after a plugin, theme, snippet, or deployment change, compare this guide with the deeper ",
         { text: "JavaScript issues troubleshooting guide", href: "/blog/javascript-issues-website-troubleshooting/", title: "Read the JavaScript issues troubleshooting guide" },
-        " before changing CSS that may not be the real cause."
+        " before changing CSS that may not be the real cause. If the symptom is broader than the front end alone, go back to ",
+        { text: "something broke on your website", href: "/blog/something-broke-on-your-website/", title: "Read the broader broken website troubleshooting guide" },
+        "."
       ]
     ],
     exampleBlock: {
@@ -1098,6 +1104,7 @@ export const blogPosts = [
     ],
     links: [
       ["Website Fixes", "/services/website-fixes/"],
+      ["Something Broke on Your Website", "/blog/something-broke-on-your-website/"],
       ["JavaScript Issue Troubleshooting", "/blog/javascript-issues-website-troubleshooting/"],
       ["Production Debugging", "/skills/production-debugging/"],
       ["AI-Built Cleanup", "/services/ai-built-website-cleanup/"],
@@ -2209,6 +2216,7 @@ export const blogPosts = [
     links: [
       ["Crawl Analysis & Internal Linking", "/skills/crawl-analysis-internal-linking/", "Use this when crawl exports, orphaned pages, crawl paths, internal link modules, and semantic link support need implementation."],
       ["Technical SEO Implementation", "/services/technical-seo-implementation/", "Use this when topology findings need to become metadata, headings, redirects, schema, internal links, and site changes."],
+      ["SEO Developer Help", "/services/technical-seo-developer/", "Use this when crawl topology findings need an SEO developer to turn internal-link, template, schema, redirect, and crawl recommendations into live site changes."],
       ["Production Debugging", "/skills/production-debugging/", "Use this when crawl findings need to be verified against real browser behavior, scripts, routes, forms, or production state."],
       ["Performance Engineering", "/skills/performance-engineering/", "Use this when topology findings overlap with script weight, rendering, layout shift, caching, or Core Web Vitals cleanup."],
       ["GA4/GTM Measurement Integrity", "/skills/ga4-gtm-measurement-integrity/", "Use this when the same user journey has to be verified in analytics events, conversions, and reports."],
@@ -2228,6 +2236,7 @@ export const blogPosts = [
     contextCards: [
       ["Crawl Analysis & Internal Linking", "Use this for the core crawl topology work: weak internal link paths, orphaned pages, boilerplate-heavy support, and context-level link routing.", "/skills/crawl-analysis-internal-linking/", "View crawl analysis and internal linking support"],
       ["Technical SEO Implementation", "Use this when a topology report turns into implementation work: metadata, headings, schema, redirects, canonicals, crawl cleanup, and internal links.", "/services/technical-seo-implementation/", "View technical SEO implementation"],
+      ["SEO Developer Help", "Use this when the topology report needs an SEO developer to make template, schema, redirect, crawl, and body-level internal-link changes on the live site.", "/services/technical-seo-developer/", "View SEO developer help"],
       ["Production Debugging", "Use this when topology issues need to be checked against live browser behavior, scripts, forms, route state, cache, and deployment reality.", "/skills/production-debugging/", "View production debugging support"],
       ["GA4/GTM Measurement Integrity", "Use this when the same flow must be mapped in analytics so content, clicks, form fills, and conversions match real user behavior.", "/skills/ga4-gtm-measurement-integrity/", "View GA4 and GTM measurement integrity"],
       ["Performance Engineering", "Use this when the crawl shows that slow scripts, rendering, third-party embeds, layout shift, or Core Web Vitals are part of the topology problem.", "/skills/performance-engineering/", "View performance engineering support"],

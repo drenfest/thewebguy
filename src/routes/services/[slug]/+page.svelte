@@ -276,6 +276,11 @@
         ", and ",
         { text: "Crawl Analysis & Internal Linking", href: "/skills/crawl-analysis-internal-linking/", title: "View crawl analysis and internal linking support" },
         " when the SEO recommendation needs real template, CMS, schema, redirect, or internal-link work instead of another audit."
+      ],
+      [
+        "For the advanced internal-link side of that work, the ",
+        { text: "topological relevance and vector SEO", href: "/blog/topological-relevance-vector-seo/", title: "Read the TopoRank case study on crawl topology, semantic clusters, and contextual link support" },
+        " case study shows how crawl topology and contextual support guide body-level internal-link decisions before the changes hit a live site."
       ]
     ],
     "ai-built-website-cleanup": [
@@ -415,6 +420,16 @@
         <p class="wide-copy">{section.body}</p>
       {/if}
     </section>
+    {#if service.midPageCta && index === (service.midPageCta.afterSectionIndex ?? 1)}
+      <CtaBand
+        heading={service.midPageCta.heading}
+        copy={service.midPageCta.copy}
+        label={service.midPageCta.label}
+        secondaryLabel={service.midPageCta.secondaryLabel || ""}
+        secondaryHref={service.midPageCta.secondaryHref || ""}
+        sourceTitle={service.h1}
+      />
+    {/if}
   {/each}
 
   <section class="section no-overpromise section-effect section-effect--hex section-effect--low">

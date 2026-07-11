@@ -92,6 +92,7 @@ export const coreServicePages = [
       {
         h2: "SEO implementation support paths",
         cards: [
+          ["SEO Developer Help", "Use this when the recommendations need an SEO developer to touch templates, JavaScript output, redirects, schema, crawl paths, or body-level internal links.", "/services/technical-seo-developer/", "View SEO Developer Help"],
           ["Schema and structured data", "Audit notes about FAQ, service, article, product, local, or organization markup can move into structured data implementation.", "/skills/schema-structured-data/", "View schema support"],
           ["Crawl and internal links", "Crawl exports often become redirect cleanup, broken-link fixes, crawl path review, and internal linking implementation.", "/skills/crawl-analysis-internal-linking/", "View crawl and link help"],
           ["AI-built site cleanup", "AI-built pages still need metadata, schema, routing, internal links, sitemap support, and crawlable structure before they are ready for real users.", "/services/ai-built-website-cleanup/", "View AI-built website cleanup"],
@@ -105,7 +106,7 @@ export const coreServicePages = [
           "The next step can be simple: send the URL, the notes, and the priorities. The Web Guy can help identify what should be handled first, what needs access, what requires a developer-level change, and what may need more caution before touching production."
       }
     ],
-    related: ["wordpress-support", "analytics-tracking", "landing-pages", "agency-overflow"]
+    related: ["technical-seo-developer", "wordpress-support", "analytics-tracking", "landing-pages", "agency-overflow"]
   },
   {
     slug: "landing-pages",
