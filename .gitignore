@@ -27,6 +27,11 @@ site_audit_report.html
 site_audit_report.json
 logo-preview-large.*
 tools/
+reports/
+src/lib/search-console/
+src/lib/server/search-console/
+src/routes/local/
+src/routes/api/local/
 
 # Test and coverage output
 coverage/
