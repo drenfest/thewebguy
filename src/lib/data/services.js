@@ -553,12 +553,12 @@ export const coreServicePages = [
   },
   {
     slug: "api-integrations",
-    title: "Website Integration Help for APIs, Forms, and CRMs | The Web Guy",
-    meta: "Need website integration help? Get practical support for REST APIs, webhooks, forms, CRM connections, ecommerce integrations, data cleanup, tracking handoffs, and automation.",
-    h1: "Website Integration Help for APIs, Forms, and CRMs at $55/hr",
+    title: "Website Integration Help for REST APIs, Webhooks, Forms, and CRMs | The Web Guy",
+    meta: "Need website integration help for REST APIs or webhooks? Get practical support for forms, CRM connections, ecommerce integrations, data cleanup, tracking handoffs, and automation.",
+    h1: "Website Integration Help for REST APIs, Webhooks, Forms, and CRMs at $55/hr",
     eyebrow: "API & Integrations",
     intro:
-      "Need website integration help for forms, CRMs, CMS platforms, ecommerce systems, webhooks, scripts, feeds, background jobs, tracking handoffs, or data that needs to move reliably? This page is for the practical debugging and implementation work behind those handoffs.",
+      "If you searched website integration help for REST APIs, webhooks, forms, CRMs, CMS platforms, ecommerce systems, scripts, feeds, background jobs, tracking handoffs, or data that needs to move reliably, this page covers the practical debugging and implementation work behind those handoffs.",
     cta: "Connect Systems",
     audience:
       "This is not enterprise platform architecture. It is useful contract help when a website needs to send, receive, clean up, test, or automate data between tools.",
@@ -567,7 +567,7 @@ export const coreServicePages = [
       {
         h2: "Connect the pieces that keep breaking",
         body:
-          "A form should create a lead. A webhook should hit the right endpoint. A product feed should include the right data. An API payload should be tested before production. A background job should not silently fail. These are practical integration problems.",
+          "A form should create a lead. A webhook should hit the right endpoint. A REST API payload should be tested before production. A product feed should include the right data. A background job should not silently fail. These are practical integration problems.",
         bullets: [
           "REST API support",
           "Webhooks",
@@ -665,12 +665,12 @@ export const coreServicePages = [
   },
   {
     slug: "automation-internal-tools",
-    title: "Automation, Web Services Automation, and Internal Tools | The Web Guy",
+    title: "Web Services Automation and Internal Tools | The Web Guy",
     meta: "Web services automation help for crawlers, SEO QA scripts, reporting helpers, dashboards, cron jobs, data cleanup, APIs, tracking checks, and internal web tools.",
-    h1: "Automation and Internal Web Tools at $55/hr",
+    h1: "Web Services Automation and Internal Web Tools at $55/hr",
     eyebrow: "Automation",
     intro:
-      "Web services automation for crawlers, checkers, SEO QA scripts, reporting helpers, dashboards, CRON jobs, JSON/CSV cleanup, API-based workflows, and internal tools for repetitive web operations.",
+      "If you searched web services automation, this page covers crawlers, checkers, SEO QA scripts, reporting helpers, dashboards, CRON jobs, JSON/CSV cleanup, API-based workflows, and internal tools for repetitive web operations.",
     cta: "Automate Web Work",
     audience:
       "This service is for agencies, site owners, ecommerce teams, and marketing teams that keep repeating the same website tasks by hand: checking pages, cleaning product data, reviewing audit output, validating tracking, comparing crawl results, or building reports manually.",
@@ -687,7 +687,7 @@ export const coreServicePages = [
       {
         h2: "Stop repeating the same web tasks manually",
         body:
-          "If a task has a repeatable input and a repeatable output, it may be worth automating. That could mean a crawler that checks pages, a script that cleans CSV data, a dashboard that summarizes issues, or a scheduled job that watches for changes.",
+          "If a task has a repeatable input and a repeatable output, it may be worth automating. That could mean web services automation for recurring checks, a crawler that reviews pages, a script that cleans CSV data, a dashboard that summarizes issues, or a scheduled job that watches for changes.",
         bullets: [
           "Crawlers and checkers",
           "SEO QA scripts",

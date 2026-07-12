@@ -51,12 +51,12 @@ export const skillPages = [
   },
   {
     slug: "wordpress-theme-development",
-    title: "WordPress Theme Development Contractor | The Web Guy",
-    meta: "Get WordPress theme and child theme development help for PHP templates, CSS, JavaScript, Elementor cleanup, mobile layouts, SEO structure, and page updates.",
-    h1: "WordPress Theme Development at $55/hr",
+    title: "WordPress Theme Developer and Child Theme Help | The Web Guy",
+    meta: "Need a WordPress theme developer? Get WordPress theme and child theme development help for PHP templates, CSS, JavaScript, Elementor cleanup, mobile layouts, SEO structure, and page updates.",
+    h1: "WordPress Theme Developer Help at $55/hr",
     eyebrow: "WordPress Themes",
-    intro: "WordPress theme and child theme support for template edits, layout cleanup, Elementor/page builder fixes, mobile issues, PHP templates, CSS, JavaScript, and SEO-friendly page structure.",
-    problems: ["Theme templates are outdated or hard to edit", "Mobile layouts break after content changes", "Elementor or builder spacing is a mess", "SEO recommendations require template-level changes", "Tracking scripts and embeds are scattered through the theme"],
+    intro: "Need a WordPress theme developer for template edits, child theme cleanup, Elementor/page builder fixes, mobile issues, PHP templates, CSS, JavaScript, or SEO-friendly page structure? This page is built for practical theme work on existing sites.",
+    problems: ["You need a WordPress theme developer for an existing site, not a full rebuild", "Mobile layouts break after content changes", "Elementor or builder spacing is a mess", "SEO recommendations require template-level changes", "Tracking scripts and embeds are scattered through the theme"],
     tasks: ["Edit PHP templates and child themes", "Clean up CSS and JavaScript behavior", "Fix mobile layouts and builder spacing", "Improve heading and content structure", "Add or clean up embeds and tracking snippets", "Support WordPress page and content updates"],
     connection: "Theme work supports WordPress support, landing pages, technical SEO implementation, site speed cleanup, and website fixes.",
     contextCards: [
@@ -153,11 +153,11 @@ export const skillPages = [
   {
     slug: "rest-api-webhook-integrations",
     title: "REST API and Webhook Integration Help | The Web Guy",
-    meta: "REST API and webhook integration help for forms, CRMs, CMS platforms, ecommerce systems, background jobs, Postman testing, payloads, and data cleanup.",
-    h1: "REST API and Webhook Integrations at $55/hr",
+    meta: "Need to know whether an API supports REST and webhooks? Get REST API and webhook integration help for forms, CRMs, CMS platforms, ecommerce systems, background jobs, Postman testing, payloads, and data cleanup.",
+    h1: "REST API and Webhook Integration Help at $55/hr",
     eyebrow: "APIs & Webhooks",
-    intro: "API and webhook support for websites that need to connect forms, CRMs, CMS platforms, ecommerce systems, data workflows, background jobs, and automation without becoming fragile.",
-    problems: ["A webhook is firing but the receiving system is failing", "A form needs to send lead data somewhere useful", "API payloads need tested before launch", "Product or customer data needs cleanup", "Background jobs fail silently"],
+    intro: "Need to know whether an API supports REST and webhooks, or whether a website handoff should use one, the other, or both? This page covers API and webhook support for forms, CRMs, CMS platforms, ecommerce systems, data workflows, background jobs, and automation without becoming fragile.",
+    problems: ["You need to confirm whether the API supports REST, webhooks, or both", "A webhook is firing but the receiving system is failing", "A form needs to send lead data somewhere useful", "API payloads need tested before launch", "Product or customer data needs cleanup", "Background jobs fail silently"],
     tasks: ["Test REST API requests in Postman", "Review JSON payloads and responses", "Debug webhook delivery issues", "Connect forms to CRMs or email workflows", "Support ecommerce/CMS integrations", "Add practical error handling and logging"],
     connection: "API and webhook work supports API integrations, automation tools, ecommerce support, analytics tracking, and WordPress plugin development.",
     contextCards: [

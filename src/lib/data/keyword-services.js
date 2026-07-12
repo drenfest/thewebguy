@@ -45,9 +45,9 @@ export const keywordLandingSpecs = [
   },
   {
     slug: "wordpress-troubleshooting",
-    title: "WordPress Troubleshooting at $55/hr | The Web Guy",
-    meta: "Troubleshoot WordPress problems including plugin conflicts, broken layouts, Elementor issues, forms, PHP errors, scripts, and update problems.",
-    h1: "WordPress Troubleshooting at $55/hr",
+    title: "WordPress Troubleshooting Service at $55/hr | The Web Guy",
+    meta: "Need a WordPress troubleshooting service? Troubleshoot WordPress problems including plugin conflicts, broken layouts, Elementor issues, forms, PHP errors, scripts, and update problems.",
+    h1: "WordPress Troubleshooting Service at $55/hr",
     eyebrow: "WordPress Troubleshooting",
     cluster: "WordPress support",
     anchorSlug: "wordpress-support",
@@ -59,9 +59,9 @@ export const keywordLandingSpecs = [
   },
   {
     slug: "fix-wordpress-issue",
-    title: "Fix a WordPress Issue at $55/hr | The Web Guy",
-    meta: "Need to fix a WordPress issue? Get hourly help with broken pages, forms, plugins, Elementor, theme behavior, scripts, and site errors.",
-    h1: "Fix a WordPress Issue at $55/hr",
+    title: "Fix WordPress Issues at $55/hr | The Web Guy",
+    meta: "Need to fix WordPress issues? Get hourly help with broken pages, forms, plugins, Elementor, theme behavior, scripts, and site errors.",
+    h1: "Fix WordPress Issues at $55/hr",
     eyebrow: "Fix WordPress Issue",
     cluster: "WordPress support",
     anchorSlug: "website-fixes",
@@ -351,15 +351,15 @@ export const keywordLandingSpecs = [
   },
   {
     slug: "technical-seo-developer",
-    title: "SEO Developer at $55/hr | Technical SEO Implementation Help | The Web Guy",
-    meta: "Need an SEO developer? Get technical SEO developer help for schema, crawl fixes, redirects, metadata, internal links, JavaScript rendering, WordPress, Shopify, and template-level implementation.",
-    h1: "SEO Developer Help at $55/hr for Technical SEO Implementation",
+    title: "SEO Developer Help at $55/hr | Technical SEO Developer | The Web Guy",
+    meta: "Need an SEO developer or technical SEO developer? Get SEO developer help for schema, crawl fixes, redirects, metadata, internal links, JavaScript rendering, WordPress, Shopify, and template-level implementation.",
+    h1: "SEO Developer Help at $55/hr for Technical SEO Pages, Templates, and Internal Links",
     eyebrow: "Technical SEO Developer",
     cluster: "Technical SEO",
     anchorSlug: "technical-seo-implementation",
     intent: "technical SEO tasks that require code, CMS, templates, redirects, or structured data support",
     intro:
-      "Need an SEO developer to turn recommendations into live changes? This page covers the technical SEO implementation gap between an SEO plan and the real website: templates that need cleaner headings, schema that must match visible content, redirects that need to hold, internal links that need to be added in context, and JavaScript-rendered pages that need practical review.",
+      "Need an SEO developer or technical SEO developer to turn recommendations into live changes? This page covers the technical SEO implementation gap between an SEO plan and the real website: templates that need cleaner headings, schema that must match visible content, redirects that need to hold, internal links that need to be added in context, and JavaScript-rendered pages that need practical review.",
     cta: "Get SEO Developer Help",
     audience:
       "This page is for SEO teams, agencies, marketers, and site owners who already have a direction but need an SEO developer who can touch the CMS, templates, redirects, schema, page structure, internal links, tracking, or crawl blockers without turning every task into a full rebuild.",
@@ -370,7 +370,7 @@ export const keywordLandingSpecs = [
       {
         h2: "SEO developer tasks this page targets",
         body:
-          "An SEO developer is useful when the recommendation cannot be completed by editing a title field alone. The work may sit in WordPress templates, Shopify Liquid, static routes, Svelte/React output, redirect rules, schema components, navigation modules, internal links, tracking scripts, or crawl and indexation settings that need code-aware implementation.",
+          "An SEO developer is useful when the recommendation cannot be completed by editing a title field alone. People often search SEO developer, SEO web developer, or even SEO programmer when the real need sits in WordPress templates, Shopify Liquid, static routes, Svelte/React output, redirect rules, schema components, navigation modules, internal links, tracking scripts, or crawl and indexation settings that need code-aware implementation.",
         bullets: [
           "Template-level title, heading, canonical, schema, and internal-link cleanup",
           "Redirects, broken links, indexation controls, sitemap checks, and crawl-path fixes",

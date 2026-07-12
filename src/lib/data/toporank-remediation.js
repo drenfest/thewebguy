@@ -20,9 +20,9 @@ export const topologyBridgeMap = {
     { title: "Schema & Structured Data", href: "/skills/schema-structured-data/", anchor: "schema and structured data" }
   ],
   "/blog/something-broke-on-your-website/": [
-    { title: "Production Website Debugging", href: "/skills/production-debugging/", anchor: "production website debugging" },
-    { title: "Cloudflare, DNS & SSL Website Support", href: "/skills/cloudflare-dns-ssl/", anchor: "Cloudflare, DNS, and SSL support" },
-    { title: "React and Static Site Help", href: "/services/react-static-sites/", anchor: "React and static site help" }
+    { title: "Fix My Broken Website: Triage Order and Repair Notes", href: "/blog/fix-my-broken-website/", anchor: "fix my broken website triage" },
+    { title: "Website Fixes", href: "/services/website-fixes/", anchor: "website fixes" },
+    { title: "Production Website Debugging", href: "/skills/production-debugging/", anchor: "production website debugging" }
   ],
   "/services/ecommerce-support/": [
     { title: "API & Webhook Integration Contractor", href: "/skills/rest-api-webhook-integrations/", anchor: "API and webhook integration" },
@@ -75,8 +75,9 @@ export const topologyBridgeMap = {
     { title: "GA4 & GTM Measurement Integrity", href: "/skills/ga4-gtm-measurement-integrity/", anchor: "GA4 and GTM measurement integrity" }
   ],
   "/services/api-integrations/": [
-    { title: "GA4 & GTM Measurement Integrity", href: "/skills/ga4-gtm-measurement-integrity/", anchor: "GA4 and GTM measurement integrity" },
-    { title: "About The Web Guy", href: "/about/", anchor: "about The Web Guy" }
+    { title: "Website Integration Help", href: "/services/website-integration-help/", anchor: "website integration help" },
+    { title: "REST API and Webhook Integration Help", href: "/skills/rest-api-webhook-integrations/", anchor: "REST API and webhook integration" },
+    { title: "Automation and Internal Web Tools", href: "/services/automation-internal-tools/", anchor: "automation and internal web tools" }
   ],
   "/services/technical-seo-implementation/": [
     { title: "The Web Guy FAQ", href: "/faq/", anchor: "The Web Guy FAQ" },
@@ -113,9 +114,9 @@ export const topologyBridgeMap = {
     { title: "Agency Overflow Web Support", href: "/services/agency-overflow/", anchor: "agency overflow web support" }
   ],
   "/blog/css-javascript-errors-website-bugs/": [
-    { title: "Website Troubleshooting Blog", href: "/blog/", anchor: "website troubleshooting blog" },
-    { title: "Cloudflare, DNS & SSL Website Support", href: "/skills/cloudflare-dns-ssl/", anchor: "Cloudflare, DNS, and SSL support" },
-    { title: "Ongoing Webmaster Support", href: "/services/ongoing-webmaster-support/", anchor: "ongoing webmaster support" }
+    { title: "JavaScript Issues on Websites: Practical Troubleshooting", href: "/blog/javascript-issues-website-troubleshooting/", anchor: "JavaScript issues on websites" },
+    { title: "WordPress Theme Development", href: "/skills/wordpress-theme-development/", anchor: "WordPress theme development" },
+    { title: "Website Fixes", href: "/services/website-fixes/", anchor: "website fixes" }
   ],
   "/services/wordpress-help/": [
     { title: "WordPress Support", href: "/services/wordpress-support/", anchor: "WordPress support" },
@@ -189,8 +190,28 @@ export const topologyBridgeMap = {
   ],
   "/services/technical-seo-developer/": [
     { title: "Technical SEO Implementation", href: "/services/technical-seo-implementation/", anchor: "technical SEO implementation" },
-    { title: "SEO Audit Implementation", href: "/services/seo-audit-implementation/", anchor: "SEO audit implementation" },
+    { title: "Schema & Structured Data", href: "/skills/schema-structured-data/", anchor: "schema and structured data" },
     { title: "Crawl Analysis & Internal Linking", href: "/skills/crawl-analysis-internal-linking/", anchor: "crawl analysis and internal linking" }
+  ],
+  "/services/automation-internal-tools/": [
+    { title: "Web Services Automation", href: "/services/web-services-automation/", anchor: "web services automation" },
+    { title: "API and Website Integration Help", href: "/services/api-integrations/", anchor: "API and website integration help" },
+    { title: "REST API and Webhook Integration Help", href: "/skills/rest-api-webhook-integrations/", anchor: "REST API and webhook integration" }
+  ],
+  "/skills/wordpress-theme-development/": [
+    { title: "Broken Mobile Website Layout Fix Help", href: "/blog/broken-layouts-mobile-website-fixes/", anchor: "broken mobile website layouts" },
+    { title: "JavaScript Issues and CSS Bugs on Your Website", href: "/blog/css-javascript-errors-website-bugs/", anchor: "CSS and JavaScript website bugs" },
+    { title: "WordPress Support", href: "/services/wordpress-support/", anchor: "WordPress support" }
+  ],
+  "/skills/rest-api-webhook-integrations/": [
+    { title: "Website Integration Help", href: "/services/website-integration-help/", anchor: "website integration help" },
+    { title: "API & Integrations", href: "/services/api-integrations/", anchor: "API and website integration help" },
+    { title: "Automation and Internal Web Tools", href: "/services/automation-internal-tools/", anchor: "automation and internal web tools" }
+  ],
+  "/blog/javascript-issues-website-troubleshooting/": [
+    { title: "JavaScript Issues and CSS Bugs on Your Website", href: "/blog/css-javascript-errors-website-bugs/", anchor: "CSS and JavaScript website bugs" },
+    { title: "Production Website Debugging", href: "/skills/production-debugging/", anchor: "production website debugging" },
+    { title: "WordPress Theme Development", href: "/skills/wordpress-theme-development/", anchor: "WordPress theme development" }
   ],
   "/services/schema-implementation-service/": [
     { title: "Technical SEO Implementation", href: "/services/technical-seo-implementation/", anchor: "technical SEO implementation" },
