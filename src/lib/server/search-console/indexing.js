@@ -200,7 +200,7 @@ export async function submitIndexingUrl({
   };
   await upsertIndexSubmission(queued);
 
-  const { chromium } = await import('playwright-core');
+  const chromium = await loadPlaywrightChromium();
   const context = await chromium.launchPersistentContext(userDataDir, {
     executablePath,
     headless: config.browserHeadless ?? true
@@ -308,6 +308,23 @@ function resolveBrowserExecutable(config) {
     'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'
   ];
   return candidates.find((candidate) => existsSync(candidate)) || null;
+}
+
+async function loadPlaywrightChromium() {
+  try {
+    // Keep this dependency local-only. Render should be able to bundle the app
+    // without resolving Playwright for the Search Console UI helper path.
+    const dynamicImport = new Function('specifier', 'return import(specifier);');
+    const module = await dynamicImport('playwright-core');
+    if (!module?.chromium) {
+      throw new Error('playwright-core did not expose a chromium browser instance.');
+    }
+    return module.chromium;
+  } catch (error) {
+    throw new Error(
+      `Search Console UI submission requires local Playwright access: ${error instanceof Error ? error.message : String(error)}`
+    );
+  }
 }
 
 function required(value, name) {
