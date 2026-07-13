@@ -79,11 +79,11 @@ export const blogTagDefinitions = [
 export const blogPosts = [
   {
     slug: "something-broke-on-your-website",
-    title: "Fix My Broken Website Help | Website Is Broken? What to Check First | The Web Guy",
-    h1: "Fix My Broken Website: Start With the Symptom, Then Check What Changed",
-    meta: "Need help when a website is broken? Use this practical fix my broken website guide for page-broken symptoms, layouts, forms, checkout, scripts, tracking, WordPress issues, cache, hosting, and recent changes.",
+    title: "Something Broke on Your Website | Website Is Broken? Start With the Symptom | The Web Guy",
+    h1: "Something Broke on Your Website: Start With the Symptom, Then Check What Changed",
+    meta: "Need help when a website is broken? Use this broad broken-website troubleshooting guide for page symptoms, layouts, forms, checkout, scripts, tracking, WordPress issues, cache, hosting, and recent changes.",
     eyebrow: "Something broke",
-    summary: "If you are thinking fix my broken website or even fix my web page, start by describing the symptom, checking what changed, and tracing whether the problem is visual, functional, tracking-related, or server-side before the damage spreads.",
+    summary: "If something broke on your website, start by describing the symptom, checking what changed, and tracing whether the problem is visual, functional, tracking-related, or server-side before the damage spreads.",
     problemType: "Start here",
     relatedService: "website-fixes",
     category: "start-here",
@@ -94,7 +94,7 @@ export const blogPosts = [
     cta: "Send the URL, what broke, and what should happen instead. The first useful move is usually easier to find once the symptom is clear.",
     intro: [
       [
-        "If you are searching fix my broken website, start with the visible symptom before guessing the platform. Most people search for WordPress help, web developer, or ",
+        "If something broke on your website, start with the visible symptom before guessing the platform. Most people search for WordPress help, web developer, or ",
         { text: "website bug help", href: "/services/website-fixes/", title: "View website fixes for broken layouts, scripts, forms, and site bugs" },
         " when what they actually have is a symptom. The page looks wrong. A button disappeared. A form says it submitted but no lead arrived. A mobile layout is doing something strange. Checkout is stuck. A page that worked yesterday suddenly does not load."
       ],
@@ -108,7 +108,7 @@ export const blogPosts = [
         { text: "CSS and JavaScript website bugs", href: "/blog/css-javascript-errors-website-bugs/", title: "Read the CSS and JavaScript website bug guide" },
         " and ",
         { text: "Fix My Broken Website", href: "/blog/fix-my-broken-website/", title: "Read the focused broken website triage guide" },
-        " before changing the wrong layer."
+        " before changing the wrong layer. Use this parent guide for broad routing. Use the focused child page when you already need the repair order."
       ]
     ],
     sections: [
@@ -291,9 +291,9 @@ export const blogPosts = [
   },
   {
     slug: "fix-my-broken-website",
-    title: "Fix My Broken Website | Fix My Web Page Triage and Repair Notes",
+    title: "Fix My Broken Website | Repair Order for Broken Pages, Forms, Checkout, and WordPress",
     h1: "Fix My Broken Website: What to Check Before You Change Anything",
-    meta: "A practical broken website triage guide for fix my broken website, fix my web page, and website repair help covering broken pages, forms, checkout, WordPress, JavaScript, CSS, cache, DNS, hosting, tracking, and safe repair order.",
+    meta: "A practical fix my broken website guide covering broken pages, forms, checkout, WordPress, JavaScript, CSS, cache, DNS, hosting, tracking, and the safest repair order before you touch production.",
     eyebrow: "Broken website triage",
     summary: "When the site is already broken, the useful move is to protect the current state, reproduce the symptom, identify the affected business path, and fix the smallest verified cause.",
     problemType: "Something broke",
@@ -315,13 +315,13 @@ export const blogPosts = [
       [
         "If you are searching for ",
         { text: "fix my broken website", href: "/services/website-fixes/", title: "View hands-on website fix help" },
-        ", fix my web page, or website repair help, the site probably does not need another generic checklist. It needs a careful first move. The page may look broken, a form may be failing, checkout may be stuck, WordPress may have changed after an update, or a script may be breaking only on one device."
+        ", fix my web page, or website repair help, the site probably does not need another generic checklist. It needs a careful first move and a safe repair order. The page may look broken, a form may be failing, checkout may be stuck, WordPress may have changed after an update, or a script may be breaking only on one device."
       ],
       "The mistake is treating every broken-site issue like the same problem. A page with missing CSS, a checkout that cannot submit, a lead form that says success but sends nothing, and a site that redirects in a loop all need different checks. They also carry different business risk.",
       [
         "This guide is the focused child of ",
         { text: "Something Broke on Your Website", href: "/blog/something-broke-on-your-website/", title: "Read the broader broken website troubleshooting guide" },
-        ". Use the parent guide to understand the broad symptom buckets. Use this page when you need a practical repair order and a cleaner handoff to a website fixer."
+        ". Use the parent guide to understand the broad symptom buckets. Use this page when the exact request is fix my broken website and you need a practical repair order plus a cleaner handoff to a website fixer."
       ]
     ],
     sections: [
@@ -1046,11 +1046,11 @@ export const blogPosts = [
   },
   {
     slug: "css-javascript-errors-website-bugs",
-    title: "JavaScript Issues, CSS Bugs, and Website Bug Help | The Web Guy",
-    h1: "JavaScript Issues and CSS Bugs on Your Website: What to Check First",
-    meta: "Need help when JavaScript is not working or CSS bugs break a website? Troubleshoot broken menus, failed buttons, layout problems, forms, console errors, script conflicts, and front-end website bugs.",
+    title: "JavaScript Issues and CSS Bugs on Websites | Menus, Buttons, Forms, and Layout Bugs",
+    h1: "JavaScript Issues and CSS Bugs on Websites: What to Check First",
+    meta: "Need help when JavaScript is not working or CSS bugs break a website? Start with broken menus, buttons, forms, layout problems, console errors, script conflicts, and front-end website bugs.",
     eyebrow: "CSS and JavaScript",
-    summary: "JavaScript issues, CSS bugs, and website bug problems can make menus stop opening, JavaScript stop working, styles change unexpectedly, or interactive pieces work on one page and fail on another.",
+    summary: "JavaScript issues, CSS bugs, and front-end website problems can make menus stop opening, buttons fail, forms hang, styles change unexpectedly, or interactive pieces work on one page and fail on another.",
     problemType: "Something broke",
     relatedService: "website-fixes",
     category: "front-end-layout",
@@ -1060,11 +1060,11 @@ export const blogPosts = [
     heroSecondaryHref: "/services/website-fixes/",
     cta: "Send the URL, what stopped working, what should happen instead, and any recent theme, plugin, script, or deployment changes.",
     intro: [
-      "If you are searching for JavaScript issues, CSS bugs, or website bug help because JavaScript is not working on a website, the first useful move is to decide whether you are looking at a JavaScript issue, a CSS bug, or a front-end symptom caused by something else. Start with the exact page, action, and browser behavior instead of blaming the whole theme or platform.",
+      "If you are searching for JavaScript issues, CSS bugs, or website bug help because a menu, button, form, layout, or script stopped working, the first useful move is to decide whether you are looking at a JavaScript issue, a CSS bug, or a front-end symptom caused by something else. Start with the exact page, action, and browser behavior instead of blaming the whole theme or platform.",
       [
-        "A lot of CSS and JavaScript bug requests begin with a visible symptom: a menu does not open, a class never toggles, a script error freezes the page, a form submit hangs, or an update changed the markup that the CSS expected. That is why ",
+        "A lot of CSS and JavaScript bug requests begin with a visible symptom: a menu does not open, a class never toggles, a script error freezes the page, a form submit hangs, or an update changed the markup that the CSS expected. If the problem needs hands-on repair on the actual site, start with ",
         { text: "website fixes", href: "/services/website-fixes/", title: "View website fixes for broken layouts, scripts, forms, modals, and visible bugs" },
-        " and production debugging often overlap here."
+        ". Production debugging often overlaps here because the fix usually starts in the browser, not in a generic checklist."
       ],
       [
         "If the browser console already shows errors, or the issue only appears after a plugin, theme, snippet, or deployment change, compare this guide with the deeper ",

@@ -351,26 +351,26 @@ export const keywordLandingSpecs = [
   },
   {
     slug: "technical-seo-developer",
-    title: "SEO Developer Help at $55/hr | Technical SEO Developer | The Web Guy",
-    meta: "Need an SEO developer or technical SEO developer? Get SEO developer help for schema, crawl fixes, redirects, metadata, internal links, JavaScript rendering, WordPress, Shopify, and template-level implementation.",
-    h1: "SEO Developer Help at $55/hr for Technical SEO Pages, Templates, and Internal Links",
+    title: "SEO Developer at $55/hr | Technical SEO Implementation Help | The Web Guy",
+    meta: "Need an SEO developer to implement technical SEO changes? Get help with schema, crawl fixes, redirects, metadata, internal links, JavaScript rendering, WordPress, Shopify, and template-level SEO work.",
+    h1: "SEO Developer Help at $55/hr for Technical SEO Implementation",
     eyebrow: "Technical SEO Developer",
     cluster: "Technical SEO",
     anchorSlug: "technical-seo-implementation",
     intent: "technical SEO tasks that require code, CMS, templates, redirects, or structured data support",
     intro:
-      "Need an SEO developer or technical SEO developer to turn recommendations into live changes? This page covers the technical SEO implementation gap between an SEO plan and the real website: templates that need cleaner headings, schema that must match visible content, redirects that need to hold, internal links that need to be added in context, and JavaScript-rendered pages that need practical review.",
+      "Need an SEO developer to turn technical SEO recommendations into live website changes? This page is for the implementation work that sits between an audit and the real site: templates that need cleaner headings, schema that has to match visible content, redirects that need to hold, internal links that need to be added in context, and JavaScript-rendered pages that need practical SEO review.",
     cta: "Get SEO Developer Help",
     audience:
-      "This page is for SEO teams, agencies, marketers, and site owners who already have a direction but need an SEO developer who can touch the CMS, templates, redirects, schema, page structure, internal links, tracking, or crawl blockers without turning every task into a full rebuild.",
-    audienceHeading: "SEO work that needs a developer",
+      "This page is for SEO teams, agencies, marketers, and site owners who already know what needs to change but need an SEO developer who can touch the CMS, templates, redirects, schema, page structure, internal links, tracking, or crawl blockers without turning the request into a full rebuild.",
+    audienceHeading: "Technical SEO work that needs developer execution",
     problems: ["SEO recommendations require developer-level changes", "Templates, JavaScript, schema, redirects, or crawl paths need cleanup", "The SEO team needs implementation help instead of another audit"],
     tasks: ["Translate SEO recommendations into technical tasks", "Implement practical site, template, schema, redirect, and internal-link changes", "Document constraints and verification steps"],
     sections: [
       {
-        h2: "SEO developer tasks this page targets",
+        h2: "What an SEO developer actually fixes",
         body:
-          "An SEO developer is useful when the recommendation cannot be completed by editing a title field alone. People often search SEO developer, SEO web developer, or even SEO programmer when the real need sits in WordPress templates, Shopify Liquid, static routes, Svelte/React output, redirect rules, schema components, navigation modules, internal links, tracking scripts, or crawl and indexation settings that need code-aware implementation.",
+          "An SEO developer is useful when the recommendation cannot be completed by editing a title field alone. People search for SEO developer when the real work lives in WordPress templates, Shopify Liquid, static routes, Svelte/React output, redirect rules, schema components, navigation modules, internal links, tracking scripts, or crawl and indexation settings that need code-aware implementation.",
         bullets: [
           "Template-level title, heading, canonical, schema, and internal-link cleanup",
           "Redirects, broken links, indexation controls, sitemap checks, and crawl-path fixes",
@@ -381,7 +381,7 @@ export const keywordLandingSpecs = [
         ]
       },
       {
-        h2: "How SEO developer work is prioritized",
+        h2: "How this SEO implementation work is prioritized",
         cards: [
           ["Page value", "Prioritize pages with business intent, impressions, ranking movement, qualified traffic potential, or conversion value before polishing low-impact pages."],
           ["Template leverage", "Fix reusable templates when one change improves many pages, but avoid scaling weak copy or duplicate page patterns."],
@@ -404,14 +404,14 @@ export const keywordLandingSpecs = [
         ]
       },
       {
-        h2: "How to hand off SEO developer work",
+        h2: "How to hand off SEO developer implementation work",
         body:
-          "Send the priority URLs, audit notes, target queries if available, CMS/platform context, crawl export or screenshots, implementation constraints, and the result you need verified. The strongest handoff separates must-fix items from ideas that still need strategy."
+          "Send the priority URLs, audit notes, target queries if available, CMS or platform context, crawl exports or screenshots, implementation constraints, and the result you need verified. The strongest handoff separates must-fix items from ideas that still need strategy."
       }
     ],
     midPageCta: {
       afterSectionIndex: 1,
-      heading: "Need an SEO developer who can prove the internal-link logic?",
+      heading: "Need an SEO developer who can show the internal-link logic first?",
       copy: "The TopoRank case study shows how I use crawl topology, semantic clusters, and contextual link support before changing templates, schema, redirects, or internal links on live pages.",
       label: "Get SEO Developer Help",
       secondaryLabel: "View the TopoRank Case Study",
