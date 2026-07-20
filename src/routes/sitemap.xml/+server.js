@@ -1,5 +1,9 @@
 import {
+  blogCategories,
+  blogCategoryUrl,
   blogPosts,
+  blogTags,
+  blogTagUrl,
   blogUrl,
   fixNoteCategories,
   fixNoteCategoryUrl,
@@ -23,6 +27,8 @@ export function GET() {
     "/services/",
     ...servicePages.map((service) => serviceUrl(service.slug)),
     "/blog/",
+    ...blogCategories.map((category) => blogCategoryUrl(category.slug)),
+    ...blogTags.map((tag) => blogTagUrl(tag.slug)),
     ...blogPosts.map((post) => blogUrl(post.slug)),
     "/fix-notes/",
     ...fixNotes.map((note) => fixNoteUrl(note.slug)),

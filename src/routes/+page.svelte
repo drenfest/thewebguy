@@ -217,6 +217,8 @@
       { text: "The Web Guy", href: "/", title: "The Web Guy homepage for contract website developer, SEO developer, WordPress support, and website fixes" },
       " or ",
       { text: "thewebguy", href: "/", title: "The Web Guy homepage on thewebguy.app" },
+      ", ",
+      { text: "web guy", href: "/", title: "The Web Guy homepage for website fixes, SEO developer help, and WordPress support" },
       ", this page is the shortest route into contract website help for broken pages, SEO implementation, WordPress fixes, tracking, APIs, and launch cleanup."
     ],
     [
@@ -241,16 +243,16 @@
 </script>
 
 <Seo
-  title="The Web Guy | Contract Website Developer, SEO Developer, and WordPress Fix Help"
-  description="The Web Guy at thewebguy.app is a contract website developer and SEO developer for broken websites, WordPress fixes, tracking, APIs, landing pages, and technical cleanup at $55/hr."
+  title="The Web Guy | Website Fixes, SEO Developer Help, and WordPress Support"
+  description="The Web Guy at thewebguy.app provides $55/hr website fixes, SEO developer help, WordPress support, tracking cleanup, API work, landing pages, and practical technical web support."
   schema={homeSchema}
 />
 
 <main>
   <Hero
     eyebrow="The Web Guy | Contract website developer, SEO developer, and technical web support"
-    h1="The Web Guy: Contract Website Developer for Broken, Slow, Stuck, or Unfinished Websites"
-    intro="The Web Guy at thewebguy.app works as a contract website developer and SEO developer for broken websites, technical SEO, WordPress troubleshooting, API handoffs, landing pages, ecommerce cleanup, and the technical web work that still has to ship."
+    h1="The Web Guy for Website Fixes, SEO Developer Work, and WordPress Support"
+    intro="The Web Guy at thewebguy.app helps with broken websites, SEO developer implementation, WordPress troubleshooting, tracking cleanup, API handoffs, landing pages, ecommerce cleanup, and the technical web work that still has to ship."
     cta="Send a Website Problem"
     secondary="View Services"
     showCapabilityLinks={false}

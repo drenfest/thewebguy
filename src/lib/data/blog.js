@@ -79,11 +79,11 @@ export const blogTagDefinitions = [
 export const blogPosts = [
   {
     slug: "something-broke-on-your-website",
-    title: "Something Broke on Your Website | Website Is Broken? Start With the Symptom | The Web Guy",
+    title: "Something Broke on Your Website | Fix My Broken Website Without Guessing | The Web Guy",
     h1: "Something Broke on Your Website: Start With the Symptom, Then Check What Changed",
-    meta: "Need help when a website is broken? Use this broad broken-website troubleshooting guide for page symptoms, layouts, forms, checkout, scripts, tracking, WordPress issues, cache, hosting, and recent changes.",
+    meta: "Need help when a website is broken or the next thought is fix my broken website? Use this broken-website troubleshooting guide for layouts, forms, checkout, scripts, tracking, WordPress issues, cache, hosting, and recent changes.",
     eyebrow: "Something broke",
-    summary: "If something broke on your website, start by describing the symptom, checking what changed, and tracing whether the problem is visual, functional, tracking-related, or server-side before the damage spreads.",
+    summary: "If your website is broken and the next thought is fix my broken website, start by describing the symptom, checking what changed, and tracing whether the problem is visual, functional, tracking-related, or server-side before the damage spreads.",
     problemType: "Start here",
     relatedService: "website-fixes",
     category: "start-here",
@@ -94,7 +94,7 @@ export const blogPosts = [
     cta: "Send the URL, what broke, and what should happen instead. The first useful move is usually easier to find once the symptom is clear.",
     intro: [
       [
-        "If something broke on your website, start with the visible symptom before guessing the platform. Most people search for WordPress help, web developer, or ",
+        "If something broke on your website, or you are already searching for fix my broken website help, start with the visible symptom before guessing the platform. Most people search for WordPress help, web developer, or ",
         { text: "website bug help", href: "/services/website-fixes/", title: "View website fixes for broken layouts, scripts, forms, and site bugs" },
         " when what they actually have is a symptom. The page looks wrong. A button disappeared. A form says it submitted but no lead arrived. A mobile layout is doing something strange. Checkout is stuck. A page that worked yesterday suddenly does not load."
       ],
@@ -1046,11 +1046,11 @@ export const blogPosts = [
   },
   {
     slug: "css-javascript-errors-website-bugs",
-    title: "JavaScript Issues and CSS Bugs on Websites | Menus, Buttons, Forms, and Layout Bugs",
+    title: "JavaScript Issues and CSS Bugs on Websites | CSS Troubleshooting for Menus, Forms, and Layout Bugs | The Web Guy",
     h1: "JavaScript Issues and CSS Bugs on Websites: What to Check First",
-    meta: "Need help when JavaScript is not working or CSS bugs break a website? Start with broken menus, buttons, forms, layout problems, console errors, script conflicts, and front-end website bugs.",
+    meta: "Need help when JavaScript is not working, CSS bugs break a website, or you need CSS troubleshooting? Start with broken menus, buttons, forms, layout problems, script conflicts, console errors, and front-end website bugs.",
     eyebrow: "CSS and JavaScript",
-    summary: "JavaScript issues, CSS bugs, and front-end website problems can make menus stop opening, buttons fail, forms hang, styles change unexpectedly, or interactive pieces work on one page and fail on another.",
+    summary: "JavaScript issues, CSS bugs, CSS troubleshooting work, and front-end website problems can make menus stop opening, buttons fail, forms hang, styles change unexpectedly, or interactive pieces work on one page and fail on another.",
     problemType: "Something broke",
     relatedService: "website-fixes",
     category: "front-end-layout",
@@ -1060,7 +1060,7 @@ export const blogPosts = [
     heroSecondaryHref: "/services/website-fixes/",
     cta: "Send the URL, what stopped working, what should happen instead, and any recent theme, plugin, script, or deployment changes.",
     intro: [
-      "If you are searching for JavaScript issues, CSS bugs, or website bug help because a menu, button, form, layout, or script stopped working, the first useful move is to decide whether you are looking at a JavaScript issue, a CSS bug, or a front-end symptom caused by something else. Start with the exact page, action, and browser behavior instead of blaming the whole theme or platform.",
+      "If you are searching for JavaScript issues, CSS bugs, CSS troubleshooting, or website bug help because a menu, button, form, layout, or script stopped working, the first useful move is to decide whether you are looking at a JavaScript issue, a CSS bug, or a front-end symptom caused by something else. Start with the exact page, action, browser behavior, and any recent markup or script change instead of blaming the whole theme or platform.",
       [
         "A lot of CSS and JavaScript bug requests begin with a visible symptom: a menu does not open, a class never toggles, a script error freezes the page, a form submit hangs, or an update changed the markup that the CSS expected. If the problem needs hands-on repair on the actual site, start with ",
         { text: "website fixes", href: "/services/website-fixes/", title: "View website fixes for broken layouts, scripts, forms, modals, and visible bugs" },
@@ -2292,11 +2292,11 @@ export function blogUrl(slug) {
 }
 
 export function blogCategoryUrl(slug) {
-  return `/blog/#category-${slug}`;
+  return `/blog/category/${slug}/`;
 }
 
 export function blogTagUrl(slug) {
-  return `/blog/#tag-${slug}`;
+  return `/blog/tag/${slug}/`;
 }
 
 export const somethingBrokePosts = blogPosts.filter((post) => post.problemType === "Something broke");

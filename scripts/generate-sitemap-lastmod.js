@@ -5,7 +5,11 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const contentModule = await import(pathToFileURL(resolve(root, "src/lib/data/content.js")).href);
 const {
+  blogCategories,
+  blogCategoryUrl,
   blogPosts,
+  blogTags,
+  blogTagUrl,
   blogUrl,
   fixNoteCategories,
   fixNoteCategoryUrl,
@@ -65,6 +69,22 @@ for (const post of blogPosts) {
   add(lastmod, blogUrl(post.slug), [
     "src/routes/blog/[slug]/+page.svelte",
     "src/routes/blog/[slug]/+page.js",
+    contentDataPath
+  ]);
+}
+
+for (const category of blogCategories) {
+  add(lastmod, blogCategoryUrl(category.slug), [
+    "src/routes/blog/category/[slug]/+page.svelte",
+    "src/routes/blog/category/[slug]/+page.server.js",
+    contentDataPath
+  ]);
+}
+
+for (const tag of blogTags) {
+  add(lastmod, blogTagUrl(tag.slug), [
+    "src/routes/blog/tag/[slug]/+page.svelte",
+    "src/routes/blog/tag/[slug]/+page.server.js",
     contentDataPath
   ]);
 }

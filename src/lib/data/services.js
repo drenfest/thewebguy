@@ -558,7 +558,7 @@ export const coreServicePages = [
     h1: "Website Integration Help for REST APIs, Webhooks, Forms, and CRMs at $55/hr",
     eyebrow: "API & Integrations",
     intro:
-      "If you searched website integration help for REST APIs, webhooks, forms, CRMs, CMS platforms, ecommerce systems, scripts, feeds, background jobs, tracking handoffs, or data that needs to move reliably, this page covers the practical debugging and implementation work behind those handoffs.",
+      "If you searched website integration help for REST APIs, webhooks, forms, CRMs, CMS platforms, ecommerce systems, scripts, feeds, background jobs, tracking handoffs, or you are asking whether the API supports REST and webhooks cleanly, this page covers the practical debugging and implementation work behind those handoffs.",
     cta: "Connect Systems",
     audience:
       "This is not enterprise platform architecture. It is useful contract help when a website needs to send, receive, clean up, test, or automate data between tools.",
@@ -665,12 +665,12 @@ export const coreServicePages = [
   },
   {
     slug: "automation-internal-tools",
-    title: "Web Services Automation and Internal Tools | The Web Guy",
-    meta: "Web services automation help for crawlers, SEO QA scripts, reporting helpers, dashboards, cron jobs, data cleanup, APIs, tracking checks, and internal web tools.",
+    title: "Web Services Automation and Internal Web Tools | The Web Guy",
+    meta: "Web services automation and internal web tools for crawlers, SEO QA scripts, reporting helpers, dashboards, cron jobs, data cleanup, APIs, tracking checks, and repetitive website operations.",
     h1: "Web Services Automation and Internal Web Tools at $55/hr",
     eyebrow: "Automation",
     intro:
-      "If you searched web services automation, this page covers crawlers, checkers, SEO QA scripts, reporting helpers, dashboards, CRON jobs, JSON/CSV cleanup, API-based workflows, and internal tools for repetitive web operations.",
+      "If you searched web services automation or internal web tools, this page covers crawlers, checkers, SEO QA scripts, reporting helpers, dashboards, CRON jobs, JSON/CSV cleanup, API-based workflows, and internal tools for repetitive web operations.",
     cta: "Automate Web Work",
     audience:
       "This service is for agencies, site owners, ecommerce teams, and marketing teams that keep repeating the same website tasks by hand: checking pages, cleaning product data, reviewing audit output, validating tracking, comparing crawl results, or building reports manually.",

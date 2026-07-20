@@ -1,5 +1,9 @@
 import {
+  blogCategories,
+  blogCategoryUrl,
   blogPosts,
+  blogTags,
+  blogTagUrl,
   blogUrl,
   faqs,
   fixNotes,
@@ -15,7 +19,7 @@ import {
 const mainPageMeta = {
   "/": {
     title: "The Web Guy",
-    description: "Contract WordPress, web development, technical SEO, landing page, tracking, ecommerce, and website support at $55/hr.",
+    description: "The Web Guy provides $55/hr website fixes, SEO developer help, WordPress support, tracking cleanup, API work, and landing page support.",
     type: "Main page"
   },
   "/services/": {
@@ -106,6 +110,24 @@ export const searchIndex = [
       href: blogUrl(post.slug),
       type: "Blog",
       body: flatten([post.eyebrow, post.summary, post.problemType, post.category, post.tags, post.sections, post.faqs, post.links, post.contextCards])
+    })
+  ),
+  ...blogCategories.map((category) =>
+    entry({
+      title: `${category.label} blog category`,
+      description: category.description,
+      href: blogCategoryUrl(category.slug),
+      type: "Blog Category",
+      body: flatten([category.label, category.description, category.featuredTags, category.posts])
+    })
+  ),
+  ...blogTags.map((tag) =>
+    entry({
+      title: `${tag.label} blog tag`,
+      description: tag.description,
+      href: blogTagUrl(tag.slug),
+      type: "Blog Tag",
+      body: flatten([tag.label, tag.description, tag.menuGroup, tag.posts])
     })
   ),
   ...fixNotes.map((note) =>

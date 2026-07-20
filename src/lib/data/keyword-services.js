@@ -241,15 +241,15 @@ export const keywordLandingSpecs = [
   },
   {
     slug: "wordpress-plugin-conflict-help",
-    title: "Fix WordPress Plugin Conflict Issues | The Web Guy",
-    meta: "Fix WordPress plugin conflict issues affecting forms, layouts, checkout, admin behavior, scripts, performance, updates, or site stability.",
+    title: "Fix WordPress Plugin Conflict Issues | Troubleshoot WordPress Plugin Issues | The Web Guy",
+    meta: "Fix WordPress plugin conflict issues and troubleshoot WordPress plugin issues affecting forms, layouts, checkout, admin behavior, scripts, performance, updates, or site stability.",
     h1: "Fix WordPress Plugin Conflict Issues at $55/hr",
     eyebrow: "Plugin Conflict Help",
     cluster: "WordPress support",
     anchorSlug: "wordpress-support",
     intent: "plugin conflicts where updates or overlapping plugins break site behavior",
     intro:
-      "WordPress plugin conflict help for sites where an update, new plugin, cache tool, security plugin, form plugin, checkout extension, page builder, or theme interaction changed public behavior and the safest fix is not obvious yet.",
+      "WordPress plugin conflict help for sites where an update, new plugin, cache tool, security plugin, form plugin, checkout extension, page builder, or theme interaction changed public behavior and you need to troubleshoot WordPress plugin issues before the safest fix is obvious.",
     cta: "Fix the Plugin Conflict",
     audience:
       "This page is for site owners, agencies, and WordPress teams that need to fix a WordPress plugin conflict without blindly disabling production features. The work starts with the affected URL, the symptom, recent changes, and which business path is at risk.",
@@ -351,15 +351,15 @@ export const keywordLandingSpecs = [
   },
   {
     slug: "technical-seo-developer",
-    title: "SEO Developer at $55/hr | Technical SEO Implementation Help | The Web Guy",
-    meta: "Need an SEO developer to implement technical SEO changes? Get help with schema, crawl fixes, redirects, metadata, internal links, JavaScript rendering, WordPress, Shopify, and template-level SEO work.",
-    h1: "SEO Developer Help at $55/hr for Technical SEO Implementation",
+    title: "SEO Developer Help at $55/hr | Technical SEO, Schema, Redirects, and Internal Links | The Web Guy",
+    meta: "Need an SEO developer or technical SEO developer to implement technical SEO changes? Get help with schema, crawl fixes, redirects, metadata, internal links, JavaScript rendering, WordPress, Shopify, and template-level SEO work.",
+    h1: "SEO Developer Help at $55/hr for Technical SEO, Schema, and Internal Links",
     eyebrow: "Technical SEO Developer",
     cluster: "Technical SEO",
     anchorSlug: "technical-seo-implementation",
     intent: "technical SEO tasks that require code, CMS, templates, redirects, or structured data support",
     intro:
-      "Need an SEO developer to turn technical SEO recommendations into live website changes? This page is for the implementation work that sits between an audit and the real site: templates that need cleaner headings, schema that has to match visible content, redirects that need to hold, internal links that need to be added in context, and JavaScript-rendered pages that need practical SEO review.",
+      "Need an SEO developer or technical SEO developer to turn technical SEO recommendations into live website changes? This page is for the implementation work that sits between an audit and the real site: templates that need cleaner headings, schema that has to match visible content, redirects that need to hold, internal links that need to be added in context, and JavaScript-rendered pages that need practical SEO review.",
     cta: "Get SEO Developer Help",
     audience:
       "This page is for SEO teams, agencies, marketers, and site owners who already know what needs to change but need an SEO developer who can touch the CMS, templates, redirects, schema, page structure, internal links, tracking, or crawl blockers without turning the request into a full rebuild.",
