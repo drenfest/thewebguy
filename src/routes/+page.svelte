@@ -253,7 +253,7 @@
     eyebrow="The Web Guy | Contract website developer, SEO developer, and technical web support"
     h1="The Web Guy for Website Fixes, SEO Developer Work, and WordPress Support"
     intro="The Web Guy at thewebguy.app helps with broken websites, SEO developer implementation, WordPress troubleshooting, tracking cleanup, API handoffs, landing pages, ecommerce cleanup, and the technical web work that still has to ship."
-    cta="Send a Website Problem"
+    cta="Fix My Web Problem"
     secondary="View Services"
     showCapabilityLinks={false}
     image={staticHeroImages.home}

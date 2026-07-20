@@ -5,7 +5,7 @@
   let {
     heading = "Send The Web Guy the problem",
     copy = "Include the URL, what is broken or needed, your timeline, and whether this is one-time or ongoing work.",
-    label = "Send the Problem",
+    label = "Fix My Web Problem",
     secondaryLabel = "",
     secondaryHref = "",
     sourceTitle = heading

@@ -191,7 +191,7 @@
     eyebrow="Website troubleshooting blog"
     h1="Website Troubleshooting Notes"
     intro="Practical explanations for the kinds of website problems businesses and agencies run into: broken layouts, scripts, forms, embeds, tracking, CMS weirdness, and the web work that gets pushed off."
-    cta="Send a Website Problem"
+    cta="Fix My Web Problem"
     secondary="View Website Fixes"
     secondaryHref="/services/website-fixes/"
     image={staticHeroImages.blog}
