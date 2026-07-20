@@ -6,9 +6,9 @@
   import TopicalLinks from "$lib/components/TopicalLinks.svelte";
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
-  import { beforeNavigate } from "$app/navigation";
+  import { afterNavigate, beforeNavigate } from "$app/navigation";
   import { page } from "$app/state";
-  import { onMount } from "svelte";
+  import { onMount, tick } from "svelte";
   import { journeySnapshot, trackContactEvent, trackEvent } from "$lib/analytics.js";
   import { contactSourceType } from "$lib/contact-context.js";
   import { locationPages, servicePages, skillPages } from "$lib/data/content.js";
@@ -259,14 +259,27 @@
     });
   }
 
+  async function scrollToRequestFormIfNeeded(url = page.url) {
+    if (url.hash !== "#request-form") return;
+    await tick();
+    window.requestAnimationFrame(() => {
+      document.getElementById("request-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
+
   beforeNavigate(() => {
     trackContactFormAbandon("navigation");
+  });
+
+  afterNavigate(() => {
+    scrollToRequestFormIfNeeded(page.url);
   });
 
   onMount(() => {
     formLoadedAt = String(Date.now());
     applyContactSourceFromUrl(page.url);
     ensureContactSourceContext(page.url);
+    scrollToRequestFormIfNeeded(page.url);
     trackContactEvent("contact_page_view", { form_id: "request-form", is_form_fill: false });
 
     const handlePageHide = () => trackContactFormAbandon("left_page");
