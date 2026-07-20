@@ -300,7 +300,7 @@
     </div>
   </section>
 
-  <CtaBand heading="Not sure which service fits?" copy="Send the URL and the messy version of the problem. The right service category is usually obvious once the site is reviewed." label="Send the Website Problem" />
+  <CtaBand heading="Not sure which service fits?" copy="Send the URL and the messy version of the problem. The right service category is usually obvious once the site is reviewed." label="Fix My Web Problem" />
 
   <section class="section soft-section split-section section-effect section-effect--signals section-effect--low">
     <div>

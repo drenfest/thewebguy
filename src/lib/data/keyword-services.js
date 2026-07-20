@@ -913,7 +913,7 @@ export function buildKeywordLandingPage(spec) {
     h1: spec.h1,
     eyebrow: spec.eyebrow,
     intro: spec.intro || `${spec.eyebrow} help for ${spec.intent}. Start with the URL, the symptom, what should happen instead, and any recent changes; the work routes back to ${anchor.eyebrow.toLowerCase()} if the request becomes broader.`,
-    cta: spec.cta || "Send the Website Problem",
+    cta: spec.cta || "Fix My Web Problem",
     audience: spec.audience || `This page is for businesses, agencies, and site owners who know the symptom or task but need practical technical help. The work is billed hourly at $55/hr and starts with the URL, context, access limits, and the outcome you want.`,
     audienceHeading: spec.audienceHeading || `${spec.eyebrow} fit`,
     showInHub: false,

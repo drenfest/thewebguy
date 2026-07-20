@@ -8,6 +8,10 @@ const MAX_FORM_AGE_MS = 12 * 60 * 60 * 1000;
 const RATE_WINDOW_MS = 60 * 60 * 1000;
 const MAX_REQUESTS_PER_WINDOW = 5;
 const DUPLICATE_WINDOW_MS = 2 * 60 * 1000;
+const DEFAULT_SOURCE_PATH = "/contact/";
+const DEFAULT_SOURCE_TITLE = "Contact request form";
+const DEFAULT_SOURCE_TYPE = "contact_page";
+const DEFAULT_SOURCE_CTA = "direct_form_submit";
 const rateBuckets = new Map();
 const duplicateBuckets = new Map();
 
@@ -99,9 +103,172 @@ function botCheck(payload) {
   return { blocked: false };
 }
 
-function buildHtml(lines) {
-  const rows = lines.map((line) => (line ? escapeHtml(line) : "")).join("\n");
-  return `<pre style="font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 14px; line-height: 1.55; white-space: pre-wrap;">${rows}</pre>`;
+function displayValue(value, fallback = "Not provided") {
+  const cleaned = clean(value);
+  return cleaned || fallback;
+}
+
+function normalizeWebsiteUrl(value) {
+  const cleaned = clean(value, 2000);
+  if (!cleaned) return "";
+  if (/^https?:\/\//i.test(cleaned)) return cleaned;
+  if (/^[a-z0-9.-]+\.[a-z]{2,}(\/.*)?$/i.test(cleaned)) return `https://${cleaned}`;
+  return "";
+}
+
+function buildSourcePageUrl(value) {
+  const cleaned = clean(value, 400);
+  if (!cleaned) return "";
+  if (/^https?:\/\//i.test(cleaned)) return cleaned;
+  if (cleaned.startsWith("/")) return `https://thewebguy.app${cleaned}`;
+  return "";
+}
+
+function escapeAttribute(value) {
+  return escapeHtml(value).replaceAll("`", "&#96;");
+}
+
+function buildFieldRows(fields) {
+  return fields.map(({ label, value, href }) => {
+    const safeLabel = escapeHtml(label);
+    const safeValue = escapeHtml(value);
+    const valueHtml = href
+      ? `<a href="${escapeAttribute(href)}" style="color:#0f766e;text-decoration:none;font-weight:600;">${safeValue}</a>`
+      : safeValue;
+    return `<tr><td style="padding:10px 0 6px;vertical-align:top;width:180px;color:#52606d;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;">${safeLabel}</td><td style="padding:10px 0 6px;color:#17212b;font-size:15px;line-height:1.5;">${valueHtml}</td></tr>`;
+  }).join("");
+}
+
+function buildTextEmail(request) {
+  const websiteUrl = normalizeWebsiteUrl(request.url);
+  const sourceUrl = buildSourcePageUrl(request.sourcePagePath);
+  const lines = [
+    "Website work request for The Web Guy",
+    "",
+    `From: ${displayValue(request.name)}`,
+    `Reply email: ${displayValue(request.email)}`,
+    `Company or agency: ${displayValue(request.company)}`,
+    `Website URL: ${displayValue(request.url)}`,
+    `Service fit: ${displayValue(request.service)}`,
+    `Skill area: ${displayValue(request.skill)}`,
+    `City or location: ${displayValue(request.location)}`,
+    `Timeline: ${displayValue(request.timeline)}`,
+    `Work type: ${displayValue(request.workType)}`,
+    `Approximate monthly hours: ${displayValue(request.hours)}`,
+    "",
+    "Quick links:",
+    `Reply: mailto:${request.email}`,
+    `Website: ${websiteUrl || "Not provided"}`,
+    `Source page: ${sourceUrl || displayValue(request.sourcePagePath)}`,
+    "",
+    "Source context:",
+    `Source page label: ${displayValue(request.sourcePageTitle)}`,
+    `Source path: ${displayValue(request.sourcePagePath)}`,
+    `Source type: ${displayValue(request.sourcePageType)}`,
+    `Source CTA: ${displayValue(request.sourceCta)}`,
+    "",
+    "What needs help:",
+    request.details
+  ];
+  return lines.join("\n");
+}
+
+function buildHtmlEmail(request, subjectText) {
+  const websiteUrl = normalizeWebsiteUrl(request.url);
+  const sourceUrl = buildSourcePageUrl(request.sourcePagePath);
+  const serviceLabel = displayValue(request.service);
+  const timelineLabel = displayValue(request.timeline);
+  const workTypeLabel = displayValue(request.workType);
+  const intro = request.company
+    ? `${request.name} from ${request.company} sent a new website work request.`
+    : `${request.name} sent a new website work request.`;
+  const actionLinks = [
+    {
+      label: `Reply to ${request.name}`,
+      href: `mailto:${request.email}`,
+      background: "#0f766e",
+      color: "#ffffff"
+    },
+    websiteUrl ? {
+      label: "Open website",
+      href: websiteUrl,
+      background: "#e6fffb",
+      color: "#115e59"
+    } : null,
+    sourceUrl ? {
+      label: "Open source page",
+      href: sourceUrl,
+      background: "#eff6ff",
+      color: "#1d4ed8"
+    } : null
+  ].filter(Boolean);
+
+  const contactRows = buildFieldRows([
+    { label: "Name", value: displayValue(request.name) },
+    { label: "Email", value: displayValue(request.email), href: `mailto:${request.email}` },
+    { label: "Company or agency", value: displayValue(request.company) },
+    { label: "Website URL", value: displayValue(request.url), href: websiteUrl || null },
+    { label: "Service fit", value: serviceLabel },
+    { label: "Skill area", value: displayValue(request.skill) },
+    { label: "City or location", value: displayValue(request.location) },
+    { label: "Timeline", value: timelineLabel },
+    { label: "Work type", value: workTypeLabel },
+    { label: "Approximate monthly hours", value: displayValue(request.hours) }
+  ]);
+
+  const sourceRows = buildFieldRows([
+    { label: "Source page", value: displayValue(request.sourcePageTitle), href: sourceUrl || null },
+    { label: "Source path", value: displayValue(request.sourcePagePath), href: sourceUrl || null },
+    { label: "Source type", value: displayValue(request.sourcePageType) },
+    { label: "Source CTA", value: displayValue(request.sourceCta) }
+  ]);
+
+  const actionButtons = actionLinks.map((link) => `<a href="${escapeAttribute(link.href)}" style="display:inline-block;margin:0 10px 10px 0;padding:12px 16px;border-radius:999px;background:${link.background};color:${link.color};font-size:14px;font-weight:700;text-decoration:none;">${escapeHtml(link.label)}</a>`).join("");
+
+  return `<!DOCTYPE html>
+<html lang="en">
+  <body style="margin:0;padding:24px;background:#eef2f7;color:#17212b;font-family:Arial,Helvetica,sans-serif;">
+    <div style="max-width:760px;margin:0 auto;">
+      <div style="background:linear-gradient(135deg,#0f766e 0%,#155e75 100%);border-radius:24px;padding:28px 28px 24px;color:#ffffff;box-shadow:0 18px 50px rgba(15,23,42,0.16);">
+        <div style="display:inline-block;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,0.16);font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">Website Work Request</div>
+        <h1 style="margin:18px 0 8px;font-size:30px;line-height:1.15;">${escapeHtml(subjectText)}</h1>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:rgba(255,255,255,0.92);">${escapeHtml(intro)}</p>
+        <div style="margin-top:20px;">${actionButtons}</div>
+        <table role="presentation" style="width:100%;border-collapse:separate;border-spacing:12px;margin-top:12px;">
+          <tr>
+            <td style="padding:14px 16px;border-radius:18px;background:rgba(255,255,255,0.14);">
+              <div style="font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.75);">Service Fit</div>
+              <div style="margin-top:6px;font-size:18px;font-weight:700;color:#ffffff;">${escapeHtml(serviceLabel)}</div>
+            </td>
+            <td style="padding:14px 16px;border-radius:18px;background:rgba(255,255,255,0.14);">
+              <div style="font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.75);">Timeline</div>
+              <div style="margin-top:6px;font-size:18px;font-weight:700;color:#ffffff;">${escapeHtml(timelineLabel)}</div>
+            </td>
+            <td style="padding:14px 16px;border-radius:18px;background:rgba(255,255,255,0.14);">
+              <div style="font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.75);">Work Type</div>
+              <div style="margin-top:6px;font-size:18px;font-weight:700;color:#ffffff;">${escapeHtml(workTypeLabel)}</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div style="background:#ffffff;border-radius:22px;padding:24px 28px;margin-top:18px;box-shadow:0 10px 30px rgba(15,23,42,0.08);">
+        <h2 style="margin:0 0 16px;font-size:20px;line-height:1.3;color:#0f172a;">Contact and Request Details</h2>
+        <table role="presentation" style="width:100%;border-collapse:collapse;">${contactRows}</table>
+      </div>
+
+      <div style="background:#ffffff;border-radius:22px;padding:24px 28px;margin-top:18px;box-shadow:0 10px 30px rgba(15,23,42,0.08);">
+        <h2 style="margin:0 0 14px;font-size:20px;line-height:1.3;color:#0f172a;">What Needs Help</h2>
+        <div style="padding:18px 20px;border-radius:18px;background:#f8fafc;border:1px solid #dbe5ef;color:#17212b;font-size:16px;line-height:1.7;white-space:pre-wrap;">${escapeHtml(request.details)}</div>
+      </div>
+
+      <div style="background:#ffffff;border-radius:22px;padding:24px 28px;margin-top:18px;box-shadow:0 10px 30px rgba(15,23,42,0.08);">
+        <h2 style="margin:0 0 16px;font-size:20px;line-height:1.3;color:#0f172a;">Source Context</h2>
+        <table role="presentation" style="width:100%;border-collapse:collapse;">${sourceRows}</table>
+      </div>
+    </div>
+  </body>
+</html>`;
 }
 
 function dotStuff(value) {
@@ -367,15 +534,17 @@ export async function POST({ request, getClientAddress }) {
     return json({ message: "Too many requests from this connection. Please try again later." }, { status: 429 });
   }
 
+  const name = clean(payload.name);
   const email = clean(payload.email);
   const details = clean(payload.details);
 
-  if (!email || !details) {
-    return json({ message: "Email and project details are required." }, { status: 400 });
+  if (!name || !email || !details) {
+    return json({ message: "Name, email, and project details are required." }, { status: 400 });
   }
 
+  const sourcePagePath = clean(payload.sourcePagePath, 300) || DEFAULT_SOURCE_PATH;
   const normalized = {
-    name: clean(payload.name),
+    name,
     email,
     company: clean(payload.company),
     url: clean(payload.url),
@@ -386,10 +555,10 @@ export async function POST({ request, getClientAddress }) {
     workType: clean(payload.workType),
     hours: clean(payload.hours),
     details,
-    sourcePagePath: clean(payload.sourcePagePath, 300),
-    sourcePageTitle: clean(payload.sourcePageTitle, 220),
-    sourcePageType: clean(payload.sourcePageType, 80),
-    sourceCta: clean(payload.sourceCta, 160)
+    sourcePagePath,
+    sourcePageTitle: clean(payload.sourcePageTitle, 220) || (sourcePagePath === DEFAULT_SOURCE_PATH ? DEFAULT_SOURCE_TITLE : sourcePagePath),
+    sourcePageType: clean(payload.sourcePageType, 80) || DEFAULT_SOURCE_TYPE,
+    sourceCta: clean(payload.sourceCta, 160) || DEFAULT_SOURCE_CTA
   };
 
   const duplicateKey = `${clientKey}:${normalized.email.toLowerCase()}:${hashValue(`${normalized.url}|${normalized.service}|${normalized.details}`)}`;
@@ -397,33 +566,10 @@ export async function POST({ request, getClientAddress }) {
     return json({ message: "This request was already received. Please wait before sending it again." }, { status: 409 });
   }
 
-  const lines = [
-    "Request for The Web Guy",
-    "",
-    `Name: ${normalized.name}`,
-    `Email: ${normalized.email}`,
-    `Company or agency: ${normalized.company}`,
-    `Website URL: ${normalized.url}`,
-    `Service fit: ${normalized.service}`,
-    `Skill area: ${normalized.skill}`,
-    `City/location: ${normalized.location}`,
-    `Timeline: ${normalized.timeline}`,
-    `One-time or ongoing: ${normalized.workType}`,
-    `Approximate monthly hours: ${normalized.hours}`,
-    "",
-    "Source context:",
-    `Source page: ${normalized.sourcePageTitle}`,
-    `Source path: ${normalized.sourcePagePath}`,
-    `Source type: ${normalized.sourcePageType}`,
-    `Source CTA: ${normalized.sourceCta}`,
-    "",
-    "What needs help:",
-    normalized.details
-  ];
-
   const subjectContext = normalized.sourcePageTitle || normalized.service || normalized.skill || normalized.location || "The Web Guy";
   const subjectText = `Website work request - ${cleanHeader(subjectContext).slice(0, 96)}`;
-  const bodyText = lines.join("\n");
+  const bodyText = buildTextEmail(normalized);
+  const bodyHtml = buildHtmlEmail(normalized, subjectText);
   const gmailConfig = gmailApiConfig();
   const config = smtpConfig();
   const provider = preferredProvider();
@@ -451,7 +597,7 @@ export async function POST({ request, getClientAddress }) {
         replyTo: normalized.email,
         subject: subjectText,
         text: bodyText,
-        html: buildHtml(lines)
+        html: bodyHtml
       });
 
       return json({
@@ -488,7 +634,7 @@ export async function POST({ request, getClientAddress }) {
       replyTo: normalized.email,
       subject: subjectText,
       text: bodyText,
-      html: buildHtml(lines)
+      html: bodyHtml
     });
 
     return json({

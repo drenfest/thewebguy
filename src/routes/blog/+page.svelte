@@ -315,6 +315,6 @@
     items={blogHubLinks}
   />
 
-  <CtaBand heading="Know what broke?" copy="Send the URL, symptoms, what should happen, and what changed recently. That is enough to start a useful conversation." label="Send the Website Problem" />
+  <CtaBand heading="Know what broke?" copy="Send the URL, symptoms, what should happen, and what changed recently. That is enough to start a useful conversation." label="Fix My Web Problem" />
 
 </main>

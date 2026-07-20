@@ -50,7 +50,7 @@
   <CtaBand
     heading="Have a similar issue?"
     copy="Send the URL and a short description of what needs fixed."
-    label="Send the Website Problem"
+    label="Fix My Web Problem"
   />
 </main>
 

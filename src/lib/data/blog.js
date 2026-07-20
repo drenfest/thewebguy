@@ -88,7 +88,7 @@ export const blogPosts = [
     relatedService: "website-fixes",
     category: "start-here",
     tags: ["website-fixes", "wordpress", "forms", "analytics-tracking", "ecommerce", "site-speed"],
-    heroCta: "Send the Website Problem",
+    heroCta: "Fix My Web Problem",
     heroSecondary: "View Website Fixes",
     heroSecondaryHref: "/services/website-fixes/",
     cta: "Send the URL, what broke, and what should happen instead. The first useful move is usually easier to find once the symptom is clear.",

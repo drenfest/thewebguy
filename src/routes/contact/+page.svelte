@@ -10,6 +10,7 @@
   import { page } from "$app/state";
   import { onMount } from "svelte";
   import { journeySnapshot, trackContactEvent, trackEvent } from "$lib/analytics.js";
+  import { contactSourceType } from "$lib/contact-context.js";
   import { locationPages, servicePages, skillPages } from "$lib/data/content.js";
   import { staticHeroImages } from "$lib/data/hero-images.js";
   import { breadcrumbSchema, schemaList } from "$lib/data/schema.js";
@@ -91,6 +92,8 @@
       "."
     ]
   ];
+  const DEFAULT_CONTACT_SOURCE_TITLE = "Contact request form";
+  const DEFAULT_CONTACT_SOURCE_CTA = "direct_form_submit";
 
   function cleanSourceParam(value = "", limit = 260) {
     return String(value || "").replace(/\s+/g, " ").trim().slice(0, limit);
@@ -150,6 +153,20 @@
     }
 
     return true;
+  }
+
+  function ensureContactSourceContext(url = page.url) {
+    const sourcePagePath = cleanSourceParam(contactState.draft.sourcePagePath, 300) || cleanSourceParam(url.pathname, 300) || "/contact/";
+    const sourcePageTitle = cleanSourceParam(contactState.draft.sourcePageTitle, 220)
+      || (sourcePagePath === "/contact/" ? DEFAULT_CONTACT_SOURCE_TITLE : sourcePagePath);
+    const sourcePageType = cleanSourceParam(contactState.draft.sourcePageType, 80)
+      || contactSourceType(sourcePagePath);
+    const sourceCta = cleanSourceParam(contactState.draft.sourceCta, 160) || DEFAULT_CONTACT_SOURCE_CTA;
+
+    contactState.draft.sourcePagePath = sourcePagePath;
+    contactState.draft.sourcePageTitle = sourcePageTitle;
+    contactState.draft.sourcePageType = sourcePageType;
+    contactState.draft.sourceCta = sourceCta;
   }
 
   function timelineBucket(value = "") {
@@ -249,6 +266,7 @@
   onMount(() => {
     formLoadedAt = String(Date.now());
     applyContactSourceFromUrl(page.url);
+    ensureContactSourceContext(page.url);
     trackContactEvent("contact_page_view", { form_id: "request-form", is_form_fill: false });
 
     const handlePageHide = () => trackContactFormAbandon("left_page");
@@ -267,6 +285,7 @@
     submissionAttempted = true;
     status = { type: "loading", message: "Preparing request..." };
 
+    ensureContactSourceContext(page.url);
     const formData = { ...contactState.draft, websiteCompany: botTrap, formLoadedAt };
     const trackingPayload = contactTrackingPayload(formData);
     let responseStatus = "network";
@@ -350,15 +369,15 @@
           </div>
         {/if}
 
+        <label>Name<input bind:value={contactState.draft.name} name="name" type="text" autocomplete="name" placeholder="Your name" required /></label>
         <label>Email<input bind:value={contactState.draft.email} name="email" type="email" autocomplete="email" placeholder="you@example.com" required /></label>
         <label>Website URL<input bind:value={contactState.draft.url} name="url" type="url" placeholder="https://example.com/page-with-the-issue" /></label>
         <label>What is happening or needed?<textarea bind:value={contactState.draft.details} name="details" rows="6" placeholder="Describe the symptom, what should happen, and anything that changed recently." required></textarea></label>
         <label>Timeline<input bind:value={contactState.draft.timeline} name="timeline" type="text" placeholder="ASAP, this week, this month, flexible" /></label>
 
         <details class="optional-contact-details">
-          <summary>Optional: name, service fit, and ongoing details</summary>
+          <summary>Optional: company, service fit, and ongoing details</summary>
           <div class="optional-contact-grid">
-            <label>Name<input bind:value={contactState.draft.name} name="name" type="text" autocomplete="name" placeholder="Your name" /></label>
             <label>Company or agency name<input bind:value={contactState.draft.company} name="company" type="text" autocomplete="organization" placeholder="Company, agency, or team" /></label>
             <label>What service does this fit?
               <select bind:value={contactState.draft.service} name="service" onchange={() => trackContactSelect("service", contactState.draft.service)}>

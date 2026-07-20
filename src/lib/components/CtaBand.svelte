@@ -11,7 +11,7 @@
     sourceTitle = heading
   } = $props();
 
-  const primaryHref = $derived(contactHrefWithContext("/contact/", {
+  const primaryHref = $derived(contactHrefWithContext("/contact/#request-form", {
     sourcePath: page.url.pathname,
     sourceTitle,
     sourceCta: label
