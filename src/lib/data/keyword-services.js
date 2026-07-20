@@ -242,17 +242,17 @@ export const keywordLandingSpecs = [
   {
     slug: "wordpress-plugin-conflict-help",
     title: "Fix WordPress Plugin Conflict Issues | Troubleshoot WordPress Plugin Issues | The Web Guy",
-    meta: "Fix WordPress plugin conflict issues and troubleshoot WordPress plugin issues affecting forms, layouts, checkout, admin behavior, scripts, performance, updates, or site stability.",
+    meta: "Fix WordPress plugin conflict issues and troubleshoot WordPress plugin issues affecting forms, layouts, checkout, admin behavior, scripts, performance, updates, or site stability, especially when the next step needs WordPress plugin developer help.",
     h1: "Fix WordPress Plugin Conflict Issues at $55/hr",
     eyebrow: "Plugin Conflict Help",
     cluster: "WordPress support",
     anchorSlug: "wordpress-support",
     intent: "plugin conflicts where updates or overlapping plugins break site behavior",
     intro:
-      "WordPress plugin conflict help for sites where an update, new plugin, cache tool, security plugin, form plugin, checkout extension, page builder, or theme interaction changed public behavior and you need to troubleshoot WordPress plugin issues before the safest fix is obvious.",
+      "WordPress plugin conflict help for sites where an update, new plugin, cache tool, security plugin, form plugin, checkout extension, page builder, or theme interaction changed public behavior and you need to troubleshoot WordPress plugin issues before the safest fix is obvious. When the problem turns into hook, shortcode, filter, or plugin-level code review, this is often the bridge into WordPress plugin developer help.",
     cta: "Fix the Plugin Conflict",
     audience:
-      "This page is for site owners, agencies, and WordPress teams that need to fix a WordPress plugin conflict without blindly disabling production features. The work starts with the affected URL, the symptom, recent changes, and which business path is at risk.",
+      "This page is for site owners, agencies, and WordPress teams that need to fix a WordPress plugin conflict without blindly disabling production features. The work starts with the affected URL, the symptom, recent changes, and which business path is at risk, then decides whether the issue stays configuration-level or needs WordPress plugin developer help.",
     audienceHeading: "WordPress plugin conflicts that need careful triage",
     problems: ["A plugin update changed behavior", "Two plugins appear to fight over scripts, styles, forms, checkout, or admin features", "Disabling plugins randomly is too risky"],
     tasks: ["Review the affected behavior and recent updates", "Isolate likely plugin, theme, cache, or script conflicts", "Fix settings, code, or handoff notes where practical"],
@@ -288,7 +288,7 @@ export const keywordLandingSpecs = [
           ["Fix a WordPress Issue", "Use this when the plugin conflict is part of a one-off WordPress fix request.", "/services/fix-wordpress-issue/", "View WordPress Issue Help"],
           ["WooCommerce Checkout Error Fix", "Use this when plugin conflicts affect cart, checkout, payments, shipping, tax, coupons, or purchase tracking.", "/services/woocommerce-checkout-error-fix/", "View Checkout Fix Help"],
           ["Production Debugging", "Use this when console errors, network requests, scripts, cache, or live browser behavior need inspection.", "/skills/production-debugging/", "View Production Debugging"],
-          ["WordPress Plugin Development", "Use this when the conflict requires plugin-level code, hooks, filters, shortcodes, or custom functionality review.", "/skills/wordpress-plugin-development/", "View Plugin Development"]
+          ["WordPress Plugin Development", "Use this when the conflict requires WordPress plugin developer help, plugin-level code review, hooks, filters, shortcodes, or custom functionality changes.", "/skills/wordpress-plugin-development/", "View Plugin Development"]
         ]
       },
       {
@@ -351,18 +351,18 @@ export const keywordLandingSpecs = [
   },
   {
     slug: "technical-seo-developer",
-    title: "SEO Developer Help at $55/hr | Technical SEO, Schema, Redirects, and Internal Links | The Web Guy",
-    meta: "Need an SEO developer or technical SEO developer to implement technical SEO changes? Get help with schema, crawl fixes, redirects, metadata, internal links, JavaScript rendering, WordPress, Shopify, and template-level SEO work.",
-    h1: "SEO Developer Help at $55/hr for Technical SEO, Schema, and Internal Links",
+    title: "SEO Developer and SEO Web Developer Help at $55/hr | Technical SEO, Schema, Redirects, and Internal Links | The Web Guy",
+    meta: "Need an SEO developer, technical SEO developer, or SEO web developer to implement technical SEO changes? Get help with schema, crawl fixes, redirects, metadata, internal links, JavaScript rendering, WordPress, Shopify, and template-level SEO work.",
+    h1: "SEO Developer and SEO Web Developer Help at $55/hr",
     eyebrow: "Technical SEO Developer",
     cluster: "Technical SEO",
     anchorSlug: "technical-seo-implementation",
     intent: "technical SEO tasks that require code, CMS, templates, redirects, or structured data support",
     intro:
-      "Need an SEO developer or technical SEO developer to turn technical SEO recommendations into live website changes? This page is for the implementation work that sits between an audit and the real site: templates that need cleaner headings, schema that has to match visible content, redirects that need to hold, internal links that need to be added in context, and JavaScript-rendered pages that need practical SEO review.",
+      "Need an SEO developer, technical SEO developer, or SEO web developer to turn technical SEO recommendations into live website changes? This page is for the implementation work that sits between an audit and the real site: templates that need cleaner headings, schema that has to match visible content, redirects that need to hold, internal links that need to be added in context, and JavaScript-rendered pages that need practical SEO review.",
     cta: "Get SEO Developer Help",
     audience:
-      "This page is for SEO teams, agencies, marketers, and site owners who already know what needs to change but need an SEO developer who can touch the CMS, templates, redirects, schema, page structure, internal links, tracking, or crawl blockers without turning the request into a full rebuild.",
+      "This page is for SEO teams, agencies, marketers, and site owners who already know what needs to change but need an SEO developer or SEO web developer who can touch the CMS, templates, redirects, schema, page structure, internal links, tracking, or crawl blockers without turning the request into a full rebuild.",
     audienceHeading: "Technical SEO work that needs developer execution",
     problems: ["SEO recommendations require developer-level changes", "Templates, JavaScript, schema, redirects, or crawl paths need cleanup", "The SEO team needs implementation help instead of another audit"],
     tasks: ["Translate SEO recommendations into technical tasks", "Implement practical site, template, schema, redirect, and internal-link changes", "Document constraints and verification steps"],
@@ -370,7 +370,7 @@ export const keywordLandingSpecs = [
       {
         h2: "What an SEO developer actually fixes",
         body:
-          "An SEO developer is useful when the recommendation cannot be completed by editing a title field alone. People search for SEO developer when the real work lives in WordPress templates, Shopify Liquid, static routes, Svelte/React output, redirect rules, schema components, navigation modules, internal links, tracking scripts, or crawl and indexation settings that need code-aware implementation.",
+          "An SEO developer is useful when the recommendation cannot be completed by editing a title field alone. Some people search for an SEO developer. Some search for an SEO web developer. The real work lives in WordPress templates, Shopify Liquid, static routes, Svelte/React output, redirect rules, schema components, navigation modules, internal links, tracking scripts, or crawl and indexation settings that need code-aware implementation.",
         bullets: [
           "Template-level title, heading, canonical, schema, and internal-link cleanup",
           "Redirects, broken links, indexation controls, sitemap checks, and crawl-path fixes",

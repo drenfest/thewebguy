@@ -596,6 +596,7 @@ export const coreServicePages = [
           ["Webhook implementation", "When the issue is payload format, authentication, endpoint behavior, or logging, the work maps to API and webhook integration skills.", "/skills/rest-api-webhook-integrations/", "View webhook skills"],
           ["Ecommerce data", "Product feeds, order flows, checkout data, and catalog updates connect integrations to ecommerce support.", "/services/ecommerce-support/", "View ecommerce support"],
           ["Tracking and events", "Form submissions, conversion events, hidden fields, and CRM handoffs often need analytics verification too.", "/services/analytics-tracking/", "View tracking support"],
+          ["Internal web tools", "Recurring integration checks, watched signals, comparison windows, and scheduled reporting often move this work into internal web tools instead of one-off fixes.", "/services/automation-internal-tools/", "View internal web tools"],
           ["AI-built cleanup", "Generated apps and AI-built sites often need API, webhook, database, auth, and environment variable issues traced before they are usable.", "/services/ai-built-website-cleanup/", "View AI-built website cleanup"],
           ["Production debugging", "Silent failures, bad responses, and scripts that work only sometimes need debugging inside the real production flow.", "/skills/production-debugging/", "View debugging help"]
         ]
@@ -666,11 +667,11 @@ export const coreServicePages = [
   {
     slug: "automation-internal-tools",
     title: "Web Services Automation and Internal Web Tools | The Web Guy",
-    meta: "Web services automation and internal web tools for crawlers, SEO QA scripts, reporting helpers, dashboards, cron jobs, data cleanup, APIs, tracking checks, and repetitive website operations.",
+    meta: "Web services automation and internal web tools for crawlers, SEO QA scripts, reporting helpers, dashboards, cron jobs, scheduled reports, watched signals, data cleanup, APIs, tracking checks, and repetitive website operations.",
     h1: "Web Services Automation and Internal Web Tools at $55/hr",
     eyebrow: "Automation",
     intro:
-      "If you searched web services automation or internal web tools, this page covers crawlers, checkers, SEO QA scripts, reporting helpers, dashboards, CRON jobs, JSON/CSV cleanup, API-based workflows, and internal tools for repetitive web operations.",
+      "If you searched web services automation or internal web tools, this page covers crawlers, checkers, SEO QA scripts, reporting helpers, dashboards, CRON jobs, scheduled reports, watched signals, comparison windows, JSON/CSV cleanup, API-based workflows, and internal tools for repetitive web operations.",
     cta: "Automate Web Work",
     audience:
       "This service is for agencies, site owners, ecommerce teams, and marketing teams that keep repeating the same website tasks by hand: checking pages, cleaning product data, reviewing audit output, validating tracking, comparing crawl results, or building reports manually.",
@@ -687,7 +688,7 @@ export const coreServicePages = [
       {
         h2: "Stop repeating the same web tasks manually",
         body:
-          "If a task has a repeatable input and a repeatable output, it may be worth automating. That could mean web services automation for recurring checks, a crawler that reviews pages, a script that cleans CSV data, a dashboard that summarizes issues, or a scheduled job that watches for changes.",
+          "If a task has a repeatable input and a repeatable output, it may be worth automating. That could mean web services automation for recurring checks, a crawler that reviews pages, a script that cleans CSV data, a dashboard that summarizes issues, a scheduled report with watched signals, or a job that compares snapshots and watches for changes.",
         bullets: [
           "Crawlers and checkers",
           "SEO QA scripts",
@@ -713,6 +714,7 @@ export const coreServicePages = [
         h2: "Automation projects often start from",
         cards: [
           ["Web services automation", "Use this narrower path when recurring website operations need scheduled reports, comparison windows, watched signals, recommendations, and practical next actions.", "/services/web-services-automation/", "View web services automation"],
+          ["Website integration help", "Recurring CRM/API/webhook checks often start as website integration help, then become a small internal tool or monitored handoff once the workflow is understood.", "/services/api-integrations/", "View website integration help"],
           ["Crawl and link analysis", "A crawler, checker, or QA script can turn recurring crawl exports and internal link reviews into repeatable work.", "/skills/crawl-analysis-internal-linking/", "View crawl analysis help"],
           ["Programmatic SEO", "Data-driven pages, metadata patterns, scalable internal links, and page generation often need automation thinking.", "/skills/programmatic-seo/", "View programmatic SEO"],
           ["API and webhooks", "Internal tools often need REST APIs, webhook handlers, payload cleanup, logging, and scheduled data movement.", "/skills/rest-api-webhook-integrations/", "View API/webhook skills"],

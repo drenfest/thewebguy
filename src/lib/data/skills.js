@@ -51,11 +51,11 @@ export const skillPages = [
   },
   {
     slug: "wordpress-theme-development",
-    title: "WordPress Theme Developer Help | Child Theme, CSS, JavaScript, and Template Cleanup | The Web Guy",
-    meta: "Need a WordPress theme developer or WordPress theme development help? Get child theme, PHP template, CSS, JavaScript, Elementor cleanup, mobile layout, SEO structure, and page update support.",
-    h1: "WordPress Theme Developer Help for Existing Sites at $55/hr",
+    title: "WordPress Theme Developer and Theme Development Help | Child Theme, CSS, JavaScript, and Template Cleanup | The Web Guy",
+    meta: "Need a WordPress theme developer or WordPress theme development help? Get child theme, PHP template, CSS, JavaScript, Elementor cleanup, mobile layout, SEO structure, and page update support for existing sites.",
+    h1: "WordPress Theme Developer and Theme Development Help at $55/hr",
     eyebrow: "WordPress Themes",
-    intro: "Need a WordPress theme developer for template edits, child theme cleanup, WordPress theme development, Elementor/page builder fixes, mobile issues, PHP templates, CSS, JavaScript, or SEO-friendly page structure? This page is built for practical theme work on existing sites.",
+    intro: "Need a WordPress theme developer for template edits, child theme cleanup, WordPress theme development, Elementor/page builder fixes, mobile issues, PHP templates, CSS, JavaScript, or SEO-friendly page structure? This page is built for practical theme work on existing sites that need hands-on implementation instead of a full rebuild.",
     problems: ["You need a WordPress theme developer for an existing site, not a full rebuild", "Mobile layouts break after content changes", "Elementor or builder spacing is a mess", "SEO recommendations require template-level changes", "Tracking scripts and embeds are scattered through the theme"],
     tasks: ["Edit PHP templates and child themes", "Clean up CSS and JavaScript behavior", "Fix mobile layouts and builder spacing", "Improve heading and content structure", "Add or clean up embeds and tracking snippets", "Support WordPress page and content updates"],
     connection: "Theme work supports WordPress support, landing pages, technical SEO implementation, site speed cleanup, and website fixes.",
@@ -63,7 +63,8 @@ export const skillPages = [
       ["WordPress support", "Theme and child theme edits are usually part of practical WordPress support for existing sites.", "/services/wordpress-support/", "View WordPress support", "wordpress-support"],
       ["Landing pages", "Service pages, campaign pages, and local pages often need theme-level layout cleanup before they can launch cleanly.", "/services/landing-pages/", "View landing page help", "landing-pages"],
       ["Technical SEO", "Template headings, internal links, schema placement, and crawlable structure often connect theme work to SEO implementation.", "/services/technical-seo-implementation/", "View technical SEO", "technical-seo-implementation"],
-      ["Website fixes", "Broken mobile layouts, CSS conflicts, JavaScript behavior, and builder spacing often show up first as visible website fixes.", "/services/website-fixes/", "View website fixes", "website-fixes"]
+      ["Website fixes", "Broken mobile layouts, CSS conflicts, JavaScript behavior, and builder spacing often show up first as visible website fixes.", "/services/website-fixes/", "View website fixes", "website-fixes"],
+      ["WordPress plugin development", "Theme work often overlaps plugin output, hooks, shortcodes, or admin behavior that need WordPress plugin developer help on the same site.", "/skills/wordpress-plugin-development/", "View WordPress plugin development", "wordpress-support"]
     ],
     relatedServices: ["wordpress-support", "landing-pages", "technical-seo-implementation", "website-fixes"],
     relatedSkills: ["wordpress-plugin-development", "performance-engineering", "schema-structured-data", "php-javascript-node"],
