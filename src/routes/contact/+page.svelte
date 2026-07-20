@@ -283,10 +283,13 @@
     trackContactEvent("contact_page_view", { form_id: "request-form", is_form_fill: false });
 
     const handlePageHide = () => trackContactFormAbandon("left_page");
+    const handleHashChange = () => scrollToRequestFormIfNeeded(new URL(window.location.href));
     window.addEventListener("pagehide", handlePageHide);
+    window.addEventListener("hashchange", handleHashChange);
 
     return () => {
       window.removeEventListener("pagehide", handlePageHide);
+      window.removeEventListener("hashchange", handleHashChange);
     };
   });
 

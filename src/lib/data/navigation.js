@@ -94,7 +94,7 @@ const blogTagGroups = blogTagMenuGroupNames.map((title) => group(
 
 export const headerCta = {
   label: "Fix My Web Problem",
-  href: "/contact/"
+  href: "/contact/#request-form"
 };
 
 export const mainNavItems = [
@@ -167,7 +167,7 @@ export const megaMenus = {
       heading: "Not sure what service you need?",
       text: "Start with the symptom. Send the URL, what broke, what is stuck, or what needs to go live.",
       label: "Fix My Web Problem",
-      href: "/contact/"
+      href: "/contact/#request-form"
     }
   ),
   blog: menu(
@@ -253,7 +253,7 @@ export const megaMenus = {
       heading: "Straightforward contract web help",
       text: "Learn how the hourly rate works, what to send, and the kinds of website problems that fit best.",
       label: "Fix My Web Problem",
-      href: "/contact/"
+      href: "/contact/#request-form"
     }
   )
 };
