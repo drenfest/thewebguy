@@ -1,5 +1,6 @@
 <script>
   import { onMount, tick } from "svelte";
+  import { page } from "$app/state";
   import LogoMark from "./LogoMark.svelte";
   import { trackEvent } from "$lib/analytics.js";
   import { headerCta, mainNavItems, megaMenus, mobileNavSections, utilityNavItems } from "$lib/data/navigation.js";
@@ -109,8 +110,20 @@
 
   function linkTitle(label, href = "") {
     if (href === "/") return "View The Web Guy homepage";
-    if (href === "/contact/") return "Open the contact request form";
+    if (href === "/contact/" || href === "/contact/#request-form") return "Open the contact request form";
     return `View ${label}`;
+  }
+
+  function handleHeaderContactClick(event) {
+    closeMobileMenu();
+    if (page.url.pathname !== "/contact/" || !headerCta.href.includes("#request-form")) return;
+
+    event.preventDefault();
+    if (window.location.hash !== "#request-form") {
+      window.history.pushState(null, "", "#request-form");
+    }
+
+    document.getElementById("request-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   function getMenuOverviewHref(key) {
@@ -389,7 +402,7 @@
     {/if}
   </div>
 
-  <a class="button button-small button-primary header-cta" href={headerCta.href} title={linkTitle(headerCta.label, headerCta.href)}>{headerCta.label}</a>
+  <a class="button button-small button-primary header-cta" href={headerCta.href} title={linkTitle(headerCta.label, headerCta.href)} onclick={handleHeaderContactClick}>{headerCta.label}</a>
 
   <details bind:this={mobileNavDetails} class="mobile-nav-details" ontoggle={handleMobileToggle}>
     <summary
@@ -491,7 +504,7 @@
           {/each}
         </div>
 
-        <a class="button button-primary mobile-drawer-cta" href={headerCta.href} title={linkTitle(headerCta.label, headerCta.href)} onclick={closeMobileMenu}>{headerCta.label}</a>
+        <a class="button button-primary mobile-drawer-cta" href={headerCta.href} title={linkTitle(headerCta.label, headerCta.href)} onclick={handleHeaderContactClick}>{headerCta.label}</a>
       </nav>
     </div>
   </details>

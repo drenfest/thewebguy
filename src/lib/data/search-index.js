@@ -12,6 +12,8 @@ import {
   locationUrl,
   servicePages,
   serviceUrl,
+  sitesForSale,
+  siteForSaleUrl,
   skillPages,
   skillUrl
 } from "./content.js";
@@ -25,6 +27,11 @@ const mainPageMeta = {
   "/services/": {
     title: "Website Services",
     description: "WordPress support, website fixes, technical SEO implementation, landing pages, tracking cleanup, ecommerce, APIs, automation, and ongoing webmaster help.",
+    type: "Hub"
+  },
+  "/sites-for-sale/": {
+    title: "Sites For Sale",
+    description: "Exclusive website and app assets for sale or archive review, including HammerNest Handyman and the sold ModeMind app.",
     type: "Hub"
   },
   "/blog/": {
@@ -155,6 +162,25 @@ export const searchIndex = [
       href: locationUrl(location.slug),
       type: "Location",
       body: flatten([location.context, location.tasks, location.region, location.relatedServices, location.relatedSkills])
+    })
+  ),
+  ...sitesForSale.map((site) =>
+    entry({
+      title: site.name,
+      description: site.cardSummary,
+      href: siteForSaleUrl(site.slug),
+      type: "Site Asset",
+      body: flatten([
+        site.type,
+        site.status,
+        site.askingPrice,
+        site.market,
+        site.availabilityNote,
+        site.badges,
+        site.quickStats,
+        site.proofBar,
+        site.sections
+      ])
     })
   ),
   ...faqs.map(([question, answer, href]) =>

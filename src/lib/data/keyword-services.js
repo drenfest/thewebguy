@@ -351,45 +351,41 @@ export const keywordLandingSpecs = [
   },
   {
     slug: "technical-seo-developer",
-    title: "SEO Developer and SEO Web Developer Help at $55/hr | Technical SEO, Schema, Redirects, and Internal Links | The Web Guy",
-    meta: "Need an SEO developer, technical SEO developer, or SEO web developer to implement technical SEO changes? Get help with schema, crawl fixes, redirects, metadata, internal links, JavaScript rendering, WordPress, Shopify, and template-level SEO work.",
-    h1: "SEO Developer and SEO Web Developer Help at $55/hr",
+    title: "SEO Developer for Technical SEO | The Web Guy",
+    meta: "Need an SEO developer to implement technical SEO changes in WordPress, Shopify, or custom sites? Get help with crawl and indexing fixes, schema, redirects, internal links, JavaScript rendering, metadata, and technical SEO implementation.",
+    h1: "SEO Developer for Technical SEO Implementation",
     eyebrow: "Technical SEO Developer",
     cluster: "Technical SEO",
     anchorSlug: "technical-seo-implementation",
     intent: "technical SEO tasks that require code, CMS, templates, redirects, or structured data support",
     intro:
-      "Need an SEO developer, technical SEO developer, or SEO web developer to turn technical SEO recommendations into live website changes? This page is for the implementation work that sits between an audit and the real site: templates that need cleaner headings, schema that has to match visible content, redirects that need to hold, internal links that need to be added in context, and JavaScript-rendered pages that need practical SEO review.",
+      "I implement technical SEO fixes in WordPress, Shopify, and custom websites, including crawl and indexing problems, schema, redirects, internal links, JavaScript rendering, metadata, tracking, and template-level SEO changes. This page is for the implementation work that sits between an audit and the live site when the issue is already known and the work still has to ship.",
     cta: "Get SEO Developer Help",
     audience:
-      "This page is for SEO teams, agencies, marketers, and site owners who already know what needs to change but need an SEO developer or SEO web developer who can touch the CMS, templates, redirects, schema, page structure, internal links, tracking, or crawl blockers without turning the request into a full rebuild.",
-    audienceHeading: "Technical SEO work that needs developer execution",
-    problems: ["SEO recommendations require developer-level changes", "Templates, JavaScript, schema, redirects, or crawl paths need cleanup", "The SEO team needs implementation help instead of another audit"],
-    tasks: ["Translate SEO recommendations into technical tasks", "Implement practical site, template, schema, redirect, and internal-link changes", "Document constraints and verification steps"],
+      "This page is for SEO teams, agencies, marketers, and site owners who already know what needs to change but need an SEO developer who can touch the CMS, templates, redirects, schema, page structure, internal links, tracking, or crawl blockers without turning the request into a full rebuild. The work is billed at $55/hr and works best when you can send the URL, issue, and priority pages up front.",
+    audienceHeading: "Technical SEO fixes that need developer execution",
+    problems: ["SEO recommendations need code-aware implementation instead of another audit", "Templates, JavaScript, schema, redirects, internal links, or crawl paths need cleanup", "The team needs ranking support on pages that already have query signal but weak technical execution"],
+    tasks: ["Translate SEO recommendations into concrete implementation tasks", "Ship crawl, template, schema, redirect, and internal-link changes inside the real site", "Document what changed, what still needs QA, and how to verify the result"],
     sections: [
       {
-        h2: "What an SEO developer actually fixes",
+        h2: "Technical SEO tasks that can be implemented",
         body:
-          "An SEO developer is useful when the recommendation cannot be completed by editing a title field alone. Some people search for an SEO developer. Some search for an SEO web developer. The real work lives in WordPress templates, Shopify Liquid, static routes, Svelte/React output, redirect rules, schema components, navigation modules, internal links, tracking scripts, or crawl and indexation settings that need code-aware implementation.",
+          "An SEO developer is useful when the recommendation cannot be completed by editing a title field alone. The real work lives in templates, navigation, redirects, schema output, JavaScript rendering, internal links, crawl paths, and tracking or verification layers that need implementation discipline.",
         bullets: [
-          "Template-level title, heading, canonical, schema, and internal-link cleanup",
-          "Redirects, broken links, indexation controls, sitemap checks, and crawl-path fixes",
-          "Service, blog, location, ecommerce, and programmatic page structure improvements",
-          "JavaScript rendering, hydration, route, and front-end output issues that affect SEO",
-          "Schema implementation that matches visible page content and real business context",
-          "SEO audit tasks moved from a spreadsheet into the CMS or codebase"
+          "Crawl and indexing cleanup: status codes, canonicals, robots, sitemap support, and crawl-path blockers",
+          "Template and on-page implementation: title, heading, metadata, page structure, and reusable internal-link placement",
+          "Structured data that matches visible content and real business context",
+          "JavaScript rendering, route output, hydration, and front-end behavior that affects crawlability or indexation",
+          "Redirects and migration support that preserve intent and avoid thin dead-end paths",
+          "Tracking and verification touches when SEO work overlaps forms, reporting, or attribution checks"
         ]
       },
       {
-        h2: "How this SEO implementation work is prioritized",
+        h2: "Examples of SEO developer implementation work",
         cards: [
-          ["Page value", "Prioritize pages with business intent, impressions, ranking movement, qualified traffic potential, or conversion value before polishing low-impact pages."],
-          ["Template leverage", "Fix reusable templates when one change improves many pages, but avoid scaling weak copy or duplicate page patterns."],
-          ["Crawlability", "Check whether important URLs have crawlable links, clean status codes, sensible canonicals, sitemap support, and indexation blockers removed."],
-          ["Content fit", "Use query data to strengthen pages where the intent already matches, and create child pages only when a term deserves its own useful answer."],
-          ["Topology support", "Use crawl topology and contextual internal-link evidence to decide where body-level links, supporting copy, and related technical pages should reinforce the parent page."],
-          ["Implementation risk", "Separate safe content edits from redirect, schema, JavaScript, deployment, or platform changes that need careful QA."],
-          ["Verification", "Document what changed and how it can be checked in crawl output, Search Console, browser tools, structured data tests, or analytics."]
+          ["Problem: audit recommendations are approved but still live in a spreadsheet", "Change: turn the list into page, template, schema, redirect, and internal-link tasks inside the CMS or codebase. Result: the SEO work actually ships instead of waiting on another handoff."],
+          ["Problem: service pages earn impressions but sit too low to click", "Change: tighten the page structure, align the primary term with the real implementation offer, add contextual links from the right parent and sibling pages, and remove weak routing. Result: stronger ranking support before snippet testing becomes the focus."],
+          ["Problem: JavaScript rendering, routing, or template output hides what search engines need", "Change: review front-end output, crawl paths, metadata, canonicals, and schema placement at the rendered page level. Result: the technical SEO issue gets fixed at the layer causing it instead of patched in copy only."]
         ]
       },
       {
@@ -397,16 +393,16 @@ export const keywordLandingSpecs = [
         cards: [
           ["Technical SEO Implementation", "Use the parent service when the work includes broader metadata, headings, redirects, schema, internal links, and crawl cleanup.", "/services/technical-seo-implementation/", "View Technical SEO"],
           ["SEO Audit Implementation", "Use this when the audit is already done and the main need is moving recommendations into the live site.", "/services/seo-audit-implementation/", "View SEO Audit Implementation"],
+          ["Website Fixes", "Use this when SEO work overlaps broken layouts, scripts, forms, or front-end behavior that keeps the page from working normally.", "/services/website-fixes/", "View Website Fixes"],
+          ["Analytics & Tracking", "Use this when the SEO implementation also needs event verification, GA4/GTM cleanup, or cleaner reporting around key actions.", "/services/analytics-tracking/", "View Analytics & Tracking"],
           ["Schema Implementation Service", "Use this when structured data is the main technical SEO gap.", "/services/schema-implementation-service/", "View Schema Implementation"],
-          ["Crawl Analysis & Internal Linking", "Use this skill path when page topology, internal link support, orphan pages, and crawl paths are the core issue.", "/skills/crawl-analysis-internal-linking/", "View Crawl Analysis"],
-          ["TopoRank Case Study", "Use this when you want to see how topological relevance, vector SEO, and contextual link support guide real internal-link decisions before implementation.", "/blog/topological-relevance-vector-seo/", "View TopoRank Case Study"],
-          ["Programmatic SEO", "Use this when the SEO developer work involves reusable page patterns, data-driven pages, and safeguards against thin duplicate URLs.", "/skills/programmatic-seo/", "View Programmatic SEO"]
+          ["Crawl Analysis & Internal Linking", "Use this skill path when page topology, internal-link support, orphan pages, and crawl paths are the core issue.", "/skills/crawl-analysis-internal-linking/", "View Crawl Analysis"]
         ]
       },
       {
         h2: "How to hand off SEO developer implementation work",
         body:
-          "Send the priority URLs, audit notes, target queries if available, CMS or platform context, crawl exports or screenshots, implementation constraints, and the result you need verified. The strongest handoff separates must-fix items from ideas that still need strategy."
+          "Send the priority URLs, audit notes, target queries if available, CMS or platform context, crawl exports or screenshots, implementation constraints, and the result you need verified. The strongest handoff separates must-fix items from ideas that still need strategy, and it starts with the pages where rankings, leads, or crawl value matter most."
       }
     ],
     midPageCta: {
@@ -417,7 +413,7 @@ export const keywordLandingSpecs = [
       secondaryLabel: "View the TopoRank Case Study",
       secondaryHref: "/blog/topological-relevance-vector-seo/"
     },
-    related: ["technical-seo-implementation", "seo-audit-implementation", "schema-implementation-service", "agency-overflow-developer"],
+    related: ["technical-seo-implementation", "seo-audit-implementation", "website-fixes", "analytics-tracking"],
     skills: ["schema-structured-data", "crawl-analysis-internal-linking", "production-debugging"],
     faqs: [
       ["What does an SEO developer do?", "An SEO developer implements technical SEO recommendations inside the actual site: templates, schema, metadata, headings, redirects, internal links, crawl controls, JavaScript output, and platform-specific fixes."],

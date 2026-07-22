@@ -100,9 +100,8 @@ export const headerCta = {
 export const mainNavItems = [
   { label: "Services", href: "/services/", menuKey: "services" },
   { label: "Blog", href: "/blog/", menuKey: "blog" },
-  { label: "Skills", href: "/skills/", menuKey: "skills" },
-  { label: "Locations", href: "/locations/", menuKey: "locations" },
   { label: "About", href: "/about/", menuKey: "about", overviewLabel: "About The Web Guy" },
+  { label: "For Sale", href: "/sites-for-sale/", menuKey: "sitesForSale", overviewLabel: "Sites For Sale Inventory" },
   { label: "Contact", href: "/contact/" }
 ];
 
@@ -168,6 +167,27 @@ export const megaMenus = {
       text: "Start with the symptom. Send the URL, what broke, what is stuck, or what needs to go live.",
       label: "Fix My Web Problem",
       href: "/contact/#request-form"
+    }
+  ),
+  sitesForSale: menu(
+    [
+      group("Inventory", [
+        pageLink("Sites For Sale Overview", "/sites-for-sale/"),
+        pageLink("HammerNest Handyman", "/sites-for-sale/hammernest-handyman/"),
+        pageLink("ModeMind (Sold)", "/sites-for-sale/modemind/")
+      ]),
+      group("Why These Assets Are Different", [
+        pageLink("Current inventory", "/sites-for-sale/"),
+        pageLink("HammerNest details", "/sites-for-sale/hammernest-handyman/"),
+        pageLink("ModeMind archive", "/sites-for-sale/modemind/"),
+        pageLink("Ask About Buying a Site", "/contact/#request-form")
+      ])
+    ],
+    {
+      heading: "Exclusive digital assets, sold once",
+      text: "Single-sale assets with real screenshots, content depth, backend systems, and measurable proof where available.",
+      label: "View Sites For Sale",
+      href: "/sites-for-sale/"
     }
   ),
   blog: menu(
@@ -247,6 +267,20 @@ export const megaMenus = {
       group("The Basics", [
         pageLink("Rate", "/rate/"),
         pageLink("FAQ", "/faq/")
+      ]),
+      group("Skills", [
+        pageLink("View All Skills", "/skills/"),
+        skillLink("Shopify Plus & Liquid", "shopify-plus-liquid"),
+        skillLink("WordPress Plugin Development", "wordpress-plugin-development"),
+        skillLink("Performance Engineering", "performance-engineering"),
+        skillLink("GA4/GTM Measurement Integrity", "ga4-gtm-measurement-integrity")
+      ]),
+      group("Locations", [
+        pageLink("View All Locations", "/locations/"),
+        locationLink("Freeport, IL", "freeport-il"),
+        locationLink("Rockford, IL", "rockford-il"),
+        locationLink("Monroe, WI", "monroe-wi"),
+        locationLink("Beloit, WI", "beloit-wi")
       ])
     ],
     {
@@ -272,7 +306,6 @@ function mobileSectionFromMenu(key, label, overviewLabel, overviewHref) {
 export const mobileNavSections = [
   mobileSectionFromMenu("services", "Services", "View All Services", "/services/"),
   mobileSectionFromMenu("blog", "Blog", "View Blog", "/blog/"),
-  mobileSectionFromMenu("skills", "Skills", "View All Skills", "/skills/"),
-  mobileSectionFromMenu("locations", "Locations", "View All Locations", "/locations/"),
-  mobileSectionFromMenu("about", "About", "About The Web Guy", "/about/")
+  mobileSectionFromMenu("about", "About", "About The Web Guy", "/about/"),
+  mobileSectionFromMenu("sitesForSale", "For Sale", "View Sites For Sale", "/sites-for-sale/")
 ];

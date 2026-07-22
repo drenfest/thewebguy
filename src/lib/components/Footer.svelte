@@ -3,6 +3,7 @@
   const mainPages = [
     ["Home", "/"],
     ["Services", "/services/"],
+    ["Sites For Sale", "/sites-for-sale/"],
     ["Blog", "/blog/"],
     ["Fix Notes", "/fix-notes/"],
     ["Skills", "/skills/"],

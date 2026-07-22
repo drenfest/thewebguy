@@ -982,11 +982,11 @@ export const blogPosts = [
   },
   {
     slug: "broken-layouts-mobile-website-fixes",
-    title: "Broken Mobile Website Layout Fix Help | The Web Guy",
-    h1: "Broken Mobile Website Layouts: What to Check First",
-    meta: "Mobile website layout shifted, sections overlap, buttons drift, or embeds break the page? Get practical broken-layout fix help from The Web Guy.",
+    title: "Broken Website Layout on Mobile? Causes and Fixes | The Web Guy",
+    h1: "How to Fix a Broken Website Layout on Mobile or Desktop",
+    meta: "Broken website layout on mobile or desktop? Find the cause behind overlapping sections, drifting buttons, horizontal scrolling, broken columns, or layout shifts before you change the wrong layer.",
     eyebrow: "Broken layouts",
-    summary: "Sections overlap, headers act strange, spacing disappears, or the mobile layout falls apart. Start by reproducing the viewport, isolating the broken section, and tracing whether the issue comes from CSS, the builder, an embed, or a theme/plugin change.",
+    summary: "If the website layout is broken on mobile or desktop, start with the visible symptom: horizontal scrolling, overlapping sections, disappearing buttons, broken columns, or spacing that fails at certain screen widths. Then trace whether the cause is CSS, JavaScript, a theme or plugin update, a page builder rule, or stale cached assets.",
     problemType: "Something broke",
     relatedService: "website-fixes",
     category: "front-end-layout",
@@ -995,6 +995,25 @@ export const blogPosts = [
     heroSecondary: "View Website Fixes",
     heroSecondaryHref: "/services/website-fixes/",
     cta: "Send the URL, screenshot, device or browser, and what the layout should do instead.",
+    intro: [
+      [
+        "If the website layout is broken on mobile or desktop, start with the visible symptom instead of guessing the platform. Look for horizontal scrolling, overlapping sections, disappearing buttons, broken columns, sticky elements covering content, spacing failures, or layouts that only break at specific widths. If you already know the issue is broader than layout alone, compare this page with ",
+        { text: "something broke on your website", href: "/blog/something-broke-on-your-website/", title: "Read the broad broken-website diagnostic guide" },
+        "."
+      ],
+      [
+        "Broken layouts often sit between CSS, JavaScript, theme output, page builder spacing, embeds, and cached assets. If a menu stops opening, a class never toggles, or the layout only breaks after a script or theme change, compare this guide with ",
+        { text: "CSS and JavaScript website bugs", href: "/blog/css-javascript-errors-website-bugs/", title: "Read the CSS and JavaScript bug guide" },
+        " before changing the wrong layer."
+      ],
+      [
+        "The fastest fix path is usually to identify the exact viewport, isolate the affected section, and work from symptom to cause. If the page needs a hands-on repair instead of more guessing, route it into ",
+        { text: "Website Fixes", href: "/services/website-fixes/", title: "View website fixes for broken layouts, scripts, forms, embeds, and visible page bugs" },
+        " or ",
+        { text: "WordPress Support", href: "/services/wordpress-support/", title: "View WordPress support for theme, plugin, page-builder, and layout cleanup" },
+        " when the break follows a theme, builder, or plugin update."
+      ]
+    ],
     exampleBlock: {
       heading: "Need this fixed instead of guessed at?",
       copy: "A practical layout fix starts by reproducing the bad viewport, inspecting the affected element, checking recent theme, builder, plugin, or content changes, and applying the smallest CSS or template change that holds on mobile.",
@@ -1006,34 +1025,49 @@ export const blogPosts = [
       ["Common signs", [
         "The page looks fine in one viewport but breaks in another, ",
         { text: "content overlaps", href: "/services/website-fixes/", title: "View website fixes for broken layouts and visible page bugs" },
-        ", sticky headers cover sections, columns stack badly, buttons drift out of place, or images stretch beyond their container."
+        ", sticky headers cover sections, columns stack badly, buttons drift out of place, images stretch beyond their container, or horizontal scrolling appears where it should not."
       ]],
       ["Likely causes", [
         "Most broken layouts come from CSS conflicts, ",
         { text: "page builder spacing", href: "/services/wordpress-support/", title: "View WordPress support for page builder and layout cleanup" },
-        ", missing responsive rules, oversized images, uncontained embeds, theme updates, plugin styles, or old custom code fighting newer content."
+        ", missing responsive rules, oversized images, uncontained embeds, theme updates, plugin styles, JavaScript event conflicts, or old custom code fighting newer content."
       ]],
+      {
+        heading: "Symptom to likely cause checks",
+        body: "Use the visible symptom to narrow the fix path before you touch templates, custom CSS, or plugin settings.",
+        checklist: [
+          "Content wider than the viewport -> fixed-width element, image, table, or embed forcing overflow",
+          "Menu stops opening -> JavaScript error, event conflict, or a script that changed the expected markup",
+          "Layout changed after an update -> theme, builder, or plugin CSS override that won the cascade",
+          "Desktop works but mobile fails -> missing or overridden breakpoint, container rule, or responsive utility class",
+          "Sticky header covers content -> offset or scroll-margin values no longer match the rendered header height",
+          "Buttons disappear or move -> flex, grid, or absolute positioning rules changed with new content or modules"
+        ]
+      },
       ["What to send", "Send the URL, device or browser where it breaks, a screenshot, what should happen instead, and whether a theme, plugin, page builder, or content update happened recently."],
       ["Practical fix path", [
         "A useful fix usually starts by reproducing the issue, checking the element styles, isolating the rule or component causing the break, and then applying the smallest durable ",
         { text: "CSS, template, or builder-level change", href: "/services/react-static-sites/", title: "View front-end help for responsive CSS, component layout, and static page cleanup" },
-        "."
+        ". If the broken layout is part of a larger website failure, route that wider diagnostic path through ",
+        { text: "something broke on your website", href: "/blog/something-broke-on-your-website/", title: "Read the broad broken-website diagnostic guide" },
+        " before the repair turns into a blind rebuild."
       ]]
     ],
     links: [
       ["Website Fixes", "/services/website-fixes/", "For broken mobile layouts, CSS issues, sticky headers, scripts, forms, embeds, and visible page bugs."],
-      ["AI-Built Cleanup", "/services/ai-built-website-cleanup/", "For generated pages or prototypes that look close but break across devices, routes, assets, or deployment details."],
+      ["CSS and JavaScript website bugs", "/blog/css-javascript-errors-website-bugs/", "Use this when the broken layout may actually be a front-end script, console, interaction, or style-conflict problem."],
+      ["Something broke on your website", "/blog/something-broke-on-your-website/", "Use this when the layout failure is only one symptom inside a broader post-change website problem."],
       ["WordPress Support", "/services/wordpress-support/", "For Elementor, page builders, cached CSS, theme output, plugins, and WordPress layout problems."],
       ["Front-End Help", "/services/react-static-sites/", "For responsive CSS, component layout, static page cleanup, JavaScript behavior, and lightweight front-end fixes."],
       ["Contact", "/contact/", "Send the URL, screenshot, viewport, and what should happen instead so the broken layout can be reproduced."]
     ],
     contextHeading: "Where broken layout work usually goes next",
-    contextIntro: "Layout problems are usually visual symptoms with a technical cause. These paths cover the common places the fix lands after the broken section is reproduced.",
+    contextIntro: "Layout problems are visual symptoms with a technical cause. These paths keep the article specialized around layout while still routing the work into the right implementation layer.",
     contextCards: [
       ["Website Fixes", "Use this for overlapping sections, broken mobile layouts, drifting buttons, missing images, sticky header problems, and visible page bugs.", "/services/website-fixes/", "View website fixes for broken layouts and visible bugs"],
-      ["AI-Built Cleanup", "Use this when the layout came from an AI-generated page, prototype, or app and needs responsive cleanup before launch.", "/services/ai-built-website-cleanup/", "View AI-built website cleanup for broken layouts"],
+      ["CSS and JavaScript website bugs", "Use this when the layout symptom is really a script conflict, a console error, a broken interaction, or a style rule changing after markup shifts.", "/blog/css-javascript-errors-website-bugs/", "Read the CSS and JavaScript troubleshooting guide"],
+      ["Something broke on your website", "Use this when the layout failure started after a broader site change and you still need to identify what changed before fixing the wrong layer.", "/blog/something-broke-on-your-website/", "Read the broader broken-website guide"],
       ["WordPress Support", "Use this when the layout issue is tied to WordPress, Elementor, page builder spacing, theme updates, plugins, or cached CSS.", "/services/wordpress-support/", "View WordPress support for layout and builder issues"],
-      ["React & Static Sites", "Use this when the fix needs front-end structure, component cleanup, responsive CSS, JavaScript behavior, or static page work.", "/services/react-static-sites/", "View React and static front-end support"],
       ["Production Debugging", "Use this when the layout bug needs browser inspection, console checks, CSS isolation, deployment review, or a careful production-safe fix.", "/skills/production-debugging/", "View production debugging support for website layout issues"]
     ],
     finalCta: {

@@ -9,6 +9,7 @@
   import TopicalLinks from "$lib/components/TopicalLinks.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import ProofReel from "$lib/components/ProofReel.svelte";
+  import FixNotesPanel from "$lib/components/FixNotesPanel.svelte";
   import SortableTable from "$lib/components/SortableTable.svelte";
   import { faqs } from "$lib/data/faqs.js";
   import { staticHeroImages } from "$lib/data/hero-images.js";
@@ -243,17 +244,17 @@
 </script>
 
 <Seo
-  title="The Web Guy | Website Fixes, SEO Developer Help, and WordPress Support"
-  description="The Web Guy at thewebguy.app provides $55/hr website fixes, SEO developer help, WordPress support, tracking cleanup, API work, landing pages, and practical technical web support."
+  title="The Web Guy | Website Fixes, WordPress & SEO"
+  description="The Web Guy helps with broken layouts, WordPress problems, technical SEO implementation, tracking cleanup, website fixes, and ongoing web support at $55/hr."
   schema={homeSchema}
 />
 
 <main>
   <Hero
-    eyebrow="The Web Guy | Contract website developer, SEO developer, and technical web support"
-    h1="The Web Guy for Website Fixes, SEO Developer Work, and WordPress Support"
-    intro="The Web Guy at thewebguy.app helps with broken websites, SEO developer implementation, WordPress troubleshooting, tracking cleanup, API handoffs, landing pages, ecommerce cleanup, and the technical web work that still has to ship."
-    cta="Fix My Web Problem"
+    eyebrow="The Web Guy | Website fixes, WordPress development, and technical SEO support"
+    h1="Website Fixes, WordPress Development, and Technical SEO"
+    intro="The Web Guy helps service businesses, agencies, and site owners fix broken layouts, WordPress problems, technical SEO implementation, tracking issues, and recurring website tasks. If a page broke, rankings stalled, forms stopped behaving, or the site needs steady webmaster support, send the URL and the issue to start with the most useful next step."
+    cta="Send the URL and issue"
     secondary="View Services"
     showCapabilityLinks={false}
     image={staticHeroImages.home}
@@ -310,6 +311,12 @@
     <SummaryLinkGrid items={primaryServiceSummaries} />
     <p class="center-link"><a class="button button-primary" href="/services/" title="View all website services">View all services</a></p>
   </section>
+
+  <FixNotesPanel
+    title="Recent Fixes"
+    description="Three recent examples showing the problem, what changed, and where the work landed."
+    limit={3}
+  />
 
   <section class="section soft-section technical-depth-section effect effect-dark-grid effect-medium">
     <SectionHeading

@@ -65,6 +65,158 @@ export const fixNoteCategoryDefinitions = [
 
 export const fixNotes = [
   {
+    title: "Built an Admin-Only WordPress CRM for Estimate Intake",
+    slug: "built-admin-only-wordpress-crm-estimate-intake",
+    date: "2026-07-13",
+    displayDate: "July 13, 2026",
+    lastUpdated: null,
+    category: "API Integrations",
+    serviceSlug: "api-integrations",
+    excerpt: "A WordPress integration note about building an admin-only CRM and estimate form flow that captured lead context, UTM data, and follow-up details without exposing CRM language on the public site.",
+    problemSummary: "The handyman site needed a request-estimate workflow that stayed simple for visitors but saved enough lead detail for real follow-up, source tracking, and internal status management.",
+    whatIChecked: [
+      "Public estimate form fields and required intake details",
+      "Lead source, landing-page, and referrer capture needs",
+      "UTM field handling and follow-up requirements",
+      "Admin-side lead views, notes, and export needs",
+      "Spam protection, thank-you routing, and owner notifications"
+    ],
+    whatIChanged: [
+      "Built an admin-only CRM plugin for estimate leads and follow-up workflows",
+      "Saved lead source, landing page, referring URL, and UTM fields with each submission",
+      "Added nonce protection, sanitization, honeypot filtering, and local lead-table storage to the form flow",
+      "Set the form to redirect to `/thank-you/` when available and send owner notifications when configured",
+      "Added dashboard views, lead detail screens, status updates, reminders, and CSV export"
+    ],
+    resultSummary: "The site gained a cleaner estimate intake path that stayed visitor-friendly while giving the business usable lead context and follow-up controls inside WordPress.",
+    whatToWatchNext: [
+      "Whether owner notification settings stay configured after future plugin or hosting changes",
+      "Whether uploaded photo handling and lead-table growth need maintenance rules later",
+      "Whether UTM naming stays consistent across traffic sources and campaigns"
+    ],
+    toolsUsed: ["WordPress", "Custom plugin development", "Gutenberg blocks", "CSV export tooling"],
+    tags: ["WordPress", "CRM", "Estimate Form", "Lead Tracking"],
+    relatedServices: ["api-integrations", "analytics-tracking", "wordpress-support"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "Estimate CRM Intake Fix Note | The Web Guy",
+    metaDescription: "Short API integration note about building an admin-only WordPress CRM and estimate intake flow with UTM capture and follow-up controls."
+  },
+  {
+    title: "Built a Local-First Workflow App With Session Continuity",
+    slug: "built-local-first-workflow-app-session-continuity",
+    date: "2026-07-17",
+    displayDate: "July 17, 2026",
+    lastUpdated: null,
+    category: "Automation & Internal Tools",
+    serviceSlug: "api-integrations",
+    excerpt: "An internal tools note about building a private mode-based workflow app with timers, session continuity, device-local attachments, and export controls instead of depending on a cloud-synced task stack.",
+    problemSummary: "The project needed a private workflow system that could separate operating modes, keep continuity between sessions, and store notes and attachments locally without pushing sensitive data into a hosted service.",
+    whatIChecked: [
+      "Mode definitions and session rules",
+      "Focus and recovery timer requirements",
+      "Microtask and reset-flow behavior",
+      "Local browser storage and attachment handling",
+      "Export, deletion, and recurring-block controls"
+    ],
+    whatIChanged: [
+      "Built the first release around predefined modes instead of one large undifferentiated backlog",
+      "Added focus and recovery timers plus one active microtask per session",
+      "Added a reset flow, last-session continuity, and timeline-style session tracking",
+      "Stored session records in local browser storage and kept attachments in IndexedDB",
+      "Added recurring mode blocks, private reports, export, and deletion controls"
+    ],
+    resultSummary: "The app became a practical private operating system for focused work blocks, with enough local persistence to resume sessions without adding cloud-account overhead.",
+    whatToWatchNext: [
+      "Whether local-storage schema changes need migration handling as the app grows",
+      "Whether export formats stay useful if reports or attachment metadata expand",
+      "Whether very large local attachments affect browser performance over time"
+    ],
+    toolsUsed: ["Next.js", "React", "IndexedDB", "Local browser storage"],
+    tags: ["Internal Tools", "Workflow App", "Local-First", "Session Tracking"],
+    relatedServices: ["api-integrations", "production-debugging", "website-fixes"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "Local-First Workflow App Fix Note | The Web Guy",
+    metaDescription: "Short internal tools note about building a local-first workflow app with timers, session continuity, and device-local attachments."
+  },
+  {
+    title: "Structured Client-Facing HTML Invoices for Detailed Work Blocks",
+    slug: "structured-client-facing-html-invoices-detailed-work-blocks",
+    date: "2026-07-15",
+    displayDate: "July 15, 2026",
+    lastUpdated: null,
+    category: "Automation & Internal Tools",
+    serviceSlug: "api-integrations",
+    excerpt: "An internal operations note about maintaining project-specific HTML invoices that made hours, rates, totals, and technical work descriptions easier for clients to review line by line.",
+    problemSummary: "The billing workflow needed a repeatable invoice format that could show real technical work in plain language, stay browser-friendly, and print cleanly without depending on a third-party invoice builder.",
+    whatIChecked: [
+      "Invoice layout structure and metadata fields",
+      "Line-item readability for technical work summaries",
+      "Hours, rate, subtotal, and total-due presentation",
+      "Print styling and browser rendering behavior",
+      "Per-project file organization for invoice history"
+    ],
+    whatIChanged: [
+      "Standardized a reusable HTML and CSS invoice shell with clear branding, metadata, and totals sections",
+      "Organized invoice history under project-specific folders so each billing trail stayed easy to review",
+      "Expanded line-item descriptions so technical work blocks were understandable without extra translation",
+      "Kept the layout print-friendly for browser export while still reading cleanly on screen",
+      "Used the invoice files as a durable client-facing record of hours, scope, and completed work"
+    ],
+    resultSummary: "The invoice workflow became easier to reuse and gave each billing block enough context that a client could audit the work without chasing separate notes.",
+    whatToWatchNext: [
+      "Whether totals should eventually be generated from structured data instead of manual HTML edits",
+      "Whether PDF export or shared partials would reduce repetition across projects",
+      "Whether longer invoice histories should move into a more formal internal template system"
+    ],
+    toolsUsed: ["HTML", "CSS", "Browser print preview", "Project file organization"],
+    tags: ["Invoices", "Internal Tools", "Client Reporting", "Documentation"],
+    relatedServices: ["api-integrations", "analytics-tracking", "production-debugging"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "HTML Invoice Workflow Fix Note | The Web Guy",
+    metaDescription: "Short internal tools note about structuring client-facing HTML invoices with detailed work blocks and print-clean totals."
+  },
+  {
+    title: "Rebuilt a WordPress Site From a Crawl Into Reusable Blocks",
+    slug: "rebuilt-wordpress-site-from-crawl-into-reusable-blocks",
+    date: "2026-06-29",
+    displayDate: "June 29, 2026",
+    lastUpdated: null,
+    category: "WordPress Support",
+    serviceSlug: "wordpress-support",
+    excerpt: "A WordPress rebuild note about taking a live-site crawl and turning it into a custom theme architecture with reusable Gutenberg blocks, custom post types, and a Vite-based asset pipeline.",
+    problemSummary: "The site needed a rebuild path that preserved imported content but moved it into an editable WordPress structure instead of freezing the whole design into one-off hardcoded templates.",
+    whatIChecked: [
+      "Crawled live-site content and page inventory",
+      "Theme architecture needed for reusable sections",
+      "Custom post type and taxonomy requirements",
+      "Dynamic block opportunities for page sections and galleries",
+      "Frontend asset build and deployment constraints"
+    ],
+    whatIChanged: [
+      "Built a custom WordPress theme shell with PHP templates, shared components, and Vite-managed frontend assets",
+      "Registered custom post types and taxonomies for offers, projects, reviews, jobs, and imported content organization",
+      "Added dynamic Gutenberg blocks for page heroes, breadcrumbs, offers, brands, galleries, maps, and reviews",
+      "Set up crawl, import, seed, and modernization scripts so imported content could be moved into the new structure",
+      "Kept the homepage template-part driven and interior pages block-based so the site stayed easier to evolve"
+    ],
+    resultSummary: "The rebuild created a more maintainable WordPress content model where reusable sections, imported media, and future page changes could live inside the theme instead of scattered hardcoded layouts.",
+    whatToWatchNext: [
+      "Whether imported media and crawl-generated content stay aligned with the new content model",
+      "Whether dynamic block render callbacks need regression checks after WordPress updates",
+      "Whether the Vite manifest and built assets are refreshed consistently before deployment"
+    ],
+    toolsUsed: ["WordPress", "PHP", "Gutenberg blocks", "Vite", "WP-CLI"],
+    tags: ["WordPress", "Theme Rebuild", "Gutenberg", "Content Migration"],
+    relatedServices: ["wordpress-support", "landing-pages", "technical-seo-implementation"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "WordPress Rebuild From Crawl Fix Note | The Web Guy",
+    metaDescription: "Short WordPress support note about rebuilding a site from a crawl into reusable Gutenberg blocks and a custom theme architecture."
+  },
+  {
     title: "Optimized a Shopify Theme for Page Speed and Core Web Vitals",
     slug: "optimized-shopify-theme-page-speed-core-web-vitals",
     date: "2026-07-01",

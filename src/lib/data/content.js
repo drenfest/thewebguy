@@ -37,6 +37,7 @@ export {
 } from "./fix-notes.js";
 export { skillPages, skillMap, skillUrl, serviceSkillMap } from "./skills.js";
 export { locationPages, locationMap, locationUrl } from "./locations.js";
+export { sitesForSale, siteForSaleMap, siteForSaleUrl } from "./sites-for-sale.js";
 
 export const servicePages = [...coreServicePages, ...keywordServicePages];
 export const serviceMap = Object.fromEntries(servicePages.map((service) => [service.slug, service]));
@@ -44,6 +45,7 @@ export const serviceMap = Object.fromEntries(servicePages.map((service) => [serv
 export const mainPages = [
   ["Home", "/"],
   ["Services", "/services/"],
+  ["Sites For Sale", "/sites-for-sale/"],
   ["Blog", "/blog/"],
   ["Fix Notes", "/fix-notes/"],
   ["Skills", "/skills/"],

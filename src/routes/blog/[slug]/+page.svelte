@@ -47,6 +47,7 @@
   const articleBridgeLinks = {
     "something-broke-on-your-website": [
       { text: "fix my broken website triage", href: "/blog/fix-my-broken-website/", title: "Read the fix my broken website triage guide" },
+      { text: "broken website layouts on mobile", href: "/blog/broken-layouts-mobile-website-fixes/", title: "Read the broken layout troubleshooting guide" },
       { text: "forms and modals not working", href: "/blog/forms-modals-not-working/", title: "Read about forms and modals not working" },
       { text: "CMS, plugin, and theme weirdness", href: "/blog/cms-plugin-theme-weirdness/", title: "Read about CMS, plugin, and theme weirdness" }
     ],
@@ -70,10 +71,12 @@
       { text: "topological relevance and vector SEO", href: "/blog/topological-relevance-vector-seo/", title: "Read the TopoRank case study on topological relevance and vector SEO" }
     ],
     "broken-layouts-mobile-website-fixes": [
-      { text: "embeds, iframes, and widgets breaking pages", href: "/blog/embeds-iframes-widgets-breaking-pages/", title: "Read about embeds, iframes, and widgets breaking layouts" },
+      { text: "CSS and JavaScript website bugs", href: "/blog/css-javascript-errors-website-bugs/", title: "Read the CSS and JavaScript bug guide" },
+      { text: "something broke on your website", href: "/blog/something-broke-on-your-website/", title: "Read the broader broken-website diagnostic guide" },
       { text: "CMS, plugin, and theme weirdness", href: "/blog/cms-plugin-theme-weirdness/", title: "Read about CMS, plugin, and theme layout issues" }
     ],
     "css-javascript-errors-website-bugs": [
+      { text: "broken website layouts on mobile", href: "/blog/broken-layouts-mobile-website-fixes/", title: "Read the broken layout troubleshooting guide" },
       { text: "JavaScript issues on websites", href: "/blog/javascript-issues-website-troubleshooting/", title: "Read about JavaScript issues on websites" },
       { text: "forms and modals not working", href: "/blog/forms-modals-not-working/", title: "Read about forms and modals failing because of front-end issues" },
       { text: "embeds, iframes, and widgets breaking pages", href: "/blog/embeds-iframes-widgets-breaking-pages/", title: "Read about embeds, iframes, and widgets breaking pages" }
