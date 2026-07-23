@@ -143,7 +143,6 @@
             <div class="sale-card-actions">
               <a class="button button-primary" href={siteForSaleUrl(site.slug)} title={`View ${site.name} asset details`}>View Site Details</a>
               <a class="button button-secondary" href={site.liveUrl} target="_blank" rel="noreferrer" title={`${site.liveLabel}: ${site.name}`}>{site.liveLabel}</a>
-              <a class="button button-secondary" href="/contact/#request-form" title={`Ask about ${site.name}`}>{site.status === "Sold" ? "Ask About a Similar Build" : "Ask About Buying"}</a>
             </div>
           </div>
         </article>
@@ -314,6 +313,24 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
+  }
+
+  .sale-card-actions :global(.button) {
+    flex: 1 1 15rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .sale-card-actions :global(.button-secondary) {
+    border-color: #152c33;
+    background: #152c33;
+    color: #f7f4ed;
+  }
+
+  .sale-card-actions :global(.button-secondary:hover) {
+    border-color: #0f2026;
+    background: #0f2026;
+    color: #ffffff;
   }
 
   .status-pill {

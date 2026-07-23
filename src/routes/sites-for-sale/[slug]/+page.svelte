@@ -48,7 +48,9 @@
       <p class="sale-summary">{site.heroSummary}</p>
       <p class="sale-note">{site.availabilityNote}</p>
       <div class="sale-actions">
-        <a class="button button-primary" href="/contact/#request-form" title={`Ask about ${site.name}`}>{site.status === "Sold" ? "Ask About a Similar Build" : "Ask About Buying This Site"}</a>
+        {#if site.isAvailable}
+          <a class="button button-primary" href="/contact/#request-form" title={`Buy ${site.name}`}>Buy Now</a>
+        {/if}
         <a class="button button-secondary" href={site.liveUrl} target="_blank" rel="noreferrer" title={`${site.liveLabel}: ${site.name}`}>{site.liveLabel}</a>
         <a class="button button-secondary" href="/sites-for-sale/" title="Back to the sites for sale inventory">Back to Inventory</a>
       </div>
@@ -59,10 +61,29 @@
       </div>
     </div>
 
-    <div class="sale-hero-media">
-      <a href={site.liveUrl} target="_blank" rel="noreferrer" title={`${site.liveLabel}: ${site.name}`}>
-        <img src={site.screenshots[0].src} alt={site.screenshots[0].alt} />
-      </a>
+    <div class="sale-hero-visuals">
+      <article class="preview-card">
+        <div class="preview-card-head">
+          <div>
+            <p class="eyebrow">Live preview</p>
+            <strong>{site.screenshots[0].label}</strong>
+          </div>
+          <span>{site.status}</span>
+        </div>
+
+        <a class="preview-frame" href={site.liveUrl} target="_blank" rel="noreferrer" title={`${site.liveLabel}: ${site.name}`}>
+          <img src={site.screenshots[0].src} alt={site.screenshots[0].alt} />
+        </a>
+      </article>
+
+      <div class="preview-signal-grid">
+        {#each site.proofBar.slice(0, 4) as [label, value]}
+          <article class="preview-signal">
+            <strong>{value}</strong>
+            <p>{label}</p>
+          </article>
+        {/each}
+      </div>
     </div>
   </section>
 
@@ -160,13 +181,15 @@
 <style>
   .sale-hero {
     display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+    grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
     gap: 1.5rem;
     padding: clamp(1.4rem, 3vw, 2rem);
+    align-items: start;
   }
 
   .sale-hero-copy,
-  .sale-hero-media,
+  .preview-card,
+  .preview-signal,
   .proof-card,
   .shot-card,
   .metric-panel,
@@ -183,6 +206,7 @@
     padding: 1.35rem 1.4rem 1.45rem;
     display: grid;
     gap: 0.95rem;
+    align-self: start;
   }
 
   .sale-hero-copy :global(.breadcrumb-nav) {
@@ -224,23 +248,85 @@
     color: var(--ink-muted);
   }
 
-  .sale-hero-media {
-    overflow: hidden;
-    min-height: 420px;
+  .sale-hero-visuals,
+  .preview-signal-grid {
+    display: grid;
+    gap: 1rem;
   }
 
-  .sale-hero-media a {
+  .sale-hero-visuals {
+    align-self: start;
+  }
+
+  .preview-card {
+    padding: 1rem;
+    background:
+      linear-gradient(180deg, rgba(9, 17, 28, 0.98), rgba(20, 34, 43, 0.98)),
+      radial-gradient(circle at top right, rgba(240, 184, 75, 0.18), transparent 45%);
+    border-color: rgba(240, 184, 75, 0.18);
+  }
+
+  .preview-card-head,
+  .preview-signal-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .preview-card-head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.9rem;
+    color: #f7f4ed;
+  }
+
+  .preview-card-head strong {
+    font-size: 1.05rem;
+    line-height: 1.1;
+  }
+
+  .preview-card-head span {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.65rem;
+    border-radius: 999px;
+    background: rgba(247, 244, 237, 0.12);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .preview-frame {
     display: block;
-    width: 100%;
-    height: 100%;
+    overflow: hidden;
+    border-radius: 1rem;
+    border: 1px solid rgba(247, 244, 237, 0.1);
+    background: #09111c;
+    max-height: 52rem;
   }
 
-  .sale-hero-media img {
+  .preview-frame img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: top center;
     display: block;
+  }
+
+  .preview-signal {
+    padding: 1rem 1.05rem;
+  }
+
+  .preview-signal strong {
+    display: block;
+    font-size: 1.02rem;
+    line-height: 1.15;
+  }
+
+  .preview-signal p {
+    margin: 0.35rem 0 0;
+    color: var(--ink-muted);
   }
 
   .badge-row span,
@@ -282,6 +368,23 @@
     background: rgba(33, 79, 102, 0.14);
     color: #1d5067;
     border: 1px solid rgba(33, 79, 102, 0.24);
+  }
+
+  .sale-actions :global(.button) {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .sale-actions :global(.button-secondary) {
+    border-color: #152c33;
+    background: #152c33;
+    color: #f7f4ed;
+  }
+
+  .sale-actions :global(.button-secondary:hover) {
+    border-color: #0f2026;
+    background: #0f2026;
+    color: #ffffff;
   }
 
   .proof-grid,
@@ -404,7 +507,7 @@
   }
 
   .detail-section-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   }
 
   @media (max-width: 960px) {

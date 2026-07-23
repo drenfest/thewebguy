@@ -11,34 +11,25 @@ export const sitesForSale = [
     category: "WordPress",
     status: "In Progress",
     statusSlug: "in-progress",
+    isAvailable: true,
     askingPrice: "Early acquisition from $4,800",
     liveUrl: "https://hammernest.net/",
     liveLabel: "Visit Live Site",
     market: "Freeport, IL and nearby handyman market",
-    availabilityNote: "Prelaunch acquisition is available before the public domain history is fully built out.",
-    cardSummary: "A lead-ready handyman brand with service hubs, local pages, estimate intake, CRM tracking, and a measurable prelaunch build already in place.",
+    availabilityNote: "Now live on hammernest.net, with public history just starting to compound while the asset is still available for acquisition.",
+    cardSummary: "A live handyman brand with service hubs, local pages, estimate intake, CRM tracking, and a real public launch already in place.",
     heroSummary:
       "A complete local handyman website asset built to become a lead-generation system, not just a brochure. The sale includes the structure, content depth, CRM intake, tracking layer, and technical base that would normally take a buyer weeks to assemble from scratch.",
     screenshots: [
       {
-        src: "/images/sites-for-sale/hammernest-fixture-fullpage.png",
-        alt: "HammerNest fixture installation service page on desktop",
-        label: "Service page screenshot"
+        src: "/images/sites-for-sale/hammernest-home-live-fullpage.png",
+        alt: "HammerNest live homepage screenshot on desktop",
+        label: "Live homepage screenshot"
       },
       {
-        src: "/images/sites-for-sale/hammernest-location-fullpage.png",
-        alt: "HammerNest location page on desktop",
-        label: "Location page screenshot"
-      },
-      {
-        src: "/images/sites-for-sale/hammernest-fixture-mobile.png",
-        alt: "HammerNest fixture installation page on mobile",
-        label: "Mobile service page screenshot"
-      },
-      {
-        src: "/images/sites-for-sale/hammernest-location-mobile.png",
-        alt: "HammerNest location page on mobile",
-        label: "Mobile location page screenshot"
+        src: "/images/sites-for-sale/hammernest-estimate-live-fullpage.png",
+        alt: "HammerNest live request estimate page screenshot on desktop",
+        label: "Live estimate page screenshot"
       }
     ],
     badges: ["Single-sale asset", "CRM included", "UTM tracking", "Local SEO structure"],
@@ -51,33 +42,33 @@ export const sitesForSale = [
       ["Status", "In Progress"]
     ],
     lighthouse: {
-      performance: 99,
+      performance: 72,
       accessibility: 100,
       bestPractices: 100,
       seo: 100,
-      source: "Local homepage audit after the visual rebuild in July 2026."
+      source: "Live desktop Lighthouse CLI run on hammernest.net on July 23, 2026."
     },
     searchConsole: {
       label: "Search Console",
-      value: "Not public yet",
-      detail: "The site is still in prelaunch state, so public Search Console history has not started compounding yet."
+      value: "Live, history still early",
+      detail: "HammerNest is now live, but Search Console history is still too new to use as meaningful sales proof."
     },
     traffic: {
       label: "Traffic / leads",
-      value: "Prelaunch state",
-      detail: "The CRM, tracking, and UTM capture are built; public traffic and lead history begin after the live launch."
+      value: "Live, early-stage history",
+      detail: "The CRM, tracking, and UTM capture are live, but the listing is not yet using early lead or traffic numbers as sales proof."
     },
-    lastOptimizationDate: "July 2026",
+    lastOptimizationDate: "July 23, 2026",
     proofBar: [
       ["Asking price", "Early acquisition from $4,800"],
       ["Current state", "In Progress"],
-      ["Search visibility", "Not public yet"],
+      ["Search visibility", "Live, early history"],
       ["Lead backend", "CRM + local tracking"],
-      ["Lighthouse", "99 / 100 / 100 / 100"],
-      ["Last optimization", "July 2026"]
+      ["Lighthouse", "72 / 100 / 100 / 100"],
+      ["Last optimization", "July 23, 2026"]
     ],
     buyerHook:
-      "This is the kind of asset a local operator, investor, or agency can acquire before the public history fully matures, then push live with the content depth and lead systems already done.",
+      "This is the kind of live asset a local operator, investor, or agency can acquire while the public history is still early and the underlying content depth and lead systems are already done.",
     sections: [
       {
         title: "What makes this saleable",
@@ -86,7 +77,7 @@ export const sitesForSale = [
           "Service-hub architecture, individual service pages, problem-intent pages, and area pages already mapped and written.",
           "Estimate request flow with thank-you routing, local CRM capture, follow-up fields, and owner notification support.",
           "Tracking layer for UTMs, CTA clicks, phone/text taps, service-card clicks, gallery clicks, and form behavior.",
-          "Prelaunch lighthouse proof is already recorded on the homepage.",
+          "The live homepage and live estimate flow are already public on hammernest.net.",
           "Built to be sold once, then expanded, relocated, or refined after acquisition."
         ]
       },
@@ -125,7 +116,7 @@ export const sitesForSale = [
         items: [
           "Brand, phone, contact details, and target service areas can be updated after transfer.",
           "Additional services, locations, or photo proof can be added as scoped follow-up work.",
-          "Search Console history, GA4 history, and live lead history begin compounding once the public launch is complete.",
+          "Search Console history, GA4 history, and live lead history are now starting to compound on the public domain.",
           "The buyer can keep The Web Guy on to monitor, improve, and expand the asset instead of rebuilding it."
         ]
       }
@@ -139,7 +130,8 @@ export const sitesForSale = [
     category: "App",
     status: "Sold",
     statusSlug: "sold",
-    askingPrice: "Sold",
+    isAvailable: false,
+    askingPrice: "$5,500",
     liveUrl: "https://modemind.app/",
     liveLabel: "Visit Live App",
     market: "Private local-first productivity product",
@@ -149,9 +141,9 @@ export const sitesForSale = [
       "ModeMind stays in the catalog as proof that the inventory is not limited to brochure sites. It was a private workflow product built around local-first storage, operational modes, timer logic, and continuity between sessions.",
     screenshots: [
       {
-        src: "/images/sites-for-sale/modemind-home-fullpage.png",
-        alt: "ModeMind application homepage screenshot",
-        label: "Homepage screenshot"
+        src: "/images/sites-for-sale/modemind-live-fullpage.png",
+        alt: "ModeMind live work mode screen screenshot",
+        label: "Live work mode screenshot"
       }
     ],
     badges: ["Sold", "Local-first", "Private data", "Cloudflare-ready"],
@@ -164,11 +156,11 @@ export const sitesForSale = [
       ["Category", "App archive"]
     ],
     lighthouse: {
-      performance: 100,
-      accessibility: 94,
+      performance: 99,
+      accessibility: 100,
       bestPractices: 77,
       seo: 100,
-      source: "Local lighthouse run against the production start build in July 2026."
+      source: "Live desktop Lighthouse CLI run on modemind.app on July 23, 2026."
     },
     searchConsole: {
       label: "Search Console",
@@ -180,12 +172,12 @@ export const sitesForSale = [
       value: "Private / not disclosed",
       detail: "The archive page shows product depth, not buyer-specific traffic or usage history."
     },
-    lastOptimizationDate: "July 2026",
+    lastOptimizationDate: "July 23, 2026",
     proofBar: [
       ["Status", "Sold"],
       ["Search visibility", "Not applicable"],
-      ["Performance", "100"],
-      ["Accessibility", "94"],
+      ["Performance", "99"],
+      ["Accessibility", "100"],
       ["Best practices", "77"],
       ["SEO", "100"]
     ],

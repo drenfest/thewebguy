@@ -95,6 +95,11 @@
     }
   }
 
+  function handleDesktopTriggerMouseDown(event, key) {
+    event.preventDefault();
+    openDesktopMenu(key, event.currentTarget);
+  }
+
   function closeMobileMenu() {
     if (mobileNavDetails) mobileNavDetails.open = false;
     mobileOpen = false;
@@ -304,21 +309,22 @@
     <nav class="nav-links desktop-nav" aria-label="Primary navigation">
       {#each mainNavItems as item}
         {#if item.menuKey}
-          <a
-            href={item.href}
+          <button
+            type="button"
             title={linkTitle(item.label, item.href)}
             class:active={openMenu === item.menuKey}
             class="nav-trigger"
             aria-haspopup="true"
             aria-expanded={openMenu === item.menuKey}
             aria-controls={`mega-menu-${item.menuKey}`}
+            onmousedown={(event) => handleDesktopTriggerMouseDown(event, item.menuKey)}
             onmouseenter={(event) => openDesktopMenu(item.menuKey, event.currentTarget)}
             onfocus={(event) => openDesktopMenu(item.menuKey, event.currentTarget)}
             onkeydown={(event) => handleDesktopTriggerKeydown(event, item.menuKey)}
           >
             <span>{item.label}</span>
             <span class="nav-chevron" aria-hidden="true">⌄</span>
-          </a>
+          </button>
         {:else}
           <a class="nav-link" href={item.href} title={linkTitle(item.label, item.href)}>{item.label}</a>
         {/if}
