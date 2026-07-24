@@ -42,11 +42,11 @@ export const sitesForSale = [
       ["Status", "In Progress"]
     ],
     lighthouse: {
-      performance: 72,
+      performance: 98,
       accessibility: 100,
       bestPractices: 100,
       seo: 100,
-      source: "Live desktop Lighthouse CLI run on hammernest.net on July 23, 2026."
+      source: "Live desktop Lighthouse CLI run on hammernest.net on July 24, 2026."
     },
     searchConsole: {
       label: "Search Console",
@@ -58,14 +58,14 @@ export const sitesForSale = [
       value: "Live, early-stage history",
       detail: "The CRM, tracking, and UTM capture are live, but the listing is not yet using early lead or traffic numbers as sales proof."
     },
-    lastOptimizationDate: "July 23, 2026",
+    lastOptimizationDate: "July 24, 2026",
     proofBar: [
       ["Asking price", "Early acquisition from $4,800"],
       ["Current state", "In Progress"],
       ["Search visibility", "Live, early history"],
       ["Lead backend", "CRM + local tracking"],
-      ["Lighthouse", "72 / 100 / 100 / 100"],
-      ["Last optimization", "July 23, 2026"]
+      ["Lighthouse", "98 / 100 / 100 / 100"],
+      ["Last optimization", "July 24, 2026"]
     ],
     buyerHook:
       "This is the kind of live asset a local operator, investor, or agency can acquire while the public history is still early and the underlying content depth and lead systems are already done.",
@@ -156,11 +156,11 @@ export const sitesForSale = [
       ["Category", "App archive"]
     ],
     lighthouse: {
-      performance: 99,
+      performance: 100,
       accessibility: 100,
-      bestPractices: 77,
+      bestPractices: 100,
       seo: 100,
-      source: "Live desktop Lighthouse CLI run on modemind.app on July 23, 2026."
+      source: "Live desktop Lighthouse CLI run on modemind.app on July 24, 2026."
     },
     searchConsole: {
       label: "Search Console",
@@ -172,13 +172,13 @@ export const sitesForSale = [
       value: "Private / not disclosed",
       detail: "The archive page shows product depth, not buyer-specific traffic or usage history."
     },
-    lastOptimizationDate: "July 23, 2026",
+    lastOptimizationDate: "July 24, 2026",
     proofBar: [
       ["Status", "Sold"],
       ["Search visibility", "Not applicable"],
-      ["Performance", "99"],
+      ["Performance", "100"],
       ["Accessibility", "100"],
-      ["Best practices", "77"],
+      ["Best practices", "100"],
       ["SEO", "100"]
     ],
     buyerHook:
