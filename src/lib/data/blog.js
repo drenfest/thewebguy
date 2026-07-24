@@ -79,11 +79,11 @@ export const blogTagDefinitions = [
 export const blogPosts = [
   {
     slug: "something-broke-on-your-website",
-    title: "Something Broke on Your Website | Fix My Broken Website Without Guessing | The Web Guy",
-    h1: "Something Broke on Your Website: Start With the Symptom, Then Check What Changed",
-    meta: "Need help when a website is broken or the next thought is fix my broken website? Use this broken-website troubleshooting guide for layouts, forms, checkout, scripts, tracking, WordPress issues, cache, hosting, and recent changes.",
+    title: "Fix My Broken Website: Practical Troubleshooting Help",
+    h1: "Fix My Broken Website: Start With the Symptom",
+    meta: "Need to fix a broken website? Start with the symptom, recent changes, hosting, browser errors, cache, plugins, themes, forms, checkout, and the safest rollback or repair path.",
     eyebrow: "Something broke",
-    summary: "If your website is broken and the next thought is fix my broken website, start by describing the symptom, checking what changed, and tracing whether the problem is visual, functional, tracking-related, or server-side before the damage spreads.",
+    summary: "If your website is broken and the next thought is fix my broken website, identify what is broken, when it started, what changed, and whether rollback, cache cleanup, plugin/theme isolation, hosting review, or developer repair is the safest first move.",
     problemType: "Start here",
     relatedService: "website-fixes",
     category: "start-here",
@@ -92,9 +92,18 @@ export const blogPosts = [
     heroSecondary: "View Website Fixes",
     heroSecondaryHref: "/services/website-fixes/",
     cta: "Send the URL, what broke, and what should happen instead. The first useful move is usually easier to find once the symptom is clear.",
+    prioritySectionHeadings: ["Check whether the problem is visual or functional"],
+    midArticleCta: {
+      afterSectionIndex: 1,
+      heading: "Still broken? Send the URL and what changed.",
+      copy: "If the symptom is already public, send the URL, what stopped working, what should happen, when it started, and any recent edits, updates, cache changes, DNS changes, or scripts that were added.",
+      label: "Send the Broken Website",
+      secondaryLabel: "View Website Fixes",
+      secondaryHref: "/services/website-fixes/"
+    },
     intro: [
       [
-        "If something broke on your website, or you are already searching for fix my broken website help, start with the visible symptom before guessing the platform. Most people search for WordPress help, web developer, or ",
+        "If something broke on your website, or you are already searching for fix my broken website help, start with the symptom, when it started, and what changed before guessing the platform. The fastest repair path usually depends on whether the site is down, a page is blank, a layout broke, a form stopped sending, wp-admin is inaccessible, or a redirect/warning makes the site feel unsafe. Most people search for WordPress help, web developer, or ",
         { text: "website bug help", href: "/services/website-fixes/", title: "View website fixes for broken layouts, scripts, forms, and site bugs" },
         " when what they actually have is a symptom. The page looks wrong. A button disappeared. A form says it submitted but no lead arrived. A mobile layout is doing something strange. Checkout is stuck. A page that worked yesterday suddenly does not load."
       ],
@@ -104,7 +113,7 @@ export const blogPosts = [
         " might be a plugin conflict, a theme template issue, a cache problem, a JavaScript error, a DNS issue, or a third-party script changing behavior. A custom site can break for the same reasons. The label is less useful than the symptom."
       ],
       [
-        "A good first pass does not require panic or a full rebuild. It starts with what changed, where the issue appears, whether it is visual or functional, and whether it affects revenue, leads, SEO pages, tracking, or trust. If one page is broken or the visible symptom looks front-end specific, compare this guide with ",
+        "A good first pass does not require panic or a full rebuild. It starts with what changed, where the issue appears, whether rollback is safer than repair, and whether the break affects revenue, leads, SEO pages, tracking, or trust. If one page is broken or the visible symptom looks front-end specific, compare this guide with ",
         { text: "CSS and JavaScript website bugs", href: "/blog/css-javascript-errors-website-bugs/", title: "Read the CSS and JavaScript website bug guide" },
         " and ",
         { text: "Fix My Broken Website", href: "/blog/fix-my-broken-website/", title: "Read the focused broken website triage guide" },
@@ -112,6 +121,49 @@ export const blogPosts = [
       ]
     ],
     sections: [
+      {
+        heading: "Match the symptom before touching the site",
+        body: [
+          "The phrase fix my broken website is broad, so the first useful move is symptom matching. Name the exact broken state before clearing caches, disabling plugins, changing DNS, or editing code.",
+          "A site that is completely down needs a different path than a page with a broken layout. A hacked redirect is not the same problem as a form that stopped submitting. The goal is to identify the safest next action: rollback, isolate a recent change, repair the specific layer, or bring in developer help."
+        ],
+        listTitle: "Broken-website symptoms to identify first",
+        checklist: [
+          "Site down, DNS failure, SSL warning, redirect loop, or intermittent loading",
+          "Blank page, white screen, 500 error, PHP fatal error, or server error",
+          "Broken layout, missing CSS, overlapping sections, mobile-only layout failure, or page-builder output changing",
+          "Forms, buttons, menus, filters, search, checkout, or booking widgets not working",
+          "wp-admin inaccessible, editor broken, plugin settings unavailable, or login failing",
+          "Hacked redirects, browser warnings, spam pages, malware notices, or suspicious injected content"
+        ],
+        calloutTitle: "Early handoff",
+        callout: "If you need developer help, send the broken URL, what stopped working, what should happen, and anything that changed before the issue appeared."
+      },
+      {
+        heading: "Quick diagnostic checklist",
+        body: [
+          "Use this sequence before making broad changes. It keeps the repair tied to evidence instead of guessing.",
+          "If the site is business-critical, confirm backups and access before testing. A bad rollback or random plugin disable can make the outage worse."
+        ],
+        listTitle: "Check in this order",
+        checklist: [
+          "Confirm hosting, DNS, SSL, redirects, and whether the site loads from more than one network or browser",
+          "Open browser console and network tools for failed scripts, blocked files, mixed content, 404s, 500s, and JavaScript errors",
+          "Review recent changes: plugin/theme updates, CMS updates, page edits, deployments, cache/CDN settings, tracking scripts, embeds, or hosting changes",
+          "Clear cache carefully, then test with optimization or CDN features disabled only when that is safe",
+          "Isolate plugins, theme, snippets, or page-builder changes in staging where possible",
+          "Restore from backup only when the rollback target is known and safer than repairing the current state"
+        ]
+      },
+      {
+        heading: "Can you fix it yourself, or do you need a developer?",
+        body: [
+          "You may be able to fix the issue yourself when it is a clear cache problem, a reversible content edit, a known plugin setting, or a recent change with a safe rollback. Stop and get help when the site is down, checkout or leads are affected, wp-admin is inaccessible, logs show fatal errors, malware is suspected, or you cannot reproduce the problem safely.",
+          "A developer should not need a perfect diagnosis in the first message. The useful handoff is the URL, symptom, expected behavior, timeline, recent changes, screenshots or a recording, platform notes, and whether backups or staging are available."
+        ],
+        calloutTitle: "Send Me the Broken Website",
+        callout: "Include the URL, what stopped working, what should happen, and anything that changed right before the issue appeared."
+      },
       {
         heading: "Start with what you can see",
         body: [
@@ -982,11 +1034,11 @@ export const blogPosts = [
   },
   {
     slug: "broken-layouts-mobile-website-fixes",
-    title: "Broken Website Layout on Mobile? Causes and Fixes | The Web Guy",
-    h1: "How to Fix a Broken Website Layout on Mobile or Desktop",
-    meta: "Broken website layout on mobile or desktop? Find the cause behind overlapping sections, drifting buttons, horizontal scrolling, broken columns, or layout shifts before you change the wrong layer.",
+    title: "WordPress Broken Layout Fix: Mobile & Desktop Troubleshooting",
+    h1: "How to Fix a Broken WordPress Layout on Mobile or Desktop",
+    meta: "Fix a broken WordPress layout caused by CSS, caching, plugins, themes, responsive rules, page builders, optimization settings, CDN issues, or mixed content.",
     eyebrow: "Broken layouts",
-    summary: "If the website layout is broken on mobile or desktop, start with the visible symptom: horizontal scrolling, overlapping sections, disappearing buttons, broken columns, or spacing that fails at certain screen widths. Then trace whether the cause is CSS, JavaScript, a theme or plugin update, a page builder rule, or stale cached assets.",
+    summary: "If a WordPress layout is broken on mobile or desktop, check CSS files, cache and minification, plugin or theme updates, page-builder spacing, responsive breakpoints, CDN behavior, mixed content, and recent template changes before editing blindly.",
     problemType: "Something broke",
     relatedService: "website-fixes",
     category: "front-end-layout",
@@ -997,17 +1049,17 @@ export const blogPosts = [
     cta: "Send the URL, screenshot, device or browser, and what the layout should do instead.",
     intro: [
       [
-        "If the website layout is broken on mobile or desktop, start with the visible symptom instead of guessing the platform. Look for horizontal scrolling, overlapping sections, disappearing buttons, broken columns, sticky elements covering content, spacing failures, or layouts that only break at specific widths. If you already know the issue is broader than layout alone, compare this page with ",
+        "If a WordPress layout is broken on mobile or desktop, start with the visible symptom and the most likely WordPress-specific causes: CSS files not loading, cache or minification conflicts, plugin or theme updates, responsive breakpoint problems, page-builder spacing, CDN behavior, mixed-content issues, or custom CSS that no longer matches the page markup. If you already know the issue is broader than layout alone, compare this page with ",
         { text: "something broke on your website", href: "/blog/something-broke-on-your-website/", title: "Read the broad broken-website diagnostic guide" },
         "."
       ],
       [
-        "Broken layouts often sit between CSS, JavaScript, theme output, page builder spacing, embeds, and cached assets. If a menu stops opening, a class never toggles, or the layout only breaks after a script or theme change, compare this guide with ",
+        "Broken WordPress layouts often sit between CSS, JavaScript, theme output, Elementor or page-builder spacing, cached assets, optimization plugins, and plugin-generated markup. If a menu stops opening, a class never toggles, or the layout only breaks after a script or theme change, compare this guide with ",
         { text: "CSS and JavaScript website bugs", href: "/blog/css-javascript-errors-website-bugs/", title: "Read the CSS and JavaScript bug guide" },
         " before changing the wrong layer."
       ],
       [
-        "The fastest fix path is usually to identify the exact viewport, isolate the affected section, and work from symptom to cause. If the page needs a hands-on repair instead of more guessing, route it into ",
+        "The fastest WordPress broken layout fix is usually to identify the exact viewport, isolate the affected section, check recent theme/plugin/cache changes, and work from symptom to cause. If the page needs a hands-on repair instead of more guessing, route it into ",
         { text: "Website Fixes", href: "/services/website-fixes/", title: "View website fixes for broken layouts, scripts, forms, embeds, and visible page bugs" },
         " or ",
         { text: "WordPress Support", href: "/services/wordpress-support/", title: "View WordPress support for theme, plugin, page-builder, and layout cleanup" },
@@ -1022,9 +1074,50 @@ export const blogPosts = [
       title: "Open the contact request form for broken layout help"
     },
     sections: [
+      {
+        heading: "Quick WordPress layout checklist",
+        body: [
+          "Use this checklist before changing custom CSS or rebuilding sections. WordPress layout issues are often caused by stale or modified assets rather than the content itself.",
+          "If the issue affects a money page, lead form, or checkout path, test on staging or with a reversible change path before disabling production plugins."
+        ],
+        listTitle: "Check these first",
+        checklist: [
+          "Clear page, site, plugin, CDN, and browser cache, then retest the affected URL",
+          "Inspect Console and Network for missing CSS files, failed JavaScript, 404 assets, mixed content, or blocked files",
+          "Disable CSS/JavaScript optimization, minification, defer, combine, and critical CSS features long enough to compare output safely",
+          "Review recent plugin, theme, page-builder, content, and WordPress core updates",
+          "Test likely plugin or theme conflicts selectively, preferably in staging",
+          "Verify the correct stylesheet, child-theme file, media query, and responsive breakpoint are loading"
+        ]
+      },
+      {
+        heading: "WordPress-specific layout causes",
+        body: [
+          "A layout can break when Elementor or another page builder changes wrapper markup, when a theme update changes CSS selectors, when a child-theme override no longer matches the parent, or when CSS aggregation serves a stale file.",
+          "Plugin conflicts can also look like layout problems. A slider plugin, popup, form plugin, WooCommerce extension, consent tool, cache plugin, or security plugin may inject markup, hide content, delay scripts, or change classes that the theme expected."
+        ],
+        listTitle: "Common causes",
+        checklist: [
+          "Elementor, Divi, Beaver Builder, or Gutenberg block spacing changed after an edit or update",
+          "Caching, optimization, or critical CSS plugin served stale or incomplete styles",
+          "Child-theme CSS lost priority after a parent theme or plugin update",
+          "CSS aggregation, defer, or minification changed script/style order",
+          "WooCommerce, form, slider, popup, consent, or security plugin output changed the page structure",
+          "Theme update changed templates, wrappers, image sizes, breakpoints, or utility classes"
+        ]
+      },
+      {
+        heading: "When to roll back, disable a plugin, or edit the CSS",
+        body: [
+          "Rollback is best when a known update created a broad failure and a clean backup or version history exists. Disabling a plugin is best when evidence points to a specific plugin and the affected feature is not business-critical during testing. Editing CSS is best when the rendered markup is correct and the problem is clearly a selector, breakpoint, spacing, overflow, or containment issue.",
+          "Do not use CSS to hide a deeper JavaScript, cache, or plugin conflict. That can make the page look better while the underlying interaction remains broken."
+        ],
+        calloutTitle: "Repair principle",
+        callout: "A WordPress broken layout fix should target the layer causing the break: theme, child theme, builder, plugin, cache, CSS, JavaScript, CDN, or content."
+      },
       ["Common signs", [
         "The page looks fine in one viewport but breaks in another, ",
-        { text: "content overlaps", href: "/services/website-fixes/", title: "View website fixes for broken layouts and visible page bugs" },
+        { text: "WordPress broken layout fix", href: "/services/website-fixes/", title: "View website fixes for WordPress broken layout repair" },
         ", sticky headers cover sections, columns stack badly, buttons drift out of place, images stretch beyond their container, or horizontal scrolling appears where it should not."
       ]],
       ["Likely causes", [
@@ -1080,11 +1173,11 @@ export const blogPosts = [
   },
   {
     slug: "css-javascript-errors-website-bugs",
-    title: "JavaScript Issues and CSS Bugs on Websites | CSS Troubleshooting for Menus, Forms, and Layout Bugs | The Web Guy",
-    h1: "JavaScript Issues and CSS Bugs on Websites: What to Check First",
-    meta: "Need help when JavaScript is not working, CSS bugs break a website, or you need CSS troubleshooting? Start with broken menus, buttons, forms, layout problems, script conflicts, console errors, and front-end website bugs.",
+    title: "JavaScript Issues on Websites: Common Errors and Fixes",
+    h1: "JavaScript Issues on Websites: What to Check and How to Fix Them",
+    meta: "Troubleshoot JavaScript issues on websites, including console errors, failed requests, jQuery errors, CORS, CSP, buttons, menus, forms, widgets, CSS bugs, and cache conflicts.",
     eyebrow: "CSS and JavaScript",
-    summary: "JavaScript issues, CSS bugs, CSS troubleshooting work, and front-end website problems can make menus stop opening, buttons fail, forms hang, styles change unexpectedly, or interactive pieces work on one page and fail on another.",
+    summary: "JavaScript issues on websites leave clues: console errors, failed network requests, recent plugin or theme changes, cache/optimization conflicts, scripts blocked by CORS or CSP, and symptoms like dead buttons, broken menus, forms that hang, or widgets that never load.",
     problemType: "Something broke",
     relatedService: "website-fixes",
     category: "front-end-layout",
@@ -1094,7 +1187,7 @@ export const blogPosts = [
     heroSecondaryHref: "/services/website-fixes/",
     cta: "Send the URL, what stopped working, what should happen instead, and any recent theme, plugin, script, or deployment changes.",
     intro: [
-      "If you are searching for JavaScript issues, CSS bugs, CSS troubleshooting, or website bug help because a menu, button, form, layout, or script stopped working, the first useful move is to decide whether you are looking at a JavaScript issue, a CSS bug, or a front-end symptom caused by something else. Start with the exact page, action, browser behavior, and any recent markup or script change instead of blaming the whole theme or platform.",
+      "If you are searching for JavaScript issues on websites because a menu, button, form, layout, widget, or script stopped working, the first useful move is to check the browser console, failed network requests, recent plugin/theme/code changes, cache or optimization conflicts, and whether the issue affects every user or only one browser/device. CSS bugs matter too, but many visible layout symptoms start when JavaScript fails before it can attach events or toggle classes.",
       [
         "A lot of CSS and JavaScript bug requests begin with a visible symptom: a menu does not open, a class never toggles, a script error freezes the page, a form submit hangs, or an update changed the markup that the CSS expected. If the problem needs hands-on repair on the actual site, start with ",
         { text: "website fixes", href: "/services/website-fixes/", title: "View website fixes for broken layouts, scripts, forms, modals, and visible bugs" },
@@ -1116,6 +1209,71 @@ export const blogPosts = [
       title: "Open the contact request form for CSS and JavaScript bug help"
     },
     sections: [
+      {
+        heading: "Immediate JavaScript diagnostic summary",
+        body: [
+          "Start with evidence in the browser before changing CSS or plugin settings. JavaScript issues usually show up as an error on page load, an error triggered by a user action, a missing file, a blocked script, or a conflict caused by optimization settings.",
+          "Separate the failure by scope. A bug that happens for every visitor points toward global scripts, dependencies, cache, deployment, plugin updates, or theme output. A bug that only happens on one page points toward page-specific widgets, embeds, builder markup, form settings, or content."
+        ],
+        listTitle: "Check first",
+        checklist: [
+          "Browser console errors on page load and after the broken click, submit, menu open, or widget action",
+          "Network requests for 404 scripts, 500 responses, blocked files, wrong MIME types, CORS errors, and slow third-party assets",
+          "Recent plugin, theme, snippet, tracking, embed, cache, CDN, or deployment changes",
+          "Optimization settings that defer, combine, minify, lazy-load, or move JavaScript",
+          "Whether the issue happens on mobile, desktop, logged out, incognito, or only one browser",
+          "Whether CSS is only showing the wrong state because JavaScript never toggled the expected class"
+        ]
+      },
+      {
+        heading: "Symptom-to-cause table for JavaScript issues",
+        body: "Use the broken action to narrow the likely cause before rewriting scripts.",
+        checklist: [
+          "Buttons, menus, tabs, accordions, or modals do not respond -> missing event listener, script error, dependency issue, duplicate library, or changed selector",
+          "Forms do not submit or spin forever -> failed AJAX request, validation error, blocked endpoint, plugin conflict, reCAPTCHA issue, or CORS problem",
+          "Blank or missing content -> script failed before rendering, API request failed, widget blocked, route error, or hydration problem",
+          "JavaScript works only after refresh -> cache mismatch, race condition, deferred script order, hydration timing, or stale HTML/assets",
+          "Mobile-only failures -> touch event, viewport-specific markup, responsive menu script, lazy-loaded component, or mobile optimization setting",
+          "Scripts blocked by browser policy -> CORS, Content Security Policy, mixed content, ad blocker, consent mode, or third-party domain failure"
+        ]
+      },
+      {
+        heading: "Common JavaScript error messages",
+        body: [
+          "The exact error message matters. It usually points to the class of problem even when it does not name the full fix.",
+          "Read the earliest relevant error first, then repeat the broken action and watch what appears at that moment."
+        ],
+        listTitle: "Errors and likely meaning",
+        checklist: [
+          "Uncaught TypeError -> code used a value that was undefined, null, wrong type, or not ready yet",
+          "ReferenceError -> a variable, function, object, or dependency was never loaded or is out of scope",
+          "SyntaxError -> a script file is malformed, minified incorrectly, edited incorrectly, or served in the wrong format",
+          "404 JavaScript request -> the HTML points to a file that no longer exists, often after cache, build, plugin, or CDN changes",
+          "CORS error -> a browser policy blocked a script, API, form, font, or widget request from another domain",
+          "jQuery is not defined -> jQuery did not load, loaded after dependent code, was deferred incorrectly, or was removed by optimization"
+        ]
+      },
+      {
+        heading: "JavaScript first, CSS second",
+        body: [
+          "If the broken feature is interactive, debug JavaScript before changing visual styles. Menus, modals, accordions, sliders, tabs, forms, checkout steps, tracking events, maps, and widgets usually depend on scripts that attach behavior after the page loads.",
+          "CSS troubleshooting is still important when the rendered markup and state are correct but the visual result is wrong. Use CSS work for breakpoints, overflow, specificity, z-index, spacing, containment, and responsive layout after confirming JavaScript is not the root cause."
+        ]
+      },
+      {
+        heading: "Debugging workflow",
+        body: "A practical JavaScript repair should move in a controlled order so the fix can be verified.",
+        checklist: [
+          "Reproduce the broken action on the affected URL",
+          "Check console errors and network requests before changing settings",
+          "Identify whether the failing script belongs to the theme, plugin, builder, GTM, CDN, custom code, or third-party widget",
+          "Disable recent changes, cache, or optimization settings in a controlled way when safe",
+          "Apply the smallest confirmed fix: load order, dependency, selector, endpoint, exclusion, markup, or code correction",
+          "Retest the original action, adjacent interactions, mobile/desktop behavior, and tracking or form handoff if relevant"
+        ],
+        calloutTitle: "Internal-link anchors to use",
+        callout: "Link to this guide with anchors like fix JavaScript issues, website JavaScript debugging, and JavaScript errors causing website bugs when the parent page, website repair page, or WordPress support page mentions broken scripts."
+      },
       ["Common signs", [
         "Dropdowns do not open, sliders freeze, modals fail, buttons stop responding, ",
         { text: "CSS looks different after an update", href: "/services/website-fixes/", title: "View website fixes for CSS, JavaScript, menus, modals, and visible bugs" },

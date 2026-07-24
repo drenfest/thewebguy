@@ -26,53 +26,60 @@ export const skillPages = [
   },
   {
     slug: "wordpress-plugin-development",
-    title: "WordPress Plugin Developer at $55/hr | The Web Guy",
-    meta: "Get WordPress custom plugin development help for admin workflows, APIs, automation, data capture, integrations, and practical site-specific functionality.",
-    h1: "WordPress Plugin Development at $55/hr",
+    title: "WordPress Plugin Developer | Custom Plugin Development",
+    meta: "Hire a WordPress plugin developer for custom plugin development, existing plugin modification, APIs, WooCommerce extensions, admin tools, automation, debugging, and maintenance.",
+    h1: "WordPress Plugin Developer for Custom Features and Integrations",
     eyebrow: "WordPress Plugin Development",
-    intro: "Custom WordPress plugin work for site-specific workflows, admin tools, data capture, API connections, automation, shortcodes, and functionality that does not belong hacked into a theme file.",
-    problems: ["A plugin almost does what the site needs but not quite", "Admin workflows are manual or fragile", "Data needs to move between WordPress and another system", "Shortcodes or custom functionality are breaking", "Code is buried in theme files where it should not live"],
-    tasks: ["Build small custom plugins", "Create admin workflow helpers", "Connect REST APIs and webhooks", "Add custom shortcodes or blocks where appropriate", "Clean up fragile theme-function code", "Debug plugin conflicts and data issues"],
-    connection: "Plugin development connects directly to WordPress support, API integrations, automation, technical SEO, and ongoing webmaster support.",
+    intro: "WordPress plugin developer help for custom plugin development, existing plugin modification, API integrations, WooCommerce extensions, admin tools, automation, shortcodes, and site-specific functionality that should not be buried in a theme file.",
+    problems: ["A plugin almost does what the site needs but not quite", "Admin workflows are manual or fragile", "WordPress needs to connect to an API, webhook, CRM, or internal system", "WooCommerce or form functionality needs custom behavior", "Shortcodes, hooks, scheduled tasks, or plugin data are breaking", "Code is buried in theme files where it should be owned by a plugin"],
+    tasks: ["Build small custom WordPress plugins", "Modify existing plugin behavior with hooks, filters, shortcodes, and safe extension points", "Create admin screens, custom post types, settings, scheduled tasks, and database-backed workflows", "Connect REST APIs, webhooks, authentication, and external data sources", "Build WooCommerce extensions or site-specific commerce logic", "Test compatibility, security assumptions, permissions, and update-safe behavior"],
+    connection: "Plugin development connects directly to WordPress support, plugin conflict repair, API integrations, WooCommerce, automation, technical SEO, and ongoing webmaster support when custom functionality has to survive updates.",
     contextCards: [
-      ["WordPress support", "Site-specific plugin work usually starts when ordinary WordPress support exposes admin, shortcode, data, or workflow gaps.", "/services/wordpress-support/", "View WordPress support", "wordpress-support"],
-      ["API integrations", "Custom plugins often need REST API calls, webhook handlers, payload cleanup, and reliable data handoff between tools.", "/services/api-integrations/", "View API integrations", "api-integrations"],
-      ["Automation tools", "Internal WordPress admin helpers, dashboards, import tools, and recurring checks can become lightweight automation work.", "/services/automation-internal-tools/", "View automation help", "automation-internal-tools"],
-      ["Theme development", "If the plugin touches front-end output, templates, shortcodes, or layout behavior, theme support may be part of the same fix.", "/skills/wordpress-theme-development/", "View theme help", "wordpress-support"]
+      ["Custom plugin or theme code?", "Use custom plugin development when the feature owns data, admin behavior, scheduled work, integrations, permissions, or reusable functionality. Use theme code when the change is mostly presentation.", "/skills/wordpress-theme-development/", "Compare theme development", "wordpress-support"],
+      ["Existing plugin modification", "Use a WordPress plugin developer when an existing plugin needs hooks, filters, templates, API adjustments, or safer extension work instead of direct vendor-file edits.", "/services/wordpress-plugin-conflict-help/", "View plugin troubleshooting", "wordpress-support"],
+      ["API integrations", "Custom WordPress plugins often need REST API calls, webhook handlers, authentication, payload cleanup, retries, and reliable data handoff between tools.", "/services/api-integrations/", "View API integrations", "api-integrations"],
+      ["WooCommerce extensions", "WooCommerce plugin work can cover checkout rules, product data, order handling, admin workflow, fulfillment data, and compatibility with other extensions.", "/services/ecommerce-support/", "View ecommerce support", "ecommerce-support"],
+      ["Admin tools and automation", "Internal WordPress dashboards, importers, scheduled checks, reporting helpers, and workflow tools often become lightweight custom plugin projects.", "/services/automation-internal-tools/", "View automation help", "automation-internal-tools"],
+      ["Plugin development examples", "Examples include a CRM handoff plugin with webhook retries, a WooCommerce order-status helper, and an admin reporting tool built around custom post types and scheduled syncs.", "/contact/", "Discuss a custom plugin", "wordpress-support"]
     ],
     relatedServices: ["wordpress-support", "api-integrations", "automation-internal-tools", "technical-seo-implementation"],
     relatedSkills: ["php-javascript-node", "rest-api-webhook-integrations", "automation-dashboards-reporting", "wordpress-theme-development"],
     faqs: [
-      ["Do you build large commercial plugins?", "The best fit is practical site-specific plugin work, internal tooling, workflow fixes, and integration support."],
-      ["Can plugin code connect to APIs?", "Yes. REST APIs, webhooks, JSON payloads, and WordPress-side data handling are a strong fit."],
-      ["Can you fix existing plugin issues?", "Yes. Conflicts, errors, broken admin behavior, and fragile custom code can be inspected."],
-      ["Why not put code in functions.php?", "Small snippets can be fine, but durable site-specific functionality often belongs in a small plugin."]
+      ["What does a WordPress plugin developer build?", "Common work includes custom plugins, existing plugin modifications, admin tools, custom post types, settings screens, scheduled tasks, WooCommerce extensions, shortcodes, REST APIs, webhooks, and database-backed workflows."],
+      ["Can you modify an existing plugin?", "Often yes, when the plugin exposes hooks, filters, templates, APIs, or documented extension points. Directly editing vendor plugin files is usually avoided because updates overwrite those changes."],
+      ["Can plugin code connect to APIs?", "Yes. REST APIs, webhooks, authentication, JSON payloads, retries, logging, and WordPress-side data handling are a strong fit."],
+      ["How long does a custom plugin take?", "Small plugins can sometimes be scoped in hours. Larger integrations depend on requirements, third-party API behavior, data model, testing needs, and compatibility risk."],
+      ["Who owns the custom plugin code?", "Project ownership should be clear before work starts. For site-specific plugin work, the practical goal is usually code the site owner can keep using and maintain."],
+      ["Why not put code in functions.php?", "Small presentation snippets can be fine, but durable site-specific functionality usually belongs in a small plugin so it is not tied to a theme change."]
     ]
   },
   {
     slug: "wordpress-theme-development",
-    title: "WordPress Theme Developer and Theme Development Help | Child Theme, CSS, JavaScript, and Template Cleanup | The Web Guy",
-    meta: "Need a WordPress theme developer or WordPress theme development help? Get child theme, PHP template, CSS, JavaScript, Elementor cleanup, mobile layout, SEO structure, and page update support for existing sites.",
-    h1: "WordPress Theme Developer and Theme Development Help at $55/hr",
+    title: "WordPress Theme Development Services | The Web Guy",
+    meta: "Custom WordPress theme development services for child themes, block themes, WooCommerce templates, design-to-WordPress builds, responsive layouts, performance, accessibility, and theme maintenance.",
+    h1: "Custom WordPress Theme Development",
     eyebrow: "WordPress Themes",
-    intro: "Need a WordPress theme developer for template edits, child theme cleanup, WordPress theme development, Elementor/page builder fixes, mobile issues, PHP templates, CSS, JavaScript, or SEO-friendly page structure? This page is built for practical theme work on existing sites that need hands-on implementation instead of a full rebuild.",
-    problems: ["You need a WordPress theme developer for an existing site, not a full rebuild", "Mobile layouts break after content changes", "Elementor or builder spacing is a mess", "SEO recommendations require template-level changes", "Tracking scripts and embeds are scattered through the theme"],
-    tasks: ["Edit PHP templates and child themes", "Clean up CSS and JavaScript behavior", "Fix mobile layouts and builder spacing", "Improve heading and content structure", "Add or clean up embeds and tracking snippets", "Support WordPress page and content updates"],
-    connection: "Theme work supports WordPress support, landing pages, technical SEO implementation, site speed cleanup, and website fixes.",
+    intro: "Custom WordPress theme development for existing and new WordPress sites: custom themes from designs, child themes, block themes, WooCommerce templates, reusable components, performance-minded templates, accessibility cleanup, and ongoing theme work.",
+    problems: ["A custom WordPress theme needs to match a real design without page-builder bloat", "A child theme or existing theme needs safer template changes", "WooCommerce templates, archive pages, or custom fields need better output", "Mobile layouts, accessibility, or Core Web Vitals suffer because of theme structure", "SEO recommendations require template-level headings, schema placement, or internal links", "The site needs reusable components instead of one-off page hacks"],
+    tasks: ["Build custom WordPress themes from designs or existing page structures", "Create child themes, block themes, template parts, and reusable component systems", "Develop WooCommerce theme templates and product/archive layouts", "Connect custom fields, post types, Gutenberg blocks, and plugin output to front-end templates", "Improve responsive layout, accessibility, Core Web Vitals, CSS, JavaScript, and template performance", "Debug and maintain existing themes without defaulting to a full rebuild"],
+    connection: "Theme work supports WordPress support, landing pages, WooCommerce, technical SEO implementation, site speed cleanup, Gutenberg/block editing, plugin output, and website fixes.",
     contextCards: [
-      ["WordPress support", "Theme and child theme edits are usually part of practical WordPress support for existing sites.", "/services/wordpress-support/", "View WordPress support", "wordpress-support"],
-      ["Landing pages", "Service pages, campaign pages, and local pages often need theme-level layout cleanup before they can launch cleanly.", "/services/landing-pages/", "View landing page help", "landing-pages"],
-      ["Technical SEO", "Template headings, internal links, schema placement, and crawlable structure often connect theme work to SEO implementation.", "/services/technical-seo-implementation/", "View technical SEO", "technical-seo-implementation"],
-      ["Website fixes", "Broken mobile layouts, CSS conflicts, JavaScript behavior, and builder spacing often show up first as visible website fixes.", "/services/website-fixes/", "View website fixes", "website-fixes"],
-      ["WordPress plugin development", "Theme work often overlaps plugin output, hooks, shortcodes, or admin behavior that need WordPress plugin developer help on the same site.", "/skills/wordpress-plugin-development/", "View WordPress plugin development", "wordpress-support"]
+      ["WordPress themes I build", "Custom themes from Figma or existing designs, Gutenberg/block themes, child themes, WooCommerce theme development, existing-theme rebuilds, and reusable component systems.", "/contact/", "Discuss a WordPress theme", "wordpress-support"],
+      ["Design to WordPress", "Theme work can turn approved layouts into responsive PHP templates, block patterns, custom fields, reusable sections, and editable content areas.", "/services/landing-pages/", "View landing page help", "landing-pages"],
+      ["Custom theme, child theme, or builder?", "A custom theme fits durable structure, a child theme fits safer changes to an existing theme, and a page builder fits teams that need visual editing more than template control.", "/services/wordpress-support/", "Compare WordPress support", "wordpress-support"],
+      ["WooCommerce templates", "Product, archive, cart-adjacent, and store templates often need theme-level changes for layout, product data, schema, speed, and conversion cleanup.", "/services/ecommerce-support/", "View ecommerce support", "ecommerce-support"],
+      ["Technical SEO", "Template headings, internal links, schema placement, crawlable content, and Core Web Vitals often connect custom WordPress theme development to SEO implementation.", "/services/technical-seo-implementation/", "View technical SEO", "technical-seo-implementation"],
+      ["Theme repair examples", "Examples include mobile layout repair after a theme update, WooCommerce template cleanup for product data, and reusable service-page components built from custom fields.", "/blog/broken-layouts-mobile-website-fixes/", "Read layout repair guide", "website-fixes"]
     ],
     relatedServices: ["wordpress-support", "landing-pages", "technical-seo-implementation", "website-fixes"],
     relatedSkills: ["wordpress-plugin-development", "performance-engineering", "schema-structured-data", "php-javascript-node"],
     faqs: [
-      ["Can you work with child themes?", "Yes. Child theme edits, template overrides, and safer theme-level changes are a good fit."],
-      ["Can you clean up Elementor pages?", "Yes. Builder spacing, mobile layout problems, duplicated sections, and content cleanup fit this work."],
-      ["Can theme work help SEO?", "Yes. Headings, template markup, internal links, schema placement, and page structure often affect SEO implementation."],
-      ["Do you rebuild entire themes?", "The usual fit is practical theme support and cleanup. Full rebuilds can be scoped if there is a clear need."]
+      ["Do you build custom WordPress themes?", "Yes. Custom WordPress theme development can include design-to-WordPress builds, block themes, child themes, template parts, custom fields, WooCommerce templates, and reusable components."],
+      ["Can you work with child themes?", "Yes. Child theme edits, template overrides, and safer theme-level changes are a good fit when the existing parent theme should remain in place."],
+      ["Can you clean up Elementor or page-builder pages?", "Yes. Builder spacing, mobile layout problems, duplicated sections, and content cleanup fit this work, though some issues are better solved in templates than in the builder UI."],
+      ["Can theme work help SEO?", "Yes. Headings, template markup, internal links, schema placement, crawlable content, performance, accessibility, and page structure often affect SEO implementation."],
+      ["Should I use a custom theme, child theme, or page builder?", "Use a custom theme for durable structure, a child theme for safer changes on an existing theme, and a page builder when visual editing flexibility matters more than strict template control."],
+      ["Do you rebuild entire themes?", "Full rebuilds can be scoped when there is a clear reason. Many existing sites only need practical theme support, cleanup, or a focused child-theme/template change."]
     ]
   },
   {

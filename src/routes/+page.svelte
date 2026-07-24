@@ -36,6 +36,28 @@
     breadcrumbSchema(breadcrumbs, "/"),
     faqSchema(homepageFaqs)
   );
+  const proofSignals = [
+    {
+      label: "10+ years",
+      title: "Website, WordPress, and SEO implementation experience",
+      copy: "Practical support for existing sites, agency overflow, technical cleanup, and launch work."
+    },
+    {
+      label: "WordPress, Shopify, custom",
+      title: "CMS and front-end development coverage",
+      copy: "Theme, plugin, Liquid, JavaScript, CSS, templates, APIs, and production debugging."
+    },
+    {
+      label: "SEO + development",
+      title: "Technical SEO changes that actually ship",
+      copy: "Schema, redirects, headings, crawl fixes, internal links, and page structure handled in the site."
+    },
+    {
+      label: "Direct developer access",
+      title: "No account-manager handoff",
+      copy: "Send the URL, symptom, audit note, or task list directly to the person doing the work."
+    }
+  ];
 
   const serviceBySlug = Object.fromEntries(servicePages.map((service) => [service.slug, service]));
   const primaryServiceSummaries = [
@@ -244,16 +266,16 @@
 </script>
 
 <Seo
-  title="The Web Guy | Website Fixes, WordPress & SEO"
-  description="The Web Guy helps with broken layouts, WordPress problems, technical SEO implementation, tracking cleanup, website fixes, and ongoing web support at $55/hr."
+  title="The Web Guy | WordPress, Website Fixes & Technical SEO"
+  description="Hire The Web Guy for WordPress development, website fixes, technical SEO, and ongoing support at $55/hour. View services or request help today."
   schema={homeSchema}
 />
 
 <main>
   <Hero
-    eyebrow="The Web Guy | Website fixes, WordPress development, and technical SEO support"
-    h1="Website Fixes, WordPress Development, and Technical SEO"
-    intro="The Web Guy helps service businesses, agencies, and site owners fix broken layouts, WordPress problems, technical SEO implementation, tracking issues, and recurring website tasks. If a page broke, rankings stalled, forms stopped behaving, or the site needs steady webmaster support, send the URL and the issue to start with the most useful next step."
+    eyebrow="THE WEB GUY"
+    h1="Your Web Guy for WordPress, Website Fixes, and Technical SEO"
+    intro="WordPress development, broken website fixes, technical SEO implementation, and ongoing support for businesses, agencies, and site owners."
     cta="Send the URL and issue"
     secondary="View Services"
     showCapabilityLinks={false}
@@ -262,10 +284,22 @@
 
   <Breadcrumbs items={breadcrumbs} />
 
+  <section class="section soft-section section-effect section-effect--signals section-effect--low" aria-label="The Web Guy proof signals">
+    <div class="cluster-grid">
+      {#each proofSignals as signal}
+        <article class="cluster-panel">
+          <span>{signal.label}</span>
+          <h3>{signal.title}</h3>
+          <p>{signal.copy}</p>
+        </article>
+      {/each}
+    </div>
+  </section>
+
   <section class="section section-effect section-effect--grid section-effect--medium">
     <SectionHeading
       eyebrow="Website problem routing"
-      h2="Pick the thing that sounds closest"
+      h2="What Can The Web Guy Help You Fix?"
       body="You do not need to know whether the issue is WordPress, CSS, JavaScript, hosting, analytics, or a plugin. Start with the symptom and route into the right kind of help."
     />
     <InternalLinkCopy paragraphs={homeInlineParagraphs} />
@@ -410,3 +444,26 @@
     <FaqList items={homepageFaqs} />
   </section>
 </main>
+
+<style>
+  :global(main > .hero h1) {
+    max-width: 820px;
+    font-size: clamp(1.95rem, 3.9vw, 3.55rem);
+    line-height: 1;
+  }
+
+  :global(main > .hero) {
+    padding-top: clamp(42px, 5.4vw, 72px);
+    padding-bottom: clamp(40px, 5vw, 68px);
+  }
+
+  :global(main > .hero .hero-lede) {
+    max-width: 660px;
+    margin-top: 16px;
+    line-height: 1.5;
+  }
+
+  :global(main > .hero .hero-actions) {
+    margin-top: 20px;
+  }
+</style>

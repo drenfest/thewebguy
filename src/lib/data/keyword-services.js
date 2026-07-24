@@ -241,53 +241,75 @@ export const keywordLandingSpecs = [
   },
   {
     slug: "wordpress-plugin-conflict-help",
-    title: "Fix WordPress Plugin Conflict Issues | Troubleshoot WordPress Plugin Issues | The Web Guy",
-    meta: "Fix WordPress plugin conflict issues and troubleshoot WordPress plugin issues affecting forms, layouts, checkout, admin behavior, scripts, performance, updates, or site stability, especially when the next step needs WordPress plugin developer help.",
-    h1: "Fix WordPress Plugin Conflict Issues at $55/hr",
+    title: "Fix WordPress Plugin Conflicts | Troubleshooting Help",
+    meta: "Fix WordPress plugin conflicts affecting forms, checkout, layouts, admin behavior, JavaScript, performance, updates, PHP compatibility, or site stability.",
+    h1: "Fix WordPress Plugin Conflicts Without Breaking Your Site",
     eyebrow: "Plugin Conflict Help",
     cluster: "WordPress support",
     anchorSlug: "wordpress-support",
     intent: "plugin conflicts where updates or overlapping plugins break site behavior",
     intro:
-      "WordPress plugin conflict help for sites where an update, new plugin, cache tool, security plugin, form plugin, checkout extension, page builder, or theme interaction changed public behavior and you need to troubleshoot WordPress plugin issues before the safest fix is obvious. When the problem turns into hook, shortcode, filter, or plugin-level code review, this is often the bridge into WordPress plugin developer help.",
+      "WordPress plugin conflict help for diagnosing the conflicting plugin, finding whether the failure is PHP, JavaScript, database, theme, cache, or settings related, and repairing the broken functionality safely.",
     cta: "Fix the Plugin Conflict",
     audience:
       "This page is for site owners, agencies, and WordPress teams that need to fix a WordPress plugin conflict without blindly disabling production features. The work starts with the affected URL, the symptom, recent changes, and which business path is at risk, then decides whether the issue stays configuration-level or needs WordPress plugin developer help.",
     audienceHeading: "WordPress plugin conflicts that need careful triage",
-    problems: ["A plugin update changed behavior", "Two plugins appear to fight over scripts, styles, forms, checkout, or admin features", "Disabling plugins randomly is too risky"],
-    tasks: ["Review the affected behavior and recent updates", "Isolate likely plugin, theme, cache, or script conflicts", "Fix settings, code, or handoff notes where practical"],
+    problems: ["A plugin update changed behavior", "Two plugins appear to fight over scripts, styles, forms, checkout, or admin features", "Forms, checkout, menus, editors, or wp-admin fail after a plugin change", "Disabling plugins randomly is too risky"],
+    tasks: ["Review the affected behavior and recent updates", "Isolate likely plugin, theme, cache, PHP, database, or JavaScript conflicts", "Repair settings, exclusions, hooks, templates, or code where practical", "Regression test the business path that broke"],
     sections: [
       {
         h2: "Plugin conflict symptoms this page targets",
         body:
-          "A WordPress plugin conflict usually shows up as a visible or functional change: a form stops sending, a checkout step fails, a layout shifts, a shortcode disappears, a page builder section breaks, a JavaScript error appears, or the admin starts behaving differently after an update.",
+          "A WordPress plugin conflict usually shows up as a visible, functional, or admin change after an update or new plugin install. The useful first step is to identify the broken user path and the components that changed before disabling production features.",
         bullets: [
+          "Errors after plugin updates, WordPress core updates, theme updates, or PHP version changes",
+          "Blank screens, fatal errors, wp-admin failures, or inaccessible editor screens",
           "Forms, popups, checkout, menus, filters, or buttons stop working",
+          "Features work only when another plugin is disabled",
           "Layout, CSS, page builder, or shortcode output changes after an update",
           "JavaScript errors appear on pages that load specific plugin assets",
-          "Admin screens, settings pages, or editor features become unreliable",
-          "Caching, optimization, security, or consent plugins interfere with front-end behavior",
-          "Two plugins try to control the same scripts, fields, checkout steps, redirects, or tracking events"
+          "Slowdowns, timeouts, database warnings, or performance drops after a plugin change",
+          "Caching, optimization, security, or consent plugins interfere with front-end behavior"
         ]
       },
       {
-        h2: "How plugin conflicts should be isolated",
+        h2: "How WordPress plugin troubleshooting should be isolated",
         cards: [
-          ["Start with the symptom", "Name the URL, action, expected behavior, broken behavior, browser/device, and when the problem started before changing plugin settings."],
-          ["Review recent changes", "Check plugin, theme, WordPress core, PHP, cache, security, form, checkout, builder, and tracking updates near the failure."],
-          ["Identify the owning layer", "Find whether the broken output belongs to a plugin, theme, page builder, shortcode, custom snippet, optimization layer, or third-party embed."],
-          ["Use safer testing when possible", "Prefer staging, backups, logs, browser tools, and controlled tests over disabling random production plugins during business-critical paths."],
-          ["Repair the narrow cause", "Adjust settings, exclusions, script order, markup, cache behavior, template output, or plugin-specific configuration before escalating."],
-          ["Verify the business path", "Retest the form, checkout, page, admin workflow, tracking event, or visitor action that was broken, not just the plugin settings screen."]
+          ["Back up and use staging when possible", "Avoid blind production testing when the failure affects leads, checkout, wp-admin, SEO pages, or revenue-critical functionality."],
+          ["Reproduce the symptom", "Name the URL, action, expected behavior, broken behavior, browser/device, and when the problem started before changing plugin settings."],
+          ["Check logs and browser evidence", "Review PHP errors, server logs, browser console errors, failed requests, plugin notices, and database warnings before guessing."],
+          ["Isolate plugins and theme safely", "Test likely plugin pairs, theme compatibility, PHP version compatibility, cache behavior, and optimization settings in a controlled order."],
+          ["Repair the narrow cause", "Adjust settings, exclusions, script order, hooks, template output, compatibility shims, or plugin-specific configuration before escalating."],
+          ["Regression test the business path", "Retest the form, checkout, page, admin workflow, tracking event, or visitor action that was broken, not just the plugin settings screen."]
+        ]
+      },
+      {
+        h2: "Common WordPress plugin conflict categories",
+        bullets: [
+          "Caching and optimization plugins changing script order, deferred JavaScript, CSS aggregation, or stale assets",
+          "Security plugins blocking AJAX, REST API requests, file access, login behavior, or admin actions",
+          "Page builders and theme plugins fighting over markup, responsive settings, widgets, or shortcode output",
+          "WooCommerce extensions overlapping checkout, cart fragments, payment gateways, shipping, coupons, or order hooks",
+          "Form plugins and spam tools breaking validation, SMTP handoff, redirects, reCAPTCHA, or CRM submissions",
+          "PHP version conflicts, duplicate functionality, old snippets, and plugins that do not support the current WordPress stack"
+        ]
+      },
+      {
+        h2: "Plugin conflict repair examples",
+        cards: [
+          ["Checkout button stopped working", "Conflict: optimization plugin deferred a WooCommerce script after an update. Fix: exclude checkout assets from defer/combine, clear cache, and verify cart-to-order flow."],
+          ["Form submits but no lead arrives", "Conflict: spam/security settings blocked the form plugin handoff. Fix: review logs, adjust allowed requests, confirm email/CRM delivery, and retest tracking."],
+          ["Admin editor fails after update", "Conflict: page builder and plugin asset version mismatch. Fix: isolate the plugin pair, update compatibility settings, and regression test editor output."]
         ]
       },
       {
         h2: "Related WordPress conflict paths",
         cards: [
-          ["WordPress Troubleshooting", "Use this when the symptom is unclear and needs broader WordPress diagnosis across plugins, themes, cache, and admin behavior.", "/services/wordpress-troubleshooting/", "View WordPress Troubleshooting"],
-          ["Fix a WordPress Issue", "Use this when the plugin conflict is part of a one-off WordPress fix request.", "/services/fix-wordpress-issue/", "View WordPress Issue Help"],
+          ["WordPress Troubleshooting", "Use this when the symptom is unclear and needs broader WordPress diagnosis across plugins, themes, cache, PHP, and admin behavior.", "/services/wordpress-troubleshooting/", "View WordPress Troubleshooting"],
+          ["Fix a WordPress Issue", "Use this when the plugin conflict is part of a one-off WordPress repair request.", "/services/fix-wordpress-issue/", "View WordPress Issue Help"],
           ["WooCommerce Checkout Error Fix", "Use this when plugin conflicts affect cart, checkout, payments, shipping, tax, coupons, or purchase tracking.", "/services/woocommerce-checkout-error-fix/", "View Checkout Fix Help"],
           ["Production Debugging", "Use this when console errors, network requests, scripts, cache, or live browser behavior need inspection.", "/skills/production-debugging/", "View Production Debugging"],
+          ["WordPress Theme Development", "Use this when the conflict changes template output, child-theme CSS, responsive layout, builder markup, or theme JavaScript.", "/skills/wordpress-theme-development/", "View Theme Development"],
           ["WordPress Plugin Development", "Use this when the conflict requires WordPress plugin developer help, plugin-level code review, hooks, filters, shortcodes, or custom functionality changes.", "/skills/wordpress-plugin-development/", "View Plugin Development"]
         ]
       },
@@ -300,8 +322,10 @@ export const keywordLandingSpecs = [
     related: ["wordpress-support", "wordpress-troubleshooting", "fix-wordpress-issue", "woocommerce-checkout-error-fix"],
     skills: ["wordpress-plugin-development", "production-debugging", "wordpress-theme-development"],
     faqs: [
-      ["How do I fix a WordPress plugin conflict?", "Start by identifying the symptom, recent changes, affected URL, and business impact. Then isolate the plugin, theme, cache, script, or setting involved before changing production."],
+      ["How do I fix a WordPress plugin conflict?", "Start by identifying the symptom, recent changes, affected URL, and business impact. Then isolate the plugin, theme, cache, PHP, JavaScript, or setting involved before changing production."],
+      ["How do I identify the conflicting plugin?", "Compare recent updates with the failing feature, check logs and browser errors, test likely plugin pairs safely, and verify whether the failure follows a specific plugin asset, hook, shortcode, or setting."],
       ["Should I disable every plugin to test?", "Not on a live site unless you understand the risk. Staging, backups, browser evidence, logs, and controlled tests are safer than randomly disabling production features."],
+      ["What if wp-admin is inaccessible?", "The recovery path may need hosting file access, logs, plugin folder isolation, backups, or database review before normal dashboard troubleshooting is possible."],
       ["Can cache look like a plugin conflict?", "Yes. Cache and optimization plugins can serve stale assets, change script order, combine files, or hide the effect of a real plugin change."],
       ["Can plugin conflicts break forms or checkout?", "Yes. Form, checkout, security, cache, optimization, payment, and tracking plugins often overlap around scripts, redirects, validation, and user actions."],
       ["What should I send first?", "Send the URL, symptom, expected behavior, when it started, recent updates, plugin names if known, and screenshots or a recording."]
@@ -351,41 +375,63 @@ export const keywordLandingSpecs = [
   },
   {
     slug: "technical-seo-developer",
-    title: "SEO Developer for Technical SEO | The Web Guy",
-    meta: "Need an SEO developer to implement technical SEO changes in WordPress, Shopify, or custom sites? Get help with crawl and indexing fixes, schema, redirects, internal links, JavaScript rendering, metadata, and technical SEO implementation.",
+    title: "SEO Developer Services | Technical SEO Implementation",
+    meta: "Hire an SEO developer for technical SEO implementation: crawl and indexing fixes, canonicals, redirects, schema, JavaScript rendering, internal links, Core Web Vitals, CMS templates, and Search Console issues.",
     h1: "SEO Developer for Technical SEO Implementation",
     eyebrow: "Technical SEO Developer",
     cluster: "Technical SEO",
     anchorSlug: "technical-seo-implementation",
     intent: "technical SEO tasks that require code, CMS, templates, redirects, or structured data support",
     intro:
-      "I implement technical SEO fixes in WordPress, Shopify, and custom websites, including crawl and indexing problems, schema, redirects, internal links, JavaScript rendering, metadata, tracking, and template-level SEO changes. This page is for the implementation work that sits between an audit and the live site when the issue is already known and the work still has to ship.",
+      "SEO developer services for implementing technical SEO fixes in WordPress, Shopify, and custom websites. Get help with crawl and indexing problems, schema, canonicals, redirects, internal links, JavaScript rendering, Core Web Vitals, CMS templates, and Search Console issues.",
     cta: "Get SEO Developer Help",
     audience:
       "This page is for SEO teams, agencies, marketers, and site owners who already know what needs to change but need an SEO developer who can touch the CMS, templates, redirects, schema, page structure, internal links, tracking, or crawl blockers without turning the request into a full rebuild. The work is billed at $55/hr and works best when you can send the URL, issue, and priority pages up front.",
     audienceHeading: "Technical SEO fixes that need developer execution",
     problems: ["SEO recommendations need code-aware implementation instead of another audit", "Templates, JavaScript, schema, redirects, internal links, or crawl paths need cleanup", "The team needs ranking support on pages that already have query signal but weak technical execution"],
-    tasks: ["Translate SEO recommendations into concrete implementation tasks", "Ship crawl, template, schema, redirect, and internal-link changes inside the real site", "Document what changed, what still needs QA, and how to verify the result"],
+    tasks: ["Resolve crawl and indexing blockers in canonicals, redirects, robots, sitemaps, status codes, and Search Console coverage", "Implement schema, headings, metadata, internal-link modules, breadcrumbs, and CMS template changes inside the live site", "Debug JavaScript rendering, Core Web Vitals, route output, and platform templates when SEO depends on code-level execution"],
+    detailHeading: "How I Diagnose and Prioritize Technical SEO Problems",
+    detailBody:
+      "Use this table to sort technical SEO work by evidence, implementation layer, and next action before changing templates, redirects, schema, or internal links.",
+    detailCaption:
+      "Search Console and crawl evidence should point to a specific problem, the implementation layer that needs work, and the result to verify after the change.",
+    limitsHeading: "What's Included and What Requires Separate Work",
+    relatedWorkHeading: "Related Website Development Services",
     sections: [
       {
         h2: "Technical SEO tasks that can be implemented",
         body:
-          "An SEO developer is useful when the recommendation cannot be completed by editing a title field alone. The real work lives in templates, navigation, redirects, schema output, JavaScript rendering, internal links, crawl paths, and tracking or verification layers that need implementation discipline.",
+          "An SEO developer is useful when the recommendation cannot be completed by editing a title field alone. The implementation work usually lives in templates, navigation, redirects, canonical logic, schema output, JavaScript rendering, internal links, crawl paths, Search Console validation, and performance or verification layers.",
         bullets: [
           "Crawl and indexing cleanup: status codes, canonicals, robots, sitemap support, and crawl-path blockers",
-          "Template and on-page implementation: title, heading, metadata, page structure, and reusable internal-link placement",
+          "Template and on-page implementation: title, heading, metadata, page structure, breadcrumbs, and reusable internal-link placement",
           "Structured data that matches visible content and real business context",
           "JavaScript rendering, route output, hydration, and front-end behavior that affects crawlability or indexation",
-          "Redirects and migration support that preserve intent and avoid thin dead-end paths",
-          "Tracking and verification touches when SEO work overlaps forms, reporting, or attribution checks"
+          "WordPress, Shopify, and CMS template fixes when SEO changes need code, fields, snippets, app/plugin settings, or deployments",
+          "Search Console error resolution and validation support for indexed/not-indexed, duplicate, canonical, redirect, or submitted URL issues"
         ]
       },
       {
         h2: "Examples of SEO developer implementation work",
         cards: [
-          ["Problem: audit recommendations are approved but still live in a spreadsheet", "Change: turn the list into page, template, schema, redirect, and internal-link tasks inside the CMS or codebase. Result: the SEO work actually ships instead of waiting on another handoff."],
-          ["Problem: service pages earn impressions but sit too low to click", "Change: tighten the page structure, align the primary term with the real implementation offer, add contextual links from the right parent and sibling pages, and remove weak routing. Result: stronger ranking support before snippet testing becomes the focus."],
-          ["Problem: JavaScript rendering, routing, or template output hides what search engines need", "Change: review front-end output, crawl paths, metadata, canonicals, and schema placement at the rendered page level. Result: the technical SEO issue gets fixed at the layer causing it instead of patched in copy only."]
+          ["Problem: approved audit items never left the spreadsheet", "Implementation: update CMS templates, titles, headings, schema, canonicals, redirects, and internal-link placements in one prioritized pass. Result: the recommendations become crawlable live changes instead of a handoff backlog."],
+          ["Problem: service pages earn impressions but sit too low to click", "Implementation: align the primary term with the service offer, add contextual links from parent and sibling pages, tighten headings, and remove weak routing. Result: stronger ranking support before snippet testing becomes the focus."],
+          ["Problem: JavaScript rendering, routing, or template output hides what search engines need", "Implementation: review rendered HTML, crawl paths, metadata, canonical output, schema placement, and hydration behavior. Result: the SEO issue is fixed at the layer causing it instead of patched in copy only."]
+        ]
+      },
+      {
+        h2: "SEO Developer vs. SEO Consultant",
+        body:
+          "An SEO consultant usually defines strategy, audits the site, and prioritizes recommendations. An SEO developer turns approved recommendations into live changes by modifying templates, redirects, schema, CMS fields, JavaScript output, internal-link modules, APIs, plugins, and deployment files. Use this page when the plan is clear enough to implement and the blocker is technical execution."
+      },
+      {
+        h2: "Internal-link and cannibalization checks",
+        bullets: [
+          "Make this the primary page for SEO developer and technical SEO development intent",
+          "Use Technical SEO Implementation as the parent for broader audit, schema, redirect, and crawl implementation requests",
+          "Use SEO Audit Implementation when the main query is about turning a finished audit into live changes",
+          "Add contextual anchors like SEO developer, technical SEO development, and SEO implementation services from the homepage, service hub, WordPress development pages, speed pages, and relevant technical SEO articles",
+          "Avoid creating thin duplicate SEO developer pages unless a query shows distinct intent, enough substance, and a parent page already earning related signal"
         ]
       },
       {

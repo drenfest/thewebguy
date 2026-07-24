@@ -161,6 +161,10 @@
     "Read the post",
     item.relatedService
   ])).map((item) => item[4] ? item : [...item, iconForHref(item[2])]));
+  const prioritySectionSet = $derived(new Set(post.prioritySectionHeadings || []));
+  const prioritySections = $derived((post.sections || []).filter((section) => prioritySectionSet.has(sectionHeading(section))));
+  const standardSections = $derived((post.sections || []).filter((section) => !prioritySectionSet.has(sectionHeading(section))));
+  const showInArticleContextCards = $derived(post.slug !== "something-broke-on-your-website");
 
   function slugify(text = "") {
     return text
@@ -266,11 +270,27 @@
 
     return mappedItems;
   }
+
+  function articleGroupLabel(post, section, index) {
+    if (post.slug !== "something-broke-on-your-website") return "";
+
+    const heading = sectionHeading(section);
+    const groups = {
+      "Match the symptom before touching the site": "Site Availability, Risk, and First Triage",
+      "Start with what you can see": "Layout, CSS, and Visible Page Symptoms",
+      "Common WordPress breaks": "WordPress, PHP, and CMS Breaks",
+      "Common front-end breaks": "Forms, JavaScript, and Browser Behavior",
+      "Common hosting, DNS, and SSL problems": "Security, Redirects, Hosting, and SSL",
+      "Ecommerce and checkout problems need priority": "Ecommerce, Performance, and Handoff"
+    };
+
+    return groups[heading] || (index === 0 ? "Opening Diagnostic Checklist" : "");
+  }
 </script>
 
 <Seo title={post.title.includes("|") ? post.title : `${post.title} | The Web Guy`} description={post.meta} schema={seoSchema} />
 
-<main>
+<main class={`blog-post-page blog-post-${post.slug}`}>
   <Hero
     eyebrow={post.eyebrow}
     h1={post.h1 || post.title}
@@ -327,7 +347,50 @@
 
         <SortableTable caption={`${post.eyebrow} troubleshooting table`} columns={articleTableColumns} rows={articleRows} />
 
-        {#each post.sections as section}
+        {#each prioritySections as section}
+          <section id={sectionId(section)} class="article-section article-section--priority">
+            <h2>{sectionHeading(section)}</h2>
+
+            {#each sectionBody(section) as paragraph}
+              <p>
+                {#each paragraphParts(paragraph) as part}
+                  {#if typeof part === "string"}
+                    {part}
+                  {:else}
+                    <a class="text-link" href={part.href} title={linkTitle(part)}>{linkText(part)}</a>
+                  {/if}
+                {/each}
+              </p>
+            {/each}
+
+            {#if sectionList(section).length}
+              <div class="article-checklist">
+                <h3>{section.listTitle || "Checklist"}</h3>
+                <ul>
+                  {#each sectionList(section) as item}
+                    <li>{item}</li>
+                  {/each}
+                </ul>
+              </div>
+            {/if}
+
+            {#if !Array.isArray(section) && section.callout}
+              <aside class="article-callout">
+                <strong>{section.calloutTitle || "Worth noting"}</strong>
+                <p>{section.callout}</p>
+              </aside>
+            {/if}
+          </section>
+        {/each}
+
+        {#each standardSections as section, index}
+          {@const groupLabel = articleGroupLabel(post, section, index)}
+          {#if groupLabel}
+            <div class="article-group-heading">
+              <span>Diagnostic group</span>
+              <h2>{groupLabel}</h2>
+            </div>
+          {/if}
           <section id={sectionId(section)} class="article-section">
             <h2>{sectionHeading(section)}</h2>
 
@@ -388,9 +451,21 @@
               </aside>
             {/if}
           </section>
+          {#if post.midArticleCta && index === (post.midArticleCta.afterSectionIndex ?? 1)}
+            <aside class="article-callout article-callout--cta">
+              <strong>{post.midArticleCta.heading}</strong>
+              <p>{post.midArticleCta.copy}</p>
+              <div class="article-callout-actions">
+                <a class="button button-primary" href="/contact/" title={post.midArticleCta.heading}>{post.midArticleCta.label}</a>
+                {#if post.midArticleCta.secondaryHref}
+                  <a class="text-link" href={post.midArticleCta.secondaryHref} title={post.midArticleCta.secondaryLabel}>{post.midArticleCta.secondaryLabel}</a>
+                {/if}
+              </div>
+            </aside>
+          {/if}
         {/each}
 
-        {#if post.contextCards}
+        {#if post.contextCards && showInArticleContextCards}
           <section id="related-implementation-paths" class="article-section article-context-section">
             <h2>{post.contextHeading || "Related implementation paths"}</h2>
             <p>{post.contextIntro || "If this article describes what is happening on your site, these related pages show the practical service paths that usually solve it."}</p>
@@ -447,3 +522,89 @@
     </section>
   {/if}
 </main>
+
+<style>
+  :global(.blog-post-broken-layouts-mobile-website-fixes > .hero h1) {
+    font-size: clamp(2.15rem, 4.45vw, 4.05rem);
+  }
+
+  :global(.blog-post-broken-layouts-mobile-website-fixes > .hero .hero-actions) {
+    margin-top: 6px;
+  }
+
+  :global(.article-callout--cta) {
+    border-color: rgba(28, 199, 160, 0.34);
+    background:
+      linear-gradient(135deg, rgba(28, 199, 160, 0.14), rgba(255, 255, 255, 0.92)),
+      var(--surface);
+  }
+
+  :global(.article-callout-actions) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+    margin-top: 14px;
+  }
+
+  :global(.article-callout-actions .button) {
+    min-height: 42px;
+    padding: 11px 16px;
+  }
+
+  :global(.blog-post-something-broke-on-your-website .article-layout),
+  :global(.blog-post-something-broke-on-your-website .article-shell) {
+    height: auto;
+    min-height: 0;
+  }
+
+  :global(.blog-post-something-broke-on-your-website .blog-article) {
+    padding-bottom: 54px;
+  }
+
+  :global(.blog-post-something-broke-on-your-website .article-shell) {
+    padding-bottom: clamp(28px, 3vw, 36px);
+  }
+
+  :global(.blog-post-something-broke-on-your-website .article-section),
+  :global(.blog-post-something-broke-on-your-website .article-layout),
+  :global(.blog-post-something-broke-on-your-website .article-grid) {
+    align-items: start;
+    height: auto !important;
+    min-height: 0 !important;
+    margin-bottom: 0;
+  }
+
+  :global(.blog-post-something-broke-on-your-website .article-toc) {
+    align-self: start;
+    height: max-content;
+    min-height: 0;
+  }
+
+  :global(.article-group-heading) {
+    max-width: 840px;
+    margin-top: clamp(46px, 5vw, 66px);
+    padding-top: clamp(30px, 4vw, 44px);
+    border-top: 1px solid rgba(17, 24, 39, 0.12);
+  }
+
+  :global(.article-group-heading span) {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: var(--accent-dark);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  :global(.article-group-heading h2) {
+    margin: 0;
+  }
+
+  :global(.article-group-heading + .article-section) {
+    margin-top: 18px;
+    padding-top: 0;
+    border-top: 0;
+  }
+</style>

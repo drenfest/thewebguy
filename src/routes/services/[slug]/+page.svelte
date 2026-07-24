@@ -332,6 +332,11 @@
     proof: section.bullets?.slice(0, 2).join(", ") || section.cards?.slice(0, 2).map((card) => card[0]).join(", ") || "URL, access context, screenshot, task list, or audit note",
     nextStep: service.cta
   })));
+  const detailHeading = $derived(service.detailHeading || `${service.eyebrow} scope, evidence, and next steps`);
+  const detailBody = $derived(service.detailBody || "Use this table to compare the parts of the service, note priority, and gather the right context before sending a request.");
+  const limitsHeading = $derived(service.limitsHeading || `What ${service.eyebrow} includes, and where the limits are`);
+  const relatedWorkHeading = $derived(service.relatedWorkHeading || `${service.eyebrow} connects to nearby website work`);
+  const detailAfterExamples = $derived(service.slug === "technical-seo-developer");
   const serviceHeadingOverrides = {
     "What can be implemented": "Technical SEO tasks that can be implemented",
     "Send the crawl notes, audit spreadsheet, or task list": "How to hand off technical SEO implementation work",
@@ -369,7 +374,7 @@
 
 <Seo title={service.title} description={service.meta} schema={seoSchema} />
 
-<main>
+<main class={`service-page service-${service.slug}`}>
   <Hero eyebrow={service.eyebrow} h1={service.h1} intro={service.intro} cta={service.cta} image={serviceHeroImage(service)} />
   <Breadcrumbs items={breadcrumbs} />
   <ServiceNav current={service.slug} services={relatedServices} />
@@ -393,14 +398,13 @@
 
   <ProofPanel proof={serviceProof} />
 
-  <section class="section soft-section section-effect section-effect--hex section-effect--low">
-    <SectionHeading
-      eyebrow={`${service.eyebrow} details`}
-      h2={`${service.eyebrow} scope, evidence, and next steps`}
-      body="Use this table to compare the parts of the service, note priority, and gather the right context before sending a request."
-    />
-    <SortableTable caption={`${service.eyebrow} planning table`} columns={serviceDetailTableColumns} rows={serviceDetailRows} />
-  </section>
+  {#if !detailAfterExamples}
+    <section class="section soft-section section-effect section-effect--hex section-effect--low">
+      <SectionHeading eyebrow={`${service.eyebrow} details`} h2={detailHeading} body={detailBody} />
+      <SortableTable caption={`${service.eyebrow} planning table`} columns={serviceDetailTableColumns} rows={serviceDetailRows} />
+      {#if service.detailCaption}<p class="wide-copy service-detail-caption">{service.detailCaption}</p>{/if}
+    </section>
+  {/if}
 
   {#each service.sections as section, index}
     <section class={sectionEffect(index + 1, index % 2 === 1 ? "low" : "medium", index % 2 === 1 ? "soft-section" : "")}>
@@ -430,10 +434,17 @@
         sourceTitle={service.h1}
       />
     {/if}
+    {#if detailAfterExamples && index === 1}
+      <section class="section soft-section section-effect section-effect--hex section-effect--low">
+        <SectionHeading eyebrow={`${service.eyebrow} details`} h2={detailHeading} body={detailBody} />
+        <SortableTable caption={`${service.eyebrow} planning table`} columns={serviceDetailTableColumns} rows={serviceDetailRows} />
+        {#if service.detailCaption}<p class="wide-copy service-detail-caption">{service.detailCaption}</p>{/if}
+      </section>
+    {/if}
   {/each}
 
   <section class="section no-overpromise section-effect section-effect--hex section-effect--low">
-    <SectionHeading eyebrow={`${service.eyebrow} fit and limits`} h2={`What ${service.eyebrow} includes, and where the limits are`} />
+    <SectionHeading eyebrow={`${service.eyebrow} fit and limits`} h2={limitsHeading} />
     <div class="split-section tight">
       <p>This is practical contract execution. The Web Guy can inspect the site, make changes, troubleshoot issues, explain tradeoffs, and keep work moving. Some problems depend on hosting, platform limits, third-party tools, access, business requirements, or existing code quality.</p>
       <ul class="check-list">
@@ -464,7 +475,7 @@
   />
   <TopicalLinks
     eyebrow={`${service.eyebrow} support routes`}
-    heading={`${service.eyebrow} connects to nearby website work`}
+    heading={relatedWorkHeading}
     intro="If this service is close but not the whole problem, these related pages help route the work by platform, symptom, technical task, or next practical step."
     items={topicalItems}
   />
@@ -477,3 +488,19 @@
     <FaqList items={serviceFaqs} />
   </section>
 </main>
+
+<style>
+  :global(.service-wordpress-plugin-conflict-help > .hero h1) {
+    font-size: clamp(2.15rem, 4.45vw, 4.05rem);
+  }
+
+  :global(.service-wordpress-plugin-conflict-help > .hero .hero-actions) {
+    margin-top: 8px;
+  }
+
+  :global(.service-detail-caption) {
+    max-width: 920px;
+    margin-top: 16px;
+    color: var(--muted);
+  }
+</style>
