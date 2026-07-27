@@ -375,21 +375,21 @@ export const keywordLandingSpecs = [
   },
   {
     slug: "technical-seo-developer",
-    title: "SEO Developer Services | Technical SEO Implementation",
-    meta: "Hire an SEO developer for technical SEO implementation: crawl and indexing fixes, canonicals, redirects, schema, JavaScript rendering, internal links, Core Web Vitals, CMS templates, and Search Console issues.",
-    h1: "SEO Developer for Technical SEO Implementation",
+    title: "SEO Developer | Technical SEO Implementation Services",
+    meta: "Hire an SEO developer for technical SEO implementation, ranking support on pages already earning impressions, crawl and indexing fixes, canonicals, redirects, schema, JavaScript rendering, internal links, Core Web Vitals, CMS templates, and Search Console issues.",
+    h1: "SEO Developer for Technical SEO and Ranking Support",
     eyebrow: "Technical SEO Developer",
     cluster: "Technical SEO",
     anchorSlug: "technical-seo-implementation",
     intent: "technical SEO tasks that require code, CMS, templates, redirects, or structured data support",
     intro:
-      "SEO developer services for implementing technical SEO fixes in WordPress, Shopify, and custom websites. Get help with crawl and indexing problems, schema, canonicals, redirects, internal links, JavaScript rendering, Core Web Vitals, CMS templates, and Search Console issues.",
+      "SEO developer services for implementing technical SEO fixes in WordPress, Shopify, and custom websites. Get help with crawl and indexing problems, schema, canonicals, redirects, internal links, JavaScript rendering, Core Web Vitals, CMS templates, Search Console issues, and ranking support for pages that already earn impressions but need better execution.",
     cta: "Get SEO Developer Help",
     audience:
-      "This page is for SEO teams, agencies, marketers, and site owners who already know what needs to change but need an SEO developer who can touch the CMS, templates, redirects, schema, page structure, internal links, tracking, or crawl blockers without turning the request into a full rebuild. The work is billed at $55/hr and works best when you can send the URL, issue, and priority pages up front.",
+      "This page is for SEO teams, agencies, marketers, and site owners who already know what needs to change but need an SEO developer who can touch the CMS, templates, redirects, schema, page structure, internal links, tracking, or crawl blockers without turning the request into a full rebuild. It also fits pages that already have query signal and need one best-fit term supported more clearly through headings, internal links, templates, or snippet alignment. The work is billed at $55/hr and works best when you can send the URL, issue, and priority pages up front.",
     audienceHeading: "Technical SEO fixes that need developer execution",
-    problems: ["SEO recommendations need code-aware implementation instead of another audit", "Templates, JavaScript, schema, redirects, internal links, or crawl paths need cleanup", "The team needs ranking support on pages that already have query signal but weak technical execution"],
-    tasks: ["Resolve crawl and indexing blockers in canonicals, redirects, robots, sitemaps, status codes, and Search Console coverage", "Implement schema, headings, metadata, internal-link modules, breadcrumbs, and CMS template changes inside the live site", "Debug JavaScript rendering, Core Web Vitals, route output, and platform templates when SEO depends on code-level execution"],
+    problems: ["SEO recommendations need code-aware implementation instead of another audit", "Templates, JavaScript, schema, redirects, internal links, or crawl paths need cleanup", "The team needs ranking support on pages that already have query signal but weak intent match, snippet fit, or internal-link support"],
+    tasks: ["Resolve crawl and indexing blockers in canonicals, redirects, robots, sitemaps, status codes, and Search Console coverage", "Implement schema, headings, metadata, internal-link modules, breadcrumbs, and CMS template changes inside the live site", "Strengthen one best-fit term on pages already earning multiple related queries before splitting intent into new pages"],
     detailHeading: "How I Diagnose and Prioritize Technical SEO Problems",
     detailBody:
       "Use this table to sort technical SEO work by evidence, implementation layer, and next action before changing templates, redirects, schema, or internal links.",
@@ -415,7 +415,7 @@ export const keywordLandingSpecs = [
         h2: "Examples of SEO developer implementation work",
         cards: [
           ["Problem: approved audit items never left the spreadsheet", "Implementation: update CMS templates, titles, headings, schema, canonicals, redirects, and internal-link placements in one prioritized pass. Result: the recommendations become crawlable live changes instead of a handoff backlog."],
-          ["Problem: service pages earn impressions but sit too low to click", "Implementation: align the primary term with the service offer, add contextual links from parent and sibling pages, tighten headings, and remove weak routing. Result: stronger ranking support before snippet testing becomes the focus."],
+          ["Problem: service pages earn impressions from several related terms but sit too low to click", "Implementation: choose the best-fit target term based on intent match, position, and page role, then align headings, snippet copy, and contextual links around that term. Result: stronger ranking support before snippet testing or new-page creation becomes the focus."],
           ["Problem: JavaScript rendering, routing, or template output hides what search engines need", "Implementation: review rendered HTML, crawl paths, metadata, canonical output, schema placement, and hydration behavior. Result: the SEO issue is fixed at the layer causing it instead of patched in copy only."]
         ]
       },
@@ -431,6 +431,7 @@ export const keywordLandingSpecs = [
           "Use Technical SEO Implementation as the parent for broader audit, schema, redirect, and crawl implementation requests",
           "Use SEO Audit Implementation when the main query is about turning a finished audit into live changes",
           "Add contextual anchors like SEO developer, technical SEO development, and SEO implementation services from the homepage, service hub, WordPress development pages, speed pages, and relevant technical SEO articles",
+          "On pages already earning multiple related terms, support the single best-fit term first instead of diluting the page with every close variant",
           "Avoid creating thin duplicate SEO developer pages unless a query shows distinct intent, enough substance, and a parent page already earning related signal"
         ]
       },

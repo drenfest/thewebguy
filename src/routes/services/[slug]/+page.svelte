@@ -275,7 +275,7 @@
         { text: "SEO Audit Implementation", href: "/services/seo-audit-implementation/", title: "View SEO audit implementation for approved recommendations that need to go live" },
         ", and ",
         { text: "Crawl Analysis & Internal Linking", href: "/skills/crawl-analysis-internal-linking/", title: "View crawl analysis and internal linking support" },
-        " when the SEO recommendation needs real template, CMS, schema, redirect, or internal-link work instead of another audit."
+        " when the SEO recommendation needs real template, CMS, schema, redirect, or internal-link work instead of another audit. When a page already earns several related queries, the better move is usually to support one best-fit term before creating another thin SEO page."
       ],
       [
         "For the advanced internal-link side of that work, the ",

@@ -79,9 +79,9 @@ export const blogTagDefinitions = [
 export const blogPosts = [
   {
     slug: "something-broke-on-your-website",
-    title: "Fix My Broken Website: Practical Troubleshooting Help",
-    h1: "Fix My Broken Website: Start With the Symptom",
-    meta: "Need to fix a broken website? Start with the symptom, recent changes, hosting, browser errors, cache, plugins, themes, forms, checkout, and the safest rollback or repair path.",
+    title: "Fix My Broken Website: Safe Triage for Sudden Website Problems",
+    h1: "Fix My Broken Website: Start With the Symptom and the Safest Next Move",
+    meta: "Searching 'fix my broken website'? Start with the symptom, recent changes, hosting, browser errors, cache, plugins, themes, forms, checkout, and the safest rollback or repair path.",
     eyebrow: "Something broke",
     summary: "If your website is broken and the next thought is fix my broken website, identify what is broken, when it started, what changed, and whether rollback, cache cleanup, plugin/theme isolation, hosting review, or developer repair is the safest first move.",
     problemType: "Start here",
@@ -103,9 +103,9 @@ export const blogPosts = [
     },
     intro: [
       [
-        "If something broke on your website, or you are already searching for fix my broken website help, start with the symptom, when it started, and what changed before guessing the platform. The fastest repair path usually depends on whether the site is down, a page is blank, a layout broke, a form stopped sending, wp-admin is inaccessible, or a redirect/warning makes the site feel unsafe. Most people search for WordPress help, web developer, or ",
+        "If something broke on your website, or you are already searching for fix my broken website help, start with the symptom, when it started, and what changed before guessing the platform. The fastest repair path usually depends on whether the site is down, a page is blank, a layout broke, a form stopped sending, wp-admin is inaccessible, or a redirect or warning makes the site feel unsafe. Most people search for WordPress help, web developer, or ",
         { text: "website bug help", href: "/services/website-fixes/", title: "View website fixes for broken layouts, scripts, forms, and site bugs" },
-        " when what they actually have is a symptom. The page looks wrong. A button disappeared. A form says it submitted but no lead arrived. A mobile layout is doing something strange. Checkout is stuck. A page that worked yesterday suddenly does not load."
+        " when what they actually have is a symptom. The page looks wrong. A button disappeared. A form says it submitted but no lead arrived. A mobile layout is doing something strange. Checkout is stuck. A page that worked yesterday suddenly does not load. This page is the broad parent guide for that moment."
       ],
       [
         "That distinction matters because the platform name rarely tells you where the problem lives. A ",
@@ -117,7 +117,7 @@ export const blogPosts = [
         { text: "CSS and JavaScript website bugs", href: "/blog/css-javascript-errors-website-bugs/", title: "Read the CSS and JavaScript website bug guide" },
         " and ",
         { text: "Fix My Broken Website", href: "/blog/fix-my-broken-website/", title: "Read the focused broken website triage guide" },
-        " before changing the wrong layer. Use this parent guide for broad routing. Use the focused child page when you already need the repair order."
+        " before changing the wrong layer. Use this parent guide for broad routing. Use the focused child page when you already know the repair order needs to stay tightly scoped to one broken page or one obvious failure."
       ]
     ],
     sections: [
@@ -1034,9 +1034,9 @@ export const blogPosts = [
   },
   {
     slug: "broken-layouts-mobile-website-fixes",
-    title: "WordPress Broken Layout Fix: Mobile & Desktop Troubleshooting",
-    h1: "How to Fix a Broken WordPress Layout on Mobile or Desktop",
-    meta: "Fix a broken WordPress layout caused by CSS, caching, plugins, themes, responsive rules, page builders, optimization settings, CDN issues, or mixed content.",
+    title: "WordPress Broken Layout Fix: Mobile, Desktop, and CSS Triage",
+    h1: "WordPress Broken Layout Fix for Mobile or Desktop",
+    meta: "Need a WordPress broken layout fix? Check CSS, cache, plugins, themes, responsive rules, page builders, optimization settings, CDN issues, and mixed content before rebuilding the page.",
     eyebrow: "Broken layouts",
     summary: "If a WordPress layout is broken on mobile or desktop, check CSS files, cache and minification, plugin or theme updates, page-builder spacing, responsive breakpoints, CDN behavior, mixed content, and recent template changes before editing blindly.",
     problemType: "Something broke",
@@ -1049,7 +1049,7 @@ export const blogPosts = [
     cta: "Send the URL, screenshot, device or browser, and what the layout should do instead.",
     intro: [
       [
-        "If a WordPress layout is broken on mobile or desktop, start with the visible symptom and the most likely WordPress-specific causes: CSS files not loading, cache or minification conflicts, plugin or theme updates, responsive breakpoint problems, page-builder spacing, CDN behavior, mixed-content issues, or custom CSS that no longer matches the page markup. If you already know the issue is broader than layout alone, compare this page with ",
+        "If you need a WordPress broken layout fix on mobile or desktop, start with the visible symptom and the most likely WordPress-specific causes: CSS files not loading, cache or minification conflicts, plugin or theme updates, responsive breakpoint problems, page-builder spacing, CDN behavior, mixed-content issues, or custom CSS that no longer matches the page markup. Use this page when layout is the primary symptom. If you already know the issue is broader than layout alone, compare it with ",
         { text: "something broke on your website", href: "/blog/something-broke-on-your-website/", title: "Read the broad broken-website diagnostic guide" },
         "."
       ],
@@ -1110,7 +1110,7 @@ export const blogPosts = [
         heading: "When to roll back, disable a plugin, or edit the CSS",
         body: [
           "Rollback is best when a known update created a broad failure and a clean backup or version history exists. Disabling a plugin is best when evidence points to a specific plugin and the affected feature is not business-critical during testing. Editing CSS is best when the rendered markup is correct and the problem is clearly a selector, breakpoint, spacing, overflow, or containment issue.",
-          "Do not use CSS to hide a deeper JavaScript, cache, or plugin conflict. That can make the page look better while the underlying interaction remains broken."
+          "Do not use CSS to hide a deeper JavaScript, cache, or plugin conflict. That can make the page look better while the underlying interaction remains broken. The best WordPress broken layout fix usually comes from choosing the right layer first, not from adding more CSS everywhere."
         ],
         calloutTitle: "Repair principle",
         callout: "A WordPress broken layout fix should target the layer causing the break: theme, child theme, builder, plugin, cache, CSS, JavaScript, CDN, or content."
@@ -1173,9 +1173,9 @@ export const blogPosts = [
   },
   {
     slug: "css-javascript-errors-website-bugs",
-    title: "JavaScript Issues on Websites: Common Errors and Fixes",
-    h1: "JavaScript Issues on Websites: What to Check and How to Fix Them",
-    meta: "Troubleshoot JavaScript issues on websites, including console errors, failed requests, jQuery errors, CORS, CSP, buttons, menus, forms, widgets, CSS bugs, and cache conflicts.",
+    title: "JavaScript Issues on Websites: Debugging Menus, Forms, and Widgets",
+    h1: "JavaScript Issues on Websites: Start With the Console and the Broken Action",
+    meta: "Troubleshoot JavaScript issues on websites, including console errors, failed requests, jQuery errors, CORS, CSP, broken buttons, menus, forms, widgets, CSS bugs, and cache conflicts.",
     eyebrow: "CSS and JavaScript",
     summary: "JavaScript issues on websites leave clues: console errors, failed network requests, recent plugin or theme changes, cache/optimization conflicts, scripts blocked by CORS or CSP, and symptoms like dead buttons, broken menus, forms that hang, or widgets that never load.",
     problemType: "Something broke",
@@ -1187,7 +1187,7 @@ export const blogPosts = [
     heroSecondaryHref: "/services/website-fixes/",
     cta: "Send the URL, what stopped working, what should happen instead, and any recent theme, plugin, script, or deployment changes.",
     intro: [
-      "If you are searching for JavaScript issues on websites because a menu, button, form, layout, widget, or script stopped working, the first useful move is to check the browser console, failed network requests, recent plugin/theme/code changes, cache or optimization conflicts, and whether the issue affects every user or only one browser/device. CSS bugs matter too, but many visible layout symptoms start when JavaScript fails before it can attach events or toggle classes.",
+      "If you are searching for JavaScript issues on websites because a menu, button, form, layout, widget, or script stopped working, the first useful move is to check the browser console, failed network requests, recent plugin, theme, or code changes, cache or optimization conflicts, and whether the issue affects every user or only one browser or device. CSS bugs matter too, but many visible layout symptoms start when JavaScript fails before it can attach events or toggle classes. This page works best when the main search intent is debugging the broken front-end action itself.",
       [
         "A lot of CSS and JavaScript bug requests begin with a visible symptom: a menu does not open, a class never toggles, a script error freezes the page, a form submit hangs, or an update changed the markup that the CSS expected. If the problem needs hands-on repair on the actual site, start with ",
         { text: "website fixes", href: "/services/website-fixes/", title: "View website fixes for broken layouts, scripts, forms, modals, and visible bugs" },

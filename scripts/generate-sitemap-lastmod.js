@@ -5,6 +5,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const contentModule = await import(pathToFileURL(resolve(root, "src/lib/data/content.js")).href);
 const {
+  coreServicePages,
   blogCategories,
   blogCategoryUrl,
   blogPosts,
@@ -15,6 +16,7 @@ const {
   fixNoteCategoryUrl,
   fixNotes,
   fixNoteUrl,
+  keywordServicePages,
   locationPages,
   locationUrl,
   servicePages,
@@ -24,8 +26,14 @@ const {
 } = contentModule;
 
 const generatedPath = resolve(root, "src/lib/data/sitemap-lastmod.json");
-const contentDataPath = "src/lib/data/content.js";
+const coreServicesDataPath = "src/lib/data/services.js";
+const keywordServicesDataPath = "src/lib/data/keyword-services.js";
+const blogDataPath = "src/lib/data/blog.js";
 const fixNotesDataPath = "src/lib/data/fix-notes.js";
+const skillsDataPath = "src/lib/data/skills.js";
+const locationsDataPath = "src/lib/data/locations.js";
+const coreServiceSlugs = new Set(coreServicePages.map((service) => service.slug));
+const keywordServiceSlugs = new Set(keywordServicePages.map((service) => service.slug));
 
 function fileDate(path) {
   const fullPath = resolve(root, path);
@@ -44,24 +52,30 @@ function add(map, url, paths) {
 
 const lastmod = {};
 
-add(lastmod, "/", ["src/routes/+page.svelte", contentDataPath]);
-add(lastmod, "/services/", ["src/routes/services/+page.svelte", contentDataPath]);
-add(lastmod, "/blog/", ["src/routes/blog/+page.svelte", contentDataPath]);
-add(lastmod, "/fix-notes/", ["src/routes/fix-notes/+page.svelte", contentDataPath, fixNotesDataPath]);
-add(lastmod, "/skills/", ["src/routes/skills/+page.svelte", contentDataPath]);
-add(lastmod, "/locations/", ["src/routes/locations/+page.svelte", contentDataPath]);
+add(lastmod, "/", ["src/routes/+page.svelte", coreServicesDataPath]);
+add(lastmod, "/services/", ["src/routes/services/+page.svelte", coreServicesDataPath, keywordServicesDataPath]);
+add(lastmod, "/blog/", ["src/routes/blog/+page.svelte", blogDataPath]);
+add(lastmod, "/fix-notes/", ["src/routes/fix-notes/+page.svelte", fixNotesDataPath]);
+add(lastmod, "/skills/", ["src/routes/skills/+page.svelte", skillsDataPath]);
+add(lastmod, "/locations/", ["src/routes/locations/+page.svelte", locationsDataPath]);
 add(lastmod, "/about/", ["src/routes/about/+page.svelte"]);
-add(lastmod, "/rate/", ["src/routes/rate/+page.svelte", contentDataPath]);
+add(lastmod, "/rate/", ["src/routes/rate/+page.svelte"]);
 add(lastmod, "/contact/", ["src/routes/contact/+page.svelte"]);
-add(lastmod, "/faq/", ["src/routes/faq/+page.svelte", contentDataPath]);
+add(lastmod, "/faq/", ["src/routes/faq/+page.svelte"]);
 add(lastmod, "/privacy/", ["src/routes/privacy/+page.svelte"]);
 add(lastmod, "/terms/", ["src/routes/terms/+page.svelte"]);
 
 for (const service of servicePages) {
+  const serviceDataPath = coreServiceSlugs.has(service.slug)
+    ? coreServicesDataPath
+    : keywordServiceSlugs.has(service.slug)
+      ? keywordServicesDataPath
+      : null;
+
   add(lastmod, serviceUrl(service.slug), [
     "src/routes/services/[slug]/+page.svelte",
     "src/routes/services/[slug]/+page.js",
-    contentDataPath
+    serviceDataPath
   ]);
 }
 
@@ -69,7 +83,7 @@ for (const post of blogPosts) {
   add(lastmod, blogUrl(post.slug), [
     "src/routes/blog/[slug]/+page.svelte",
     "src/routes/blog/[slug]/+page.js",
-    contentDataPath
+    blogDataPath
   ]);
 }
 
@@ -77,7 +91,7 @@ for (const category of blogCategories) {
   add(lastmod, blogCategoryUrl(category.slug), [
     "src/routes/blog/category/[slug]/+page.svelte",
     "src/routes/blog/category/[slug]/+page.server.js",
-    contentDataPath
+    blogDataPath
   ]);
 }
 
@@ -85,7 +99,7 @@ for (const tag of blogTags) {
   add(lastmod, blogTagUrl(tag.slug), [
     "src/routes/blog/tag/[slug]/+page.svelte",
     "src/routes/blog/tag/[slug]/+page.server.js",
-    contentDataPath
+    blogDataPath
   ]);
 }
 
@@ -109,7 +123,7 @@ for (const skill of skillPages) {
   add(lastmod, skillUrl(skill.slug), [
     "src/routes/skills/[slug]/+page.svelte",
     "src/routes/skills/[slug]/+page.js",
-    contentDataPath
+    skillsDataPath
   ]);
 }
 
@@ -117,7 +131,7 @@ for (const location of locationPages) {
   add(lastmod, locationUrl(location.slug), [
     "src/routes/locations/[slug]/+page.svelte",
     "src/routes/locations/[slug]/+page.js",
-    contentDataPath
+    locationsDataPath
   ]);
 }
 

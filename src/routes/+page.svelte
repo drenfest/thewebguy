@@ -92,8 +92,8 @@
     },
     {
       label: "SEO is stuck",
-      title: "The audit is done, but the website still needs an SEO developer",
-      copy: "Turn crawl notes, headings, schema, redirects, and internal links into real site changes.",
+      title: "Pages earn impressions, but the site still needs an SEO developer",
+      copy: "Turn crawl notes, headings, schema, redirects, and internal links into ranking support on the live site.",
       href: "/blog/seo-audit-done-now-implement-it/"
     },
     {
@@ -266,16 +266,16 @@
 </script>
 
 <Seo
-  title="The Web Guy | WordPress, Website Fixes & Technical SEO"
-  description="Hire The Web Guy for WordPress development, website fixes, technical SEO, and ongoing support at $55/hour. View services or request help today."
+  title="The Web Guy | SEO Developer, WordPress Help & Website Fixes"
+  description="The Web Guy provides direct SEO developer help, WordPress support, website fixes, and ongoing technical cleanup at $55/hour."
   schema={homeSchema}
 />
 
 <main>
   <Hero
     eyebrow="THE WEB GUY"
-    h1="Your Web Guy for WordPress, Website Fixes, and Technical SEO"
-    intro="WordPress development, broken website fixes, technical SEO implementation, and ongoing support for businesses, agencies, and site owners."
+    h1="The Web Guy for SEO Developer Work, WordPress Help, and Website Fixes"
+    intro="Direct developer help for broken websites, WordPress cleanup, technical SEO implementation, and ongoing support for businesses, agencies, and site owners."
     cta="Send the URL and issue"
     secondary="View Services"
     showCapabilityLinks={false}
