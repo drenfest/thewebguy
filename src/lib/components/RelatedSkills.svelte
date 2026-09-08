@@ -19,7 +19,7 @@
       className="summary-link-grid summary-link-grid--compact"
       items={skills.map((skill) => ({
         label: skill.eyebrow,
-        title: skill.h1.replace(" at $55/hr", ""),
+        title: skill.h1.replace(" at $90/hr", ""),
         copy: skill.intro,
         bullets: bulletsFor(skill),
         href: skillUrl(skill.slug),

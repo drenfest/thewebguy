@@ -6,7 +6,7 @@ This document turns the keyword research into an execution plan for `thewebguy.a
 
 ## Current Baseline
 
-- Site positioning: practical hourly website support at `$55/hr` for WordPress, website fixes, technical SEO implementation, landing pages, tracking, ecommerce, AI-built cleanup, agency overflow, and ongoing webmaster work.
+- Site positioning: practical hourly website support at `$90/hr` for WordPress, website fixes, technical SEO implementation, landing pages, tracking, ecommerce, AI-built cleanup, agency overflow, and ongoing webmaster work.
 - Indexed architecture: service pages, keyword service pages, skill pages, blog posts, location pages, sitemap, robots, schema helpers, canonical trailing slashes, FAQ schema, item lists, and AI discovery files are already in place.
 - Strongest existing clusters:
   - WordPress support and WordPress issue repair.

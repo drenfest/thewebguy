@@ -36,7 +36,7 @@
       .filter(Boolean)
       .map((skill) => ({
         label: skill.eyebrow,
-        title: skill.h1.replace(" at $55/hr", ""),
+        title: skill.h1.replace(" at $90/hr", ""),
         copy: skill.intro,
         bullets: [...(skill.problems || []).slice(0, 2), ...(skill.tasks || []).slice(0, 2)].slice(0, 4),
         href: skillUrl(skill.slug),
@@ -118,7 +118,7 @@
   <Hero
     eyebrow="Technical implementation skills"
     h1="Technical Web Skills for WordPress, SEO, Tracking, APIs, and Performance"
-    intro="These are practical production skills used to fix, stabilize, speed up, automate, measure, and improve websites. They support the $55/hr service work without turning the site into a resume."
+    intro="These are practical production skills used to fix, stabilize, speed up, automate, measure, and improve websites. They support the $90/hr service work without turning the site into a resume."
     cta="Send a Technical Issue"
     image={staticHeroImages.skills}
   />
@@ -189,7 +189,7 @@
     </div>
     <div class="rate-callout">
       <span>Contract rate</span>
-      <strong>$55/hr</strong>
+      <strong>$90/hr</strong>
       <p>Use hourly help for practical technical tasks, debugging, cleanup, implementation, and support.</p>
     </div>
   </section>

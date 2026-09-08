@@ -56,13 +56,13 @@ function listItem(item, index, itemType = "WebPage") {
 function hourlyOffer(path) {
   return {
     "@type": "Offer",
-    price: "55",
+    price: "90",
     priceCurrency: "USD",
     availability: "https://schema.org/InStock",
     url: absoluteUrl(path),
     priceSpecification: {
       "@type": "UnitPriceSpecification",
-      price: "55",
+      price: "90",
       priceCurrency: "USD",
       unitText: "HOUR"
     }
@@ -132,7 +132,7 @@ export function offerCatalogSchema({ id = "/services/", name = "Website support 
         url: absoluteUrl(service.path),
         provider: { "@id": PROVIDER_ID }
       },
-      price: "55",
+      price: "90",
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
       url: absoluteUrl(service.path)

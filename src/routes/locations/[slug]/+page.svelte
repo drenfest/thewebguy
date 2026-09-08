@@ -41,7 +41,7 @@
   const topicalItems = $derived(locationTopicalItems(location, relatedServices, relatedSkills));
   const locationFaqs = $derived([
     [`Do you work with ${location.city} businesses remotely?`, `Yes. The Web Guy provides remote-friendly hourly website support for ${location.city}-area businesses and teams.`],
-    [`What do you charge for website help in ${location.city}?`, `Contract web help starts at $55/hr for practical website fixes, updates, SEO implementation, tracking, and webmaster support.`],
+    [`What do you charge for website help in ${location.city}?`, `Contract web help starts at $90/hr for practical website fixes, updates, SEO implementation, tracking, and webmaster support.`],
     [`Can you help with WordPress sites in ${location.city}?`, `Yes. WordPress support includes updates, theme cleanup, page builder issues, plugin conflicts, SEO implementation, speed cleanup, and form troubleshooting.`],
     [`Do you offer ongoing website support for ${location.city} businesses?`, `Yes. Ongoing hourly support works well for monthly updates, small improvements, technical fixes, and recurring webmaster tasks.`],
     [`Can you help agencies or marketing teams near ${location.city}?`, `Yes. Agency overflow support is available for production work, SEO implementation, landing pages, tracking QA, and website cleanup.`]
@@ -155,7 +155,7 @@
   <Hero
     eyebrow={`${location.city}, ${location.state}`}
     h1={`Local Website Support for ${location.city}, ${location.state} Businesses`}
-    intro={`The Web Guy helps ${location.city}-area businesses with local-friendly hourly website support at $55/hr: WordPress support, website fixes, technical SEO, landing pages, tracking, ecommerce cleanup, and ongoing webmaster help.`}
+    intro={`The Web Guy helps ${location.city}-area businesses with local-friendly hourly website support at $90/hr: WordPress support, website fixes, technical SEO, landing pages, tracking, ecommerce cleanup, and ongoing webmaster help.`}
     cta={`Request ${location.city} Web Support`}
     image={locationHeroImage(location)}
   />
@@ -183,7 +183,7 @@
     <CardGrid
       className="card-grid compact-grid"
       items={relatedServices.map((service) => [
-        service.h1.replace(" at $55/hr", ""),
+        service.h1.replace(" at $90/hr", ""),
         service.intro,
         `/services/${service.slug}/`,
         `View ${service.eyebrow}`,
@@ -226,11 +226,11 @@
   </section>
 
   <section class="section section-effect section-effect--traces section-effect--low">
-    <SectionHeading eyebrow={`Hourly web help in ${location.city}`} h2={`A practical alternative to a full agency or full-time hire`} body={`Many ${location.city}-area businesses do not need a big agency package every time a page breaks, tracking fails, a plugin causes trouble, or a landing page needs launched. Hourly contract help at $55/hr keeps the scope clear and lets the work start with the actual problem.`} />
+    <SectionHeading eyebrow={`Hourly web help in ${location.city}`} h2={`A practical alternative to a full agency or full-time hire`} body={`Many ${location.city}-area businesses do not need a big agency package every time a page breaks, tracking fails, a plugin causes trouble, or a landing page needs launched. Hourly contract help at $90/hr keeps the scope clear and lets the work start with the actual problem.`} />
     <CardGrid
       className="card-grid compact-grid"
       items={relatedSkills.map((skill) => [
-        skill.h1.replace(" at $55/hr", ""),
+        skill.h1.replace(" at $90/hr", ""),
         skill.intro,
         `/skills/${skill.slug}/`,
         `View ${skill.eyebrow}`,

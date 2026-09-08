@@ -155,7 +155,7 @@
           />
           <h2 class="sr-only">The Web Guy</h2>
         </div>
-        <p>Contract web development, WordPress support, Shopify/Liquid help, technical SEO implementation, tracking cleanup, automation, performance, and platform support at $55/hr.</p>
+        <p>Contract web development, WordPress support, Shopify/Liquid help, technical SEO implementation, tracking cleanup, automation, performance, and platform support at $90/hr.</p>
         <div class="footer-mini-grid footer-brand-pills" aria-label="Core support areas">
           {#each supportPills as link}
             <a href={link.href} title={linkTitle(link.label, link.href)}>{link.label}</a>

@@ -74,7 +74,7 @@
 
       return {
         label: service.eyebrow,
-        title: service.h1.replace(" at $55/hr", ""),
+        title: service.h1.replace(" at $90/hr", ""),
         copy: service.intro,
         bullets,
         href: serviceUrl(service.slug),
@@ -231,7 +231,7 @@
       label: "Pricing path",
       title: "Contract Rate",
       href: "/rate/",
-      copy: "Use this when you want to understand how $55/hr contract support fits quick fixes, small projects, and ongoing website work."
+      copy: "Use this when you want to understand how $90/hr contract support fits quick fixes, small projects, and ongoing website work."
     }
   ];
   const homeInlineParagraphs = [
@@ -267,7 +267,7 @@
 
 <Seo
   title="The Web Guy | SEO Developer, WordPress Help & Website Fixes"
-  description="The Web Guy provides direct SEO developer help, WordPress support, website fixes, and ongoing technical cleanup at $55/hour."
+  description="The Web Guy provides direct SEO developer help, WordPress support, website fixes, and ongoing technical cleanup at $90/hr."
   schema={homeSchema}
 />
 
@@ -391,14 +391,14 @@
       <div>
         <SectionHeading
           eyebrow="Hourly contract rate"
-          h2="Simple hourly website help: $55/hr"
+          h2="Simple hourly website help: $90/hr"
           body="Best for ongoing support, agency overflow, WordPress cleanup, SEO implementation, landing pages, tracking fixes, ecommerce support, APIs, and practical technical website work."
         />
-        <a class="button button-primary" href="/rate/" title="View how the $55/hr contract rate works">Read how the rate works</a>
+        <a class="button button-primary" href="/rate/" title="View how the $90/hr contract rate works">Read how the rate works</a>
       </div>
       <div class="rate-card">
         <span>Contract rate</span>
-        <strong>$55/hr</strong>
+        <strong>$90/hr</strong>
         <p>Start with the URL, the problem, and the outcome you want. The first useful step is usually clear after a practical review.</p>
       </div>
     </div>

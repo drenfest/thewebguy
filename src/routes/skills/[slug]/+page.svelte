@@ -31,7 +31,7 @@
   const breadcrumbs = $derived([
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
     { label: "Skills", href: "/skills/", title: "View all technical web skills" },
-    { label: skill.eyebrow, title: `Current page: ${skill.h1.replace(" at $55/hr", "")}` }
+    { label: skill.eyebrow, title: `Current page: ${skill.h1.replace(" at $90/hr", "")}` }
   ]);
   const seoSchema = $derived(schemaList(
     breadcrumbSchema(breadcrumbs, skillPath),
@@ -299,7 +299,7 @@
     <InternalLinkCopy paragraphs={allSkillInternalParagraphs} />
     <CardGrid
       className="card-grid compact-grid"
-      items={relatedServiceCards.map((service) => [service.h1.replace(" at $55/hr", ""), service.intro, `/services/${service.slug}/`, `View ${service.eyebrow}`, service.slug])}
+      items={relatedServiceCards.map((service) => [service.h1.replace(" at $90/hr", ""), service.intro, `/services/${service.slug}/`, `View ${service.eyebrow}`, service.slug])}
     />
   </section>
 

@@ -1,5 +1,5 @@
 export const faqs = [
-  ["What do you charge?", "The Web Guy charges $55/hr for contract website help. The rate is a fit for quick fixes, small projects, ongoing webmaster support, SEO implementation, and agency overflow.", "/rate/"],
+  ["What do you charge?", "The Web Guy charges $90/hr for contract website help. The rate is a fit for quick fixes, small projects, ongoing webmaster support, SEO implementation, and agency overflow.", "/rate/"],
   ["Do you work with agencies?", "Yes. Agencies can use The Web Guy for WordPress production, SEO implementation, landing pages, QA cleanup, technical fixes, tracking, and overflow work.", "/services/agency-overflow/"],
   ["Do you work white-label?", "White-label friendly support can make sense for production tasks where expectations, access, communication, and ownership are clear.", "/services/agency-overflow/"],
   ["Do you work with WordPress?", "Yes. WordPress support includes themes, child themes, Elementor, page builders, plugins, PHP templates, CSS, JavaScript, SEO implementation, speed, and cleanup.", "/services/wordpress-support/"],

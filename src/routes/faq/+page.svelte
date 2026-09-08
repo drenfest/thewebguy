@@ -25,7 +25,7 @@
       label: "Pricing answer",
       title: "Contract Rate",
       href: "/rate/",
-      copy: "Use this for the $55/hr rate, task fit, ongoing support, small projects, agency overflow, and what the hourly model includes."
+      copy: "Use this for the $90/hr rate, task fit, ongoing support, small projects, agency overflow, and what the hourly model includes."
     },
     {
       label: "Service answer",
@@ -67,7 +67,7 @@
   const faqInlineParagraphs = [
     [
       "For pricing questions, start with the ",
-      { text: "Contract Rate", href: "/rate/", title: "View the $55/hr contract website help rate" },
+      { text: "Contract Rate", href: "/rate/", title: "View the $90/hr contract website help rate" },
       ". For routing questions, use ",
       { text: "Website Services", href: "/services/", title: "View all website service options" },
       " before choosing a specific page like ",
@@ -88,7 +88,7 @@
 
 <Seo
   title="The Web Guy FAQ | Contract Website Help"
-  description="Answers about The Web Guy’s $55/hr rate, WordPress support, agency overflow, SEO implementation, landing pages, tracking, ecommerce, and ongoing support."
+  description="Answers about The Web Guy’s $90/hr rate, WordPress support, agency overflow, SEO implementation, landing pages, tracking, ecommerce, and ongoing support."
   schema={seoSchema}
 />
 
@@ -96,7 +96,7 @@
   <Hero
     eyebrow="Contract website help FAQ"
     h1="The Web Guy FAQ"
-    intro="Answers about the $55/hr rate, WordPress support, agency overflow, SEO implementation, landing pages, tracking, ecommerce, and ongoing support."
+    intro="Answers about the $90/hr rate, WordPress support, agency overflow, SEO implementation, landing pages, tracking, ecommerce, and ongoing support."
     image={staticHeroImages.faq}
   />
   <Breadcrumbs items={breadcrumbs} />

@@ -106,7 +106,7 @@
   function summaryForService(service, label = service.eyebrow) {
     return {
       label,
-      title: service.h1.replace(" at $55/hr", ""),
+      title: service.h1.replace(" at $90/hr", ""),
       copy: service.intro,
       bullets: serviceSummaryBullets[service.slug] || [
         service.keywordCluster || service.eyebrow,
@@ -199,7 +199,7 @@
 </script>
 
 <Seo
-  title="Website Services at $55/hr | The Web Guy"
+  title="Website Services at $90/hr | The Web Guy"
   description="Explore contract website services from The Web Guy, including WordPress support, technical SEO implementation, landing pages, site speed, tracking, ecommerce, and agency overflow."
   schema={seoSchema}
 />
@@ -208,7 +208,7 @@
   <Hero
     eyebrow="Contract website services"
     h1="Contract Website Services for WordPress, SEO, Tracking, and Site Fixes"
-    intro="Practical contract web support at $55/hr for businesses, agencies, ecommerce stores, SEO teams, and overloaded marketing teams that need useful website work done."
+    intro="Practical contract web support at $90/hr for businesses, agencies, ecommerce stores, SEO teams, and overloaded marketing teams that need useful website work done."
     image={staticHeroImages.services}
   />
 
@@ -296,7 +296,7 @@
     </div>
     <div>
       <SectionHeading eyebrow="For business owners" h2="A practical web helper for annoying site problems" body="Use hourly support when the website is broken, outdated, slow, hard to update, not tracking correctly, or sitting on a backlog of small-but-important tasks." />
-      <a class="text-link" href="/rate/" title="View the $55/hr contract rate">See the $55/hr rate</a>
+      <a class="text-link" href="/rate/" title="View the $90/hr contract rate">See the $90/hr rate</a>
     </div>
   </section>
 
@@ -309,7 +309,7 @@
     </div>
     <div class="rate-callout">
       <span>Contract rate</span>
-      <strong>$55/hr</strong>
+      <strong>$90/hr</strong>
       <p>Clear hourly help for practical website work, technical cleanup, and support tasks.</p>
     </div>
   </section>

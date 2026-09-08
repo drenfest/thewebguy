@@ -15,7 +15,7 @@
 
   const breadcrumbs = [
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
-    { label: "Rate", title: "Current page: Contract website help at $55/hr" }
+    { label: "Rate", title: "Current page: Contract website help at $90/hr" }
   ];
   const seoSchema = schemaList(
     breadcrumbSchema(breadcrumbs, "/rate/"),
@@ -77,7 +77,7 @@
       " when recommendations need to become site changes."
     ],
     [
-      "The same $55/hr model can also support ",
+      "The same $90/hr model can also support ",
       { text: "Landing Pages", href: "/services/landing-pages/", title: "View landing page support for service pages, campaign pages, local pages, forms, CTAs, and tracking" },
       " or ",
       { text: "Agency Overflow", href: "/services/agency-overflow/", title: "View agency overflow support for production work, client updates, QA, and SEO implementation" },
@@ -125,15 +125,15 @@
 </script>
 
 <Seo
-  title="Contract Website Help at $55/hr | The Web Guy"
-  description="See The Web Guy’s simple $55/hr contract rate for quick fixes, small projects, ongoing webmaster support, SEO implementation, and agency overflow."
+  title="Contract Website Help at $90/hr | The Web Guy"
+  description="See The Web Guy’s simple $90/hr contract rate for quick fixes, small projects, ongoing webmaster support, SEO implementation, and agency overflow."
   schema={seoSchema}
 />
 
 <main>
   <Hero
     eyebrow="Hourly contract rate"
-    h1="Contract Website Help at $55/hr"
+    h1="Contract Website Help at $90/hr"
     intro="A clear hourly rate for practical website support: quick fixes, small projects, ongoing webmaster work, SEO implementation, agency overflow, and technical cleanup."
     cta="Start a Website Request"
     image={staticHeroImages.rate}
@@ -142,7 +142,7 @@
   <Breadcrumbs items={breadcrumbs} />
 
   <section class="section section-effect section-effect--grid section-effect--medium">
-    <SectionHeading eyebrow="Hourly website support" h2="What $55/hr website support is good for" body="The rate works best when there is a real task, site, issue, or backlog. It keeps pricing honest and avoids fake packages that do not match the work." />
+    <SectionHeading eyebrow="Hourly website support" h2="What $90/hr website support is good for" body="The rate works best when there is a real task, site, issue, or backlog. It keeps pricing honest and avoids fake packages that do not match the work." />
     <InternalLinkCopy paragraphs={rateInlineParagraphs} />
     <CardGrid
       items={[
@@ -154,7 +154,7 @@
         ["What is included", "Time spent reviewing, implementing, troubleshooting, testing, communicating updates, and documenting practical next steps.", "/contact/", "Send a request", "website-fixes"]
       ]}
     />
-    <SortableTable caption="$55/hr scope planning table" columns={rateTableColumns} rows={rateRows} />
+    <SortableTable caption="$90/hr scope planning table" columns={rateTableColumns} rows={rateRows} />
   </section>
 
   <ContextualSupport
@@ -165,16 +165,16 @@
   />
 
   <TopicalLinks
-    eyebrow="Services that fit $55/hr"
+    eyebrow="Services that fit $90/hr"
     heading="The hourly rate works best when the task has a clear website outcome"
-    intro="These pages show the types of work that fit $55/hr contract support, from quick fixes and SEO implementation to ongoing production help."
+    intro="These pages show the types of work that fit $90/hr contract support, from quick fixes and SEO implementation to ongoing production help."
     items={rateTopicalLinks}
   />
 
   <CtaBand heading="Ready to start?" copy="Send the site URL, the task list, timeline, and whether this is one-time or ongoing work." />
 
   <section class="section soft-section split-section section-effect section-effect--signals section-effect--low">
-    <div><SectionHeading eyebrow="$55/hr limits" h2="No fake unlimited website package" body="The $55/hr rate does not mean unlimited work, guaranteed SEO rankings, guaranteed perfect speed scores, major security incident response, enterprise architecture, or full brand strategy from scratch." /></div>
+    <div><SectionHeading eyebrow="$90/hr limits" h2="No fake unlimited website package" body="The $90/hr rate does not mean unlimited work, guaranteed SEO rankings, guaranteed perfect speed scores, major security incident response, enterprise architecture, or full brand strategy from scratch." /></div>
     <div><SectionHeading eyebrow="Hourly billing and updates" h2="Plain time tracking for contract website work" body="Work should be scoped around tasks, hours, or a monthly range. Updates should explain what changed, what was found, what remains, and where the next hour is most useful." /></div>
   </section>
 </main>

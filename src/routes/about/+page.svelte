@@ -138,7 +138,7 @@
   <Breadcrumbs items={breadcrumbs} />
 
   <section class="section split-section section-effect section-effect--grid section-effect--low">
-    <div><SectionHeading eyebrow="Contract support model" h2="A practical contract website support service" body="This is not a fake agency brand and not a resume page. The public offer is simple: contract website help at $55/hr for real tasks that need technical execution." /></div>
+    <div><SectionHeading eyebrow="Contract support model" h2="A practical contract website support service" body="This is not a fake agency brand and not a resume page. The public offer is simple: contract website help at $90/hr for real tasks that need technical execution." /></div>
     <div>
       <ul class="check-list">
         <li>WordPress and webmaster support</li>

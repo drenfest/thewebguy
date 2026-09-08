@@ -71,7 +71,7 @@
     <SectionHeading
       eyebrow="Contract work"
       h2="Hourly support and project scope"
-      body="The public contract rate is $55/hr unless a different written agreement applies. Actual work may require a written scope, access details, priorities, dependencies, and practical acceptance criteria."
+      body="The public contract rate is $90/hr unless a different written agreement applies. Actual work may require a written scope, access details, priorities, dependencies, and practical acceptance criteria."
     />
     <ul class="check-list">
       <li>Hourly support may be used for website fixes, WordPress updates, landing pages, SEO implementation, analytics, performance, integrations, and webmaster support.</li>

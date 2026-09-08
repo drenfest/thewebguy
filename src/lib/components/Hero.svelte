@@ -104,7 +104,7 @@
   <div class="hero-grid">
     <div>
       <p class="eyebrow">{eyebrow}</p>
-      <p class="availability-pill"><span></span>Available for contract web work at $55/hr</p>
+      <p class="availability-pill"><span></span>Available for contract web work at $90/hr</p>
       <h1>{h1}</h1>
       <p class="hero-lede">{intro}</p>
       <div class="hero-actions">
@@ -144,7 +144,7 @@
           />
         </picture>
       </div>
-      <div class="rate-badge"><span>Contract rate</span><strong>$55/hr</strong></div>
+      <div class="rate-badge"><span>Contract rate</span><strong>$90/hr</strong></div>
       <p>Practical hourly web support for fixes, implementation, cleanup, and ongoing website work.</p>
       <div class="hero-panel-tags" aria-label="Rate details">
         <span>Hourly</span>

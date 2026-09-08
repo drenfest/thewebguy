@@ -67,7 +67,7 @@
       label: "Rate context",
       title: "Contract Rate",
       href: "/rate/",
-      copy: "Use this when you want to confirm how $55/hr hourly support fits one-time fixes, small projects, ongoing work, or agency overflow."
+      copy: "Use this when you want to confirm how $90/hr hourly support fits one-time fixes, small projects, ongoing work, or agency overflow."
     }
   ];
   const contactContextualItems = contactTopicalLinks.slice(0, 5).map((item) => ({
@@ -105,7 +105,7 @@
   }
 
   function serviceOptionLabel(service) {
-    return service?.h1?.replace(" at $55/hr", "") || "";
+    return service?.h1?.replace(" at $90/hr", "") || "";
   }
 
   function inferServiceFromSource(sourcePath = "") {
@@ -371,7 +371,7 @@
         />
         <div class="rate-callout light">
           <span>Contract rate</span>
-          <strong>$55/hr</strong>
+          <strong>$90/hr</strong>
           <p>Quotes are free. Approved work is billed hourly for quick fixes, small projects, ongoing support, and agency overflow.</p>
         </div>
       </div>
@@ -398,7 +398,7 @@
             <label>What service does this fit?
               <select bind:value={contactState.draft.service} name="service" onchange={() => trackContactSelect("service", contactState.draft.service)}>
                 <option value="">Choose the closest fit</option>
-                {#each servicePages as service}<option>{service.h1.replace(" at $55/hr", "")}</option>{/each}
+                {#each servicePages as service}<option>{service.h1.replace(" at $90/hr", "")}</option>{/each}
                 <option>Not sure yet</option>
               </select>
             </label>

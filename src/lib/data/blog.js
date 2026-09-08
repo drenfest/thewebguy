@@ -300,7 +300,7 @@ export const blogPosts = [
       ["Why is my form not sending leads?", "The problem may be the form plugin, validation, SMTP/email delivery, spam filtering, CRM integration, hidden fields, a webhook, or the thank-you state."],
       ["Can cache make a website look broken?", "Yes. Cache can serve old CSS, old JavaScript, stale HTML, or CDN versions that do not match the current page."],
       ["Should I restore a backup immediately?", "Only if you understand what will be overwritten and the backup is clean. Restoring too quickly can erase good updates or hide the real cause."],
-      ["How much does it cost to fix a broken website?", "It depends on the issue, access, and platform. The Web Guy handles practical website fixes hourly at $55/hr when the task is clear enough to start."]
+      ["How much does it cost to fix a broken website?", "It depends on the issue, access, and platform. The Web Guy handles practical website fixes hourly at $90/hr when the task is clear enough to start."]
     ],
     relatedHeading: "Where this issue usually leads",
     relatedIntro: "Broken-site requests often move into one of these hands-on service areas after the first symptom is clear.",
@@ -484,7 +484,7 @@ export const blogPosts = [
     slug: "seo-audit-done-now-implement-it",
     title: "SEO Audit Implementation Help | The Web Guy",
     h1: "SEO Audit Done? Now Implement It on the Website.",
-    meta: "Have SEO audit recommendations sitting in a spreadsheet? The Web Guy helps turn technical SEO notes into real website changes at $55/hr.",
+    meta: "Have SEO audit recommendations sitting in a spreadsheet? The Web Guy helps turn technical SEO notes into real website changes at $90/hr.",
     eyebrow: "SEO work is stuck",
     summary: "SEO recommendations do not help much while they sit in a spreadsheet. Technical SEO implementation turns crawl notes, audit tasks, internal link gaps, schema needs, and template fixes into real site changes.",
     problemType: "Start here",
@@ -667,9 +667,9 @@ export const blogPosts = [
   },
   {
     slug: "need-a-page-live-fast",
-    title: "Landing Page Help at $55/hr | The Web Guy",
+    title: "Landing Page Help at $90/hr | The Web Guy",
     h1: "You Need a Page Live Fast. Here’s What It Actually Needs.",
-    meta: "Need a landing page, service page, local SEO page, or campaign page built? Learn what it needs and get hourly page build help at $55/hr.",
+    meta: "Need a landing page, service page, local SEO page, or campaign page built? Learn what it needs and get hourly page build help at $90/hr.",
     eyebrow: "Need a page live",
     summary: "A useful page is not just a headline and a button. It needs a clear job, the right sections, mobile structure, forms, tracking, internal links, and enough polish to launch without turning into a giant process.",
     problemType: "Start here",
@@ -854,7 +854,7 @@ export const blogPosts = [
     slug: "website-data-systems-not-connecting",
     title: "Website Tracking & Data Troubleshooting | The Web Guy",
     h1: "Website Data and Systems Not Connecting? Map the Flow First.",
-    meta: "Forms, GA4, GTM, ecommerce revenue, APIs, or dashboards not matching reality? Learn how to trace the flow and get hourly help at $55/hr.",
+    meta: "Forms, GA4, GTM, ecommerce revenue, APIs, or dashboards not matching reality? Learn how to trace the flow and get hourly help at $90/hr.",
     eyebrow: "Data does not connect",
     summary: "When forms, analytics, ecommerce revenue, APIs, dashboards, and CRMs disagree, the fix starts by tracing the data path from user action to final destination.",
     problemType: "Start here",

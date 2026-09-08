@@ -1,9 +1,9 @@
 export const coreServicePages = [
   {
     slug: "wordpress-support",
-    title: "WordPress Support at $55/hr | The Web Guy",
+    title: "WordPress Support at $90/hr | The Web Guy",
     meta: "Get practical WordPress support for theme edits, page builder cleanup, plugin issues, SEO implementation, speed cleanup, and website fixes.",
-    h1: "WordPress Support at $55/hr",
+    h1: "WordPress Support at $90/hr",
     eyebrow: "WordPress Support",
     intro:
       "WordPress help for business sites, agency client sites, old themes, plugin-heavy builds, page builders, content updates, and the kind of layout problems that always show up right before something needs to launch.",
@@ -54,9 +54,9 @@ export const coreServicePages = [
   },
   {
     slug: "technical-seo-implementation",
-    title: "Technical SEO Implementation at $55/hr | The Web Guy",
+    title: "Technical SEO Implementation at $90/hr | The Web Guy",
     meta: "Turn SEO audits into real site changes with technical SEO implementation, metadata cleanup, schema support, redirects, internal links, and crawl fixes.",
-    h1: "Technical SEO Implementation at $55/hr",
+    h1: "Technical SEO Implementation at $90/hr",
     eyebrow: "Technical SEO",
     intro:
       "SEO audits are useful. They are also easy to ignore when nobody has time to touch the site. The Web Guy helps turn crawl notes, audit spreadsheets, and SEO recommendations into actual website changes.",
@@ -110,9 +110,9 @@ export const coreServicePages = [
   },
   {
     slug: "landing-pages",
-    title: "Landing Page Development at $55/hr | The Web Guy",
+    title: "Landing Page Development at $90/hr | The Web Guy",
     meta: "Build focused service, campaign, local SEO, and lead generation landing pages with clear CTAs, tracking, and practical website structure.",
-    h1: "Landing Page Development at $55/hr",
+    h1: "Landing Page Development at $90/hr",
     eyebrow: "Landing Pages",
     intro:
       "Landing pages for real offers: service pages, local SEO pages, campaign pages, paid traffic pages, lead-gen pages, and quick launches that need clean structure instead of decorative fluff.",
@@ -165,7 +165,7 @@ export const coreServicePages = [
     slug: "site-speed-performance",
     title: "Site Speed Cleanup and Core Web Vitals Help | The Web Guy",
     meta: "Improve slow WordPress, Svelte, React, Shopify, and static pages with practical speed cleanup, Core Web Vitals review, image optimization, script cleanup, caching checks, and conversion-focused performance support.",
-    h1: "Site Speed and Performance Cleanup at $55/hr",
+    h1: "Site Speed and Performance Cleanup at $90/hr",
     eyebrow: "Site Speed",
     intro:
       "Client-facing speed cleanup for slow WordPress, Shopify, Svelte, React, and static pages where heavy scripts, oversized images, layout shift, caching confusion, or front-end weight are hurting user experience, Core Web Vitals, and conversion paths.",
@@ -220,7 +220,7 @@ export const coreServicePages = [
     slug: "website-fixes",
     title: "Website Fixes and Website Fixer Help | The Web Guy",
     meta: "Website fixer help for broken layouts, CSS issues, JavaScript bugs, forms, modals, embeds, tracking scripts, mobile problems, and broken site issues.",
-    h1: "Website Fixes and Website Fixer Help at $55/hr",
+    h1: "Website Fixes and Website Fixer Help at $90/hr",
     eyebrow: "Website Fixes",
     intro:
       "Send the URL and the problem. Broken layouts, CSS bugs, JavaScript errors, forms not working, modals, embeds, iframe issues, tracking scripts, mobile layout problems, WordPress weirdness, checkout symptoms, and CMS problems all fit here.",
@@ -285,9 +285,9 @@ export const coreServicePages = [
   },
   {
     slug: "ai-built-website-cleanup",
-    title: "AI-Built Website and Vibe Code Cleanup at $55/hr | The Web Guy",
+    title: "AI-Built Website and Vibe Code Cleanup at $90/hr | The Web Guy",
     meta: "Built with ChatGPT, Codex, Lovable, Bolt, Cursor, Replit, or v0? Get hourly help fixing, cleaning up, and launching AI-built websites and vibe-coded pages.",
-    h1: "AI-Built Website Cleanup at $55/hr",
+    h1: "AI-Built Website Cleanup at $90/hr",
     eyebrow: "AI-built site cleanup",
     intro:
       "Built something with ChatGPT, Codex, Lovable, Bolt, Cursor, Replit, v0, or another AI tool and now it is half-working, hard to edit, slow, broken, or confusing? The Web Guy helps clean up AI-built websites, fix the parts that broke, improve structure, connect forms and tracking, and turn vibe-coded output into something usable.",
@@ -379,7 +379,7 @@ export const coreServicePages = [
     slug: "agency-overflow",
     title: "Agency Overflow Web Support | The Web Guy",
     meta: "Get hourly agency overflow support for WordPress production, SEO implementation, landing pages, technical cleanup, and website fixes.",
-    h1: "Agency Overflow Web Support at $55/hr",
+    h1: "Agency Overflow Web Support at $90/hr",
     eyebrow: "Agency Overflow",
     intro:
       "Hourly production support for marketing agencies, SEO agencies, web shops, freelancers, and small teams that have more website work than available hands.",
@@ -444,7 +444,7 @@ export const coreServicePages = [
     slug: "ecommerce-support",
     title: "Ecommerce Website Support | The Web Guy",
     meta: "Get technical ecommerce support for Shopify, WooCommerce, BigCommerce, product data, schema, tracking, feeds, templates, and integrations.",
-    h1: "Ecommerce Website Support at $55/hr",
+    h1: "Ecommerce Website Support at $90/hr",
     eyebrow: "Ecommerce Support",
     intro:
       "Technical ecommerce cleanup for Shopify, WooCommerce, BigCommerce, product data, schema, tracking, feeds, templates, theme edits, forms, and integrations.",
@@ -499,7 +499,7 @@ export const coreServicePages = [
     slug: "analytics-tracking",
     title: "Analytics and Tracking Support | The Web Guy",
     meta: "Get help with GA4, Google Tag Manager, conversion tracking, form events, pixels, campaign tracking, and analytics cleanup.",
-    h1: "Analytics and Tracking Support at $55/hr",
+    h1: "Analytics and Tracking Support at $90/hr",
     eyebrow: "Analytics & Tracking",
     intro:
       "GA4, Google Tag Manager, pixels, form tracking, conversion tracking, event verification, campaign tracking, ecommerce tracking, and cleanup when the numbers cannot be trusted.",
@@ -555,7 +555,7 @@ export const coreServicePages = [
     slug: "api-integrations",
     title: "Website Integration Help for REST APIs, Webhooks, Forms, and CRMs | The Web Guy",
     meta: "Need website integration help for REST APIs or webhooks? Get practical support for forms, CRM connections, ecommerce integrations, data cleanup, tracking handoffs, and automation.",
-    h1: "Website Integration Help for REST APIs, Webhooks, Forms, and CRMs at $55/hr",
+    h1: "Website Integration Help for REST APIs, Webhooks, Forms, and CRMs at $90/hr",
     eyebrow: "API & Integrations",
     intro:
       "If you searched website integration help for REST APIs, webhooks, forms, CRMs, CMS platforms, ecommerce systems, scripts, feeds, background jobs, tracking handoffs, or you are asking whether the API supports REST and webhooks cleanly, this page covers the practical debugging and implementation work behind those handoffs.",
@@ -613,7 +613,7 @@ export const coreServicePages = [
     slug: "security-hosting-reliability",
     title: "Website Security, Hosting and Reliability Support | The Web Guy",
     meta: "Get practical website reliability support for DNS, SSL, Cloudflare, hosting, backups, WordPress hardening, suspicious scripts, and stability fixes.",
-    h1: "Website Security, Hosting and Reliability Support at $55/hr",
+    h1: "Website Security, Hosting and Reliability Support at $90/hr",
     eyebrow: "Security & Reliability",
     intro:
       "Practical reliability support for DNS, SSL, Cloudflare, hosting, cPanel, backups, WordPress hardening, suspicious scripts, caching issues, redirects, and stability problems.",
@@ -668,7 +668,7 @@ export const coreServicePages = [
     slug: "automation-internal-tools",
     title: "Web Services Automation and Internal Web Tools | The Web Guy",
     meta: "Web services automation and internal web tools for crawlers, SEO QA scripts, reporting helpers, dashboards, cron jobs, scheduled reports, watched signals, data cleanup, APIs, tracking checks, and repetitive website operations.",
-    h1: "Web Services Automation and Internal Web Tools at $55/hr",
+    h1: "Web Services Automation and Internal Web Tools at $90/hr",
     eyebrow: "Automation",
     intro:
       "If you searched web services automation or internal web tools, this page covers crawlers, checkers, SEO QA scripts, reporting helpers, dashboards, CRON jobs, scheduled reports, watched signals, comparison windows, JSON/CSV cleanup, API-based workflows, and internal tools for repetitive web operations.",
@@ -731,9 +731,9 @@ export const coreServicePages = [
   },
   {
     slug: "ongoing-webmaster-support",
-    title: "Ongoing Webmaster Support at $55/hr | The Web Guy",
+    title: "Ongoing Webmaster Support at $90/hr | The Web Guy",
     meta: "Get ongoing hourly webmaster support for website updates, page edits, WordPress help, technical SEO tasks, tracking fixes, and site cleanup.",
-    h1: "Ongoing Webmaster Support at $55/hr",
+    h1: "Ongoing Webmaster Support at $90/hr",
     eyebrow: "Webmaster Support",
     intro:
       "A webmaster without hiring full-time: website updates, page edits, WordPress support, technical SEO tasks, tracking fixes, speed cleanup, small improvements, and recurring technical support.",
@@ -779,7 +779,7 @@ export const coreServicePages = [
       {
         h2: "Hourly support expectations",
         body:
-          "The $55/hr rate works well for ongoing contract support when tasks are clear and communication is practical. The Web Guy can provide plain updates on what changed, what was found, what is blocked, and what should happen next."
+          "The $90/hr rate works well for ongoing contract support when tasks are clear and communication is practical. The Web Guy can provide plain updates on what changed, what was found, what is blocked, and what should happen next."
       }
     ],
     related: ["wordpress-support", "website-fixes", "technical-seo-implementation", "analytics-tracking", "site-speed-performance"]
@@ -788,7 +788,7 @@ export const coreServicePages = [
     slug: "react-static-sites",
     title: "React and Static Site Help | The Web Guy",
     meta: "Get lightweight front-end help with React components, static sites, JavaScript fixes, forms, modals, embeds, and SEO-friendly page structure.",
-    h1: "React and Static Site Help at $55/hr",
+    h1: "React and Static Site Help at $90/hr",
     eyebrow: "Front-End Help",
     intro:
       "Lightweight front-end work for static sites, React components, JavaScript cleanup, forms, modals, embeds, SEO-friendly page structure, and performance-minded builds.",

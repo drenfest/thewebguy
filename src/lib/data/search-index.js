@@ -21,7 +21,7 @@ import {
 const mainPageMeta = {
   "/": {
     title: "The Web Guy",
-    description: "The Web Guy provides $55/hr website fixes, SEO developer help, WordPress support, tracking cleanup, API work, and landing page support.",
+    description: "The Web Guy provides $90/hr website fixes, SEO developer help, WordPress support, tracking cleanup, API work, and landing page support.",
     type: "Main page"
   },
   "/services/": {
@@ -56,7 +56,7 @@ const mainPageMeta = {
   },
   "/rate/": {
     title: "Contract Rate",
-    description: "Hourly contract website support at $55/hr for quick fixes, small projects, recurring support, and agency overflow.",
+    description: "Hourly contract website support at $90/hr for quick fixes, small projects, recurring support, and agency overflow.",
     type: "Main page"
   },
   "/about/": {
@@ -85,7 +85,7 @@ function flatten(value) {
 }
 
 function cleanTitle(title = "") {
-  return title.replace(/\s*\|\s*The Web Guy\s*$/i, "").replace(/\s+at\s+\$55\/hr$/i, "");
+  return title.replace(/\s*\|\s*The Web Guy\s*$/i, "").replace(/\s+at\s+\$90\/hr$/i, "");
 }
 
 function entry({ title, description, href, type, body = "" }) {

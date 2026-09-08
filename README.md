@@ -1,6 +1,6 @@
 # The Web Guy
 
-SvelteKit site for `thewebguy.app`, positioning The Web Guy as contract web development, WordPress, technical SEO, website fixes, tracking, ecommerce, and support help at `$55/hr`.
+SvelteKit site for `thewebguy.app`, positioning The Web Guy as contract web development, WordPress, technical SEO, website fixes, tracking, ecommerce, and support help at `$90/hr`.
 
 This README covers setup, deployment, environment variables, and the project map. Directory-level READMEs explain the files in each folder, common patterns, how each area is used, and suggested next steps.
 

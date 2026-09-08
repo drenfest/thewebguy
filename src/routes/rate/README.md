@@ -4,7 +4,7 @@ Rate/pricing page route at `/rate/`.
 
 ## Files
 
-- `+page.svelte`: explains the `$55/hr` contract rate, common hour ranges, fit, and expectations.
+- `+page.svelte`: explains the `$90/hr` contract rate, common hour ranges, fit, and expectations.
 
 ## Common Patterns
 
