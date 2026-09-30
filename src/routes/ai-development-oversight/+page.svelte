@@ -105,10 +105,10 @@
     <h2>Bring in experience where it helps.</h2>
     <p>Founders, agencies, business owners, and developers can start with one scoped review. You keep your AI tools and your existing team.</p>
     <div class="ai-tool-strip" aria-label="Example AI coding tools">
-    <span>Codex</span>
-    <span>Claude Code</span>
-    <span>Cursor</span>
-    <span>Copilot</span>
+    <span><img src="/icons/ai-tools/codex.svg" width="28" height="28" alt="" loading="lazy" />Codex</span>
+    <span><img src="/icons/ai-tools/claude-code.svg" width="28" height="28" alt="" loading="lazy" />Claude Code</span>
+    <span><img src="/icons/ai-tools/cursor.svg" width="28" height="28" alt="" loading="lazy" />Cursor</span>
+    <span><img src="/icons/ai-tools/github-copilot.svg" width="28" height="28" alt="" loading="lazy" />GitHub Copilot</span>
     </div>
     <p>JavaScript, React, PHP, WordPress, Shopify/Liquid, APIs, search, measurement, and production behavior.</p>
     <a href="/skills/">Explore technical experience ↗</a>

@@ -1348,8 +1348,9 @@ body:has(.ai-editorial) .site-header:not(:has(.mobile-nav-details[open])) { posi
 .ai-editorial details p { line-height: 1.7; color: var(--muted); margin: 16px 0 0; }
 .ai-example-notes summary span { margin-right: 14px; color: #087052; }
 .ai-coverage-section { background: #e8f2e9; }
-.ai-tool-strip { display: flex; gap: 8px; flex-wrap: wrap; margin: 25px 0; }
-.ai-tool-strip span { padding: 8px 12px; border: 1px solid #afc6b9; border-radius: 4px; color: #28493c; font-size: .9rem; }
+.ai-tool-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr)); gap: 10px; margin: 25px 0; }
+.ai-tool-strip > span { display: flex; align-items: center; gap: 9px; min-height: 50px; padding: 10px; border: 1px solid #afc6b9; border-radius: 4px; color: #28493c; font-size: .9rem; line-height: 1.35; }
+.ai-tool-strip img { display: block; width: 28px; height: 28px; flex: 0 0 28px; object-fit: contain; }
 .ai-start-brief { padding: 30px; background: #fffdf7; border-top: 4px solid #087052; box-shadow: 0 12px 35px #17392d0b; }
 .ai-start-brief h3 { font-size: 1.4rem; margin: 8px 0 22px; }
 .ai-start-brief ol { padding-left: 22px; }

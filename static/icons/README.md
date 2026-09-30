@@ -11,6 +11,20 @@ Public icon source files and references.
 - `webguy-maskable.svg`: generated maskable source with a safe-zone modern Web Guy mark.
 - `webguy-maskable-192.png` and `webguy-maskable-512.png`: generated maskable icon exports referenced by `site.webmanifest`.
 - `wordpress-logo-source.svg`: source WordPress mark used as the basis for the customized WordPress service icon in `ServiceIcon.svelte`.
+- `ai-tools/`: four SVG tool marks displayed beside their names on the AI Development Oversight hub. Source and license details are below.
+
+## AI coding tool marks
+
+These identify examples of tools used with the service. They are third-party marks, not endorsements or partnership badges. Retain their supplied colors and proportions; the adjacent visible names provide accessible labels, so the images use empty alt text.
+
+| Asset | Source |
+| --- | --- |
+| `ai-tools/codex.svg` | [Lobe Icons Codex SVG](https://github.com/lobehub/lobe-icons/blob/329f378cbd1a88f45b60cd096b9111ce16f3ea39/packages/static-svg/icons/codex.svg), pinned to commit `329f378cbd1a88f45b60cd096b9111ce16f3ea39`. Community vector asset, not an official OpenAI download. MIT notice retained in `ai-tools/LOBE-ICONS-LICENSE.txt`; the Codex mark belongs to OpenAI. |
+| `ai-tools/claude-code.svg` | Claude Spark – Clay, from the [Anthropic press kit](https://anthropic.com/press-kit), archive member `Anthropic media resources/Anthropic logos/Claude logos/3 Claude Spark/SVG/Claude Spark - Clay.svg`. |
+| `ai-tools/cursor.svg` | Cube 2D Light, from the [Cursor brand assets](https://cursor.com/brand), archive member `General Logos/Cube/SVG/CUBE_2D_LIGHT.svg`. |
+| `ai-tools/github-copilot.svg` | Copilot Icon Black, from the [GitHub logo assets](https://brand.github.com/foundations/logo), archive member `GitHub Logos/SVG/Copilot_Icon_Black.svg`. Paired with the visible name GitHub Copilot. |
+
+Retrieved September 30, 2026. Original vector geometry is preserved; no icon package or runtime dependency is added.
 
 ## Common Patterns
 
