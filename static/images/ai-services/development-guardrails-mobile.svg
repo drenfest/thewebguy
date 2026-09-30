@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 282"><rect width="360" height="282" rx="16" fill="#10212c"/><g font-family="Arial,sans-serif">
+<path d="M27 42V236" fill="none" stroke="#5b937b" stroke-width="2"/>
+<g fill="#30c795"><circle cx="27" cy="42" r="6"/><circle cx="27" cy="108" r="6"/><circle cx="27" cy="174" r="6"/><circle cx="27" cy="240" r="6"/></g>
+<g font-size="13" letter-spacing="1.3" fill="#97cdb5"><text x="47" y="29">FAILURE</text><text x="47" y="95">CAUSE</text><text x="47" y="161">CHECK</text><text x="47" y="227">RESPONSE</text></g>
+<g font-size="19" fill="#e8f4ec"><text x="47" y="53">Duplicate service record</text><text x="47" y="119">Multiple writable sources</text><text x="47" y="185">Validate unique records</text><text x="47" y="251">Flag the change for its owner</text></g></g></svg>

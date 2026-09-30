@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 440"><rect width="560" height="440" rx="16" fill="#10212c"/><g font-family="Arial,sans-serif">
+<text x="30" y="43" fill="#b7d7cb" font-size="17" letter-spacing="2">A DECISION BEFORE DEPLOYMENT</text>
+<rect x="184" y="70" width="192" height="50" rx="8" fill="#263f47" stroke="#6b8b89"/><text x="280" y="102" text-anchor="middle" fill="#ecf5ef" font-size="20">Change ready</text>
+<path d="M280 120V152M228 237H138V306M332 237H422V306" fill="none" stroke="#78b69c" stroke-width="2"/>
+<path d="M280 148L386 220L280 292L174 220Z" fill="#194b3e" stroke="#53d4a7" stroke-width="2"/>
+<g text-anchor="middle"><text x="280" y="214" fill="#f1fbf5" font-size="22">Review</text><text x="280" y="241" fill="#b3e2d0" font-size="17">decision</text>
+<rect x="54" y="306" width="168" height="68" rx="9" fill="#215e48" stroke="#70d8af"/><text x="138" y="334" fill="#c2f1dc" font-size="21">Ship</text><text x="138" y="357" fill="#d1e8dd" font-size="15">Agreed checks pass</text>
+<rect x="338" y="306" width="168" height="68" rx="9" fill="#3a3329" stroke="#d7aa68"/><text x="422" y="334" fill="#efc991" font-size="21">Hold</text><text x="422" y="357" fill="#e5d8c7" font-size="15">Resolve open issues</text>
+<text x="280" y="410" fill="#a7c7bb" font-size="16">The agreed release owner makes the call</text></g></g></svg>

@@ -15,6 +15,9 @@ export const aiDevelopmentPages = [
   {
     slug: "ai-code-review",
     legacySlug: "code-review",
+    media: "code-review.svg",
+    mediaAlt: "Illustrative route diff connected to redirects, navigation, and sitemap checks.",
+    contents: [["example", "Example review"], ["scope", "Review coverage"], ["deliverables", "Your handoff"], ["questions", "Questions"]],
     eyebrow: "AI Code Review",
     title: "AI Code Review for Websites & Pull Requests | The Web Guy",
     h1: "AI Wrote the Code. I'll Review What It Changed.",
@@ -69,6 +72,9 @@ export const aiDevelopmentPages = [
   {
     slug: "ai-production-oversight",
     legacySlug: "production-oversight",
+    media: "production-oversight.svg",
+    mediaAlt: "Illustrative release decision: a ready change passes through engineering review, then the release owner chooses to ship or hold.",
+    contents: [["release-cycle", "Release cycle"], ["ownership", "Who does what"], ["deliverables", "Your release record"], ["questions", "Questions"]],
     eyebrow: "Production Oversight",
     title: "AI Development Production Oversight | The Web Guy",
     h1: "Keep Building. Give Each Release a Review Point.",
@@ -89,6 +95,9 @@ export const aiDevelopmentPages = [
   {
     slug: "ai-website-qa",
     legacySlug: "website-qa",
+    media: "website-qa.svg",
+    mediaAlt: "Illustrative desktop and mobile contact journey connecting inquiry, delivery, and a lead event.",
+    contents: [["visitor-journey", "Visitor journey"], ["coverage", "QA coverage"], ["deliverables", "Your issue list"], ["questions", "Questions"]],
     eyebrow: "AI Website QA",
     title: "AI Website QA & Pre-Launch Review | The Web Guy",
     h1: "The Preview Looks Good. Test the Journey Before Launch.",
@@ -109,6 +118,9 @@ export const aiDevelopmentPages = [
   {
     slug: "ai-development-guardrails",
     legacySlug: "guardrails",
+    media: "development-guardrails.svg",
+    mediaAlt: "Illustrative guardrail: trace a duplicate record to multiple data sources, validate uniqueness, and flag the change for its owner.",
+    contents: [["before-after", "Before and after"], ["failure-map", "Failure to check"], ["deliverables", "Your guardrails"], ["questions", "Questions"]],
     eyebrow: "AI Development Guardrails",
     title: "AI Development Guardrails & Review Workflows | The Web Guy",
     h1: "Catch the Same Mistake Before It Ships Again.",

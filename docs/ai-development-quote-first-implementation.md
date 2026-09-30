@@ -222,3 +222,42 @@ Verification for this revision:
 - Initial development-preview screenshots represented server-rendered layout; a junction-related Vite development-client restriction was avoided by verifying interactions on the compiled Node build.
 
 Local evidence lives in `reports/ai-chatgpt-review/` (ignored audit output): before/after screenshots, `chatgpt-round-1.txt`, `chatgpt-round-2.txt`, and `responsive-checks.json`. The compiled preview runs at `http://127.0.0.1:4197/ai-development-oversight/` while its process is active. Screenshot review is visual feedback; source checks, route tests, browser interactions, and the owner's email confirmation supply the separate functional evidence.
+
+## Editorial redesign and extended screenshot loop — September 30, 2026
+
+After the owner requested substantially more variation, media, and browseability, all five AI pages were recomposed. The existing Hero, SEO, breadcrumb, quote, and FAQ infrastructure remains. The body of each page now has a different reading structure:
+
+| Page | Main presentation |
+| --- | --- |
+| Hub | Original editorial artwork, situation-led service chooser, seven-stage workflow, expandable context, and a starting brief |
+| Code Review | Annotated route diff, matching review markers, scope disclosures, and an illustrative written handoff |
+| Production Oversight | Ship/hold decision graphic, release timeline, responsibility matrix, and release record |
+| Website QA | Desktop/mobile journey illustration, visitor journey, coverage disclosures, and a reproducible issue ticket |
+| Development Guardrails | Failure/cause/check/response graphic, before/after data structure, and expandable failure-to-check map |
+
+Service-specific sticky contents links make the long pages browsable. Mobile media uses purpose-made compositions, timelines become vertical, duplicate data nodes stack, and secondary detail stays in native disclosures. Examples remain explicitly illustrative. Full-width sections and stable anchor positioning are scoped to this page family; other site layouts are preserved.
+
+Four batches totaling 40 actual desktop/mobile screenshots were submitted to the same [ChatGPT review conversation](https://chatgpt.com/c/6abd7140-8a80-83ea-a007-2359624435ac), following an initial design-direction request. The review identified duplicated concepts between the Production and Guardrails heroes and body sections, weak mobile navigation polish, small code labels, and disclosure affordances. These were revised and re-reviewed. The final completed response said **“the complete redesigned family is all good against the higher design standard we established.”** All ten visual acceptance criteria passed. This is screenshot-based design feedback, not a measured conversion result.
+
+Verification on the final compiled source:
+
+- `npm run check`: zero errors and warnings. `npm run build`: passed in the isolated source copy.
+- SHA-256 comparison: all 15 changed application/media files matched the compiled workspace sources.
+- Route audit: 202 sitemap pages, five AI pages, 124 internal targets, metadata, JSON-LD, anchors, discovery, redirects, pricing cleanup, and unknown-route 404 passed.
+- Mocked email/lead and analytics checks passed, with no real email sent.
+- Browser checks at 390px, 768px, and 1280px found no horizontal page overflow. Mobile SVG sources, full mobile media, responsibility-table readability, and tablet layout were inspected.
+- Enter opened and Space closed native failure-map disclosures. The QA hero CTA selected **AI Website QA**, preserved source attribution, and landed at the form with only name, email, and details required. No browser warnings/errors were reported in that session.
+- Evidence: `reports/ai-editorial-review/` contains screenshots, design direction, desktop/mobile/deep critiques, final approval, and responsive measurements. These generated audit files are ignored by Git.
+
+### Media provenance and image-generation prompt
+
+The built-in `image_gen.imagegen` tool created one original editorial illustration. It was optimized with the existing Sharp dependency into:
+
+- `static/images/ai-services/engineering-review-640.webp` (21,644 bytes)
+- `static/images/ai-services/engineering-review-960.webp` (42,714 bytes)
+
+The four service SVGs, their `-mobile.svg` variants, and `canonical-data.svg` are original code-drawn diagrams. They are small explanatory assets, not client screenshots. Original generated PNG: `C:/Users/drenf/.codex/generated_images/01a0f3ff-eec7-7060-a102-9928139c5c9c/exec-4d31c94d-d830-45c5-9b0f-4e202ed8d63f.png`.
+
+Final image-generation prompt:
+
+> Use case: stylized-concept. Create one premium editorial illustration for TheWebGuy.app's AI Development Oversight service hub. Landscape 3:2 composition, no text, no logos, no people, no robot, no brain or hand. Show a small system of precise dark graphite architectural modules and translucent glass layers, several mint-green luminous paths arriving at a central illuminated review aperture, then becoming one orderly connected route. A visual metaphor for software changes being understood in context, no shields or guaranteed-security symbols. Restrained tactile 3D rendering with subtle grain, dark navy/charcoal environment (#101925), mint/emerald accents (#30c795), warm ivory highlights, a tiny amber inspection marker. Strong directional composition, one clear focal point, beautiful soft studio lighting and shadows, generous breathing space. It will occupy the right half of a website hero, so ensure it is readable as a single illustration at 450px wide. Not a screenshot, not a dashboard, no UI cards, no lettering or numeric labels. High craft, editorial technology artwork.
