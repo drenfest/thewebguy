@@ -1,12 +1,12 @@
 // Run against a local dev or preview server: node scripts/verify-quote-routes.mjs http://127.0.0.1:4194
 import assert from "node:assert/strict";
-import { aiDevelopmentPages, aiDevelopmentUrl } from "../src/lib/data/ai-development.js";
+import { aiDevelopmentPages, aiDevelopmentUrl, aiDevelopmentRedirects } from "../src/lib/data/ai-development.js";
 
 const origin = process.argv[2] || "http://127.0.0.1:4194";
 assert(["localhost", "127.0.0.1", "[::1]"].includes(new URL(origin).hostname), "Use a local verification server");
 const sitemap = await (await fetch(`${origin}/sitemap.xml`)).text();
 const paths = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => new URL(match[1]).pathname);
-const aiPaths = ["/ai-development/", ...aiDevelopmentPages.map(page => aiDevelopmentUrl(page.slug))];
+const aiPaths = ["/ai-development-oversight/", ...aiDevelopmentPages.map(page => aiDevelopmentUrl(page.slug))];
 assert.equal(new Set(paths).size, paths.length, "Duplicate sitemap URLs");
 for (const path of aiPaths) assert(paths.includes(path), `Missing sitemap URL: ${path}`);
 const failures = [];
@@ -56,10 +56,19 @@ for (const path of linkTargets) {
   const response = await fetch(`${origin}${path}`);
   if (!response.ok) failures.push(`Broken internal link: ${path} (${response.status})`);
 }
-assert.equal((await fetch(`${origin}/ai-development/not-a-service/`)).status, 404, "Unknown service must 404");
+assert.equal((await fetch(`${origin}/ai-development-oversight/not-a-service/`)).status, 404, "Unknown service must 404");
+for (const [oldPath, newPath] of Object.entries(aiDevelopmentRedirects)) {
+  assert(!paths.includes(oldPath), `Retired URL in sitemap: ${oldPath}`);
+  for (const requestPath of [oldPath, oldPath.slice(0, -1)]) {
+    const response = await fetch(`${origin}${requestPath}?utm_source=redirect_test`, {redirect: "manual"});
+    assert.equal(response.status, 301, `${requestPath}: permanent redirect`);
+    assert.equal(response.headers.get("location"), `${newPath}?utm_source=redirect_test`, `${requestPath}: direct canonical and query preserved`);
+  }
+}
+assert.equal((await fetch(`${origin}/ai-development/not-a-service/`)).status, 404, "Unknown retired service must 404");
 for (const route of ["/llms.txt", "/llms-full.txt"]) {
   const body = await (await fetch(`${origin}${route}`)).text();
-  assert(body.includes("/ai-development/code-review/"), `${route}: new section discovery`);
+  assert(body.includes("/ai-development-oversight/ai-code-review/"), `${route}: new section discovery`);
   assert(!/\$(?:90|55)\/hr/.test(body), `${route}: no old rate`);
 }
 assert.deepEqual(failures, [], "Route verification failed");

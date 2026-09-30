@@ -8,19 +8,22 @@ export const aiDevelopmentHub = {
 };
 
 export function aiDevelopmentUrl(slug = "") {
-  return `/ai-development/${slug ? `${slug}/` : ""}`;
+  return `/ai-development-oversight/${slug ? `${slug}/` : ""}`;
 }
 
 export const aiDevelopmentPages = [
   {
-    slug: "code-review",
+    slug: "ai-code-review",
+    legacySlug: "code-review",
     eyebrow: "AI Code Review",
     title: "AI Code Review for Websites & Pull Requests | The Web Guy",
     h1: "AI Wrote the Code. I'll Review What It Changed.",
     meta: "Have an experienced developer review AI-generated code, a GitHub pull request, or an AI-built website. Clear findings, priorities, and next steps. Request a free quote.",
     intro: "Have a branch, pull request, generated feature, or AI-built site ready for another set of eyes? I review the change in context and explain what should be fixed, tested, or clarified before you merge or launch.",
     summary: "A focused review of an existing build or change, with prioritized findings and a practical next step.",
-    cta: "Get Your AI Build Reviewed",
+    cta: "Get an AI Code Review Quote",
+    purpose: "Review a specific change before merge or launch.",
+    outcome: "A review your developer can act on",
     deliverables: ["Prioritized findings tied to the agreed scope", "Code comments or a written review your team can act on", "Recommended fixes and checks, with open questions called out", "A clear handoff: what was checked and what still needs verification"],
     sections: [
       {
@@ -64,7 +67,8 @@ export const aiDevelopmentPages = [
     ]
   },
   {
-    slug: "production-oversight",
+    slug: "ai-production-oversight",
+    legacySlug: "production-oversight",
     eyebrow: "Production Oversight",
     title: "AI Development Production Oversight | The Web Guy",
     h1: "Keep Building. Give Each Release a Review Point.",
@@ -72,6 +76,8 @@ export const aiDevelopmentPages = [
     intro: "When AI-assisted changes become part of your regular workflow, a one-time review is only the beginning. I help your team define what needs review, what must pass, and who approves the next release.",
     summary: "Recurring engineering review around your team's AI-generated changes and release process.",
     cta: "Talk About Ongoing Oversight",
+    purpose: "Add repeatable review points to ongoing releases.",
+    outcome: "Clear review and release responsibilities",
     deliverables: ["An agreed review cadence and scope", "Review requirements for sensitive changes", "Release and rollback checklists for the work in scope", "Post-release verification notes and follow-up priorities"],
     sections: [
       { h2: "A review layer around your existing workflow", body: "Your team keeps its tools, repository, and deployment process. We identify high-impact areas such as routing, forms, authentication, shared components, tracking, and configuration, then define when engineering review is required." },
@@ -81,14 +87,17 @@ export const aiDevelopmentPages = [
     faqs: [["Do you deploy every change?", "Only if deployment is part of the agreement. Your existing team can retain release control while I review changes and help verify the result."], ["Can you work with our agency?", "Yes. Scope, communication, review ownership, and handoff expectations can be agreed with your existing developer or agency."]]
   },
   {
-    slug: "website-qa",
+    slug: "ai-website-qa",
+    legacySlug: "website-qa",
     eyebrow: "AI Website QA",
     title: "AI Website QA & Pre-Launch Review | The Web Guy",
-    h1: "The Preview Looks Good. Check the Journey Before Launch.",
+    h1: "The Preview Looks Good. Test the Journey Before Launch.",
     meta: "Pre-launch QA for AI-built websites: forms, mobile layouts, accessibility, SEO, tracking, and production behavior. Get a free quote for a scoped review.",
     intro: "An AI-built site can look finished while the contact form, mobile menu, redirects, or tracking still need work. I test the agreed visitor journeys and explain what needs attention before you send people to the site.",
     summary: "A practical check of visitor journeys, forms, mobile behavior, search setup, and measurement.",
     cta: "Request a Website QA Quote",
+    purpose: "Test real visitor journeys before launch.",
+    outcome: "A prioritized launch issue list",
     deliverables: ["A prioritized issue list with reproduction steps", "Device, browser, and journey coverage agreed up front", "Notes on forms, SEO, tracking, and accessibility checks", "Retest priorities for your launch decision"],
     sections: [
       { h2: "Start with what visitors need to do", body: "We identify your most important paths: find a service, use the navigation, submit an inquiry, buy a product, or complete an integration. Testing follows those paths across the agreed screen sizes and browsers." },
@@ -98,7 +107,8 @@ export const aiDevelopmentPages = [
     faqs: [["Do I need a repository for website QA?", "Not always. A public or staging URL is enough for many visitor-facing checks. Source code or configuration access may be needed to explain an issue or make a fix."], ["Can you fix what the review finds?", "Yes, when the platform and work fit. Fixes and retesting can be included in the quote or scoped after the findings are clear."]]
   },
   {
-    slug: "guardrails",
+    slug: "ai-development-guardrails",
+    legacySlug: "guardrails",
     eyebrow: "AI Development Guardrails",
     title: "AI Development Guardrails & Review Workflows | The Web Guy",
     h1: "Catch the Same Mistake Before It Ships Again.",
@@ -106,6 +116,8 @@ export const aiDevelopmentPages = [
     intro: "If you keep catching duplicate records, broken routes, or changes in the wrong place, another reminder is not enough. I help turn recurring problems into checks your team can run with every change.",
     summary: "Validation, tests, and review rules based on the mistakes your project actually needs to catch.",
     cta: "Discuss Development Guardrails",
+    purpose: "Turn recurring mistakes into checks and rules.",
+    outcome: "Checks your team can keep using",
     deliverables: ["A review of recurring failure patterns", "Targeted validation and tests for agreed risks", "CI and review workflow changes where appropriate", "Instructions for running, maintaining, and responding to checks"],
     sections: [
       { h2: "Start with an actual failure pattern", body: "For duplicate data, identify the canonical source, consolidate references, and validate unique records or slugs. For route changes, check links, redirects, and required metadata. Choose checks that can explain a failure clearly." },
@@ -138,3 +150,9 @@ export const aiHubFaqs = [
   ["Is the initial review free?", "The quote is free. Engineering review, diagnostics, testing, fixes, and workflow setup are paid work. We agree the scope and cost before that work begins."],
   ["Can this be an ongoing service?", "Yes. One-time review, recurring oversight, agency support, and guardrail setup can be scoped separately. Review frequency and responsibilities are agreed before work starts."]
 ];
+
+// Published URLs remain valid while canonical pages use service-specific slugs.
+export const aiDevelopmentRedirects = Object.fromEntries([
+  ["/ai-development/", aiDevelopmentUrl()],
+  ...aiDevelopmentPages.map(page => [`/ai-development/${page.legacySlug}/`, aiDevelopmentUrl(page.slug)])
+]);

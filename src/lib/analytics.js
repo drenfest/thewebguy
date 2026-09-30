@@ -53,7 +53,7 @@ function routeMeta(pathname = "/") {
     };
   }
 
-  if (root === "ai-development") {
+  if (["ai-development", "ai-development-oversight"].includes(root)) {
     return {
       page_type: slug ? "ai_service_detail" : "ai_service_hub",
       content_group: "AI Development",

@@ -7,6 +7,7 @@
     eyebrow = "The Web Guy",
     h1,
     intro,
+    purpose = "",
     cta = "Get a Free Quote",
     ctaHref = "/contact/#request-form",
     secondary = "View Services",
@@ -110,7 +111,7 @@
   <div class="hero-grid">
     <div>
       <p class="eyebrow">{eyebrow}</p>
-      <p class="availability-pill"><span></span>Direct help from a developer</p>
+      {#if purpose}<p class="hero-purpose">{purpose}</p>{:else}<p class="availability-pill"><span></span>Direct help from a developer</p>{/if}
       <h1>{h1}</h1>
       <p class="hero-lede">{intro}</p>
       <div class="hero-actions">

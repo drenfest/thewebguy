@@ -2,6 +2,8 @@
 
 Implementation report · 30 September 2026
 
+The original implementation record below is followed by a **Screenshot review and URL migration follow-up** with the current AI routes, shared layout correction, and subsequent verification. Earlier deployment and preview statements describe the initial handoff.
+
 ## Outcome and scope
 
 The site now leads with a free quote and agreed scope. Public hourly service prices were removed from sales copy, shared heroes, metadata, FAQs, structured data, and discovery files. The existing `/rate/` URL is retained as **How Quotes Work**. Paid diagnostics and engineering review are clearly distinguished from the free quote.
@@ -184,3 +186,39 @@ PASS: `npm run check` (0 errors, 0 warnings) and `npm run build` completed succe
 The final production-output route audit passed **202 sitemap pages**, including the five AI routes, and 124 internal targets. The count grew from 183 because concurrent fix-notes content was added to the shared repository. The lead-flow tests also passed again. Browser checks on the compiled output confirmed search discovery, navigation into AI Code Review, contextual service selection, the three required form fields, and correct mobile form landing. Homepage and /rate/ smoke checks passed. The production preview is available at `http://127.0.0.1:4196/ai-development/` while the local preview process is running.
 
 At handoff, HEAD and origin/main both pointed to the shared commit `37ccd29`. The public `/ai-development/` URL still returned the previous site's 404 page and hourly-price footer during the live check. Publication of this build is therefore not yet verified. The final report addendum remains a local modification.
+
+## Screenshot review and URL migration follow-up
+
+The original implementation and report were pushed through `3caafc7`, the public pages became available, and the owner confirmed receipt of the explicitly requested production contact-form test. No additional real email was sent during this follow-up.
+
+Two screenshot review rounds were completed in the owner's [internal-browser ChatGPT conversation](https://chatgpt.com/c/6abd7140-8a80-83ea-a007-2359624435ac). Each submission included ten actual page screenshots. The first covered all five AI page heroes, workflow/comparison sections, mobile views, and the owner's reported defect. The second covered all five revised desktop heroes, three mobile heroes, and the corrected checklist on desktop and mobile. ChatGPT explicitly found the alignment defect resolved and no visible launch-blocking design issues in the second set. Its optional CTA preferences were not treated as new requirements or evidence of conversion improvement.
+
+Applied changes:
+
+- Standalone `.section > .check-list` elements now use the heading's centered content width and inline padding. This fixes the AI templates and other affected pages without changing lists nested inside cards or split layouts.
+- Smaller child-page headlines, distinct service purpose lines, clearer outcome headings, brighter panel copy, and more space between panel rows improve hierarchy within the existing Hero component.
+- The code-review CTA explicitly requests a quote; the QA headline now says “Test the Journey Before Launch.”
+- The original seven-stage workflow remains, with Review and Approve emphasized.
+
+Current canonical paths and permanent redirects:
+
+| Previous path | Current canonical path |
+| --- | --- |
+| `/ai-development/` | `/ai-development-oversight/` |
+| `/ai-development/code-review/` | `/ai-development-oversight/ai-code-review/` |
+| `/ai-development/production-oversight/` | `/ai-development-oversight/ai-production-oversight/` |
+| `/ai-development/website-qa/` | `/ai-development-oversight/ai-website-qa/` |
+| `/ai-development/guardrails/` | `/ai-development-oversight/ai-development-guardrails/` |
+
+The shared AI data defines this mapping. The server returns direct 301 redirects with query strings preserved, including old paths without trailing slashes. Navigation, internal links, sitemap, canonicals, schema, search/discovery, analytics classification, and quote context use the current routes. Historical contact source paths still resolve to the appropriate service. The terms describe each service; no search-volume or ranking uplift claim is made. This follows Google's guidance on [descriptive URLs](https://developers.google.com/search/docs/crawling-indexing/url-structure) and [URL migrations](https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes).
+
+Verification for this revision:
+
+- `npm run check`: zero errors and warnings; `npm run build`: passed in an isolated source copy.
+- Mocked lead-flow and analytics checks: passed; no real messages sent.
+- Production-output route audit: 202 sitemap pages, all five AI routes, 124 internal targets, metadata, JSON-LD, pricing cleanup, anchors, discovery files, unknown-route 404s, and all ten old-path redirect variants passed.
+- All five AI pages checked at actual 390px and 1280px viewport widths with no horizontal overflow. The reported section's heading and list columns also matched at 1693px; the fixed mobile section and Privacy page lists were checked separately.
+- Compiled preview mobile menu expands and exposes the new routes. The AI Code Review quote CTA lands on the form with AI Code Review selected, three required fields, and no browser console errors.
+- Initial development-preview screenshots represented server-rendered layout; a junction-related Vite development-client restriction was avoided by verifying interactions on the compiled Node build.
+
+Local evidence lives in `reports/ai-chatgpt-review/` (ignored audit output): before/after screenshots, `chatgpt-round-1.txt`, `chatgpt-round-2.txt`, and `responsive-checks.json`. The compiled preview runs at `http://127.0.0.1:4197/ai-development-oversight/` while its process is active. Screenshot review is visual feedback; source checks, route tests, browser interactions, and the owner's email confirmation supply the separate functional evidence.

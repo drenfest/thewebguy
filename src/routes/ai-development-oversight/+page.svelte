@@ -33,12 +33,11 @@
   ];
 </script>
 
-<Seo title={hub.title} description={hub.meta} schema={schemaList(serviceSchema(hub, "/ai-development/"), breadcrumbSchema(breadcrumbs, "/ai-development/"), faqSchema(aiHubFaqs))} />
+<Seo title={hub.title} description={hub.meta} schema={schemaList(serviceSchema(hub, "/ai-development-oversight/"), breadcrumbSchema(breadcrumbs, "/ai-development-oversight/"), faqSchema(aiHubFaqs))} />
 
 <main class="ai-development">
   <Hero eyebrow={hub.eyebrow} h1={hub.h1} intro={hub.intro} cta="Get Your AI Build Reviewed" secondary="See How It Works" secondaryHref="#how-it-works" showCapabilityLinks={false} note="Start with a free quote. Engineering review is paid work, scoped and agreed first.">
     {#snippet panel()}
-      <div class="hero-panel-status"><span>From build to release</span><strong>Human review</strong></div>
       <div class="ai-review-preview">
         <p class="eyebrow">Illustrative review</p>
         <h2>The build passes.<br />What else changed?</h2>
@@ -46,15 +45,15 @@
           <div><dt>Build & automated checks</dt><dd class="ai-check">Passed</dd></div>
           <div><dt>Existing source of truth</dt><dd>Check reuse</dd></div>
           <div><dt>Routes & customer journeys</dt><dd>Verify impact</dd></div>
-          <div><dt>Release decision</dt><dd class="ai-review">Review required</dd></div>
+          <div><dt>Release decision</dt><dd>Engineering review</dd></div>
         </dl>
-        <p>A green check is evidence. Understanding the change is the next step.</p>
+        <p>Passing checks are evidence. Review connects them to your release decision.</p>
       </div>
     {/snippet}
   </Hero>
   <Breadcrumbs items={breadcrumbs} />
   <nav class="service-nav" aria-label="AI development services">
-    <a href="/ai-development/" aria-current="page">Overview</a>
+    <a href="/ai-development-oversight/" aria-current="page">Overview</a>
     {#each aiDevelopmentCards as card}<a href={card[2]}>{card[0]}</a>{/each}
   </nav>
 
@@ -72,7 +71,7 @@
     <SectionHeading eyebrow="A practical review workflow" h2="Keep the speed. Add review points." body="Use the parts your project needs. The workflow fits your existing repository and release process; responsibilities are agreed before work begins." />
     <ol class="ai-workflow">
       {#each aiWorkflow as [title, copy], index}
-        <li><span class="ai-step-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><div><h3>{title}</h3><p>{copy}</p></div></li>
+        <li class:ai-workflow-decision={index === 2 || index === 4}><span class="ai-step-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><div><h3>{title}</h3><p>{copy}</p></div></li>
       {/each}
     </ol>
   </section>
@@ -84,7 +83,7 @@
       <article><span class="eyebrow">After · one source</span><h3>One record serves each page</h3><ul><li>Canonical service data → Pages A, B, and C</li><li>Validation → unique records and slugs</li><li>Review rule → changes to shared data</li></ul><p>The implementation is consolidated and the repeated mistake has a check.</p></article>
     </div>
     <p class="ai-guardrail-chain">Find the problem → trace the cause → consolidate the implementation → add a guardrail → verify the result.</p>
-    <a class="button button-primary" href="/ai-development/guardrails/">Explore Development Guardrails</a>
+    <a class="button button-primary" href="/ai-development-oversight/ai-development-guardrails/">Explore Development Guardrails</a>
   </section>
 
   <CtaBand heading="Have a build ready for a second look?" copy="Describe what you built, what changed, and what you want checked. I will confirm the review scope and cost before you commit." label="Get Your AI Build Reviewed" />
@@ -117,5 +116,5 @@
     <SectionHeading eyebrow="Questions before a review" h2="What You Need to Know Before Starting" />
     <FaqList items={aiHubFaqs} askQuestion={false} />
   </section>
-  <CtaBand heading="Use AI for speed. Bring in experience for the next decision." copy="Send the goal and the current state. I will reply with questions, fit, and a proposed scope. The quote is free; engineering work starts after approval." label="Get Your AI Build Reviewed" secondaryLabel="See AI Code Review" secondaryHref="/ai-development/code-review/" />
+  <CtaBand heading="Use AI for speed. Bring in experience for the next decision." copy="Send the goal and the current state. I will reply with questions, fit, and a proposed scope. The quote is free; engineering work starts after approval." label="Get Your AI Build Reviewed" secondaryLabel="See AI Code Review" secondaryHref="/ai-development-oversight/ai-code-review/" />
 </main>

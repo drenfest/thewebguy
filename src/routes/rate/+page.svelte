@@ -39,7 +39,7 @@
     <SectionHeading eyebrow="No technical brief required" h2="Send What You Know" body="A short explanation is enough to start. Do not include passwords, API keys, or other secrets. Repository access can be arranged later if the work needs it." />
     <CardGrid items={[
       ["A website problem", "The affected page, what should happen, what happens instead, and anything that recently changed.", "/services/website-fixes/", "Website fixes"],
-      ["An AI build or code change", "What you built, your stack if known, what you want checked, and whether this is a one-time review or ongoing work.", "/ai-development/", "AI Development Oversight"],
+      ["An AI build or code change", "What you built, your stack if known, what you want checked, and whether this is a one-time review or ongoing work.", "/ai-development-oversight/", "AI Development Oversight"],
       ["A project or task list", "The outcome you want, the platform, priorities, and any deadline. Mention audit notes or a backlog if you have one.", "/services/", "Explore services"]
     ]} />
   </section>

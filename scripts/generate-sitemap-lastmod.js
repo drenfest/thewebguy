@@ -52,9 +52,9 @@ function add(map, url, paths) {
 }
 
 const lastmod = {};
-add(lastmod, "/ai-development/", ["src/routes/ai-development/+page.svelte", "src/lib/data/ai-development.js"]);
+add(lastmod, "/ai-development-oversight/", ["src/routes/ai-development-oversight/+page.svelte", "src/lib/data/ai-development.js"]);
 for (const service of aiDevelopmentPages) {
-  add(lastmod, aiDevelopmentUrl(service.slug), ["src/routes/ai-development/[slug]/+page.svelte", "src/lib/data/ai-development.js"]);
+  add(lastmod, aiDevelopmentUrl(service.slug), ["src/routes/ai-development-oversight/[slug]/+page.svelte", "src/lib/data/ai-development.js"]);
 }
 
 add(lastmod, "/", ["src/routes/+page.svelte", coreServicesDataPath]);

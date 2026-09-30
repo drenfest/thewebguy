@@ -1,5 +1,6 @@
 import { env } from "$env/dynamic/private";
 import { siteOrigin } from "$lib/config/site.js";
+import { aiDevelopmentRedirects } from "$lib/data/ai-development.js";
 
 let setupLinkLogged = false;
 
@@ -35,5 +36,10 @@ function logGmailOauthSetupLink() {
 logGmailOauthSetupLink();
 
 export async function handle({ event, resolve }) {
+  const legacyPath = `${event.url.pathname.replace(/\/+$/, "")}/`;
+  const canonicalPath = aiDevelopmentRedirects[legacyPath];
+  if (canonicalPath) {
+    return new Response(null, { status: 301, headers: { location: `${canonicalPath}${event.url.search}` } });
+  }
   return resolve(event);
 }

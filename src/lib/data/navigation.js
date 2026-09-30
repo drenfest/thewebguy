@@ -101,7 +101,7 @@ export const headerCta = {
 
 export const mainNavItems = [
   { label: "Services", href: "/services/", menuKey: "services" },
-  { label: "AI Development", href: "/ai-development/", menuKey: "aiDevelopment", overviewLabel: "AI Development Overview" },
+  { label: "AI Development", href: "/ai-development-oversight/", menuKey: "aiDevelopment", overviewLabel: "AI Development Overview" },
   { label: "Blog", href: "/blog/", menuKey: "blog" },
   { label: "About", href: "/about/", menuKey: "about", overviewLabel: "About The Web Guy" },
   { label: "For Sale", href: "/sites-for-sale/", menuKey: "sitesForSale", overviewLabel: "Sites For Sale Inventory" },
@@ -113,10 +113,10 @@ export const utilityNavItems = mainNavItems.filter((item) => !item.menuKey);
 export const megaMenus = {
   aiDevelopment: menu([
     group("AI Development Oversight", [
-      pageLink("Overview", "/ai-development/"),
+      pageLink("Overview", "/ai-development-oversight/"),
       ...aiDevelopmentPages.map(item => pageLink(item.eyebrow, aiDevelopmentUrl(item.slug)))
     ])
-  ], { heading: "Build with AI. Ship with an engineer.", text: "Human review for your AI-built website, pull request, or next release. Start with a free quote for the work in scope.", label: "Get a Free Quote", href: "/contact/?source_path=%2Fai-development%2F#request-form" }),
+  ], { heading: "Build with AI. Ship with an engineer.", text: "Human review for your AI-built website, pull request, or next release. Start with a free quote for the work in scope.", label: "Get a Free Quote", href: "/contact/?source_path=%2Fai-development-oversight%2F#request-form" }),
   services: menu(
     [
       group("Fix & Stabilize", [
@@ -314,7 +314,7 @@ function mobileSectionFromMenu(key, label, overviewLabel, overviewHref) {
 
 export const mobileNavSections = [
   mobileSectionFromMenu("services", "Services", "View All Services", "/services/"),
-  mobileSectionFromMenu("aiDevelopment", "AI Development", "AI Development Overview", "/ai-development/"),
+  mobileSectionFromMenu("aiDevelopment", "AI Development", "AI Development Overview", "/ai-development-oversight/"),
   mobileSectionFromMenu("blog", "Blog", "View Blog", "/blog/"),
   mobileSectionFromMenu("about", "About", "About The Web Guy", "/about/"),
   mobileSectionFromMenu("sitesForSale", "For Sale", "View Sites For Sale", "/sites-for-sale/")

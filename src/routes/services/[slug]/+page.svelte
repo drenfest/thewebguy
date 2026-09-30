@@ -401,7 +401,7 @@
   {#if ["ai-built-website-cleanup", "react-static-sites", "agency-overflow", "wordpress-support", "website-fixes", "automation-internal-tools"].includes(service.slug)}
     <section class="section split-section soft-section">
       <div><SectionHeading eyebrow="Working with AI-generated changes?" h2="Add a Review Before the Next Release" body="AI Development Oversight covers code review, launch QA, and checks that help catch recurring problems. Use it for work from your own tools, developer, or agency." /></div>
-      <div><a class="button button-primary" href="/ai-development/">Explore AI Development Oversight</a><p><a class="text-link" href="/ai-development/code-review/">See AI Code Review</a></p></div>
+      <div><a class="button button-primary" href="/ai-development-oversight/">Explore AI Development Oversight</a><p><a class="text-link" href="/ai-development-oversight/ai-code-review/">See AI Code Review</a></p></div>
     </section>
   {/if}
 

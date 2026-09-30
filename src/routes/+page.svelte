@@ -285,8 +285,8 @@
   <Breadcrumbs items={breadcrumbs} />
 
   <section class="section split-section section-effect section-effect--signals section-effect--low">
-    <div><SectionHeading eyebrow="AI Development Oversight" h2="Build With AI. Ship With an Engineer." body="Already building with Codex, Claude Code, Cursor, or another AI tool? Get human review of the code, the system around it, and the checks your next release needs." /><a class="button button-primary" href="/ai-development/">Explore AI Development Oversight</a></div>
-    <div class="summary-copy-panel"><h3>Have something ready for review?</h3><p>Start with a focused code review, pre-launch website QA, or ongoing oversight for your team. You receive findings and a practical next step within an agreed scope.</p><a class="text-link" href="/ai-development/code-review/">See what an AI code review covers</a></div>
+    <div><SectionHeading eyebrow="AI Development Oversight" h2="Build With AI. Ship With an Engineer." body="Already building with Codex, Claude Code, Cursor, or another AI tool? Get human review of the code, the system around it, and the checks your next release needs." /><a class="button button-primary" href="/ai-development-oversight/">Explore AI Development Oversight</a></div>
+    <div class="summary-copy-panel"><h3>Have something ready for review?</h3><p>Start with a focused code review, pre-launch website QA, or ongoing oversight for your team. You receive findings and a practical next step within an agreed scope.</p><a class="text-link" href="/ai-development-oversight/ai-code-review/">See what an AI code review covers</a></div>
   </section>
 
   <section class="section soft-section section-effect section-effect--signals section-effect--low" aria-label="The Web Guy proof signals">

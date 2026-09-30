@@ -25,7 +25,7 @@ globalThis.fetch = async (url, options) => {
 };
 const payload = {
   name: "Local QA", email: "qa@example.test", details: "Review the changed form and routing behavior.",
-  service: "AI Code Review", sourcePagePath: "/ai-development/code-review/", sourcePageType: "ai_service_detail",
+  service: "AI Code Review", sourcePagePath: "/ai-development-oversight/ai-code-review/", sourcePageType: "ai_service_detail",
   sourcePageTitle: "AI Code Review", sourceCta: "Get Your AI Build Reviewed", formLoadedAt: String(Date.now() - 5000)
 };
 function submit(body, address) {
@@ -69,7 +69,7 @@ const originalWindow = globalThis.window;
 const originalDocument = globalThis.document;
 const storage = new Map();
 globalThis.window = {
-  location: new URL("https://thewebguy.app/ai-development/?utm_source=linkedin&utm_medium=social&utm_campaign=ai_oversight_launch"),
+  location: new URL("https://thewebguy.app/ai-development-oversight/?utm_source=linkedin&utm_medium=social&utm_campaign=ai_oversight_launch"),
   sessionStorage: { getItem: key => storage.get(key) || null, setItem: (key, value) => storage.set(key, value) }
 };
 globalThis.document = { title: "AI Development Oversight", referrer: "https://www.linkedin.com/" };
@@ -82,7 +82,7 @@ try {
   window.location = new URL("https://thewebguy.app/contact/");
   document.title = "Get a Free Quote";
   analytics.trackPageView(window.location.href, document.title);
-  analytics.trackEvent("generate_lead", {selected_service: "AI Code Review", source_page_path: "/ai-development/code-review/"});
+  analytics.trackEvent("generate_lead", {selected_service: "AI Code Review", source_page_path: "/ai-development-oversight/ai-code-review/"});
   const events = window.dataLayer.map(args => [...args]);
   const pages = events.filter(args => args[1] === "page_view");
   const lead = events.find(args => args[1] === "generate_lead")[2];
@@ -91,7 +91,7 @@ try {
   assert.equal(pages[1][2].page_type, "contact");
   assert.equal(lead.session_utm_campaign, "ai_oversight_launch");
   assert.equal(lead.landing_page_type, "ai_service_hub");
-  assert.equal(lead.source_page_path, "/ai-development/code-review/");
+  assert.equal(lead.source_page_path, "/ai-development-oversight/ai-code-review/");
   assert.equal(lead.selected_service, "AI Code Review");
   console.log("PASS: AI page classification, two route page views, campaign attribution, and lead event context. No analytics network requests sent.");
 } finally {

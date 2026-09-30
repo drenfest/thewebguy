@@ -1184,6 +1184,13 @@
   line-height: 1.55;
 }
 
+/* Full-width sections must keep their standalone lists in the heading's content column. */
+.section > .check-list {
+  width: min(1160px, 100%);
+  margin-inline: auto;
+  padding-inline: clamp(22px, 3vw, 34px);
+}
+
 .check-list li::before {
   content: "";
   position: absolute;
@@ -1275,20 +1282,25 @@
   transform: translateY(-1px);
 }
 .ai-development .ai-review-preview { padding: 8px 0; }
+.ai-development .hero-panel { background: rgba(21, 35, 43, .94); }
+.ai-development .hero-purpose { color: #e5eee9; font-weight: 600; line-height: 1.5; margin: 0 0 18px; }
+.ai-development--detail .hero h1 { font-size: clamp(1.85rem, 4vw, 3.35rem); line-height: 1.14; }
+.ai-development .ai-review-preview p:not(.eyebrow), .ai-development .ai-review-preview .hero-proof { color: #eef4f1; }
+.ai-development .ai-review-preview .hero-proof { gap: 16px; margin-block: 24px; font-weight: 400; }
 .ai-development .ai-review-preview h2 { font-size: clamp(1.25rem, 2.3vw, 1.85rem); line-height: 1.45; color: var(--white); }
 .ai-development .ai-review-preview .eyebrow { color: var(--accent); }
 .ai-development .ai-review-preview dl { margin: 24px 0; }
-.ai-development .ai-review-preview dl > div { display: flex; justify-content: space-between; gap: 14px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.15); }
+.ai-development .ai-review-preview dl > div { display: flex; justify-content: space-between; gap: 18px; padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,.18); }
 .ai-development .ai-review-preview dt { color: #dae2ed; }
 .ai-development .ai-review-preview dd { margin: 0; text-align: right; font-weight: 700; }
 .ai-development .ai-review-preview .ai-check { color: var(--accent); }
-.ai-development .ai-review-preview .ai-review { color: var(--gold); }
 .ai-development .ai-workflow { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px; }
 .ai-development .ai-workflow li { display: flex; gap: 18px; padding: 24px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
 .ai-development .ai-workflow h3 { margin: 0 0 10px; font-size: 1.05rem; }
 .ai-development .ai-workflow p { margin: 0; color: var(--muted); }
 .ai-development .ai-step-number { color: var(--accent-dark); font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; }
 .ai-development .ai-workflow li:last-child { grid-column: 1 / -1; border-color: var(--accent-dark); }
+.ai-development .ai-workflow li.ai-workflow-decision { border-left: 4px solid var(--accent-dark); background: #edf8f3; }
 .ai-development .ai-guardrail-section { background: var(--dark); color: var(--white); border-radius: 14px; }
 .ai-development .ai-guardrail-section h2, .ai-development .ai-guardrail-section h3 { color: var(--white); }
 .ai-development .ai-guardrail-section p, .ai-development .ai-guardrail-section li { color: #dae2ed; }

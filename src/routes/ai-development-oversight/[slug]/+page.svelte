@@ -12,18 +12,17 @@
   let { data } = $props();
   const service = $derived(data.service);
   const path = $derived(aiDevelopmentUrl(service.slug));
-  const breadcrumbs = $derived([{ label: "Home", href: "/" }, { label: "AI Development", href: "/ai-development/" }, { label: service.eyebrow }]);
+  const breadcrumbs = $derived([{ label: "Home", href: "/" }, { label: "AI Development", href: "/ai-development-oversight/" }, { label: service.eyebrow }]);
 </script>
 
 <Seo title={service.title} description={service.meta} schema={schemaList(serviceSchema(service, path), breadcrumbSchema(breadcrumbs, path), faqSchema(service.faqs))} />
 
-<main class="ai-development">
-  <Hero eyebrow={service.eyebrow} h1={service.h1} intro={service.intro} cta={service.cta} secondary="What You Receive" secondaryHref="#deliverables" showCapabilityLinks={false} note="Free quote. Review, testing, and implementation are paid services with scope agreed first.">
+<main class="ai-development ai-development--detail">
+  <Hero eyebrow={service.eyebrow} purpose={service.purpose} h1={service.h1} intro={service.intro} cta={service.cta} secondary="What You Receive" secondaryHref="#deliverables" showCapabilityLinks={false} note="Free quote. Review, testing, and implementation are paid services with scope agreed first.">
     {#snippet panel()}
-      <div class="hero-panel-status"><span>Define the work first</span><strong>Clear handoff</strong></div>
       <div class="ai-review-preview">
-        <p class="eyebrow">{service.eyebrow}</p>
-        <h2>What you leave with</h2>
+        <p class="eyebrow">What you leave with</p>
+        <h2>{service.outcome}</h2>
         <ul class="hero-proof">{#each service.deliverables as item}<li>{item}</li>{/each}</ul>
         <p>The quote defines the coverage, access, and deliverables before work starts.</p>
       </div>
@@ -31,7 +30,7 @@
   </Hero>
   <Breadcrumbs items={breadcrumbs} />
   <nav class="service-nav" aria-label="AI development services">
-    <a href="/ai-development/">Overview</a>
+    <a href="/ai-development-oversight/">Overview</a>
     {#each aiDevelopmentPages as item}<a href={aiDevelopmentUrl(item.slug)} aria-current={item.slug === service.slug ? "page" : undefined}>{item.eyebrow}</a>{/each}
   </nav>
 

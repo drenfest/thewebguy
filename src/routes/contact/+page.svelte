@@ -13,7 +13,7 @@
   import { staticHeroImages } from "$lib/data/hero-images.js";
   import { breadcrumbSchema, schemaList } from "$lib/data/schema.js";
   import { contactState } from "$lib/state/contact-state.svelte.js";
-  import { aiDevelopmentHub, aiDevelopmentPages, aiDevelopmentUrl } from "$lib/data/ai-development.js";
+  import { aiDevelopmentHub, aiDevelopmentPages, aiDevelopmentUrl, aiDevelopmentRedirects } from "$lib/data/ai-development.js";
 
   let status = $state({ type: "idle", message: "" });
   let botTrap = $state("");
@@ -32,7 +32,7 @@
   ];
   const seoSchema = schemaList(breadcrumbSchema(breadcrumbs, "/contact/"));
   const contactTopicalLinks = [
-    { label: "AI-built project", title: "AI Development Oversight", href: "/ai-development/", copy: "Explore code review, launch QA, production oversight, and guardrails for AI-assisted work." },
+    { label: "AI-built project", title: "AI Development Oversight", href: "/ai-development-oversight/", copy: "Explore code review, launch QA, production oversight, and guardrails for AI-assisted work." },
     {
       label: "Broken-site request",
       title: "Website Fixes",
@@ -87,6 +87,7 @@
   }
 
   function inferServiceFromSource(sourcePath = "") {
+    sourcePath = aiDevelopmentRedirects[sourcePath] || sourcePath;
     const aiService = [aiDevelopmentHub, ...aiDevelopmentPages].find(item => aiDevelopmentUrl(item.slug) === sourcePath);
     if (aiService) return { ...aiService, contactLabel: aiService.eyebrow };
     const serviceSlug = slugFromPath(sourcePath, "services");

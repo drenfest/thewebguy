@@ -130,7 +130,7 @@ Setup details are in `docs/tawk-live-chat/README.md`.
 
 The site exposes AI-friendly discovery files at `/llms.txt` and `/llms-full.txt`. They are generated from `src/lib/data/llm-context.js`, which pulls from the same service, AI development, skill, blog, FAQ, and location content used by the public pages.
 
-The `/ai-development/` hub and its four child services use `src/lib/data/ai-development.js` as their shared content source. The data also feeds navigation, search, contact service selection, sitemap generation, and LLM discovery. The existing `/rate/` URL now explains how quotes work. Implementation details and verification results are in `docs/ai-development-quote-first-implementation.md`.
+The `/ai-development-oversight/` hub and its four child services use `src/lib/data/ai-development.js` as their shared content source. The data also feeds navigation, search, contact service selection, sitemap generation, and LLM discovery. The existing `/rate/` URL now explains how quotes work. Implementation details and verification results are in `docs/ai-development-quote-first-implementation.md`.
 
 - `/llms.txt`: concise route map and positioning summary for AI assistants.
 - `/llms-full.txt`: fuller Markdown context with service summaries, skill summaries, blog guide summaries, FAQs, location pages, and guardrails.

@@ -216,7 +216,7 @@
 
   <section class="section split-section soft-section">
     <div><SectionHeading eyebrow="AI Development Oversight" h2="Using AI to Build or Change Your Website?" body="Add experienced engineering review around the work. Start with a code review, pre-launch QA, production oversight, or practical guardrails for your team." /></div>
-    <div><a class="button button-primary" href="/ai-development/">Explore AI Development</a><p>Free quote. Review and implementation are paid work with scope agreed first.</p></div>
+    <div><a class="button button-primary" href="/ai-development-oversight/">Explore AI Development</a><p>Free quote. Review and implementation are paid work with scope agreed first.</p></div>
   </section>
 
   <section class="section section-effect section-effect--hex section-effect--medium">

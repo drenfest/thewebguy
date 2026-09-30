@@ -7,7 +7,7 @@
   const mainPages = [
     ["Home", "/"],
     ["Services", "/services/"],
-    ["AI Development", "/ai-development/"],
+    ["AI Development", "/ai-development-oversight/"],
     ["Sites For Sale", "/sites-for-sale/"],
     ["Blog", "/blog/"],
     ["Fix Notes", "/fix-notes/"],
@@ -58,7 +58,7 @@
 
   const serviceGroups = [
     subgroup("AI Development", [
-      routeLink("AI Development Oversight", "/ai-development/"),
+      routeLink("AI Development Oversight", "/ai-development-oversight/"),
       ...aiDevelopmentPages.map(item => routeLink(item.eyebrow, aiDevelopmentUrl(item.slug)))
     ]),
     subgroup("Fix & Stabilize", [

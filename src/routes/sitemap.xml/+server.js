@@ -26,7 +26,7 @@ export function GET() {
   const urls = [
     "/",
     "/services/",
-    "/ai-development/",
+    "/ai-development-oversight/",
     ...aiDevelopmentPages.map(service => aiDevelopmentUrl(service.slug)),
     ...servicePages.map((service) => serviceUrl(service.slug)),
     "/blog/",
