@@ -191,7 +191,7 @@
     eyebrow="Website troubleshooting blog"
     h1="Website Troubleshooting Notes"
     intro="Practical explanations for the kinds of website problems businesses and agencies run into: broken layouts, scripts, forms, embeds, tracking, CMS weirdness, and the web work that gets pushed off."
-    cta="Fix My Web Problem"
+    cta="Get a Free Quote"
     secondary="View Website Fixes"
     secondaryHref="/services/website-fixes/"
     image={staticHeroImages.blog}
@@ -315,6 +315,6 @@
     items={blogHubLinks}
   />
 
-  <CtaBand heading="Know what broke?" copy="Send the URL, symptoms, what should happen, and what changed recently. That is enough to start a useful conversation." label="Fix My Web Problem" />
+  <CtaBand heading="Know what broke?" copy="Send the URL, symptoms, what should happen, and what changed recently. That is enough to start a useful conversation." label="Get a Free Quote" />
 
 </main>

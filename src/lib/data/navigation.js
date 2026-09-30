@@ -1,3 +1,5 @@
+import { aiDevelopmentPages, aiDevelopmentUrl } from "./ai-development.js";
+
 function group(title, links) {
   return { title, links: links.filter(Boolean) };
 }
@@ -93,12 +95,13 @@ const blogTagGroups = blogTagMenuGroupNames.map((title) => group(
 ));
 
 export const headerCta = {
-  label: "Fix My Web Problem",
+  label: "Get a Free Quote",
   href: "/contact/#request-form"
 };
 
 export const mainNavItems = [
   { label: "Services", href: "/services/", menuKey: "services" },
+  { label: "AI Development", href: "/ai-development/", menuKey: "aiDevelopment", overviewLabel: "AI Development Overview" },
   { label: "Blog", href: "/blog/", menuKey: "blog" },
   { label: "About", href: "/about/", menuKey: "about", overviewLabel: "About The Web Guy" },
   { label: "For Sale", href: "/sites-for-sale/", menuKey: "sitesForSale", overviewLabel: "Sites For Sale Inventory" },
@@ -108,6 +111,12 @@ export const mainNavItems = [
 export const utilityNavItems = mainNavItems.filter((item) => !item.menuKey);
 
 export const megaMenus = {
+  aiDevelopment: menu([
+    group("AI Development Oversight", [
+      pageLink("Overview", "/ai-development/"),
+      ...aiDevelopmentPages.map(item => pageLink(item.eyebrow, aiDevelopmentUrl(item.slug)))
+    ])
+  ], { heading: "Build with AI. Ship with an engineer.", text: "Human review for your AI-built website, pull request, or next release. Start with a free quote for the work in scope.", label: "Get a Free Quote", href: "/contact/?source_path=%2Fai-development%2F#request-form" }),
   services: menu(
     [
       group("Fix & Stabilize", [
@@ -165,7 +174,7 @@ export const megaMenus = {
     {
       heading: "Not sure what service you need?",
       text: "Start with the symptom. Send the URL, what broke, what is stuck, or what needs to go live.",
-      label: "Fix My Web Problem",
+      label: "Get a Free Quote",
       href: "/contact/#request-form"
     }
   ),
@@ -265,7 +274,7 @@ export const megaMenus = {
   about: menu(
     [
       group("The Basics", [
-        pageLink("Rate", "/rate/"),
+        pageLink("How Quotes Work", "/rate/"),
         pageLink("FAQ", "/faq/")
       ]),
       group("Skills", [
@@ -285,8 +294,8 @@ export const megaMenus = {
     ],
     {
       heading: "Straightforward contract web help",
-      text: "Learn how the hourly rate works, what to send, and the kinds of website problems that fit best.",
-      label: "Fix My Web Problem",
+      text: "Learn how quotes work, what to send, and the kinds of website problems that fit best.",
+      label: "Get a Free Quote",
       href: "/contact/#request-form"
     }
   )
@@ -305,6 +314,7 @@ function mobileSectionFromMenu(key, label, overviewLabel, overviewHref) {
 
 export const mobileNavSections = [
   mobileSectionFromMenu("services", "Services", "View All Services", "/services/"),
+  mobileSectionFromMenu("aiDevelopment", "AI Development", "AI Development Overview", "/ai-development/"),
   mobileSectionFromMenu("blog", "Blog", "View Blog", "/blog/"),
   mobileSectionFromMenu("about", "About", "About The Web Guy", "/about/"),
   mobileSectionFromMenu("sitesForSale", "For Sale", "View Sites For Sale", "/sites-for-sale/")

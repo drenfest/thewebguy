@@ -23,9 +23,9 @@
   const faqTopicalLinks = [
     {
       label: "Pricing answer",
-      title: "Contract Rate",
+      title: "How Quotes Work",
       href: "/rate/",
-      copy: "Use this for the $90/hr rate, task fit, ongoing support, small projects, agency overflow, and what the hourly model includes."
+      copy: "Use this for the quote process, task fit, ongoing support, small projects, agency overflow, and what the agreed scope includes."
     },
     {
       label: "Service answer",
@@ -67,7 +67,7 @@
   const faqInlineParagraphs = [
     [
       "For pricing questions, start with the ",
-      { text: "Contract Rate", href: "/rate/", title: "View the $90/hr contract website help rate" },
+      { text: "How Quotes Work", href: "/rate/", title: "View the website quote process" },
       ". For routing questions, use ",
       { text: "Website Services", href: "/services/", title: "View all website service options" },
       " before choosing a specific page like ",
@@ -88,7 +88,7 @@
 
 <Seo
   title="The Web Guy FAQ | Contract Website Help"
-  description="Answers about The Web Guy’s $90/hr rate, WordPress support, agency overflow, SEO implementation, landing pages, tracking, ecommerce, and ongoing support."
+  description="Answers about The Web Guy’s quote process, WordPress support, agency overflow, SEO implementation, landing pages, tracking, ecommerce, and ongoing support."
   schema={seoSchema}
 />
 
@@ -96,7 +96,7 @@
   <Hero
     eyebrow="Contract website help FAQ"
     h1="The Web Guy FAQ"
-    intro="Answers about the $90/hr rate, WordPress support, agency overflow, SEO implementation, landing pages, tracking, ecommerce, and ongoing support."
+    intro="Answers about the quote process, WordPress support, agency overflow, SEO implementation, landing pages, tracking, ecommerce, and ongoing support."
     image={staticHeroImages.faq}
   />
   <Breadcrumbs items={breadcrumbs} />
@@ -112,7 +112,7 @@
   <TopicalLinks
     eyebrow="FAQ next steps"
     heading="If the FAQ points to a specific kind of work, start there"
-    intro="These pages expand the short answers into the service, rate, and request paths people most often need after reading the FAQ."
+    intro="These pages expand the short answers into the service, quote, and request paths people most often need after reading the FAQ."
     items={faqTopicalLinks}
   />
   <CtaBand />

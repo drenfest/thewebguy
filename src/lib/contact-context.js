@@ -7,6 +7,7 @@ export function contactSourceType(pathname = "/") {
   const [root, slug] = String(pathname || "/").split("/").filter(Boolean);
   if (!root) return "home";
   if (root === "services") return slug ? "service_detail" : "service_hub";
+  if (root === "ai-development") return slug ? "ai_service_detail" : "ai_service_hub";
   if (root === "skills") return slug ? "skill_detail" : "skill_hub";
   if (root === "locations") return slug ? "location_detail" : "location_hub";
   if (root === "blog") return slug ? "blog_post" : "blog_hub";

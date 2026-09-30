@@ -5,7 +5,7 @@ export const locationPages = [
     state: "IL",
     region: "Illinois",
     title: "Local Website Support in Freeport, IL | The Web Guy",
-    meta: "The Web Guy provides hourly WordPress support, website fixes, technical SEO implementation, landing pages, and webmaster help for Freeport, IL businesses at $90/hr.",
+    meta: "The Web Guy provides hourly WordPress support, website fixes, technical SEO implementation, landing pages, and webmaster help for Freeport, IL businesses.",
     context: [
       "Freeport-area businesses often need practical website support without hiring a full agency or full-time developer. Local service companies, shops, contractors, nonprofits, organizations, and regional businesses all run into the same problem: the site needs work, but nobody has time to touch it.",
       "The Web Guy provides remote-friendly and local-friendly contract help near Freeport for WordPress updates, broken forms, slow pages, tracking fixes, landing pages, technical SEO implementation, and ongoing webmaster support.",
@@ -31,7 +31,7 @@ export const locationPages = [
     state: "IL",
     region: "Illinois",
     title: "Local Website Support in Rockford, IL | The Web Guy",
-    meta: "The Web Guy provides hourly WordPress support, website fixes, technical SEO implementation, landing pages, and webmaster help for Rockford, IL businesses at $90/hr.",
+    meta: "The Web Guy provides hourly WordPress support, website fixes, technical SEO implementation, landing pages, and webmaster help for Rockford, IL businesses.",
     context: [
       "Rockford has a larger regional business market, which means more competition for service pages, local SEO visibility, lead flow, tracking accuracy, and fast mobile pages.",
       "The Web Guy can support Rockford-area service businesses, manufacturers, healthcare-adjacent organizations, contractors, nonprofits, ecommerce stores, and agencies that need overflow web production without adding a full-time role.",
@@ -57,7 +57,7 @@ export const locationPages = [
     state: "WI",
     region: "Wisconsin",
     title: "Local Website Support in Monroe, WI | The Web Guy",
-    meta: "The Web Guy provides hourly WordPress support, website fixes, technical SEO implementation, landing pages, and webmaster help for Monroe, WI businesses at $90/hr.",
+    meta: "The Web Guy provides hourly WordPress support, website fixes, technical SEO implementation, landing pages, and webmaster help for Monroe, WI businesses.",
     context: [
       "Monroe-area businesses often need dependable remote website support for WordPress updates, content changes, ecommerce cleanup, and service-page improvements.",
       "For regional service companies, professional services, shops, and ecommerce sellers, hourly support can be more practical than waiting on a large agency process."
@@ -73,7 +73,7 @@ export const locationPages = [
     state: "WI",
     region: "Wisconsin",
     title: "Local Website Support in Beloit, WI | The Web Guy",
-    meta: "The Web Guy provides hourly WordPress support, website fixes, technical SEO implementation, landing pages, and webmaster help for Beloit, WI businesses at $90/hr.",
+    meta: "The Web Guy provides hourly WordPress support, website fixes, technical SEO implementation, landing pages, and webmaster help for Beloit, WI businesses.",
     context: [
       "Beloit businesses near the Illinois/Wisconsin line may need web support across service-area pages, ecommerce, trades, manufacturing-adjacent companies, and local lead generation.",
       "The Web Guy can help with practical technical work: fixing broken pages, cleaning up tracking, improving speed, updating WordPress, and supporting local or regional campaigns."
@@ -89,7 +89,7 @@ export const locationPages = [
     state: "WI",
     region: "Wisconsin",
     title: "Local Website Support in Janesville, WI | The Web Guy",
-    meta: "The Web Guy provides hourly WordPress support, website fixes, technical SEO implementation, landing pages, and webmaster help for Janesville, WI businesses at $90/hr.",
+    meta: "The Web Guy provides hourly WordPress support, website fixes, technical SEO implementation, landing pages, and webmaster help for Janesville, WI businesses.",
     context: [
       "Janesville has enough regional competition that outdated pages, broken tracking, slow templates, and weak technical SEO can quietly cost businesses leads.",
       "The Web Guy supports Janesville-area service businesses, ecommerce stores, agencies, professional services, and organizations that need technical website work handled hourly."
@@ -105,7 +105,7 @@ export const locationPages = [
     state: "IL",
     region: "Illinois",
     title: "Local Website Support in Dixon, IL | The Web Guy",
-    meta: "The Web Guy provides hourly WordPress support, website fixes, technical SEO implementation, landing pages, and webmaster help for Dixon, IL businesses at $90/hr.",
+    meta: "The Web Guy provides hourly WordPress support, website fixes, technical SEO implementation, landing pages, and webmaster help for Dixon, IL businesses.",
     context: [
       "Dixon-area businesses, professional services, healthcare/service providers, contractors, and local organizations often need steady website support more than a large redesign.",
       "The Web Guy can help keep existing sites useful with page edits, WordPress fixes, form troubleshooting, SEO implementation, speed cleanup, and ongoing webmaster support."
@@ -121,7 +121,7 @@ export const locationPages = [
     state: "IL",
     region: "Illinois",
     title: "Local Website Support in Sterling, IL | The Web Guy",
-    meta: "The Web Guy provides hourly WordPress support, website fixes, technical SEO implementation, landing pages, and webmaster help for Sterling, IL businesses at $90/hr.",
+    meta: "The Web Guy provides hourly WordPress support, website fixes, technical SEO implementation, landing pages, and webmaster help for Sterling, IL businesses.",
     context: [
       "Sterling-area companies often need practical support for older WordPress sites, service pages, ecommerce cleanup, local campaigns, and technical maintenance.",
       "Hourly help works well when the site needs consistent updates, tracking fixes, broken layout repair, performance cleanup, or technical SEO work without a full agency package."
@@ -137,7 +137,7 @@ export const locationPages = [
     state: "IL",
     region: "Illinois",
     title: "Local Website Support in Galena, IL | The Web Guy",
-    meta: "The Web Guy provides hourly WordPress support, website fixes, technical SEO implementation, landing pages, and webmaster help for Galena, IL businesses at $90/hr.",
+    meta: "The Web Guy provides hourly WordPress support, website fixes, technical SEO implementation, landing pages, and webmaster help for Galena, IL businesses.",
     context: [
       "Galena businesses often depend on mobile visitors, seasonal traffic, booking or lead flow, local search visibility, and pages that explain services clearly.",
       "The Web Guy can help tourism, hospitality, retail, appointment-based businesses, and local service companies with landing pages, tracking, WordPress cleanup, technical SEO, and mobile UX fixes."
@@ -153,7 +153,7 @@ export const locationPages = [
     state: "IA",
     region: "Iowa",
     title: "Local Website Support in Dubuque, IA | The Web Guy",
-    meta: "The Web Guy provides hourly WordPress support, website fixes, technical SEO implementation, landing pages, and webmaster help for Dubuque, IA businesses at $90/hr.",
+    meta: "The Web Guy provides hourly WordPress support, website fixes, technical SEO implementation, landing pages, and webmaster help for Dubuque, IA businesses.",
     context: [
       "Dubuque businesses compete across service, tourism, ecommerce, professional services, and regional lead generation. That makes technical website work more than a nice-to-have.",
       "The Web Guy can support Dubuque-area companies and agencies with WordPress support, ecommerce cleanup, technical SEO implementation, tracking verification, landing pages, and production debugging."
@@ -169,7 +169,7 @@ export const locationPages = [
     state: "WI",
     region: "Wisconsin",
     title: "Local Website Support in Madison, WI | The Web Guy",
-    meta: "The Web Guy provides hourly WordPress support, website fixes, technical SEO implementation, landing pages, and webmaster help for Madison, WI businesses at $90/hr.",
+    meta: "The Web Guy provides hourly WordPress support, website fixes, technical SEO implementation, landing pages, and webmaster help for Madison, WI businesses.",
     context: [
       "Madison is a more competitive web market, which means professional services, startups, ecommerce sellers, nonprofits, agencies, and local companies often need better technical execution behind their content and campaigns.",
       "The Web Guy can help Madison-area teams with SEO implementation, landing pages, tracking integrity, automation, API connections, performance cleanup, and practical platform support."

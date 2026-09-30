@@ -2,6 +2,11 @@
 
 Build-time maintenance scripts for the site.
 
+Quote and campaign verification:
+
+- `node scripts/verify-lead-flow.mjs`: exercises the real contact handler with mocked Gmail responses, plus analytics attribution. Sends no real mail and needs no credentials.
+- `node scripts/verify-quote-routes.mjs http://127.0.0.1:5173`: audits a running local site for sitemap routes, metadata, headings, schema, links, AI service integration, and retired hourly price copy. Only localhost targets are accepted.
+
 ## Files
 
 - `optimize-images.js`: generates responsive JPEG and WebP hero image assets from the source hero PNG before the SvelteKit production build runs.

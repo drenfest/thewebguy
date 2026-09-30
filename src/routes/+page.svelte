@@ -74,7 +74,7 @@
 
       return {
         label: service.eyebrow,
-        title: service.h1.replace(" at $90/hr", ""),
+        title: service.h1,
         copy: service.intro,
         bullets,
         href: serviceUrl(service.slug),
@@ -117,7 +117,7 @@
     {
       label: "Ongoing web help",
       title: "The site needs steady updates, fixes, cleanup, and support",
-      copy: "Use hourly contract help for the tasks that keep getting pushed off.",
+      copy: "Get help with the website tasks that keep getting pushed off.",
       href: "/services/ongoing-webmaster-support/"
     }
   ];
@@ -229,9 +229,9 @@
     },
     {
       label: "Pricing path",
-      title: "Contract Rate",
+      title: "How Quotes Work",
       href: "/rate/",
-      copy: "Use this when you want to understand how $90/hr contract support fits quick fixes, small projects, and ongoing website work."
+      copy: "Use this when you want to understand how scoped website support fits quick fixes, small projects, and ongoing website work."
     }
   ];
   const homeInlineParagraphs = [
@@ -267,22 +267,27 @@
 
 <Seo
   title="The Web Guy | SEO Developer, WordPress Help & Website Fixes"
-  description="The Web Guy provides direct SEO developer help, WordPress support, website fixes, and ongoing technical cleanup at $90/hr."
+  description="The Web Guy provides direct SEO developer help, WordPress support, website fixes, and ongoing technical cleanup."
   schema={homeSchema}
 />
 
 <main>
   <Hero
     eyebrow="THE WEB GUY"
-    h1="The Web Guy for SEO Developer Work, WordPress Help, and Website Fixes"
-    intro="Direct developer help for broken websites, WordPress cleanup, technical SEO implementation, and ongoing support for businesses, agencies, and site owners."
-    cta="Send the URL and issue"
+    h1="Get Your Website Working the Way It Should."
+    intro="Broken forms, WordPress trouble, SEO work that never gets implemented, or an AI build that needs a second look. Work directly with a developer to get the next step scoped, fixed, and checked."
+    cta="Get a Free Quote"
     secondary="View Services"
     showCapabilityLinks={false}
     image={staticHeroImages.home}
   />
 
   <Breadcrumbs items={breadcrumbs} />
+
+  <section class="section split-section section-effect section-effect--signals section-effect--low">
+    <div><SectionHeading eyebrow="AI Development Oversight" h2="Build With AI. Ship With an Engineer." body="Already building with Codex, Claude Code, Cursor, or another AI tool? Get human review of the code, the system around it, and the checks your next release needs." /><a class="button button-primary" href="/ai-development/">Explore AI Development Oversight</a></div>
+    <div class="summary-copy-panel"><h3>Have something ready for review?</h3><p>Start with a focused code review, pre-launch website QA, or ongoing oversight for your team. You receive findings and a practical next step within an agreed scope.</p><a class="text-link" href="/ai-development/code-review/">See what an AI code review covers</a></div>
+  </section>
 
   <section class="section soft-section section-effect section-effect--signals section-effect--low" aria-label="The Web Guy proof signals">
     <div class="cluster-grid">
@@ -356,7 +361,7 @@
     <SectionHeading
       eyebrow="Technical execution depth"
       h2="Built for the work behind the visible page"
-      body="The full skill pages explain the implementation layer. The homepage only needs the short version: practical technical cleanup behind real website tasks."
+      body="The full skill pages explain the implementation layer. Get practical technical cleanup behind the pages your customers use."
     />
     <div class="summary-copy-panel summary-copy-panel--dark">
       <ul class="check-list">
@@ -374,7 +379,7 @@
     <div>
       <SectionHeading
         eyebrow="Local and remote website support"
-        h2="Hourly web support near Freeport, IL and remote-friendly"
+        h2="Website support near Freeport, IL and for remote teams"
         body="The Web Guy supports businesses near Freeport, Rockford, Monroe, Beloit, Janesville, Dixon, Sterling, Galena, Dubuque, Madison, and remote teams that need practical contract website help."
       />
       <a class="text-link" href="/locations/" title="View the service area page">View service area</a>
@@ -390,16 +395,16 @@
     <div class="rate-layout">
       <div>
         <SectionHeading
-          eyebrow="Hourly contract rate"
-          h2="Simple hourly website help: $90/hr"
-          body="Best for ongoing support, agency overflow, WordPress cleanup, SEO implementation, landing pages, tracking fixes, ecommerce support, APIs, and practical technical website work."
+          eyebrow="A clear next step"
+          h2="Know the Scope Before You Commit."
+          body="Send the problem or project goal. I will ask any questions needed to quote a useful first step. You approve the scope and cost before paid work begins."
         />
-        <a class="button button-primary" href="/rate/" title="View how the $90/hr contract rate works">Read how the rate works</a>
+        <a class="button button-primary" href="/contact/#request-form" title="Request a free website quote">Get a Free Quote</a>
       </div>
       <div class="rate-card">
-        <span>Contract rate</span>
-        <strong>$90/hr</strong>
-        <p>Start with the URL, the problem, and the outcome you want. The first useful step is usually clear after a practical review.</p>
+        <span>Start with your project</span>
+        <strong>Free quote</strong>
+        <p>No charge to ask for a quote. If technical investigation is needed to define the fix, I will explain that and quote the diagnostic work first.</p>
       </div>
     </div>
   </section>
@@ -409,8 +414,8 @@
     <div class="process-grid">
       {#each [
         ["01", "Send the context", "URL, platform, symptom, goal, deadline, audit notes, or task list."],
-        ["02", "Find the first move", "The issue gets sorted into fix, build, SEO, tracking, integration, or support work."],
-        ["03", "Do the practical work", "Updates, debugging, cleanup, implementation, testing, and launch support happen hourly."],
+        ["02", "Agree the scope and cost", "Review the proposed work and approve it before paid work begins."],
+        ["03", "Do the practical work", "Complete the agreed updates, debugging, implementation, review, or launch support."],
         ["04", "Get a plain update", "You get what changed, what was found, what is blocked, and what should happen next."]
       ] as [num, title, text]}
         <article><span>{num}</span><h3>{title}</h3><p>{text}</p></article>
@@ -428,7 +433,7 @@
   <CtaBand
     heading="Need web work handled without babysitting?"
     copy="Send the URL, what is broken or needed, and the outcome you want. The reply can start with the most useful next step."
-    label="Fix My Web Problem"
+    label="Get a Free Quote"
     secondaryLabel="View Services"
     secondaryHref="/services/"
   />

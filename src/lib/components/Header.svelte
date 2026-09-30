@@ -3,6 +3,7 @@
   import { page } from "$app/state";
   import LogoMark from "./LogoMark.svelte";
   import { trackEvent } from "$lib/analytics.js";
+  import { contactHrefWithContext } from "$lib/contact-context.js";
   import { headerCta, mainNavItems, megaMenus, mobileNavSections, utilityNavItems } from "$lib/data/navigation.js";
 
   let scrolled = $state(false);
@@ -25,6 +26,7 @@
     maxHeight: "calc(100vh - 102px)"
   });
   const showSearchResults = $derived(searchFocused && searchQuery.trim().length >= 4);
+  const quoteHref = $derived(contactHrefWithContext(headerCta.href, { sourcePath: page.url.pathname, sourceCta: headerCta.label }));
 
   function openDesktopMenu(key, trigger) {
     if (!mobileOpen && megaMenus[key]) {
@@ -128,7 +130,7 @@
       window.history.pushState(null, "", "#request-form");
     }
 
-    document.getElementById("request-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    document.getElementById("request-form")?.scrollIntoView({ behavior: "instant", block: "start" });
   }
 
   function getMenuOverviewHref(key) {
@@ -408,7 +410,7 @@
     {/if}
   </div>
 
-  <a class="button button-small button-primary header-cta" href={headerCta.href} title={linkTitle(headerCta.label, headerCta.href)} onclick={handleHeaderContactClick}>{headerCta.label}</a>
+  <a class="button button-small button-primary header-cta" href={quoteHref} title={linkTitle(headerCta.label, quoteHref)} onclick={handleHeaderContactClick}>{headerCta.label}</a>
 
   <details bind:this={mobileNavDetails} class="mobile-nav-details" ontoggle={handleMobileToggle}>
     <summary
@@ -510,7 +512,7 @@
           {/each}
         </div>
 
-        <a class="button button-primary mobile-drawer-cta" href={headerCta.href} title={linkTitle(headerCta.label, headerCta.href)} onclick={handleHeaderContactClick}>{headerCta.label}</a>
+        <a class="button button-primary mobile-drawer-cta" href={quoteHref} title={linkTitle(headerCta.label, quoteHref)} onclick={handleHeaderContactClick}>{headerCta.label}</a>
       </nav>
     </div>
   </details>

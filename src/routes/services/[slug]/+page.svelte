@@ -35,10 +35,10 @@
   const breadcrumbs = $derived([
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
     { label: "Services", href: "/services/", title: "View all website services" },
-    { label: service.eyebrow, title: `Current page: ${service.h1.replace(" at $90/hr", "")}` }
+    { label: service.eyebrow, title: `Current page: ${service.h1}` }
   ]);
   const serviceFaqs = $derived(service.faqs || [
-    [`What does ${service.eyebrow.toLowerCase()} cost?`, `Contract help for this work is billed at $90/hr when the task, site, and access are clear.`],
+    [`What does ${service.eyebrow.toLowerCase()} cost?`, `Request a free quote for your site and task. Scope and cost are agreed before work starts.`],
     ["What should I send first?", "Send the URL, what should happen, what is happening now, timeline, and any audit notes, screenshots, or task lists."],
     ["Can this be one-time or ongoing?", "Yes. This can be a one-time fix, a small project, agency overflow, or part of ongoing webmaster/platform support."],
     ["What does The Web Guy avoid promising?", "No fake guarantees, no unlimited flat-rate work, and no pretending every issue is simple before the site is reviewed."]
@@ -389,14 +389,21 @@
       {/if}
     </div>
     <div class="rate-callout">
-      <span>Simple hourly support</span>
-      <strong>$90/hr</strong>
+      <span>A clear scope before work starts</span>
+      <strong>Free quote</strong>
       <p>Good for quick fixes, small projects, cleanup work, ongoing support, and agency overflow when the work is clear.</p>
     </div>
     <InternalLinkCopy paragraphs={allServiceInternalParagraphs} className="internal-link-copy--wide" />
   </section>
 
   <ProofPanel proof={serviceProof} />
+
+  {#if ["ai-built-website-cleanup", "react-static-sites", "agency-overflow", "wordpress-support", "website-fixes", "automation-internal-tools"].includes(service.slug)}
+    <section class="section split-section soft-section">
+      <div><SectionHeading eyebrow="Working with AI-generated changes?" h2="Add a Review Before the Next Release" body="AI Development Oversight covers code review, launch QA, and checks that help catch recurring problems. Use it for work from your own tools, developer, or agency." /></div>
+      <div><a class="button button-primary" href="/ai-development/">Explore AI Development Oversight</a><p><a class="text-link" href="/ai-development/code-review/">See AI Code Review</a></p></div>
+    </section>
+  {/if}
 
   {#if !detailAfterExamples}
     <section class="section soft-section section-effect section-effect--hex section-effect--low">

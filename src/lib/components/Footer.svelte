@@ -1,14 +1,19 @@
 <script>
+  import { aiDevelopmentPages, aiDevelopmentUrl } from "$lib/data/ai-development.js";
+  import { page } from "$app/state";
+  import { contactHrefWithContext } from "$lib/contact-context.js";
+  const quoteHref = $derived(contactHrefWithContext("/contact/#request-form", { sourcePath: page.url.pathname, sourceCta: "Get a Free Quote" }));
   const year = new Date().getFullYear();
   const mainPages = [
     ["Home", "/"],
     ["Services", "/services/"],
+    ["AI Development", "/ai-development/"],
     ["Sites For Sale", "/sites-for-sale/"],
     ["Blog", "/blog/"],
     ["Fix Notes", "/fix-notes/"],
     ["Skills", "/skills/"],
     ["Locations", "/locations/"],
-    ["Rate", "/rate/"],
+    ["How Quotes Work", "/rate/"],
     ["About", "/about/"],
     ["FAQ", "/faq/"],
     ["Contact", "/contact/"]
@@ -52,6 +57,10 @@
   const hubLinks = mainPages.map(([label, href]) => routeLink(label, href));
 
   const serviceGroups = [
+    subgroup("AI Development", [
+      routeLink("AI Development Oversight", "/ai-development/"),
+      ...aiDevelopmentPages.map(item => routeLink(item.eyebrow, aiDevelopmentUrl(item.slug)))
+    ]),
     subgroup("Fix & Stabilize", [
       serviceLink("Website Fixes", "website-fixes"),
       serviceLink("AI-Built Website Cleanup", "ai-built-website-cleanup"),
@@ -136,7 +145,7 @@
       <p>Start with the URL, the problem, and the outcome you want.</p>
     </div>
     <div class="footer-cta-action">
-      <a class="button button-primary" href="/contact/" title="Open the contact request form">Start a Website Request</a>
+      <a class="button button-primary" href={quoteHref} title="Open the contact request form">Get a Free Quote</a>
     </div>
   </div>
 
@@ -155,7 +164,7 @@
           />
           <h2 class="sr-only">The Web Guy</h2>
         </div>
-        <p>Contract web development, WordPress support, Shopify/Liquid help, technical SEO implementation, tracking cleanup, automation, performance, and platform support at $90/hr.</p>
+        <p>Contract web development, WordPress support, Shopify/Liquid help, technical SEO implementation, tracking cleanup, automation, performance, and platform support.</p>
         <div class="footer-mini-grid footer-brand-pills" aria-label="Core support areas">
           {#each supportPills as link}
             <a href={link.href} title={linkTitle(link.label, link.href)}>{link.label}</a>
@@ -163,7 +172,7 @@
         </div>
       </div>
       <div class="footer-brand-support">
-        <p>Practical hourly help for existing sites, messy platforms, agency overflow, and web work that needs to move.</p>
+        <p>Practical developer help for existing sites, messy platforms, agency overflow, and web work that needs to move.</p>
       </div>
     </section>
 

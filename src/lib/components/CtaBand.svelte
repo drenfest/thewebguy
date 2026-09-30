@@ -3,9 +3,9 @@
   import { contactHrefWithContext, isContactTarget } from "$lib/contact-context.js";
 
   let {
-    heading = "Send The Web Guy the problem",
-    copy = "Include the URL, what is broken or needed, your timeline, and whether this is one-time or ongoing work.",
-    label = "Fix My Web Problem",
+    heading = "Get a Free Quote for the Work You Need",
+    copy = "Send the problem or project goal and your timeline. I will confirm scope and cost before paid work begins.",
+    label = "Get a Free Quote",
     secondaryLabel = "",
     secondaryHref = "",
     sourceTitle = heading

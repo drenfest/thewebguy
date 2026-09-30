@@ -1,6 +1,6 @@
 # The Web Guy
 
-SvelteKit site for `thewebguy.app`, positioning The Web Guy as contract web development, WordPress, technical SEO, website fixes, tracking, ecommerce, and support help at `$90/hr`.
+SvelteKit site for `thewebguy.app`, offering contract web development, WordPress, technical SEO, website fixes, tracking, ecommerce, and AI Development Oversight. Visitors start with a free quote; scope and cost are agreed before paid work begins.
 
 This README covers setup, deployment, environment variables, and the project map. Directory-level READMEs explain the files in each folder, common patterns, how each area is used, and suggested next steps.
 
@@ -21,6 +21,8 @@ npm run verify:contact-email
 npm run check
 npm run build
 npm run preview
+node scripts/verify-lead-flow.mjs
+node scripts/verify-quote-routes.mjs http://127.0.0.1:5173
 ```
 
 ## Hosting On Render
@@ -126,7 +128,9 @@ Setup details are in `docs/tawk-live-chat/README.md`.
 
 ## AI And LLM Discovery
 
-The site exposes AI-friendly discovery files at `/llms.txt` and `/llms-full.txt`. They are generated from `src/lib/data/llm-context.js`, which pulls from the same service, skill, blog, FAQ, and location content used by the public pages.
+The site exposes AI-friendly discovery files at `/llms.txt` and `/llms-full.txt`. They are generated from `src/lib/data/llm-context.js`, which pulls from the same service, AI development, skill, blog, FAQ, and location content used by the public pages.
+
+The `/ai-development/` hub and its four child services use `src/lib/data/ai-development.js` as their shared content source. The data also feeds navigation, search, contact service selection, sitemap generation, and LLM discovery. The existing `/rate/` URL now explains how quotes work. Implementation details and verification results are in `docs/ai-development-quote-first-implementation.md`.
 
 - `/llms.txt`: concise route map and positioning summary for AI assistants.
 - `/llms-full.txt`: fuller Markdown context with service summaries, skill summaries, blog guide summaries, FAQs, location pages, and guardrails.

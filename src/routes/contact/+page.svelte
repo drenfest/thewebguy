@@ -4,8 +4,6 @@
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
   import SectionHeading from "$lib/components/SectionHeading.svelte";
   import TopicalLinks from "$lib/components/TopicalLinks.svelte";
-  import ContextualSupport from "$lib/components/ContextualSupport.svelte";
-  import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import { afterNavigate, beforeNavigate } from "$app/navigation";
   import { page } from "$app/state";
   import { onMount, tick } from "svelte";
@@ -15,6 +13,7 @@
   import { staticHeroImages } from "$lib/data/hero-images.js";
   import { breadcrumbSchema, schemaList } from "$lib/data/schema.js";
   import { contactState } from "$lib/state/contact-state.svelte.js";
+  import { aiDevelopmentHub, aiDevelopmentPages, aiDevelopmentUrl } from "$lib/data/ai-development.js";
 
   let status = $state({ type: "idle", message: "" });
   let botTrap = $state("");
@@ -24,7 +23,7 @@
   let submissionAttempted = false;
   let abandonTracked = false;
   const formLocked = $derived(status.type === "loading" || status.type === "success");
-  const submitLabel = $derived(status.type === "loading" ? "Sending..." : status.type === "success" ? "Request Sent" : "Send Website Request");
+  const submitLabel = $derived(status.type === "loading" ? "Sending..." : status.type === "success" ? "Request Sent" : "Request My Free Quote");
   const hasSourceContext = $derived(Boolean(contactState.draft.sourcePagePath || contactState.draft.sourcePageTitle));
   const sourceContextLabel = $derived(contactState.draft.sourcePageTitle || contactState.draft.sourcePagePath);
   const breadcrumbs = [
@@ -33,6 +32,7 @@
   ];
   const seoSchema = schemaList(breadcrumbSchema(breadcrumbs, "/contact/"));
   const contactTopicalLinks = [
+    { label: "AI-built project", title: "AI Development Oversight", href: "/ai-development/", copy: "Explore code review, launch QA, production oversight, and guardrails for AI-assisted work." },
     {
       label: "Broken-site request",
       title: "Website Fixes",
@@ -64,33 +64,11 @@
       copy: "Use this when GA4, GTM, pixels, form events, ecommerce measurement, CRM handoffs, or dashboards need troubleshooting."
     },
     {
-      label: "Rate context",
-      title: "Contract Rate",
+      label: "Quote process",
+      title: "How Quotes Work",
       href: "/rate/",
-      copy: "Use this when you want to confirm how $90/hr hourly support fits one-time fixes, small projects, ongoing work, or agency overflow."
+      copy: "Use this when you want to confirm how scoped website support fits one-time fixes, small projects, ongoing work, or agency overflow."
     }
-  ];
-  const contactContextualItems = contactTopicalLinks.slice(0, 5).map((item) => ({
-    title: item.title,
-    href: item.href,
-    titleAttr: `View ${item.title} before sending the contact form`,
-    copy: item.copy
-  }));
-  const contactInlineParagraphs = [
-    [
-      "If the site is visibly broken, describe it through ",
-      { text: "Website Fixes", href: "/services/website-fixes/", title: "View website fixes for broken layouts, forms, scripts, embeds, and mobile bugs" },
-      ". If the request is a theme, plugin, Elementor, PHP, CSS, JavaScript, or content issue, check ",
-      { text: "WordPress Support", href: "/services/wordpress-support/", title: "View WordPress support for themes, plugins, Elementor, PHP, CSS, JavaScript, and cleanup" },
-      " before sending the form."
-    ],
-    [
-      "If you already have audit notes, crawl exports, schema tasks, redirects, headings, or internal-link work, use ",
-      { text: "Technical SEO Implementation", href: "/services/technical-seo-implementation/", title: "View technical SEO implementation for audit notes, crawl cleanup, schema, redirects, headings, and internal links" },
-      ". If the issue is GA4, GTM, pixels, form tracking, ecommerce data, or dashboards, use ",
-      { text: "Analytics & Tracking", href: "/services/analytics-tracking/", title: "View analytics and tracking support for GA4, GTM, pixels, form events, ecommerce measurement, and dashboards" },
-      "."
-    ]
   ];
   const DEFAULT_CONTACT_SOURCE_TITLE = "Contact request form";
   const DEFAULT_CONTACT_SOURCE_CTA = "direct_form_submit";
@@ -105,10 +83,12 @@
   }
 
   function serviceOptionLabel(service) {
-    return service?.h1?.replace(" at $90/hr", "") || "";
+    return service?.contactLabel || service?.h1 || "";
   }
 
   function inferServiceFromSource(sourcePath = "") {
+    const aiService = [aiDevelopmentHub, ...aiDevelopmentPages].find(item => aiDevelopmentUrl(item.slug) === sourcePath);
+    if (aiService) return { ...aiService, contactLabel: aiService.eyebrow };
     const serviceSlug = slugFromPath(sourcePath, "services");
     return servicePages.find((service) => service.slug === serviceSlug);
   }
@@ -134,13 +114,14 @@
     const sourceService = inferServiceFromSource(sourcePagePath);
     const sourceSkill = inferSkillFromSource(sourcePagePath);
     const sourceLocation = inferLocationFromSource(sourcePagePath);
+    const previousSourceService = inferServiceFromSource(contactState.draft.sourcePagePath);
 
     contactState.draft.sourcePagePath = sourcePagePath;
-    contactState.draft.sourcePageTitle = sourcePageTitle;
+    contactState.draft.sourcePageTitle = sourcePageTitle || sourceService?.eyebrow || sourcePagePath;
     contactState.draft.sourcePageType = sourcePageType;
     contactState.draft.sourceCta = sourceCta;
 
-    if (sourceService && !contactState.draft.service) {
+    if (sourceService && (!contactState.draft.service || contactState.draft.service === serviceOptionLabel(previousSourceService))) {
       contactState.draft.service = serviceOptionLabel(sourceService);
     }
 
@@ -263,7 +244,8 @@
     if (url.hash !== "#request-form") return;
     await tick();
     window.requestAnimationFrame(() => {
-      document.getElementById("request-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Cancel the router's smooth hash scroll after the source note has rendered.
+      document.getElementById("request-form")?.scrollIntoView({ behavior: "instant", block: "start" });
     });
   }
 
@@ -272,6 +254,8 @@
   });
 
   afterNavigate(() => {
+    applyContactSourceFromUrl(page.url);
+    ensureContactSourceContext(page.url);
     scrollToRequestFormIfNeeded(page.url);
   });
 
@@ -279,7 +263,6 @@
     formLoadedAt = String(Date.now());
     applyContactSourceFromUrl(page.url);
     ensureContactSourceContext(page.url);
-    scrollToRequestFormIfNeeded(page.url);
     trackContactEvent("contact_page_view", { form_id: "request-form", is_form_fill: false });
 
     const handlePageHide = () => trackContactFormAbandon("left_page");
@@ -317,6 +300,14 @@
       responseStatus = response.status;
       const result = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(result.message || "Request failed.");
+      if (result.mode === "filtered") {
+        // Preserve the honeypot response without recording a delivered inquiry.
+        status = { type: "success", message: "Request received." };
+        return;
+      }
+      if (!result.ok || !["gmail-api-email", "smtp-email"].includes(result.mode)) {
+        throw new Error("Delivery could not be confirmed. Please try again.");
+      }
 
       contactState.lastSubmittedAt = new Date().toISOString();
       contactState.lastService = formData.service;
@@ -349,13 +340,16 @@
   schema={seoSchema}
 />
 
-<main>
+<main class="contact-page">
   <Hero
     eyebrow="Free website quote"
     h1="Get a Free Quote From The Web Guy"
     intro="Tell me what is broken, what needs built, or what keeps getting pushed off. Include the URL, timeline, and what a useful outcome looks like. There is no charge to send the request or ask for a quote."
     cta="Get a Free Quote"
     ctaHref="#request-form"
+    compact={true}
+    showCapabilityLinks={false}
+    secondary=""
     image={staticHeroImages.contact}
   />
 
@@ -367,12 +361,12 @@
         <SectionHeading
           eyebrow="Free quote request form"
           h2="Get a free quote for website support"
-          body="Include the URL, what should happen, what is happening now, timeline, and whether this is one-time or ongoing. If you have an audit, screenshots, crawl notes, or a task list, mention that too. I will review the request and reply with the best next step before any paid work begins."
+          body="A short description is enough to start. I will review your request, ask any needed questions, and confirm fit, scope, and cost before you decide."
         />
         <div class="rate-callout light">
-          <span>Contract rate</span>
-          <strong>$90/hr</strong>
-          <p>Quotes are free. Approved work is billed hourly for quick fixes, small projects, ongoing support, and agency overflow.</p>
+          <span>Start with your project</span>
+          <strong>Free quote</strong>
+          <p>Tell me what you need. I will confirm fit, scope, and cost before you commit. Engineering review, diagnostics, and implementation are paid work.</p>
         </div>
       </div>
 
@@ -387,8 +381,8 @@
 
         <label>Name<input bind:value={contactState.draft.name} name="name" type="text" autocomplete="name" placeholder="Your name" required /></label>
         <label>Email<input bind:value={contactState.draft.email} name="email" type="email" autocomplete="email" placeholder="you@example.com" required /></label>
-        <label>Website URL<input bind:value={contactState.draft.url} name="url" type="url" placeholder="https://example.com/page-with-the-issue" /></label>
-        <label>What is happening or needed?<textarea bind:value={contactState.draft.details} name="details" rows="6" placeholder="Describe the symptom, what should happen, and anything that changed recently." required></textarea></label>
+        <label>Website URL (optional)<input bind:value={contactState.draft.url} name="url" type="url" placeholder="https://example.com/page-with-the-issue" /></label>
+        <label>What is happening or needed?<textarea bind:value={contactState.draft.details} name="details" rows="6" placeholder="What did you build or what needs fixing? What should happen next? For an AI review, mention your tools or stack if you know them." required></textarea></label>
         <label>Timeline<input bind:value={contactState.draft.timeline} name="timeline" type="text" placeholder="ASAP, this week, this month, flexible" /></label>
 
         <details class="optional-contact-details">
@@ -398,7 +392,8 @@
             <label>What service does this fit?
               <select bind:value={contactState.draft.service} name="service" onchange={() => trackContactSelect("service", contactState.draft.service)}>
                 <option value="">Choose the closest fit</option>
-                {#each servicePages as service}<option>{service.h1.replace(" at $90/hr", "")}</option>{/each}
+                {#each [aiDevelopmentHub, ...aiDevelopmentPages] as service}<option>{service.eyebrow}</option>{/each}
+                {#each servicePages as service}<option>{service.h1}</option>{/each}
                 <option>Not sure yet</option>
               </select>
             </label>
@@ -420,6 +415,8 @@
                 <option value="">Choose one</option>
                 <option>One-time fix</option>
                 <option>Small project</option>
+                <option>One-time AI review</option>
+                <option>Ongoing AI oversight</option>
                 <option>Ongoing monthly help</option>
                 <option>Agency overflow</option>
               </select>
@@ -429,52 +426,17 @@
         </details>
         <label class="bot-field" aria-hidden="true" tabindex="-1">Leave this field blank<input bind:value={botTrap} name="websiteCompany" type="text" autocomplete="off" tabindex="-1" /></label>
         <input type="hidden" name="formLoadedAt" value={formLoadedAt} />
-        <p class="form-note">Requests send through the private contact route. Your email is used as the reply-to address, and paid work only starts after scope and rate are clear.</p>
-        {#if status.message}<p class={`form-status ${status.type}`}>{status.message}</p>{/if}
+        <p class="form-note">No charge to request a quote. Paid work begins after scope and cost are approved. A repository URL is not required. Do not send passwords, API keys, or other secrets. <a href="/privacy/">How your request is handled</a>.</p>
+        <div role="status" aria-live="polite" aria-atomic="true">{#if status.message}<p class={`form-status ${status.type}`}>{status.message}</p>{/if}</div>
         <button class="button button-primary cta-animated cta-animated--primary" type="submit" disabled={formLocked} aria-disabled={formLocked}>{submitLabel}</button>
       </form>
     </div>
   </section>
 
-  <section class="section soft-section section-effect section-effect--signals section-effect--low">
-    <SectionHeading
-      eyebrow="Website request prep"
-      h2="Pick the closest work type, then send the messy version"
-      body="The request form can handle rough context, but these links help frame the page, platform, tracking, or SEO work before you send it."
-    />
-    <InternalLinkCopy paragraphs={contactInlineParagraphs} />
-  </section>
-
-  <ContextualSupport
-    eyebrow="Service pages before the form"
-    heading="Service context before the request form"
-    intro="These pages can help frame the request before the form: what broke, what needs improved, and what kind of help fits."
-    items={contactContextualItems}
-  />
-
   <TopicalLinks
-    eyebrow="Request routing"
-    heading="Choose the closest request path, then describe the real site problem"
-    intro="The form can handle messy requests, but these pages help frame the work if you already know the likely service category."
+    eyebrow="Helpful context"
+    heading="Want to learn more before sending a request?"
+    intro="These service pages explain the work. You can also send the form above with a rough description and I will help identify the right starting point."
     items={contactTopicalLinks}
   />
-
-  <section class="section split-section section-effect section-effect--signals section-effect--low">
-    <div>
-      <SectionHeading
-        eyebrow="Broken website request"
-        h2="Send the symptom and the URL"
-        body="If something broke, the most useful request starts with the exact page, what should happen, what is happening instead, device/browser notes, and any recent WordPress, plugin, theme, script, hosting, or content changes."
-      />
-      <a class="text-link" href="/services/website-fixes/" title="View website fixes for broken layouts, forms, modals, embeds, scripts, and website bugs">View website fixes</a>
-    </div>
-    <div>
-      <SectionHeading
-        eyebrow="SEO, page, or support request"
-        h2="Send the task list or audit notes"
-        body="If the work is not urgent, include the page goal, platform, SEO audit, crawl notes, tracking requirements, rough deadline, and whether this is one-time help, agency overflow, or recurring webmaster support."
-      />
-      <a class="text-link" href="/services/technical-seo-implementation/" title="View technical SEO implementation for audit notes, crawl cleanup, schema, redirects, headings, and internal links">View SEO implementation</a>
-    </div>
-  </section>
 </main>

@@ -1,5 +1,17 @@
 /* Hero and breadcrumbs: top-of-page layout, hero media, proof strip, and breadcrumb styling. */
 
+.hero .hero-quote-note {
+  max-width: 54ch;
+  margin: 18px 0 0;
+  color: #d0ded9;
+  font-size: 0.92rem;
+}
+
+.hero.hero--compact { padding-block: clamp(32px, 4vw, 52px); }
+.hero--compact .hero-grid { grid-template-columns: minmax(0, 1fr); }
+.hero--compact h1 { max-width: 24ch; font-size: clamp(1.9rem, 4vw, 3.2rem); }
+.hero--compact .hero-lede { max-width: 72ch; }
+
 .hero {
   position: relative;
   isolation: isolate;

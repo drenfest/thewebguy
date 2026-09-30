@@ -45,12 +45,13 @@ export const serviceMap = Object.fromEntries(servicePages.map((service) => [serv
 export const mainPages = [
   ["Home", "/"],
   ["Services", "/services/"],
+  ["AI Development", "/ai-development/"],
   ["Sites For Sale", "/sites-for-sale/"],
   ["Blog", "/blog/"],
   ["Fix Notes", "/fix-notes/"],
   ["Skills", "/skills/"],
   ["Locations", "/locations/"],
-  ["Rate", "/rate/"],
+  ["How Quotes Work", "/rate/"],
   ["About", "/about/"],
   ["FAQ", "/faq/"],
   ["Contact", "/contact/"]

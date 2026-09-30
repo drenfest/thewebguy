@@ -1,3 +1,4 @@
+import { aiDevelopmentHub, aiDevelopmentPages, aiDevelopmentUrl } from "./ai-development.js";
 import {
   blogCategories,
   blogCategoryUrl,
@@ -21,7 +22,7 @@ import {
 const mainPageMeta = {
   "/": {
     title: "The Web Guy",
-    description: "The Web Guy provides $90/hr website fixes, SEO developer help, WordPress support, tracking cleanup, API work, and landing page support.",
+    description: "The Web Guy provides website fixes, SEO developer help, WordPress support, tracking cleanup, API work, and landing page support.",
     type: "Main page"
   },
   "/services/": {
@@ -55,8 +56,8 @@ const mainPageMeta = {
     type: "Hub"
   },
   "/rate/": {
-    title: "Contract Rate",
-    description: "Hourly contract website support at $90/hr for quick fixes, small projects, recurring support, and agency overflow.",
+    title: "How Quotes Work",
+    description: "How free quotes, scope, approval, and paid website work fit together.",
     type: "Main page"
   },
   "/about/": {
@@ -85,7 +86,7 @@ function flatten(value) {
 }
 
 function cleanTitle(title = "") {
-  return title.replace(/\s*\|\s*The Web Guy\s*$/i, "").replace(/\s+at\s+\$90\/hr$/i, "");
+  return title.replace(/\s*\|\s*The Web Guy\s*$/i, "");
 }
 
 function entry({ title, description, href, type, body = "" }) {
@@ -100,6 +101,7 @@ function entry({ title, description, href, type, body = "" }) {
 }
 
 export const searchIndex = [
+  ...[aiDevelopmentHub, ...aiDevelopmentPages].map(service => entry({ title: service.eyebrow, description: service.meta, href: aiDevelopmentUrl(service.slug), type: "Service", body: flatten([service.intro, service.sections, service.faqs]) })),
   ...Object.entries(mainPageMeta).map(([href, page]) => entry({ ...page, href })),
   ...servicePages.map((service) =>
     entry({

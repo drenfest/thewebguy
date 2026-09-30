@@ -48,7 +48,7 @@
 
     const runWhenIdle = () => {
       if ("requestIdleCallback" in window) {
-        idleHandle = window.requestIdleCallback(() => loadGoogleAnalyticsScript(), { timeout: 2000 });
+        idleHandle = window.requestIdleCallback(() => loadGoogleAnalyticsScript(), { timeout: 1000 });
       } else {
         loadGoogleAnalyticsScript();
       }
@@ -57,7 +57,7 @@
     const scheduleScriptLoad = () => {
       if (loadStarted) return;
       loadStarted = true;
-      loadTimer = window.setTimeout(runWhenIdle, 3000);
+      loadTimer = window.setTimeout(runWhenIdle, 0);
     };
 
     if (document.readyState === "complete") {

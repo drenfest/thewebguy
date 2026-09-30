@@ -53,6 +53,16 @@ function routeMeta(pathname = "/") {
     };
   }
 
+  if (root === "ai-development") {
+    return {
+      page_type: slug ? "ai_service_detail" : "ai_service_hub",
+      content_group: "AI Development",
+      page_topic: slug ? topic : "AI Development Oversight",
+      service_slug: slug || "ai-development",
+      conversion_stage: slug ? "service_evaluation" : "service_discovery"
+    };
+  }
+
   if (root === "skills") {
     return {
       page_type: slug ? "skill_detail" : "skill_hub",
@@ -85,7 +95,7 @@ function routeMeta(pathname = "/") {
 
   const singlePages = {
     contact: ["contact", "Contact", "Request form", "lead_capture"],
-    rate: ["rate", "Rate", "Hourly contract rate", "pricing"],
+    rate: ["quote_process", "Quotes", "How quotes work", "service_evaluation"],
     faq: ["faq", "FAQ", "Questions before hiring", "objection_handling"],
     about: ["about", "About", "Background and fit", "trust_building"]
   };

@@ -3,10 +3,9 @@ import { env } from "$env/dynamic/public";
 export const site = {
   name: "The Web Guy",
   domain: "thewebguy.app",
-  rate: "$90/hr",
   titleSuffix: "The Web Guy",
   description:
-    "Contract web development, WordPress support, technical SEO implementation, landing pages, website fixes, tracking, ecommerce cleanup, and webmaster support at $90/hr."
+    "Contract web development, WordPress support, technical SEO implementation, landing pages, website fixes, tracking, ecommerce cleanup, and webmaster support."
 };
 
 const fallbackOrigin = "https://thewebguy.app";

@@ -7,11 +7,14 @@
     eyebrow = "The Web Guy",
     h1,
     intro,
-    cta = "Fix My Web Problem",
+    cta = "Get a Free Quote",
     ctaHref = "/contact/#request-form",
     secondary = "View Services",
     secondaryHref = "/services/",
     showCapabilityLinks = true,
+    compact = false,
+    panel,
+    note = "Free quote. Scope and cost agreed before paid work begins.",
     image = {
       slug: "home-contract-web-support",
       basePath: "/images/heroes",
@@ -59,6 +62,7 @@
   let HeroEffect = $state(null);
 
   onMount(() => {
+    if (compact) return;
     let cancelled = false;
     const isMobile = window.matchMedia("(max-width: 640px)").matches;
     const delay = isMobile ? 4200 : 3600;
@@ -85,6 +89,7 @@
 </script>
 
 <svelte:head>
+  {#if !panel && !compact}
   <link
     rel="preload"
     as="image"
@@ -95,22 +100,24 @@
     media="(min-width: 641px)"
     fetchpriority="high"
   />
+  {/if}
 </svelte:head>
 
-<section class="hero effect effect-hero effect-high">
+<section class="hero effect effect-hero effect-high" class:hero--compact={compact}>
   {#if HeroEffect}
     <HeroEffect intensity="high" />
   {/if}
   <div class="hero-grid">
     <div>
       <p class="eyebrow">{eyebrow}</p>
-      <p class="availability-pill"><span></span>Available for contract web work at $90/hr</p>
+      <p class="availability-pill"><span></span>Direct help from a developer</p>
       <h1>{h1}</h1>
       <p class="hero-lede">{intro}</p>
       <div class="hero-actions">
         <a class="button button-primary cta-animated cta-animated--primary" href={contextualCtaHref} title={linkTitle(cta, contextualCtaHref)}>{cta}</a>
-        <a class="button button-secondary cta-animated" href={contextualSecondaryHref} title={linkTitle(secondary, contextualSecondaryHref)}>{secondary}</a>
+        {#if secondary}<a class="button button-secondary cta-animated" href={contextualSecondaryHref} title={linkTitle(secondary, contextualSecondaryHref)}>{secondary}</a>{/if}
       </div>
+      <p class="hero-quote-note">{note}</p>
       {#if showCapabilityLinks}
         <nav class="cred-strip" aria-label="Common website support paths">
           {#each capabilityLinks as [label, url]}
@@ -119,10 +126,13 @@
         </nav>
       {/if}
     </div>
-    <aside class="hero-panel">
+    {#if !compact}<aside class="hero-panel">
+      {#if panel}
+        {@render panel()}
+      {:else}
       <div class="hero-panel-status">
-        <span>Contract queue</span>
-        <strong>Open</strong>
+        <span>Your next step</span>
+        <strong>Start here</strong>
       </div>
       <div class="hero-image-frame">
         <picture>
@@ -144,18 +154,19 @@
           />
         </picture>
       </div>
-      <div class="rate-badge"><span>Contract rate</span><strong>$90/hr</strong></div>
-      <p>Practical hourly web support for fixes, implementation, cleanup, and ongoing website work.</p>
-      <div class="hero-panel-tags" aria-label="Rate details">
-        <span>Hourly</span>
+      <div class="rate-badge"><span>Start with your project</span><strong>Free quote</strong></div>
+      <p>Tell me what is broken, what needs to launch, or what you want improved. I will help define the work and quote the next step.</p>
+      <div class="hero-panel-tags" aria-label="Working together">
+        <span>Clear scope</span>
         <span>Remote-friendly</span>
         <span>Task-first</span>
       </div>
       <ul class="hero-proof">
         <li>WordPress, Shopify, tracking, APIs</li>
         <li>Site fixes, speed, SEO implementation</li>
-        <li>No bloated packages or mystery pricing</li>
+        <li>You approve the work before it starts</li>
       </ul>
-    </aside>
+      {/if}
+    </aside>{/if}
   </div>
 </section>

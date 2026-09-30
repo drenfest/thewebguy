@@ -38,7 +38,7 @@ export const staticHeroImages = {
   ),
   rate: heroImage(
     "page-contract-rate",
-    "Contract website help rate workspace with hourly support notes, task list, website fixes, and technical cleanup planning"
+    "Website quote planning workspace with project notes, task list, website fixes, and technical cleanup planning"
   ),
   about: heroImage(
     "page-about-contract-support",
@@ -61,14 +61,14 @@ export const staticHeroImages = {
 export function serviceHeroImage(service) {
   return heroImage(
     `service-${service.heroImageSlug || service.slug}`,
-    `${service.eyebrow} hero photo showing practical website support for ${service.h1.replace(" at $90/hr", "").toLowerCase()}`
+    `${service.eyebrow} hero photo showing practical website support for ${service.h1.toLowerCase()}`
   );
 }
 
 export function skillHeroImage(skill) {
   return heroImage(
     `skill-${skill.slug}`,
-    `${skill.eyebrow} hero photo showing technical website implementation work for ${skill.h1.replace(" at $90/hr", "").toLowerCase()}`
+    `${skill.eyebrow} hero photo showing technical website implementation work for ${skill.h1.toLowerCase()}`
   );
 }
 

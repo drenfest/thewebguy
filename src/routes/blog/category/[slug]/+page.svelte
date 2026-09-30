@@ -78,7 +78,7 @@
   <CtaBand
     heading={`Need help with ${category.label.toLowerCase()} work?`}
     copy="Send the URL, the symptom, what should happen instead, and any recent changes."
-    label="Fix My Web Problem"
+    label="Get a Free Quote"
     secondaryLabel="View Blog"
     secondaryHref="/blog/"
   />

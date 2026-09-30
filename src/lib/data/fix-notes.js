@@ -65,6 +65,720 @@ export const fixNoteCategoryDefinitions = [
 
 export const fixNotes = [
   {
+    title: "Traced a Deceptive-Page Warning to an Obfuscated Database Payload",
+    slug: "traced-deceptive-page-warning-obfuscated-database-payload",
+    date: "2026-09-26",
+    displayDate: "September 26, 2026",
+    lastUpdated: null,
+    category: "Security & Hosting",
+    serviceSlug: "website-security-malware-cleanup",
+    excerpt: "A WordPress security note about preserving forensic evidence, tracing a browser warning to injected database JavaScript, and validating the rest of the installation before closing the incident.",
+    problemSummary: "A production WordPress site had been flagged for deceptive pages even though the obvious infected files had already been neutralized, which meant the remaining payload could be hiding outside the normal theme and plugin paths.",
+    whatIChecked: [
+      "Production database options, page-builder content, revisions, snippets, and user metadata",
+      "WordPress core files against official checksums",
+      "Supported plugins against version-specific file manifests",
+      "Premium plugins, themes, must-use plugins, uploads, and external script domains",
+      "Administrator access, registration settings, server rules, and local malware scans"
+    ],
+    whatIChanged: [
+      "Preserved an untouched database export and hashed forensic file copy before remediation",
+      "Removed the obfuscated JavaScript payload from the affected database option",
+      "Deactivated an unnecessary file-manager plugin and disabled dashboard file editing",
+      "Produced a cleaned local database while retaining the original evidence separately",
+      "Documented the sweep, validation results, and remaining monitoring steps"
+    ],
+    resultSummary: "The hidden database payload was removed, core and supported plugin files were validated, and the cleanup retained enough evidence to explain the warning without making destructive guesses in production.",
+    whatToWatchNext: [
+      "Whether the external warning clears after the provider reviews the cleaned site",
+      "Whether monitoring detects the same option or script pattern returning",
+      "Whether access logs reveal the original entry point"
+    ],
+    toolsUsed: ["WordPress", "WP-CLI checksums", "Database inspection", "Local malware scanning"],
+    tags: ["WordPress", "Malware", "Database Injection", "Forensics"],
+    relatedServices: ["website-security-malware-cleanup", "wordpress-support", "production-debugging"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "WordPress Database Malware Cleanup Fix Note | The Web Guy",
+    metaDescription: "Short security note about tracing a deceptive-page warning to obfuscated JavaScript in a WordPress database and validating the cleaned site."
+  },
+  {
+    title: "Repaired reCAPTCHA Loading Without Disabling Page Optimization",
+    slug: "repaired-recaptcha-loading-without-disabling-page-optimization",
+    date: "2026-09-24",
+    displayDate: "September 24, 2026",
+    lastUpdated: null,
+    category: "Production Debugging",
+    serviceSlug: "production-debugging",
+    excerpt: "A production debugging note about fixing a form CAPTCHA that disappeared when an optimization plugin delayed scripts ahead of their jQuery dependency.",
+    problemSummary: "A homepage form showed a spinning or missing reCAPTCHA widget for logged-out visitors because its form scripts were being delayed in the wrong dependency order.",
+    whatIChecked: [
+      "Logged-in and clean logged-out form behavior",
+      "Browser console errors and script execution order",
+      "Form-plugin, reCAPTCHA, and jQuery dependencies",
+      "Optimization-plugin delay settings",
+      "Cached output before and after configuration changes"
+    ],
+    whatIChanged: [
+      "Added narrow delay exclusions for the form, reCAPTCHA, variables, and jQuery scripts",
+      "Purged and rebuilt the optimized cache",
+      "Retested the form from a clean visitor session",
+      "Verified the widget initializes automatically without new console errors"
+    ],
+    resultSummary: "The CAPTCHA and form now initialize in the correct order while the rest of the page keeps its performance optimizations.",
+    whatToWatchNext: [
+      "Whether optimization-plugin updates rename or rebundle the excluded files",
+      "Whether future form add-ons introduce another dependency",
+      "Whether cache rebuilds preserve the exclusion rules"
+    ],
+    toolsUsed: ["WordPress", "Browser console", "Fluent Forms", "Performance plugin configuration"],
+    tags: ["reCAPTCHA", "Forms", "JavaScript", "Caching"],
+    relatedServices: ["production-debugging", "wordpress-support", "website-fixes"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "reCAPTCHA Script Loading Fix Note | The Web Guy",
+    metaDescription: "Short production debugging note about repairing reCAPTCHA and form loading with targeted performance-plugin exclusions."
+  },
+  {
+    title: "Allowed a Form Embed Through WordPress Security Without a Broad Bypass",
+    slug: "allowed-form-embed-wordpress-security-without-broad-bypass",
+    date: "2026-09-28",
+    displayDate: "September 28, 2026",
+    lastUpdated: null,
+    category: "WordPress Support",
+    serviceSlug: "wordpress-support",
+    excerpt: "A WordPress support note about tracing a form editor's 403 response to the firewall, adding a narrowly scoped exception, and correcting the replacement embed's responsive width.",
+    problemSummary: "A form-script widget could not be edited because the firewall rejected its external embed code, and the replacement form rendered at a browser-default narrow iframe width.",
+    whatIChecked: [
+      "The failing WordPress AJAX request and returned 403 response",
+      "Firewall activity and the exact blocked POST parameter",
+      "Original and replacement form embed markup",
+      "Iframe sizing inside the page-builder column",
+      "Live desktop and mobile form behavior"
+    ],
+    whatIChanged: [
+      "Added an allowlist rule for only the required POST parameter",
+      "Kept the rest of the firewall protection active",
+      "Updated the iframe styling to fill its available container",
+      "Published and verified the form fields, consent copy, button, and responsive layout"
+    ],
+    resultSummary: "The editor works again without weakening the firewall broadly, and the embedded form now uses the full available width across screen sizes.",
+    whatToWatchNext: [
+      "Whether the embed vendor changes the submitted parameter format",
+      "Whether a firewall ruleset update overrides the exception",
+      "Whether the form provider adds its own responsive sizing"
+    ],
+    toolsUsed: ["WordPress", "Wordfence", "Browser network panel", "Responsive CSS"],
+    tags: ["WordPress", "Firewall", "Embedded Forms", "Responsive CSS"],
+    relatedServices: ["wordpress-support", "website-fixes", "website-security-malware-cleanup"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "WordPress Form Firewall Fix Note | The Web Guy",
+    metaDescription: "Short WordPress note about fixing a firewall-blocked form editor and making the replacement iframe responsive."
+  },
+  {
+    title: "Added Call Tracking, Tag Management, and Site Verification to a Static Site",
+    slug: "added-call-tracking-tag-management-site-verification-static-site",
+    date: "2026-09-29",
+    displayDate: "September 29, 2026",
+    lastUpdated: null,
+    category: "Tracking & Analytics",
+    serviceSlug: "analytics-tracking",
+    excerpt: "A tracking implementation note about adding call tracking, Google Tag Manager, and Search Console verification to a client-routed static site without duplicating scripts.",
+    problemSummary: "A statically generated site needed a coordinated measurement setup, but an older number-swap loader conflicted with the new call-tracking provider and client-side navigation could skip rescans.",
+    whatIChecked: [
+      "Existing number-swap and booking-form scripts",
+      "Client-side navigation behavior",
+      "Privacy opt-out handling",
+      "Tag-manager head and noscript placement",
+      "Live script duplication and browser console output"
+    ],
+    whatIChanged: [
+      "Added the supplied call-tracking loader sitewide",
+      "Removed the competing number-swap loader while preserving booking forms",
+      "Triggered rescans after client-side route changes",
+      "Added tag-manager consent initialization, noscript fallback, and site verification",
+      "Updated environment documentation and passed the full production build"
+    ],
+    resultSummary: "The site now has coordinated call tracking, tag management, and ownership verification that survives client-side navigation without loading competing number-replacement scripts.",
+    whatToWatchNext: [
+      "Whether container tags assume libraries the site does not use",
+      "Whether future route changes still trigger call-number rescans",
+      "Whether privacy controls stay aligned with new tracking tags"
+    ],
+    toolsUsed: ["CallRail", "Google Tag Manager", "Google Search Console", "Static-site build tooling"],
+    tags: ["Call Tracking", "GTM", "Search Console", "Static Site"],
+    relatedServices: ["analytics-tracking", "technical-seo-implementation", "api-integrations"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "Static Site Tracking Setup Fix Note | The Web Guy",
+    metaDescription: "Short analytics note about adding call tracking, GTM, and Search Console verification to a client-routed static site."
+  },
+  {
+    title: "Replaced an Oversized Booking Embed With a Validated Lead Form",
+    slug: "replaced-oversized-booking-embed-validated-lead-form",
+    date: "2026-09-30",
+    displayDate: "September 30, 2026",
+    lastUpdated: null,
+    category: "API Integrations",
+    serviceSlug: "api-integrations",
+    excerpt: "An API integration note about replacing a long service-page booking embed with a focused lead form, server-side validation, and the site's existing lead workflow.",
+    problemSummary: "A service page was dominated by a long embedded booking form that disrupted the hero and asked for too much information before the visitor had engaged with the service content.",
+    whatIChecked: [
+      "Existing booking and lead-management flow",
+      "Required fields for an initial service inquiry",
+      "Modal behavior on the target service page",
+      "Server validation and error responses",
+      "Responsive layout, consent state, console, and generated routes"
+    ],
+    whatIChanged: [
+      "Replaced the embed with a short name, phone, and email form",
+      "Added an API endpoint and server-side input validation",
+      "Connected successful submissions to the existing lead workflow",
+      "Scoped the compact modal to the intended service page",
+      "Corrected consent initialization and completed lint, type, build, route, and response checks"
+    ],
+    resultSummary: "The page has a shorter conversion path that fits the service experience while retaining server validation and the established lead-management handoff.",
+    whatToWatchNext: [
+      "Whether shorter intake changes lead quality",
+      "Whether validation errors remain clear on mobile",
+      "Whether the receiving workflow changes required fields"
+    ],
+    toolsUsed: ["TypeScript", "API route", "Server-side validation", "Responsive testing"],
+    tags: ["Lead Form", "API", "Validation", "Conversion"],
+    relatedServices: ["api-integrations", "landing-pages", "website-fixes"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "Validated Service Lead Form Fix Note | The Web Guy",
+    metaDescription: "Short API integration note about replacing a large booking embed with a focused validated lead form."
+  },
+  {
+    title: "Centralized Business Data and FAQ Schema During Pull Request Review",
+    slug: "centralized-business-data-faq-schema-pull-request-review",
+    date: "2026-09-25",
+    displayDate: "September 25, 2026",
+    lastUpdated: null,
+    category: "Technical SEO",
+    serviceSlug: "technical-seo-implementation",
+    excerpt: "A technical SEO note about reviewing two related pull requests and consolidating business and FAQ facts so visible content and structured data share one source of truth.",
+    problemSummary: "Business details and FAQ answers were repeated across components and schema, making it easy for the footer, contact page, visible FAQs, and structured data to drift apart.",
+    whatIChecked: [
+      "Business address, hours, coordinates, map data, profile link, and price range",
+      "Footer, contact-page, and LocalBusiness schema output",
+      "Visible homepage FAQ answers and FAQ schema",
+      "Interaction between two independently submitted pull requests",
+      "Static checks and all generated pages"
+    ],
+    whatIChanged: [
+      "Consolidated business facts into a shared site-data object",
+      "Updated the footer, contact page, and LocalBusiness schema to consume the shared data",
+      "Made the visible FAQ section and FAQ schema use the same answer set",
+      "Removed implementation-history comments that no longer helped maintainers",
+      "Tested the changes together, built every page, and merged the pull requests in order"
+    ],
+    resultSummary: "Visible business information and structured data now stay aligned through shared sources instead of duplicate hand-maintained values.",
+    whatToWatchNext: [
+      "Whether new components bypass the shared data object",
+      "Whether FAQ edits update both visible content and schema",
+      "Whether future pull requests reintroduce duplicated facts"
+    ],
+    toolsUsed: ["Astro", "Git", "Structured data testing", "Static-site checks"],
+    tags: ["Structured Data", "FAQ Schema", "Code Review", "Site Data"],
+    relatedServices: ["technical-seo-implementation", "website-fixes", "production-debugging"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "Shared Site Data and FAQ Schema Fix Note | The Web Guy",
+    metaDescription: "Short technical SEO note about centralizing business facts and FAQ answers across visible pages and structured data."
+  },
+  {
+    title: "Built an Accessible Service Page With Custom Imagery and Schema",
+    slug: "built-accessible-service-page-custom-imagery-schema",
+    date: "2026-09-23",
+    displayDate: "September 23, 2026",
+    lastUpdated: null,
+    category: "Landing Pages",
+    serviceSlug: "landing-pages",
+    excerpt: "A landing-page implementation note about turning a service brief into a responsive WordPress draft with custom imagery, clear process content, FAQs, and structured data.",
+    problemSummary: "A new residential service needed a complete review-ready page rather than a thin template, including original visuals, detailed process information, financing context, and accessible mobile behavior.",
+    whatIChecked: [
+      "Service content, FAQs, calls to action, rebates, and financing details",
+      "Service and FAQ schema requirements",
+      "Image relevance, dimensions, formats, loading, and alt text",
+      "Color contrast, keyboard focus, typography, and responsive overflow",
+      "Shared header behavior on desktop and mobile"
+    ],
+    whatIChanged: [
+      "Built the full service-page draft with a six-step process and stronger information hierarchy",
+      "Created and optimized custom WebP service photography",
+      "Added responsive dimensions, lazy loading, and descriptive alt text",
+      "Refined contrast, focus states, typography, process panels, and the savings section",
+      "Corrected shared-header CSS and kept the page unpublished for review"
+    ],
+    resultSummary: "The client received a polished, accessible service-page draft with useful depth, purpose-built imagery, and structured data ready for review before publication.",
+    whatToWatchNext: [
+      "Whether final client edits change schema-visible claims",
+      "Whether the hero image remains the correct loading priority",
+      "Whether shared header changes affect unrelated pages"
+    ],
+    toolsUsed: ["WordPress", "Responsive CSS", "WebP image optimization", "Schema markup"],
+    tags: ["Landing Page", "Accessibility", "WebP", "Schema"],
+    relatedServices: ["landing-pages", "wordpress-support", "technical-seo-implementation"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "Accessible WordPress Service Page Fix Note | The Web Guy",
+    metaDescription: "Short landing-page note about building a responsive WordPress service page with custom WebP imagery, accessibility, FAQs, and schema."
+  },
+  {
+    title: "Published Structured Blog Content With Optimized Featured Images",
+    slug: "published-structured-blog-content-optimized-featured-images",
+    date: "2026-09-27",
+    displayDate: "September 27, 2026",
+    lastUpdated: null,
+    category: "Technical SEO",
+    serviceSlug: "technical-seo-implementation",
+    excerpt: "A content implementation note about converting supplied documents into polished WordPress articles with optimized imagery, metadata, internal links, and live verification.",
+    problemSummary: "Several supplied articles needed to be published in an established WordPress design without losing their source images, SEO fields, categorization, or requested internal-link structure.",
+    whatIChecked: [
+      "Source documents and embedded primary images",
+      "Existing post layout and taxonomy conventions",
+      "Titles, excerpts, metadata, and internal-link requests",
+      "Featured-image sizing, format, and alt text",
+      "Public blog index and final article URLs"
+    ],
+    whatIChanged: [
+      "Duplicated the established post structure for consistent layout",
+      "Extracted source images and converted them to optimized WebP files",
+      "Added article content, titles, excerpts, metadata, categories, and internal links",
+      "Wrote descriptive image alt text",
+      "Verified every article on the live index and at its public URL with cache-bypassing checks"
+    ],
+    resultSummary: "The articles were published in the site's native format with lighter featured images, complete metadata, and verified live placement.",
+    whatToWatchNext: [
+      "Whether future source documents use images large enough for featured placements",
+      "Whether internal targets change after publication",
+      "Whether the blog template introduces new required fields"
+    ],
+    toolsUsed: ["WordPress", "WebP conversion", "Metadata editing", "Live URL verification"],
+    tags: ["WordPress", "Blog Publishing", "Image Optimization", "On-Page SEO"],
+    relatedServices: ["technical-seo-implementation", "wordpress-support", "site-speed-performance"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "Optimized WordPress Blog Publishing Fix Note | The Web Guy",
+    metaDescription: "Short technical SEO note about publishing supplied articles with optimized WebP images, metadata, and internal links."
+  },
+  {
+    title: "Consolidated Conflicting WordPress SEO Plugins",
+    slug: "consolidated-conflicting-wordpress-seo-plugins",
+    date: "2026-09-10",
+    displayDate: "September 10, 2026",
+    lastUpdated: null,
+    category: "Technical SEO",
+    serviceSlug: "technical-seo-implementation",
+    excerpt: "A technical SEO note about importing settings into one supported plugin, removing duplicate output, and cleaning up canonical and internal-link inconsistencies.",
+    problemSummary: "Two SEO plugins were producing overlapping controls and output, while internal links mixed hostname variants and an indexed profile URL retained campaign parameters.",
+    whatIChecked: [
+      "Active SEO plugins and their stored settings",
+      "Page titles, canonical tags, schema, and XML sitemap output",
+      "Internal links using www and non-www hostnames",
+      "Indexed profile URLs with tracking parameters",
+      "Frontend source after the consolidation"
+    ],
+    whatIChanged: [
+      "Imported the existing configuration into the retained SEO plugin",
+      "Removed the conflicting plugin output",
+      "Rechecked metadata, canonicals, schema, and sitemap behavior",
+      "Cleaned up mixed-host internal links and the tracked indexed URL"
+    ],
+    resultSummary: "The site now has one authoritative SEO configuration, cleaner source output, and fewer signals that could send crawlers to duplicate URL variants.",
+    whatToWatchNext: [
+      "Whether theme or plugin updates reintroduce duplicate schema",
+      "Whether search results retire the parameterized URL",
+      "Whether editors add mixed-host links in new content"
+    ],
+    toolsUsed: ["WordPress", "Rank Math", "SEO source review", "Crawl checks"],
+    tags: ["WordPress", "SEO Plugins", "Canonical Tags", "Schema"],
+    relatedServices: ["technical-seo-implementation", "wordpress-support", "production-debugging"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "WordPress SEO Plugin Consolidation Fix Note | The Web Guy",
+    metaDescription: "Short technical SEO note about consolidating duplicate WordPress SEO plugins and validating canonical, schema, and sitemap output."
+  },
+  {
+    title: "Repaired Full-Screen Section Scrolling and Theme Overflow",
+    slug: "repaired-full-screen-section-scrolling-theme-overflow",
+    date: "2026-09-07",
+    displayDate: "September 7, 2026",
+    lastUpdated: null,
+    category: "Website Fixes",
+    serviceSlug: "website-fixes",
+    excerpt: "A website repair note about isolating intermittent missing content and broken scrolling caused by full-screen rows, URL anchors, overflow rules, and overlapping optimization layers.",
+    problemSummary: "Visitors intermittently lost page content or could not scroll through the homepage because several theme behaviors and cache layers were interacting unpredictably.",
+    whatIChecked: [
+      "Full-screen row and URL-anchor behavior",
+      "Row overflow and section-height rules",
+      "Overlapping cache and optimization plugins",
+      "A duplicate homepage used for controlled testing",
+      "Media weight and embedded widget placement"
+    ],
+    whatIChanged: [
+      "Created a controlled duplicate page to isolate theme behavior",
+      "Repaired section scrolling without disrupting the intended page sequence",
+      "Adjusted the embedded proof section placement",
+      "Optimized site media before preparing the repaired version for review"
+    ],
+    resultSummary: "The homepage regained predictable section scrolling and content visibility, with the risky theme interaction isolated before the changes were presented for review.",
+    whatToWatchNext: [
+      "Whether theme updates change full-screen row JavaScript",
+      "Whether another optimization layer rewrites overflow styles",
+      "Whether new sections use incompatible anchor settings"
+    ],
+    toolsUsed: ["WordPress", "Theme settings", "Browser testing", "Image optimization"],
+    tags: ["Scrolling", "Overflow", "WordPress", "Theme Debugging"],
+    relatedServices: ["website-fixes", "wordpress-support", "production-debugging"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "WordPress Full-Screen Scrolling Fix Note | The Web Guy",
+    metaDescription: "Short website repair note about fixing missing content and broken scrolling caused by full-screen rows and overflow behavior."
+  },
+  {
+    title: "Replaced Embedded Hero Forms With an Accessible Booking Modal",
+    slug: "replaced-embedded-hero-forms-accessible-booking-modal",
+    date: "2026-09-14",
+    displayDate: "September 14, 2026",
+    lastUpdated: null,
+    category: "Landing Pages",
+    serviceSlug: "landing-pages",
+    excerpt: "A conversion cleanup note about removing oversized forms from service-page heroes and replacing them with a reusable, keyboard-accessible booking modal.",
+    problemSummary: "Long embedded forms pushed service content down the page, created awkward spacing, and made the booking experience inconsistent across a large generated site.",
+    whatIChecked: [
+      "Shared service-page template and hero spacing",
+      "Existing booking calls to action",
+      "Modal focus, keyboard, close, backdrop, and scroll behavior",
+      "Related-service recommendations",
+      "Homepage, service, and general-content routes"
+    ],
+    whatIChanged: [
+      "Removed the oversized hero form and excess template spacing",
+      "Added a compact globally available booking modal",
+      "Implemented focus trapping, Escape and backdrop close behavior, and internal scrolling",
+      "Connected booking calls to action across the homepage and service pages",
+      "Added persistent mobile and desktop contact actions and verified the production build"
+    ],
+    resultSummary: "The site gained a consistent booking path that preserves more room for service content and remains usable with keyboards and smaller screens.",
+    whatToWatchNext: [
+      "Whether embedded booking-provider changes affect modal height",
+      "Whether all new CTAs use the shared modal trigger",
+      "Whether conversion data improves after the shorter page path"
+    ],
+    toolsUsed: ["Shared templates", "Accessible modal", "Responsive testing", "Production build"],
+    tags: ["Booking Modal", "Accessibility", "Landing Pages", "Conversion"],
+    relatedServices: ["landing-pages", "website-fixes", "api-integrations"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "Accessible Booking Modal Fix Note | The Web Guy",
+    metaDescription: "Short landing-page note about replacing oversized embedded forms with a reusable accessible booking modal."
+  },
+  {
+    title: "Rebuilt a Large Service-Site Image System and Mega Menu",
+    slug: "rebuilt-large-service-site-image-system-mega-menu",
+    date: "2026-09-18",
+    displayDate: "September 18, 2026",
+    lastUpdated: null,
+    category: "Website Fixes",
+    serviceSlug: "website-fixes",
+    excerpt: "A website implementation note about replacing generic imagery across dozens of service pages, rebuilding an additional-services page, and reorganizing a dense mega menu.",
+    problemSummary: "A large service website reused generic visuals, had inconsistent asset filenames, relied on weak fallback images, and presented additional services in a basic list that was hard to scan.",
+    whatIChecked: [
+      "Supplied photos and video assets against available service pages",
+      "Hero, service, location, and supporting-content image placements",
+      "Existing additional-services page and embedded videos",
+      "Mega-menu hierarchy, duplicate links, and parent-link behavior",
+      "Removed-page links, redirects, cache, and mobile presentation"
+    ],
+    whatIChanged: [
+      "Optimized, renamed, matched, and deployed service-specific images across 32 pages",
+      "Removed generic fallbacks and refreshed homepage, hero, footer, service, and location imagery",
+      "Rebuilt the additional-services page with alternating image-and-description sections",
+      "Reorganized the mega menu into clearer service columns with a distinct supporting-services area",
+      "Added redirects for removed pages and verified navigation, links, imagery, and mobile output"
+    ],
+    resultSummary: "The site now uses more credible service-specific photography, presents secondary services as real content, and gives visitors a clearer route through a large service catalog.",
+    whatToWatchNext: [
+      "Whether newly added services receive unique images instead of fallbacks",
+      "Whether menu changes preserve the intended column balance",
+      "Whether removed URLs continue redirecting after platform updates"
+    ],
+    toolsUsed: ["WordPress", "Image optimization", "Menu builder", "Responsive QA"],
+    tags: ["Imagery", "Mega Menu", "Service Pages", "Redirects"],
+    relatedServices: ["website-fixes", "wordpress-support", "landing-pages"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "Service Imagery and Mega Menu Fix Note | The Web Guy",
+    metaDescription: "Short website note about replacing generic service imagery, rebuilding an additional-services page, and reorganizing a mega menu."
+  },
+  {
+    title: "Prepared a Domain Migration Without Dropping the Existing Hostname",
+    slug: "prepared-domain-migration-without-dropping-existing-hostname",
+    date: "2026-09-22",
+    displayDate: "September 22, 2026",
+    lastUpdated: null,
+    category: "Security & Hosting",
+    serviceSlug: "hosting-dns-support",
+    excerpt: "A hosting note about staging a custom-domain cutover, documenting the DNS records, and preserving the old hostname for redirects once ownership changes were ready.",
+    problemSummary: "A deployed static site needed to move to a new primary domain without losing traffic or breaking the still-active domain before the required DNS records were available.",
+    whatIChecked: [
+      "Current hosting and custom-domain configuration",
+      "DNS records required for verification",
+      "Existing-domain preservation and redirect path",
+      "Header and footer social-profile links",
+      "Staging deployment after the supporting site changes"
+    ],
+    whatIChanged: [
+      "Prepared the hosting project for new-domain verification",
+      "Documented the exact DNS work needed before cutover",
+      "Staged the old-domain redirect plan without activating it prematurely",
+      "Added supplied social links and verified the staged deployment"
+    ],
+    resultSummary: "The migration was ready for the external DNS step, while the current domain and live traffic remained intact until the cutover could be completed safely.",
+    whatToWatchNext: [
+      "Whether DNS records are added exactly as documented",
+      "Whether TLS certificates finish provisioning before redirect activation",
+      "Whether canonical URLs, sitemap, analytics, and Search Console need final domain updates"
+    ],
+    toolsUsed: ["Render", "DNS planning", "Static-site deployment", "Redirect planning"],
+    tags: ["Domain Migration", "DNS", "Redirects", "Hosting"],
+    relatedServices: ["hosting-dns-support", "technical-seo-implementation", "production-debugging"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "Domain Migration Preparation Fix Note | The Web Guy",
+    metaDescription: "Short hosting note about preparing a custom-domain cutover while preserving the existing hostname and redirect path."
+  },
+  {
+    title: "Removed a WordPress Backdoor While Separating a WAF Crawl Block",
+    slug: "removed-wordpress-backdoor-separated-waf-crawl-block",
+    date: "2026-09-03",
+    displayDate: "September 3, 2026",
+    lastUpdated: null,
+    category: "Security & Hosting",
+    serviceSlug: "website-security-malware-cleanup",
+    excerpt: "A security cleanup note about distinguishing a real WordPress compromise from a separate hosting firewall problem that was blocking external site-health crawlers.",
+    problemSummary: "A site-health crawl failed while the WordPress installation also contained backdoor code, injected theme scripts, a malicious plugin, and an unauthorized administrator account.",
+    whatIChecked: [
+      "Crawler responses at the hosting and firewall layers",
+      "Theme files, plugins, administrator accounts, and database content",
+      "Known malicious code and persistence patterns",
+      "Post-cleanup WordPress file and database indicators",
+      "Frontend presentation affected by removed compromised files"
+    ],
+    whatIChanged: [
+      "Removed the backdoor code, injected scripts, malicious plugin, and unauthorized account",
+      "Swept the database for remaining indicators",
+      "Verified the WordPress installation after cleanup",
+      "Documented the remaining firewall issue as a separate hosting task",
+      "Repaired footer styling affected by removal of the compromised theme code"
+    ],
+    resultSummary: "The WordPress compromise was cleaned without falsely treating the unrelated firewall crawl block as evidence that malware remained.",
+    whatToWatchNext: [
+      "Whether the hosting provider adjusts the crawler-blocking rule",
+      "Whether file monitoring detects the removed patterns returning",
+      "Whether all administrator credentials and salts have been rotated"
+    ],
+    toolsUsed: ["WordPress", "Database scanning", "File inspection", "WAF diagnostics"],
+    tags: ["WordPress", "Backdoor", "WAF", "Malware Cleanup"],
+    relatedServices: ["website-security-malware-cleanup", "wordpress-support", "technical-seo-implementation"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "WordPress Backdoor and WAF Fix Note | The Web Guy",
+    metaDescription: "Short security note about removing a WordPress compromise while separating an unrelated hosting firewall crawl block."
+  },
+  {
+    title: "Fixed a WordPress Critical Error Caused by a Cache Plugin",
+    slug: "fixed-wordpress-critical-error-caused-cache-plugin",
+    date: "2026-08-18",
+    displayDate: "August 18, 2026",
+    lastUpdated: null,
+    category: "Production Debugging",
+    serviceSlug: "production-debugging",
+    excerpt: "A production support note about restoring CMS access after a caching plugin caused WordPress to show a critical-error screen.",
+    problemSummary: "The WordPress dashboard and site workflow were blocked by a critical error, preventing both the client and content team from working in the CMS.",
+    whatIChecked: [
+      "The critical-error state and available WordPress access",
+      "Recently active performance and cache plugins",
+      "The failing plugin path",
+      "Site behavior after isolating the suspected component"
+    ],
+    whatIChanged: [
+      "Removed the failing cache-plugin path from the active runtime",
+      "Confirmed the site and CMS became available again",
+      "Documented that the removed optimization behavior would need a safer replacement"
+    ],
+    resultSummary: "WordPress access was restored quickly, and the failed optimization layer was isolated instead of leaving the whole site unavailable.",
+    whatToWatchNext: [
+      "Whether a compatible plugin version can be reintroduced safely",
+      "Whether page caching needs a replacement before traffic peaks",
+      "Whether error logs reveal a broader compatibility problem"
+    ],
+    toolsUsed: ["WordPress", "Plugin isolation", "Error diagnosis", "Live verification"],
+    tags: ["WordPress", "Critical Error", "Caching", "Plugin Conflict"],
+    relatedServices: ["production-debugging", "wordpress-support", "site-speed-performance"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "WordPress Cache Plugin Critical Error Fix Note | The Web Guy",
+    metaDescription: "Short production support note about restoring WordPress after a caching plugin caused a critical error."
+  },
+  {
+    title: "Rebuilt Static WordPress Caching Across Hundreds of URLs",
+    slug: "rebuilt-static-wordpress-caching-hundreds-urls",
+    date: "2026-08-03",
+    displayDate: "August 3, 2026",
+    lastUpdated: null,
+    category: "Page Speed",
+    serviceSlug: "site-speed-performance",
+    excerpt: "A performance engineering note about moving fixes into a child theme and must-use plugin, rebuilding static caching, and verifying hundreds of production URLs without stale-host leaks.",
+    problemSummary: "A WordPress site had inconsistent output across live, local, staging, and cached production copies, including old host references, layout shifts, duplicate schema, and cache files that could be regenerated stale.",
+    whatIChecked: [
+      "Live, local, staging, and production layouts and assets",
+      "Browser traces, console output, cache behavior, and page paint",
+      "Database host references, canonical URLs, and schema duplication",
+      "Header, hero, form, font, and embedded-widget behavior",
+      "Every production URL selected for static-cache generation"
+    ],
+    whatIChanged: [
+      "Built a child theme and must-use performance plugin so fixes lived in versionable files",
+      "Added critical CSS, layout-stability rules, delayed noncritical scripts, and asset protections",
+      "Reworked purge and rebuild controls to avoid writing stale or redirected pages",
+      "Normalized old environment URLs and removed duplicate LocalBusiness-style schema",
+      "Rebuilt 278 production cache files with no failures and removed temporary deployment tools"
+    ],
+    resultSummary: "Production gained deterministic static caching, cleaner rendered output, safer admin controls, and a verified cache set covering all 278 intended URLs.",
+    whatToWatchNext: [
+      "Whether content saves purge only the affected cache paths",
+      "Whether new plugins reintroduce old hostnames or duplicate schema",
+      "Whether delayed third-party scripts remain compatible with lead forms"
+    ],
+    toolsUsed: ["WordPress", "Child theme", "MU plugin", "Chrome performance traces"],
+    tags: ["Static Cache", "WordPress", "Performance", "Production QA"],
+    relatedServices: ["site-speed-performance", "wordpress-support", "production-debugging"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "WordPress Static Cache Rebuild Fix Note | The Web Guy",
+    metaDescription: "Short performance note about rebuilding safe static WordPress caching and verifying hundreds of production URLs."
+  },
+  {
+    title: "Built a Production-Ready Static Service Website in Astro",
+    slug: "built-production-ready-static-service-website-astro",
+    date: "2026-07-22",
+    displayDate: "July 22, 2026",
+    lastUpdated: null,
+    category: "Landing Pages",
+    serviceSlug: "landing-pages",
+    excerpt: "A website build note about turning approved mockups into a reusable Astro site with service templates, local pages, structured data, optimized assets, and deployment guardrails.",
+    problemSummary: "A new local-service brand needed a complete fast website that matched the approved design while remaining reusable across services, locations, articles, legal pages, and future content changes.",
+    whatIChecked: [
+      "Approved homepage structure and brand direction",
+      "Required service, service-area, blog, contact, legal, and utility routes",
+      "Shared business data, templates, navigation, calls to action, and schema",
+      "Asset orientation, formats, dimensions, alt text, and deployment paths",
+      "Desktop, mobile, staging, indexing, and production deployment behavior"
+    ],
+    whatIChanged: [
+      "Built reusable Astro components and data-driven service and location templates",
+      "Centralized site data, metadata, canonical rules, sitemap generation, and staging noindex controls",
+      "Implemented the full route set with local copy, FAQs, internal links, and structured data",
+      "Created optimized responsive image variants and corrected weak or broken visuals",
+      "Completed full-page visual QA and production polish before deployment"
+    ],
+    resultSummary: "The project became a production-ready static website with a consistent design system, reusable content architecture, local SEO support, and verified responsive output.",
+    whatToWatchNext: [
+      "Whether editors keep shared facts in the centralized data source",
+      "Whether new routes are included in sitemap and internal navigation",
+      "Whether production-only asset paths remain correct after hosting changes"
+    ],
+    toolsUsed: ["Astro", "Structured data", "Responsive image pipeline", "Render"],
+    tags: ["Astro", "Static Site", "Local SEO", "Design System"],
+    relatedServices: ["landing-pages", "technical-seo-implementation", "site-speed-performance"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "Astro Service Website Build Fix Note | The Web Guy",
+    metaDescription: "Short website build note about creating a production-ready Astro service site with reusable templates, local pages, schema, and optimized assets."
+  },
+  {
+    title: "Expanded Local Pages With Consistent FAQs and Structured Data",
+    slug: "expanded-local-pages-consistent-faqs-structured-data",
+    date: "2026-07-20",
+    displayDate: "July 20, 2026",
+    lastUpdated: null,
+    category: "Technical SEO",
+    serviceSlug: "technical-seo-implementation",
+    excerpt: "A local SEO implementation note about expanding dozens of state and clinic pages with unique local content, linked service sections, consistent FAQ behavior, and page-specific schema.",
+    problemSummary: "A multi-location site had thin or inconsistent local pages, generic internal links, duplicated editor content, and FAQ markup that behaved differently from one page to another.",
+    whatIChecked: [
+      "Supplied spreadsheet changes and page-specific review notes",
+      "State, city, clinic, condition, and treatment page relationships",
+      "Local landmarks, neighborhoods, roads, universities, and nearby communities",
+      "Internal links, ACF-controlled content, FAQs, forms, and schema",
+      "Final page count, wrapper cleanliness, and consistent accordion behavior"
+    ],
+    whatIChanged: [
+      "Expanded local copy and corrected service and condition links",
+      "Added linked clinic and treatment sections plus ten-question local FAQs",
+      "Implemented MedicalOrganization, MedicalClinic, ItemList, and FAQPage schema where appropriate",
+      "Removed duplicate editor content when custom fields already controlled the output",
+      "Standardized accordion CSS and JavaScript and verified a 42-page final sweep"
+    ],
+    resultSummary: "The local page set became more useful and internally connected, with consistent FAQs and structured data across 42 reviewed pages.",
+    whatToWatchNext: [
+      "Whether newly added locations follow the same schema and FAQ pattern",
+      "Whether local claims stay accurate as clinics and service offerings change",
+      "Whether internal links keep pointing to the most specific relevant pages"
+    ],
+    toolsUsed: ["WordPress", "ACF", "Schema markup", "Bulk page QA"],
+    tags: ["Local SEO", "FAQ Schema", "Internal Linking", "Location Pages"],
+    relatedServices: ["technical-seo-implementation", "wordpress-support", "landing-pages"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "Local Page FAQ and Schema Fix Note | The Web Guy",
+    metaDescription: "Short technical SEO note about expanding 42 local pages with unique content, internal links, FAQs, and structured data."
+  },
+  {
+    title: "Turned a Shopify Speed Audit Into a Verified Theme Release",
+    slug: "turned-shopify-speed-audit-verified-theme-release",
+    date: "2026-07-18",
+    displayDate: "July 18, 2026",
+    lastUpdated: null,
+    category: "Page Speed",
+    serviceSlug: "ecommerce-support",
+    excerpt: "A Shopify performance note about reconciling work against the current theme, delaying noncritical apps, improving responsive image priority, and publishing only after measured staging QA.",
+    problemSummary: "Performance work had started against an older theme while app embeds, third-party scripts, blocking styles, and image priorities continued to affect the live storefront.",
+    whatIChecked: [
+      "Current theme Liquid, snippets, sections, templates, and app embeds",
+      "JavaScript and CSS loading, hero images, product galleries, and delivery scripts",
+      "Product and cart behavior after each optimization",
+      "Representative homepage, collection, product, content, and local landing pages",
+      "Mobile and desktop Lighthouse runs, Chrome traces, screenshots, and sitemap status"
+    ],
+    whatIChanged: [
+      "Reapplied the performance work to the client's current theme",
+      "Delayed noncritical support, promotion, and proof widgets until appropriate visitor intent",
+      "Made stylesheet delivery less blocking and improved responsive image output and fetch priority",
+      "Preserved preview, product, cart, and delivery behavior through repeated QA",
+      "Published after approval, retained a rollback theme, and delivered a measured performance report"
+    ],
+    resultSummary: "Average mobile performance rose from 32 to 65 and desktop from about 81 to 95, while all 5,494 checked sitemap URLs returned successfully and the client retained a documented rollback path.",
+    whatToWatchNext: [
+      "Whether new app embeds add blocking work back to the theme",
+      "Whether future theme merges preserve responsive image and loading changes",
+      "Whether product and cart scripts remain stable after app updates"
+    ],
+    toolsUsed: ["Shopify Liquid", "Lighthouse", "Chrome traces", "Visual regression screenshots"],
+    tags: ["Shopify", "Page Speed", "Theme Release", "Core Web Vitals"],
+    relatedServices: ["ecommerce-support", "site-speed-performance", "technical-seo-implementation"],
+    screenshot: null,
+    screenshotAlt: null,
+    metaTitle: "Shopify Performance Release Fix Note | The Web Guy",
+    metaDescription: "Short Shopify note about turning a speed audit into a measured theme release with staging QA and rollback support."
+  },
+  {
     title: "Built an Admin-Only WordPress CRM for Estimate Intake",
     slug: "built-admin-only-wordpress-crm-estimate-intake",
     date: "2026-07-13",

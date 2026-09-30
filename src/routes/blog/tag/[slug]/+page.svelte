@@ -80,7 +80,7 @@
   <CtaBand
     heading={`Need help with ${tag.label.toLowerCase()} issues?`}
     copy="Send the URL, what is broken, what should happen instead, and any recent changes."
-    label="Fix My Web Problem"
+    label="Get a Free Quote"
     secondaryLabel="View Blog"
     secondaryHref="/blog/"
   />

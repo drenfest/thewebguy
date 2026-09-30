@@ -1,3 +1,4 @@
+import { aiDevelopmentPages, aiDevelopmentUrl } from "$lib/data/ai-development.js";
 import {
   blogCategories,
   blogCategoryUrl,
@@ -25,6 +26,8 @@ export function GET() {
   const urls = [
     "/",
     "/services/",
+    "/ai-development/",
+    ...aiDevelopmentPages.map(service => aiDevelopmentUrl(service.slug)),
     ...servicePages.map((service) => serviceUrl(service.slug)),
     "/blog/",
     ...blogCategories.map((category) => blogCategoryUrl(category.slug)),

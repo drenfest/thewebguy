@@ -53,19 +53,11 @@ function listItem(item, index, itemType = "WebPage") {
   };
 }
 
-function hourlyOffer(path) {
+function quoteOffer(path) {
   return {
     "@type": "Offer",
-    price: "90",
-    priceCurrency: "USD",
-    availability: "https://schema.org/InStock",
     url: absoluteUrl(path),
-    priceSpecification: {
-      "@type": "UnitPriceSpecification",
-      price: "90",
-      priceCurrency: "USD",
-      unitText: "HOUR"
-    }
+    description: "Request a free quote. Paid work begins after scope and cost are agreed."
   };
 }
 
@@ -80,7 +72,6 @@ export function organizationSchema() {
     logo: absoluteUrl("/android-chrome-512x512.png"),
     image: absoluteUrl("/og-image.png"),
     description: site.description,
-    priceRange: site.rate,
     areaServed: areaServed(),
     knowsAbout: coreTopics
   };
@@ -132,9 +123,7 @@ export function offerCatalogSchema({ id = "/services/", name = "Website support 
         url: absoluteUrl(service.path),
         provider: { "@id": PROVIDER_ID }
       },
-      price: "90",
-      priceCurrency: "USD",
-      availability: "https://schema.org/InStock",
+      description: "Request a free quote for the agreed scope of work.",
       url: absoluteUrl(service.path)
     }))
   };
@@ -197,7 +186,7 @@ export function serviceSchema(service, path) {
     url: absoluteUrl(path),
     provider: { "@id": PROVIDER_ID },
     areaServed: areaServed(),
-    offers: hourlyOffer(path)
+    offers: quoteOffer(path)
   };
 }
 
@@ -232,7 +221,7 @@ export function skillPageSchema(skill, path) {
       url: absoluteUrl(path),
       provider: { "@id": PROVIDER_ID },
       areaServed: areaServed(),
-      offers: hourlyOffer(path)
+      offers: quoteOffer(path)
     },
     {
       "@context": "https://schema.org",
@@ -256,7 +245,7 @@ export function locationServiceSchema(location, path) {
     url: absoluteUrl(path),
     provider: { "@id": PROVIDER_ID },
     areaServed: areaServed([`${location.city}, ${location.state}`]),
-    offers: hourlyOffer(path)
+    offers: quoteOffer(path)
   };
 }
 

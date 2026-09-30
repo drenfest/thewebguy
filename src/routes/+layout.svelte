@@ -2,9 +2,9 @@
   import { onMount } from "svelte";
   import Header from "$lib/components/Header.svelte";
   import Footer from "$lib/components/Footer.svelte";
+  import GoogleAnalytics from "$lib/components/GoogleAnalytics.svelte";
   import "../app.css";
 
-  let GoogleAnalyticsComponent = $state(null);
   let ExitIntentPromptComponent = $state(null);
   let MotionObserverComponent = $state(null);
   let TawkLiveChatComponent = $state(null);
@@ -17,8 +17,7 @@
     let loadTimer;
 
     async function loadDeferredLayout() {
-      const [googleAnalytics, exitIntentPrompt, motionObserver, tawkLiveChat, topologyBridge] = await Promise.all([
-        import("$lib/components/GoogleAnalytics.svelte"),
+      const [exitIntentPrompt, motionObserver, tawkLiveChat, topologyBridge] = await Promise.all([
         import("$lib/components/ExitIntentPrompt.svelte"),
         import("$lib/components/MotionObserver.svelte"),
         import("$lib/components/TawkLiveChat.svelte"),
@@ -27,7 +26,6 @@
 
       if (cancelled) return;
 
-      GoogleAnalyticsComponent = googleAnalytics.default;
       ExitIntentPromptComponent = exitIntentPrompt.default;
       MotionObserverComponent = motionObserver.default;
       TawkLiveChatComponent = tawkLiveChat.default;
@@ -54,9 +52,7 @@
 </script>
 
 <Header />
-{#if GoogleAnalyticsComponent}
-  <GoogleAnalyticsComponent />
-{/if}
+<GoogleAnalytics />
 {#if ExitIntentPromptComponent}
   <ExitIntentPromptComponent />
 {/if}

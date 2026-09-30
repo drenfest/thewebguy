@@ -123,7 +123,7 @@
       copy: `Hourly WordPress, SEO, tracking, website fixes, and webmaster support for businesses in and around ${location.city}.`,
       bullets: [
         "Local-friendly city page",
-        "Remote-friendly support at $90/hr",
+        "Remote-friendly support",
         "Routes into WordPress, fixes, SEO, tracking, and webmaster help"
       ],
       href: locationUrl(location.slug),
@@ -134,7 +134,7 @@
 
 <Seo
   title="Local Website Support Near Freeport, IL | The Web Guy"
-  description="Local-friendly hourly website support near Freeport, IL for WordPress, website fixes, technical SEO, landing pages, tracking, ecommerce, and webmaster help at $90/hr."
+  description="Local-friendly hourly website support near Freeport, IL for WordPress, website fixes, technical SEO, landing pages, tracking, ecommerce, and webmaster help."
   schema={seoSchema}
 />
 
@@ -142,7 +142,7 @@
   <Hero
     eyebrow="Local website support service area"
     h1="Local Website Support Near Freeport, IL"
-    intro="The Web Guy provides local-friendly and remote-friendly website support for businesses near Freeport, IL and surrounding cities. Hourly web help starts at $90/hr."
+    intro="The Web Guy provides local-friendly and remote-friendly website support for businesses near Freeport, IL and surrounding cities. Start with a free quote for the work you need."
     cta="Request Local Web Support"
     image={staticHeroImages.locations}
   />
@@ -159,8 +159,8 @@
       <InternalLinkCopy paragraphs={locationHubInlineParagraphs} />
     </div>
     <div class="rate-callout">
-      <span>Contract rate</span>
-      <strong>$90/hr</strong>
+      <span>Start with your project</span>
+      <strong>Free quote</strong>
       <p>Available for one-time fixes, monthly support, agency overflow, technical cleanup, and web platform support.</p>
     </div>
   </section>

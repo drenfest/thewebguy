@@ -126,7 +126,20 @@
 
       <article class="metric-panel">
         <h3>{site.searchConsole.label}</h3>
-        <strong class="metric-emphasis">{site.searchConsole.value}</strong>
+        {#if site.searchConsole.snapshot}
+          <p class="snapshot-period">{site.searchConsole.snapshot.periodLabel}</p>
+          <dl class="search-metrics">
+            {#each site.searchConsole.metrics as [label, value]}
+              <div>
+                <dt>{label}</dt>
+                <dd>{value}</dd>
+              </div>
+            {/each}
+          </dl>
+          <p class="snapshot-meta">Snapshot captured <time datetime={site.searchConsole.snapshot.capturedDate}>{site.searchConsole.snapshot.capturedLabel}</time></p>
+        {:else}
+          <strong class="metric-emphasis">{site.searchConsole.value}</strong>
+        {/if}
         <p>{site.searchConsole.detail}</p>
       </article>
 
@@ -179,6 +192,42 @@
 </main>
 
 <style>
+  .metric-panel .snapshot-period {
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+  }
+
+  .metric-panel .snapshot-meta {
+    margin-bottom: 0.8rem;
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+  }
+
+  .search-metrics {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin: 0 0 0.9rem;
+  }
+
+  .search-metrics div {
+    padding: 0.8rem 0.9rem;
+    border-radius: 1rem;
+    background: rgba(10, 31, 40, 0.05);
+  }
+
+  .search-metrics dt {
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+  }
+
+  .search-metrics dd {
+    margin: 0.3rem 0 0;
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.05;
+  }
+
   .sale-hero {
     display: grid;
     grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);

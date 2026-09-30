@@ -22,7 +22,7 @@
     className="summary-link-grid summary-link-grid--compact"
     items={related.map((item) => ({
       label: item.eyebrow,
-      title: item.h1.replace(" at $90/hr", ""),
+      title: item.h1,
       copy: item.intro,
       bullets: bulletsFor(item),
       href: serviceUrl(item.slug),

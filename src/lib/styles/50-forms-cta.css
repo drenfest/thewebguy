@@ -872,3 +872,8 @@ select:focus {
   color: var(--accent-dark);
   font-weight: 800;
 }
+/* The quote form is a primary destination. Do not estimate heights above its anchor. */
+main.contact-page > section, main.contact-page > nav {
+  content-visibility: visible;
+  contain-intrinsic-size: none;
+}

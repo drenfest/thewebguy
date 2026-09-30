@@ -67,7 +67,7 @@ export function serviceTopicalItems(service, relatedServices = [], relatedSkills
     },
     ...relatedServices.slice(0, 3).map((related) => ({
       label: "Related service",
-      title: related.h1.replace(" at $90/hr", ""),
+      title: related.h1,
       copy: `${service.eyebrow} often overlaps with ${related.eyebrow.toLowerCase()} when the work touches the same site, template, tracking, or technical backlog.`,
       href: serviceUrl(related.slug)
     })),
@@ -89,7 +89,7 @@ export function serviceContextualSupportItems(service, relatedServices = [], rel
       copy: skill.connection
     })),
     ...relatedServices.slice(0, 2).map((related) => ({
-      title: related.h1.replace(" at $90/hr", ""),
+      title: related.h1,
       href: serviceUrl(related.slug),
       titleAttr: `View ${related.eyebrow} from ${service.eyebrow}`,
       copy: related.intro
@@ -133,7 +133,7 @@ export function skillTopicalItems(skill, relatedServiceCards = [], relatedSkills
     },
     ...relatedServiceCards.slice(0, 3).map((service) => ({
       label: "Service connection",
-      title: service.h1.replace(" at $90/hr", ""),
+      title: service.h1,
       copy: `${skill.eyebrow} usually becomes useful during ${service.eyebrow.toLowerCase()}, especially when implementation has to happen inside an existing website.`,
       href: serviceUrl(service.slug)
     })),
@@ -149,7 +149,7 @@ export function skillTopicalItems(skill, relatedServiceCards = [], relatedSkills
 export function skillContextualSupportItems(skill, relatedServiceCards = [], relatedSkills = []) {
   return [
     ...relatedServiceCards.slice(0, 3).map((service) => ({
-      title: service.h1.replace(" at $90/hr", ""),
+      title: service.h1,
       href: serviceUrl(service.slug),
       titleAttr: `View ${service.eyebrow} from ${skill.eyebrow}`,
       copy: `${skill.eyebrow} usually matters here when the work needs to become a finished site change instead of a technical note.`
@@ -189,7 +189,7 @@ export function locationTopicalItems(location, relatedServices = [], relatedSkil
     },
     ...relatedServices.slice(0, 3).map((service) => ({
       label: `${location.city} service fit`,
-      title: service.h1.replace(" at $90/hr", ""),
+      title: service.h1,
       copy: `${location.city}-area sites often need ${service.eyebrow.toLowerCase()} when local pages, lead forms, tracking, or platform cleanup are part of the work.`,
       href: serviceUrl(service.slug)
     })),
@@ -211,7 +211,7 @@ export function locationContextualSupportItems(location, nearbyLocations = [], r
       copy: `for nearby regional context when the visitor is comparing local-friendly website support around ${location.city}.`
     })),
     ...relatedServices.slice(0, 2).map((service) => ({
-      title: service.h1.replace(" at $90/hr", ""),
+      title: service.h1,
       href: serviceUrl(service.slug),
       titleAttr: `View ${service.eyebrow} for ${location.city}, ${location.state}`,
       copy: `${location.city}-area sites often need this when local pages, forms, tracking, platform cleanup, or SEO implementation become part of the request.`

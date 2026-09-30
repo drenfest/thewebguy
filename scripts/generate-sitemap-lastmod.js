@@ -1,6 +1,7 @@
 import { existsSync, mkdirSync, statSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
+import { aiDevelopmentPages, aiDevelopmentUrl } from "../src/lib/data/ai-development.js";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const contentModule = await import(pathToFileURL(resolve(root, "src/lib/data/content.js")).href);
@@ -51,6 +52,10 @@ function add(map, url, paths) {
 }
 
 const lastmod = {};
+add(lastmod, "/ai-development/", ["src/routes/ai-development/+page.svelte", "src/lib/data/ai-development.js"]);
+for (const service of aiDevelopmentPages) {
+  add(lastmod, aiDevelopmentUrl(service.slug), ["src/routes/ai-development/[slug]/+page.svelte", "src/lib/data/ai-development.js"]);
+}
 
 add(lastmod, "/", ["src/routes/+page.svelte", coreServicesDataPath]);
 add(lastmod, "/services/", ["src/routes/services/+page.svelte", coreServicesDataPath, keywordServicesDataPath]);

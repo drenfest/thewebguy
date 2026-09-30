@@ -2,6 +2,27 @@ export function siteForSaleUrl(slug) {
   return `/sites-for-sale/${slug}/`;
 }
 
+// Live Search Console CSV export captured September 30, 2026.
+// Totals are summed from Chart.csv, not the privacy-filtered query table.
+// Average position is the aggregate displayed by Search Console.
+// Local source: reports/demo-snapshots/2026-09-30/
+const hammernestSearchSnapshot = {
+  property: "sc-domain:hammernest.net",
+  searchType: "Web",
+  capturedDate: "2026-09-30",
+  capturedLabel: "September 30, 2026",
+  startDate: "2026-09-01",
+  endDate: "2026-09-28",
+  periodLabel: "September 1–28, 2026 · 28 days",
+  clicks: 5,
+  impressions: 1844,
+  averagePosition: 25.8
+};
+
+const hammernestImpressions = hammernestSearchSnapshot.impressions.toLocaleString("en-US");
+const hammernestCtr = `${(100 * hammernestSearchSnapshot.clicks / hammernestSearchSnapshot.impressions).toFixed(2)}%`;
+const hammernestAskingPrice = "Early acquisition from $4,800";
+
 export const sitesForSale = [
   {
     slug: "hammernest-handyman",
@@ -12,11 +33,11 @@ export const sitesForSale = [
     status: "In Progress",
     statusSlug: "in-progress",
     isAvailable: true,
-    askingPrice: "Early acquisition from $4,800",
+    askingPrice: hammernestAskingPrice,
     liveUrl: "https://hammernest.net/",
     liveLabel: "Visit Live Site",
     market: "Freeport, IL and nearby handyman market",
-    availabilityNote: "Now live on hammernest.net, with public history just starting to compound while the asset is still available for acquisition.",
+    availabilityNote: "Live on hammernest.net and available for acquisition, with a dated Search Console snapshot showing its early search visibility.",
     cardSummary: "A live handyman brand with service hubs, local pages, estimate intake, CRM tracking, and a real public launch already in place.",
     heroSummary:
       "A complete local handyman website asset built to become a lead-generation system, not just a brochure. The sale includes the structure, content depth, CRM intake, tracking layer, and technical base that would normally take a buyer weeks to assemble from scratch.",
@@ -50,8 +71,15 @@ export const sitesForSale = [
     },
     searchConsole: {
       label: "Search Console",
-      value: "Live, history still early",
-      detail: "HammerNest is now live, but Search Console history is still too new to use as meaningful sales proof."
+      value: `${hammernestImpressions} impressions · ${hammernestSearchSnapshot.clicks} clicks`,
+      detail: "Google web search totals for hammernest.net. These are search impressions and clicks, not verified leads or customers. This is a saved snapshot of early search visibility, not a continuously updating report.",
+      snapshot: hammernestSearchSnapshot,
+      metrics: [
+        ["Search clicks", String(hammernestSearchSnapshot.clicks)],
+        ["Impressions", hammernestImpressions],
+        ["Click-through rate", hammernestCtr],
+        ["Average position", String(hammernestSearchSnapshot.averagePosition)]
+      ]
     },
     traffic: {
       label: "Traffic / leads",
@@ -60,9 +88,9 @@ export const sitesForSale = [
     },
     lastOptimizationDate: "July 24, 2026",
     proofBar: [
-      ["Asking price", "Early acquisition from $4,800"],
+      ["Asking price", hammernestAskingPrice],
       ["Current state", "In Progress"],
-      ["Search visibility", "Live, early history"],
+      ["Search impressions · Sep 1–28", hammernestImpressions],
       ["Lead backend", "CRM + local tracking"],
       ["Lighthouse", "98 / 100 / 100 / 100"],
       ["Last optimization", "July 24, 2026"]

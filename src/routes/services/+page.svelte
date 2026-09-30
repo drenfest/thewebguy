@@ -106,7 +106,7 @@
   function summaryForService(service, label = service.eyebrow) {
     return {
       label,
-      title: service.h1.replace(" at $90/hr", ""),
+      title: service.h1,
       copy: service.intro,
       bullets: serviceSummaryBullets[service.slug] || [
         service.keywordCluster || service.eyebrow,
@@ -199,7 +199,7 @@
 </script>
 
 <Seo
-  title="Website Services at $90/hr | The Web Guy"
+  title="Website Services | The Web Guy"
   description="Explore contract website services from The Web Guy, including WordPress support, technical SEO implementation, landing pages, site speed, tracking, ecommerce, and agency overflow."
   schema={seoSchema}
 />
@@ -208,11 +208,16 @@
   <Hero
     eyebrow="Contract website services"
     h1="Contract Website Services for WordPress, SEO, Tracking, and Site Fixes"
-    intro="Practical contract web support at $90/hr for businesses, agencies, ecommerce stores, SEO teams, and overloaded marketing teams that need useful website work done."
+    intro="Practical contract web support for businesses, agencies, ecommerce stores, SEO teams, and overloaded marketing teams that need useful website work done."
     image={staticHeroImages.services}
   />
 
   <Breadcrumbs items={breadcrumbs} />
+
+  <section class="section split-section soft-section">
+    <div><SectionHeading eyebrow="AI Development Oversight" h2="Using AI to Build or Change Your Website?" body="Add experienced engineering review around the work. Start with a code review, pre-launch QA, production oversight, or practical guardrails for your team." /></div>
+    <div><a class="button button-primary" href="/ai-development/">Explore AI Development</a><p>Free quote. Review and implementation are paid work with scope agreed first.</p></div>
+  </section>
 
   <section class="section section-effect section-effect--hex section-effect--medium">
     <SectionHeading
@@ -295,12 +300,12 @@
       <a class="text-link" href="/services/agency-overflow/" title="View agency overflow web support">View agency overflow</a>
     </div>
     <div>
-      <SectionHeading eyebrow="For business owners" h2="A practical web helper for annoying site problems" body="Use hourly support when the website is broken, outdated, slow, hard to update, not tracking correctly, or sitting on a backlog of small-but-important tasks." />
-      <a class="text-link" href="/rate/" title="View the $90/hr contract rate">See the $90/hr rate</a>
+      <SectionHeading eyebrow="For business owners" h2="A practical web helper for annoying site problems" body="Get developer help when the website is broken, outdated, slow, hard to update, not tracking correctly, or sitting on a backlog of small-but-important tasks." />
+      <a class="text-link" href="/rate/" title="View the website quote process">See the quote process</a>
     </div>
   </section>
 
-  <CtaBand heading="Not sure which service fits?" copy="Send the URL and the messy version of the problem. The right service category is usually obvious once the site is reviewed." label="Fix My Web Problem" />
+  <CtaBand heading="Not sure which service fits?" copy="Send the URL and the messy version of the problem. I will ask any questions needed to confirm fit and quote the next step." label="Get a Free Quote" />
 
   <section class="section soft-section split-section section-effect section-effect--signals section-effect--low">
     <div>
@@ -308,9 +313,9 @@
       <a class="text-link" href="/services/ecommerce-support/" title="View ecommerce website support">View ecommerce support</a>
     </div>
     <div class="rate-callout">
-      <span>Contract rate</span>
-      <strong>$90/hr</strong>
-      <p>Clear hourly help for practical website work, technical cleanup, and support tasks.</p>
+      <span>Start with your project</span>
+      <strong>Free quote</strong>
+      <p>Agree the scope and cost for your website work before it starts.</p>
     </div>
   </section>
 </main>

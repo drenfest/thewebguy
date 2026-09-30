@@ -1,5 +1,5 @@
 export const faqs = [
-  ["What do you charge?", "The Web Guy charges $90/hr for contract website help. The rate is a fit for quick fixes, small projects, ongoing webmaster support, SEO implementation, and agency overflow.", "/rate/"],
+  ["What do you charge?", "Start with a free quote. Send the website, the problem or goal, and your timeline. I will confirm the scope and cost before you decide whether to go ahead.", "/rate/"],
   ["Do you work with agencies?", "Yes. Agencies can use The Web Guy for WordPress production, SEO implementation, landing pages, QA cleanup, technical fixes, tracking, and overflow work.", "/services/agency-overflow/"],
   ["Do you work white-label?", "White-label friendly support can make sense for production tasks where expectations, access, communication, and ownership are clear.", "/services/agency-overflow/"],
   ["Do you work with WordPress?", "Yes. WordPress support includes themes, child themes, Elementor, page builders, plugins, PHP templates, CSS, JavaScript, SEO implementation, speed, and cleanup.", "/services/wordpress-support/"],
@@ -21,5 +21,5 @@ export const faqs = [
   ["Do you offer monthly support?", "Yes. Ongoing webmaster support is available hourly for recurring updates, fixes, SEO tasks, tracking, cleanup, and technical site work.", "/services/ongoing-webmaster-support/"],
   ["Do you do design?", "The Web Guy can make pages cleaner, more usable, and conversion-focused, especially for service pages and landing pages. Full brand strategy from scratch is not the core offer.", "/services/landing-pages/"],
   ["How do I send a request?", "Use the contact page. Send the URL, what needs fixed or built, timeline, and whether it is one-time or ongoing.", "/contact/"],
-  ["What happens after I contact you?", "The Web Guy reviews the request, asks any needed questions, identifies the best first move, and can start hourly work if the fit is clear.", "/contact/"]
+  ["What happens after I contact you?", "The Web Guy reviews the request, asks any needed questions, identifies the best first move, and quotes a next step for approval if the fit is clear.", "/contact/"]
 ];

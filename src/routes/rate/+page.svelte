@@ -4,177 +4,45 @@
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
   import SectionHeading from "$lib/components/SectionHeading.svelte";
   import CardGrid from "$lib/components/CardGrid.svelte";
+  import FaqList from "$lib/components/FaqList.svelte";
   import CtaBand from "$lib/components/CtaBand.svelte";
-  import TopicalLinks from "$lib/components/TopicalLinks.svelte";
-  import ContextualSupport from "$lib/components/ContextualSupport.svelte";
-  import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
-  import SortableTable from "$lib/components/SortableTable.svelte";
-  import { servicePages } from "$lib/data/content.js";
   import { staticHeroImages } from "$lib/data/hero-images.js";
-  import { breadcrumbSchema, schemaList, serviceCatalogFromPages } from "$lib/data/schema.js";
-
-  const breadcrumbs = [
-    { label: "Home", href: "/", title: "View The Web Guy homepage" },
-    { label: "Rate", title: "Current page: Contract website help at $90/hr" }
-  ];
-  const seoSchema = schemaList(
-    breadcrumbSchema(breadcrumbs, "/rate/"),
-    serviceCatalogFromPages(servicePages, "/rate/")
-  );
-
-  const rateTopicalLinks = [
-    {
-      label: "Quick fix fit",
-      title: "Website Fixes",
-      href: "/services/website-fixes/",
-      copy: "Use hourly support for broken layouts, JavaScript bugs, forms, modals, embeds, tracking scripts, and visible site problems."
-    },
-    {
-      label: "CMS fit",
-      title: "WordPress Support",
-      href: "/services/wordpress-support/",
-      copy: "Use hourly support for themes, plugins, page builders, PHP templates, CSS, JavaScript, redirects, metadata, and content cleanup."
-    },
-    {
-      label: "SEO fit",
-      title: "Technical SEO Implementation",
-      href: "/services/technical-seo-implementation/",
-      copy: "Use hourly support when audit notes, crawl issues, schema, headings, redirects, and internal links need actual site changes."
-    },
-    {
-      label: "Page build fit",
-      title: "Landing Pages",
-      href: "/services/landing-pages/",
-      copy: "Use hourly support for service pages, campaign pages, local pages, forms, CTAs, tracking, responsive cleanup, and launch checks."
-    },
-    {
-      label: "Team support fit",
-      title: "Agency Overflow",
-      href: "/services/agency-overflow/",
-      copy: "Use hourly support when an agency or marketing team needs practical production help without adding a full-time hire."
-    },
-    {
-      label: "Request fit",
-      title: "Contact",
-      href: "/contact/",
-      copy: "Use the request form when you know the URL, task list, timeline, and whether the work is one-time or ongoing."
-    }
-  ];
-  const rateContextualItems = rateTopicalLinks.slice(0, 5).map((item) => ({
-    title: item.title,
-    href: item.href,
-    titleAttr: `View ${item.title} from the contract rate page`,
-    copy: item.copy
-  }));
-  const rateInlineParagraphs = [
-    [
-      "Hourly support fits best when the request is specific: ",
-      { text: "Website Fixes", href: "/services/website-fixes/", title: "View website fixes for broken layouts, scripts, forms, embeds, and website bugs" },
-      " for visible problems, ",
-      { text: "WordPress Support", href: "/services/wordpress-support/", title: "View WordPress support for themes, plugins, page builders, PHP templates, CSS, JavaScript, and cleanup" },
-      " for CMS work, and ",
-      { text: "Technical SEO Implementation", href: "/services/technical-seo-implementation/", title: "View technical SEO implementation for audit notes, schema, redirects, headings, crawl cleanup, and internal links" },
-      " when recommendations need to become site changes."
-    ],
-    [
-      "The same $90/hr model can also support ",
-      { text: "Landing Pages", href: "/services/landing-pages/", title: "View landing page support for service pages, campaign pages, local pages, forms, CTAs, and tracking" },
-      " or ",
-      { text: "Agency Overflow", href: "/services/agency-overflow/", title: "View agency overflow support for production work, client updates, QA, and SEO implementation" },
-      " when the scope is clear enough to move without a bloated process."
-    ]
-  ];
-  const rateTableColumns = [
-    { key: "scope", label: "Scope" },
-    { key: "range", label: "Common range" },
-    { key: "fits", label: "Good fit" },
-    { key: "needs", label: "What helps it move" }
-  ];
-  const rateRows = [
-    {
-      scope: "Quick website fix",
-      range: "1 to 5 hours",
-      fits: "Broken CSS, JavaScript errors, form issues, tracking checks, small WordPress edits",
-      needs: "Exact URL, symptom, screenshot, and what changed recently"
-    },
-    {
-      scope: "Focused implementation batch",
-      range: "5 to 15 hours",
-      fits: "SEO audit items, page cleanup, redirect work, schema fixes, landing page updates",
-      needs: "Prioritized task list, source notes, access, and definition of done"
-    },
-    {
-      scope: "Messy site cleanup",
-      range: "15 to 40 hours",
-      fits: "WordPress bloat, ecommerce cleanup, performance issues, tracking rebuilds",
-      needs: "Platform context, known risks, staging preference, and approval points"
-    },
-    {
-      scope: "Ongoing webmaster support",
-      range: "Monthly range",
-      fits: "Recurring updates, SEO implementation, technical fixes, reporting support",
-      needs: "Backlog, cadence, communication channel, and priority rules"
-    },
-    {
-      scope: "Agency overflow",
-      range: "As needed",
-      fits: "Client production work, QA cleanup, page builds, SEO implementation support",
-      needs: "Ticket details, client standards, due dates, review process"
-    }
+  import { breadcrumbSchema, faqSchema, schemaList } from "$lib/data/schema.js";
+  const breadcrumbs = [{ label: "Home", href: "/" }, { label: "How Quotes Work" }];
+  const questions = [
+    ["Is the quote really free?", "Yes. There is no charge to describe the work and request a quote. Code review, testing, diagnosis, implementation, and ongoing support are paid services with scope and cost agreed first."],
+    ["What if you need to investigate before quoting a fix?", "Some problems need technical investigation before a reliable fix can be scoped. I will explain what needs checking and quote that diagnostic work first. You approve it before it starts."],
+    ["Do I need a complete brief?", "No. Start with the website, the problem or goal, and your timeline. You do not need to know the technical cause. I will ask questions to clarify fit and scope."],
+    ["Can I request ongoing or agency support?", "Yes. We can define a recurring scope, priorities, communication, and billing terms that fit the work. One-time tasks and ongoing support are both available."],
+    ["What happens if the scope changes?", "Changes that affect the agreed work or cost are discussed before proceeding. You should know what is included and what needs a separate decision."]
   ];
 </script>
 
-<Seo
-  title="Contract Website Help at $90/hr | The Web Guy"
-  description="See The Web Guy’s simple $90/hr contract rate for quick fixes, small projects, ongoing webmaster support, SEO implementation, and agency overflow."
-  schema={seoSchema}
-/>
-
+<Seo title="How Website Quotes Work | The Web Guy" description="Request a free quote for website fixes, development, AI code review, SEO, or ongoing support. Agree the scope and cost before paid work begins." schema={schemaList(breadcrumbSchema(breadcrumbs, "/rate/"), faqSchema(questions))} />
 <main>
-  <Hero
-    eyebrow="Hourly contract rate"
-    h1="Contract Website Help at $90/hr"
-    intro="A clear hourly rate for practical website support: quick fixes, small projects, ongoing webmaster work, SEO implementation, agency overflow, and technical cleanup."
-    cta="Start a Website Request"
-    image={staticHeroImages.rate}
-  />
-
+  <Hero eyebrow="How quotes work" h1="Start With the Problem. Get a Clear Quote." intro="You should know what the work covers and what it costs before committing. Send the site or project goal, and I will help define a useful next step." cta="Get a Free Quote" secondary="What to Send" secondaryHref="#quote-details" image={staticHeroImages.rate} />
   <Breadcrumbs items={breadcrumbs} />
-
-  <section class="section section-effect section-effect--grid section-effect--medium">
-    <SectionHeading eyebrow="Hourly website support" h2="What $90/hr website support is good for" body="The rate works best when there is a real task, site, issue, or backlog. It keeps pricing honest and avoids fake packages that do not match the work." />
-    <InternalLinkCopy paragraphs={rateInlineParagraphs} />
-    <CardGrid
-      items={[
-        ["Quick fixes", "1 to 5 hours for broken layouts, scripts, forms, tracking issues, page edits, redirects, or small WordPress fixes.", "/services/website-fixes/", "View website fixes", "website-fixes"],
-        ["Small projects", "5 to 15 hours for landing pages, SEO implementation batches, WordPress cleanup, tracking setup, or technical improvements.", "/services/landing-pages/", "View landing pages", "landing-pages"],
-        ["Bigger cleanup", "15 to 40 hours for messy WordPress cleanup, ecommerce issues, performance work, integration fixes, or large SEO implementation lists.", "/services/wordpress-support/", "View WordPress support", "wordpress-support"],
-        ["Ongoing support", "Weekly or monthly help for businesses that need a webmaster without hiring full-time.", "/services/ongoing-webmaster-support/", "View ongoing support", "ongoing-webmaster-support"],
-        ["Agency overflow", "As-needed production help for agencies with client tasks, SEO implementation, QA cleanup, and landing page work.", "/services/agency-overflow/", "View agency overflow", "agency-overflow"],
-        ["What is included", "Time spent reviewing, implementing, troubleshooting, testing, communicating updates, and documenting practical next steps.", "/contact/", "Send a request", "website-fixes"]
-      ]}
-    />
-    <SortableTable caption="$90/hr scope planning table" columns={rateTableColumns} rows={rateRows} />
+  <section class="section">
+    <SectionHeading eyebrow="From request to useful work" h2="A Simple Way to Start" />
+    <div class="process-grid">
+      {#each [
+        ["01", "Describe the work", "Send the URL if available, what is broken or needed, and your timeline."],
+        ["02", "Get a scoped quote", "I confirm fit, ask any needed questions, and explain the proposed work and cost."],
+        ["03", "Approve the next step", "Paid investigation, review, or implementation begins after you agree the scope."],
+        ["04", "Get a clear handoff", "See what changed, what was checked, and anything that still needs a decision."]
+      ] as [number, title, copy]}
+        <article><span>{number}</span><h3>{title}</h3><p>{copy}</p></article>
+      {/each}
+    </div>
   </section>
-
-  <ContextualSupport
-    eyebrow="Hourly support fit"
-    heading="Where the hourly rate usually applies"
-    intro="These are the common service contexts where hourly contract support tends to fit best."
-    items={rateContextualItems}
-  />
-
-  <TopicalLinks
-    eyebrow="Services that fit $90/hr"
-    heading="The hourly rate works best when the task has a clear website outcome"
-    intro="These pages show the types of work that fit $90/hr contract support, from quick fixes and SEO implementation to ongoing production help."
-    items={rateTopicalLinks}
-  />
-
-  <CtaBand heading="Ready to start?" copy="Send the site URL, the task list, timeline, and whether this is one-time or ongoing work." />
-
-  <section class="section soft-section split-section section-effect section-effect--signals section-effect--low">
-    <div><SectionHeading eyebrow="$90/hr limits" h2="No fake unlimited website package" body="The $90/hr rate does not mean unlimited work, guaranteed SEO rankings, guaranteed perfect speed scores, major security incident response, enterprise architecture, or full brand strategy from scratch." /></div>
-    <div><SectionHeading eyebrow="Hourly billing and updates" h2="Plain time tracking for contract website work" body="Work should be scoped around tasks, hours, or a monthly range. Updates should explain what changed, what was found, what remains, and where the next hour is most useful." /></div>
+  <section class="section soft-section" id="quote-details">
+    <SectionHeading eyebrow="No technical brief required" h2="Send What You Know" body="A short explanation is enough to start. Do not include passwords, API keys, or other secrets. Repository access can be arranged later if the work needs it." />
+    <CardGrid items={[
+      ["A website problem", "The affected page, what should happen, what happens instead, and anything that recently changed.", "/services/website-fixes/", "Website fixes"],
+      ["An AI build or code change", "What you built, your stack if known, what you want checked, and whether this is a one-time review or ongoing work.", "/ai-development/", "AI Development Oversight"],
+      ["A project or task list", "The outcome you want, the platform, priorities, and any deadline. Mention audit notes or a backlog if you have one.", "/services/", "Explore services"]
+    ]} />
   </section>
+  <section class="section"><SectionHeading eyebrow="Before you commit" h2="Questions About Scope and Cost" /><FaqList items={questions} askQuestion={false} /></section>
+  <CtaBand heading="Tell Me What You Need Done" copy="The quote is free. You decide whether to proceed after the scope and cost are clear." label="Get a Free Quote" />
 </main>

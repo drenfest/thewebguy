@@ -137,6 +137,10 @@
               <div>
                 <strong>{site.searchConsole.label}</strong>
                 <p>{site.searchConsole.value}</p>
+                {#if site.searchConsole.snapshot}
+                  <p class="snapshot-meta">{site.searchConsole.snapshot.periodLabel}</p>
+                  <p class="snapshot-meta">Snapshot captured <time datetime={site.searchConsole.snapshot.capturedDate}>{site.searchConsole.snapshot.capturedLabel}</time></p>
+                {/if}
               </div>
             </div>
 
@@ -154,6 +158,11 @@
 </main>
 
 <style>
+  .snapshot-meta {
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+  }
+
   .inventory-head {
     margin-bottom: 1.25rem;
   }
