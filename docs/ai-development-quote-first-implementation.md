@@ -8,7 +8,7 @@ The site now leads with a free quote and agreed scope. Public hourly service pri
 
 The AI vertical extends the current SvelteKit route/data/component conventions. No application reorganization, CSS framework, state library, dependency, or new component file was introduced. New examples are explicitly illustrative.
 
-This is a local implementation and preview. No production deployment, commit, push, Google account setting change, real email submission, campaign posting, or ad spend was performed.
+This task built and verified a local implementation and preview. It did not initiate a production deployment, commit, push, Google account setting change, real email submission, campaign posting, or ad spend. While work was in progress, another operation committed the shared workspace as `37ccd29` (Expand fix notes and refresh site content), including this implementation. The final verification addendum was written afterward.
 
 ## 1. Routes added
 
@@ -180,3 +180,7 @@ Final self-review: one shared AI service data source, no duplicate hero, no new 
 ## Final isolated build result
 
 PASS: `npm run check` (0 errors, 0 warnings) and `npm run build` completed successfully in the isolated build workspace. The Node adapter output was started on localhost:4196 for production-output smoke checks.
+
+The final production-output route audit passed **202 sitemap pages**, including the five AI routes, and 124 internal targets. The count grew from 183 because concurrent fix-notes content was added to the shared repository. The lead-flow tests also passed again. Browser checks on the compiled output confirmed search discovery, navigation into AI Code Review, contextual service selection, the three required form fields, and correct mobile form landing. Homepage and /rate/ smoke checks passed. The production preview is available at `http://127.0.0.1:4196/ai-development/` while the local preview process is running.
+
+At handoff, HEAD and origin/main both pointed to the shared commit `37ccd29`. The public `/ai-development/` URL still returned the previous site's 404 page and hourly-price footer during the live check. Publication of this build is therefore not yet verified. The final report addendum remains a local modification.
