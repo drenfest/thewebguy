@@ -12,4 +12,6 @@ Compose each page around its service: hub chooser and seven-stage workflow; code
 
 Media lives in `static/images/ai-services/`. The hub uses responsive WebP editorial artwork. Technical illustrations are small original SVGs with separate mobile compositions selected by `<picture>` at 700px. Keep meaningful alt text and illustrative labels: these examples are not client evidence. A free quote remains separate from paid engineering review. The existing report records the image-generation prompt and review evidence.
 
+On these pages, the site header scrolls away and the section navigation sticks at `top: 0`. Keep anchor offsets and the desktop workflow's sticky introduction aligned to that single bar. The open mobile menu must retain its fixed overlay; other page families keep their existing header behavior.
+
 Run `npm run check`, `npm run build`, `node scripts/verify-lead-flow.mjs`, and `node scripts/verify-quote-routes.mjs <local-origin>` after substantive changes. Avoid concurrent dev/build generation in the same `.svelte-kit` directory.
