@@ -1,7 +1,7 @@
 export const skillPages = [
   {
     slug: "shopify-plus-liquid",
-    title: "Shopify Plus & Liquid Contractor | The Web Guy",
+    title: "Shopify Plus & Liquid Support | The Web Guy",
     meta: "Get practical Shopify Plus and Shopify Liquid support for storefront fixes, product templates, schema, tracking, performance, and ecommerce cleanup.",
     h1: "Shopify Plus & Liquid Support",
     eyebrow: "Shopify Plus & Liquid",
@@ -56,7 +56,7 @@ export const skillPages = [
   {
     slug: "wordpress-theme-development",
     title: "WordPress Theme Development Services | The Web Guy",
-    meta: "Custom WordPress theme development services for child themes, block themes, WooCommerce templates, design-to-WordPress builds, responsive layouts, performance, accessibility, and theme maintenance.",
+    meta: "Custom WordPress theme development for child themes, block themes, WooCommerce templates, responsive builds, performance, accessibility, and maintenance.",
     h1: "Custom WordPress Theme Development",
     eyebrow: "WordPress Themes",
     intro: "Custom WordPress theme development for existing and new WordPress sites: custom themes from designs, child themes, block themes, WooCommerce templates, reusable components, performance-minded templates, accessibility cleanup, and ongoing theme work.",
@@ -109,7 +109,7 @@ export const skillPages = [
   },
   {
     slug: "production-debugging",
-    title: "Production Website Debugging and Live-Site Debug Help | The Web Guy",
+    title: "Production Website Debugging | The Web Guy",
     meta: "Debug production website issues including broken layouts, JavaScript errors, forms, APIs, tracking, CMS issues, integrations, cache, and unstable live-site behavior.",
     h1: "Production Website Debugging",
     eyebrow: "Production Debugging",
@@ -161,7 +161,7 @@ export const skillPages = [
   {
     slug: "rest-api-webhook-integrations",
     title: "REST API and Webhook Integration Help | The Web Guy",
-    meta: "Need to know whether an API supports REST and webhooks? Get REST API and webhook integration help for forms, CRMs, CMS platforms, ecommerce systems, background jobs, Postman testing, payloads, and data cleanup.",
+    meta: "Get REST API and webhook integration help for forms, CRMs, CMS platforms, ecommerce systems, background jobs, Postman testing, payloads, and data cleanup.",
     h1: "REST API and Webhook Integration Help",
     eyebrow: "APIs & Webhooks",
     intro: "Need to know whether an API supports REST and webhooks, or whether a website handoff should use one, the other, or both? This page covers API and webhook support for forms, CRMs, CMS platforms, ecommerce systems, data workflows, background jobs, and automation without becoming fragile.",
@@ -186,7 +186,7 @@ export const skillPages = [
   },
   {
     slug: "programmatic-seo",
-    title: "Programmatic SEO Developer Contractor | The Web Guy",
+    title: "Programmatic SEO Support & Implementation | The Web Guy",
     meta: "Get programmatic SEO support for scalable page structure, templates, internal links, schema, crawl cleanup, data workflows, and technical implementation.",
     h1: "Programmatic SEO Support",
     eyebrow: "Programmatic SEO",

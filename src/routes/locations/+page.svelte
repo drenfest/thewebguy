@@ -134,7 +134,7 @@
 
 <Seo
   title="Local Website Support Near Freeport, IL | The Web Guy"
-  description="Local-friendly hourly website support near Freeport, IL for WordPress, website fixes, technical SEO, landing pages, tracking, ecommerce, and webmaster help."
+  description="Local website support near Freeport, IL and across nearby Illinois, Wisconsin, and Iowa for WordPress, website fixes, technical SEO, tracking, and more."
   schema={seoSchema}
 />
 

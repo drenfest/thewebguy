@@ -25,7 +25,7 @@
 </script>
 
 <Seo
-  title="Fix Notes | The Web Guy"
+  title="Website Fix Notes | The Web Guy"
   description="Short work notes from website cleanup, debugging, implementation, and support tasks by The Web Guy."
   schema={seoSchema}
 />

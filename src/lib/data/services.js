@@ -55,7 +55,7 @@ export const coreServicePages = [
   {
     slug: "technical-seo-implementation",
     title: "Technical SEO Implementation | The Web Guy",
-    meta: "Turn SEO audits into real site changes with technical SEO implementation, metadata cleanup, schema support, redirects, internal links, and crawl fixes.",
+    meta: "Get technical SEO implementation help for metadata, schema, redirects, internal links, crawl and indexing fixes, and CMS/template changes.",
     h1: "Technical SEO Implementation",
     eyebrow: "Technical SEO",
     intro:
@@ -219,7 +219,7 @@ export const coreServicePages = [
   {
     slug: "website-fixes",
     title: "Website Fixes and Website Fixer Help | The Web Guy",
-    meta: "Website fixer help for broken layouts, CSS issues, JavaScript bugs, forms, modals, embeds, tracking scripts, mobile problems, and broken site issues.",
+    meta: "Website broken or behaving wrong? Get developer help with layouts, CSS/JavaScript bugs, forms, embeds, tracking scripts, mobile issues, and site errors.",
     h1: "Website Fixes and Website Fixer Help",
     eyebrow: "Website Fixes",
     intro:
@@ -286,7 +286,7 @@ export const coreServicePages = [
   {
     slug: "ai-built-website-cleanup",
     title: "AI-Built Website and Vibe Code Cleanup | The Web Guy",
-    meta: "Built with ChatGPT, Codex, Lovable, Bolt, Cursor, Replit, or v0? Get hourly help fixing, cleaning up, and launching AI-built websites and vibe-coded pages.",
+    meta: "Built with ChatGPT, Codex, Lovable, Bolt, Cursor, Replit, or v0? Get help cleaning up AI-built websites, fixing broken code, and preparing changes to ship.",
     h1: "AI-Built Website Cleanup",
     eyebrow: "AI-built site cleanup",
     intro:
@@ -378,7 +378,7 @@ export const coreServicePages = [
   {
     slug: "agency-overflow",
     title: "Agency Overflow Web Support | The Web Guy",
-    meta: "Get hourly agency overflow support for WordPress production, SEO implementation, landing pages, technical cleanup, and website fixes.",
+    meta: "Need extra hands for client-site work? Get scoped agency overflow support for WordPress, technical SEO, landing pages, QA, and website fixes.",
     h1: "Agency Overflow Web Support",
     eyebrow: "Agency Overflow",
     intro:
@@ -666,8 +666,8 @@ export const coreServicePages = [
   },
   {
     slug: "automation-internal-tools",
-    title: "Web Services Automation and Internal Web Tools | The Web Guy",
-    meta: "Web services automation and internal web tools for crawlers, SEO QA scripts, reporting helpers, dashboards, cron jobs, scheduled reports, watched signals, data cleanup, APIs, tracking checks, and repetitive website operations.",
+    title: "Website Automation & Internal Tools | The Web Guy",
+    meta: "Automate repetitive website work with crawlers, SEO QA scripts, reporting tools, dashboards, scheduled jobs, data cleanup, APIs, and tracking checks.",
     h1: "Web Services Automation and Internal Web Tools",
     eyebrow: "Automation",
     intro:
@@ -732,7 +732,7 @@ export const coreServicePages = [
   {
     slug: "ongoing-webmaster-support",
     title: "Ongoing Webmaster Support | The Web Guy",
-    meta: "Get ongoing hourly webmaster support for website updates, page edits, WordPress help, technical SEO tasks, tracking fixes, and site cleanup.",
+    meta: "Need recurring website help without a full-time webmaster? Get scoped support for updates, WordPress, technical SEO, tracking, fixes, and cleanup.",
     h1: "Ongoing Webmaster Support",
     eyebrow: "Webmaster Support",
     intro:

@@ -22,7 +22,7 @@
 </script>
 
 <Seo
-  title={`${category.label} Fix Notes | The Web Guy`}
+  title={category.slug === "website-fixes" ? "Website Fixes | Fix Notes | The Web Guy" : `${category.label} Fix Notes | The Web Guy`}
   description={`${category.label} Fix Notes from The Web Guy. ${category.description}`}
   schema={seoSchema}
 />

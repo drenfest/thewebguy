@@ -267,7 +267,7 @@
 
 <Seo
   title="The Web Guy | SEO Developer, WordPress Help & Website Fixes"
-  description="The Web Guy provides direct SEO developer help, WordPress support, website fixes, and ongoing technical cleanup."
+  description="Work directly with a developer to fix your website, handle WordPress and technical SEO, or review AI-built code. Start with a free quote."
   schema={homeSchema}
 />
 

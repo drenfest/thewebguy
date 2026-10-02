@@ -122,7 +122,7 @@
 
 <Seo
   title="About The Web Guy | Practical Website Support"
-  description="Learn about The Web Guy, a practical contract website support service focused on WordPress, SEO implementation, landing pages, tracking, and website fixes."
+  description="Learn how The Web Guy provides direct contract website support, from WordPress and technical SEO implementation to website fixes, tracking, and related web work."
   schema={seoSchema}
 />
 

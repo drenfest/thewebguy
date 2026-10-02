@@ -51,3 +51,7 @@ Desktop.ini
 .cache/
 .tmp/
 tmp/
+
+# Local Codex review and tracking artifacts
+.codex-tmp/
+organic-search-review/

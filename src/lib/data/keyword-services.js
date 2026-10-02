@@ -46,7 +46,7 @@ export const keywordLandingSpecs = [
   {
     slug: "wordpress-troubleshooting",
     title: "WordPress Troubleshooting Service | The Web Guy",
-    meta: "Need a WordPress troubleshooting service? Troubleshoot WordPress problems including plugin conflicts, broken layouts, Elementor issues, forms, PHP errors, scripts, and update problems.",
+    meta: "WordPress problems with no clear cause? Get diagnosis-first help for plugin, theme, builder, form, PHP, script, cache, and update issues.",
     h1: "WordPress Troubleshooting Service",
     eyebrow: "WordPress Troubleshooting",
     cluster: "WordPress support",
@@ -60,7 +60,7 @@ export const keywordLandingSpecs = [
   {
     slug: "fix-wordpress-issue",
     title: "Fix WordPress Issues | The Web Guy",
-    meta: "Need to fix WordPress issues? Get hourly help with broken pages, forms, plugins, Elementor, theme behavior, scripts, and site errors.",
+    meta: "Need help with a WordPress issue? Get scoped developer help for broken pages, forms, plugins, Elementor, theme behavior, scripts, and site errors.",
     h1: "Fix WordPress Issues",
     eyebrow: "Fix WordPress Issue",
     cluster: "WordPress support",
@@ -74,7 +74,7 @@ export const keywordLandingSpecs = [
   {
     slug: "fix-broken-wordpress-site",
     title: "Fix a Broken WordPress Site | The Web Guy",
-    meta: "Get help fixing a broken WordPress site, including visible layout issues, plugin conflicts, white screens, failed forms, scripts, and urgent site behavior.",
+    meta: "WordPress site broken after an update or change? Get help reproducing the failure, tracing the cause, and planning a safe repair. Start with a free quote.",
     h1: "Fix a Broken WordPress Site",
     eyebrow: "Broken WordPress Site",
     cluster: "WordPress support",
@@ -138,7 +138,7 @@ export const keywordLandingSpecs = [
   },
   {
     slug: "wordpress-white-screen-of-death-fix",
-    title: "WordPress White Screen of Death Fix Help | The Web Guy",
+    title: "WordPress White Screen of Death Fix | The Web Guy",
     meta: "Get help with WordPress white screen of death issues, fatal errors, plugin conflicts, PHP problems, theme issues, and recovery planning.",
     h1: "WordPress White Screen of Death Fix Help",
     eyebrow: "White Screen Fix",
@@ -153,7 +153,7 @@ export const keywordLandingSpecs = [
   {
     slug: "woocommerce-checkout-error-fix",
     title: "WooCommerce Checkout Error Fix Help | The Web Guy",
-    meta: "Fix WooCommerce checkout errors, payment/shipping issues, broken cart behavior, plugin conflicts, tracking problems, and checkout page bugs.",
+    meta: "WooCommerce checkout not working? Get help diagnosing checkout errors, payment, shipping, tax, cart, coupon, and order failures. Start with a free quote.",
     h1: "WooCommerce Checkout Error Fix Help",
     eyebrow: "WooCommerce Checkout Fix",
     cluster: "Ecommerce support",
@@ -241,8 +241,8 @@ export const keywordLandingSpecs = [
   },
   {
     slug: "wordpress-plugin-conflict-help",
-    title: "Fix WordPress Plugin Conflicts | Troubleshooting Help",
-    meta: "Fix WordPress plugin conflicts affecting forms, checkout, layouts, admin behavior, JavaScript, performance, updates, PHP compatibility, or site stability.",
+    title: "WordPress Plugin Conflict Help | The Web Guy",
+    meta: "Get developer help diagnosing and fixing WordPress plugin conflicts affecting forms, checkout, layouts, admin behavior, JavaScript, performance, updates, or site stability.",
     h1: "Fix WordPress Plugin Conflicts Without Breaking Your Site",
     eyebrow: "Plugin Conflict Help",
     cluster: "WordPress support",
@@ -334,7 +334,7 @@ export const keywordLandingSpecs = [
   {
     slug: "wordpress-developer-for-small-tasks",
     title: "WordPress Developer for Small Tasks | The Web Guy",
-    meta: "Hire hourly WordPress help for small tasks, page edits, plugin fixes, Elementor cleanup, forms, SEO implementation, and technical website updates.",
+    meta: "Small WordPress task? Get scoped developer help for page edits, plugin fixes, Elementor cleanup, forms, SEO implementation, and technical updates.",
     h1: "WordPress Developer for Small Tasks",
     eyebrow: "Small WordPress Tasks",
     cluster: "WordPress support",
@@ -376,7 +376,7 @@ export const keywordLandingSpecs = [
   {
     slug: "technical-seo-developer",
     title: "SEO Developer | Technical SEO Implementation Services",
-    meta: "Hire an SEO developer for technical SEO implementation, ranking support on pages already earning impressions, crawl and indexing fixes, canonicals, redirects, schema, JavaScript rendering, internal links, Core Web Vitals, CMS templates, and Search Console issues.",
+    meta: "Need technical SEO implementation? Get developer help with crawl/indexing, canonicals, redirects, schema, JavaScript rendering, and Search Console fixes.",
     h1: "SEO Developer for Technical SEO and Ranking Support",
     eyebrow: "Technical SEO Developer",
     cluster: "Technical SEO",
@@ -487,7 +487,7 @@ export const keywordLandingSpecs = [
   {
     slug: "website-integration-help",
     title: "Website Integration Help | The Web Guy",
-    meta: "Website integration help for forms, CRMs, webhooks, REST APIs, ecommerce data, tracking handoffs, scripts, and systems that need to connect reliably.",
+    meta: "Website integration help when forms, webhooks, APIs, CRMs, ecommerce, or tracking handoffs fail. Trace the break and start with a free quote.",
     h1: "Website Integration Help",
     eyebrow: "Website Integration Help",
     cluster: "API and integration support",
@@ -708,7 +708,7 @@ export const keywordLandingSpecs = [
   {
     slug: "conversion-tracking-troubleshooting",
     title: "Conversion Tracking Troubleshooting | The Web Guy",
-    meta: "Troubleshoot conversion tracking problems in GA4, GTM, forms, pixels, ecommerce events, thank-you pages, CRMs, and reporting dashboards.",
+    meta: "Conversion tracking not matching real leads or sales? I troubleshoot GA4, GTM, forms, pixels, ecommerce events, and reporting. Start with a free quote.",
     h1: "Conversion Tracking Troubleshooting",
     eyebrow: "Conversion Tracking Troubleshooting",
     cluster: "Analytics and tracking",
@@ -769,7 +769,7 @@ export const keywordLandingSpecs = [
   {
     slug: "agency-overflow-developer",
     title: "Agency Overflow Developer | The Web Guy",
-    meta: "Hourly agency overflow developer help for WordPress tasks, SEO implementation, landing pages, QA cleanup, tracking fixes, ecommerce, and client-site support.",
+    meta: "Need extra developer capacity for client work? Get scoped overflow support for WordPress, technical SEO, landing pages, tracking, QA, and ecommerce.",
     h1: "Agency Overflow Developer",
     eyebrow: "Agency Overflow Developer",
     cluster: "Agency support",
@@ -933,7 +933,7 @@ export const keywordLandingSpecs = [
   {
     slug: "woocommerce-support",
     title: "WooCommerce Support | The Web Guy",
-    meta: "WooCommerce support for checkout issues, product pages, plugin conflicts, tracking, schema, product data, performance, and WordPress ecommerce cleanup.",
+    meta: "Need technical WooCommerce website help? Get developer support for checkout, product pages, plugins, tracking, schema, product data, and performance.",
     h1: "WooCommerce Support",
     eyebrow: "WooCommerce Support",
     cluster: "Ecommerce support",
