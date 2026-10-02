@@ -667,9 +667,9 @@ export const blogPosts = [
   },
   {
     slug: "need-a-page-live-fast",
-    title: "Landing Page Help | The Web Guy",
+    title: "Need a Page Live Fast? What It Needs to Launch | The Web Guy",
     h1: "You Need a Page Live Fast. Here’s What It Actually Needs.",
-    meta: "Need a landing page, service page, local SEO page, or campaign page built? Learn what it needs and get hourly page build help.",
+    meta: "Need a landing, service, local SEO, or campaign page live fast? Learn what to prepare for structure, mobile, forms, tracking, links, and launch.",
     eyebrow: "Need a page live",
     summary: "A useful page is not just a headline and a button. It needs a clear job, the right sections, mobile structure, forms, tracking, internal links, and enough polish to launch without turning into a giant process.",
     problemType: "Start here",

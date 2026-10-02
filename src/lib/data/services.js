@@ -164,7 +164,7 @@ export const coreServicePages = [
   {
     slug: "site-speed-performance",
     title: "Site Speed Cleanup and Core Web Vitals Help | The Web Guy",
-    meta: "Improve slow WordPress, Svelte, React, Shopify, and static pages with practical speed cleanup, Core Web Vitals review, image optimization, script cleanup, caching checks, and conversion-focused performance support.",
+    meta: "Improve slow WordPress, Shopify, Svelte, React, and static sites with Core Web Vitals review, image optimization, script cleanup, and caching checks.",
     h1: "Site Speed and Performance Cleanup",
     eyebrow: "Site Speed",
     intro:
