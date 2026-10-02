@@ -92,9 +92,10 @@ export const locationPages = [
     meta: "Need website help in Janesville, WI? Get WordPress fixes, technical SEO implementation, landing pages, tracking, and ongoing webmaster support. Free quote.",
     context: [
       "Janesville has enough regional competition that outdated pages, broken tracking, slow templates, and weak technical SEO can quietly cost businesses leads.",
-      "The Web Guy supports Janesville-area service businesses, ecommerce stores, agencies, professional services, and organizations that need technical website work handled hourly."
+      "The Web Guy supports Janesville-area service businesses, ecommerce stores, agencies, professional services, and organizations that need technical website work handled remotely and billed by the hour.",
+      "Website-side SEO work can include metadata, headings and page structure, schema, internal linking, crawl and indexability fixes, redirects, service-area or local landing pages, UI/UX, tracking, performance, and implementation from a supplied audit or strategy. The standard service stays focused on implementation rather than Google Business Profile management, citations or listings, backlink campaigns, off-site SEO, or a full local-marketing retainer."
     ],
-    tasks: ["Implement technical SEO tasks", "Improve landing page tracking", "Fix WordPress layouts", "Clean up slow scripts", "Support agency overflow", "Review product schema or Merchant Center issues"],
+    tasks: ["Implement technical and on-page SEO recommendations", "Update metadata, headings, schema, internal links, redirects, and canonicals", "Build or improve service-area and local landing pages", "Fix crawl, indexability, WordPress, layout, and performance issues", "Implement UI/UX, forms, GA4/GTM, and conversion tracking changes", "Support ecommerce, product data, feeds, and Merchant Center work", "Carry out supplied SEO audits and agency task lists", "Handle one-time fixes or ongoing website support"],
     relatedServices: ["technical-seo-implementation", "site-speed-performance", "agency-overflow", "ecommerce-support"],
     relatedSkills: ["programmatic-seo", "performance-engineering", "google-merchant-center-product-data"],
     nearby: ["beloit-wi", "madison-wi", "rockford-il", "monroe-wi"]

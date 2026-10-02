@@ -183,8 +183,8 @@ export function locationTopicalItems(location, relatedServices = [], relatedSkil
   return [
     {
       label: "Service area hub",
-      title: "Local Website Support Near Freeport, IL",
-      copy: "Use the locations hub to compare nearby service areas and understand how local-friendly remote web support is organized.",
+      title: "Local-Friendly Website Support by City and Region",
+      copy: "Use the locations hub to compare city and regional service areas and route local-friendly remote support into the right website service.",
       href: "/locations/"
     },
     ...relatedServices.slice(0, 3).map((service) => ({

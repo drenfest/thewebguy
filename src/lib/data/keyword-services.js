@@ -131,8 +131,52 @@ export const keywordLandingSpecs = [
     cluster: "WordPress support",
     anchorSlug: "website-fixes",
     intent: "urgent WordPress problems where the first useful move matters more than a long proposal",
-    problems: ["A public page, lead form, checkout, or key feature is broken", "The site changed suddenly after an update or deployment", "The issue needs fast triage and plain communication"],
-    tasks: ["Assess severity and affected pages", "Look for recent changes and obvious failure points", "Fix what is safe or document what access/support is needed"],
+    intro:
+      "24/7 emergency intake for WordPress outages, white screens, broken checkout, failed forms, update failures, and serious production bugs. Emergency inquiries receive an initial response target within two hours through the contact form or live chat; that response target is not a two-hour repair guarantee.",
+    cta: "Request Emergency WordPress Help",
+    audience:
+      "Use emergency support when a live WordPress problem is blocking customers, leads, orders, access, or a business-critical page. Send the affected URL, the visible symptom, when it started, and any recent update, deployment, plugin, theme, PHP, hosting, or code change.",
+    audienceHeading: "Urgent WordPress problems that need a fast first response",
+    problems: ["The site is down, blank, or failing publicly", "A form, checkout, page, or key feature stopped working", "An update, conflict, code failure, or reliability incident needs urgent triage"],
+    tasks: ["Assess the affected path and business impact", "Review recent changes and likely WordPress failure points", "Respond with the safest repair, stabilization, or access plan"],
+    sections: [
+      {
+        h2: "WordPress problems that qualify for emergency intake",
+        body:
+          "Emergency support is for urgent production problems where delay can affect sales, leads, access, reliability, or customer trust. The first step is to reproduce the failure, understand the business impact, and avoid making a fragile site worse.",
+        bullets: [
+          "Site outages, major failures, white screens, and broken public pages",
+          "Failed contact forms, broken checkout, or other revenue and lead-flow problems",
+          "Plugin or theme conflicts and failures after WordPress, PHP, code, or deployment changes",
+          "Serious production bugs, security or reliability incidents, and other time-sensitive website failures"
+        ]
+      },
+      {
+        h2: "Emergency intake and response expectations",
+        cards: [
+          ["24/7 emergency intake", "Send an emergency request at any time through the existing contact form or live chat."],
+          ["Two-hour emergency response target", "Emergency inquiries target an initial response within two hours so the problem, access, and next safe step can be assessed."],
+          ["Standard working hours", "Standard business hours are Monday through Friday, 9:00 AM–7:00 PM Central Time."],
+          ["General inquiry response target", "Non-emergency inquiries target a response within 24 hours."],
+          ["Response is not resolution", "The two-hour target covers the initial response, not a promise that every issue will be repaired within two hours or the same day."],
+          ["What affects the repair path", "Access, backups, hosting, third-party systems, incident severity, and the condition of the existing code can change what is safe and how long repair takes."]
+        ]
+      },
+      {
+        h2: "Related urgent WordPress support paths",
+        cards: [
+          ["Website Fixes", "Use this when the problem is a visible layout, form, script, embed, or mobile issue that does not require emergency intake.", "/services/website-fixes/", "View Website Fixes"],
+          ["Fix a Broken WordPress Site", "Use this when a WordPress failure needs structured troubleshooting and the cause is not clear yet.", "/services/fix-broken-wordpress-site/", "View Broken WordPress Help"],
+          ["WordPress Support", "Use the broader WordPress page for updates, theme or plugin work, page builders, cleanup, and non-emergency support.", "/services/wordpress-support/", "View WordPress Support"],
+          ["Security, Hosting & Reliability", "Use this when the incident involves DNS, SSL, hosting, security, uptime, backups, or infrastructure reliability.", "/services/security-hosting-reliability/", "View Reliability Support"]
+        ]
+      },
+      {
+        h2: "How to request emergency WordPress help",
+        body:
+          "Use the contact form or live chat and send the URL, what is broken, the expected behavior, when it started, recent changes, screenshots or exact errors, and whether leads, checkout, access, or a live campaign is affected. Include available backup, hosting, staging, and administrator-access context without sending passwords in the first message."
+      }
+    ],
     related: ["website-fixes", "fix-broken-wordpress-site", "wordpress-support", "security-hosting-reliability"],
     skills: ["production-debugging", "cloudflare-dns-ssl", "wordpress-plugin-development"]
   },
@@ -829,44 +873,44 @@ export const keywordLandingSpecs = [
   },
   {
     slug: "white-label-wordpress-support",
-    title: "White Label WordPress Support | The Web Guy",
-    meta: "White-label friendly WordPress support for agencies needing client-site fixes, updates, page edits, plugin troubleshooting, SEO implementation, and QA cleanup.",
-    h1: "White Label WordPress Support",
-    eyebrow: "White Label WordPress Support",
+    title: "White Label WordPress Development & Support | The Web Guy",
+    meta: "White-label WordPress development and support for agencies needing full builds, themes, plugins, WooCommerce, migrations, integrations, SEO implementation, fixes, and ongoing technical execution.",
+    h1: "White Label WordPress Development and Support",
+    eyebrow: "White Label WordPress Development",
     cluster: "Agency support",
     anchorSlug: "agency-overflow",
-    intent: "agency-friendly WordPress support where communication, scope, and ownership need to stay clear",
+    intent: "agency-friendly WordPress development and support where technical delivery stays behind the agency brand",
     intro:
-      "White-label-friendly WordPress support for agencies that need client-site updates, fixes, plugin troubleshooting, SEO implementation, form work, QA cleanup, and plain handoff notes without adding a full-time developer.",
-    cta: "Add White Label WordPress Help",
+      "Complete behind-the-scenes WordPress execution for agencies: full site builds, themes, plugins, WooCommerce, migrations, landing pages, integrations, fixes, SEO implementation, tracking, performance, and production QA. Work can be one-off or ongoing and delivered under the agency's client-facing brand.",
+    cta: "Add White Label Development Help",
     audience:
-      "This page is for agencies that own the client relationship and need WordPress production help behind the scenes. It works best when scope, access, review expectations, and communication boundaries are clear.",
-    audienceHeading: "Behind-the-scenes WordPress support for agency client sites",
-    problems: ["The agency needs WordPress execution without exposing process mess to the client", "Client sites need updates, fixes, SEO implementation, or cleanup", "White-label boundaries and handoff notes matter"],
-    tasks: ["Follow agency scope and communication expectations", "Handle WordPress support tasks quietly and clearly", "Provide concise status, blockers, and implementation notes"],
+      "This page is for agencies that own the strategy and client relationship but need a technical delivery partner to build, extend, repair, migrate, optimize, or support WordPress sites. The work can stay fully behind the scenes, with agency-branded reports and deliverables when that is part of the handoff.",
+    audienceHeading: "A technical WordPress delivery partner behind the agency brand",
+    problems: ["A complete client build or technical workstream needs delivery capacity", "WordPress, WooCommerce, SEO, tracking, integration, or production tasks are backing up", "The agency needs one-off or recurring execution with clear white-label boundaries"],
+    tasks: ["Deliver full builds and scoped technical projects", "Handle ongoing WordPress and WooCommerce execution", "Return agency-ready status, QA, blockers, and branded deliverables"],
     sections: [
       {
-        h2: "White-label WordPress tasks this page targets",
+        h2: "How agencies use white-label WordPress development",
         body:
-          "White-label WordPress support is useful when the agency needs production execution while keeping ownership, communication, and client context inside the agency relationship.",
+          "An agency can hand off a complete technical workstream or a defined slice of production. The Web Guy works from the agency's strategy, requirements, designs, audit, tickets, or acceptance criteria while the agency keeps the client relationship and decides how the work is presented.",
         bullets: [
-          "WordPress updates, page edits, content changes, and builder cleanup",
-          "Theme, child theme, CSS, JavaScript, PHP template, and layout fixes",
-          "Plugin conflicts, broken forms, shortcodes, admin issues, and odd front-end behavior",
-          "SEO implementation inside WordPress: metadata, headings, schema, redirects, and internal links",
-          "GA4/GTM tracking checks, form events, pixels, and conversion QA",
-          "Maintenance-style tasks, recurring updates, small fixes, and client-site cleanup"
+          "Build complete WordPress sites, landing pages, themes, child themes, templates, and custom functionality",
+          "Develop or customize plugins, WooCommerce stores, checkout flows, product experiences, APIs, and webhooks",
+          "Migrate sites and handle launch, staging, production cleanup, performance work, and QA",
+          "Implement technical and on-site SEO, metadata, schema, redirects, internal links, and page structure",
+          "Implement analytics, GTM, conversion tracking, forms, pixels, and measurement QA",
+          "Take on one-off scoped projects, recurring production work, or ongoing development and support"
         ]
       },
       {
-        h2: "White-label boundaries that should be clear",
+        h2: "How white-label delivery stays agency-ready",
         cards: [
-          ["Who owns client communication", "The agency should define whether The Web Guy stays fully behind the scenes or can communicate in limited technical contexts."],
-          ["What notes are needed", "Handoff notes can be short technical notes, agency-facing status updates, or review bullets that the agency rewrites for the client."],
-          ["What counts as done", "Define acceptance criteria before work starts: visible fix, CMS update, event firing, page published, staging review, or client approval."],
-          ["Where work happens", "Clarify staging, production, Git, backups, hosting, cache, and plugin update expectations before changing client sites."],
-          ["What is out of scope", "Separate quick WordPress support from redesigns, emergency breach response, unlimited maintenance, or strategy work the agency owns."],
-          ["How urgent work is handled", "Triage depends on access, risk, availability, and whether a public page, lead form, checkout, or campaign is affected."]
+          ["Agency-owned client relationship", "The agency defines whether The Web Guy remains fully behind the scenes or joins limited technical conversations."],
+          ["Agency-branded output", "Reports, completion notes, QA records, and other agreed deliverables can use the agency's branding instead of The Web Guy branding."],
+          ["One-off or ongoing", "Use the same technical delivery model for a defined build, a difficult ticket, a recurring queue, or an ongoing client workstream."],
+          ["Review-ready handoff", "Agree on acceptance criteria, staging or production rules, screenshots, test evidence, status format, and who approves the work."],
+          ["Technical execution boundary", "The Web Guy implements the technical work. Upstream marketing research and strategy remain with the agency unless separately scoped."],
+          ["Real capacity and timing", "Scope, access, risk, priority, and availability determine scheduling; the service does not promise unlimited capacity or guaranteed turnaround."]
         ]
       },
       {
@@ -938,9 +982,53 @@ export const keywordLandingSpecs = [
     eyebrow: "WooCommerce Support",
     cluster: "Ecommerce support",
     anchorSlug: "ecommerce-support",
-    intent: "WooCommerce sites that need ecommerce cleanup inside WordPress",
-    problems: ["WooCommerce checkout, cart, product, or order behavior is unreliable", "Plugins, templates, tracking, schema, or performance issues are affecting the store", "The store needs WordPress and ecommerce support at the same time"],
-    tasks: ["Review WooCommerce symptoms and affected URLs", "Troubleshoot plugins, templates, checkout, tracking, and product data", "Coordinate fixes with WordPress support and ecommerce measurement"],
+    intent: "WooCommerce stores that need one-off fixes, ongoing technical support, or full development work",
+    intro:
+      "Technical WooCommerce help for one-off fixes, recurring support and development, or larger store projects. The work can cover complete store builds and improvements, checkout and cart, products, themes, plugins, custom functionality, integrations, tracking, performance, technical SEO, and production fixes.",
+    cta: "Request WooCommerce Help",
+    audience:
+      "This page is for store owners, agencies, and ecommerce teams that need a developer across the WooCommerce stack—not only an isolated support ticket. Start with the store, the affected customer or admin path, and whether the need is a single fix, an ongoing workstream, or a larger build.",
+    audienceHeading: "WooCommerce work sized to the store and engagement",
+    problems: ["A checkout, cart, product, payment, shipping, tax, coupon, or order path is unreliable", "Themes, plugins, custom code, data, integrations, tracking, schema, or performance need technical work", "The store needs recurring development or a larger build instead of a single ticket"],
+    tasks: ["Fix a defined WooCommerce problem", "Support recurring store development and maintenance", "Build or improve the complete technical store experience"],
+    sections: [
+      {
+        h2: "Ways to engage for WooCommerce work",
+        body:
+          "The engagement should match the real store need. A reproducible checkout bug can be a one-off task; a backlog can become recurring development; a new or changing business may need a larger store build or improvement project.",
+        bullets: [
+          "One-off fixes for a clear store, checkout, product, plugin, data, or tracking problem",
+          "Ongoing or recurring support and development across a prioritized WooCommerce backlog",
+          "Larger development projects, complete store builds, migrations, redesign implementation, and production cleanup",
+          "Maintenance and updates when they are part of the agreed store project or ongoing work"
+        ]
+      },
+      {
+        h2: "WooCommerce technical work across the store",
+        cards: [
+          ["Storefront and product experience", "Build or improve product data, product templates, variations, categories, search, merchandising UI, themes, and front-end behavior."],
+          ["Cart, checkout, and orders", "Work on cart logic, checkout fields, coupons, orders, customer flows, payment gateways, shipping rules, and tax behavior."],
+          ["Plugins and custom functionality", "Develop or customize plugins, hooks, templates, business rules, admin workflows, and store-specific WordPress functionality."],
+          ["Feeds, APIs, and integrations", "Connect product feeds, marketplaces, CRMs, fulfillment tools, analytics systems, APIs, and webhooks."],
+          ["Measurement and search implementation", "Implement analytics, ecommerce events, conversion tracking, schema, product data, and technical SEO changes."],
+          ["Performance and production reliability", "Troubleshoot conflicts, slow store paths, deployment issues, update failures, production bugs, and front-end or server-side bottlenecks."]
+        ]
+      },
+      {
+        h2: "Related WooCommerce support paths",
+        cards: [
+          ["Ecommerce Support", "Use the main ecommerce service when the work spans WooCommerce, Shopify, feeds, tracking, conversion, or broader store operations.", "/services/ecommerce-support/", "View Ecommerce Support"],
+          ["WooCommerce Checkout Error Fix", "Use this for a focused checkout, payment, shipping, tax, coupon, cart, or order failure.", "/services/woocommerce-checkout-error-fix/", "View Checkout Error Help"],
+          ["WordPress Support", "Use this when the store problem is primarily a WordPress theme, plugin, admin, update, or hosting issue.", "/services/wordpress-support/", "View WordPress Support"],
+          ["Conversion Tracking Troubleshooting", "Use this when orders are working but analytics, revenue, product, or ad-platform data does not match.", "/services/conversion-tracking-troubleshooting/", "View Tracking Troubleshooting"]
+        ]
+      },
+      {
+        h2: "How to hand off WooCommerce work",
+        body:
+          "Send the store URL, affected product or customer path, what should happen, what happens now, recent changes, screenshots or order examples, and the plugins, payment, shipping, tax, feed, tracking, or integration context involved. State whether the request is a one-off fix, an ongoing queue, or part of a larger development project."
+      }
+    ],
     related: ["ecommerce-support", "woocommerce-checkout-error-fix", "wordpress-support", "conversion-tracking-troubleshooting"],
     skills: ["wordpress-plugin-development", "ga4-gtm-measurement-integrity", "schema-structured-data"]
   }

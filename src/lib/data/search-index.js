@@ -51,8 +51,8 @@ const mainPageMeta = {
     type: "Hub"
   },
   "/locations/": {
-    title: "Local Website Support",
-    description: "Remote-friendly hourly website support near Freeport, Rockford, Monroe, Beloit, Janesville, Madison, Dubuque, and nearby regions.",
+    title: "Website Support Service Areas",
+    description: "Local-friendly, remote website support across Illinois, Wisconsin, Iowa, and other service areas for WordPress, technical SEO, tracking, ecommerce, and site fixes.",
     type: "Hub"
   },
   "/rate/": {

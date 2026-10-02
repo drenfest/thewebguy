@@ -133,16 +133,16 @@
 </script>
 
 <Seo
-  title="Local Website Support Near Freeport, IL | The Web Guy"
-  description="Local website support near Freeport, IL and across nearby Illinois, Wisconsin, and Iowa for WordPress, website fixes, technical SEO, tracking, and more."
+  title="Website Support Service Areas | The Web Guy"
+  description="Explore local-friendly, remote website support across Illinois, Wisconsin, Iowa, and other service areas for WordPress, technical SEO, tracking, ecommerce, and site fixes."
   schema={seoSchema}
 />
 
 <main>
   <Hero
-    eyebrow="Local website support service area"
-    h1="Local Website Support Near Freeport, IL"
-    intro="The Web Guy provides local-friendly and remote-friendly website support for businesses near Freeport, IL and surrounding cities. Start with a free quote for the work you need."
+    eyebrow="Website support service areas"
+    h1="Local-Friendly Website Support by City and Region"
+    intro="The Web Guy provides local-friendly, remote website support across the listed service areas. Choose the city or region that fits your business, then route the request into the WordPress, website-fix, technical SEO, tracking, ecommerce, or ongoing support service that matches the work."
     cta="Request Local Web Support"
     image={staticHeroImages.locations}
   />
@@ -152,9 +152,9 @@
   <section class="section split-section section-effect section-effect--hex section-effect--low">
     <div>
       <SectionHeading
-        eyebrow="Freeport-area website support"
-        h2="Local enough to understand the region, remote-friendly enough to move fast"
-        body="This service area is built around practical hourly website help for local companies, agencies, contractors, ecommerce sellers, professional services, nonprofits, and organizations that need work handled without a large agency process."
+        eyebrow="Regional website support"
+        h2="Start with the city or region, then route the website work"
+        body="These service-area pages give local companies, agencies, contractors, ecommerce sellers, professional services, nonprofits, and other organizations a regional entry point into practical remote website help without requiring a large agency process."
       />
       <InternalLinkCopy paragraphs={locationHubInlineParagraphs} />
     </div>
@@ -189,7 +189,7 @@
   <ContextualSupport
     eyebrow="Nearby city pages"
     heading="Primary local website support pages"
-    intro="Use these city pages when you want local-friendly website support near Freeport without a full agency handoff."
+    intro="Use these city pages to choose the market that fits your business, then connect the request to the website service that matches the actual work."
     items={locationHubContextualItems}
   />
 

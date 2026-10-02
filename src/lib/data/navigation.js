@@ -265,8 +265,8 @@ export const megaMenus = {
       ])
     ],
     {
-      heading: "Remote-friendly web support near Freeport, IL",
-      text: "Hourly website help for nearby businesses, agencies, and teams across the Freeport/Rockford region and surrounding areas.",
+      heading: "Local-friendly support by city and region",
+      text: "Remote website help for businesses, agencies, and teams across the listed service areas in Illinois, Wisconsin, Iowa, and nearby regions.",
       label: "View Locations",
       href: "/locations/"
     }
