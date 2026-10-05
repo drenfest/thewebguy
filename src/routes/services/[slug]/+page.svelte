@@ -5,16 +5,11 @@
   import SectionHeading from "$lib/components/SectionHeading.svelte";
   import CardGrid from "$lib/components/CardGrid.svelte";
   import CtaBand from "$lib/components/CtaBand.svelte";
-  import ServiceNav from "$lib/components/ServiceNav.svelte";
-  import RelatedServices from "$lib/components/RelatedServices.svelte";
-  import RelatedSkills from "$lib/components/RelatedSkills.svelte";
-  import TopicalLinks from "$lib/components/TopicalLinks.svelte";
-  import ContextualSupport from "$lib/components/ContextualSupport.svelte";
+  import RelatedProjectHelp from "$lib/components/RelatedProjectHelp.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import FaqList from "$lib/components/FaqList.svelte";
   import ProofPanel from "$lib/components/ProofPanel.svelte";
-  import FixNotesPanel from "$lib/components/FixNotesPanel.svelte";
-  import SortableTable from "$lib/components/SortableTable.svelte";
+  import ServiceTroubleshootingGuide from "$lib/components/ServiceTroubleshootingGuide.svelte";
   import { serviceUrl, skillUrl } from "$lib/data/content.js";
   import { serviceHeroImage } from "$lib/data/hero-images.js";
   import { proofForService } from "$lib/data/proof.js";
@@ -23,9 +18,8 @@
     relatedSkillsForService,
     relatedSkillSlugsForService,
     serviceClusterPagesFor,
-    serviceClusterTopicalItems,
-    serviceContextualSupportItems,
-    serviceTopicalItems
+    isRelatedServiceSection,
+    serviceRelatedProjectItems
   } from "$lib/data/relationships.js";
   import { breadcrumbSchema, faqSchema, schemaList, serviceSchema } from "$lib/data/schema.js";
 
@@ -55,22 +49,17 @@
   const fallbackAudienceHeading = $derived(`${service.audience.split(".")[0]}.`);
   const audienceHeading = $derived(service.audienceHeading || fallbackAudienceHeading);
   const audienceBody = $derived(service.audienceHeading ? service.audience : service.audience.split(".").slice(1).join(".").trim());
-  const topicalItems = $derived(serviceTopicalItems(service, relatedServices, relatedSkills));
-  const contextualSupportItems = $derived(serviceContextualSupportItems(service, relatedServices, relatedSkills));
   const serviceClusterPages = $derived(serviceClusterPagesFor(service));
-  const clusterTopicalItems = $derived(serviceClusterTopicalItems(serviceClusterPages));
-  const fixNoteCategoryByService = {
-    "site-speed-performance": "Page Speed",
-    "technical-seo-implementation": "Technical SEO",
-    "website-fixes": "Website Fixes",
-    "wordpress-support": "WordPress Support",
-    "ai-built-website-cleanup": "AI Website Cleanup",
-    "analytics-tracking": "Tracking & Analytics",
-    "api-integrations": "API Integrations",
-    "ecommerce-support": "Ecommerce Support",
-    "landing-pages": "Landing Pages"
-  };
-  const fixNoteCategory = $derived(fixNoteCategoryByService[service.slug] || "");
+  const primaryServiceSections = $derived(service.sections
+    .map((section, originalIndex) => ({ section, originalIndex }))
+    .filter(({ section }) => !isRelatedServiceSection(section))
+    .filter(({ section }) => !(
+      service.keywordCluster &&
+      (/problems this page targets/i.test(section.h2 || "") ||
+        / tasks$/i.test(section.h2 || "") ||
+        /^how to hand off /i.test(section.h2 || ""))
+    )));
+  const relatedProjectItems = $derived(serviceRelatedProjectItems(service, relatedServices, relatedSkills, serviceClusterPages));
   const serviceInternalParagraphs = $derived([
     [
       `${service.eyebrow} often overlaps with `,
@@ -320,23 +309,7 @@
     ]
   };
   const allServiceInternalParagraphs = $derived([...(serviceFocusParagraphs[service.slug] || []), ...serviceSupportingParagraphs, ...serviceInternalParagraphs]);
-  const serviceDetailTableColumns = [
-    { key: "area", label: "Work area" },
-    { key: "whatItMeans", label: "What it means" },
-    { key: "proof", label: "Helpful evidence" },
-    { key: "nextStep", label: "Next step" }
-  ];
-  const serviceDetailRows = $derived(service.sections.map((section) => ({
-    area: serviceSectionHeading(section),
-    whatItMeans: section.body || `${section.cards?.length || section.bullets?.length || 0} related ${service.eyebrow.toLowerCase()} items to review.`,
-    proof: section.bullets?.slice(0, 2).join(", ") || section.cards?.slice(0, 2).map((card) => card[0]).join(", ") || "URL, access context, screenshot, task list, or audit note",
-    nextStep: service.cta
-  })));
-  const detailHeading = $derived(service.detailHeading || `${service.eyebrow} scope, evidence, and next steps`);
-  const detailBody = $derived(service.detailBody || "Use this table to compare the parts of the service, note priority, and gather the right context before sending a request.");
   const limitsHeading = $derived(service.limitsHeading || `What ${service.eyebrow} includes, and where the limits are`);
-  const relatedWorkHeading = $derived(service.relatedWorkHeading || `${service.eyebrow} connects to nearby website work`);
-  const detailAfterExamples = $derived(service.slug === "technical-seo-developer");
   const serviceHeadingOverrides = {
     "What can be implemented": "Technical SEO tasks that can be implemented",
     "Send the crawl notes, audit spreadsheet, or task list": "How to hand off technical SEO implementation work",
@@ -377,8 +350,6 @@
 <main class={`service-page service-${service.slug}`}>
   <Hero eyebrow={service.eyebrow} h1={service.h1} intro={service.intro} cta={service.cta} image={serviceHeroImage(service)} />
   <Breadcrumbs items={breadcrumbs} />
-  <ServiceNav current={service.slug} services={relatedServices} />
-
   <section class="section split-section audience-section section-effect section-effect--hex section-effect--medium">
     <div>
       <SectionHeading eyebrow={`${service.eyebrow} fit`} h2={audienceHeading} body={audienceBody} />
@@ -405,16 +376,8 @@
     </section>
   {/if}
 
-  {#if !detailAfterExamples}
-    <section class="section soft-section section-effect section-effect--hex section-effect--low">
-      <SectionHeading eyebrow={`${service.eyebrow} details`} h2={detailHeading} body={detailBody} />
-      <SortableTable caption={`${service.eyebrow} planning table`} columns={serviceDetailTableColumns} rows={serviceDetailRows} />
-      {#if service.detailCaption}<p class="wide-copy service-detail-caption">{service.detailCaption}</p>{/if}
-    </section>
-  {/if}
-
-  {#each service.sections as section, index}
-    <section class={sectionEffect(index + 1, index % 2 === 1 ? "low" : "medium", index % 2 === 1 ? "soft-section" : "")}>
+  {#each primaryServiceSections as { section, originalIndex }}
+    <section class={sectionEffect(originalIndex + 1, originalIndex % 2 === 1 ? "low" : "medium", originalIndex % 2 === 1 ? "soft-section" : "")}>
       <SectionHeading eyebrow={serviceSectionEyebrow(section)} h2={serviceSectionHeading(section)} />
       {#if section.cards}
         <CardGrid items={section.cards} />
@@ -431,7 +394,7 @@
         <p class="wide-copy">{section.body}</p>
       {/if}
     </section>
-    {#if service.midPageCta && index === (service.midPageCta.afterSectionIndex ?? 1)}
+    {#if service.midPageCta && originalIndex === (service.midPageCta.afterSectionIndex ?? 1)}
       <CtaBand
         heading={service.midPageCta.heading}
         copy={service.midPageCta.copy}
@@ -441,14 +404,9 @@
         sourceTitle={service.h1}
       />
     {/if}
-    {#if detailAfterExamples && index === 1}
-      <section class="section soft-section section-effect section-effect--hex section-effect--low">
-        <SectionHeading eyebrow={`${service.eyebrow} details`} h2={detailHeading} body={detailBody} />
-        <SortableTable caption={`${service.eyebrow} planning table`} columns={serviceDetailTableColumns} rows={serviceDetailRows} />
-        {#if service.detailCaption}<p class="wide-copy service-detail-caption">{service.detailCaption}</p>{/if}
-      </section>
-    {/if}
   {/each}
+
+  <ServiceTroubleshootingGuide {service} />
 
   <section class="section no-overpromise section-effect section-effect--hex section-effect--low">
     <SectionHeading eyebrow={`${service.eyebrow} fit and limits`} h2={limitsHeading} />
@@ -464,31 +422,12 @@
     </div>
   </section>
 
-  <RelatedServices {service} />
-  <RelatedSkills slugs={relatedSkillSlugs} />
-  {#if clusterTopicalItems.length}
-    <TopicalLinks
-      eyebrow={service.keywordCluster ? `${service.keywordCluster} paths` : `${service.eyebrow} support paths`}
-      heading={`${service.eyebrow} supporting pages`}
-      intro="These supporting pages route narrower website problems into the right service path instead of leaving the visitor guessing."
-      items={clusterTopicalItems}
-    />
-  {/if}
-  <ContextualSupport
-    eyebrow={`Related ${service.eyebrow.toLowerCase()} work`}
-    heading={`Where ${service.eyebrow} work often expands`}
-    intro="These links point to nearby services and skills that often become part of the same real website request."
-    items={contextualSupportItems}
+  <RelatedProjectHelp
+    eyebrow={`${service.eyebrow} project paths`}
+    heading="Related help for this project"
+    intro={`Compare the most relevant services, technical skills, and focused support paths when ${service.eyebrow.toLowerCase()} is only one part of the work.`}
+    items={relatedProjectItems}
   />
-  <TopicalLinks
-    eyebrow={`${service.eyebrow} support routes`}
-    heading={relatedWorkHeading}
-    intro="If this service is close but not the whole problem, these related pages help route the work by platform, symptom, technical task, or next practical step."
-    items={topicalItems}
-  />
-  {#if fixNoteCategory}
-    <FixNotesPanel category={fixNoteCategory} serviceSlug={service.slug} />
-  {/if}
   <CtaBand heading={service.cta} copy="Send the URL, the task list, or the thing that keeps getting pushed off. The Web Guy will help turn it into actual website work." label={service.cta} sourceTitle={service.h1} />
   <section class="section section-effect section-effect--traces section-effect--low">
     <SectionHeading eyebrow="FAQ" h2={`${service.eyebrow} questions`} />
@@ -505,9 +444,4 @@
     margin-top: 8px;
   }
 
-  :global(.service-detail-caption) {
-    max-width: 920px;
-    margin-top: 16px;
-    color: var(--muted);
-  }
 </style>

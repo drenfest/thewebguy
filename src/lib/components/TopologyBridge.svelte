@@ -9,9 +9,10 @@
   }
 
   const links = $derived(topologyBridgeMap[normalizePath(page.url.pathname)] || []);
+  const isServiceDetail = $derived(/^\/services\/[^/]+\/$/.test(normalizePath(page.url.pathname)));
 </script>
 
-{#if links.length}
+{#if links.length && !isServiceDetail}
   <section class="section topology-bridge-section section-effect section-effect--traces section-effect--low">
     <SectionHeading
       eyebrow="Keep exploring"

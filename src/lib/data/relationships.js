@@ -115,6 +115,79 @@ export function serviceClusterTopicalItems(pages = []) {
   }));
 }
 
+export function isRelatedServiceSection(section) {
+  const heading = section?.h2 || "";
+  const linkedCards = (section?.cards || []).filter((card) => card?.[2]);
+
+  return linkedCards.length > 0 && /(related|support paths|nearby|overlap|connections?)/i.test(heading);
+}
+
+function relatedItemLabel(href = "") {
+  if (href.startsWith("/skills/")) return "Technical skill";
+  if (href.startsWith("/blog/") || href.startsWith("/fix-notes/")) return "Supporting guide";
+  if (href === "/services/") return "Service hub";
+  return "Related service";
+}
+
+function conciseCopy(value = "") {
+  const firstSentence = value.trim().match(/^.*?[.!?](?:\s|$)/)?.[0]?.trim();
+  return firstSentence || value.trim();
+}
+
+export function serviceRelatedProjectItems(service, relatedServices = [], relatedSkills = [], clusterPages = []) {
+  const pageSpecificItems = (service?.sections || [])
+    .filter(isRelatedServiceSection)
+    .flatMap((section) => section.cards || [])
+    .filter((card) => card?.[2])
+    .map((card) => ({
+      label: relatedItemLabel(card[2]),
+      title: card[0],
+      copy: card[1],
+      href: card[2],
+      linkLabel: card[3] || `View ${card[0]}`
+    }));
+
+  const candidates = [
+    ...pageSpecificItems,
+    ...relatedServices.map((related) => ({
+      label: "Related service",
+      title: related.eyebrow || related.h1,
+      copy: `Useful when this ${service.eyebrow.toLowerCase()} project also needs ${conciseCopy(related.intro).replace(/^[A-Z]/, (letter) => letter.toLowerCase())}`,
+      href: serviceUrl(related.slug),
+      linkLabel: `View ${related.eyebrow || related.h1}`
+    })),
+    ...relatedSkills.map((skill) => ({
+      label: "Technical skill",
+      title: skill.eyebrow,
+      copy: conciseCopy(skill.connection || skill.intro),
+      href: skillUrl(skill.slug),
+      linkLabel: `Explore ${skill.eyebrow}`
+    })),
+    ...clusterPages.map((page) => ({
+      label: page.keywordCluster || "Focused support path",
+      title: page.eyebrow || page.h1,
+      copy: conciseCopy(page.intro),
+      href: serviceUrl(page.slug),
+      linkLabel: `View ${page.eyebrow || page.h1}`
+    })),
+    {
+      label: "Service hub",
+      title: "Website Services",
+      copy: "Compare the full service range when the project crosses platforms, symptoms, or more than one technical workstream.",
+      href: "/services/",
+      linkLabel: "View all website services"
+    }
+  ];
+
+  const seen = new Set([serviceUrl(service.slug)]);
+  return candidates.filter((item) => {
+    const href = item?.href?.endsWith("/") ? item.href : `${item?.href || ""}/`;
+    if (!item?.href || seen.has(href)) return false;
+    seen.add(href);
+    return true;
+  });
+}
+
 export function relatedServicesForSkill(skill) {
   return resolveServices(skill?.relatedServices || []);
 }

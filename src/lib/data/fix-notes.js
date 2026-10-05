@@ -2313,6 +2313,85 @@ function matchesService(note, serviceSlug = "") {
   return note.serviceSlug === serviceSlug || (note.relatedServices || []).includes(serviceSlug);
 }
 
+const fixNoteTagStopWords = new Set([
+  "and", "built", "cleanup", "development", "for", "help", "implementation", "ongoing",
+  "page", "pages", "service", "services", "site", "support", "technical", "the", "web",
+  "website", "with", "work", "working"
+]);
+
+function relevanceTokens(value = "") {
+  return slugify(value)
+    .split("-")
+    .filter((token) => token.length > 2 && !fixNoteTagStopWords.has(token));
+}
+
+function serviceRelevanceText(service = {}) {
+  return [
+    service.slug,
+    service.h1,
+    service.eyebrow,
+    service.intro,
+    service.keywordCluster,
+    service.clusterAnchor,
+    ...(service.clusterLinks || []),
+    ...(service.related || []),
+    ...(service.skillSlugs || []),
+    ...((service.sections || []).flatMap((section) => [
+      section.h2,
+      section.body,
+      ...(section.bullets || []),
+      ...(section.cards || []).flatMap((card) => card.slice(0, 2))
+    ]))
+  ].filter(Boolean).join(" ");
+}
+
+function fixNoteMatchDetails(note, service = {}) {
+  const serviceText = slugify(serviceRelevanceText(service));
+  const serviceTokens = new Set(relevanceTokens(serviceText));
+  const tokenMatches = (tagToken) => [...serviceTokens].some((serviceToken) =>
+    serviceToken === tagToken ||
+    (Math.min(serviceToken.length, tagToken.length) >= 4 &&
+      serviceToken.slice(0, 4) === tagToken.slice(0, 4))
+  );
+  const matchedTags = (note.tags || []).filter((tag) => {
+    const normalizedTag = slugify(tag);
+    const tagTokens = relevanceTokens(tag);
+    return serviceText.includes(normalizedTag) || tagTokens.some(tokenMatches);
+  });
+  const noteContextTokens = new Set(relevanceTokens([
+    note.title,
+    note.category,
+    note.excerpt,
+    note.problemSummary,
+    ...(note.tags || []),
+    ...(note.toolsUsed || [])
+  ].filter(Boolean).join(" ")));
+  const contextOverlap = [...noteContextTokens].filter(tokenMatches).length;
+  const nearbyServiceSlugs = new Set([
+    ...(service.clusterLinks || []),
+    ...(service.related || [])
+  ].filter(Boolean));
+  const skillSlugs = new Set(service.skillSlugs || []);
+  const noteRelatedServices = new Set(note.relatedServices || []);
+  const relationshipScore = Math.max(
+    note.serviceSlug === service.slug ? 24 : 0,
+    noteRelatedServices.has(service.slug) ? 20 : 0,
+    skillSlugs.has(note.serviceSlug) ? 18 : 0,
+    [...skillSlugs].some((slug) => noteRelatedServices.has(slug)) ? 16 : 0,
+    nearbyServiceSlugs.has(note.serviceSlug) ? 12 : 0,
+    [...nearbyServiceSlugs].some((slug) => noteRelatedServices.has(slug)) ? 10 : 0,
+    note.serviceSlug === service.clusterAnchor ? 8 : 0,
+    noteRelatedServices.has(service.clusterAnchor) ? 6 : 0
+  );
+  const troubleshootingIntentScore = /troubleshoot|fix|broken|error|repair/.test(service.slug || "") &&
+    /Production Debugging|Website Fixes|WordPress Support/.test(note.category || "") ? 8 : 0;
+
+  return {
+    matchedTags,
+    score: relationshipScore + troubleshootingIntentScore + (matchedTags.length * 4) + Math.min(contextOverlap, 8)
+  };
+}
+
 export const sortedFixNotes = [...fixNotes].sort(sortByNewest);
 
 export const fixNoteMap = Object.fromEntries(fixNotes.map((note) => [note.slug, note]));
@@ -2377,6 +2456,21 @@ export function getFixNotes({ category = "", serviceSlug = "", limit = 3, fallba
   }
 
   return typeof limit === "number" ? notes.slice(0, limit) : notes;
+}
+
+export function getFixNotesForService(service, limit = 2) {
+  const recentMatches = sortedFixNotes
+    .map((note) => ({ note, ...fixNoteMatchDetails(note, service) }))
+    .filter(({ score, matchedTags }) => score > 0 && matchedTags.length > 0)
+    .slice(0, 12)
+    .map((match, recentRank) => ({ ...match, recentRank }));
+
+  return recentMatches
+    .sort((a, b) =>
+      (b.score - (b.recentRank * 2)) - (a.score - (a.recentRank * 2)) || sortByNewest(a.note, b.note)
+    )
+    .slice(0, limit)
+    .map(({ note, matchedTags }) => ({ ...note, matchedTags }));
 }
 
 export function getRelatedFixNotes(note, limit = 3) {

@@ -32,6 +32,7 @@ export {
   fixNoteMap,
   fixNoteUrl,
   getFixNotes,
+  getFixNotesForService,
   getRelatedFixNotes,
   sortedFixNotes
 } from "./fix-notes.js";
