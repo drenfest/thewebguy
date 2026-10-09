@@ -8,7 +8,8 @@
     label = "Get a Free Quote",
     secondaryLabel = "",
     secondaryHref = "",
-    sourceTitle = heading
+    sourceTitle = heading,
+    sectionId = undefined
   } = $props();
 
   const primaryHref = $derived(contactHrefWithContext("/contact/#request-form", {
@@ -28,7 +29,7 @@
   }
 </script>
 
-<section class="section cta-band effect effect-dark-grid effect-medium effect-parallax">
+<section class="section cta-band effect effect-dark-grid effect-medium effect-parallax" id={sectionId}>
   <div>
     <h2>{heading}</h2>
     <p>{copy}</p>

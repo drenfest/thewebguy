@@ -1,5 +1,6 @@
 import { coreServicePages } from "./services.js";
 import { keywordServicePages } from "./keyword-services.js";
+import { applyProductionServiceUplift, applySupportingServiceBridge, applyTargetedServicePatch } from "./production-uplift.js";
 
 export { coreServicePages, serviceUrl } from "./services.js";
 export { keywordLandingSpecs, buildKeywordLandingPage, keywordServicePages } from "./keyword-services.js";
@@ -40,7 +41,10 @@ export { skillPages, skillMap, skillUrl, serviceSkillMap } from "./skills.js";
 export { locationPages, locationMap, locationUrl } from "./locations.js";
 export { sitesForSale, siteForSaleMap, siteForSaleUrl } from "./sites-for-sale.js";
 
-export const servicePages = [...coreServicePages, ...keywordServicePages];
+export const servicePages = [...coreServicePages, ...keywordServicePages]
+  .map(applyTargetedServicePatch)
+  .map(applySupportingServiceBridge)
+  .map(applyProductionServiceUplift);
 export const serviceMap = Object.fromEntries(servicePages.map((service) => [service.slug, service]));
 
 export const mainPages = [

@@ -2,7 +2,7 @@
   import Seo from "$lib/components/Seo.svelte";
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
   import SectionHeading from "$lib/components/SectionHeading.svelte";
-  import CtaBand from "$lib/components/CtaBand.svelte";
+  import InlineLeadForm from "$lib/components/InlineLeadForm.svelte";
   import { siteForSaleUrl } from "$lib/data/content.js";
   import { breadcrumbSchema, schemaList, webPageSchema } from "$lib/data/schema.js";
 
@@ -49,7 +49,7 @@
       <p class="sale-note">{site.availabilityNote}</p>
       <div class="sale-actions">
         {#if site.isAvailable}
-          <a class="button button-primary" href="/contact/#request-form" title={`Buy ${site.name}`}>Buy Now</a>
+          <a class="button button-primary" href="#site-inquiry" title={`Ask about buying ${site.name}`}>Ask About Buying</a>
         {/if}
         <a class="button button-secondary" href={site.liveUrl} target="_blank" rel="noreferrer" title={`${site.liveLabel}: ${site.name}`}>{site.liveLabel}</a>
         <a class="button button-secondary" href="/sites-for-sale/" title="Back to the sites for sale inventory">Back to Inventory</a>
@@ -188,7 +188,29 @@
     </div>
   </section>
 
-  <CtaBand heading="Need the transfer scope or expansion plan?" copy="Use the request form to ask about acquisition timing, rebranding, launch support, additional locations, SEO work, or a similar commissioned build." />
+  <InlineLeadForm
+    id="site-inquiry"
+    eyebrow={site.isAvailable ? "Acquisition inquiry" : "Commission a similar build"}
+    heading={site.isAvailable ? `Ask about buying ${site.name}` : `Want a project like ${site.name}?`}
+    intro={site.isAvailable
+      ? "Ask about availability, the transfer scope, launch support, rebranding, expansion, or anything else you need to evaluate the purchase."
+      : "This asset is no longer available, but you can describe the market, features, and systems you want in a separately commissioned build."}
+    sourcePath={pagePath}
+    sourceTitle={`${site.name} | Sites For Sale`}
+    sourceType="site_for_sale_detail"
+    sourceCta="listing_inline_inquiry"
+    service={site.isAvailable ? `Purchase inquiry: ${site.name}` : `Similar build inquiry: ${site.name}`}
+    workType={site.isAvailable ? "Site purchase inquiry" : "Commissioned website build"}
+    detailsLabel={site.isAvailable ? "What would you like to know about this asset?" : "What would you want in a similar build?"}
+    detailsPlaceholder={site.isAvailable
+      ? "Ask about the purchase, included assets, transfer process, launch support, rebranding, or expansion options."
+      : "Describe your market, required pages, lead systems, integrations, and launch goals."}
+    urlLabel="Your company or current website (optional)"
+    submitText={site.isAvailable ? "Send Purchase Inquiry" : "Request a Similar Build"}
+    successText={site.isAvailable
+      ? `Your inquiry about ${site.name} was submitted. I will review it and follow up with availability and the next step.`
+      : `Your request for a project like ${site.name} was submitted. I will review the details and follow up about scope.`}
+  />
 </main>
 
 <style>

@@ -455,6 +455,40 @@ h3 {
   font-weight: 600;
 }
 
+.hero-panel-cta {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border: 1px solid rgba(48, 199, 149, 0.48);
+  border-radius: 7px;
+  background: rgba(48, 199, 149, 0.1);
+  color: #f7fbff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.hero-panel-cta b {
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+.hero-panel-cta:hover {
+  border-color: rgba(48, 199, 149, 0.82);
+  background: rgba(48, 199, 149, 0.18);
+  transform: translateY(-1px);
+}
+
+.hero-panel-cta:focus-visible {
+  outline: 3px solid rgba(48, 199, 149, 0.35);
+  outline-offset: 3px;
+}
+
 .breadcrumb-nav {
   position: relative;
   z-index: 2;

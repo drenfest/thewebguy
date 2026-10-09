@@ -3,7 +3,7 @@
   import Hero from "$lib/components/Hero.svelte";
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
   import SectionHeading from "$lib/components/SectionHeading.svelte";
-  import CtaBand from "$lib/components/CtaBand.svelte";
+  import InlineLeadForm from "$lib/components/InlineLeadForm.svelte";
   import { staticHeroImages } from "$lib/data/hero-images.js";
   import { sitesForSale, siteForSaleUrl } from "$lib/data/content.js";
   import { breadcrumbSchema, itemListSchema, schemaList } from "$lib/data/schema.js";
@@ -59,6 +59,7 @@
     h1="Sites For Sale"
     intro="Acquisition-ready web assets, built once and sold once. Each listing is presented like a product: real screenshots, state badges, proof where available, and a direct path into the underlying system depth."
     cta="Ask About Buying a Site"
+    ctaHref="#inventory-inquiry"
     image={staticHeroImages.services}
   />
 
@@ -154,7 +155,23 @@
     </div>
   </section>
 
-  <CtaBand heading="Want the full transfer scope?" copy="Use the request form to ask about acquisition timing, what is included, launch support, or a similar commissioned build." />
+  <InlineLeadForm
+    id="inventory-inquiry"
+    eyebrow="Inventory inquiry"
+    heading="Ask about buying a site"
+    intro="Tell me which listing interests you and what you need to know about ownership transfer, launch support, rebranding, or a similar commissioned build."
+    sourcePath="/sites-for-sale/"
+    sourceTitle="Sites For Sale Inventory"
+    sourceType="site_inventory"
+    sourceCta="inventory_inline_inquiry"
+    service="Website asset acquisition"
+    workType="Site purchase inquiry"
+    detailsLabel="Which site are you interested in?"
+    detailsPlaceholder="Name the listing and ask about the purchase, included assets, transfer process, launch support, or a similar custom build."
+    urlLabel="Your company or current website (optional)"
+    submitText="Send Purchase Inquiry"
+    successText="Your purchase inquiry was submitted. I will review it and follow up with availability and the appropriate next step."
+  />
 </main>
 
 <style>

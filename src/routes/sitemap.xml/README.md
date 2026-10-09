@@ -4,7 +4,7 @@ Dynamic XML sitemap endpoint.
 
 ## Files
 
-- `+server.js`: imports service, blog, skill, and location data, generates all known URLs, and returns XML.
+- `+server.js`: imports service, blog, fix-note, sites-for-sale, skill, and location data, generates all known URLs, and returns XML.
 
 ## Common Patterns
 

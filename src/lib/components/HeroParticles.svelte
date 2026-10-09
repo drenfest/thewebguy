@@ -3,6 +3,7 @@
 
   let { intensity = "high", variant = "hero" } = $props();
   let canvas;
+  let halloweenSeason = $state(false);
 
   const intensityPresets = {
     low: {
@@ -60,6 +61,7 @@
     let pointer = { x: 0, y: 0, active: false };
     let pointerListenersActive = false;
     let lastMobileFrame = 0;
+    halloweenSeason = new Date().getMonth() === 9;
 
     function settings() {
       return intensityPresets[intensity] || intensityPresets.medium;
@@ -67,6 +69,12 @@
 
     function particleCount() {
       const activeSettings = settings();
+      if (halloweenSeason) {
+        if (reduceMotion.matches) return mobileQuery.matches ? 7 : 12;
+        if (mobileQuery.matches) return 9;
+        if (window.innerWidth < 1024) return 14;
+        return 19;
+      }
       if (reduceMotion.matches) return mobileQuery.matches ? 18 : 28;
       if (mobileQuery.matches) return activeSettings.mobileCount;
       if (window.innerWidth < 1024) return activeSettings.tabletCount;
@@ -87,9 +95,72 @@
           vy: (Math.random() - 0.5) * 0.2 * activeSettings.speed,
           r: 1.1 + Math.random() * 1.9,
           pulse: Math.random() * Math.PI * 2,
-          drift: 5 + Math.random() * 13
+          drift: 5 + Math.random() * 13,
+          pumpkinSize: 7 + Math.random() * 7,
+          pumpkinTilt: (Math.random() - 0.5) * 0.38,
+          pumpkinFace: Math.floor(Math.random() * 3),
+          pumpkinHue: 22 + Math.random() * 14
         };
       });
+    }
+
+    function drawJackOLantern(node, glow) {
+      const size = node.pumpkinSize;
+      ctx.save();
+      ctx.translate(node.x, node.y);
+      ctx.rotate(node.pumpkinTilt);
+      ctx.globalAlpha = clamp(glow + 0.22, 0.48, 0.92);
+      ctx.shadowBlur = 10;
+      ctx.shadowColor = "rgba(255, 128, 28, 0.34)";
+
+      ctx.fillStyle = "#4f8a45";
+      ctx.fillRect(-1.2, -size * 0.82, 2.4, size * 0.32);
+
+      ctx.fillStyle = `hsl(${node.pumpkinHue} 88% 52%)`;
+      ctx.beginPath();
+      ctx.ellipse(0, 0, size, size * 0.72, 0, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.strokeStyle = "rgba(118, 48, 10, 0.42)";
+      ctx.lineWidth = Math.max(0.7, size * 0.08);
+      for (const offset of [-0.45, 0.45]) {
+        ctx.beginPath();
+        ctx.ellipse(offset * size, 0, size * 0.42, size * 0.69, 0, -Math.PI / 2, Math.PI / 2);
+        ctx.stroke();
+      }
+
+      ctx.shadowBlur = 4;
+      ctx.fillStyle = "rgba(255, 239, 134, 0.94)";
+      const eyeY = -size * 0.13;
+      for (const eyeX of [-size * 0.34, size * 0.34]) {
+        ctx.beginPath();
+        ctx.moveTo(eyeX - size * 0.13, eyeY + size * 0.1);
+        ctx.lineTo(eyeX, eyeY - size * 0.14);
+        ctx.lineTo(eyeX + size * 0.13, eyeY + size * 0.1);
+        ctx.closePath();
+        ctx.fill();
+      }
+
+      ctx.beginPath();
+      if (node.pumpkinFace === 0) {
+        ctx.moveTo(-size * 0.48, size * 0.2);
+        ctx.lineTo(-size * 0.18, size * 0.42);
+        ctx.lineTo(0, size * 0.26);
+        ctx.lineTo(size * 0.18, size * 0.42);
+        ctx.lineTo(size * 0.48, size * 0.2);
+        ctx.lineTo(size * 0.32, size * 0.48);
+        ctx.lineTo(-size * 0.32, size * 0.48);
+      } else if (node.pumpkinFace === 1) {
+        ctx.arc(0, size * 0.26, size * 0.38, 0.12, Math.PI - 0.12);
+        ctx.lineTo(-size * 0.34, size * 0.22);
+      } else {
+        ctx.moveTo(-size * 0.42, size * 0.24);
+        ctx.quadraticCurveTo(0, size * 0.58, size * 0.42, size * 0.24);
+        ctx.quadraticCurveTo(0, size * 0.4, -size * 0.42, size * 0.24);
+      }
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
     }
 
     function resize() {
@@ -148,7 +219,9 @@
           if (distance < maxDistance) {
             const influence = Math.max(pointerInfluence(a), pointerInfluence(b));
             const alpha = activeSettings.lineAlpha * (1 - distance / maxDistance) + influence * 0.08;
-            ctx.strokeStyle = `rgba(48, 199, 149, ${alpha})`;
+            ctx.strokeStyle = halloweenSeason
+              ? `rgba(255, 126, 35, ${alpha * 0.72})`
+              : `rgba(48, 199, 149, ${alpha})`;
             ctx.lineWidth = 1;
             ctx.shadowBlur = influence > 0.16 ? 10 * influence : 0;
             ctx.shadowColor = "rgba(48, 199, 149, 0.38)";
@@ -176,10 +249,14 @@
           ctx.fill();
         }
 
-        ctx.fillStyle = `rgba(240, 184, 75, ${glow})`;
-        ctx.beginPath();
-        ctx.arc(node.x, node.y, radius, 0, Math.PI * 2);
-        ctx.fill();
+        if (halloweenSeason) {
+          drawJackOLantern(node, glow);
+        } else {
+          ctx.fillStyle = `rgba(240, 184, 75, ${glow})`;
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, radius, 0, Math.PI * 2);
+          ctx.fill();
+        }
       }
     }
 
@@ -277,6 +354,12 @@
       }
     }
 
+    function handleSeasonChange(event) {
+      halloweenSeason = event.detail?.halloween ?? new Date().getMonth() === 9;
+      resetNodes();
+      start();
+    }
+
     let startup;
     let startupMode = "timeout";
     let mounted = true;
@@ -302,6 +385,7 @@
       reduceMotion.addEventListener("change", start);
       mobileQuery.addEventListener("change", resize);
       mobileQuery.addEventListener("change", syncPointerListeners);
+      document.addEventListener("seasonchange", handleSeasonChange);
       resize();
       start();
     }
@@ -330,8 +414,9 @@
       reduceMotion.removeEventListener("change", start);
       mobileQuery.removeEventListener("change", resize);
       mobileQuery.removeEventListener("change", syncPointerListeners);
+      document.removeEventListener("seasonchange", handleSeasonChange);
     };
   });
 </script>
 
-<canvas bind:this={canvas} class={`hero-particles hero-particles--${variant} hero-particles--${intensity}`} aria-hidden="true"></canvas>
+<canvas bind:this={canvas} class={`hero-particles hero-particles--${variant} hero-particles--${intensity}`} class:hero-particles--halloween={halloweenSeason} aria-hidden="true"></canvas>

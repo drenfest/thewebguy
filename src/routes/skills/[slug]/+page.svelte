@@ -111,9 +111,9 @@
       [
         "GA4 and GTM work is the technical layer behind ",
         { text: "Analytics & Tracking", href: "/services/analytics-tracking/", title: "View analytics and tracking support for GA4, GTM, pixels, form events, and ecommerce measurement" },
-        ", and it often overlaps with ",
+        ". When those events, forms, CRMs, and reports disagree, I also check ",
         { text: "Tracking Scripts and Pixels", href: "/blog/tracking-scripts-pixels-broken/", title: "Read about broken tracking scripts and pixels" },
-        " or ",
+        " and ",
         { text: "API Integrations", href: "/services/api-integrations/", title: "View API integration support when data has to move between systems" },
         " when events, forms, CRMs, and reports do not agree."
       ]
@@ -215,35 +215,13 @@
     ]),
     " so the technical fix is tied to what a visitor, marketer, or site owner actually sees."
   ]] : []);
-  const skillInternalParagraphs = $derived([
-    [
-      `${skill.eyebrow} usually becomes useful inside `,
-      relatedServiceCards[0] && {
-        text: relatedServiceCards[0].eyebrow,
-        href: serviceUrl(relatedServiceCards[0].slug),
-        title: `View ${relatedServiceCards[0].eyebrow} connected to ${skill.eyebrow}`
-      },
-      relatedServiceCards[1] ? " and " : "",
-      relatedServiceCards[1] && {
-        text: relatedServiceCards[1].eyebrow,
-        href: serviceUrl(relatedServiceCards[1].slug),
-        title: `View ${relatedServiceCards[1].eyebrow} connected to ${skill.eyebrow}`
-      },
-      " when the technical work needs to become a real site change."
-    ],
-    [
-      relatedSkills[0] ? "Nearby technical context includes " : "For broader context, use the ",
-      relatedSkills[0] && {
-        text: relatedSkills[0].eyebrow,
-        href: skillUrl(relatedSkills[0].slug),
-        title: `View ${relatedSkills[0].eyebrow} related to ${skill.eyebrow}`
-      },
-      relatedSkills[0] ? ", or you can return to the " : "",
-      { text: "Technical Web Skills", href: "/skills/", title: "View all technical web skills" },
-      " hub when the platform, debugging path, tracking setup, API, SEO system, or performance issue is still being sorted."
-    ]
+  const skillTaskParagraphs = $derived(skill.problems[0] && skill.tasks[0] ? [[
+    `When ${skill.problems[0].charAt(0).toLowerCase()}${skill.problems[0].slice(1)}, the first useful step is to ${skill.tasks[0].charAt(0).toLowerCase()}${skill.tasks[0].slice(1)}. The goal is a tested implementation, not another generic recommendation.`
+  ]] : []);
+  const allSkillInternalParagraphs = $derived([
+    ...(skillFocusParagraphs[skill.slug] || skillTaskParagraphs),
+    ...skillSupportingParagraphs
   ]);
-  const allSkillInternalParagraphs = $derived([...(skillFocusParagraphs[skill.slug] || []), ...skillSupportingParagraphs, ...skillInternalParagraphs]);
   const skillTableColumns = [
     { key: "need", label: "Need" },
     { key: "implementation", label: "Implementation focus" },

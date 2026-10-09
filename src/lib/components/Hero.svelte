@@ -15,6 +15,15 @@
     showCapabilityLinks = true,
     compact = false,
     panel,
+    panelHeading = "Start here",
+    panelStatus = "Your next step",
+    panelEyebrow = "Start with your project",
+    panelTitle = "Free quote",
+    panelCopy = "Tell me what is broken, what needs to launch, or what you want improved. I will help define the work and quote the next step.",
+    panelCta = "",
+    panelCtaHref = ctaHref,
+    panelTags = ["Clear scope", "Remote-friendly", "Task-first"],
+    panelProof = ["WordPress, Shopify, tracking, APIs", "Site fixes, speed, SEO implementation", "You approve the work before it starts"],
     note = "Free quote. Scope and cost agreed before paid work begins.",
     image = {
       slug: "home-contract-web-support",
@@ -44,6 +53,11 @@
     sourcePath: page.url.pathname,
     sourceTitle: h1,
     sourceCta: secondary
+  }));
+  const contextualPanelCtaHref = $derived(contactHrefWithContext(panelCtaHref, {
+    sourcePath: page.url.pathname,
+    sourceTitle: h1,
+    sourceCta: panelCta
   }));
 
   const capabilityLinks = [
@@ -90,7 +104,7 @@
 </script>
 
 <svelte:head>
-  {#if !panel && !compact}
+  {#if !compact}
   <link
     rel="preload"
     as="image"
@@ -129,11 +143,40 @@
     </div>
     {#if !compact}<aside class="hero-panel">
       {#if panel}
+        <div class="hero-panel-status">
+          <span>{panelStatus}</span>
+          <strong>{panelHeading}</strong>
+        </div>
+        <div class="hero-image-frame">
+          <picture>
+            <source
+              type="image/webp"
+              srcset={webpSrcset}
+              sizes={imageSizes}
+            />
+            <img
+              src={fallbackSrc}
+              srcset={jpegSrcset}
+              sizes={imageSizes}
+              width={imageWidth}
+              height={imageHeight}
+              alt={imageAlt}
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </picture>
+        </div>
         {@render panel()}
+        {#if panelCta}
+          <a class="hero-panel-cta" href={contextualPanelCtaHref} title={linkTitle(panelCta, contextualPanelCtaHref)}>
+            <span>{panelCta}</span><b aria-hidden="true">→</b>
+          </a>
+        {/if}
       {:else}
       <div class="hero-panel-status">
-        <span>Your next step</span>
-        <strong>Start here</strong>
+        <span>{panelStatus}</span>
+        <strong>{panelHeading}</strong>
       </div>
       <div class="hero-image-frame">
         <picture>
@@ -149,23 +192,24 @@
             width={imageWidth}
             height={imageHeight}
             alt={imageAlt}
-            loading="lazy"
-            fetchpriority="auto"
+            loading="eager"
+            fetchpriority="high"
             decoding="async"
           />
         </picture>
       </div>
-      <div class="rate-badge"><span>Start with your project</span><strong>Free quote</strong></div>
-      <p>Tell me what is broken, what needs to launch, or what you want improved. I will help define the work and quote the next step.</p>
+      <div class="rate-badge"><span>{panelEyebrow}</span><strong>{panelTitle}</strong></div>
+      <p>{panelCopy}</p>
+      {#if panelCta}
+        <a class="hero-panel-cta" href={contextualPanelCtaHref} title={linkTitle(panelCta, contextualPanelCtaHref)}>
+          <span>{panelCta}</span><b aria-hidden="true">→</b>
+        </a>
+      {/if}
       <div class="hero-panel-tags" aria-label="Working together">
-        <span>Clear scope</span>
-        <span>Remote-friendly</span>
-        <span>Task-first</span>
+        {#each panelTags as tag}<span>{tag}</span>{/each}
       </div>
       <ul class="hero-proof">
-        <li>WordPress, Shopify, tracking, APIs</li>
-        <li>Site fixes, speed, SEO implementation</li>
-        <li>You approve the work before it starts</li>
+        {#each panelProof as item}<li>{item}</li>{/each}
       </ul>
       {/if}
     </aside>{/if}

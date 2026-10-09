@@ -14,6 +14,8 @@ import {
   locationUrl,
   servicePages,
   serviceUrl,
+  sitesForSale,
+  siteForSaleUrl,
   skillPages,
   skillUrl
 } from "$lib/data/content.js";
@@ -36,6 +38,8 @@ export function GET() {
     "/fix-notes/",
     ...fixNotes.map((note) => fixNoteUrl(note.slug)),
     ...fixNoteCategories.map((category) => fixNoteCategoryUrl(category.slug)),
+    "/sites-for-sale/",
+    ...sitesForSale.map((site) => siteForSaleUrl(site.slug)),
     "/skills/",
     ...skillPages.map((skill) => skillUrl(skill.slug)),
     "/locations/",

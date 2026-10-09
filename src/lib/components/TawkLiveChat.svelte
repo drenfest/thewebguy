@@ -25,6 +25,7 @@
   const widgetId = publicEnv("PUBLIC_TAWK_WIDGET_ID", defaultWidgetId);
   const enabled = booleanEnv("PUBLIC_TAWK_ENABLED");
   const autoStart = booleanEnv("PUBLIC_TAWK_AUTO_START");
+  const customIntake = booleanEnv("PUBLIC_TAWK_CUSTOM_INTAKE");
   const hideWhenOffline = booleanEnv("PUBLIC_TAWK_HIDE_WHEN_OFFLINE");
   const allowedHosts = publicEnv("PUBLIC_TAWK_ALLOWED_HOSTS")
     .split(",")
@@ -51,18 +52,26 @@
   const showSetupPreview = dev && enabled && !hasConfig;
   const maxLoadAttempts = 4;
 
-  let status = $state(hasConfig ? "loading" : "setup");
+  let status = $state(hasConfig ? "ready" : "setup");
   let networkOnline = $state(true);
   let setupPreviewOpen = $state(false);
   let previewContactName = $state("");
+  let previewFollowUp = $state(false);
   let previewContactMethod = $state("");
+  let previewContactEmail = $state("");
+  let previewContactPhone = $state("");
   let previewContactSubmitted = $state(false);
+  let startConfiguredChat = null;
 
   const statusCopy = $derived(
     !networkOnline
       ? "Connection lost"
+      : hasConfig && customIntake && !previewContactSubmitted
+        ? "Start chat"
       : status === "online"
         ? "Online"
+        : status === "ready"
+          ? "Start chat"
         : status === "away"
           ? "Away"
           : status === "offline"
@@ -73,7 +82,17 @@
                 ? "Unavailable"
                 : "Setup needed"
   );
-  const previewContactReady = $derived(Boolean(previewContactName.trim() && previewContactMethod.trim()));
+  const previewNeedsEmail = $derived(previewFollowUp && ["email", "both"].includes(previewContactMethod));
+  const previewNeedsPhone = $derived(previewFollowUp && ["phone", "both"].includes(previewContactMethod));
+  const previewContactReady = $derived(Boolean(
+    previewContactName.trim()
+      && (!previewFollowUp || (
+        previewContactMethod
+        && (!previewNeedsEmail || previewContactEmail.trim())
+        && (!previewNeedsPhone || previewContactPhone.trim())
+      ))
+  ));
+  const showChatGate = $derived(enabled && (showSetupPreview || (hasConfig && customIntake && !previewContactSubmitted)));
 
   function normalizeStatus(value) {
     return ["online", "away", "offline"].includes(value) ? value : "offline";
@@ -185,6 +204,12 @@
       return;
     }
 
+    if (customIntake && previewContactSubmitted) {
+      api.showWidget?.();
+      updateLiveChatWindowState(api);
+      return;
+    }
+
     if (nextStatus === "online") {
       api.showWidget?.();
       updateLiveChatWindowState(api);
@@ -207,6 +232,16 @@
     event.preventDefault();
     if (!previewContactReady) return;
     previewContactSubmitted = true;
+    if (hasConfig && customIntake) {
+      setupPreviewOpen = false;
+      startConfiguredChat?.({
+        name: previewContactName.trim(),
+        followUp: previewFollowUp,
+        method: previewFollowUp ? previewContactMethod : "none",
+        email: previewNeedsEmail ? previewContactEmail.trim() : "",
+        phone: previewNeedsPhone ? previewContactPhone.trim() : ""
+      });
+    }
   }
 
   onMount(() => {
@@ -260,7 +295,7 @@
     window.Tawk_LoadStart = window.Tawk_LoadStart || new Date();
 
     const api = window.Tawk_API;
-    api.autoStart = autoStart;
+    api.autoStart = customIntake ? false : autoStart;
     api.customStyle = tawkCustomStyle;
 
     const previousBeforeLoad = api.onBeforeLoad;
@@ -287,6 +322,8 @@
     let retryTimer;
     let initialLoadTimer;
     let initialLoadQueued = false;
+    let pendingCustomStart = false;
+    let pendingContactPreference = "none";
 
     const callApi = (method, ...args) => {
       if (typeof api[method] !== "function") return undefined;
@@ -377,6 +414,35 @@
       initialLoadTimer = window.setTimeout(startInitialLoad, initialLoadDelay);
     };
 
+    const openConfiguredChat = () => {
+      api.start?.({ showWidget: true });
+      api.showWidget?.();
+      api.maximize?.();
+      addTawkTags(api, ["custom-chat-intake"]);
+      addTawkEvent(api, "custom-chat-intake", {
+        followup_requested: pendingContactPreference !== "none",
+        followup_preference: pendingContactPreference
+      });
+      trackLiveChatEvent("custom_intake_submitted", {
+        chat_followup_requested: pendingContactPreference !== "none",
+        chat_followup_preference: pendingContactPreference
+      });
+      pendingCustomStart = false;
+    };
+
+    startConfiguredChat = ({ name, followUp, method, email, phone }) => {
+      pendingCustomStart = true;
+      pendingContactPreference = followUp ? method : "none";
+      api.visitor = cleanPayload({ name, email, phone });
+
+      if (typeof api.start === "function") {
+        openConfiguredChat();
+        return;
+      }
+
+      ensureTawkScript();
+    };
+
     api.onBeforeLoad = () => {
       previousBeforeLoad?.();
       if (hideWhenOffline) api.hideWidget?.();
@@ -387,7 +453,11 @@
     api.onLoad = () => {
       previousLoad?.();
       setLiveChatStatus(normalizeStatus(api.getStatus?.()));
-      applyAvailability(status);
+      if (pendingCustomStart) {
+        openConfiguredChat();
+      } else {
+        applyAvailability(status);
+      }
       addTawkEvent(api, "site-chat-loaded", { status });
       trackLiveChatEvent("loaded");
     };
@@ -532,7 +602,7 @@
     window.addEventListener("online", handleOnline);
     window.addEventListener("offline", handleOffline);
 
-    if (networkOnline) {
+    if (networkOnline && !customIntake) {
       queueInitialLoad();
     } else {
       setLiveChatStatus("connection-lost");
@@ -543,6 +613,7 @@
       window.clearTimeout(retryTimer);
       window.clearTimeout(initialLoadTimer);
       removeInitialLoadListeners();
+      startConfiguredChat = null;
       window.removeEventListener("online", handleOnline);
       window.removeEventListener("offline", handleOffline);
       api.onBeforeLoad = previousBeforeLoad;
@@ -585,35 +656,55 @@
   </div>
 {/if}
 
-{#if showSetupPreview}
+{#if showChatGate}
   <div class="live-chat-preview" data-status={status} aria-live="polite">
     {#if setupPreviewOpen}
       <section id="live-chat-preview-panel" class="live-chat-preview-panel" aria-labelledby="live-chat-preview-title">
         <div class="live-chat-preview-header">
           <div>
-            <p class="live-chat-preview-kicker">Tawk setup preview</p>
-            <h2 id="live-chat-preview-title">Live chat</h2>
+            <p class="live-chat-preview-kicker">{hasConfig ? "Quick details" : "Tawk setup preview"}</p>
+            <h2 id="live-chat-preview-title">Start live chat</h2>
           </div>
           <button type="button" class="live-chat-preview-close" aria-label="Close live chat preview" onclick={closeSetupPreview}>&times;</button>
         </div>
 
         <div class="live-chat-preview-body">
           {#if networkOnline}
-            {#if previewContactSubmitted}
+            {#if previewContactSubmitted && !hasConfig}
               <p class="live-chat-preview-message agent">Thanks. The real Tawk widget should require this contact step before chat starts.</p>
               <p class="live-chat-preview-message visitor">When you are online in Tawk, visitors can chat here right away.</p>
               <p class="live-chat-preview-message agent">When all agents are offline, the widget stays hidden and the existing contact form remains the fallback.</p>
             {:else}
               <form class="live-chat-preview-form" onsubmit={submitPreviewContact}>
-                <p>Add your details to start a live chat.</p>
+                <p>Your name is all that is required to start chatting.</p>
                 <label>
                   Name
                   <input bind:value={previewContactName} name="preview-chat-name" type="text" autocomplete="name" required placeholder="Your name" />
                 </label>
-                <label>
-                  Email or phone
-                  <input bind:value={previewContactMethod} name="preview-chat-contact" type="text" autocomplete="email" required placeholder="you@example.com or +1 555 123 4567" />
+                <label class="live-chat-followup-toggle">
+                  <input bind:checked={previewFollowUp} name="preview-chat-followup" type="checkbox" />
+                  <span>If no one is available, contact me</span>
                 </label>
+                {#if previewFollowUp}
+                  <fieldset class="live-chat-contact-choice">
+                    <legend>How should I contact you?</legend>
+                    <label><input bind:group={previewContactMethod} type="radio" name="preview-chat-contact-method" value="email" required /> Email</label>
+                    <label><input bind:group={previewContactMethod} type="radio" name="preview-chat-contact-method" value="phone" required /> Phone</label>
+                    <label><input bind:group={previewContactMethod} type="radio" name="preview-chat-contact-method" value="both" required /> Both</label>
+                  </fieldset>
+                  {#if previewNeedsEmail}
+                    <label>
+                      Email
+                      <input bind:value={previewContactEmail} name="preview-chat-email" type="email" autocomplete="email" required placeholder="you@example.com" />
+                    </label>
+                  {/if}
+                  {#if previewNeedsPhone}
+                    <label>
+                      Phone
+                      <input bind:value={previewContactPhone} name="preview-chat-phone" type="tel" autocomplete="tel" required placeholder="+1 555 123 4567" />
+                    </label>
+                  {/if}
+                {/if}
                 <button class="live-chat-preview-start" type="submit" disabled={!previewContactReady}>Start chat</button>
               </form>
             {/if}
@@ -623,7 +714,7 @@
           {/if}
         </div>
 
-        {#if previewContactSubmitted || !networkOnline}
+        {#if (previewContactSubmitted && !hasConfig) || !networkOnline}
           <div class="live-chat-preview-input" aria-hidden="true">
             <span>Message preview</span>
             <span class="live-chat-preview-send">Send</span>

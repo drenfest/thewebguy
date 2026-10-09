@@ -5,7 +5,8 @@
     eyebrow = "Related project help",
     heading = "Related help for this project",
     intro = "These nearby services and technical paths can become relevant when the project expands.",
-    items = []
+    items = [],
+    sectionId = undefined
   } = $props();
 
   let track = $state();
@@ -43,7 +44,7 @@
 </script>
 
 {#if items.length}
-  <section class="section related-project-help section-effect section-effect--traces section-effect--low">
+  <section class="section related-project-help section-effect section-effect--traces section-effect--low" id={sectionId}>
     <div class="related-project-help__header">
       <div class="section-heading">
         <p class="eyebrow">{eyebrow}</p>

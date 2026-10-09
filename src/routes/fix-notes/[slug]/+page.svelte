@@ -16,9 +16,12 @@
     skillUrl
   } from "$lib/data/content.js";
   import { breadcrumbSchema, fixNoteArticleSchema, schemaList } from "$lib/data/schema.js";
+  import { fixNoteUplifts } from "$lib/data/fix-note-uplift.js";
+  import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
 
   let { data } = $props();
   const note = $derived(data.note);
+  const uplift = $derived(fixNoteUplifts[note.slug]);
   const notePath = $derived(fixNoteUrl(note.slug));
   const categorySlug = $derived(fixNoteCategorySlug(note.category));
   const lastUpdatedDate = $derived(fixNoteLastUpdatedDate(note));
@@ -81,7 +84,7 @@
     <article class="fix-note-article">
       <section class="fix-note-intro">
         <h2>Quick summary</h2>
-        <p>{note.excerpt}</p>
+        <p>{uplift?.intro || note.excerpt}</p>
       </section>
 
       <section class="fix-note-section">
@@ -112,7 +115,12 @@
         <p>{note.resultSummary}</p>
       </section>
 
-      {#if relatedSupportLinks.length}
+      {#if uplift}
+        <section class="fix-note-section">
+          <h2>How this relates to your project</h2>
+          <InternalLinkCopy paragraphs={[uplift.bridge]} />
+        </section>
+      {:else if relatedSupportLinks.length}
         <section class="fix-note-section">
           <h2>Where this fix usually leads next</h2>
           <p>
@@ -128,7 +136,7 @@
                 <a class="text-link" href={item.href} title={item.title}>{item.label}</a>
               {/if}
             {/each}
-            so the fix note can lead into a clearer support path instead of staying as an isolated one-off task.
+            when the same kind of problem affects your project.
           </p>
         </section>
       {/if}
@@ -160,8 +168,8 @@
 
   <CtaBand
     heading="Need help with something similar?"
-    copy="Send the URL and what needs fixed."
-    label="Send the URL"
+    copy="Send the page and request a free quote. Diagnostics and implementation are paid work, scoped and agreed first."
+    label="Request a Free Quote"
   />
 </main>
 

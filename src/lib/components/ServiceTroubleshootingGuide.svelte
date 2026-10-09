@@ -1,19 +1,44 @@
 <script>
   import SectionHeading from "./SectionHeading.svelte";
-  import { fixNoteDisplayDate, fixNoteUrl, getFixNotesForService } from "$lib/data/content.js";
+  import { fixNoteDisplayDate, fixNoteMap, fixNoteUrl, getFixNotesForService, sortedFixNotes } from "$lib/data/content.js";
 
-  let { service = null } = $props();
+  let {
+    service = null,
+    showDiagnosis = true,
+    showProcess = true,
+    showDelivery = true,
+    showProof = true,
+    diagnosisEyebrow = "",
+    diagnosisHeading = "From a visible symptom to a verified fix",
+    diagnosisBody = "A useful request starts with what is happening. The investigation finds the responsible layer before the repair is agreed and tested.",
+    symptomsOverride = [],
+    investigationCopy = "",
+    processHeading = "How the work proceeds",
+    processBody = "Each step narrows uncertainty before more changes are made.",
+    processStepsOverride = [],
+    deliveryHeading = "What you receive",
+    deliveryCopy = "A diagnosis, the agreed changes, verification results, unresolved dependencies, and a plain completion note that explains what changed and what still needs attention.",
+    sendHeading = "What to send first",
+    sendCopy = "The affected URL, expected versus actual behavior, when it started, recent changes, a screenshot or screen recording, and whether admin or hosting access still works.",
+    proofSlugsOverride = [],
+    proofMatch = "related",
+    proofId = ""
+  } = $props();
 
-  const examples = $derived(getFixNotesForService(service, 2));
+  const examples = $derived(proofSlugsOverride.length
+    ? proofSlugsOverride.map((slug) => fixNoteMap[slug]).filter(Boolean).map((note) => ({ ...note, matchedTags: note.tags || [] }))
+    : proofMatch === "exact"
+      ? sortedFixNotes.filter((note) => note.serviceSlug === service?.slug).slice(0, 2).map((note) => ({ ...note, matchedTags: note.tags || [] }))
+      : getFixNotesForService(service, 2));
   const problemSection = $derived((service?.sections || []).find((section) =>
     /problems this page targets|common problems|what.*happening/i.test(section.h2 || "") && section.bullets?.length
   ));
-  const symptoms = $derived((problemSection?.bullets || [
+  const symptoms = $derived((symptomsOverride.length ? symptomsOverride : problemSection?.bullets || [
     "A visible part of the site stopped working or behaves differently for some visitors",
     "A form, checkout, admin screen, layout, integration, or tracked action is failing",
     "The problem appeared after an update, deployment, content change, or cache rebuild"
   ]).slice(0, 5));
-  const processSteps = ["Reproduce", "Isolate", "Agree", "Repair", "Retest"];
+  const processSteps = $derived(processStepsOverride.length ? processStepsOverride : ["Reproduce", "Isolate", "Agree", "Repair", "Retest"]);
 
   function firstItem(items = [], fallback = "") {
     return items[0] || fallback;
@@ -21,10 +46,11 @@
 </script>
 
 <section class="section service-guide section-effect section-effect--signals section-effect--low">
+  {#if showDiagnosis}
   <SectionHeading
-    eyebrow={`${service.eyebrow} in practice`}
-    h2="From a visible symptom to a verified fix"
-    body="A useful request starts with what is happening. The investigation finds the responsible layer before the repair is agreed and tested."
+    eyebrow={diagnosisEyebrow || `${service.eyebrow} in practice`}
+    h2={diagnosisHeading}
+    body={diagnosisBody}
   />
 
   <div class="service-guide__top">
@@ -39,19 +65,21 @@
     <article class="service-guide__panel service-guide__panel--investigate">
       <span class="service-guide__number" aria-hidden="true">02</span>
       <h3>What I investigate</h3>
-      <p>Recent changes, server and PHP errors, browser console and network failures, plugin or theme interactions, cache layers, hosting behavior, and external integrations—as relevant to the symptom.</p>
+      <p>{investigationCopy || "Recent changes, server and PHP errors, browser console and network failures, plugin or theme interactions, cache layers, hosting behavior, and external integrations, as relevant to the symptom."}</p>
       <div class="service-guide__signal" aria-hidden="true">
         <span></span><span></span><span></span><span></span><span></span>
       </div>
     </article>
   </div>
+  {/if}
 
+  {#if showProcess}
   <article class="service-guide__process" aria-labelledby="service-process-heading">
     <div class="service-guide__process-copy">
       <span class="service-guide__number" aria-hidden="true">03</span>
       <div>
-        <h3 id="service-process-heading">How the work proceeds</h3>
-        <p>Each step narrows uncertainty before more changes are made.</p>
+        <h3 id="service-process-heading">{processHeading}</h3>
+        <p>{processBody}</p>
       </div>
     </div>
     <ol class="service-guide__steps">
@@ -63,29 +91,32 @@
       {/each}
     </ol>
   </article>
+  {/if}
 
+  {#if showDelivery}
   <div class="service-guide__middle">
     <article class="service-guide__panel">
       <span class="service-guide__number" aria-hidden="true">04</span>
-      <h3>What you receive</h3>
-      <p>A diagnosis, the agreed changes, verification results, unresolved dependencies, and a plain completion note that explains what changed and what still needs attention.</p>
+      <h3>{deliveryHeading}</h3>
+      <p>{deliveryCopy}</p>
     </article>
 
     <article class="service-guide__panel service-guide__panel--send">
       <span class="service-guide__number" aria-hidden="true">05</span>
-      <h3>What to send first</h3>
-      <p>The affected URL, expected versus actual behavior, when it started, recent changes, a screenshot or screen recording, and whether admin or hosting access still works.</p>
+      <h3>{sendHeading}</h3>
+      <p>{sendCopy}</p>
     </article>
   </div>
+  {/if}
 
-  {#if examples.length}
-    <div class="service-guide__examples">
+  {#if showProof && examples.length}
+    <div class="service-guide__examples" id={proofId || undefined}>
       <div class="service-guide__examples-heading">
         <span class="service-guide__number" aria-hidden="true">06</span>
         <div>
           <p class="eyebrow">Relevant Fix Notes</p>
-          <h3>Actual troubleshooting examples</h3>
-          <p>Recent work notes selected because their tags match this service page.</p>
+          <h3>{examples.length === 1 ? "Actual troubleshooting example" : "Actual troubleshooting examples"}</h3>
+          <p>{examples.length === 1 ? "A related work note that shows the problem, the change made, and what was checked afterward." : "Related work notes that show the problem, the change made, and what was checked afterward."}</p>
         </div>
       </div>
 

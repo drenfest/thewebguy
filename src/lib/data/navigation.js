@@ -42,6 +42,7 @@ const blogCategories = [
   ["Forms, Tracking & Data", "/blog/category/forms-tracking-data/"],
   ["WordPress & CMS", "/blog/category/wordpress-cms/"],
   ["SEO, Pages & AI Launches", "/blog/category/seo-pages-ai/"],
+  ["AI Development", "/blog/category/ai-development/"],
   ["Ecommerce & Checkout", "/blog/category/ecommerce-checkout/"]
 ];
 const fixNoteCategories = [
@@ -114,6 +115,7 @@ export const megaMenus = {
   aiDevelopment: menu([
     group("AI Development Oversight", [
       pageLink("Overview", "/ai-development-oversight/"),
+      serviceLink("AI-Built Website Cleanup", "ai-built-website-cleanup"),
       ...aiDevelopmentPages.map(item => pageLink(item.eyebrow, aiDevelopmentUrl(item.slug)))
     ])
   ], { heading: "Build with AI. Ship with an engineer.", text: "Human review for your AI-built website, pull request, or next release. Start with a free quote for the work in scope.", label: "Get a Free Quote", href: "/contact/?source_path=%2Fai-development-oversight%2F#request-form" }),
@@ -121,7 +123,7 @@ export const megaMenus = {
     [
       group("Fix & Stabilize", [
         serviceLink("Website Fixes", "website-fixes"),
-        serviceLink("AI-Built Cleanup", "ai-built-website-cleanup"),
+        serviceLink("AI-Built Website Cleanup", "ai-built-website-cleanup"),
         serviceLink("WordPress Support", "wordpress-support"),
         serviceLink("Site Speed & Performance", "site-speed-performance"),
         serviceLink("Security, Hosting & Reliability", "security-hosting-reliability"),

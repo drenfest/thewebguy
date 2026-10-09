@@ -199,7 +199,7 @@ export const coreServicePages = [
         ]
       },
       {
-        h2: "Performance work often overlaps with",
+        h2: "Performance issues that may need another technical layer",
         cards: [
           ["Performance engineering", "Use the skill page when the work needs diagnostics, tooling, bundle analysis, hydration review, caching traces, or deeper front-end optimization.", "/skills/performance-engineering/", "View performance engineering"],
           ["WordPress cleanup", "Theme weight, plugins, builders, image handling, and cache behavior often make speed work a WordPress support issue.", "/services/wordpress-support/", "View WordPress support"],
@@ -285,13 +285,13 @@ export const coreServicePages = [
   },
   {
     slug: "ai-built-website-cleanup",
-    title: "AI-Built Website and Vibe Code Cleanup | The Web Guy",
-    meta: "Built with ChatGPT, Codex, Lovable, Bolt, Cursor, Replit, or v0? Get help cleaning up AI-built websites, fixing broken code, and preparing changes to ship.",
-    h1: "AI-Built Website Cleanup",
-    eyebrow: "AI-built site cleanup",
+    title: "AI-Built Website Checker and Cleanup | The Web Guy",
+    meta: "Need an AI-built website checker? Get practical review and cleanup for ChatGPT, Shopify, WordPress, Lovable, Bolt, Cursor, Replit, v0, and other AI-created sites.",
+    h1: "AI-Built Website Checker and Cleanup",
+    eyebrow: "AI-built website cleanup",
     intro:
-      "Built something with ChatGPT, Codex, Lovable, Bolt, Cursor, Replit, v0, or another AI tool and now it is half-working, hard to edit, slow, broken, or confusing? The Web Guy helps clean up AI-built websites, fix the parts that broke, improve structure, connect forms and tracking, and turn vibe-coded output into something usable.",
-    cta: "Clean Up My AI-Built Site",
+      "AI built your website, or helped you build it, and now you need to know what actually works. The Web Guy checks AI-created websites for broken layouts, forms, tracking, search basics, integrations, performance, deployment risk, and maintainability, then can clean up the agreed problems without automatically rebuilding everything.",
+    cta: "Check My AI-Built Site",
     audience:
       "This is for site owners, founders, marketers, agencies, and builders who used AI to move faster but now need a real web developer to review the output, fix the fragile parts, connect missing systems, and make the site safer to launch or keep editing.",
     audienceHeading: "When AI-built website cleanup makes sense",
@@ -306,6 +306,28 @@ export const coreServicePages = [
       "You need someone technical to review what AI generated and make it safer, cleaner, and more maintainable."
     ],
     sections: [
+      {
+        h2: "What an AI-built website checker should actually check",
+        cards: [
+          ["Pages, navigation, and responsive behavior", "Check the important routes, menus, buttons, layouts, breakpoints, 404 behavior, and the paths a real visitor needs to complete."],
+          ["Forms, leads, and connected systems", "Follow the full path from validation and success states to email, CRM, webhook, database, or another destination instead of stopping at a green message."],
+          ["Search and sharing basics", "Review titles, descriptions, headings, canonicals, schema, sitemap and robots behavior, internal links, crawlable copy, and social sharing metadata."],
+          ["Browser errors and production behavior", "Look for failed requests, console errors, missing environment variables, local-versus-live differences, redirects, host assumptions, and deployment failures."],
+          ["Accessibility and interaction", "Check labels, keyboard flow, focus states, contrast, button behavior, readable structure, dialogs, and practical mobile usability."],
+          ["Performance, security, and maintainability", "Identify oversized assets, duplicate code, risky generated snippets, exposed values, brittle dependencies, and structures that make the next edit unnecessarily dangerous."]
+        ]
+      },
+      {
+        h2: "AI-built website examples I can review",
+        cards: [
+          ["AI-built WordPress websites", "Generated themes, page-builder output, custom snippets, plugin interactions, forms, templates, and WordPress sites that became fragile after repeated prompted edits."],
+          ["AI-built Shopify storefronts", "Generated Liquid, theme sections, product and collection templates, storefront scripts, tracking, apps, and conversion paths that need human review."],
+          ["ChatGPT or Codex-built websites", "HTML, CSS, JavaScript, Svelte, React, static sites, and repository-based projects that are close but need debugging, structure, testing, or launch cleanup."],
+          ["Lovable, Bolt, Replit, Cursor, and v0 projects", "Generated apps and prototypes with routing, auth, database, API, environment, deployment, or maintainability gaps."],
+          ["AI-designed marketing pages", "Landing pages and service pages that look polished but still need accessible interactions, lead-flow checks, analytics, metadata, schema, and real responsive QA."],
+          ["Existing sites extended with AI", "Established WordPress, Shopify, ecommerce, or custom sites where an AI-generated feature or code change needs to fit the system already in production."]
+        ]
+      },
       {
         h2: "What AI-built sites usually need cleaned up",
         cards: [
@@ -336,17 +358,40 @@ export const coreServicePages = [
       },
       {
         h2: "AI can build fast. Cleanup still takes judgment.",
+        presentation: "judgment-contrast",
         body:
-          "AI tools are useful for momentum, prototypes, landing pages, and fast builds. The problem is that generated work often skips boring but important production details: accessibility, schema, routing, robots and sitemap support, form handling, email deliverability, analytics, error handling, performance, redirects, security basics, maintainability, deployment environment variables, database sanity, and actual UX. AI gives you motion. It does not always give you judgment."
+          "AI tools are useful for momentum, prototypes, landing pages, and fast builds. Production cleanup tests the assumptions that generated output leaves behind.",
+        contrast: [
+          {
+            label: "Fast start",
+            heading: "What AI is good at",
+            items: ["First drafts and prototypes", "Layout and component scaffolding", "Repetitive code and content structure", "Getting an idea into a working preview"]
+          },
+          {
+            label: "Dependable launch",
+            heading: "What cleanup adds",
+            items: ["Real forms, lead delivery, and error states", "Routing, metadata, schema, sitemap, and redirects", "Accessibility, mobile behavior, and performance", "Environment, security, maintainability, and deployment checks"]
+          }
+        ],
+        outcome: "Keep the useful momentum. Replace untested assumptions with evidence and a safer release path."
       },
       {
         h2: "AI tools this work can support",
+        presentation: "tool-map",
         body:
-          "This cleanup work can support sites built with ChatGPT, Codex, Lovable, Bolt, Cursor, Replit, v0, GitHub Copilot, Svelte, React, WordPress, Shopify, WooCommerce, static sites, JavaScript, APIs, and common hosting or deployment platforms. This is not official platform support or a partnership claim. It is practical help with generated or AI-assisted website work that needs a technical review."
+          "The useful question is not which logo made the first draft. It is which layers now need to work together.",
+        toolGroups: [
+          ["AI builders and coding assistants", ["ChatGPT", "Codex", "Lovable", "Bolt", "Cursor", "Replit", "v0", "GitHub Copilot"]],
+          ["Frameworks and front ends", ["Svelte", "React", "JavaScript", "Static sites"]],
+          ["CMS and commerce", ["WordPress", "Shopify", "WooCommerce"]],
+          ["Delivery and connected systems", ["APIs", "Databases", "Auth", "Hosting", "Deployment platforms"]]
+        ],
+        note: "This is practical cleanup for AI-assisted website work, not official platform support or a partnership claim."
       },
       {
         h2: "Related support paths",
         cards: [
+          ["AI Website QA", "Use this when you want a scoped pre-launch review and prioritized findings before deciding what should be changed.", "/ai-development-oversight/ai-website-qa/", "View AI Website QA"],
           ["Website Fixes", "Use this when the AI-built site has visible bugs, broken layouts, JavaScript errors, forms, modals, embeds, or mobile issues.", "/services/website-fixes/", "View Website Fixes"],
           ["Technical SEO Implementation", "Use this when generated output needs metadata, headings, schema, sitemap support, crawl cleanup, or internal links.", "/services/technical-seo-implementation/", "View Technical SEO Implementation"],
           ["Analytics & Tracking", "Use this when GA4, GTM, pixels, conversion events, form tracking, or reporting needs to be added or verified.", "/services/analytics-tracking/", "View Analytics & Tracking"],
@@ -360,13 +405,26 @@ export const coreServicePages = [
       },
       {
         h2: "Send the URL and what feels broken",
+        presentation: "handoff-board",
         body:
-          "You do not need to diagnose everything first. Send the URL, repo or builder context if available, what should happen, what is happening instead, and what tool helped build it. The Web Guy can help figure out the safest first cleanup step."
+          "You do not need to diagnose everything first. A useful handoff gives enough context to reproduce the problem and choose the safest first step.",
+        handoff: [
+          ["01", "Public URL", "The page or route where the problem is visible."],
+          ["02", "Expected result", "What a visitor, editor, or connected system should be able to do."],
+          ["03", "Current symptom", "What happens instead, including screenshots or error text if useful."],
+          ["04", "Build context", "Repo or builder link, the AI tool used, and the platform or framework."],
+          ["05", "Launch context", "Anything known about hosting, deployment, environment values, or recent changes."]
+        ],
+        handoffNote: "No technical diagnosis required. Start with what you can see; the quote defines the next practical step."
       }
     ],
     faqs: [
+      ["What does an AI-built website checker review?", "A useful check follows the important user paths and looks at responsive layouts, navigation, forms and lead delivery, browser errors, tracking, search basics, accessibility, performance, integrations, deployment behavior, and maintainability. The exact checklist should match the site and the agreed scope."],
+      ["Can you check an AI-built website for free?", "The first quote is free. Send the public URL and describe what concerns you. I can use that context to scope the work, but a detailed audit, repository review, private-system check, or hands-on diagnosis is paid work only after we agree on the scope and cost."],
       ["Can you fix a website built with ChatGPT or Codex?", "Yes. AI-assisted sites can be reviewed and cleaned up when the URL, repo, generated files, or builder context are available."],
-      ["Can you clean up a Lovable, Bolt, Cursor, Replit, or v0 project?", "Yes. The work can include layout fixes, routing cleanup, deployment issues, forms, tracking, SEO basics, API connections, and maintainability improvements."],
+      ["Can you clean up an AI-built WordPress website?", "Yes. The review can cover generated theme or plugin code, page-builder output, custom snippets, forms, templates, responsive behavior, performance, SEO basics, and conflicts with the existing WordPress setup."],
+      ["Can you clean up an AI-built Shopify website?", "Yes. Shopify work can include generated Liquid, theme sections, storefront scripts, product and collection templates, tracking, app interactions, responsive issues, and conversion-path cleanup."],
+      ["Can you clean up a Lovable, Bolt, Cursor, Replit, or v0 project?", "Yes. These are common AI-built website examples. The work can include layout fixes, routing, deployment, auth, forms, tracking, SEO basics, API or database connections, and maintainability improvements."],
       ["What should I send before you look at it?", "Send the URL, repo or builder link if available, what tool helped build it, what should happen, what is happening instead, and any deployment or environment notes."],
       ["Can you make an AI-built site faster?", "Often, yes. Generated sites can carry oversized assets, duplicate scripts, unused code, layout shift, and bundle weight that can be reviewed and cleaned up."],
       ["Can you add tracking, forms, schema, or SEO basics?", "Yes. GA4/GTM tracking, form flow, metadata, schema, sitemap support, robots rules, internal links, and launch checks are common cleanup tasks."],

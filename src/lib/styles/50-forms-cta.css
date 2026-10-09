@@ -148,6 +148,13 @@
   line-height: 1.68;
 }
 
+.rate-callout.light .contact-channel-note {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(8, 112, 82, 0.18);
+  color: #263646;
+}
+
 .process-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -293,11 +300,12 @@
 .faq-list details .text-link {
   margin: 0;
   padding: 0 20px 18px;
-  color: var(--muted);
+  color: #455468;
 }
 
 .faq-list details[open] p {
   animation: details-in 180ms ease both;
+  opacity: 1;
 }
 
 .faq-list details .text-link {
@@ -812,6 +820,54 @@ select:focus {
   border-color: rgba(17, 24, 39, 0.18);
   border-radius: 8px;
   font-size: 0.9rem;
+}
+
+.live-chat-followup-toggle {
+  grid-template-columns: 20px 1fr !important;
+  align-items: center;
+  padding: 10px 11px;
+  border: 1px solid rgba(8, 112, 82, 0.2);
+  border-radius: 8px;
+  background: rgba(48, 199, 149, 0.08);
+  cursor: pointer;
+}
+
+.live-chat-followup-toggle input,
+.live-chat-contact-choice input {
+  width: 18px;
+  min-height: 18px;
+  margin: 0;
+  accent-color: var(--accent-dark);
+}
+
+.live-chat-contact-choice {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.live-chat-contact-choice legend {
+  grid-column: 1 / -1;
+  margin-bottom: 2px;
+  color: #253043;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.live-chat-contact-choice label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 40px;
+  padding: 7px;
+  border: 1px solid rgba(17, 24, 39, 0.14);
+  border-radius: 8px;
+  background: #ffffff;
+  cursor: pointer;
 }
 
 .live-chat-preview-start {

@@ -22,6 +22,8 @@ const {
   locationUrl,
   servicePages,
   serviceUrl,
+  sitesForSale,
+  siteForSaleUrl,
   skillPages,
   skillUrl
 } = contentModule;
@@ -33,6 +35,7 @@ const blogDataPath = "src/lib/data/blog.js";
 const fixNotesDataPath = "src/lib/data/fix-notes.js";
 const skillsDataPath = "src/lib/data/skills.js";
 const locationsDataPath = "src/lib/data/locations.js";
+const sitesForSaleDataPath = "src/lib/data/sites-for-sale.js";
 const coreServiceSlugs = new Set(coreServicePages.map((service) => service.slug));
 const keywordServiceSlugs = new Set(keywordServicePages.map((service) => service.slug));
 
@@ -61,6 +64,7 @@ add(lastmod, "/", ["src/routes/+page.svelte", coreServicesDataPath]);
 add(lastmod, "/services/", ["src/routes/services/+page.svelte", coreServicesDataPath, keywordServicesDataPath]);
 add(lastmod, "/blog/", ["src/routes/blog/+page.svelte", blogDataPath]);
 add(lastmod, "/fix-notes/", ["src/routes/fix-notes/+page.svelte", fixNotesDataPath]);
+add(lastmod, "/sites-for-sale/", ["src/routes/sites-for-sale/+page.svelte", sitesForSaleDataPath]);
 add(lastmod, "/skills/", ["src/routes/skills/+page.svelte", skillsDataPath]);
 add(lastmod, "/locations/", ["src/routes/locations/+page.svelte", locationsDataPath]);
 add(lastmod, "/about/", ["src/routes/about/+page.svelte"]);
@@ -121,6 +125,14 @@ for (const category of fixNoteCategories) {
     "src/routes/fix-notes/category/[slug]/+page.svelte",
     "src/routes/fix-notes/category/[slug]/+page.js",
     fixNotesDataPath
+  ]);
+}
+
+for (const site of sitesForSale) {
+  add(lastmod, siteForSaleUrl(site.slug), [
+    "src/routes/sites-for-sale/[slug]/+page.svelte",
+    "src/routes/sites-for-sale/[slug]/+page.js",
+    sitesForSaleDataPath
   ]);
 }
 

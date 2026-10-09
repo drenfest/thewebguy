@@ -987,7 +987,7 @@ export const keywordLandingSpecs = [
       "Technical WooCommerce help for one-off fixes, recurring support and development, or larger store projects. The work can cover complete store builds and improvements, checkout and cart, products, themes, plugins, custom functionality, integrations, tracking, performance, technical SEO, and production fixes.",
     cta: "Request WooCommerce Help",
     audience:
-      "This page is for store owners, agencies, and ecommerce teams that need a developer across the WooCommerce stack—not only an isolated support ticket. Start with the store, the affected customer or admin path, and whether the need is a single fix, an ongoing workstream, or a larger build.",
+      "This page is for store owners, agencies, and ecommerce teams that need a developer across the WooCommerce stack, not only an isolated support ticket. Start with the store, the affected customer or admin path, and whether the need is a single fix, an ongoing workstream, or a larger build.",
     audienceHeading: "WooCommerce work sized to the store and engagement",
     problems: ["A checkout, cart, product, payment, shipping, tax, coupon, or order path is unreliable", "Themes, plugins, custom code, data, integrations, tracking, schema, or performance need technical work", "The store needs recurring development or a larger build instead of a single ticket"],
     tasks: ["Fix a defined WooCommerce problem", "Support recurring store development and maintenance", "Build or improve the complete technical store experience"],
@@ -1036,14 +1036,31 @@ export const keywordLandingSpecs = [
 
 export function buildKeywordLandingPage(spec) {
   const anchor = coreServicePages.find((service) => service.slug === spec.anchorSlug) || coreServicePages[0];
+  const helpLead = /\bhelp$/i.test(spec.eyebrow) ? spec.eyebrow : `${spec.eyebrow} help`;
   const related = [...new Set((spec.related || [anchor.slug]).filter((slug) => slug !== spec.slug))];
+  const anchorScopeDescriptions = {
+    "website-fixes": "visible bugs, broken layouts, failed forms, scripts, embeds, and other site behavior that needs repair",
+    "wordpress-support": "broader WordPress updates, fixes, cleanup, plugin or theme work, and ongoing technical help",
+    "technical-seo-implementation": "crawl cleanup, schema, redirects, headings, metadata, and internal-link implementation",
+    "site-speed-performance": "performance diagnosis and cleanup across scripts, images, caching, templates, and hosting",
+    "analytics-tracking": "GA4, GTM, conversion events, pixels, form tracking, and measurement verification",
+    "api-integrations": "forms, CRMs, APIs, webhooks, ecommerce systems, and reliable data handoffs",
+    "ecommerce-support": "storefront, product, checkout-adjacent, tracking, schema, and product-data work",
+    "landing-pages": "service, campaign, local, and conversion pages that need to be built or improved",
+    "agency-overflow": "mixed client-site backlogs, technical implementation, QA, and behind-the-scenes production help",
+    "security-hosting-reliability": "malware, hosting, DNS, SSL, cache, recovery, and reliability work",
+    "automation-internal-tools": "repeatable reports, checks, dashboards, imports, APIs, and internal website workflows",
+    "ongoing-webmaster-support": "recurring updates, fixes, content changes, tracking checks, and technical upkeep",
+    "react-static-sites": "lightweight front-end builds, static pages, components, forms, and JavaScript cleanup"
+  };
+  const anchorScope = anchorScopeDescriptions[anchor.slug] || anchor.intro;
   return {
     slug: spec.slug,
     title: spec.title,
     meta: spec.meta,
     h1: spec.h1,
     eyebrow: spec.eyebrow,
-    intro: spec.intro || `${spec.eyebrow} help for ${spec.intent}. Start with the URL, the symptom, what should happen instead, and any recent changes; the work routes back to ${anchor.eyebrow.toLowerCase()} if the request becomes broader.`,
+    intro: spec.intro || `${helpLead} for ${spec.intent}. Start with the URL, the symptom, what should happen instead, and any recent changes that may have triggered it.`,
     cta: spec.cta || "Get a Free Quote",
     audience: spec.audience || `This page is for businesses, agencies, and site owners who know the symptom or task but need practical technical help. Start with a free quote based on the URL, context, access limits, and the outcome you want.`,
     audienceHeading: spec.audienceHeading || `${spec.eyebrow} fit`,
@@ -1069,7 +1086,8 @@ export function buildKeywordLandingPage(spec) {
           ...(related.slice(0, 5).map((slug) => {
             const relatedService = coreServicePages.find((service) => service.slug === slug) || keywordLandingSpecs.find((item) => item.slug === slug);
             const title = relatedService?.eyebrow || slug.split("-").map((part) => part[0].toUpperCase() + part.slice(1)).join(" ");
-            return [title, `${spec.eyebrow} often overlaps with ${title.toLowerCase()} when one site issue touches more than one layer.`, `/services/${slug}/`, `View ${title}`];
+            const relatedContext = relatedService?.intent || relatedService?.intro || `the request also needs ${title.toLowerCase()}`;
+            return [title, `Use ${title} when ${relatedContext.replace(/^[A-Z]/, (letter) => letter.toLowerCase()).replace(/[.]$/, "")}.`, `/services/${slug}/`, `View ${title}`];
           }))
         ]
       },
@@ -1081,7 +1099,14 @@ export function buildKeywordLandingPage(spec) {
     related,
     skillSlugs: spec.skills || [],
     faqs: spec.faqs || [
-      [`Is ${spec.eyebrow.toLowerCase()} different from ${anchor.eyebrow.toLowerCase()}?`, `This page targets a narrower search. If the task expands, it routes back into ${anchor.eyebrow}.`],
+      [
+        `Is ${spec.eyebrow.toLowerCase()} different from ${anchor.eyebrow.toLowerCase()}?`,
+        [
+          `${spec.eyebrow} focuses on ${spec.intent}. `,
+          { text: anchor.eyebrow, href: `/services/${anchor.slug}/`, title: `View ${anchor.eyebrow}` },
+          ` covers ${anchorScope}.`
+        ]
+      ],
       ["Can this be a one-off task?", "Yes. One-off fixes and small task lists are a strong fit when the issue is clear enough to start hourly."],
       ["What should I send first?", "Send the URL, symptom, expected behavior, recent changes, screenshots or notes, and any access constraints."],
       ["What does it cost?", "Request a free quote. The scope, access requirements, and cost are agreed before paid work begins."]

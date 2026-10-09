@@ -107,11 +107,11 @@
   ];
   const blogHubInlineParagraphs = [
     [
-      "If a post helps name the symptom and the site still needs work, route visible bugs to ",
+      "If a post helps name the symptom and the site still needs work, ",
       { text: "Website Fixes", href: "/services/website-fixes/", title: "View website fixes for broken layouts, forms, scripts, embeds, mobile bugs, and visible site problems" },
-      " and CMS or plugin-heavy issues to ",
+      " handles visible bugs, while ",
       { text: "WordPress Support", href: "/services/wordpress-support/", title: "View WordPress support for themes, plugins, Elementor, PHP templates, CSS, JavaScript, and cleanup" },
-      "."
+      " covers CMS, theme, plugin, and page-builder problems."
     ],
     [
       "When an article points to audit notes, crawl fixes, redirects, schema, or internal links, use ",

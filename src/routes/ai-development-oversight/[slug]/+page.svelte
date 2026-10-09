@@ -165,7 +165,7 @@
     </div>
     <div class="ai-responsibility-table">
     <table>
-    <caption>Illustrative responsibility split — confirmed in the agreement</caption>
+    <caption>Illustrative responsibility split, confirmed in the agreement</caption>
     <thead>
     <tr>
     <th scope="col">Stage</th>

@@ -80,12 +80,37 @@
   const coreServicePages = servicePages.filter((service) => service.showInHub !== false);
   const focusedSupportPages = servicePages.filter((service) => service.showInHub === false);
   const focusedSupportGroups = [
-    ["WordPress support", focusedSupportPages.filter((service) => service.keywordCluster === "WordPress support")],
-    ["Technical SEO", focusedSupportPages.filter((service) => service.keywordCluster === "Technical SEO")],
-    ["Analytics and tracking", focusedSupportPages.filter((service) => service.keywordCluster === "Analytics and tracking")],
-    ["Agency support", focusedSupportPages.filter((service) => service.keywordCluster === "Agency support")],
-    ["Ecommerce support", focusedSupportPages.filter((service) => service.keywordCluster === "Ecommerce support")]
+    ["WordPress problems and updates", focusedSupportPages.filter((service) => service.keywordCluster === "WordPress support")],
+    ["Agency and ecommerce support", focusedSupportPages.filter((service) => ["Agency support", "Ecommerce support"].includes(service.keywordCluster))],
+    ["SEO, tracking, and connected systems", focusedSupportPages.filter((service) => ["Technical SEO", "Analytics and tracking", "API and integration support"].includes(service.keywordCluster))]
   ].filter(([, pages]) => pages.length);
+  const catalogCopy = {
+    "contact-form-not-working-wordpress": "Troubleshoot missing form emails, stuck submissions, CAPTCHA failures, and incomplete lead handoffs.",
+    "website-integration-help": "Trace failed website connections, missing fields, rejected webhooks, and duplicate records.",
+    "api-integrations": "Build a defined connection between your website, CRM, API, or internal workflow.",
+    "wordpress-troubleshooting": "Investigate uncertain WordPress errors and repair the confirmed behavior with relevant retesting.",
+    "wordpress-help": "Get practical developer help for an existing WordPress site, from one unclear problem to a defined change.",
+    "wordpress-website-support": "Keep website changes moving with scoped help for pages, plugins, forms, and the surrounding setup.",
+    "wordpress-maintenance": "Scope routine updates, checks, and follow-up work around the parts of your site that matter.",
+    "fix-wordpress-issue": "Address one specific WordPress problem with a clear expected result and an agreed repair scope.",
+    "fix-broken-wordpress-site": "Investigate a site that is failing to load or function, with recovery and rollback considered before changes.",
+    "wordpress-emergency-support": "Request help with a live-site failure and explain the impact, timing, and access available.",
+    "wordpress-white-screen-of-death-fix": "Investigate blank pages, critical errors, and failures that can prevent access to WordPress.",
+    "elementor-layout-broken": "Fix affected Elementor layouts, responsive behavior, spacing, or content that disappears on the public page.",
+    "wordpress-plugin-conflict-help": "Isolate an interaction between plugins, themes, scripts, or caching before choosing the repair.",
+    "wordpress-developer-for-small-tasks": "Get a defined WordPress change handled without turning it into a full redesign.",
+    "hourly-wordpress-developer": "Scope developer time for a task list, investigation, or changes that need hands-on implementation.",
+    "agency-overflow-developer": "Add implementation capacity for an agency backlog with clear ownership, handoff, and review expectations.",
+    "white-label-wordpress-support": "Arrange behind-the-scenes WordPress implementation within your agency’s agreed communication and delivery process.",
+    "website-maintenance-for-agencies": "Organize recurring website checks and maintenance across an agreed client-site scope.",
+    "website-support-for-agencies": "Turn client requests into scoped technical work with useful status updates and a reviewable handoff.",
+    "shopify-liquid-support": "Implement targeted Shopify theme and Liquid changes without treating the storefront as a complete rebuild.",
+    "woocommerce-support": "Get scoped help with WooCommerce store behavior, extensions, product presentation, and operational changes.",
+    "woocommerce-checkout-error-fix": "Trace checkout errors and test the agreed repair against the affected purchase path.",
+    "seo-audit-implementation": "Turn audit recommendations into verified website changes with clear priorities and implementation notes.",
+    "technical-seo-developer": "Implement the code, template, and crawl-related changes behind a technical SEO plan.",
+    "ga4-gtm-setup-help": "Set up agreed measurement events and check that the implementation reflects the intended website actions."
+  };
   const serviceSummaryBullets = {
     "wordpress-support": ["Themes, plugins, page builders, and PHP templates", "Content updates, cleanup, and admin friction", "Useful when the site already exists"],
     "technical-seo-implementation": ["Audit notes, crawl exports, and SEO task lists", "Metadata, headings, redirects, schema, and internal links", "Implementation that can be tested on the site"],
@@ -107,11 +132,11 @@
     return {
       label,
       title: service.h1,
-      copy: service.intro,
+      copy: catalogCopy[service.slug] || service.intro,
       bullets: serviceSummaryBullets[service.slug] || [
         service.keywordCluster || service.eyebrow,
-        "Dedicated page for this narrower support request",
-        "Routes back into the right core service path"
+        "Focused guidance for this specific website problem",
+        "Clear symptoms, investigation steps, evidence, and next action"
       ],
       href: serviceUrl(service.slug),
       linkLabel: `View ${service.eyebrow}`
@@ -126,7 +151,7 @@
   const symptomSummaryBullets = [
     "Name the symptom before choosing a service",
     "Collect URL, screenshot, device, and recent change details",
-    "Route the issue into website fixes, WordPress, tracking, or front-end work"
+    "Use the evidence to identify the responsible website layer"
   ];
   const brokenSymptomItems = somethingBrokePosts.slice(0, 6).map((post) => ({
     label: post.eyebrow,
@@ -221,9 +246,9 @@
 
   <section class="section section-effect section-effect--hex section-effect--medium">
     <SectionHeading
-      eyebrow="Website service routing"
-      h2="Choose the website service closest to the actual problem"
-      body="If you are not sure where the work fits, start with the problem. The categories below are here to help you route the request, not force you into a package."
+      eyebrow="Website services"
+      h2="Choose the help closest to the actual problem"
+      body="Start with what is broken, what needs to change, or what you want to build. You do not need to choose the perfect category before contacting me."
     />
     <InternalLinkCopy paragraphs={serviceHubInlineParagraphs} />
     <SummaryLinkGrid items={coreServiceSummaryItems} />
@@ -234,12 +259,12 @@
 
   <section class="section soft-section section-effect section-effect--signals section-effect--low">
     <SectionHeading
-      eyebrow="Focused support pages"
-      h2="Specific website support paths by topical cluster"
-      body="These narrower pages are useful for search and routing, but they stay visually secondary to the main service paths."
+      eyebrow="Focused website help"
+      h2="Help with a Specific Website Problem"
+      body="Know what is broken or what needs to change? Start with the closest problem below. Each service explains what I check, what the work can include, and what to send for a quote. You do not need to choose the perfect category before contacting me."
     />
     {#each focusedSupportSummaryGroups as [group, pages]}
-      <SectionHeading eyebrow={group} h2={`${group} searches`} />
+      <SectionHeading eyebrow="Service options" h2={group} />
       <SummaryLinkGrid className="summary-link-grid summary-link-grid--compact" items={pages} />
     {/each}
   </section>

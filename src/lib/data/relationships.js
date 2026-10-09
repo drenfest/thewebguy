@@ -68,7 +68,7 @@ export function serviceTopicalItems(service, relatedServices = [], relatedSkills
     ...relatedServices.slice(0, 3).map((related) => ({
       label: "Related service",
       title: related.h1,
-      copy: `${service.eyebrow} often overlaps with ${related.eyebrow.toLowerCase()} when the work touches the same site, template, tracking, or technical backlog.`,
+      copy: `${related.eyebrow} is useful when ${conciseCopy(related.intro).replace(/^[A-Z]/, (letter) => letter.toLowerCase())}`,
       href: serviceUrl(related.slug)
     })),
     ...relatedSkills.slice(0, 3).map((skill) => ({

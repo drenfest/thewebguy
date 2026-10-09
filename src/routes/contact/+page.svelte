@@ -23,7 +23,7 @@
   let submissionAttempted = false;
   let abandonTracked = false;
   const formLocked = $derived(status.type === "loading" || status.type === "success");
-  const submitLabel = $derived(status.type === "loading" ? "Sending..." : status.type === "success" ? "Request Sent" : "Request My Free Quote");
+  const submitLabel = $derived(status.type === "loading" ? "Sending…" : status.type === "success" ? "Request Sent" : "Request My Free Quote");
   const hasSourceContext = $derived(Boolean(contactState.draft.sourcePagePath || contactState.draft.sourcePageTitle));
   const sourceContextLabel = $derived(contactState.draft.sourcePageTitle || contactState.draft.sourcePagePath);
   const breadcrumbs = [
@@ -82,10 +82,6 @@
     return parts[0] === root ? parts[1] || "" : "";
   }
 
-  function serviceOptionLabel(service) {
-    return service?.contactLabel || service?.h1 || "";
-  }
-
   function inferServiceFromSource(sourcePath = "") {
     sourcePath = aiDevelopmentRedirects[sourcePath] || sourcePath;
     const aiService = [aiDevelopmentHub, ...aiDevelopmentPages].find(item => aiDevelopmentUrl(item.slug) === sourcePath);
@@ -115,16 +111,11 @@
     const sourceService = inferServiceFromSource(sourcePagePath);
     const sourceSkill = inferSkillFromSource(sourcePagePath);
     const sourceLocation = inferLocationFromSource(sourcePagePath);
-    const previousSourceService = inferServiceFromSource(contactState.draft.sourcePagePath);
 
     contactState.draft.sourcePagePath = sourcePagePath;
     contactState.draft.sourcePageTitle = sourcePageTitle || sourceService?.eyebrow || sourcePagePath;
     contactState.draft.sourcePageType = sourcePageType;
     contactState.draft.sourceCta = sourceCta;
-
-    if (sourceService && (!contactState.draft.service || contactState.draft.service === serviceOptionLabel(previousSourceService))) {
-      contactState.draft.service = serviceOptionLabel(sourceService);
-    }
 
     if (sourceSkill && !contactState.draft.skill) {
       contactState.draft.skill = sourceSkill.eyebrow;
@@ -283,7 +274,7 @@
 
     trackContactFormStart("submit");
     submissionAttempted = true;
-    status = { type: "loading", message: "Preparing request..." };
+    status = { type: "loading", message: "Sending your request…" };
 
     ensureContactSourceContext(page.url);
     const formData = { ...contactState.draft, websiteCompany: botTrap, formLoadedAt };
@@ -316,7 +307,7 @@
       trackEvent("contact_form_success", { ...trackingPayload, response_status: responseStatus, ...journeySnapshot() });
       trackContactEvent("contact_form_success", { ...trackingPayload, response_status: responseStatus, ...journeySnapshot() });
       trackEvent("generate_lead", { ...trackingPayload, response_status: responseStatus, ...journeySnapshot() });
-      status = { type: "success", message: "Free quote request sent. I will review the details and follow up." };
+      status = { type: "success", message: "Your request was submitted. Thank you for sharing the details. I will review the request and follow up about the next step." };
     } catch (error) {
       trackEvent("contact_form_error", {
         ...trackingPayload,
@@ -330,7 +321,7 @@
         error_type: responseStatus === "network" ? "network_or_client" : "server_response",
         ...journeySnapshot()
       });
-      status = { type: "error", message: error.message || "The request could not be sent. Please try again in a moment." };
+      status = { type: "error", message: error.message || "Your request could not be submitted. Your details are still here. Please try again." };
     }
   }
 </script>
@@ -345,7 +336,7 @@
   <Hero
     eyebrow="Free website quote"
     h1="Get a Free Quote From The Web Guy"
-    intro="Tell me what is broken, what needs built, or what keeps getting pushed off. Include the URL, timeline, and what a useful outcome looks like. There is no charge to send the request or ask for a quote."
+    intro="Tell me what is happening, what you need to change, or what you want to build. I will use that context to scope the next step and provide a quote. You do not need to know the technical cause before getting in touch."
     cta="Get a Free Quote"
     ctaHref="#request-form"
     compact={true}
@@ -362,12 +353,13 @@
         <SectionHeading
           eyebrow="Free quote request form"
           h2="Get a free quote for website support"
-          body="A short description is enough to start. I will review your request, ask any needed questions, and confirm fit, scope, and cost before you decide."
+          body="The page URL and expected result are useful. Screenshots or a short description of recent changes help when something is broken. Do not send passwords, API keys, or private customer information."
         />
         <div class="rate-callout light">
           <span>Start with your project</span>
           <strong>Free quote</strong>
           <p>Tell me what you need. I will confirm fit, scope, and cost before you commit. Engineering review, diagnostics, and implementation are paid work.</p>
+          <p class="contact-channel-note">My phone number is not published because of the volume of spam calls. Send me a message through this form or the live chat and I will get back to you. When live chat is available, you will usually be talking directly with me.</p>
         </div>
       </div>
 
@@ -383,7 +375,7 @@
         <label>Name<input bind:value={contactState.draft.name} name="name" type="text" autocomplete="name" placeholder="Your name" required /></label>
         <label>Email<input bind:value={contactState.draft.email} name="email" type="email" autocomplete="email" placeholder="you@example.com" required /></label>
         <label>Website URL (optional)<input bind:value={contactState.draft.url} name="url" type="url" placeholder="https://example.com/page-with-the-issue" /></label>
-        <label>What is happening or needed?<textarea bind:value={contactState.draft.details} name="details" rows="6" placeholder="What did you build or what needs fixing? What should happen next? For an AI review, mention your tools or stack if you know them." required></textarea></label>
+        <label>What is happening or needed?<textarea bind:value={contactState.draft.details} name="details" rows="6" placeholder="Example: The contact form shows a success message, but no email arrives. It started after an update. The form is on the page linked above." required></textarea></label>
         <label>Timeline<input bind:value={contactState.draft.timeline} name="timeline" type="text" placeholder="ASAP, this week, this month, flexible" /></label>
 
         <details class="optional-contact-details">
@@ -427,7 +419,7 @@
         </details>
         <label class="bot-field" aria-hidden="true" tabindex="-1">Leave this field blank<input bind:value={botTrap} name="websiteCompany" type="text" autocomplete="off" tabindex="-1" /></label>
         <input type="hidden" name="formLoadedAt" value={formLoadedAt} />
-        <p class="form-note">No charge to request a quote. Paid work begins after scope and cost are approved. A repository URL is not required. Do not send passwords, API keys, or other secrets. <a href="/privacy/">How your request is handled</a>.</p>
+        <p class="form-note">Your quote is free. Engineering review, diagnostics, and implementation are paid work, with scope and cost agreed before they begin. A repository URL is not required. Do not send passwords, API keys, or private customer information. <a href="/privacy/">How your request is handled</a>.</p>
         <div role="status" aria-live="polite" aria-atomic="true">{#if status.message}<p class={`form-status ${status.type}`}>{status.message}</p>{/if}</div>
         <button class="button button-primary cta-animated cta-animated--primary" type="submit" disabled={formLocked} aria-disabled={formLocked}>{submitLabel}</button>
       </form>

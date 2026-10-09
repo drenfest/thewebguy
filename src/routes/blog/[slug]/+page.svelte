@@ -112,36 +112,7 @@
     ]),
     " because real website problems often cross visual behavior, forms, scripts, tracking, and CMS layers."
   ]] : []);
-  const articleInternalParagraphs = $derived([
-    ...articleBridgeParagraphs,
-    [
-      "If this article describes the symptom on your site, compare ",
-      articleSupportLinks[0] && {
-        text: articleSupportLinks[0][0],
-        href: articleSupportLinks[0][1],
-        title: `View ${articleSupportLinks[0][0]} from this article`
-      },
-      articleSupportLinks[1] ? " and " : "",
-      articleSupportLinks[1] && {
-        text: articleSupportLinks[1][0],
-        href: articleSupportLinks[1][1],
-        title: `View ${articleSupportLinks[1][0]} from this article`
-      },
-      " before turning the problem into a request."
-    ],
-    [
-      articleSupportLinks[2] ? "If the first fix path is not quite right, " : "For a broader route, ",
-      articleSupportLinks[2] && {
-        text: articleSupportLinks[2][0],
-        href: articleSupportLinks[2][1],
-        title: `View ${articleSupportLinks[2][0]} from this article`
-      },
-      articleSupportLinks[2] ? " may be the better service or skill page. " : "",
-      "You can also use ",
-      { text: "Contact", href: "/contact/", title: "Open the website support request form" },
-      " once you have the URL, symptom, timeline, and what should happen instead."
-    ]
-  ]);
+  const articleInternalParagraphs = $derived(articleBridgeParagraphs);
   const articleTableColumns = [
     { key: "section", label: "Section" },
     { key: "whyItMatters", label: "Why it matters" },

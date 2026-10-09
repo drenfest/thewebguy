@@ -36,7 +36,7 @@
       <p class="eyebrow">Fix Notes</p>
       <h1>Fix Notes</h1>
       <p>
-        Short work notes from website cleanup, debugging, implementation, and support tasks. These are practical examples of the kinds of issues I work through across real website projects.
+        Real website problems, the changes made, and what was checked afterward. Browse by the issue or platform that matches your project.
       </p>
     </div>
   </section>

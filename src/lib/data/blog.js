@@ -39,6 +39,12 @@ export const blogCategoryDefinitions = [
     featuredTags: ["seo-audit", "internal-links", "ai-built", "technical-seo", "crawl-analysis"]
   },
   {
+    slug: "ai-development",
+    label: "AI Development",
+    description: "AI-assisted website development, launch readiness, human review, production cleanup, and maintainable implementation.",
+    featuredTags: ["ai-built", "javascript", "site-speed", "forms", "automation"]
+  },
+  {
     slug: "ecommerce-checkout",
     label: "Ecommerce & Checkout",
     description: "WooCommerce, checkout failures, product data, purchase tracking, and revenue reporting.",
@@ -1191,7 +1197,7 @@ export const blogPosts = [
       [
         "A lot of CSS and JavaScript bug requests begin with a visible symptom: a menu does not open, a class never toggles, a script error freezes the page, a form submit hangs, or an update changed the markup that the CSS expected. If the problem needs hands-on repair on the actual site, start with ",
         { text: "website fixes", href: "/services/website-fixes/", title: "View website fixes for broken layouts, scripts, forms, modals, and visible bugs" },
-        ". Production debugging often overlaps here because the fix usually starts in the browser, not in a generic checklist."
+        ". I use production debugging here because the fix usually starts with the browser request and real user flow, not a generic checklist."
       ],
       [
         "If the browser console already shows errors, or the issue only appears after a plugin, theme, snippet, or deployment change, compare this guide with the deeper ",
@@ -1997,7 +2003,7 @@ export const blogPosts = [
     summary: "AI-built sites can look close while missing the production details that make a site usable: forms, tracking, routing, metadata, deployment settings, accessibility, and maintainable structure.",
     problemType: "AI-built cleanup",
     relatedService: "ai-built-website-cleanup",
-    category: "seo-pages-ai",
+    category: "ai-development",
     tags: ["ai-built", "landing-pages", "forms", "analytics-tracking", "technical-seo", "site-speed"],
     heroCta: "Clean Up an AI-Built Site",
     heroSecondary: "View AI-Built Cleanup",
@@ -2160,7 +2166,7 @@ export const blogPosts = [
         heading: "The math behind TopoRank",
         body: [
           "TopoRank starts with autonomous cluster discovery. The crawler harvests pages, extracts main content, creates vector representations, and lets the site reveal its own topical clusters instead of forcing every page into a third-party keyword taxonomy.",
-          "The updated June 16 local crawl requested 7 main pillars and retained all 7 as populated profiles: Website Support Services, Website Troubleshooting Resources, Local Website Support, Local Website Support — Landing Webmaster, Analytics and Tracking, Performance and Reliability, and Ecommerce and Product Data. That behavior is useful because it shows the updated TopoRank model producing a more granular site structure instead of collapsing the site back into only a few broad clusters.",
+          "The updated June 16 local crawl requested 7 main pillars and retained all 7 as populated profiles: Website Support Services, Website Troubleshooting Resources, Local Website Support, Local Website Support: Landing Webmaster, Analytics and Tracking, Performance and Reliability, and Ecommerce and Product Data. That behavior is useful because it shows the updated TopoRank model producing a more granular site structure instead of collapsing the site back into only a few broad clusters.",
           "URL hierarchy is then used as a structural weight. A page under /services/ has a different declared role than a page under /blog/ or /skills/. If the vector engine says a page belongs near a business-service cluster but the URL and link graph isolate it as a loose article, TopoRank flags the mismatch as structural dissonance or silo bleed.",
           "The tool also strips boilerplate before scoring. Header menus, footer columns, repeated CTAs, global sidebars, and common navigation can overwhelm the text if they are treated as page-specific meaning. TopoRank uses fuzzy thresholding across pages to suppress those repeated blocks and analyze the semantic content that is actually unique to the page."
         ],

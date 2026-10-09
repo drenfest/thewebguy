@@ -236,20 +236,11 @@
   ];
   const homeInlineParagraphs = [
     [
-      "If you searched for ",
-      { text: "The Web Guy", href: "/", title: "The Web Guy homepage for contract website developer, SEO developer, WordPress support, and website fixes" },
-      " or ",
-      { text: "thewebguy", href: "/", title: "The Web Guy homepage on thewebguy.app" },
-      ", ",
-      { text: "web guy", href: "/", title: "The Web Guy homepage for website fixes, SEO developer help, and WordPress support" },
-      ", this page is the shortest route into contract website help for broken pages, SEO implementation, WordPress fixes, tracking, APIs, and launch cleanup."
-    ],
-    [
       "If the site is visibly broken, start with ",
       { text: "Website Fixes", href: "/services/website-fixes/", title: "View website fixes for broken layouts, forms, scripts, embeds, and mobile bugs" },
-      ". If the work lives inside themes, plugins, page builders, or PHP templates, route it to ",
+      ". If the work lives inside themes, plugins, page builders, or PHP templates, ",
       { text: "WordPress Support", href: "/services/wordpress-support/", title: "View WordPress support for themes, plugins, page builders, PHP, CSS, and JavaScript" },
-      ". Audit notes, schema, redirects, headings, and internal links belong in ",
+      " covers that WordPress layer. Audit notes, schema, redirects, headings, and internal links belong in ",
       { text: "Technical SEO Implementation", href: "/services/technical-seo-implementation/", title: "View technical SEO implementation for crawl notes, schema, redirects, headings, and internal links" },
       ". If the work specifically needs an ",
       { text: "SEO developer", href: "/services/technical-seo-developer/", title: "View SEO developer help for templates, schema, redirects, internal links, and technical SEO implementation" },

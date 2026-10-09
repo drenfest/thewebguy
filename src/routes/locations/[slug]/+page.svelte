@@ -16,10 +16,8 @@
   import { proofForLocation } from "$lib/data/proof.js";
   import {
     locationContextualSupportItems,
-    locationLinkSeries,
     locationTopicalItems,
     nearbyLocationsForLocation,
-    regionalLinkLocationsForLocation,
     relatedServicesForLocation,
     relatedSkillsForLocation
   } from "$lib/data/relationships.js";
@@ -37,7 +35,6 @@
   const relatedSkills = $derived(relatedSkillsForLocation(location));
   const nearbyLocations = $derived(nearbyLocationsForLocation(location));
   const locationProof = $derived(proofForLocation(location.slug));
-  const regionalLinkLocations = $derived(regionalLinkLocationsForLocation(location));
   const topicalItems = $derived(locationTopicalItems(location, relatedServices, relatedSkills));
   const locationFaqs = $derived([
     [`Do you work with ${location.city} businesses remotely?`, `Yes. The Web Guy provides remote-friendly hourly website support for ${location.city}-area businesses and teams.`],
@@ -103,50 +100,7 @@
     " before the work becomes a scoped website fix, tracking cleanup, WordPress update, or SEO implementation task."
   ]] : []);
 
-  const locationInternalParagraphs = $derived([
-    [
-      `${location.city}-area sites usually route into `,
-      relatedServices[0] && {
-        text: relatedServices[0].eyebrow,
-        href: serviceUrl(relatedServices[0].slug),
-        title: `View ${relatedServices[0].eyebrow} for ${location.city}, ${location.state}`
-      },
-      relatedServices[1] ? " or " : "",
-      relatedServices[1] && {
-        text: relatedServices[1].eyebrow,
-        href: serviceUrl(relatedServices[1].slug),
-        title: `View ${relatedServices[1].eyebrow} for ${location.city}, ${location.state}`
-      },
-      " depending on whether the work is a visible fix, CMS cleanup, SEO implementation, tracking issue, page launch, or recurring support request."
-    ],
-    [
-      relatedSkills[0] ? "The technical side may also involve " : "For nearby regional context, compare ",
-      relatedSkills[0] && {
-        text: relatedSkills[0].eyebrow,
-        href: skillUrl(relatedSkills[0].slug),
-        title: `View ${relatedSkills[0].eyebrow} for ${location.city}, ${location.state} website support`
-      },
-      relatedSkills[0] ? ". For nearby regional context, compare " : "",
-      nearbyLocations[0] && {
-        text: `${nearbyLocations[0].city}, ${nearbyLocations[0].state}`,
-        href: locationUrl(nearbyLocations[0].slug),
-        title: `View local website support for ${nearbyLocations[0].city}, ${nearbyLocations[0].state}`
-      },
-      nearbyLocations[1] ? " or " : "",
-      nearbyLocations[1] && {
-        text: `${nearbyLocations[1].city}, ${nearbyLocations[1].state}`,
-        href: locationUrl(nearbyLocations[1].slug),
-        title: `View local website support for ${nearbyLocations[1].city}, ${nearbyLocations[1].state}`
-      },
-      "."
-    ],
-    [
-      "For broader regional comparison, review ",
-      ...locationLinkSeries(regionalLinkLocations),
-      " when the website support need spans nearby service areas, local pages, lead tracking, WordPress cleanup, or ongoing webmaster work."
-    ],
-    ...localTroubleParagraphs
-  ]);
+  const locationInternalParagraphs = $derived(localTroubleParagraphs);
 </script>
 
 <Seo title={location.title} description={location.meta} schema={seoSchema} />

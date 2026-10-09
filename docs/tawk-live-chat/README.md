@@ -6,12 +6,13 @@ This app loads the tawk.to widget from a client-only Svelte component. Render on
 
 - `src/lib/components/TawkLiveChat.svelte` mounts once from the root layout.
 - The component reads public SvelteKit runtime variables from Render.
-- The widget script is only injected in the browser.
-- The Tawk JavaScript API hides the widget before load, reads `getStatus()`, listens for `onStatusChange`, and keeps the widget hidden unless the status is `online`.
+- The widget script is only injected in the browser after the visitor completes the site-owned chat intake.
+- The conditional intake requires only a name by default. Visitors can request follow-up and choose Email, Phone, or Both; only the selected contact fields appear and become required.
+- The validated visitor details are assigned to `Tawk_API.visitor` before the hosted widget script downloads, then Tawk is started and opened.
 - Browser `online`/`offline` events are monitored. If the visitor loses internet, the Tawk iframe is left mounted so Tawk can resync active chat state when the connection returns.
 - If the Tawk script fails to load, the loader retries when the browser is online, with capped exponential backoff.
 - `PUBLIC_TAWK_ALLOWED_HOSTS` prevents the widget from loading on unexpected hostnames if the public widget IDs are copied elsewhere.
-- Tawk's `onPrechatSubmit` event is tracked as a lifecycle event and tagged as `prechat-contact-captured` without logging the submitted name, email, phone, or message contents.
+- Tawk lifecycle events are tracked without logging submitted names, email addresses, phone numbers, or message contents.
 - Tawk JavaScript API callbacks are wired for load, status, window state, chat lifecycle, offline/pre-chat forms, messages, agent activity, satisfaction, file uploads, tag updates, and unread counts. Message text, visitor names, email addresses, phone numbers, uploaded file URLs, and transcripts are not sent to site analytics.
 - Tawk `customStyle` is configured before the embed script loads so the widget sits bottom right and below the site menu layers.
 - Chat lifecycle events are sent to the existing analytics helper without message text, names, emails, or chat transcripts.
@@ -22,39 +23,31 @@ This app loads the tawk.to widget from a client-only Svelte component. Render on
 1. Create or open the tawk.to property for `thewebguy.app`.
 2. In tawk.to, go to `Administration > Chat Widget`.
 3. Copy the `Property ID` and `Widget ID`. Tawk also documents where to find both IDs here: https://help.tawk.to/article/where-can-i-find-the-property-and-widget-id
-4. In `Widget Behavior > Visibility Settings`, enable:
-   - `Hide widget when offline`
-   - `Widget offline when all agents offline`
+4. In `Widget Behavior > Visibility Settings`, enable `Widget offline when all agents offline`. The site-owned intake can still open the offline widget after the visitor asks for follow-up.
 5. In `Availability Restriction`, enable `Domain Restriction` and allow only:
    - `thewebguy.app`
    - `www.thewebguy.app`
-6. Configure the required lead gate in `Widget Content > Pre-Chat`:
-   - Enable `Pre-Chat`.
-   - Add a `Form` body card if one is not already present.
-   - Add `Name` and click the star icon so it is required.
-   - Add a custom short-text field labeled `Email or phone` and click the star icon so it is required.
-   - Do not rely on separate optional Email and Phone fields to enforce this rule unless you are comfortable requiring both.
-7. Optional: add separate optional `Email` and `Phone` fields if you want structured contact records in Tawk, but keep the required `Email or phone` field as the enforcement gate.
+6. In `Widget Content > Pre-Chat`, disable Tawk's hosted Pre-Chat form. The site-owned intake replaces it, and leaving both enabled would ask visitors for the same details twice.
+7. Keep the Tawk Offline form available so unavailable chats can still accept a message after the site-owned intake supplies the visitor's selected follow-up details.
 8. Optional: configure `Country Restriction` if spam starts coming from markets you do not serve.
 9. Optional: configure `Widget Scheduler` if chat should only appear during planned hours.
 10. Install the tawk.to iOS or Android app and test push notifications before relying on live leads.
 
 The app enforces the same online-only behavior through the Tawk JavaScript API, but the dashboard settings should still be enabled so Tawk's own state matches the site's behavior.
 
-## Required Contact Gate
+## Conditional Contact Gate
 
-Tawk supports required fields in the Pre-Chat Form. Their documented control is per field: click the star icon to make a field required. The current Tawk docs do not describe a conditional required rule such as "Email OR Phone" across two separate fields.
-
-Use this field setup to match the requirement:
+Tawk's hosted form supports fields that are independently required, but it does not expose conditional visibility or conditional required rules. The site therefore owns the conditional gate and passes the completed details to Tawk before loading the widget.
 
 | Field | Type | Required | Purpose |
 | --- | --- | --- | --- |
-| `Name` | Built-in Name | Yes | Identifies the lead before chat starts. |
-| `Email or phone` | Custom short-text field | Yes | Enforces at least one contact method before chat starts. |
-| `Email` | Built-in Email | Optional | Optional structured email storage in Tawk. |
-| `Phone` | Built-in Phone | Optional | Optional structured phone storage in Tawk. |
+| `Name` | Text | Always | The only field required for an ordinary chat. |
+| `If no one is available, contact me` | Checkbox | No | Reveals the follow-up controls when selected. |
+| `Email / Phone / Both` | Radio group | Only after follow-up is selected | Determines which contact fields appear. |
+| `Email` | Email | For Email or Both | Passed to Tawk before chat starts. |
+| `Phone` | Telephone | For Phone or Both | Passed to Tawk before chat starts. |
 
-This is the closest exact match to "name, and phone number or email" without requiring both phone and email.
+The form is intentionally not submitted to the site's contact endpoint. The selected details are handed directly to Tawk as visitor data and are not included in site analytics.
 
 ## Connection Handling
 
@@ -88,6 +81,7 @@ Add these variables to the Render web service:
 ```txt
 PUBLIC_TAWK_ENABLED=true
 PUBLIC_TAWK_AUTO_START=true
+PUBLIC_TAWK_CUSTOM_INTAKE=true
 PUBLIC_TAWK_PROPERTY_ID=6a43edcd82c4e81d44ac79af
 PUBLIC_TAWK_WIDGET_ID=1jsclhqsd
 PUBLIC_TAWK_HIDE_WHEN_OFFLINE=true
@@ -104,7 +98,8 @@ PUBLIC_TAWK_MOBILE_Y_OFFSET=12
 Notes:
 
 - These are public client-side IDs, not secrets.
-- `PUBLIC_TAWK_AUTO_START=true` lets Tawk start the socket connection after the script loads. Set it to `false` only if you plan to call `window.theWebGuyLiveChat.start()` manually.
+- `PUBLIC_TAWK_CUSTOM_INTAKE=true` delays the Tawk script until the visitor completes the conditional intake, then starts and opens the widget automatically.
+- `PUBLIC_TAWK_AUTO_START` is ignored while the custom intake is enabled.
 - `PUBLIC_TAWK_WIDGET_ID` must match the widget ID from the Tawk embed script.
 - `PUBLIC_TAWK_Z_INDEX=70` keeps the widget above the page content but below the mobile navigation overlay.
 - `PUBLIC_TAWK_*_POSITION` must be one of `br`, `bl`, `cr`, `cl`, `tr`, or `tl`.
@@ -119,6 +114,7 @@ Copy `.env.example` to `.env.local` and add the same public values:
 ```txt
 PUBLIC_TAWK_ENABLED=true
 PUBLIC_TAWK_AUTO_START=true
+PUBLIC_TAWK_CUSTOM_INTAKE=true
 PUBLIC_TAWK_PROPERTY_ID=6a43edcd82c4e81d44ac79af
 PUBLIC_TAWK_WIDGET_ID=1jsclhqsd
 PUBLIC_TAWK_HIDE_WHEN_OFFLINE=true
@@ -138,14 +134,15 @@ The component includes those public IDs as defaults, so local dev can load the r
 
 1. Deploy the branch to Render.
 2. Open the live site in an incognito browser.
-3. Set your Tawk status to `Online`; confirm the chat widget appears.
-4. Set your Tawk status to `Invisible` or log out; confirm the widget disappears.
-5. Click the widget and confirm Tawk requires `Name` plus `Email or phone` before the chat can start.
-6. Start a test chat from the site; confirm the Tawk mobile app receives a push notification.
-7. Reply from the app; confirm the visitor browser receives the message.
-8. While the chat is open, temporarily disconnect the visitor browser from the network, reconnect, and confirm the chat catches up.
-9. Confirm the existing `/contact/` form still works as the offline fallback.
-10. Confirm the widget does not load on any unapproved host.
+3. Confirm the site-owned Live chat launcher appears without downloading the Tawk widget script first.
+4. Open it with follow-up unchecked. Confirm Name is the only required field.
+5. Select follow-up, then verify Email, Phone, and Both reveal and require the correct fields.
+6. Submit each path with test details and confirm the Tawk widget opens without showing a second Pre-Chat form.
+7. Start a test chat from the site; confirm the Tawk mobile app receives a push notification.
+8. Reply from the app; confirm the visitor browser receives the message.
+9. While the chat is open, temporarily disconnect the visitor browser from the network, reconnect, and confirm the chat catches up.
+10. Confirm the existing `/contact/` form still works as a separate fallback.
+11. Confirm the widget does not load on any unapproved host.
 
 ## Troubleshooting
 
@@ -153,7 +150,7 @@ The component includes those public IDs as defaults, so local dev can load the r
 - Widget never appears on a preview URL: add that hostname to `PUBLIC_TAWK_ALLOWED_HOSTS`, redeploy, then remove it before production if it should not keep chat enabled.
 - Widget appears while offline: confirm `Hide widget when offline`, `Widget offline when all agents offline`, and `PUBLIC_TAWK_HIDE_WHEN_OFFLINE=true`.
 - Widget appears on copied/staging domains: confirm both Tawk dashboard `Domain Restriction` and `PUBLIC_TAWK_ALLOWED_HOSTS`.
-- Visitors can start chat without contact details: confirm `Pre-Chat` is enabled and both `Name` and `Email or phone` have the required star active in Tawk.
+- Visitors see a second form: disable Tawk's hosted Pre-Chat form; the conditional intake already supplies visitor details before the widget loads.
 - Spam chats arrive: ban the visitor/IP in Tawk, then consider country restriction if the pattern repeats.
 - Mobile notifications fail: use Tawk's built-in mobile push notification test and confirm OS notification permissions are enabled.
 - Widget is disabled locally: confirm `PUBLIC_TAWK_ENABLED=true`, the IDs match the embed script, and the local hostname is allowed.

@@ -33,6 +33,8 @@ function stripSiteSuffix(value = "") {
 }
 
 function asText(value = "") {
+  if (Array.isArray(value)) return value.map(asText).join("").replace(/\s+/g, " ").trim();
+  if (value && typeof value === "object") return asText(value.text || value.label || "");
   return String(value).replace(/\s+/g, " ").trim();
 }
 
