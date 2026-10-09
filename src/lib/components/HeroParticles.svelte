@@ -13,7 +13,7 @@
       maxDistance: 116,
       lineAlpha: 0.11,
       nodeAlpha: 0.34,
-      speed: 0.7,
+      speed: 0.9,
       pointerRadius: 180,
       pointerForce: 0.012,
       glowAlpha: 0.08
@@ -25,7 +25,7 @@
       maxDistance: 132,
       lineAlpha: 0.15,
       nodeAlpha: 0.42,
-      speed: 0.88,
+      speed: 1.05,
       pointerRadius: 220,
       pointerForce: 0.018,
       glowAlpha: 0.12
@@ -37,7 +37,7 @@
       maxDistance: 148,
       lineAlpha: 0.18,
       nodeAlpha: 0.5,
-      speed: 1,
+      speed: 1.2,
       pointerRadius: 250,
       pointerForce: 0.024,
       glowAlpha: 0.16
@@ -86,16 +86,24 @@
       nodes = Array.from({ length: particleCount() }, () => {
         const baseX = Math.random() * width;
         const baseY = Math.random() * height;
+        const travelAngle = Math.random() * Math.PI * 2;
+        const travelSpeed = (0.16 + Math.random() * 0.18) * activeSettings.speed * (halloweenSeason ? 1.14 : 1);
+        const cruiseVx = Math.cos(travelAngle) * travelSpeed;
+        const cruiseVy = Math.sin(travelAngle) * travelSpeed;
         return {
           x: baseX,
           y: baseY,
           baseX,
           baseY,
-          vx: (Math.random() - 0.5) * 0.2 * activeSettings.speed,
-          vy: (Math.random() - 0.5) * 0.2 * activeSettings.speed,
+          vx: cruiseVx,
+          vy: cruiseVy,
+          cruiseVx,
+          cruiseVy,
           r: 1.1 + Math.random() * 1.9,
           pulse: Math.random() * Math.PI * 2,
-          drift: 5 + Math.random() * 13,
+          drift: 12 + Math.random() * 20,
+          wanderRate: 0.0003 + Math.random() * 0.00034,
+          wanderStrength: 0.028 + Math.random() * 0.052,
           pumpkinSize: 7 + Math.random() * 7,
           pumpkinTilt: (Math.random() - 0.5) * 0.38,
           pumpkinFace: Math.floor(Math.random() * 3),
@@ -104,11 +112,11 @@
       });
     }
 
-    function drawJackOLantern(node, glow) {
+    function drawJackOLantern(node, glow, time) {
       const size = node.pumpkinSize;
       ctx.save();
       ctx.translate(node.x, node.y);
-      ctx.rotate(node.pumpkinTilt);
+      ctx.rotate(node.pumpkinTilt + Math.sin(time * node.wanderRate + node.pulse) * 0.09);
       ctx.globalAlpha = clamp(glow + 0.22, 0.48, 0.92);
       ctx.shadowBlur = 10;
       ctx.shadowColor = "rgba(255, 128, 28, 0.34)";
@@ -274,7 +282,7 @@
         }
 
         if (halloweenSeason) {
-          drawJackOLantern(node, glow);
+          drawJackOLantern(node, glow, time);
         } else {
           ctx.fillStyle = `rgba(240, 184, 75, ${glow})`;
           ctx.beginPath();
@@ -296,12 +304,17 @@
 
       for (const node of nodes) {
         if (isMobile) {
-          const driftTime = time * 0.00022 + node.pulse;
-          node.x = node.baseX + Math.cos(driftTime) * node.drift;
-          node.y = node.baseY + Math.sin(driftTime * 0.86) * node.drift;
+          const driftTime = time * node.wanderRate + node.pulse;
+          node.x = node.baseX
+            + Math.cos(driftTime) * node.drift
+            + Math.sin(driftTime * 1.7) * node.drift * 0.24;
+          node.y = node.baseY
+            + Math.sin(driftTime * 0.82) * node.drift
+            + Math.cos(driftTime * 1.36) * node.drift * 0.2;
         } else if (!reduceMotion.matches) {
-          node.x += node.vx;
-          node.y += node.vy;
+          const wanderTime = time * node.wanderRate + node.pulse;
+          node.x += node.vx + Math.cos(wanderTime) * node.wanderStrength;
+          node.y += node.vy + Math.sin(wanderTime * 0.88) * node.wanderStrength;
         }
 
         if (!isMobile && pointer.active) {
@@ -318,8 +331,10 @@
           }
         }
 
-        node.vx *= 0.998;
-        node.vy *= 0.998;
+        if (!isMobile) {
+          node.vx += (node.cruiseVx - node.vx) * 0.012;
+          node.vy += (node.cruiseVy - node.vy) * 0.012;
+        }
 
         if (node.x < -20) node.x = width + 20;
         if (node.x > width + 20) node.x = -20;
