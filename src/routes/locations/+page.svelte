@@ -68,7 +68,7 @@
     title: `Local Website Support in ${location.city}, ${location.state}`,
     href: locationUrl(location.slug),
     titleAttr: `View local website support for ${location.city}, ${location.state}`,
-    copy: `for local-friendly hourly website support around ${location.city}, including WordPress, website fixes, SEO implementation, tracking, and ongoing webmaster help.`
+    copy: `for local-friendly hourly or project-based website support around ${location.city}, including WordPress, website fixes, SEO implementation, tracking, and ongoing webmaster help.`
   }));
   const locationHubInlineParagraphs = [
     [
@@ -120,7 +120,7 @@
     return {
       label: location.region,
       title: `${location.city}, ${location.state}`,
-      copy: `Hourly WordPress, SEO, tracking, website fixes, and webmaster support for businesses in and around ${location.city}.`,
+      copy: `Hourly or project-based WordPress, SEO, tracking, website fixes, and webmaster support for businesses in and around ${location.city}.`,
       bullets: [
         "Local-friendly city page",
         "Remote-friendly support",

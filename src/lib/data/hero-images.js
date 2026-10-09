@@ -54,7 +54,7 @@ export const staticHeroImages = {
   ),
   terms: heroImage(
     "page-terms-contract-web-work",
-    "Contract website support terms workspace with scope notes, access rules, third-party platform details, and hourly work terms"
+    "Contract website support terms workspace with scope notes, access rules, third-party platform details, and hourly or project-based work terms"
   )
 };
 

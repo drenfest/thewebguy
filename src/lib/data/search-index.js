@@ -41,7 +41,7 @@ const mainPageMeta = {
     type: "Hub"
   },
   "/fix-notes/": {
-    title: "Fix Notes",
+    title: "Web Fixes",
     description: "Short work notes from website cleanup, debugging, implementation, and support tasks.",
     type: "Hub"
   },
@@ -72,7 +72,7 @@ const mainPageMeta = {
   },
   "/contact/": {
     title: "Contact The Web Guy",
-    description: "Send the website problem, URL, timeline, work type, and context for practical hourly support.",
+    description: "Send the website problem, URL, timeline, work type, and context for practical hourly or project-based support.",
     type: "Contact"
   }
 };
@@ -144,7 +144,7 @@ export const searchIndex = [
       title: note.title,
       description: note.metaDescription || note.excerpt,
       href: fixNoteUrl(note.slug),
-      type: "Fix Note",
+      type: "Web Fix",
       body: flatten([note.category, note.serviceSlug, note.excerpt, note.problemSummary, note.whatIChecked, note.whatIChanged, note.resultSummary, note.whatToWatchNext, note.toolsUsed, note.tags, note.relatedServices])
     })
   ),

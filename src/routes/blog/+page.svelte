@@ -10,9 +10,9 @@
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import SortableTable from "$lib/components/SortableTable.svelte";
   import { blogCategories, blogCategoryMap, blogPosts, blogTagMap, blogTags, blogTagUrl, blogUrl } from "$lib/data/content.js";
+  import { formatContentDate, updatedDateForUrl } from "$lib/data/content-dates.js";
   import { staticHeroImages } from "$lib/data/hero-images.js";
   import { blogPostListSchema, breadcrumbSchema, schemaList } from "$lib/data/schema.js";
-  import sitemapLastmod from "$lib/data/sitemap-lastmod.json";
 
   const breadcrumbs = [
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
@@ -20,22 +20,15 @@
   ];
   const blogPostOrder = new Map(blogPosts.map((post, index) => [post.slug, index]));
   const sortedBlogPosts = [...blogPosts].sort((a, b) => {
-    const aDate = sitemapLastmod[blogUrl(a.slug)] || "";
-    const bDate = sitemapLastmod[blogUrl(b.slug)] || "";
+    const aDate = updatedDateForUrl(blogUrl(a.slug));
+    const bDate = updatedDateForUrl(blogUrl(b.slug));
     const dateSort = bDate.localeCompare(aDate);
     if (dateSort) return dateSort;
     return (blogPostOrder.get(b.slug) ?? 0) - (blogPostOrder.get(a.slug) ?? 0);
   });
 
   function formatArticleDate(post) {
-    const value = sitemapLastmod[blogUrl(post.slug)];
-    if (!value) return "Recently updated";
-    return new Intl.DateTimeFormat("en-US", {
-      month: "short",
-      day: "numeric",
-      year: "numeric",
-      timeZone: "UTC"
-    }).format(new Date(`${value}T00:00:00Z`));
+    return formatContentDate(updatedDateForUrl(blogUrl(post.slug)));
   }
   const sortedStartHerePosts = sortedBlogPosts.filter((post) => post.problemType === "Start here");
   const sortedSomethingBrokePosts = sortedBlogPosts.filter((post) => post.problemType === "Something broke");

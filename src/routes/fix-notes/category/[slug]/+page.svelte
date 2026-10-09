@@ -12,8 +12,8 @@
   const categoryPath = $derived(fixNoteCategoryUrl(category.slug));
   const breadcrumbs = $derived([
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
-    { label: "Fix Notes", href: "/fix-notes/", title: "View all Fix Notes" },
-    { label: category.label, title: `Current Fix Notes category: ${category.label}` }
+    { label: "Web Fixes", href: "/fix-notes/", title: "View all Web Fixes" },
+    { label: category.label, title: `Current Web Fixes category: ${category.label}` }
   ]);
   const seoSchema = $derived(schemaList(
     breadcrumbSchema(breadcrumbs, categoryPath),
@@ -22,16 +22,16 @@
 </script>
 
 <Seo
-  title={category.slug === "website-fixes" ? "Website Fixes | Fix Notes | The Web Guy" : `${category.label} Fix Notes | The Web Guy`}
-  description={`${category.label} Fix Notes from The Web Guy. ${category.description}`}
+  title={category.slug === "website-fixes" ? "Website Fixes | Web Fixes | The Web Guy" : `${category.label} Web Fixes | The Web Guy`}
+  description={`${category.label} Web Fixes from The Web Guy. ${category.description}`}
   schema={seoSchema}
 />
 
 <main>
   <section class="section fix-note-category-hero section-effect section-effect--grid section-effect--low">
     <div class="fix-note-category-hero__inner">
-      <p class="eyebrow">Fix Notes</p>
-      <h1>{category.label} Fix Notes</h1>
+      <p class="eyebrow">Web Fixes</p>
+      <h1>{category.label} Web Fixes</h1>
       <p>{category.description}</p>
     </div>
   </section>
@@ -40,7 +40,7 @@
 
   <section class="section section-effect section-effect--signals section-effect--low">
     <SectionHeading
-      eyebrow="Related Fix Notes"
+      eyebrow="Related Web Fixes"
       h2={`Recent ${category.label.toLowerCase()} notes`}
       body="Short work notes from related cleanup, debugging, implementation, and support tasks."
     />

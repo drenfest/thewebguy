@@ -15,7 +15,7 @@ export const coreServicePages = [
       {
         h2: "WordPress help without the runaround",
         body:
-          "A lot of WordPress work is not glamorous. A page broke on mobile. Elementor spacing got strange. A plugin update changed a layout. A tracking script was pasted into three different places. The SEO team has a spreadsheet of title, heading, redirect, and schema fixes that never made it into the site. That is useful hourly work, and it should not require a giant project wrapper.",
+          "A lot of WordPress work is not glamorous. A page broke on mobile. Elementor spacing got strange. A plugin update changed a layout. A tracking script was pasted into three different places. The SEO team has a spreadsheet of title, heading, redirect, and schema fixes that never made it into the site. That work can be handled hourly or at a project-based price, and it should not require a giant project wrapper.",
         bullets: [
           "Old themes, child themes, and template edits",
           "Elementor and page builder cleanup",
@@ -45,9 +45,9 @@ export const coreServicePages = [
         ]
       },
       {
-        h2: "When hourly WordPress help makes sense",
+        h2: "When hourly or project-based WordPress help makes sense",
         body:
-          "Hourly support is a good fit when the site already exists and you need technical execution: a handful of fixes, a recurring task list, agency overflow, SEO implementation, page updates, or cleanup work. It is not unlimited work for a flat fee, and it is not a fake agency package. Send the URL and the task list, and The Web Guy can help figure out the best first move."
+          "Hourly or project-based support is a good fit when the site already exists and you need technical execution: a handful of fixes, a recurring task list, agency overflow, SEO implementation, page updates, or cleanup work. It is not unlimited work for a flat fee, and it is not a fake agency package. Send the URL and the task list, and The Web Guy can help figure out the best first move."
       }
     ],
     related: ["technical-seo-implementation", "site-speed-performance", "website-fixes", "ongoing-webmaster-support"]
@@ -278,7 +278,7 @@ export const coreServicePages = [
       {
         h2: "The person to send annoying website problems to",
         body:
-          "Not every website problem deserves a full project. Some need a careful technical look, a fix, and a plain-English summary of what changed. That is exactly where hourly contract help makes sense: a broken page, a stuck form, a checkout issue, a tracking problem, a mobile layout failure, or a site that suddenly behaves differently after an update."
+          "Not every website problem deserves a full project. Some need a careful technical look, a fix, and a plain-English summary of what changed. That work can be priced hourly or as a defined project: a broken page, a stuck form, a checkout issue, a tracking problem, a mobile layout failure, or a site that suddenly behaves differently after an update."
       }
     ],
     related: ["ai-built-website-cleanup", "wordpress-support", "analytics-tracking", "api-integrations", "security-hosting-reliability"]
@@ -440,7 +440,7 @@ export const coreServicePages = [
     h1: "Agency Overflow Web Support",
     eyebrow: "Agency Overflow",
     intro:
-      "Hourly production support for marketing agencies, SEO agencies, web shops, freelancers, and small teams that have more website work than available hands.",
+      "Hourly or project-based production support for marketing agencies, SEO agencies, web shops, freelancers, and small teams that have more website work than available hands.",
     cta: "Add Agency Overflow Help",
     audience:
       "This is for agencies that need reliable execution on existing work: WordPress updates, SEO implementation, landing pages, technical cleanup, QA fixes, tracking, and client-site troubleshooting without hiring full-time.",
@@ -478,7 +478,7 @@ export const coreServicePages = [
           ["Review workflow", "Define whether the agency wants direct implementation, staging review, pull-request style notes, screenshots, or a plain status summary."],
           ["White-label expectations", "State whether The Web Guy stays fully behind the agency, can appear in technical systems, or should avoid client-facing communication."],
           ["Blocker reporting", "Useful updates name what changed, what was found, what is blocked, what access is missing, and what should happen next."],
-          ["Scope discipline", "Hourly overflow is strongest for specific production tasks, not unlimited support disguised as a single vague ticket."]
+          ["Scope discipline", "Hourly or project-based overflow is strongest for specific production tasks, not unlimited support disguised as a single vague ticket."]
         ]
       },
       {
@@ -548,7 +548,7 @@ export const coreServicePages = [
       {
         h2: "Conversion and UX fixes",
         body:
-          "Sometimes ecommerce cleanup is about the basics: product pages loading slowly, forms not working, CTAs buried, collection pages confusing users, tracking missing conversions, or scripts making the store feel heavy. Hourly support is a practical way to start fixing the highest-impact problems first."
+          "Sometimes ecommerce cleanup is about the basics: product pages loading slowly, forms not working, CTAs buried, collection pages confusing users, tracking missing conversions, or scripts making the store feel heavy. Hourly or project-based support is a practical way to start fixing the highest-impact problems first."
       }
     ],
     related: ["analytics-tracking", "api-integrations", "site-speed-performance", "website-fixes"]
@@ -803,7 +803,7 @@ export const coreServicePages = [
       {
         h2: "A webmaster without hiring full-time",
         body:
-          "Most sites need steady attention: updates, page edits, redirects, forms, tracking, speed cleanup, SEO implementation, plugin issues, content cleanup, and small improvements. Hourly webmaster support gives you a practical way to keep those tasks moving.",
+          "Most sites need steady attention: updates, page edits, redirects, forms, tracking, speed cleanup, SEO implementation, plugin issues, content cleanup, and small improvements. Hourly or project-based webmaster support gives you a practical way to keep those tasks moving.",
         bullets: [
           "Website updates and page edits",
           "WordPress support",
@@ -835,7 +835,7 @@ export const coreServicePages = [
         ]
       },
       {
-        h2: "Hourly support expectations",
+        h2: "Hourly or project-based support expectations",
         body:
           "An agreed scope works well for ongoing contract support when tasks are clear and communication is practical. The Web Guy can provide plain updates on what changed, what was found, what is blocked, and what should happen next."
       }

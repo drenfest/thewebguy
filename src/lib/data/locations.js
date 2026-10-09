@@ -10,7 +10,7 @@ export const locationPages = [
       "Freeport-area businesses often need practical website support without hiring a full agency or full-time developer. Local service companies, shops, contractors, nonprofits, organizations, and regional businesses all run into the same problem: the site needs work, but nobody has time to touch it.",
       "The Web Guy provides remote-friendly and local-friendly contract help near Freeport for WordPress updates, broken forms, slow pages, tracking fixes, landing pages, technical SEO implementation, and ongoing webmaster support.",
       "Freeport website requests are usually practical: update service pages, fix a WordPress layout that changed after an edit, get a contact form sending again, clean up old pages, add GA4/GTM tracking, improve a slow mobile page, or make local SEO recommendations actually live on the site.",
-      "This is positioned as hourly website help for existing local business sites, not a large redesign package by default. The first step is the URL, the issue, the page or form affected, and what should happen next."
+      "This is positioned as hourly or project-based website help for existing local business sites, not a large redesign package by default. The first step is the URL, the issue, the page or form affected, and what should happen next."
     ],
     tasks: [
       "Update Freeport-area service pages, location copy, staff pages, menus, images, and calls to action",
@@ -60,7 +60,7 @@ export const locationPages = [
     meta: "Need website help in Monroe, WI? Get WordPress fixes, technical SEO implementation, tracking, ecommerce cleanup, and landing-page support. Free quote.",
     context: [
       "Monroe-area businesses often need dependable remote website support for WordPress updates, content changes, ecommerce cleanup, and service-page improvements.",
-      "For regional service companies, professional services, shops, and ecommerce sellers, hourly support can be more practical than waiting on a large agency process."
+      "For regional service companies, professional services, shops, and ecommerce sellers, hourly or project-based support can be more practical than waiting on a large agency process."
     ],
     tasks: ["Clean up WordPress pages", "Improve local service page structure", "Fix forms and lead tracking", "Review ecommerce product data", "Add campaign landing pages", "Troubleshoot slow or outdated pages"],
     relatedServices: ["wordpress-support", "ecommerce-support", "analytics-tracking", "landing-pages"],
@@ -122,10 +122,10 @@ export const locationPages = [
     state: "IL",
     region: "Illinois",
     title: "Local Website Support in Sterling, IL | The Web Guy",
-    meta: "The Web Guy provides hourly WordPress support, website fixes, technical SEO implementation, landing pages, and webmaster help for Sterling, IL businesses.",
+    meta: "The Web Guy provides hourly or project-based WordPress support, website fixes, technical SEO implementation, landing pages, and webmaster help for Sterling, IL businesses.",
     context: [
       "Sterling-area companies often need practical support for older WordPress sites, service pages, ecommerce cleanup, local campaigns, and technical maintenance.",
-      "Hourly help works well when the site needs consistent updates, tracking fixes, broken layout repair, performance cleanup, or technical SEO work without a full agency package."
+      "Hourly or project-based help works well when the site needs consistent updates, tracking fixes, broken layout repair, performance cleanup, or technical SEO work without a full agency package."
     ],
     tasks: ["Fix slow WordPress pages", "Add or update local service pages", "Troubleshoot forms and modals", "Clean up ecommerce product pages", "Implement redirects and metadata", "Review DNS, SSL, or hosting issues"],
     relatedServices: ["wordpress-support", "site-speed-performance", "ecommerce-support", "security-hosting-reliability"],
@@ -138,7 +138,7 @@ export const locationPages = [
     state: "IL",
     region: "Illinois",
     title: "Local Website Support in Galena, IL | The Web Guy",
-    meta: "The Web Guy provides hourly WordPress support, website fixes, technical SEO implementation, landing pages, and webmaster help for Galena, IL businesses.",
+    meta: "The Web Guy provides hourly or project-based WordPress support, website fixes, technical SEO implementation, landing pages, and webmaster help for Galena, IL businesses.",
     context: [
       "Galena businesses often depend on mobile visitors, seasonal traffic, booking or lead flow, local search visibility, and pages that explain services clearly.",
       "The Web Guy can help tourism, hospitality, retail, appointment-based businesses, and local service companies with landing pages, tracking, WordPress cleanup, technical SEO, and mobile UX fixes."

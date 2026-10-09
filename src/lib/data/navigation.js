@@ -203,17 +203,17 @@ export const megaMenus = {
   ),
   blog: menu(
     [
-      group("Fix Notes", [
-        taxonomyLink("View Fix Notes", "/fix-notes/"),
+      group("Web Fixes", [
+        taxonomyLink("View Web Fixes", "/fix-notes/"),
         ...fixNoteCategoryLinks.slice(0, 6)
       ]),
       group("Categories", blogCategoryLinks),
       ...blogTagGroups
     ],
     {
-      heading: "Recent Fix Notes",
+      heading: "Recent Web Fixes",
       text: "Short work notes from related cleanup, debugging, implementation, and support tasks.",
-      label: "View Fix Notes",
+      label: "View Web Fixes",
       href: "/fix-notes/"
     }
   ),

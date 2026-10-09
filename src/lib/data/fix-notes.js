@@ -99,7 +99,7 @@ export const fixNotes = [
     relatedServices: ["website-security-malware-cleanup", "wordpress-support", "production-debugging"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "WordPress Database Malware Cleanup Fix Note | The Web Guy",
+    metaTitle: "WordPress Database Malware Cleanup Web Fix | The Web Guy",
     metaDescription: "Short security note about tracing a deceptive-page warning to obfuscated JavaScript in a WordPress database and validating the cleaned site."
   },
   {
@@ -136,7 +136,7 @@ export const fixNotes = [
     relatedServices: ["production-debugging", "wordpress-support", "website-fixes"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "reCAPTCHA Script Loading Fix Note | The Web Guy",
+    metaTitle: "reCAPTCHA Script Loading Web Fix | The Web Guy",
     metaDescription: "Short production debugging note about repairing reCAPTCHA and form loading with targeted performance-plugin exclusions."
   },
   {
@@ -173,7 +173,7 @@ export const fixNotes = [
     relatedServices: ["wordpress-support", "website-fixes", "website-security-malware-cleanup"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "WordPress Form Firewall Fix Note | The Web Guy",
+    metaTitle: "WordPress Form Firewall Web Fix | The Web Guy",
     metaDescription: "Short WordPress note about fixing a firewall-blocked form editor and making the replacement iframe responsive."
   },
   {
@@ -211,7 +211,7 @@ export const fixNotes = [
     relatedServices: ["analytics-tracking", "technical-seo-implementation", "api-integrations"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Static Site Tracking Setup Fix Note | The Web Guy",
+    metaTitle: "Static Site Tracking Setup Web Fix | The Web Guy",
     metaDescription: "Short analytics note about adding call tracking, GTM, and Search Console verification to a client-routed static site."
   },
   {
@@ -249,7 +249,7 @@ export const fixNotes = [
     relatedServices: ["api-integrations", "landing-pages", "website-fixes"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Validated Service Lead Form Fix Note | The Web Guy",
+    metaTitle: "Validated Service Lead Form Web Fix | The Web Guy",
     metaDescription: "Short API integration note about replacing a large booking embed with a focused validated lead form."
   },
   {
@@ -287,7 +287,7 @@ export const fixNotes = [
     relatedServices: ["technical-seo-implementation", "website-fixes", "production-debugging"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Shared Site Data and FAQ Schema Fix Note | The Web Guy",
+    metaTitle: "Shared Site Data and FAQ Schema Web Fix | The Web Guy",
     metaDescription: "Short technical SEO note about centralizing business facts and FAQ answers across visible pages and structured data."
   },
   {
@@ -325,7 +325,7 @@ export const fixNotes = [
     relatedServices: ["landing-pages", "wordpress-support", "technical-seo-implementation"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Accessible WordPress Service Page Fix Note | The Web Guy",
+    metaTitle: "Accessible WordPress Service Page Web Fix | The Web Guy",
     metaDescription: "Short landing-page note about building a responsive WordPress service page with custom WebP imagery, accessibility, FAQs, and schema."
   },
   {
@@ -363,7 +363,7 @@ export const fixNotes = [
     relatedServices: ["technical-seo-implementation", "wordpress-support", "site-speed-performance"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Optimized WordPress Blog Publishing Fix Note | The Web Guy",
+    metaTitle: "Optimized WordPress Blog Publishing Web Fix | The Web Guy",
     metaDescription: "Short technical SEO note about publishing supplied articles with optimized WebP images, metadata, and internal links."
   },
   {
@@ -400,7 +400,7 @@ export const fixNotes = [
     relatedServices: ["technical-seo-implementation", "wordpress-support", "production-debugging"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "WordPress SEO Plugin Consolidation Fix Note | The Web Guy",
+    metaTitle: "WordPress SEO Plugin Consolidation Web Fix | The Web Guy",
     metaDescription: "Short technical SEO note about consolidating duplicate WordPress SEO plugins and validating canonical, schema, and sitemap output."
   },
   {
@@ -437,7 +437,7 @@ export const fixNotes = [
     relatedServices: ["website-fixes", "wordpress-support", "production-debugging"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "WordPress Full-Screen Scrolling Fix Note | The Web Guy",
+    metaTitle: "WordPress Full-Screen Scrolling Web Fix | The Web Guy",
     metaDescription: "Short website repair note about fixing missing content and broken scrolling caused by full-screen rows and overflow behavior."
   },
   {
@@ -475,7 +475,7 @@ export const fixNotes = [
     relatedServices: ["landing-pages", "website-fixes", "api-integrations"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Accessible Booking Modal Fix Note | The Web Guy",
+    metaTitle: "Accessible Booking Modal Web Fix | The Web Guy",
     metaDescription: "Short landing-page note about replacing oversized embedded forms with a reusable accessible booking modal."
   },
   {
@@ -513,7 +513,7 @@ export const fixNotes = [
     relatedServices: ["website-fixes", "wordpress-support", "landing-pages"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Service Imagery and Mega Menu Fix Note | The Web Guy",
+    metaTitle: "Service Imagery and Mega Menu Web Fix | The Web Guy",
     metaDescription: "Short website note about replacing generic service imagery, rebuilding an additional-services page, and reorganizing a mega menu."
   },
   {
@@ -550,7 +550,7 @@ export const fixNotes = [
     relatedServices: ["hosting-dns-support", "technical-seo-implementation", "production-debugging"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Domain Migration Preparation Fix Note | The Web Guy",
+    metaTitle: "Domain Migration Preparation Web Fix | The Web Guy",
     metaDescription: "Short hosting note about preparing a custom-domain cutover while preserving the existing hostname and redirect path."
   },
   {
@@ -588,7 +588,7 @@ export const fixNotes = [
     relatedServices: ["website-security-malware-cleanup", "wordpress-support", "technical-seo-implementation"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "WordPress Backdoor and WAF Fix Note | The Web Guy",
+    metaTitle: "WordPress Backdoor and WAF Web Fix | The Web Guy",
     metaDescription: "Short security note about removing a WordPress compromise while separating an unrelated hosting firewall crawl block."
   },
   {
@@ -623,7 +623,7 @@ export const fixNotes = [
     relatedServices: ["production-debugging", "wordpress-support", "site-speed-performance"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "WordPress Cache Plugin Critical Error Fix Note | The Web Guy",
+    metaTitle: "WordPress Cache Plugin Critical Error Web Fix | The Web Guy",
     metaDescription: "Short production support note about restoring WordPress after a caching plugin caused a critical error."
   },
   {
@@ -661,7 +661,7 @@ export const fixNotes = [
     relatedServices: ["site-speed-performance", "wordpress-support", "production-debugging"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "WordPress Static Cache Rebuild Fix Note | The Web Guy",
+    metaTitle: "WordPress Static Cache Rebuild Web Fix | The Web Guy",
     metaDescription: "Short performance note about rebuilding safe static WordPress caching and verifying hundreds of production URLs."
   },
   {
@@ -699,7 +699,7 @@ export const fixNotes = [
     relatedServices: ["landing-pages", "technical-seo-implementation", "site-speed-performance"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Astro Service Website Build Fix Note | The Web Guy",
+    metaTitle: "Astro Service Website Build Web Fix | The Web Guy",
     metaDescription: "Short website build note about creating a production-ready Astro service site with reusable templates, local pages, schema, and optimized assets."
   },
   {
@@ -737,7 +737,7 @@ export const fixNotes = [
     relatedServices: ["technical-seo-implementation", "wordpress-support", "landing-pages"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Local Page FAQ and Schema Fix Note | The Web Guy",
+    metaTitle: "Local Page FAQ and Schema Web Fix | The Web Guy",
     metaDescription: "Short technical SEO note about expanding 42 local pages with unique content, internal links, FAQs, and structured data."
   },
   {
@@ -775,7 +775,7 @@ export const fixNotes = [
     relatedServices: ["ecommerce-support", "site-speed-performance", "technical-seo-implementation"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Shopify Performance Release Fix Note | The Web Guy",
+    metaTitle: "Shopify Performance Release Web Fix | The Web Guy",
     metaDescription: "Short Shopify note about turning a speed audit into a measured theme release with staging QA and rollback support."
   },
   {
@@ -813,7 +813,7 @@ export const fixNotes = [
     relatedServices: ["api-integrations", "analytics-tracking", "wordpress-support"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Estimate CRM Intake Fix Note | The Web Guy",
+    metaTitle: "Estimate CRM Intake Web Fix | The Web Guy",
     metaDescription: "Short API integration note about building an admin-only WordPress CRM and estimate intake flow with UTM capture and follow-up controls."
   },
   {
@@ -851,7 +851,7 @@ export const fixNotes = [
     relatedServices: ["api-integrations", "production-debugging", "website-fixes"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Local-First Workflow App Fix Note | The Web Guy",
+    metaTitle: "Local-First Workflow App Web Fix | The Web Guy",
     metaDescription: "Short internal tools note about building a local-first workflow app with timers, session continuity, and device-local attachments."
   },
   {
@@ -889,7 +889,7 @@ export const fixNotes = [
     relatedServices: ["api-integrations", "analytics-tracking", "production-debugging"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "HTML Invoice Workflow Fix Note | The Web Guy",
+    metaTitle: "HTML Invoice Workflow Web Fix | The Web Guy",
     metaDescription: "Short internal tools note about structuring client-facing HTML invoices with detailed work blocks and print-clean totals."
   },
   {
@@ -927,7 +927,7 @@ export const fixNotes = [
     relatedServices: ["wordpress-support", "landing-pages", "technical-seo-implementation"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "WordPress Rebuild From Crawl Fix Note | The Web Guy",
+    metaTitle: "WordPress Rebuild From Crawl Web Fix | The Web Guy",
     metaDescription: "Short WordPress support note about rebuilding a site from a crawl into reusable Gutenberg blocks and a custom theme architecture."
   },
   {
@@ -965,8 +965,8 @@ export const fixNotes = [
     relatedServices: ["ecommerce-support", "site-speed-performance", "technical-seo-implementation"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Shopify Page Speed Fix Note | The Web Guy",
-    metaDescription: "Short fix note about optimizing a Shopify staging theme for page speed, Core Web Vitals, and safer third-party script loading."
+    metaTitle: "Shopify Page Speed Web Fix | The Web Guy",
+    metaDescription: "Short Web Fix about optimizing a Shopify staging theme for page speed, Core Web Vitals, and safer third-party script loading."
   },
   {
     title: "Cleaned a WordPress Install and Database After Malware",
@@ -1003,8 +1003,8 @@ export const fixNotes = [
     relatedServices: ["security-hosting-reliability", "wordpress-support", "production-debugging"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "WordPress Malware Database Cleanup Fix Note | The Web Guy",
-    metaDescription: "Short fix note about cleaning a WordPress install and database after malware, including file scanning and malicious user removal."
+    metaTitle: "WordPress Malware Database Cleanup Web Fix | The Web Guy",
+    metaDescription: "Short Web Fix about cleaning a WordPress install and database after malware, including file scanning and malicious user removal."
   },
   {
     title: "Traced a Live WordPress Display Problem to Host Cache",
@@ -1040,7 +1040,7 @@ export const fixNotes = [
     relatedServices: ["production-debugging", "wordpress-support", "security-hosting-reliability"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "WordPress Host Cache Debugging Fix Note | The Web Guy",
+    metaTitle: "WordPress Host Cache Debugging Web Fix | The Web Guy",
     metaDescription: "Short production debugging note about tracing a live WordPress display issue to a host or CDN cache layer."
   },
   {
@@ -1077,7 +1077,7 @@ export const fixNotes = [
     relatedServices: ["wordpress-support", "website-fixes", "analytics-tracking"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Contact Form Email Delivery Fix Note | The Web Guy",
+    metaTitle: "Contact Form Email Delivery Web Fix | The Web Guy",
     metaDescription: "Short WordPress support note about fixing contact form email delivery with authenticated sending."
   },
   {
@@ -1113,7 +1113,7 @@ export const fixNotes = [
     relatedServices: ["wordpress-support", "website-fixes", "ongoing-webmaster-support"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Instagram Plugin Cleanup Fix Note | The Web Guy",
+    metaTitle: "Instagram Plugin Cleanup Web Fix | The Web Guy",
     metaDescription: "Short WordPress support note about resolving an unused Instagram feed plugin issue by updating, checking authentication, and deactivating it."
   },
   {
@@ -1151,7 +1151,7 @@ export const fixNotes = [
     relatedServices: ["analytics-tracking", "landing-pages", "react-static-sites"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Click-to-Call and Review Badge Fix Note | The Web Guy",
+    metaTitle: "Click-to-Call and Review Badge Web Fix | The Web Guy",
     metaDescription: "Short support note about adding a floating phone CTA, review badge support, cached review data, and tracking to a static site."
   },
   {
@@ -1162,7 +1162,7 @@ export const fixNotes = [
     lastUpdated: null,
     category: "Website Fixes",
     serviceSlug: "website-fixes",
-    excerpt: "A frontend fix note about repairing a mobile popup scroll issue, adding a project card, and correcting blurry responsive image output.",
+    excerpt: "A frontend Web Fix about repairing a mobile popup scroll issue, adding a project card, and correcting blurry responsive image output.",
     problemSummary: "The page had a bio popup that showed scrollbars but would not scroll properly on affected views, and new project imagery exposed a responsive image sizing problem.",
     whatIChecked: [
       "Mobile and laptop popup behavior",
@@ -1189,8 +1189,8 @@ export const fixNotes = [
     relatedServices: ["website-fixes", "wordpress-support", "landing-pages"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Mobile Popup and Image Quality Fix Note | The Web Guy",
-    metaDescription: "Short website fix note about repairing mobile popup scrolling and correcting blurry responsive project images."
+    metaTitle: "Mobile Popup and Image Quality Web Fix | The Web Guy",
+    metaDescription: "Short website Web Fix about repairing mobile popup scrolling and correcting blurry responsive project images."
   },
   {
     title: "Built a Static-Site Lead Handler and Contact Popup Flow",
@@ -1227,7 +1227,7 @@ export const fixNotes = [
     relatedServices: ["api-integrations", "analytics-tracking", "react-static-sites"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Static Site Lead Handler Fix Note | The Web Guy",
+    metaTitle: "Static Site Lead Handler Web Fix | The Web Guy",
     metaDescription: "Short API integration note about building a static-site lead handler and contact popup flow."
   },
   {
@@ -1264,7 +1264,7 @@ export const fixNotes = [
     relatedServices: ["wordpress-support", "landing-pages", "website-fixes"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "WordPress FAQ Cleanup Fix Note | The Web Guy",
+    metaTitle: "WordPress FAQ Cleanup Web Fix | The Web Guy",
     metaDescription: "Short WordPress support note about cleaning up FAQ sections and visible page layout details."
   },
   {
@@ -1302,7 +1302,7 @@ export const fixNotes = [
     relatedServices: ["security-hosting-reliability", "wordpress-support", "production-debugging"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "WordPress Backup Recovery Fix Note | The Web Guy",
+    metaTitle: "WordPress Backup Recovery Web Fix | The Web Guy",
     metaDescription: "Short WordPress recovery note about staging a backup locally, cleaning database imports, refreshing core files, and quarantining suspicious assets."
   },
   {
@@ -1340,7 +1340,7 @@ export const fixNotes = [
     relatedServices: ["automation-internal-tools", "api-integrations", "react-static-sites"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Operations Dashboard Prototype Fix Note | The Web Guy",
+    metaTitle: "Operations Dashboard Prototype Web Fix | The Web Guy",
     metaDescription: "Short internal tools note about building a role-aware operations dashboard prototype."
   },
   {
@@ -1375,7 +1375,7 @@ export const fixNotes = [
     relatedServices: ["website-fixes", "ongoing-webmaster-support", "production-debugging"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Site Modification Review Fix Note | The Web Guy",
+    metaTitle: "Site Modification Review Web Fix | The Web Guy",
     metaDescription: "Short website support note about completing requested site modifications and reviewing the updated output."
   },
   {
@@ -1413,8 +1413,8 @@ export const fixNotes = [
     relatedServices: ["react-static-sites", "api-integrations", "analytics-tracking"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Next.js Static Hosting Refactor Fix Note | The Web Guy",
-    metaDescription: "Short fix note about refactoring a Next.js app for static hosting while preserving forms and analytics."
+    metaTitle: "Next.js Static Hosting Refactor Web Fix | The Web Guy",
+    metaDescription: "Short Web Fix about refactoring a Next.js app for static hosting while preserving forms and analytics."
   },
   {
     title: "Removed WordPress Backdoors and Hardened File Access",
@@ -1451,8 +1451,8 @@ export const fixNotes = [
     relatedServices: ["security-hosting-reliability", "wordpress-support", "production-debugging"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "WordPress Backdoor Cleanup Fix Note | The Web Guy",
-    metaDescription: "Short security fix note about removing WordPress backdoors, malware payloads, and hardening sensitive file access."
+    metaTitle: "WordPress Backdoor Cleanup Web Fix | The Web Guy",
+    metaDescription: "Short security Web Fix about removing WordPress backdoors, malware payloads, and hardening sensitive file access."
   },
   {
     title: "Updated a Static Promotion Page and Chat Script",
@@ -1489,8 +1489,8 @@ export const fixNotes = [
     relatedServices: ["landing-pages", "website-fixes", "react-static-sites"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Static Promotion Page Fix Note | The Web Guy",
-    metaDescription: "Short landing page fix note about updating a static promotion page, print route, share copy, and chat script."
+    metaTitle: "Static Promotion Page Web Fix | The Web Guy",
+    metaDescription: "Short landing page Web Fix about updating a static promotion page, print route, share copy, and chat script."
   },
   {
     title: "Repaired Custom Permalinks for Location-Based Service Pages",
@@ -1527,7 +1527,7 @@ export const fixNotes = [
     relatedServices: ["wordpress-support", "technical-seo-implementation", "landing-pages"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "WordPress Custom Permalink Fix Note | The Web Guy",
+    metaTitle: "WordPress Custom Permalink Web Fix | The Web Guy",
     metaDescription: "Short WordPress support note about repairing custom permalinks for location-based service pages."
   },
   {
@@ -1565,7 +1565,7 @@ export const fixNotes = [
     relatedServices: ["site-speed-performance", "wordpress-support", "website-fixes"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Builder-Based Performance Review Fix Note | The Web Guy",
+    metaTitle: "Builder-Based Performance Review Web Fix | The Web Guy",
     metaDescription: "Short page speed note about reviewing a builder-based WordPress site and documenting structural performance constraints."
   },
   {
@@ -1603,7 +1603,7 @@ export const fixNotes = [
     relatedServices: ["landing-pages", "wordpress-support", "technical-seo-implementation"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "WordPress Location Page Import Fix Note | The Web Guy",
+    metaTitle: "WordPress Location Page Import Web Fix | The Web Guy",
     metaDescription: "Short WordPress implementation note about preparing bulk location page imports and Elementor templates."
   },
   {
@@ -1641,7 +1641,7 @@ export const fixNotes = [
     relatedServices: ["technical-seo-implementation", "wordpress-support", "landing-pages"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Blog Schema Upload Fix Note | The Web Guy",
+    metaTitle: "Blog Schema Upload Web Fix | The Web Guy",
     metaDescription: "Short technical SEO note about uploading WordPress blog content and validating schema output."
   },
   {
@@ -1678,7 +1678,7 @@ export const fixNotes = [
     relatedServices: ["security-hosting-reliability", "wordpress-support", "production-debugging"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "WordPress Malware Audit Fix Note | The Web Guy",
+    metaTitle: "WordPress Malware Audit Web Fix | The Web Guy",
     metaDescription: "Short security note about auditing a WordPress site for remaining malware indicators and access needs."
   },
   {
@@ -1713,8 +1713,8 @@ export const fixNotes = [
     relatedServices: ["website-fixes", "landing-pages", "technical-seo-implementation"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Small Content Migration Fix Note | The Web Guy",
-    metaDescription: "Short website fix note about migrating content between domains and verifying the transfer."
+    metaTitle: "Small Content Migration Web Fix | The Web Guy",
+    metaDescription: "Short website Web Fix about migrating content between domains and verifying the transfer."
   },
   {
     title: "Reviewed a WordPress Site for Suspicious Plugin-Like Files",
@@ -1751,7 +1751,7 @@ export const fixNotes = [
     relatedServices: ["security-hosting-reliability", "wordpress-support", "production-debugging"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Suspicious WordPress File Review Fix Note | The Web Guy",
+    metaTitle: "Suspicious WordPress File Review Web Fix | The Web Guy",
     metaDescription: "Short WordPress security note about reviewing suspicious plugin-like files with limited dashboard access."
   },
   {
@@ -1789,8 +1789,8 @@ export const fixNotes = [
     relatedServices: ["security-hosting-reliability", "wordpress-support", "production-debugging"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "WordPress Malware Recovery Fix Note | The Web Guy",
-    metaDescription: "Short security fix note about recovering multiple WordPress sites after malware injection."
+    metaTitle: "WordPress Malware Recovery Web Fix | The Web Guy",
+    metaDescription: "Short security Web Fix about recovering multiple WordPress sites after malware injection."
   },
   {
     title: "Added Location-Specific Proof Content to Service Pages",
@@ -1825,7 +1825,7 @@ export const fixNotes = [
     relatedServices: ["landing-pages", "wordpress-support", "technical-seo-implementation"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Location Proof Content Fix Note | The Web Guy",
+    metaTitle: "Location Proof Content Web Fix | The Web Guy",
     metaDescription: "Short landing page note about adding location-specific proof content to service pages."
   },
   {
@@ -1862,8 +1862,8 @@ export const fixNotes = [
     relatedServices: ["site-speed-performance", "wordpress-support", "website-fixes"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "WordPress Asset Cleanup Fix Note | The Web Guy",
-    metaDescription: "Short website fix note about cleaning up WordPress assets on a service page, what was checked, and what was changed."
+    metaTitle: "WordPress Asset Cleanup Web Fix | The Web Guy",
+    metaDescription: "Short website Web Fix about cleaning up WordPress assets on a service page, what was checked, and what was changed."
   },
   {
     title: "Fixed a Mobile Layout That Broke Below Tablet Width",
@@ -1899,8 +1899,8 @@ export const fixNotes = [
     relatedServices: ["website-fixes", "landing-pages", "production-debugging"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Mobile Layout Fix Note | The Web Guy",
-    metaDescription: "Short website fix note about repairing a mobile layout that broke below tablet width."
+    metaTitle: "Mobile Layout Web Fix | The Web Guy",
+    metaDescription: "Short website Web Fix about repairing a mobile layout that broke below tablet width."
   },
   {
     title: "Cleaned Up Crawl Paths for Pages Google Was Slow to Index",
@@ -1936,8 +1936,8 @@ export const fixNotes = [
     relatedServices: ["technical-seo-implementation", "website-fixes", "ongoing-webmaster-support"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Crawl Path Cleanup Fix Note | The Web Guy",
-    metaDescription: "Short technical SEO fix note about improving crawl paths for pages Google was slow to index."
+    metaTitle: "Crawl Path Cleanup Web Fix | The Web Guy",
+    metaDescription: "Short technical SEO Web Fix about improving crawl paths for pages Google was slow to index."
   },
   {
     title: "Improved Internal Links Between Service Pages and Supporting Content",
@@ -1973,8 +1973,8 @@ export const fixNotes = [
     relatedServices: ["technical-seo-implementation", "website-fixes", "ongoing-webmaster-support"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Internal Linking Cleanup Fix Note | The Web Guy",
-    metaDescription: "Short fix note about improving internal links between service pages and supporting content."
+    metaTitle: "Internal Linking Cleanup Web Fix | The Web Guy",
+    metaDescription: "Short Web Fix about improving internal links between service pages and supporting content."
   },
   {
     title: "Fixed Lead Tracking for a Contact Form That Was Hard to Measure",
@@ -2010,8 +2010,8 @@ export const fixNotes = [
     relatedServices: ["analytics-tracking", "technical-seo-implementation", "website-fixes"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Contact Form Lead Tracking Fix Note | The Web Guy",
-    metaDescription: "Short tracking fix note about measuring a contact form lead path more clearly in GA4."
+    metaTitle: "Contact Form Lead Tracking Web Fix | The Web Guy",
+    metaDescription: "Short tracking Web Fix about measuring a contact form lead path more clearly in GA4."
   },
   {
     title: "Stabilized Contact Form Email Sending Without Overcomplicating the Setup",
@@ -2047,7 +2047,7 @@ export const fixNotes = [
     relatedServices: ["wordpress-support", "website-fixes", "analytics-tracking"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Contact Form Email Fix Note | The Web Guy",
+    metaTitle: "Contact Form Email Web Fix | The Web Guy",
     metaDescription: "Short WordPress support note about stabilizing contact form email notifications without overcomplicating the setup."
   },
   {
@@ -2084,7 +2084,7 @@ export const fixNotes = [
     relatedServices: ["website-fixes", "wordpress-support", "production-debugging"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Server Cache Display Issue Fix Note | The Web Guy",
+    metaTitle: "Server Cache Display Issue Web Fix | The Web Guy",
     metaDescription: "Short production debugging note about tracing a live-site display issue back to server-side cache behavior."
   },
   {
@@ -2121,7 +2121,7 @@ export const fixNotes = [
     relatedServices: ["ai-built-website-cleanup", "website-fixes", "landing-pages"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "AI-Built Page Cleanup Fix Note | The Web Guy",
+    metaTitle: "AI-Built Page Cleanup Web Fix | The Web Guy",
     metaDescription: "Short AI website cleanup note about improving structure, mobile layout, links, and maintainability."
   },
   {
@@ -2158,8 +2158,8 @@ export const fixNotes = [
     relatedServices: ["landing-pages", "website-fixes", "ai-built-website-cleanup"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Mobile Landing Page Cleanup Fix Note | The Web Guy",
-    metaDescription: "Short landing page fix note about cleaning up a mobile page with too many competing sections."
+    metaTitle: "Mobile Landing Page Cleanup Web Fix | The Web Guy",
+    metaDescription: "Short landing page Web Fix about cleaning up a mobile page with too many competing sections."
   },
   {
     title: "Reviewed Shopify Theme Files Before Making Template Changes",
@@ -2195,8 +2195,8 @@ export const fixNotes = [
     relatedServices: ["ecommerce-support", "website-fixes", "production-debugging"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Shopify Theme File Review Fix Note | The Web Guy",
-    metaDescription: "Short ecommerce fix note about reviewing Shopify theme files before making template changes."
+    metaTitle: "Shopify Theme File Review Web Fix | The Web Guy",
+    metaDescription: "Short ecommerce Web Fix about reviewing Shopify theme files before making template changes."
   },
   {
     title: "Checked for Suspicious WordPress Users After a Site Compromise",
@@ -2232,7 +2232,7 @@ export const fixNotes = [
     relatedServices: ["wordpress-support", "website-fixes", "production-debugging"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Suspicious WordPress User Cleanup Fix Note | The Web Guy",
+    metaTitle: "Suspicious WordPress User Cleanup Web Fix | The Web Guy",
     metaDescription: "Short WordPress support note about checking suspicious users after a possible site compromise."
   },
   {
@@ -2269,8 +2269,8 @@ export const fixNotes = [
     relatedServices: ["api-integrations", "analytics-tracking", "website-fixes"],
     screenshot: null,
     screenshotAlt: null,
-    metaTitle: "Form-to-CRM API Handoff Fix Note | The Web Guy",
-    metaDescription: "Short API integration fix note about verifying a form-to-CRM handoff that was dropping fields."
+    metaTitle: "Form-to-CRM API Handoff Web Fix | The Web Guy",
+    metaDescription: "Short API integration Web Fix about verifying a form-to-CRM handoff that was dropping fields."
   }
 ];
 

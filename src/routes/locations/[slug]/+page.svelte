@@ -37,10 +37,10 @@
   const locationProof = $derived(proofForLocation(location.slug));
   const topicalItems = $derived(locationTopicalItems(location, relatedServices, relatedSkills));
   const locationFaqs = $derived([
-    [`Do you work with ${location.city} businesses remotely?`, `Yes. The Web Guy provides remote-friendly hourly website support for ${location.city}-area businesses and teams.`],
+    [`Do you work with ${location.city} businesses remotely?`, `Yes. The Web Guy provides remote-friendly hourly or project-based website support for ${location.city}-area businesses and teams.`],
     [`What do you charge for website help in ${location.city}?`, `Send the site and the work you need for a free quote. Scope and cost are agreed before any paid work begins.`],
     [`Can you help with WordPress sites in ${location.city}?`, `Yes. WordPress support includes updates, theme cleanup, page builder issues, plugin conflicts, SEO implementation, speed cleanup, and form troubleshooting.`],
-    [`Do you offer ongoing website support for ${location.city} businesses?`, `Yes. Ongoing hourly support works well for monthly updates, small improvements, technical fixes, and recurring webmaster tasks.`],
+    [`Do you offer ongoing website support for ${location.city} businesses?`, `Yes. Ongoing support can be hourly or project based for monthly updates, small improvements, technical fixes, and recurring webmaster tasks.`],
     [`Can you help agencies or marketing teams near ${location.city}?`, `Yes. Agency overflow support is available for production work, SEO implementation, landing pages, tracking QA, and website cleanup.`]
   ]);
   const seoSchema = $derived(schemaList(
@@ -109,7 +109,7 @@
   <Hero
     eyebrow={`${location.city}, ${location.state}`}
     h1={`Local Website Support for ${location.city}, ${location.state} Businesses`}
-    intro={`The Web Guy helps ${location.city}-area businesses with local-friendly hourly website support: WordPress support, website fixes, technical SEO, landing pages, tracking, ecommerce cleanup, and ongoing webmaster help.`}
+    intro={`The Web Guy helps ${location.city}-area businesses with local-friendly hourly or project-based website support: WordPress support, website fixes, technical SEO, landing pages, tracking, ecommerce cleanup, and ongoing webmaster help.`}
     cta={`Request ${location.city} Web Support`}
     image={locationHeroImage(location)}
   />
@@ -180,7 +180,7 @@
   </section>
 
   <section class="section section-effect section-effect--traces section-effect--low">
-    <SectionHeading eyebrow={`Hourly web help in ${location.city}`} h2={`A practical alternative to a full agency or full-time hire`} body={`Many ${location.city}-area businesses do not need a big agency package every time a page breaks, tracking fails, a plugin causes trouble, or a landing page needs launched. A free quote starts with the actual problem, so you can agree the scope and cost before work begins.`} />
+    <SectionHeading eyebrow={`Hourly or project-based web help in ${location.city}`} h2={`A practical alternative to a full agency or full-time hire`} body={`Many ${location.city}-area businesses do not need a big agency package every time a page breaks, tracking fails, a plugin causes trouble, or a landing page needs launched. A free quote starts with the actual problem, so you can agree the scope and cost before work begins.`} />
     <CardGrid
       className="card-grid compact-grid"
       items={relatedSkills.map((skill) => [

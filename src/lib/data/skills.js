@@ -248,7 +248,7 @@ export const skillPages = [
       ["Technical SEO implementation", "Crawl findings usually need implementation: redirects, broken links, canonical cleanup, headings, schema, and internal links.", "/services/technical-seo-implementation/", "View technical SEO", "technical-seo-implementation"],
       ["Ecommerce support", "Product and category pages often need crawl path cleanup, internal product links, duplicate handling, and schema alignment.", "/services/ecommerce-support/", "View ecommerce support", "ecommerce-support"],
       ["Programmatic SEO", "Scalable page sets need crawl-aware templates, internal link modules, and safeguards against thin orphaned pages.", "/skills/programmatic-seo/", "View programmatic SEO", "technical-seo-implementation"],
-      ["Agency overflow", "Crawl exports and internal link edits are common agency implementation tasks that can be handed off hourly.", "/services/agency-overflow/", "View agency overflow", "agency-overflow"]
+      ["Agency overflow", "Crawl exports and internal link edits are common agency implementation tasks that can be handed off hourly or quoted as a project.", "/services/agency-overflow/", "View agency overflow", "agency-overflow"]
     ],
     relatedServices: ["technical-seo-implementation", "landing-pages", "ecommerce-support", "agency-overflow"],
     relatedSkills: ["programmatic-seo", "schema-structured-data", "ga4-gtm-measurement-integrity", "performance-engineering"],

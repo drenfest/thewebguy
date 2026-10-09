@@ -706,7 +706,7 @@
     <div class="split-section tight">
       <p>This is practical contract execution. The Web Guy can inspect the site, make changes, troubleshoot issues, explain tradeoffs, and keep work moving. Some problems depend on hosting, platform limits, third-party tools, access, business requirements, or existing code quality.</p>
       <ul class="check-list">
-        <li>Clear hourly rate</li>
+        <li>Clear hourly rate or project price</li>
         <li>Plain updates</li>
         <li>No fake guarantees</li>
         <li>No unlimited flat-fee work</li>

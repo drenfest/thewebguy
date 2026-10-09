@@ -165,13 +165,37 @@
 
     function resize() {
       const rect = canvas.getBoundingClientRect();
-      width = Math.max(1, rect.width);
-      height = Math.max(1, rect.height);
-      dpr = Math.min(window.devicePixelRatio || 1, 1.5);
-      canvas.width = Math.floor(width * dpr);
-      canvas.height = Math.floor(height * dpr);
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      resetNodes();
+      const previousWidth = width;
+      const previousHeight = height;
+      const nextWidth = Math.max(1, rect.width);
+      const nextHeight = Math.max(1, rect.height);
+      const sizeChanged = Math.abs(nextWidth - previousWidth) > 0.5 || Math.abs(nextHeight - previousHeight) > 0.5;
+      const nextDpr = Math.min(window.devicePixelRatio || 1, 1.5);
+      const resolutionChanged = nextDpr !== dpr;
+
+      width = nextWidth;
+      height = nextHeight;
+      dpr = nextDpr;
+      if (sizeChanged || resolutionChanged || !canvas.width || !canvas.height) {
+        canvas.width = Math.floor(width * dpr);
+        canvas.height = Math.floor(height * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+
+      const requiredCount = particleCount();
+      if (!nodes.length || nodes.length !== requiredCount) {
+        resetNodes();
+      } else if (sizeChanged && previousWidth > 0 && previousHeight > 0) {
+        const scaleX = width / previousWidth;
+        const scaleY = height / previousHeight;
+        for (const node of nodes) {
+          node.x *= scaleX;
+          node.y *= scaleY;
+          node.baseX *= scaleX;
+          node.baseY *= scaleY;
+        }
+      }
+
       draw(0);
     }
 
@@ -355,7 +379,9 @@
     }
 
     function handleSeasonChange(event) {
-      halloweenSeason = event.detail?.halloween ?? new Date().getMonth() === 9;
+      const nextHalloweenSeason = event.detail?.halloween ?? new Date().getMonth() === 9;
+      if (nextHalloweenSeason === halloweenSeason) return;
+      halloweenSeason = nextHalloweenSeason;
       resetNodes();
       start();
     }

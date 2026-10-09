@@ -18,7 +18,7 @@ export const keywordLandingSpecs = [
   {
     slug: "wordpress-website-support",
     title: "WordPress Website Support | The Web Guy",
-    meta: "Hourly WordPress website support for existing business sites, page edits, plugin issues, forms, SEO implementation, cleanup, and recurring tasks.",
+    meta: "Hourly or project-based WordPress website support for existing business sites, page edits, plugin issues, forms, SEO implementation, cleanup, and recurring tasks.",
     h1: "WordPress Website Support",
     eyebrow: "WordPress Website Support",
     cluster: "WordPress support",
@@ -392,13 +392,13 @@ export const keywordLandingSpecs = [
   {
     slug: "hourly-wordpress-developer",
     title: "Hourly WordPress Developer | The Web Guy",
-    meta: "Hourly WordPress developer support for existing sites, small tasks, technical fixes, SEO implementation, page cleanup, plugins, and agency overflow.",
+    meta: "Hourly or project-based WordPress developer support for existing sites, small tasks, technical fixes, SEO implementation, page cleanup, plugins, and agency overflow.",
     h1: "Hourly WordPress Developer",
     eyebrow: "Hourly WordPress Developer",
     cluster: "WordPress support",
     anchorSlug: "wordpress-support",
-    intent: "hourly WordPress development support when task-based help is a better fit than a package",
-    problems: ["You need WordPress work without a large project wrapper", "Tasks vary across pages, plugins, themes, SEO, tracking, and fixes", "You want clear hourly execution and plain updates"],
+    intent: "hourly or project-based WordPress development support when task-based help is a better fit than a package",
+    problems: ["You need WordPress work without a large project wrapper", "Tasks vary across pages, plugins, themes, SEO, tracking, and fixes", "You want clear hourly or project-based pricing and plain updates"],
     tasks: ["Review and prioritize the task list", "Work through WordPress fixes, updates, cleanup, and implementation tasks", "Document what changed, what was found, and what remains"],
     related: ["wordpress-developer-for-small-tasks", "wordpress-support", "agency-overflow-developer", "ongoing-webmaster-support"],
     skills: ["wordpress-theme-development", "wordpress-plugin-development", "ga4-gtm-measurement-integrity"]
@@ -820,7 +820,7 @@ export const keywordLandingSpecs = [
     anchorSlug: "agency-overflow",
     intent: "agency production backlogs that need a technical developer without hiring full-time",
     intro:
-      "Hourly overflow developer help for agencies with client-site tickets that need practical execution: WordPress production, SEO implementation, landing pages, QA fixes, tracking cleanup, ecommerce support, and small technical tasks.",
+      "Hourly or project-based overflow developer help for agencies with client-site tickets that need practical execution: WordPress production, SEO implementation, landing pages, QA fixes, tracking cleanup, ecommerce support, and small technical tasks.",
     cta: "Add Overflow Developer Help",
     audience:
       "This page is for agencies, consultants, and small web or SEO teams that already have strategy, clients, and task lists, but need a technical person to move implementation work through the queue without hiring full-time.",
@@ -849,7 +849,7 @@ export const keywordLandingSpecs = [
           ["Plain status updates", "Expect concise notes on what changed, what was found, what is blocked, and what needs review."],
           ["Review-ready output", "Return changes in a state the agency can review, approve, hand off, or translate into client-facing language."],
           ["White-label-friendly boundaries", "Work can stay behind the agency process when communication, ownership, and client visibility are clear."],
-          ["No fake unlimited support", "Hourly overflow works for defined production tasks, not unbounded scope hidden inside a support bucket."]
+          ["No fake unlimited support", "Hourly or project-based overflow works for defined production tasks, not unbounded scope hidden inside a support bucket."]
         ]
       },
       {
@@ -1077,7 +1077,7 @@ export function buildKeywordLandingPage(spec) {
       },
       {
         h2: `${spec.eyebrow} tasks`,
-        cards: spec.tasks.map((task) => [task, `${task} as part of practical hourly website support. The exact fix depends on the site, access, platform, and what can be reproduced safely.`])
+        cards: spec.tasks.map((task) => [task, `${task} as part of practical hourly or project-based website support. The exact fix depends on the site, access, platform, and what can be reproduced safely.`])
       },
       {
         h2: `${spec.eyebrow} related support paths`,
@@ -1107,7 +1107,7 @@ export function buildKeywordLandingPage(spec) {
           ` covers ${anchorScope}.`
         ]
       ],
-      ["Can this be a one-off task?", "Yes. One-off fixes and small task lists are a strong fit when the issue is clear enough to start hourly."],
+      ["Can this be a one-off task?", "Yes. One-off fixes and small task lists are a strong fit when the issue is clear enough to price hourly or quote as a project."],
       ["What should I send first?", "Send the URL, symptom, expected behavior, recent changes, screenshots or notes, and any access constraints."],
       ["What does it cost?", "Request a free quote. The scope, access requirements, and cost are agreed before paid work begins."]
     ]

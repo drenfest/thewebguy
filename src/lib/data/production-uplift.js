@@ -232,7 +232,7 @@ export const targetedServicePatches = {
     faq: ["Does the newest plugin always cause the conflict?", "No. Timing is a useful clue, not proof. An update can expose an interaction with another plugin, the theme, caching, or custom code, so the cause should be tested."]
   },
   "wordpress-developer-for-small-tasks": {
-    paragraph: ["A small task might be a template adjustment, a field change, a layout correction, or functionality that needs a developer rather than another tutorial. Send the exact location and desired result. A defined change can stay small; a collection of related tasks can be scoped as ", link("hourly WordPress development", "/services/hourly-wordpress-developer/"), " without implying a full-site rebuild."],
+    paragraph: ["A small task might be a template adjustment, a field change, a layout correction, or functionality that needs a developer rather than another tutorial. Send the exact location and desired result. A defined change can stay small; a collection of related tasks can be scoped as ", link("hourly or project-based WordPress development", "/services/hourly-wordpress-developer/"), " without implying a full-site rebuild."],
     faq: ["What makes a task ready to quote?", "A clear location, desired result, constraints, and any relevant access information. Screenshots help, but the expected behavior matters more than a polished technical brief."]
   },
   "hourly-wordpress-developer": {

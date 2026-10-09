@@ -9,7 +9,7 @@
   } from "$lib/data/content.js";
 
   let {
-    title = "Recent Fix Notes",
+    title = "Recent Web Fixes",
     description = fixNotesDescription,
     category = "",
     serviceSlug = "",
@@ -25,9 +25,9 @@
   <section class="section fix-notes-panel-section section-effect section-effect--signals section-effect--low">
     <div class="fix-notes-panel">
       <div class="fix-notes-panel__header">
-        <SectionHeading eyebrow="Fix Notes" h2={title} body={description} />
+        <SectionHeading eyebrow="Web Fixes" h2={title} body={description} />
         {#if showViewAllLink}
-          <a href={viewAllHref} title="View more Fix Notes">View more fix notes -&gt;</a>
+          <a href={viewAllHref} title="View more Web Fixes">View more Web Fixes -&gt;</a>
         {/if}
       </div>
 

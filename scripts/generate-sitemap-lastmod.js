@@ -1,4 +1,5 @@
-import { existsSync, mkdirSync, statSync, writeFileSync } from "node:fs";
+import { execFileSync } from "node:child_process";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { aiDevelopmentPages, aiDevelopmentUrl } from "../src/lib/data/ai-development.js";
@@ -28,7 +29,44 @@ const {
   skillUrl
 } = contentModule;
 
+const registryPath = resolve(root, "src/lib/data/content-dates.json");
 const generatedPath = resolve(root, "src/lib/data/sitemap-lastmod.json");
+const today = new Date().toISOString().slice(0, 10);
+const existingRegistry = existsSync(registryPath)
+  ? JSON.parse(readFileSync(registryPath, "utf8"))
+  : {};
+const registry = {};
+
+function gitDates(paths = [], search = "") {
+  try {
+    const args = ["log", "--format=%ad", "--date=short", "--reverse"];
+    if (search) args.push("-S", search);
+    args.push("--", ...paths.filter(Boolean));
+    const dates = execFileSync("git", args, { cwd: root, encoding: "utf8" })
+      .split(/\r?\n/)
+      .map((value) => value.trim())
+      .filter(Boolean);
+    return dates.length ? { published: dates[0], updated: dates.at(-1) } : null;
+  } catch {
+    return null;
+  }
+}
+
+function add(url, { paths = [], search = "", published = "", updated = "" } = {}) {
+  const existing = existingRegistry[url];
+  if (existing?.published && existing?.updated) {
+    registry[url] = existing;
+    return;
+  }
+
+  const history = gitDates(paths, search);
+  const publishedDate = published || existing?.published || history?.published || today;
+  registry[url] = {
+    published: publishedDate,
+    updated: updated || existing?.updated || history?.updated || publishedDate
+  };
+}
+
 const coreServicesDataPath = "src/lib/data/services.js";
 const keywordServicesDataPath = "src/lib/data/keyword-services.js";
 const blogDataPath = "src/lib/data/blog.js";
@@ -39,120 +77,74 @@ const sitesForSaleDataPath = "src/lib/data/sites-for-sale.js";
 const coreServiceSlugs = new Set(coreServicePages.map((service) => service.slug));
 const keywordServiceSlugs = new Set(keywordServicePages.map((service) => service.slug));
 
-function fileDate(path) {
-  const fullPath = resolve(root, path);
-  if (!existsSync(fullPath)) return 0;
-  return statSync(fullPath).mtimeMs;
+add("/", { paths: ["src/routes/+page.svelte"] });
+add("/services/", { paths: ["src/routes/services/+page.svelte"] });
+add("/ai-development-oversight/", { paths: ["src/routes/ai-development-oversight/+page.svelte"] });
+add("/blog/", { paths: ["src/routes/blog/+page.svelte"] });
+add("/fix-notes/", { paths: ["src/routes/fix-notes/+page.svelte"] });
+add("/sites-for-sale/", { paths: ["src/routes/sites-for-sale/+page.svelte"] });
+add("/skills/", { paths: ["src/routes/skills/+page.svelte"] });
+add("/locations/", { paths: ["src/routes/locations/+page.svelte"] });
+for (const route of ["about", "rate", "contact", "faq", "privacy", "terms"]) {
+  add(`/${route}/`, { paths: [`src/routes/${route}/+page.svelte`] });
 }
 
-function latestDate(paths = []) {
-  const timestamp = Math.max(...paths.map(fileDate).filter(Boolean));
-  return timestamp ? new Date(timestamp).toISOString().slice(0, 10) : new Date().toISOString().slice(0, 10);
+for (const page of aiDevelopmentPages) {
+  add(aiDevelopmentUrl(page.slug), { paths: ["src/lib/data/ai-development.js"], search: page.slug });
 }
-
-function add(map, url, paths) {
-  map[url] = latestDate(paths);
-}
-
-const lastmod = {};
-add(lastmod, "/ai-development-oversight/", ["src/routes/ai-development-oversight/+page.svelte", "src/lib/data/ai-development.js"]);
-for (const service of aiDevelopmentPages) {
-  add(lastmod, aiDevelopmentUrl(service.slug), ["src/routes/ai-development-oversight/[slug]/+page.svelte", "src/lib/data/ai-development.js"]);
-}
-
-add(lastmod, "/", ["src/routes/+page.svelte", coreServicesDataPath]);
-add(lastmod, "/services/", ["src/routes/services/+page.svelte", coreServicesDataPath, keywordServicesDataPath]);
-add(lastmod, "/blog/", ["src/routes/blog/+page.svelte", blogDataPath]);
-add(lastmod, "/fix-notes/", ["src/routes/fix-notes/+page.svelte", fixNotesDataPath]);
-add(lastmod, "/sites-for-sale/", ["src/routes/sites-for-sale/+page.svelte", sitesForSaleDataPath]);
-add(lastmod, "/skills/", ["src/routes/skills/+page.svelte", skillsDataPath]);
-add(lastmod, "/locations/", ["src/routes/locations/+page.svelte", locationsDataPath]);
-add(lastmod, "/about/", ["src/routes/about/+page.svelte"]);
-add(lastmod, "/rate/", ["src/routes/rate/+page.svelte"]);
-add(lastmod, "/contact/", ["src/routes/contact/+page.svelte"]);
-add(lastmod, "/faq/", ["src/routes/faq/+page.svelte"]);
-add(lastmod, "/privacy/", ["src/routes/privacy/+page.svelte"]);
-add(lastmod, "/terms/", ["src/routes/terms/+page.svelte"]);
 
 for (const service of servicePages) {
-  const serviceDataPath = coreServiceSlugs.has(service.slug)
+  const dataPath = coreServiceSlugs.has(service.slug)
     ? coreServicesDataPath
     : keywordServiceSlugs.has(service.slug)
       ? keywordServicesDataPath
-      : null;
-
-  add(lastmod, serviceUrl(service.slug), [
-    "src/routes/services/[slug]/+page.svelte",
-    "src/routes/services/[slug]/+page.js",
-    serviceDataPath
-  ]);
+      : coreServicesDataPath;
+  add(serviceUrl(service.slug), { paths: [dataPath], search: service.slug });
 }
 
 for (const post of blogPosts) {
-  add(lastmod, blogUrl(post.slug), [
-    "src/routes/blog/[slug]/+page.svelte",
-    "src/routes/blog/[slug]/+page.js",
-    blogDataPath
-  ]);
+  add(blogUrl(post.slug), { paths: [blogDataPath], search: post.slug });
 }
 
 for (const category of blogCategories) {
-  add(lastmod, blogCategoryUrl(category.slug), [
-    "src/routes/blog/category/[slug]/+page.svelte",
-    "src/routes/blog/category/[slug]/+page.server.js",
-    blogDataPath
-  ]);
+  add(blogCategoryUrl(category.slug), { paths: [blogDataPath], search: category.slug });
 }
 
 for (const tag of blogTags) {
-  add(lastmod, blogTagUrl(tag.slug), [
-    "src/routes/blog/tag/[slug]/+page.svelte",
-    "src/routes/blog/tag/[slug]/+page.server.js",
-    blogDataPath
-  ]);
+  add(blogTagUrl(tag.slug), { paths: [blogDataPath], search: tag.slug });
 }
 
 for (const note of fixNotes) {
-  add(lastmod, fixNoteUrl(note.slug), [
-    "src/routes/fix-notes/[slug]/+page.svelte",
-    "src/routes/fix-notes/[slug]/+page.js",
-    fixNotesDataPath
-  ]);
+  add(fixNoteUrl(note.slug), {
+    paths: [fixNotesDataPath],
+    search: note.slug,
+    published: note.date,
+    updated: note.lastUpdated || note.date
+  });
 }
 
 for (const category of fixNoteCategories) {
-  add(lastmod, fixNoteCategoryUrl(category.slug), [
-    "src/routes/fix-notes/category/[slug]/+page.svelte",
-    "src/routes/fix-notes/category/[slug]/+page.js",
-    fixNotesDataPath
-  ]);
+  add(fixNoteCategoryUrl(category.slug), { paths: [fixNotesDataPath], search: category.slug });
 }
 
 for (const site of sitesForSale) {
-  add(lastmod, siteForSaleUrl(site.slug), [
-    "src/routes/sites-for-sale/[slug]/+page.svelte",
-    "src/routes/sites-for-sale/[slug]/+page.js",
-    sitesForSaleDataPath
-  ]);
+  add(siteForSaleUrl(site.slug), { paths: [sitesForSaleDataPath], search: site.slug });
 }
 
 for (const skill of skillPages) {
-  add(lastmod, skillUrl(skill.slug), [
-    "src/routes/skills/[slug]/+page.svelte",
-    "src/routes/skills/[slug]/+page.js",
-    skillsDataPath
-  ]);
+  add(skillUrl(skill.slug), { paths: [skillsDataPath], search: skill.slug });
 }
 
 for (const location of locationPages) {
-  add(lastmod, locationUrl(location.slug), [
-    "src/routes/locations/[slug]/+page.svelte",
-    "src/routes/locations/[slug]/+page.js",
-    locationsDataPath
-  ]);
+  add(locationUrl(location.slug), { paths: [locationsDataPath], search: location.slug });
 }
 
-mkdirSync(dirname(generatedPath), { recursive: true });
+const lastmod = Object.fromEntries(
+  Object.entries(registry).map(([url, dates]) => [url, dates.updated])
+);
+
+mkdirSync(dirname(registryPath), { recursive: true });
+writeFileSync(registryPath, `${JSON.stringify(registry, null, 2)}\n`);
 writeFileSync(generatedPath, `${JSON.stringify(lastmod, null, 2)}\n`);
 
-console.log(`Generated sitemap lastmod data for ${Object.keys(lastmod).length} URLs.`);
+console.log(`Stored publication and update dates for ${Object.keys(registry).length} URLs.`);

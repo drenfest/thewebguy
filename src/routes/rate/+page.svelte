@@ -11,7 +11,7 @@
   const breadcrumbs = [{ label: "Home", href: "/" }, { label: "How Quotes Work" }];
   const questions = [
     ["Is the quote really free?", "Yes. There is no charge to describe the work and request a quote. Code review, testing, diagnosis, implementation, and ongoing support are paid services with scope and cost agreed first."],
-    ["What is your hourly rate?", "Hourly pricing generally ranges from $70 to $90 per hour. The exact rate depends on the work, and it may decrease for a larger, recurring, or consistently scheduled volume of work."],
+    ["What is your hourly rate?", "Hourly pricing generally ranges from $70 to $90 per hour. Project-based pricing is also available when the scope and deliverables are clear. The exact hourly rate depends on the work, and it may decrease for a larger, recurring, or consistently scheduled volume of work."],
     ["Can work be quoted as a project?", "Yes. When the scope and deliverables are clear, the work can be quoted at a fixed or project-based price instead of hourly billing."],
     ["What if you need to investigate before quoting a fix?", "Some problems need technical investigation before a reliable fix can be scoped. I will explain what needs checking and quote that diagnostic work first. You approve it before it starts."],
     ["Do I need a complete brief?", "No. Start with the website, the problem or goal, and your timeline. You do not need to know the technical cause. I will ask questions to clarify fit and scope."],
@@ -47,12 +47,12 @@
       <article>
         <span>01</span>
         <h3>$70 - $90 per hour</h3>
-        <p>Hourly pricing generally falls within this range. The final rate depends on the type and complexity of the work.</p>
+        <p>Hourly pricing generally falls within this range. Project-based pricing is also available when the scope and deliverables are clear.</p>
       </article>
       <article>
         <span>02</span>
         <h3>Lower rates for more work</h3>
-        <p>The hourly rate can decrease for larger engagements, recurring support, or a consistent quantity of scheduled work.</p>
+        <p>The hourly rate can decrease for larger engagements, recurring support, or a consistent quantity of scheduled work. Defined scopes can also be quoted at a project-based price.</p>
       </article>
       <article>
         <span>03</span>

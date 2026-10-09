@@ -27,8 +27,8 @@
   const lastUpdatedDate = $derived(fixNoteLastUpdatedDate(note));
   const breadcrumbs = $derived([
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
-    { label: "Fix Notes", href: "/fix-notes/", title: "View all Fix Notes" },
-    { label: note.title, title: `Current Fix Note: ${note.title}` }
+    { label: "Web Fixes", href: "/fix-notes/", title: "View all Web Fixes" },
+    { label: note.title, title: `Current Web Fix: ${note.title}` }
   ]);
   const seoSchema = $derived(schemaList(
     breadcrumbSchema(breadcrumbs, notePath),
@@ -64,7 +64,7 @@
 <main>
   <section class="section fix-note-hero section-effect section-effect--signals section-effect--low">
     <div class="fix-note-hero__inner">
-      <a class="fix-note-pill" href={fixNoteCategoryUrl(categorySlug)} title={`View ${note.category} Fix Notes`}>
+      <a class="fix-note-pill" href={fixNoteCategoryUrl(categorySlug)} title={`View ${note.category} Web Fixes`}>
         {note.category}
       </a>
       <h1>{note.title}</h1>

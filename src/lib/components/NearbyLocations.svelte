@@ -15,7 +15,7 @@
       className="card-grid compact-grid"
       items={locations.map((location) => [
         `${location.city}, ${location.state}`,
-        `Hourly remote-friendly website support for businesses in and around ${location.city}.`,
+        `Hourly or project-based remote-friendly website support for businesses in and around ${location.city}.`,
         locationUrl(location.slug),
         `View ${location.city} web support`
       ])}

@@ -8,7 +8,7 @@ const conversionOverrides = {
   "wordpress-white-screen-of-death-fix": ["Start with the error or blank screen", "Request White Screen Help"],
   "elementor-layout-broken": ["Show me the broken Elementor layout", "Request Elementor Help"],
   "wordpress-developer-for-small-tasks": ["Send the WordPress task list", "Request Small-Task Help"],
-  "hourly-wordpress-developer": ["Start with the WordPress backlog", "Request Hourly WordPress Help"],
+  "hourly-wordpress-developer": ["Start with the WordPress backlog", "Request WordPress Help"],
   "seo-audit-implementation": ["Send the audit and priority URLs", "Request SEO Implementation"],
   "schema-implementation-service": ["Start with the page and schema goal", "Request Schema Implementation"],
   "web-services-automation": ["Show me the repeated workflow", "Request Workflow Automation"],

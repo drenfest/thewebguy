@@ -44,6 +44,7 @@ Required Render environment variables:
 - `PUBLIC_GA_MEASUREMENT_ID`: public GA4 measurement ID, such as `G-XXXXXXXXXX`. Leave blank to disable analytics. Restart/redeploy the Render service after changing it so the Node app reads the new runtime value.
 - `PUBLIC_TAWK_ENABLED`: set to `true` to load tawk.to live chat, or `false` to disable it without removing code.
 - `PUBLIC_TAWK_AUTO_START`: set to `true` so Tawk starts its chat connection automatically after the widget script loads.
+- `PUBLIC_TAWK_CUSTOM_INTAKE`: set to `true` to use the site-owned conditional chat intake. Name is always required. Follow-up contact fields appear only when requested and are handed to Tawk before the widget script starts.
 - `PUBLIC_TAWK_PROPERTY_ID`: public tawk.to property ID for the site chat widget. The installed widget uses `6a43edcd82c4e81d44ac79af`.
 - `PUBLIC_TAWK_WIDGET_ID`: public tawk.to widget ID. The installed widget uses `1jsclhqsd`.
 - `PUBLIC_TAWK_HIDE_WHEN_OFFLINE`: set to `true` so the app hides the widget unless Tawk reports the widget status as `online`.
@@ -116,13 +117,106 @@ Tracked interactions include:
 
 Contact form analytics avoid private content. Names, emails, URLs, and message text are not sent to GA4; only category selections, booleans, and length/timeline buckets are tracked.
 
+## Local Search Console Observability Dashboard
+
+The local-only dashboard at `/local/search-console-comparisons/` combines Search Console page/query performance with three separate event types:
+
+- `code_change`: a repository change that materially affects one or more URLs.
+- `deployment`: a confirmed or explicitly labeled inferred production deployment.
+- `google_crawl`: a changed `lastCrawlTime` reported by the Google URL Inspection API.
+
+These events are timing context, not proof that a deployment caused later ranking movement. The page/query trend is an impressions-and-clicks line graph; hover or keyboard-focus any period to see its metrics and an interactive Changes, Deployments, and Crawls tab set containing every event in that period. Code changes display their short commit SHA directly on the graph, while the Changes tab explains the affected page, the specific work performed, the change ID, source files, and commit. Crawl entries prominently identify the crawled page and label its exact last-crawl timestamp. Sitewide mode shows unique commits and crawl events across all tracked pages; selecting a page narrows the markers and event details to that page. The graph tooltip is the event-details interface, so the ranking tables remain visually compact. After selecting a page or query, use the `Sitewide` button beside the current-period badges to return the graph to aggregate sitewide averages. Use the adjacent `Export` menu to download CSV, PDF, or JSON. The dashboard itself retains all available history, while every export is limited to the rolling six calendar months ending on the report's `data_through` date. Each format includes the active-view summary, page/query history within that window, commit and deployment details, and Google crawl events with explicit last-crawl timestamps. CSV is audit-friendly tabular data, PDF is a formatted report with a historical appendix, and JSON preserves the complete structured event records. The dashboard keeps normal week, month, quarter, page, query, search, and sorting behavior available when crawl enrichment is missing.
+
+Start the site and open the dashboard:
+
+```bash
+npm run dev
+```
+
+```text
+http://127.0.0.1:5173/local/search-console-comparisons/
+```
+
+### Weekly refresh
+
+Run the combined performance and URL Inspection workflow with the current local date:
+
+```bash
+node tools/run-weekly-search-console-refresh.mjs --date YYYY-MM-DD
+```
+
+The existing Codex automation runs this command every Wednesday at 8:00 AM. The workflow:
+
+1. Refreshes Search Console page/query performance.
+2. Builds the prioritized inspection set, guaranteeing recently changed and actively observed pages are considered first.
+3. Runs URL Inspection for the tracked page set.
+4. Appends every inspection observation without overwriting prior observations.
+5. Creates a `google_crawl` event only when the reported `lastCrawlTime` changes.
+6. Rebuilds the lightweight dashboard data.
+7. Appends a weekly diagnostic log.
+
+The default local Search Console OAuth configuration is read from:
+
+```text
+%USERPROFILE%\.codex\automations\daily-search-console-seo-report\search-console.local.json
+```
+
+Do not commit this credentials file. If reauthorization is required, run:
+
+```bash
+node tools/setup-search-console-oauth.mjs
+```
+
+### Register a future change
+
+Register implementation and deployment as separate events. Repeat `--url` or `--query` for additional affected URLs or query-family terms.
+
+```bash
+node tools/register-search-event.mjs --type code_change --url /services/example/ --timestamp "2026-10-15T18:22:00-05:00" --timezone America/Chicago --change-id RIR-007 --commit COMMIT_SHA --title "RIR-007 implemented" --summary "Added service-scope section" --query "example service"
+```
+
+```bash
+node tools/register-search-event.mjs --type deployment --url /services/example/ --timestamp "2026-10-15T19:03:00-05:00" --timezone America/Chicago --change-id RIR-007 --commit COMMIT_SHA --title "RIR-007 deployed" --summary "Confirmed production deployment" --source "deployment log" --confirmed
+```
+
+For normalized multi-page events or extra metadata such as observation windows, source files, or per-page query families, pass a JSON object or array:
+
+```bash
+node tools/register-search-event.mjs --file path/to/events.json
+```
+
+Registered events appear after the next weekly refresh. To rebuild prepared dashboard data immediately without calling Google, use the latest generated performance CSV:
+
+```bash
+node tools/update-search-console-observability.mjs --performance-csv reports/local/page-query-position/search-console-page-query-comparisons-YYYY-MM-DD.csv --prepare-only
+```
+
+### Local data and verification
+
+Generated observability data is local and Git-ignored under `reports/local/search-console-observability/`:
+
+- `events.json`: durable normalized code-change, deployment, and Google-crawl events.
+- `crawl-observations.ndjson`: append-only URL Inspection history, including `observed_at` and `last_crawl_time` as separate values.
+- `prepared.json`: preprocessed page summaries consumed by the dashboard.
+- `weekly-runs.ndjson`: concise run counts, failures, anomalies, quota issues, awaiting-crawl URLs, and skipped-URL reasons.
+
+Validate the prepared data against a generated performance CSV:
+
+```bash
+node tools/verify-search-console-observability.mjs reports/local/page-query-position/search-console-page-query-comparisons-YYYY-MM-DD.csv
+npm run check
+npm run build
+```
+
+The first backfill covers the reliable October 1, 2026 organic-search and RIR-001 through RIR-005 records. RIR-006 remains intentionally held through October 30, 2026. A git commit without reliable deployment evidence remains a `code_change`; it is not silently converted into a deployment.
+
 ## Live Chat
 
 Live chat is handled by tawk.to through `src/lib/components/TawkLiveChat.svelte`. The component loads `https://embed.tawk.to/6a43edcd82c4e81d44ac79af/1jsclhqsd` client-side, uses Tawk's JavaScript API callbacks, reacts to `online`, `away`, and `offline` status changes, and keeps the widget hidden unless the status is `online`.
 
 The integration watches browser connection state, keeps the Tawk widget mounted during temporary network loss, retries failed script loads when the browser comes back online, applies Tawk `customStyle` placement/z-index values before the embed script loads, and exposes a small `window.theWebGuyLiveChat` bridge for future site controls. Message queuing and transcript sync remain inside Tawk's widget and service; the site does not read or store chat message content.
 
-Configure the Tawk dashboard to hide the widget when offline, mark the widget offline when all agents are offline, restrict allowed domains, require a Pre-Chat form with `Name` plus `Email or phone`, and use Tawk's ban list/IP ban tools for spam. Then set the public Tawk IDs in Render and redeploy.
+When `PUBLIC_TAWK_CUSTOM_INTAKE=true`, disable Tawk's hosted Pre-Chat form so visitors do not receive a second static form after completing the site-owned conditional intake. Keep the Offline form available for messages, restrict allowed domains, and use Tawk's ban list/IP ban tools for spam. Then set the public Tawk IDs in Render and redeploy.
 
 Setup details are in `docs/tawk-live-chat/README.md`.
 

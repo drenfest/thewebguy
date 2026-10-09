@@ -6,7 +6,7 @@
   import CtaBand from "$lib/components/CtaBand.svelte";
   import { blogCategoryMap, blogCategoryUrl, blogTagUrl, blogUrl } from "$lib/data/content.js";
   import { blogPostListSchema, breadcrumbSchema, schemaList } from "$lib/data/schema.js";
-  import sitemapLastmod from "$lib/data/sitemap-lastmod.json";
+  import { updatedDateForUrl } from "$lib/data/content-dates.js";
 
   let { data } = $props();
   const tag = $derived(data.tag);
@@ -25,8 +25,8 @@
     const blogPostOrder = new Map(posts.map((post, index) => [post.slug, index]));
 
     return [...posts].sort((left, right) => {
-      const leftDate = sitemapLastmod[blogUrl(left.slug)] || "";
-      const rightDate = sitemapLastmod[blogUrl(right.slug)] || "";
+      const leftDate = updatedDateForUrl(blogUrl(left.slug));
+      const rightDate = updatedDateForUrl(blogUrl(right.slug));
       const dateSort = rightDate.localeCompare(leftDate);
       if (dateSort) return dateSort;
       return (blogPostOrder.get(right.slug) ?? 0) - (blogPostOrder.get(left.slug) ?? 0);

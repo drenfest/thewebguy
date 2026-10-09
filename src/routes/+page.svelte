@@ -3,23 +3,38 @@
   import Hero from "$lib/components/Hero.svelte";
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
   import SectionHeading from "$lib/components/SectionHeading.svelte";
-  import SummaryLinkGrid from "$lib/components/SummaryLinkGrid.svelte";
   import CtaBand from "$lib/components/CtaBand.svelte";
   import FaqList from "$lib/components/FaqList.svelte";
-  import TopicalLinks from "$lib/components/TopicalLinks.svelte";
-  import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
-  import ProofReel from "$lib/components/ProofReel.svelte";
-  import FixNotesPanel from "$lib/components/FixNotesPanel.svelte";
-  import SortableTable from "$lib/components/SortableTable.svelte";
+  import RecentFixesCarousel from "$lib/components/RecentFixesCarousel.svelte";
+  import HomepageProblemTabs from "$lib/components/HomepageProblemTabs.svelte";
+  import HomepageSkillsTabs from "$lib/components/HomepageSkillsTabs.svelte";
   import { faqs } from "$lib/data/faqs.js";
   import { staticHeroImages } from "$lib/data/hero-images.js";
+  import { blogCategoryMap, blogPosts, blogUrl } from "$lib/data/content.js";
+  import { formatContentDate, publishedDateForUrl } from "$lib/data/content-dates.js";
   import { locationPages, locationUrl } from "$lib/data/locations.js";
   import { breadcrumbSchema, faqSchema, organizationSchema, schemaList, serviceCatalogFromPages, websiteSchema } from "$lib/data/schema.js";
-  import { coreServicePages, serviceUrl } from "$lib/data/services.js";
+  import { coreServicePages } from "$lib/data/services.js";
 
   const breadcrumbs = [{ label: "Home", title: "Current page: The Web Guy homepage" }];
   const servicePages = coreServicePages;
   const homepageFaqs = faqs.slice(0, 6);
+  const blogPostOrder = new Map(blogPosts.map((post, index) => [post.slug, index]));
+  const recentBlogPosts = [...blogPosts]
+    .sort((a, b) => {
+      const dateSort = publishedDateForUrl(blogUrl(b.slug)).localeCompare(publishedDateForUrl(blogUrl(a.slug)));
+      if (dateSort) return dateSort;
+      return (blogPostOrder.get(b.slug) ?? 0) - (blogPostOrder.get(a.slug) ?? 0);
+    })
+    .slice(0, 4);
+
+  function recentPostDate(post) {
+    return formatContentDate(publishedDateForUrl(blogUrl(post.slug)), "Publication date unavailable");
+  }
+
+  function recentPostCategory(post) {
+    return blogCategoryMap[post.category]?.label || post.eyebrow || "Website support";
+  }
   const homepageSchemaServiceSlugs = new Set([
     "website-fixes",
     "wordpress-support",
@@ -59,201 +74,252 @@
     }
   ];
 
-  const serviceBySlug = Object.fromEntries(servicePages.map((service) => [service.slug, service]));
-  const primaryServiceSummaries = [
-    ["website-fixes", ["Visible bugs and broken page behavior", "CSS, JavaScript, forms, modals, and embeds", "A clear path from symptom to fix"]],
-    ["wordpress-support", ["Theme, plugin, and page-builder cleanup", "Content, template, CSS, JavaScript, and PHP tasks", "Useful help for existing WordPress sites"]],
-    ["technical-seo-implementation", ["Audit notes turned into site changes", "Metadata, headings, redirects, schema, and internal links", "Implementation support for SEO teams and site owners"]],
-    ["landing-pages", ["Service, campaign, local, and paid traffic pages", "Forms, CTAs, mobile checks, and launch support", "Tracking and SEO structure before the page goes live"]],
-    ["analytics-tracking", ["GA4, GTM, pixels, and conversion events", "Form, phone-click, ecommerce, and CRM handoff checks", "Cleaner reports tied to real user actions"]],
-    ["ecommerce-support", ["Shopify, WooCommerce, product pages, and checkout issues", "Product data, feeds, schema, and tracking cleanup", "Practical support for revenue-critical pages"]]
-  ]
-    .map(([slug, bullets]) => {
-      const service = serviceBySlug[slug];
-      if (!service) return null;
-
-      return {
-        label: service.eyebrow,
-        title: service.h1,
-        copy: service.intro,
-        bullets,
-        href: serviceUrl(service.slug),
-        linkLabel: `View ${service.eyebrow}`
-      };
-    })
-    .filter(Boolean);
-
-  const problemCards = [
+  const problemRoutes = [
     {
       label: "Something broke",
       title: "A page, form, layout, script, or checkout stopped working",
-      copy: "Start with the symptom, what changed, and what should happen instead.",
-      href: "/blog/something-broke-on-your-website/"
+      symptoms: ["A form, button, modal, or checkout action stopped working", "A page overlaps, disappears, or breaks on mobile", "A script, embed, plugin, or recent update caused new errors"],
+      image: "/images/homepage/problem-routing/something-broke.webp",
+      imageAlt: "Broken website layouts and form errors being traced through a diagnostic interface",
+      links: [
+        { label: "Website Fixes", href: "/services/website-fixes/" },
+        { label: "WordPress Troubleshooting", href: "/services/wordpress-troubleshooting/" },
+        { label: "Production Debugging", href: "/skills/production-debugging/" }
+      ],
+      send: "The URL, screenshot, device or browser, expected behavior, and anything that recently changed.",
+      outcome: "Reproduce the problem, identify the responsible layer, and fix it or document the safest next move."
     },
     {
       label: "SEO is stuck",
       title: "Pages earn impressions, but the site still needs an SEO developer",
-      copy: "Turn crawl notes, headings, schema, redirects, and internal links into ranking support on the live site.",
-      href: "/blog/seo-audit-done-now-implement-it/"
+      symptoms: ["Important pages earn impressions but do not move up", "An audit lists fixes that have never been implemented", "Indexing, redirects, schema, or internal links remain inconsistent"],
+      image: "/images/homepage/problem-routing/seo-is-stuck.webp",
+      imageAlt: "Website crawl graph, structured page elements, and search pathways becoming organized",
+      links: [
+        { label: "Technical SEO Implementation", href: "/services/technical-seo-implementation/" },
+        { label: "Technical SEO Developer", href: "/services/technical-seo-developer/" },
+        { label: "Crawl Analysis", href: "/skills/crawl-analysis-internal-linking/" }
+      ],
+      send: "The audit or crawl export, affected URLs, CMS details, current priorities, and any known access limits.",
+      outcome: "Apply and verify the technical changes that support clearer crawling, indexing, relevance, and page structure."
     },
     {
-      label: "Need a page live",
+      label: "A page needs to launch",
       title: "A service, campaign, local, or landing page needs to launch",
-      copy: "Build the page, wire up the CTA, check mobile, and verify tracking.",
-      href: "/blog/need-a-page-live-fast/"
+      symptoms: ["A campaign or service is ready but has no useful destination page", "The current page has no clear conversion path", "Copy and assets exist, but the page is not built or launch-ready"],
+      image: "/images/homepage/problem-routing/need-a-page-live.webp",
+      imageAlt: "Responsive landing page moving through a launch checklist toward deployment",
+      links: [
+        { label: "Landing Pages", href: "/services/landing-pages/" },
+        { label: "React and Static Sites", href: "/services/react-static-sites/" },
+        { label: "Analytics and Tracking", href: "/services/analytics-tracking/" }
+      ],
+      send: "The offer, audience, source copy, desired CTA, reference pages, tracking needs, and target launch date.",
+      outcome: "A launch-ready page with clear structure, responsive behavior, verified conversion paths, and clean handoff notes."
     },
     {
       label: "Data does not connect",
       title: "Forms, GA4, GTM, ecommerce, APIs, or dashboards disagree",
-      copy: "Trace the flow from user action to CRM, analytics, webhook, or report.",
-      href: "/blog/website-data-systems-not-connecting/"
+      symptoms: ["Form submissions never reach the CRM or inbox", "Analytics totals do not match real leads or sales", "An API, webhook, tag, or dashboard reports success but loses data"],
+      image: "/images/homepage/problem-routing/data-does-not-connect.webp",
+      imageAlt: "Disconnected website form data being repaired into verified analytics, CRM, API, and dashboard paths",
+      links: [
+        { label: "Analytics and Tracking", href: "/services/analytics-tracking/" },
+        { label: "API Integrations", href: "/services/api-integrations/" },
+        { label: "GA4 and GTM", href: "/skills/ga4-gtm-measurement-integrity/" }
+      ],
+      send: "The source page, action being measured, expected destination, sample test flow, and the reports or systems that disagree.",
+      outcome: "A mapped and tested data path with failures corrected, duplicate signals removed, and verification at the final destination."
     },
     {
-      label: "Site is slow",
+      label: "The site is slow",
       title: "Pages feel heavy, unstable, or held back by scripts and plugins",
-      copy: "Find practical speed cleanup without pretending every platform can score perfectly.",
-      href: "/services/site-speed-performance/"
+      symptoms: ["Pages take too long to become usable", "Images, scripts, plugins, or embeds make the layout jump", "The site feels slow even after basic caching or image changes"],
+      image: "/images/homepage/problem-routing/site-is-slow.webp",
+      imageAlt: "Heavy website assets and scripts being optimized into a faster loading page",
+      links: [
+        { label: "Site Speed and Performance", href: "/services/site-speed-performance/" },
+        { label: "Performance Engineering", href: "/skills/performance-engineering/" },
+        { label: "WordPress Support", href: "/services/wordpress-support/" }
+      ],
+      send: "The affected URLs, platform and hosting details, recent changes, performance reports, and the slow interactions that matter most.",
+      outcome: "Reduce avoidable page weight and blocking work, improve stability, and document remaining platform or third-party limits."
     },
     {
-      label: "Ongoing web help",
+      label: "Web work keeps piling up",
       title: "The site needs steady updates, fixes, cleanup, and support",
-      copy: "Get help with the website tasks that keep getting pushed off.",
-      href: "/services/ongoing-webmaster-support/"
+      symptoms: ["Small website tasks stay unfinished for weeks", "Updates arrive faster than the current team can ship them", "Recurring fixes, content changes, and checks need one dependable owner"],
+      image: "/images/homepage/problem-routing/ongoing-web-help.webp",
+      imageAlt: "Website maintenance dashboard with recurring tasks, monitoring, backups, and steady improvement",
+      links: [
+        { label: "Ongoing Webmaster Support", href: "/services/ongoing-webmaster-support/" },
+        { label: "Agency Overflow", href: "/services/agency-overflow/" },
+        { label: "WordPress Support", href: "/services/wordpress-support/" }
+      ],
+      send: "The current backlog, platforms involved, recurring deadlines, approximate monthly volume, priorities, and access boundaries.",
+      outcome: "A manageable support rhythm with prioritized work, useful status updates, safer changes, and less unfinished website debt."
+    },
+    {
+      label: "The site is unreliable",
+      title: "Repair the technical problems making the site unreliable",
+      symptoms: ["The same production issue keeps returning", "DNS, SSL, caching, hosting, or WordPress behavior changes unpredictably", "Updates are risky because the site has no reliable baseline"],
+      image: "/images/homepage/problem-routing/fix-and-stabilize.webp",
+      imageAlt: "A fractured website being repaired into a stable and secure production system",
+      links: [
+        { label: "Website Fixes", href: "/services/website-fixes/" },
+        { label: "WordPress Support", href: "/services/wordpress-support/" },
+        { label: "Reliability", href: "/services/security-hosting-reliability/" }
+      ],
+      send: "The affected URL, hosting or platform details, screenshots, recent changes, error messages, and the behavior that needs to become reliable.",
+      outcome: "Identify the responsible layer, repair the immediate issue, and leave the site in a safer state for the next update."
+    },
+    {
+      label: "A page or feature needs built",
+      title: "Build the page, component, or recurring update the site needs",
+      symptoms: ["A new offer needs a page or reusable component", "An existing page cannot support the content it now needs", "Desktop and mobile versions require different layout work"],
+      image: "/images/homepage/problem-routing/build-and-update.webp",
+      imageAlt: "Responsive website sections being assembled into a polished desktop and mobile experience",
+      links: [
+        { label: "Landing Pages", href: "/services/landing-pages/" },
+        { label: "React and Static Sites", href: "/services/react-static-sites/" },
+        { label: "Webmaster Support", href: "/services/ongoing-webmaster-support/" }
+      ],
+      send: "The current site or source files, the page goal, supplied copy and assets, examples you like, required actions, and the launch deadline.",
+      outcome: "A maintainable, responsive addition that fits the existing site and is checked before it goes live."
+    },
+    {
+      label: "SEO changes are not implemented",
+      title: "Turn SEO recommendations into real website changes",
+      symptoms: ["SEO recommendations are documented but still not live", "Metadata, headings, schema, redirects, or canonicals conflict", "Priority pages remain difficult to crawl or reach internally"],
+      image: "/images/homepage/problem-routing/seo-and-visibility.webp",
+      imageAlt: "Connected website pages becoming easier for search systems to crawl and discover",
+      links: [
+        { label: "Technical SEO", href: "/services/technical-seo-implementation/" },
+        { label: "SEO Developer", href: "/services/technical-seo-developer/" },
+        { label: "Schema", href: "/skills/schema-structured-data/" },
+        { label: "Crawl and Links", href: "/skills/crawl-analysis-internal-linking/" }
+      ],
+      send: "The audit or crawl export, priority URLs, CMS access notes, current rankings or indexing symptoms, and the recommendations waiting for implementation.",
+      outcome: "Ship the technical changes, verify them on the live site, and make important pages easier to understand and reach."
+    },
+    {
+      label: "Tracking and tools do not connect",
+      title: "Connect the forms, data, tools, and reporting behind the site",
+      symptoms: ["Leads or sales are missing from reports", "Forms, pixels, tags, APIs, and dashboards disagree", "Manual handoffs keep copying the same data between systems"],
+      image: "/images/homepage/problem-routing/track-connect-automate.webp",
+      imageAlt: "Forms, analytics, APIs, webhooks, and dashboards connected through a reliable data system",
+      links: [
+        { label: "Analytics and Tracking", href: "/services/analytics-tracking/" },
+        { label: "API Integrations", href: "/services/api-integrations/" },
+        { label: "Automation", href: "/services/automation-internal-tools/" }
+      ],
+      send: "The action to measure or automate, the systems involved, sample data, current scripts or tags, expected destination, and any access limitations.",
+      outcome: "A tested path from visitor action to the correct report, CRM, webhook, database, notification, or internal workflow."
+    },
+    {
+      label: "An AI build needs review",
+      title: "Add engineering review to an AI-built website or release",
+      symptoms: ["The AI-built site works in pieces but not as a complete flow", "Generated code is difficult to review, maintain, or release safely", "Forms, SEO, tracking, security, or production checks were skipped"],
+      image: "/images/homepage/problem-routing/ai-development.webp",
+      imageAlt: "AI-generated code moving through automated tests, security checks, and production review",
+      links: [
+        { label: "AI Development Oversight", href: "/ai-development-oversight/" },
+        { label: "AI Website Cleanup", href: "/services/ai-built-website-cleanup/" },
+        { label: "AI Code Review", href: "/ai-development-oversight/ai-code-review/" }
+      ],
+      send: "The repository or build context, target URL, tools used, known concerns, release goal, recent changes, and what must be dependable before launch.",
+      outcome: "Keep the useful speed of AI-assisted work while adding human review, verification, safer structure, and a clearer production path."
+    }
+  ];
+  const homepageSkills = [
+    {
+      label: "Website Fixes",
+      skillLabel: "Production Debugging",
+      title: "Trace failures through the live production stack",
+      intro: "Production debugging brings together browser diagnostics, JavaScript behavior, CMS output, APIs, hosting, caching, DNS, SSL, and third-party scripts. The goal is to identify the failing layer before changing code or configuration.",
+      context: ["This skill draws on ", { text: "performance engineering", href: "/skills/performance-engineering/", title: "View website performance engineering skills" }, ", ", { text: "API and webhook integration", href: "/skills/rest-api-webhook-integrations/", title: "View REST API and webhook integration skills" }, ", and ", { text: "Cloudflare, DNS, and SSL", href: "/skills/cloudflare-dns-ssl/", title: "View Cloudflare, DNS, and SSL skills" }, " when a failure crosses system boundaries."],
+      scope: ["Browser behavior, network requests, application state, CMS output, and server responses", "Environment differences, releases, caching, third-party scripts, and integration boundaries", "Console evidence, request traces, logs, and repeatable failure conditions"],
+      advantages: ["Isolates the responsible layer before code or configuration changes begin", "Reduces broad rewrites and unrelated changes that create new risk", "Tests the repair against the exact path that originally failed"],
+      deliverable: "The client receives a smaller, safer repair backed by evidence, plus a clear explanation of the cause and what was verified afterward.",
+      skillHref: "/skills/production-debugging/",
+      serviceHref: "/services/website-fixes/",
+      image: "/images/homepage/skills/production-debugging.webp",
+      imageAlt: "Production website debugging illustration showing an isolated error moving through a repaired browser and server path"
+    },
+    {
+      label: "WordPress Support",
+      skillLabel: "WordPress Plugin and Theme Engineering",
+      title: "Build WordPress systems that stay maintainable",
+      intro: "WordPress engineering covers custom plugins, theme and child-theme work, Gutenberg output, WooCommerce extensions, PHP templates, JavaScript, custom fields, scheduled actions, admin tools, and external integrations.",
+      context: ["Durable functionality belongs in ", { text: "custom plugin development", href: "/skills/wordpress-plugin-development/", title: "View WordPress plugin development skills" }, ", while layouts and reusable presentation systems belong in ", { text: "WordPress theme development", href: "/skills/wordpress-theme-development/", title: "View WordPress theme development skills" }, ". Both support broader ", { text: "WordPress website support", href: "/services/wordpress-support/", title: "View WordPress website support services" }, "."],
+      scope: ["Plugins, hooks, filters, REST routes, settings, permissions, scheduled actions, and stored data", "Themes, child themes, PHP templates, Gutenberg components, custom fields, CSS, and JavaScript", "Admin workflows, WooCommerce behavior, integrations, validation, logging, and update safety"],
+      advantages: ["Places functionality and presentation in the correct WordPress layers", "Extends core and vendor systems without editing files that updates will overwrite", "Creates reusable code with clearer ownership, testing boundaries, and maintenance paths"],
+      deliverable: "The client receives WordPress functionality and templates that fit the platform, survive routine updates, and remain understandable to the next developer who works on the site.",
+      skillHref: "/skills/wordpress-plugin-development/",
+      serviceHref: "/services/wordpress-support/",
+      image: "/images/homepage/skills/wordpress-plugin-development.webp",
+      imageAlt: "WordPress plugin engineering illustration with modular code, hooks, admin controls, and connected data"
+    },
+    {
+      label: "Technical SEO",
+      skillLabel: "Crawl Analysis and Internal Linking",
+      title: "Turn crawl evidence into a clearer site graph",
+      intro: "Technical SEO work spans crawl analysis, internal linking, schema, metadata patterns, redirects, canonicals, indexability, product data, and template-level page structure. The value is turning search evidence into implementable website changes.",
+      context: ["The same implementation depth supports ", { text: "schema and structured data", href: "/skills/schema-structured-data/", title: "View schema and structured data skills" }, ", ", { text: "programmatic SEO", href: "/skills/programmatic-seo/", title: "View programmatic SEO skills" }, ", and ", { text: "Google Merchant Center product data", href: "/skills/google-merchant-center-product-data/", title: "View Google Merchant Center and product data skills" }, "."],
+      scope: ["Status codes, canonicals, indexability, crawl depth, navigation, and internal-link graphs", "Orphaned content, redirect chains, broken paths, weak hubs, and duplicate URL patterns", "Page purpose, template behavior, anchor context, and site hierarchy"],
+      advantages: ["Connects crawl data to the templates and navigation systems causing it", "Prioritizes changes by structural impact instead of spreadsheet order", "Turns abstract SEO findings into changes a developer can actually implement"],
+      deliverable: "The client receives a prioritized site-structure plan tied to specific pages, templates, and internal-link changes rather than an unexplained crawl export.",
+      skillHref: "/skills/crawl-analysis-internal-linking/",
+      serviceHref: "/services/technical-seo-implementation/",
+      image: "/images/homepage/skills/crawl-analysis-internal-linking.webp",
+      imageAlt: "Crawl analysis illustration showing a structured website hierarchy and orphaned pages reconnecting to internal link paths"
+    },
+    {
+      label: "Landing Pages",
+      skillLabel: "Performance Engineering",
+      title: "Control the code and assets that make pages feel slow",
+      intro: "Front-end and performance work covers responsive HTML and CSS, JavaScript behavior, component structure, images, fonts, bundles, embeds, accessibility, caching, rendering, and Core Web Vitals. It improves the page without separating speed from usability or conversion.",
+      context: ["This skill supports focused ", { text: "landing page development", href: "/services/landing-pages/", title: "View landing page development services" }, ", production-ready ", { text: "React and static sites", href: "/services/react-static-sites/", title: "View React and static website services" }, ", and deeper ", { text: "site speed and performance work", href: "/services/site-speed-performance/", title: "View site speed and performance services" }, "."],
+      scope: ["Network waterfalls, JavaScript execution, rendering, layout shift, caching, and asset delivery", "Images, fonts, bundles, embeds, analytics, widgets, and third-party scripts", "Real-device behavior across the interactions that matter to the page"],
+      advantages: ["Identifies the actual bottleneck instead of optimizing whatever is easiest", "Balances speed improvements against tracking, content, and conversion requirements", "Separates fixable page weight from platform and vendor limitations"],
+      deliverable: "The client receives a faster, more stable page with measurable improvements and an honest record of any remaining third-party constraints.",
+      skillHref: "/skills/performance-engineering/",
+      serviceHref: "/services/landing-pages/",
+      image: "/images/homepage/skills/performance-engineering.webp",
+      imageAlt: "Website performance engineering illustration showing a heavy page becoming faster, stable, and streamlined"
+    },
+    {
+      label: "Analytics and Tracking",
+      skillLabel: "GA4 and GTM Measurement Integrity",
+      title: "Verify the complete path from action to report",
+      intro: "Measurement skills include GA4, GTM, ecommerce events, pixels, data layers, consent behavior, campaign attribution, forms, phone clicks, CRM handoffs, dashboards, and the browser requests connecting them. A green tag preview alone is not proof.",
+      context: ["Reliable reporting often depends on ", { text: "REST APIs and webhooks", href: "/skills/rest-api-webhook-integrations/", title: "View REST API and webhook integration skills" }, ", ", { text: "automation and internal tools", href: "/services/automation-internal-tools/", title: "View automation and internal tool services" }, ", and hands-on ", { text: "analytics and tracking support", href: "/services/analytics-tracking/", title: "View analytics and tracking services" }, "."],
+      scope: ["Events, parameters, triggers, consent behavior, data layers, destinations, and attribution", "Forms, phone clicks, ecommerce actions, campaign URLs, GA4, GTM, and reporting tools", "Browser requests, tag diagnostics, platform processing, and controlled conversion tests"],
+      advantages: ["Validates the full measurement chain instead of stopping when a tag fires", "Finds duplication, missing context, and transformation errors between systems", "Creates repeatable tests for future releases and campaign changes"],
+      deliverable: "The client receives cleaner conversion data, a documented measurement path, and proof that the intended user action reaches the final report correctly.",
+      skillHref: "/skills/ga4-gtm-measurement-integrity/",
+      serviceHref: "/services/analytics-tracking/",
+      image: "/images/homepage/skills/ga4-gtm-measurement-integrity.webp",
+      imageAlt: "Measurement integrity illustration showing a user action passing through validated events into accurate analytics reporting"
+    },
+    {
+      label: "Ecommerce Support",
+      skillLabel: "Shopify, Liquid, and WooCommerce Engineering",
+      title: "Connect storefront code, product data, and ecommerce behavior",
+      intro: "Ecommerce engineering covers Shopify Plus and Liquid, WooCommerce templates and extensions, product and collection data, checkout-adjacent behavior, feeds, schema, analytics, integrations, storefront JavaScript, and performance.",
+      context: ["The platform work connects ", { text: "Shopify Plus and Liquid skills", href: "/skills/shopify-plus-liquid/", title: "View Shopify Plus and Liquid development skills" }, " with ", { text: "WordPress plugin development", href: "/skills/wordpress-plugin-development/", title: "View WordPress plugin development skills for WooCommerce extensions" }, ", ", { text: "product data and Merchant Center", href: "/skills/google-merchant-center-product-data/", title: "View Google Merchant Center and ecommerce product data skills" }, ", and ", { text: "ecommerce tracking", href: "/services/analytics-tracking/", title: "View ecommerce analytics and tracking services" }, "."],
+      scope: ["Shopify Liquid templates, sections, app blocks, metafields, products, and collections", "WooCommerce templates, hooks, extensions, product data, and order or checkout-adjacent behavior", "Feeds, structured data, ecommerce events, APIs, responsive storefronts, and performance"],
+      advantages: ["Works in the correct platform, theme, extension, or data layer instead of patching only the visible symptom", "Keeps merchandising, tracking, schema, integrations, and responsive output aligned", "Accounts for reusable templates, catalog growth, routine updates, and platform constraints"],
+      deliverable: "The client receives a storefront change that fits Shopify or WooCommerce architecture, works across product and collection templates, and remains maintainable as the catalog evolves.",
+      skillHref: "/skills/shopify-plus-liquid/",
+      skillCta: "Explore Shopify and Liquid",
+      skillTitle: "Explore Shopify Plus and Liquid development skills",
+      serviceHref: "/services/ecommerce-support/",
+      image: "/images/homepage/skills/shopify-plus-liquid.webp",
+      imageAlt: "Shopify and WooCommerce engineering illustration showing storefront templates, product data, cart flow, and ecommerce systems"
     }
   ];
 
-  const serviceClusters = [
-    {
-      label: "Fix & stabilize",
-      title: "Broken layouts, WordPress issues, hosting, DNS, SSL, cache, and production bugs.",
-      links: [["Website Fixes", "/services/website-fixes/"], ["WordPress Support", "/services/wordpress-support/"], ["Reliability", "/services/security-hosting-reliability/"]]
-    },
-    {
-      label: "Build & update",
-      title: "Landing pages, service pages, local pages, content cleanup, static pages, and recurring updates.",
-      links: [["Landing Pages", "/services/landing-pages/"], ["React / Static Sites", "/services/react-static-sites/"], ["Webmaster Support", "/services/ongoing-webmaster-support/"]]
-    },
-    {
-      label: "SEO & visibility",
-      title: "Audit implementation, schema, internal links, page structure, product data, and crawl cleanup.",
-      links: [["Technical SEO", "/services/technical-seo-implementation/"], ["SEO Developer", "/services/technical-seo-developer/"], ["Schema", "/skills/schema-structured-data/"], ["Crawl & Links", "/skills/crawl-analysis-internal-linking/"]]
-    },
-    {
-      label: "Track, connect & automate",
-      title: "GA4, GTM, forms, pixels, APIs, webhooks, dashboards, product data, and internal tools.",
-      links: [["Analytics & Tracking", "/services/analytics-tracking/"], ["API Integrations", "/services/api-integrations/"], ["Automation", "/services/automation-internal-tools/"]]
-    }
-  ];
-  const homepageTableColumns = [
-    { key: "problem", label: "Problem" },
-    { key: "bestPath", label: "Best path" },
-    { key: "send", label: "What to send" },
-    { key: "outcome", label: "Useful outcome" }
-  ];
-  const homepageRows = [
-    {
-      problem: "Broken page, form, modal, embed, or mobile layout",
-      bestPath: { text: "Website Fixes", href: "/services/website-fixes/" },
-      send: "URL, screenshot, device, what should happen, recent changes",
-      outcome: "Reproduce the bug, identify the layer, fix or document the next move"
-    },
-    {
-      problem: "WordPress, Elementor, plugin, theme, or content backlog",
-      bestPath: { text: "WordPress Support", href: "/services/wordpress-support/" },
-      send: "Admin context, plugin/theme notes, task list, priority pages",
-      outcome: "Clean updates, safer edits, fewer mystery CMS problems"
-    },
-    {
-      problem: "SEO audit recommendations waiting for implementation",
-      bestPath: { text: "Technical SEO Implementation", href: "/services/technical-seo-implementation/" },
-      send: "Audit, crawl export, spreadsheet, CMS access notes, priority URLs",
-      outcome: "Metadata, headings, redirects, schema, internal links, and crawl fixes applied"
-    },
-    {
-      problem: "A page needs to launch for a service, city, offer, or campaign",
-      bestPath: { text: "Landing Pages", href: "/services/landing-pages/" },
-      send: "Offer, audience, CTA, source copy, tracking needs, target launch date",
-      outcome: "Page structure, mobile QA, form/CTA checks, launch-ready tracking"
-    },
-    {
-      problem: "GA4, GTM, pixels, forms, or dashboards do not match reality",
-      bestPath: { text: "Analytics & Tracking", href: "/services/analytics-tracking/" },
-      send: "Events needed, sample user actions, access notes, reporting issue",
-      outcome: "Cleaner conversion events and a mapped path from action to report"
-    },
-    {
-      problem: "Recurring updates and small technical tasks keep piling up",
-      bestPath: { text: "Ongoing Webmaster Support", href: "/services/ongoing-webmaster-support/" },
-      send: "Backlog, monthly range, access limits, recurring deadlines",
-      outcome: "Steady updates, issue triage, SEO support, and site maintenance"
-    }
-  ];
-
-  const technicalDepthBullets = [
-    "Production debugging across CMS, scripts, forms, embeds, hosting, cache, and browser behavior",
-    "Performance and reliability cleanup for heavy pages, scripts, images, Cloudflare, DNS, SSL, and hosting limits",
-    "Measurement integrity for GA4, GTM, pixels, ecommerce events, campaign URLs, and reporting flows",
-    "API, webhook, crawler, checker, dashboard, CRON, JSON, CSV, and lightweight automation support"
-  ];
-
-  const homeTopicalLinks = [
-    {
-      label: "Broken website path",
-      title: "Website Fixes",
-      href: "/services/website-fixes/",
-      copy: "Start here for broken layouts, forms, modals, scripts, embeds, mobile bugs, or site behavior that needs hands-on debugging."
-    },
-    {
-      label: "CMS path",
-      title: "WordPress Support",
-      href: "/services/wordpress-support/",
-      copy: "Use this for themes, plugins, Elementor, PHP templates, CSS, JavaScript, content updates, and WordPress cleanup."
-    },
-    {
-      label: "SEO implementation path",
-      title: "Technical SEO Implementation",
-      href: "/services/technical-seo-implementation/",
-      copy: "Use this when audit notes, crawl fixes, schema, redirects, headings, or internal links need to become real site changes."
-    },
-    {
-      label: "Measurement path",
-      title: "Analytics & Tracking",
-      href: "/services/analytics-tracking/",
-      copy: "Use this when GA4, GTM, forms, pixels, ecommerce events, CRM handoffs, or dashboards do not match actual behavior."
-    },
-    {
-      label: "Launch path",
-      title: "Landing Pages",
-      href: "/services/landing-pages/",
-      copy: "Use this for service pages, campaign pages, local pages, paid traffic pages, forms, CTAs, mobile checks, and launch tracking."
-    },
-    {
-      label: "Pricing path",
-      title: "How Quotes Work",
-      href: "/rate/",
-      copy: "Use this when you want to understand how scoped website support fits quick fixes, small projects, and ongoing website work."
-    }
-  ];
-  const homeInlineParagraphs = [
-    [
-      "If the site is visibly broken, start with ",
-      { text: "Website Fixes", href: "/services/website-fixes/", title: "View website fixes for broken layouts, forms, scripts, embeds, and mobile bugs" },
-      ". If the work lives inside themes, plugins, page builders, or PHP templates, ",
-      { text: "WordPress Support", href: "/services/wordpress-support/", title: "View WordPress support for themes, plugins, page builders, PHP, CSS, and JavaScript" },
-      " covers that WordPress layer. Audit notes, schema, redirects, headings, and internal links belong in ",
-      { text: "Technical SEO Implementation", href: "/services/technical-seo-implementation/", title: "View technical SEO implementation for crawl notes, schema, redirects, headings, and internal links" },
-      ". If the work specifically needs an ",
-      { text: "SEO developer", href: "/services/technical-seo-developer/", title: "View SEO developer help for templates, schema, redirects, internal links, and technical SEO implementation" },
-      ", start there."
-    ],
-    [
-      "When the numbers do not match reality, ",
-      { text: "Analytics & Tracking", href: "/services/analytics-tracking/", title: "View analytics and tracking support for GA4, GTM, form events, pixels, and ecommerce measurement" },
-      " is the better starting point. When the need is a service page, campaign page, local page, form, CTA, or launch check, use ",
-      { text: "Landing Pages", href: "/services/landing-pages/", title: "View landing page support for service pages, campaign pages, local pages, forms, CTAs, and tracking" },
-      "."
-    ]
-  ];
 </script>
 
 <Seo
@@ -275,9 +341,9 @@
 
   <Breadcrumbs items={breadcrumbs} />
 
-  <section class="section split-section section-effect section-effect--signals section-effect--low">
+  <section class="section split-section home-ai-review-section section-effect section-effect--signals section-effect--low">
     <div><SectionHeading eyebrow="AI Development Oversight" h2="Build With AI. Ship With an Engineer." body="Already building with Codex, Claude Code, Cursor, or another AI tool? Get human review of the code, the system around it, and the checks your next release needs." /><a class="button button-primary" href="/ai-development-oversight/">Explore AI Development Oversight</a></div>
-    <div class="summary-copy-panel"><h3>Have something ready for review?</h3><p>Start with a focused code review, pre-launch website QA, or ongoing oversight for your team. You receive findings and a practical next step within an agreed scope.</p><a class="text-link" href="/ai-development-oversight/ai-code-review/">See what an AI code review covers</a></div>
+    <div class="summary-copy-panel home-ai-review-panel"><h3>Have something ready for review?</h3><p>Start with a focused code review, pre-launch website QA, or ongoing oversight for your team. You receive findings and a practical next step within an agreed scope.</p><a class="text-link" href="/ai-development-oversight/ai-code-review/">See what an AI code review covers</a></div>
   </section>
 
   <section class="section soft-section section-effect section-effect--signals section-effect--low" aria-label="The Web Guy proof signals">
@@ -292,79 +358,41 @@
     </div>
   </section>
 
-  <section class="section section-effect section-effect--grid section-effect--medium">
-    <SectionHeading
-      eyebrow="Website problem routing"
-      h2="What Can The Web Guy Help You Fix?"
-      body="You do not need to know whether the issue is WordPress, CSS, JavaScript, hosting, analytics, or a plugin. Start with the symptom and route into the right kind of help."
-    />
-    <InternalLinkCopy paragraphs={homeInlineParagraphs} />
-    <div class="decision-grid">
-      {#each problemCards as card}
-        <a class="decision-card" href={card.href} title={`Read about ${card.label}: ${card.title}`}>
-          <span>{card.label}</span>
-          <h3>{card.title}</h3>
-          <p>{card.copy}</p>
-        </a>
-      {/each}
-    </div>
-    <SortableTable caption="Website request routing table" columns={homepageTableColumns} rows={homepageRows} />
-  </section>
+  <HomepageProblemTabs items={problemRoutes} />
 
-  <section class="section soft-section section-effect section-effect--hex section-effect--medium">
-    <SectionHeading
-      eyebrow="Website service categories"
-      h2="The work usually falls into four buckets"
-      body="The offer is broad enough to handle real messy websites, but the work stays practical: fix, build, implement, measure, connect, and keep moving."
-    />
-    <div class="cluster-grid">
-      {#each serviceClusters as cluster}
-        <article class="cluster-panel">
-          <span>{cluster.label}</span>
-          <h3>{cluster.title}</h3>
-          <div class="mini-link-list">
-            {#each cluster.links as [label, href]}
-              <a href={href} title={`View ${label} from ${cluster.label}`}>{label}</a>
-            {/each}
-          </div>
+  <CtaBand
+    heading="Need web work handled without babysitting?"
+    copy="Send the URL, what is broken or needed, and the outcome you want. The reply can start with the most useful next step."
+    label="Get a Free Quote"
+    secondaryLabel="View Services"
+    secondaryHref="/services/"
+  />
+
+  <section class="section home-blog-section section-effect section-effect--hex section-effect--medium">
+    <div class="home-blog-heading">
+      <SectionHeading
+        eyebrow="Recent blog posts"
+        h2="Recent website troubleshooting and implementation guides"
+        body="Practical articles about broken sites, WordPress, SEO implementation, tracking, launches, and the technical work behind them."
+      />
+      <a class="button button-primary" href="/blog/" title="View all website support articles">View All Blog Posts</a>
+    </div>
+
+    <div class="home-blog-grid">
+      {#each recentBlogPosts as post}
+        <article class="home-blog-card">
+          <p class="home-blog-meta">{recentPostDate(post)} <span aria-hidden="true">/</span> {recentPostCategory(post)}</p>
+          <h3><a href={blogUrl(post.slug)} title={`Read ${post.title.replace(" | The Web Guy", "")}`}>{post.title.replace(" | The Web Guy", "")}</a></h3>
+          <p>{post.summary}</p>
+          <a class="home-blog-link" href={blogUrl(post.slug)} title={`Read ${post.title.replace(" | The Web Guy", "")}`}>Read Article -&gt;</a>
         </article>
       {/each}
     </div>
   </section>
 
-  <section class="section section-effect section-effect--hex section-effect--medium">
-    <SectionHeading
-      eyebrow="High-value website support"
-      h2="High-value website help you can hand off"
-      body="These topics are broad enough to have their own pages, so the homepage keeps them short and routes you to the deeper service path."
-    />
-    <SummaryLinkGrid items={primaryServiceSummaries} />
-    <p class="center-link"><a class="button button-primary" href="/services/" title="View all website services">View all services</a></p>
-  </section>
+  <HomepageSkillsTabs items={homepageSkills} />
 
-  <FixNotesPanel
-    title="Recent Fixes"
-    description="Three recent examples showing the problem, what changed, and where the work landed."
-    limit={3}
-  />
-
-  <section class="section soft-section technical-depth-section effect effect-dark-grid effect-medium">
-    <SectionHeading
-      eyebrow="Technical execution depth"
-      h2="Built for the work behind the visible page"
-      body="The full skill pages explain the implementation layer. Get practical technical cleanup behind the pages your customers use."
-    />
-    <div class="summary-copy-panel summary-copy-panel--dark">
-      <ul class="check-list">
-        {#each technicalDepthBullets as bullet}
-          <li>{bullet}</li>
-        {/each}
-      </ul>
-      <a class="button button-primary" href="/skills/" title="View technical web skills">View technical skills</a>
-    </div>
-  </section>
-
-  <ProofReel />
+  <RecentFixesCarousel />
 
   <section class="section split-section local-remote-section section-effect section-effect--grid section-effect--low">
     <div>
@@ -386,48 +414,28 @@
     <div class="rate-layout">
       <div>
         <SectionHeading
-          eyebrow="A clear next step"
-          h2="Know the Scope Before You Commit."
-          body="Send the problem or project goal. I will ask any questions needed to quote a useful first step. You approve the scope and cost before paid work begins."
+          eyebrow="Flexible freelance web support"
+          h2="Get a Free Quote."
+          body="Find out what can be done for your website. We can discuss a prototype, a focused first step, or a full implementation, and I can work within your existing processes, tools, and approval flow."
         />
-        <a class="button button-primary" href="/contact/#request-form" title="Request a free website quote">Get a Free Quote</a>
+        <div class="home-quote-actions">
+          <a class="button button-primary" href="/contact/#request-form" title="Request a free website quote">Get a Free Quote</a>
+          <a class="home-quote-rate-link" href="/rate/" title="View hourly and project-based pricing">See Pricing Options -&gt;</a>
+        </div>
       </div>
-      <div class="rate-card">
-        <span>Start with your project</span>
-        <strong>Free quote</strong>
-        <p>No charge to ask for a quote. If technical investigation is needed to define the fix, I will explain that and quote the diagnostic work first.</p>
+      <div class="rate-card home-quote-card">
+        <span>Ways to get started</span>
+        <h3>Choose the approach that fits your team</h3>
+        <ul>
+          <li>Prototype an idea before committing to the complete build</li>
+          <li>Hand off a defined project, website fix, implementation, or review</li>
+          <li>Add developer capacity within your existing tools and processes</li>
+          <li>Use hourly or project-based pricing based on the work</li>
+        </ul>
+        <p>There is no charge to request a quote. Send the context you already have, and we can determine the most useful way to begin.</p>
       </div>
     </div>
   </section>
-
-  <section class="section section-effect section-effect--hex section-effect--medium">
-    <SectionHeading eyebrow="Website support process" h2="A simple way to start contract web work" />
-    <div class="process-grid">
-      {#each [
-        ["01", "Send the context", "URL, platform, symptom, goal, deadline, audit notes, or task list."],
-        ["02", "Agree the scope and cost", "Review the proposed work and approve it before paid work begins."],
-        ["03", "Do the practical work", "Complete the agreed updates, debugging, implementation, review, or launch support."],
-        ["04", "Get a plain update", "You get what changed, what was found, what is blocked, and what should happen next."]
-      ] as [num, title, text]}
-        <article><span>{num}</span><h3>{title}</h3><p>{text}</p></article>
-      {/each}
-    </div>
-  </section>
-
-  <TopicalLinks
-    eyebrow="Website support routes"
-    heading="Route the website problem into the right support path"
-    intro="The fastest path is usually not a broad rebuild. Pick the page that matches the symptom, platform, implementation need, or next decision."
-    items={homeTopicalLinks}
-  />
-
-  <CtaBand
-    heading="Need web work handled without babysitting?"
-    copy="Send the URL, what is broken or needed, and the outcome you want. The reply can start with the most useful next step."
-    label="Get a Free Quote"
-    secondaryLabel="View Services"
-    secondaryHref="/services/"
-  />
 
   <section class="section soft-section home-faq-section">
     <div class="faq-header-row">
@@ -462,4 +470,144 @@
   :global(main > .hero .hero-actions) {
     margin-top: 20px;
   }
+
+  .home-ai-review-section { align-items: stretch; }
+  .home-ai-review-panel {
+    align-content: center;
+    justify-items: center;
+    text-align: center;
+  }
+  .home-ai-review-panel p { max-width: 520px; }
+  .home-ai-review-panel .text-link { justify-self: center; text-align: center; }
+
+  .home-quote-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .rate-section :global(.section-heading h2) { color: #fff; }
+  .rate-section :global(.section-heading p:not(.eyebrow)) { color: #e7eef6; }
+  .rate-section :global(.section-heading .eyebrow) { color: var(--accent); }
+
+  .home-quote-rate-link {
+    color: var(--accent);
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .home-quote-rate-link:hover,
+  .home-quote-rate-link:focus-visible {
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .home-quote-card {
+    display: grid;
+    align-content: center;
+    gap: 18px;
+  }
+
+  .home-quote-card > span { color: #d5e0ec; }
+
+  .home-quote-card h3 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(1.45rem, 2.4vw, 2rem);
+    line-height: 1.12;
+  }
+
+  .home-quote-card ul {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .home-quote-card li {
+    position: relative;
+    padding-left: 20px;
+    color: #e3ebf3;
+    line-height: 1.45;
+  }
+
+  .home-quote-card li::before {
+    position: absolute;
+    top: 0.58em;
+    left: 0;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px rgba(48, 199, 149, 0.45);
+    content: "";
+  }
+
+  .home-quote-card p {
+    margin: 0;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .home-blog-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 24px;
+    align-items: end;
+  }
+
+  .home-blog-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: clamp(26px, 4vw, 42px);
+  }
+
+  .home-blog-card {
+    display: grid;
+    align-content: start;
+    min-width: 0;
+    padding: clamp(20px, 2.4vw, 26px);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: rgba(255, 253, 250, 0.9);
+    clip-path: var(--notch-clip-soft);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .home-blog-meta {
+    margin: 0;
+    color: var(--accent-dark);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+
+  .home-blog-meta span { margin: 0 4px; color: var(--muted); }
+  .home-blog-card h3 { margin: 14px 0 0; font-size: clamp(1.08rem, 1.55vw, 1.3rem); line-height: 1.2; }
+  .home-blog-card h3 a { color: var(--ink); text-decoration: none; }
+  .home-blog-card h3 a:hover,
+  .home-blog-card h3 a:focus-visible { color: var(--accent-dark); }
+  .home-blog-card > p:not(.home-blog-meta) { display: -webkit-box; margin: 14px 0 0; overflow: hidden; color: var(--muted); line-height: 1.55; -webkit-box-orient: vertical; -webkit-line-clamp: 4; line-clamp: 4; }
+  .home-blog-link { width: fit-content; margin-top: 20px; color: var(--accent-dark); font-weight: 800; text-decoration: none; }
+  .home-blog-link:hover,
+  .home-blog-link:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
+
+  @media (max-width: 1060px) {
+    .home-blog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  @media (max-width: 680px) {
+    .home-blog-heading { grid-template-columns: 1fr; align-items: start; }
+    .home-blog-heading > :global(.button) { width: 100%; }
+    .home-blog-grid { grid-template-columns: 1fr; }
+  }
+
 </style>

@@ -89,10 +89,10 @@ function siteFacts() {
     `- Brand/site name: ${site.name}.`,
     "- Public contact path: https://thewebguy.app/contact/.",
     "- Quotes are free. Development, diagnostics, and engineering reviews are paid work with scope and cost agreed first.",
-    "- Offer: hourly contract web development, WordPress support, website fixes, technical SEO implementation, landing pages, tracking cleanup, ecommerce cleanup, API/integration work, and ongoing webmaster support.",
-    "- Content proof system: Fix Notes are short practical work notes from related cleanup, debugging, implementation, and support tasks.",
+    "- Offer: hourly or project-based contract web development, WordPress support, website fixes, technical SEO implementation, landing pages, tracking cleanup, ecommerce cleanup, API/integration work, and ongoing webmaster support.",
+    "- Content proof system: Web Fixes are short practical work notes from related cleanup, debugging, implementation, and support tasks.",
     "- Fit: businesses, agencies, marketing teams, ecommerce operators, and overloaded teams with existing websites or practical site work to execute.",
-    "- Positioning: practical hourly help, not a large agency package, retainer funnel, or junior freelancer pitch.",
+    "- Positioning: practical hourly or project-based help, not a large agency package, retainer funnel, or junior freelancer pitch.",
     "- Public email: do not invent or expose an email address. The site uses the contact form."
   ].join("\n");
 }
@@ -112,7 +112,7 @@ function usageNotes() {
 export function buildLlmsText() {
   return `# ${site.name}
 
-> Practical hourly contract web help for existing sites, messy platforms, agency overflow, and web work that needs to move.
+> Practical hourly or project-based contract web help for existing sites, messy platforms, agency overflow, and web work that needs to move.
 
 ${siteFacts()}
 
@@ -136,7 +136,7 @@ ${skillPages.map(skillSummary).join("\n")}
 
 ${blogPosts.map(blogSummary).join("\n")}
 
-## Fix Notes
+## Web Fixes
 
 ${fixNotes.map(fixNoteSummary).join("\n")}
 
@@ -301,7 +301,7 @@ ${skillPages.map(skillDetails).join("\n")}
 
 ${blogPosts.map(blogDetails).join("\n")}
 
-## Fix Notes
+## Web Fixes
 
 ${fixNotes.map(fixNoteDetails).join("\n")}
 
@@ -321,7 +321,7 @@ ${locationPages.map(locationDetails).join("\n")}
 - Contact/request form: ${absoluteUrl("/contact/")}
 - FAQ: ${absoluteUrl("/faq/")}
 - Blog hub: ${absoluteUrl("/blog/")}
-- Fix Notes archive: ${absoluteUrl("/fix-notes/")}
+- Web Fixes archive: ${absoluteUrl("/fix-notes/")}
 - Technical skills hub: ${absoluteUrl("/skills/")}
 - Location hub: ${absoluteUrl("/locations/")}
 

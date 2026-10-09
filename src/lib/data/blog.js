@@ -306,7 +306,7 @@ export const blogPosts = [
       ["Why is my form not sending leads?", "The problem may be the form plugin, validation, SMTP/email delivery, spam filtering, CRM integration, hidden fields, a webhook, or the thank-you state."],
       ["Can cache make a website look broken?", "Yes. Cache can serve old CSS, old JavaScript, stale HTML, or CDN versions that do not match the current page."],
       ["Should I restore a backup immediately?", "Only if you understand what will be overwritten and the backup is clean. Restoring too quickly can erase good updates or hide the real cause."],
-      ["How much does it cost to fix a broken website?", "It depends on the issue, access, and platform. The Web Guy handles practical website fixes hourly when the task is clear enough to start."]
+      ["How much does it cost to fix a broken website?", "It depends on the issue, access, and platform. The Web Guy handles practical website fixes hourly or project based when the task is clear enough to scope."]
     ],
     relatedHeading: "Where this issue usually leads",
     relatedIntro: "Broken-site requests often move into one of these hands-on service areas after the first symptom is clear.",
@@ -589,7 +589,7 @@ export const blogPosts = [
         heading: "Technical SEO tasks that usually need a developer",
         body: [
           "Some SEO work can be handled by a marketer inside a CMS. Other work needs someone comfortable with templates, redirects, code, scripts, schema, server behavior, and front-end performance.",
-          "Developer-level SEO tasks are often the items that sit untouched the longest because they are not large enough for a rebuild but not simple enough for a content editor. This is where hourly implementation can be useful. The task may be small, but the person doing it needs to understand the consequences."
+          "Developer-level SEO tasks are often the items that sit untouched the longest because they are not large enough for a rebuild but not simple enough for a content editor. This is where hourly or project-based implementation can be useful. The task may be small, but the person doing it needs to understand the consequences."
         ],
         listTitle: "Often technical",
         checklist: ["Template-level headings", "Schema output", "Redirect rules", "Sitemap and indexation cleanup", "JavaScript-rendered content concerns", "Canonical tags", "Pagination", "Internal linking modules", "Speed and Core Web Vitals cleanup", "Tracking verification after changes"]
@@ -630,7 +630,7 @@ export const blogPosts = [
       ["What is technical SEO implementation?", "It is the process of turning SEO recommendations into real site changes: metadata, headings, schema, redirects, internal links, crawl fixes, templates, tracking, and related cleanup."],
       ["Can you implement an SEO audit without creating a new strategy?", "Yes. If the strategy and recommendations already exist, the work can focus on implementation rather than a new audit."],
       ["Do SEO fixes require a developer?", "Some do. Metadata and content edits may be simple, but template headings, schema output, redirects, JavaScript issues, internal linking modules, and performance often need technical help."],
-      ["Can WordPress SEO issues be fixed hourly?", "Yes. Many WordPress SEO fixes are practical hourly tasks when the recommendations and affected pages are clear."],
+      ["Can WordPress SEO issues be handled hourly or project based?", "Yes. Many WordPress SEO fixes work well as hourly tasks or as project-based work when the recommendations and affected pages are clear."],
       ["What should I include when sending SEO recommendations?", "Send the spreadsheet, priority notes, affected URLs, crawl export, CMS details, target intent notes, and any plugin or platform constraints."],
       ["Can ecommerce SEO issues be fixed without rebuilding the site?", "Often, yes. Product data, schema, collection pages, internal links, tracking, and technical cleanup can often be improved without a full rebuild."],
       ["Can schema be implemented without a plugin?", "Sometimes. It depends on the platform. Schema may come from a plugin, theme template, custom code, ecommerce platform, or a tag-based implementation."],

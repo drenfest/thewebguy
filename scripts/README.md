@@ -10,14 +10,15 @@ Quote and campaign verification:
 ## Files
 
 - `optimize-images.js`: generates responsive JPEG and WebP hero image assets from the source hero PNG before the SvelteKit production build runs.
-- `generate-sitemap-lastmod.js`: generates `src/lib/data/sitemap-lastmod.json` before build so sitemap `<lastmod>` values follow the source files that define each page.
+- `generate-sitemap-lastmod.js`: maintains `src/lib/data/content-dates.json` and generates `src/lib/data/sitemap-lastmod.json`. New URLs are backfilled from Git history; stored publication dates are preserved.
+- `touch-content-date.js`: records an intentional update date for an existing URL. Run `npm run content:touch -- /page-path/` or provide an explicit `YYYY-MM-DD` date as the second argument.
 - `verify-contact-email.js`: validates contact-form email environment variables during deploy. For Gmail API delivery, it refreshes the OAuth token without sending an email. If `GMAIL_REFRESH_TOKEN` is missing but `CONTACT_OAUTH_SETUP_KEY` exists, it logs the setup URL and lets the first OAuth setup deploy continue.
 
 ## Patterns
 
 - Scripts are written as Node ESM so they run on Windows locally and on Render during deployment.
 - Generated image variants should stay deterministic and small enough for Lighthouse-friendly LCP.
-- Generated sitemap dates are based on source file modified times. Dynamic service, skill, blog, and location URLs use the shared content model plus their route templates.
+- Publication and update dates are stored per URL so editing one shared data file does not make every article look newly published. Use `content:touch` when a specific page receives a meaningful content update.
 
 ## Extending
 

@@ -16,13 +16,13 @@
 {#if note}
   <article class={`fix-note-card ${className}`.trim()}>
     <div class="fix-note-card__meta">
-      <a class="fix-note-pill" href={fixNoteCategoryUrl(categorySlug)} title={`View ${note.category} Fix Notes`}>
+      <a class="fix-note-pill" href={fixNoteCategoryUrl(categorySlug)} title={`View ${note.category} Web Fixes`}>
         {note.category}
       </a>
       <time datetime={note.date}>{fixNoteDisplayDate(note)}</time>
     </div>
 
-    <h3><a href={fixNoteUrl(note.slug)} title={`Read the Fix Note: ${note.title}`}>{note.title}</a></h3>
+    <h3><a href={fixNoteUrl(note.slug)} title={`Read the Web Fix: ${note.title}`}>{note.title}</a></h3>
     <p>{note.excerpt}</p>
 
     {#if showTools && tools.length}
@@ -39,7 +39,7 @@
       </div>
     {/if}
 
-    <a class="fix-note-card__link" href={fixNoteUrl(note.slug)} title={`Read the Fix Note: ${note.title}`}>Read note -&gt;</a>
+    <a class="fix-note-card__link" href={fixNoteUrl(note.slug)} title={`Read the Web Fix: ${note.title}`}>Read Web Fix -&gt;</a>
   </article>
 {/if}
 

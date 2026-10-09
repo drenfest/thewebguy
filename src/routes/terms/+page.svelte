@@ -26,7 +26,7 @@
 
 <Seo
   title="Terms of Service | The Web Guy"
-  description="Terms of Service for The Web Guy website, contact form, website support information, hourly contract work, and acceptable use."
+  description="Terms of Service for The Web Guy website, contact form, website support information, hourly or project-based contract work, and acceptable use."
   schema={seoSchema}
 />
 
@@ -70,11 +70,11 @@
   <section class="section soft-section section-effect section-effect--traces section-effect--low">
     <SectionHeading
       eyebrow="Contract work"
-      h2="Hourly support and project scope"
+      h2="Hourly or project-based support"
       body="The scope, rate or project cost, and approval to begin are agreed in writing before paid work starts. Existing written agreements continue to apply. Actual work may require a written scope, access details, priorities, dependencies, and practical acceptance criteria."
     />
     <ul class="check-list">
-      <li>Hourly support may be used for website fixes, WordPress updates, landing pages, SEO implementation, analytics, performance, integrations, and webmaster support.</li>
+      <li>Hourly or project-based support may be used for website fixes, WordPress updates, landing pages, SEO implementation, analytics, performance, integrations, and webmaster support.</li>
       <li>Estimates are not guarantees unless a specific written agreement says otherwise.</li>
       <li>Work may depend on platform access, hosting access, third-party tools, plugins, APIs, DNS records, client responsiveness, or existing site quality.</li>
       <li>Emergency availability, after-hours work, ongoing retainers, and large projects require separate agreement.</li>

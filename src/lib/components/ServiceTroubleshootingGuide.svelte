@@ -114,7 +114,7 @@
       <div class="service-guide__examples-heading">
         <span class="service-guide__number" aria-hidden="true">06</span>
         <div>
-          <p class="eyebrow">Relevant Fix Notes</p>
+          <p class="eyebrow">Relevant Web Fixes</p>
           <h3>{examples.length === 1 ? "Actual troubleshooting example" : "Actual troubleshooting examples"}</h3>
           <p>{examples.length === 1 ? "A related work note that shows the problem, the change made, and what was checked afterward." : "Related work notes that show the problem, the change made, and what was checked afterward."}</p>
         </div>
@@ -127,14 +127,14 @@
               <time datetime={note.date}>{fixNoteDisplayDate(note)}</time>
               {#each note.matchedTags.slice(0, 3) as tag}<span>{tag}</span>{/each}
             </div>
-            <h4><a href={fixNoteUrl(note.slug)} title={`Read the Fix Note: ${note.title}`}>{note.title}</a></h4>
+            <h4><a href={fixNoteUrl(note.slug)} title={`Read the Web Fix: ${note.title}`}>{note.title}</a></h4>
             <dl>
               <div><dt>Symptom</dt><dd>{note.problemSummary}</dd></div>
               <div><dt>Evidence</dt><dd>{firstItem(note.whatIChecked, note.excerpt)}</dd></div>
               <div><dt>Change</dt><dd>{firstItem(note.whatIChanged, "The agreed repair was implemented and documented.")}</dd></div>
               <div><dt>Verified result</dt><dd>{note.resultSummary}</dd></div>
             </dl>
-            <a class="service-guide__example-link" href={fixNoteUrl(note.slug)} title={`Read the Fix Note: ${note.title}`}>Read the full Fix Note -&gt;</a>
+            <a class="service-guide__example-link" href={fixNoteUrl(note.slug)} title={`Read the Web Fix: ${note.title}`}>Read the full Web Fix -&gt;</a>
           </article>
         {/each}
       </div>

@@ -1,4 +1,5 @@
 import { absoluteUrl, site } from "$lib/config/site.js";
+import { contentDatesForUrl } from "$lib/data/content-dates.js";
 
 const LAST_MODIFIED = "2026-06-12";
 const PROVIDER_ID = `${absoluteUrl("/")}#the-web-guy`;
@@ -243,7 +244,7 @@ export function locationServiceSchema(location, path) {
     "@id": `${absoluteUrl(path)}#local-service`,
     name: `Website support for ${location.city}, ${location.state}`,
     serviceType: "Local website support",
-    description: asText(location.meta || `Hourly website support for ${location.city}, ${location.state}.`),
+    description: asText(location.meta || `Hourly or project-based website support for ${location.city}, ${location.state}.`),
     url: absoluteUrl(path),
     provider: { "@id": PROVIDER_ID },
     areaServed: areaServed([`${location.city}, ${location.state}`]),
@@ -252,6 +253,7 @@ export function locationServiceSchema(location, path) {
 }
 
 export function articleSchema(post, path) {
+  const dates = contentDatesForUrl(path);
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -261,7 +263,8 @@ export function articleSchema(post, path) {
     description: asText(post.meta || post.summary),
     author: { "@id": PROVIDER_ID },
     publisher: { "@id": PROVIDER_ID },
-    dateModified: LAST_MODIFIED,
+    datePublished: dates.published,
+    dateModified: dates.updated,
     image: absoluteUrl("/images/technical-web-support-hero.png")
   };
 }
@@ -316,7 +319,7 @@ export function fixNoteArticleSchema(note, path) {
 export function fixNoteListSchema(notes = [], path = "/fix-notes/") {
   return itemListSchema({
     id: path,
-    name: "Fix Notes",
+    name: "Web Fixes",
     description: "Short practical website work notes from The Web Guy covering cleanup, debugging, implementation, and support tasks.",
     itemType: "BlogPosting",
     items: notes.map((note) => ({

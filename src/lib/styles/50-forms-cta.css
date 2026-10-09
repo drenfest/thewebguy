@@ -680,11 +680,11 @@ select:focus {
   min-width: 172px;
   min-height: 58px;
   padding: 10px 16px;
-  border: 1px solid rgba(8, 112, 82, 0.26);
+  border: 1px solid rgba(86, 122, 176, 0.42);
   border-radius: 8px;
   background:
-    linear-gradient(135deg, rgba(48, 199, 149, 0.96), rgba(8, 112, 82, 0.98)),
-    var(--accent-dark);
+    linear-gradient(135deg, #1b2c48, #101722),
+    var(--dark);
   color: var(--white);
   box-shadow: 0 16px 38px rgba(16, 23, 34, 0.22);
   cursor: pointer;
@@ -694,7 +694,10 @@ select:focus {
 
 .live-chat-preview-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 20px 44px rgba(16, 23, 34, 0.26);
+  background:
+    linear-gradient(135deg, #243b60, #142038),
+    var(--dark);
+  box-shadow: 0 20px 44px rgba(16, 23, 34, 0.3);
 }
 
 .live-chat-preview-button span:not(.live-chat-preview-dot) {
@@ -716,17 +719,17 @@ select:focus {
   width: 10px;
   height: 10px;
   border-radius: 999px;
-  background: #ffffff;
-  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.18);
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(48, 199, 149, 0.18);
 }
 
 .live-chat-preview[data-status="connection-lost"] .live-chat-preview-button,
 .live-chat-preview[data-status="restricted"] .live-chat-preview-button,
 .live-chat-preview[data-status="error"] .live-chat-preview-button {
-  border-color: rgba(170, 44, 44, 0.20);
+  border-color: rgba(86, 122, 176, 0.42);
   background:
-    linear-gradient(135deg, #7a1f1f, #4d1d1d),
-    #7a1f1f;
+    linear-gradient(135deg, #1b2c48, #101722),
+    var(--dark);
 }
 
 .live-chat-preview-panel {

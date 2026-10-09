@@ -18,7 +18,7 @@ export const faqs = [
   ["Can you verify tracking and data accuracy?", "Yes. Measurement integrity work checks what fires, where it fires, and whether the data matches actual site behavior.", "/skills/ga4-gtm-measurement-integrity/"],
   ["Can you connect APIs or webhooks?", "Yes. REST APIs, webhooks, forms, CRMs, ecommerce systems, Postman testing, and data handoff are a strong fit.", "/skills/rest-api-webhook-integrations/"],
   ["Can you fix forms, modals, embeds, and scripts?", "Yes. Those are common website-fix tasks, especially when they involve CSS, JavaScript, tracking, iframes, widgets, or CMS weirdness.", "/services/website-fixes/"],
-  ["Do you offer monthly support?", "Yes. Ongoing webmaster support is available hourly for recurring updates, fixes, SEO tasks, tracking, cleanup, and technical site work.", "/services/ongoing-webmaster-support/"],
+  ["Do you offer monthly support?", "Yes. Ongoing webmaster support is available hourly or project based for recurring updates, fixes, SEO tasks, tracking, cleanup, and technical site work.", "/services/ongoing-webmaster-support/"],
   ["Do you do design?", "The Web Guy can make pages cleaner, more usable, and conversion-focused, especially for service pages and landing pages. Full brand strategy from scratch is not the core offer.", "/services/landing-pages/"],
   ["How do I send a request?", "Use the contact page. Send the URL, what needs fixed or built, timeline, and whether it is one-time or ongoing.", "/contact/"],
   ["What happens after I contact you?", "The Web Guy reviews the request, asks any needed questions, identifies the best first move, and quotes a next step for approval if the fit is clear.", "/contact/"]

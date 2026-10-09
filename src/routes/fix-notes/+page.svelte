@@ -15,7 +15,7 @@
 
   const breadcrumbs = [
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
-    { label: "Fix Notes", title: "Current page: Fix Notes" }
+    { label: "Web Fixes", title: "Current page: Web Fixes" }
   ];
   const seoSchema = schemaList(
     breadcrumbSchema(breadcrumbs, "/fix-notes/"),
@@ -25,7 +25,7 @@
 </script>
 
 <Seo
-  title="Website Fix Notes | The Web Guy"
+  title="Web Fixes | Real Website Work | The Web Guy"
   description="Short work notes from website cleanup, debugging, implementation, and support tasks by The Web Guy."
   schema={seoSchema}
 />
@@ -33,8 +33,8 @@
 <main>
   <section class="section fix-notes-archive-hero section-effect section-effect--grid section-effect--low">
     <div class="fix-notes-archive-hero__inner">
-      <p class="eyebrow">Fix Notes</p>
-      <h1>Fix Notes</h1>
+      <p class="eyebrow">Real website work</p>
+      <h1>Web Fixes</h1>
       <p>
         Real website problems, the changes made, and what was checked afterward. Browse by the issue or platform that matches your project.
       </p>
@@ -46,7 +46,7 @@
   <section class="section fix-notes-recent section-effect section-effect--signals section-effect--low">
     <SectionHeading
       eyebrow="Recent website fixes"
-      h2="Featured recent Fix Notes"
+      h2="Featured recent Web Fixes"
       body={fixNotesDescription}
     />
     <div class="fix-notes-recent__grid">
@@ -59,12 +59,12 @@
   <section class="section soft-section fix-notes-categories section-effect section-effect--traces section-effect--low">
     <SectionHeading
       eyebrow="Browse by category"
-      h2="Find Fix Notes by practical work type"
+      h2="Find Web Fixes by practical work type"
       body="Use the categories to jump into cleanup notes by site issue, support path, platform, or implementation type."
     />
     <div class="fix-notes-categories__grid">
       {#each fixNoteCategories as category}
-        <a href={fixNoteCategoryUrl(category.slug)} title={`View ${category.label} Fix Notes`}>
+        <a href={fixNoteCategoryUrl(category.slug)} title={`View ${category.label} Web Fixes`}>
           <span>{category.notes.length} notes</span>
           <strong>{category.label}</strong>
           <em>{category.description}</em>
@@ -75,7 +75,7 @@
 
   <section class="section fix-notes-latest section-effect section-effect--grid section-effect--low">
     <SectionHeading
-      eyebrow="Latest Fix Notes"
+      eyebrow="Latest Web Fixes"
       h2="Latest practical work notes"
       body="Newest notes are listed first by date."
     />

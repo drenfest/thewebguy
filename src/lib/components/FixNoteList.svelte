@@ -6,7 +6,7 @@
     notes = [],
     currentCategorySlug = "",
     showCategoryNav = true,
-    emptyMessage = "No Fix Notes are published in this category yet."
+    emptyMessage = "No Web Fixes are published in this category yet."
   } = $props();
 
   const categoryLinks = $derived(fixNoteCategories.map((category) => ({
@@ -16,13 +16,13 @@
 </script>
 
 {#if showCategoryNav}
-  <nav class="fix-note-category-nav" aria-label="Browse Fix Notes by category">
-    <a class:active={!currentCategorySlug} href="/fix-notes/" title="View all Fix Notes">All Fix Notes</a>
+  <nav class="fix-note-category-nav" aria-label="Browse Web Fixes by category">
+    <a class:active={!currentCategorySlug} href="/fix-notes/" title="View all Web Fixes">All Web Fixes</a>
     {#each categoryLinks as category}
       <a
         class:active={currentCategorySlug === category.slug}
         href={fixNoteCategoryUrl(category.slug)}
-        title={`View ${category.label} Fix Notes`}
+        title={`View ${category.label} Web Fixes`}
       >
         {category.label}
         <span>{category.count}</span>
@@ -40,7 +40,7 @@
 {:else}
   <div class="fix-note-list-empty">
     <p>{emptyMessage}</p>
-    <a href="/fix-notes/" title="View all Fix Notes">View all Fix Notes</a>
+    <a href="/fix-notes/" title="View all Web Fixes">View all Web Fixes</a>
   </div>
 {/if}
 

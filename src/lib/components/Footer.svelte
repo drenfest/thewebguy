@@ -10,7 +10,7 @@
     ["AI Development", "/ai-development-oversight/"],
     ["Sites For Sale", "/sites-for-sale/"],
     ["Blog", "/blog/"],
-    ["Fix Notes", "/fix-notes/"],
+    ["Web Fixes", "/fix-notes/"],
     ["Skills", "/skills/"],
     ["Locations", "/locations/"],
     ["How Quotes Work", "/rate/"],

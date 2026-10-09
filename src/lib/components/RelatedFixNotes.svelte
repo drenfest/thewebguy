@@ -4,7 +4,7 @@
 
   let {
     note = null,
-    title = "Related Fix Notes",
+    title = "Related Web Fixes",
     limit = 3
   } = $props();
 
@@ -14,7 +14,7 @@
 {#if notes.length}
   <section class="related-fix-notes">
     <div class="related-fix-notes__heading">
-      <p class="eyebrow">Related Fix Notes</p>
+      <p class="eyebrow">Related Web Fixes</p>
       <h2>{title}</h2>
     </div>
     <div class="related-fix-notes__grid">
