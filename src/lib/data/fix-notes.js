@@ -74,6 +74,7 @@ export const fixNotes = [
     serviceSlug: "website-security-malware-cleanup",
     excerpt: "A WordPress security note about preserving forensic evidence, tracing a browser warning to injected database JavaScript, and validating the rest of the installation before closing the incident.",
     problemSummary: "A production WordPress site had been flagged for deceptive pages even though the obvious infected files had already been neutralized, which meant the remaining payload could be hiding outside the normal theme and plugin paths.",
+    evidenceSummary: "Core and supported plugin files matched known-good sources, while an obfuscated JavaScript payload remained inside a database option outside the normal theme and plugin paths.",
     whatIChecked: [
       "Production database options, page-builder content, revisions, snippets, and user metadata",
       "WordPress core files against official checksums",
@@ -112,6 +113,7 @@ export const fixNotes = [
     serviceSlug: "production-debugging",
     excerpt: "A production debugging note about fixing a form CAPTCHA that disappeared when an optimization plugin delayed scripts ahead of their jQuery dependency.",
     problemSummary: "A homepage form showed a spinning or missing reCAPTCHA widget for logged-out visitors because its form scripts were being delayed in the wrong dependency order.",
+    evidenceSummary: "The form worked for logged-in users but failed in a clean visitor session, where console output showed delayed form scripts executing before their jQuery dependency.",
     whatIChecked: [
       "Logged-in and clean logged-out form behavior",
       "Browser console errors and script execution order",
@@ -149,6 +151,7 @@ export const fixNotes = [
     serviceSlug: "wordpress-support",
     excerpt: "A WordPress support note about tracing a form editor's 403 response to the firewall, adding a narrowly scoped exception, and correcting the replacement embed's responsive width.",
     problemSummary: "A form-script widget could not be edited because the firewall rejected its external embed code, and the replacement form rendered at a browser-default narrow iframe width.",
+    evidenceSummary: "The failed editor request returned a 403 tied to one blocked POST parameter, while the replacement iframe rendered at its narrow browser-default width.",
     whatIChecked: [
       "The failing WordPress AJAX request and returned 403 response",
       "Firewall activity and the exact blocked POST parameter",
@@ -186,6 +189,7 @@ export const fixNotes = [
     serviceSlug: "analytics-tracking",
     excerpt: "A tracking implementation note about adding call tracking, Google Tag Manager, and Search Console verification to a client-routed static site without duplicating scripts.",
     problemSummary: "A statically generated site needed a coordinated measurement setup, but an older number-swap loader conflicted with the new call-tracking provider and client-side navigation could skip rescans.",
+    evidenceSummary: "The site loaded a competing number-swap script, and client-side route changes did not reliably trigger the new call-tracking provider to rescan the page.",
     whatIChecked: [
       "Existing number-swap and booking-form scripts",
       "Client-side navigation behavior",
@@ -224,6 +228,7 @@ export const fixNotes = [
     serviceSlug: "api-integrations",
     excerpt: "An API integration note about replacing a long service-page booking embed with a focused lead form, server-side validation, and the site's existing lead workflow.",
     problemSummary: "A service page was dominated by a long embedded booking form that disrupted the hero and asked for too much information before the visitor had engaged with the service content.",
+    evidenceSummary: "The existing lead workflow could already receive qualified inquiries, so the oversized booking embed was adding conversion friction rather than supplying a missing backend handoff.",
     whatIChecked: [
       "Existing booking and lead-management flow",
       "Required fields for an initial service inquiry",
@@ -262,6 +267,7 @@ export const fixNotes = [
     serviceSlug: "technical-seo-implementation",
     excerpt: "A technical SEO note about reviewing two related pull requests and consolidating business and FAQ facts so visible content and structured data share one source of truth.",
     problemSummary: "Business details and FAQ answers were repeated across components and schema, making it easy for the footer, contact page, visible FAQs, and structured data to drift apart.",
+    evidenceSummary: "The same business facts and FAQ answers were maintained separately in visible components and structured data, creating multiple sources that could contradict one another.",
     whatIChecked: [
       "Business address, hours, coordinates, map data, profile link, and price range",
       "Footer, contact-page, and LocalBusiness schema output",
@@ -300,6 +306,7 @@ export const fixNotes = [
     serviceSlug: "landing-pages",
     excerpt: "A landing-page implementation note about turning a service brief into a responsive WordPress draft with custom imagery, clear process content, FAQs, and structured data.",
     problemSummary: "A new residential service needed a complete review-ready page rather than a thin template, including original visuals, detailed process information, financing context, and accessible mobile behavior.",
+    evidenceSummary: "The supplied brief contained strong service, rebate, financing, and FAQ details, but the site lacked a complete accessible page, relevant imagery, and matching schema to present them.",
     whatIChecked: [
       "Service content, FAQs, calls to action, rebates, and financing details",
       "Service and FAQ schema requirements",
@@ -338,6 +345,7 @@ export const fixNotes = [
     serviceSlug: "technical-seo-implementation",
     excerpt: "A content implementation note about converting supplied documents into polished WordPress articles with optimized imagery, metadata, internal links, and live verification.",
     problemSummary: "Several supplied articles needed to be published in an established WordPress design without losing their source images, SEO fields, categorization, or requested internal-link structure.",
+    evidenceSummary: "The source documents included usable primary images and article structure, but the live posts still needed optimized assets, metadata, taxonomy, and requested internal links.",
     whatIChecked: [
       "Source documents and embedded primary images",
       "Existing post layout and taxonomy conventions",
@@ -488,6 +496,7 @@ export const fixNotes = [
     serviceSlug: "website-fixes",
     excerpt: "A website implementation note about replacing generic imagery across dozens of service pages, rebuilding an additional-services page, and reorganizing a dense mega menu.",
     problemSummary: "A large service website reused generic visuals, had inconsistent asset filenames, relied on weak fallback images, and presented additional services in a basic list that was hard to scan.",
+    evidenceSummary: "The asset review found service-specific photos available for many pages, while the live site continued to reuse generic fallbacks and inconsistent filenames across key placements.",
     whatIChecked: [
       "Supplied photos and video assets against available service pages",
       "Hero, service, location, and supporting-content image placements",
@@ -526,6 +535,7 @@ export const fixNotes = [
     serviceSlug: "hosting-dns-support",
     excerpt: "A hosting note about staging a custom-domain cutover, documenting the DNS records, and preserving the old hostname for redirects once ownership changes were ready.",
     problemSummary: "A deployed static site needed to move to a new primary domain without losing traffic or breaking the still-active domain before the required DNS records were available.",
+    evidenceSummary: "The hosting project was ready to accept the new hostname, but ownership-verification DNS records were still unavailable and the current domain needed to remain active through cutover.",
     whatIChecked: [
       "Current hosting and custom-domain configuration",
       "DNS records required for verification",

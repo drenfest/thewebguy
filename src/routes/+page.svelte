@@ -91,8 +91,8 @@
     },
     {
       label: "SEO is stuck",
-      title: "Pages earn impressions, but the site still needs an SEO developer",
-      symptoms: ["Important pages earn impressions but do not move up", "An audit lists fixes that have never been implemented", "Indexing, redirects, schema, or internal links remain inconsistent"],
+      title: "Search visibility has stalled and the cause is not yet clear",
+      symptoms: ["Important pages earn impressions but rankings or clicks have plateaued", "Traffic dropped without an obvious page or content change", "Crawl, indexation, internal-link, or page-quality signals need diagnosis"],
       image: "/images/homepage/problem-routing/seo-is-stuck.webp",
       imageAlt: "Website crawl graph, structured page elements, and search pathways becoming organized",
       links: [
@@ -100,8 +100,8 @@
         { label: "Technical SEO Developer", href: "/services/technical-seo-developer/" },
         { label: "Crawl Analysis", href: "/skills/crawl-analysis-internal-linking/" }
       ],
-      send: "The audit or crawl export, affected URLs, CMS details, current priorities, and any known access limits.",
-      outcome: "Apply and verify the technical changes that support clearer crawling, indexing, relevance, and page structure."
+      send: "The affected URLs, Search Console or analytics context, recent site changes, CMS details, and any existing crawl data.",
+      outcome: "Identify the technical constraints behind the plateau, prioritize the strongest opportunities, and define the changes worth implementing."
     },
     {
       label: "A page needs to launch",
@@ -119,17 +119,17 @@
     },
     {
       label: "Data does not connect",
-      title: "Forms, GA4, GTM, ecommerce, APIs, or dashboards disagree",
-      symptoms: ["Form submissions never reach the CRM or inbox", "Analytics totals do not match real leads or sales", "An API, webhook, tag, or dashboard reports success but loses data"],
+      title: "Website data fails between forms, APIs, CRMs, and business systems",
+      symptoms: ["A form succeeds on screen but the lead never reaches the CRM or inbox", "An API or webhook drops fields, duplicates records, or fails intermittently", "Website and ecommerce data never reaches the system where staff need it"],
       image: "/images/homepage/problem-routing/data-does-not-connect.webp",
       imageAlt: "Disconnected website form data being repaired into verified analytics, CRM, API, and dashboard paths",
       links: [
-        { label: "Analytics and Tracking", href: "/services/analytics-tracking/" },
         { label: "API Integrations", href: "/services/api-integrations/" },
-        { label: "GA4 and GTM", href: "/skills/ga4-gtm-measurement-integrity/" }
+        { label: "Automation", href: "/services/automation-internal-tools/" },
+        { label: "Website Fixes", href: "/services/website-fixes/" }
       ],
-      send: "The source page, action being measured, expected destination, sample test flow, and the reports or systems that disagree.",
-      outcome: "A mapped and tested data path with failures corrected, duplicate signals removed, and verification at the final destination."
+      send: "The source page, form or action, expected destination, sample records, field requirements, and any API or webhook details.",
+      outcome: "A mapped and tested operational data path with the broken handoff corrected and the final record verified in its destination system."
     },
     {
       label: "The site is slow",
@@ -174,9 +174,9 @@
       outcome: "Identify the responsible layer, repair the immediate issue, and leave the site in a safer state for the next update."
     },
     {
-      label: "A page or feature needs built",
-      title: "Build the page, component, or recurring update the site needs",
-      symptoms: ["A new offer needs a page or reusable component", "An existing page cannot support the content it now needs", "Desktop and mobile versions require different layout work"],
+      label: "A page or feature needs building",
+      title: "The existing site needs a custom page, component, or feature",
+      symptoms: ["The site needs reusable functionality rather than a one-off campaign page", "An existing page cannot support the interaction or content it now needs", "A custom component, template, integration, or responsive behavior needs development"],
       image: "/images/homepage/problem-routing/build-and-update.webp",
       imageAlt: "Responsive website sections being assembled into a polished desktop and mobile experience",
       links: [
@@ -184,13 +184,13 @@
         { label: "React and Static Sites", href: "/services/react-static-sites/" },
         { label: "Webmaster Support", href: "/services/ongoing-webmaster-support/" }
       ],
-      send: "The current site or source files, the page goal, supplied copy and assets, examples you like, required actions, and the launch deadline.",
-      outcome: "A maintainable, responsive addition that fits the existing site and is checked before it goes live."
+      send: "The current site or source files, required behavior, supplied content, technical constraints, examples, and how editors or visitors should use it.",
+      outcome: "A maintainable, responsive feature that fits the existing codebase, supports the required interaction, and is ready for release testing."
     },
     {
       label: "SEO changes are not implemented",
-      title: "Turn SEO recommendations into real website changes",
-      symptoms: ["SEO recommendations are documented but still not live", "Metadata, headings, schema, redirects, or canonicals conflict", "Priority pages remain difficult to crawl or reach internally"],
+      title: "An SEO audit already defines the work, but the changes are not live",
+      symptoms: ["A completed audit or ticket list is waiting for a developer", "Metadata, headings, schema, redirects, canonicals, or links need implementation", "The recommendations are clear, but CMS or code changes have stalled"],
       image: "/images/homepage/problem-routing/seo-and-visibility.webp",
       imageAlt: "Connected website pages becoming easier for search systems to crawl and discover",
       links: [
@@ -199,22 +199,22 @@
         { label: "Schema", href: "/skills/schema-structured-data/" },
         { label: "Crawl and Links", href: "/skills/crawl-analysis-internal-linking/" }
       ],
-      send: "The audit or crawl export, priority URLs, CMS access notes, current rankings or indexing symptoms, and the recommendations waiting for implementation.",
-      outcome: "Ship the technical changes, verify them on the live site, and make important pages easier to understand and reach."
+      send: "The approved audit or ticket list, priority URLs, CMS or repository context, access notes, and the recommendations ready to ship.",
+      outcome: "Implement the agreed recommendations, verify the live output, and document what shipped, changed, or remains blocked."
     },
     {
       label: "Tracking and tools do not connect",
-      title: "Connect the forms, data, tools, and reporting behind the site",
-      symptoms: ["Leads or sales are missing from reports", "Forms, pixels, tags, APIs, and dashboards disagree", "Manual handoffs keep copying the same data between systems"],
+      title: "Analytics, pixels, tags, and reports do not measure the same actions",
+      symptoms: ["GA4, GTM, ad pixels, and platform reports show conflicting totals", "Conversions fire twice, never fire, or lose campaign attribution", "Client-side navigation, consent, or tag order makes measurement unreliable"],
       image: "/images/homepage/problem-routing/track-connect-automate.webp",
       imageAlt: "Forms, analytics, APIs, webhooks, and dashboards connected through a reliable data system",
       links: [
         { label: "Analytics and Tracking", href: "/services/analytics-tracking/" },
-        { label: "API Integrations", href: "/services/api-integrations/" },
-        { label: "Automation", href: "/services/automation-internal-tools/" }
+        { label: "GA4 and GTM", href: "/skills/ga4-gtm-measurement-integrity/" },
+        { label: "Production Debugging", href: "/skills/production-debugging/" }
       ],
-      send: "The action to measure or automate, the systems involved, sample data, current scripts or tags, expected destination, and any access limitations.",
-      outcome: "A tested path from visitor action to the correct report, CRM, webhook, database, notification, or internal workflow."
+      send: "The actions that should count, current tag or pixel setup, affected reports, sample sessions or conversions, consent behavior, and access limitations.",
+      outcome: "A documented measurement plan with deduplicated events, corrected tag behavior, and test conversions verified in the intended reports."
     },
     {
       label: "An AI build needs review",

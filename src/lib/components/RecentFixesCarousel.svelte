@@ -98,7 +98,7 @@
                 </div>
                 <div>
                   <dt>Evidence</dt>
-                  <dd>{firstItem(note.whatIChecked, note.excerpt)}</dd>
+                  <dd>{note.evidenceSummary || firstItem(note.whatIChecked, note.excerpt)}</dd>
                 </div>
                 <div>
                   <dt>Change</dt>
