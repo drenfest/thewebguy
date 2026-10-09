@@ -328,7 +328,7 @@
 
 <Seo
   title="Contact The Web Guy | Get a Free Website Quote"
-  description="Get a free quote from The Web Guy for a website issue, WordPress task, SEO implementation need, landing page request, tracking problem, or agency overflow work."
+  description="Get a free quote from a U.S.-based 1099 website contractor for WordPress, SEO implementation, website fixes, landing pages, tracking, or agency overflow work."
   schema={seoSchema}
 />
 
@@ -346,6 +346,23 @@
   />
 
   <Breadcrumbs items={breadcrumbs} />
+
+  <section class="section soft-section split-section section-effect section-effect--signals section-effect--low">
+    <div>
+      <SectionHeading
+        eyebrow="U.S. contract availability"
+        h2="Available for 1099 contract work"
+        body="I am available for hire as an independent contractor under a 1099 arrangement for one-time projects, recurring support, and agency overflow work."
+      />
+    </div>
+    <div>
+      <ul class="check-list">
+        <li>U.S. citizen eligible to work in the United States</li>
+        <li>No work visa or employer sponsorship required</li>
+        <li>Available for project-based and ongoing contract work</li>
+      </ul>
+    </div>
+  </section>
 
   <section class="section contact-section">
     <div class="contact-grid">

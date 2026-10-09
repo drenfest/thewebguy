@@ -122,7 +122,7 @@
 
 <Seo
   title="About The Web Guy | Practical Website Support"
-  description="U.S.-based 1099 website contractor available without visa sponsorship for WordPress, technical SEO implementation, website fixes, tracking, and related web work."
+  description="Learn about The Web Guy's practical experience with WordPress, technical SEO implementation, website fixes, tracking, integrations, and related contract web work."
   schema={seoSchema}
 />
 
@@ -136,23 +136,6 @@
   />
 
   <Breadcrumbs items={breadcrumbs} />
-
-  <section class="section soft-section split-section section-effect section-effect--signals section-effect--low">
-    <div>
-      <SectionHeading
-        eyebrow="U.S. contract availability"
-        h2="Available for 1099 contract work"
-        body="I am available for hire as an independent contractor under a 1099 arrangement for one-time projects, recurring support, and agency overflow work."
-      />
-    </div>
-    <div>
-      <ul class="check-list">
-        <li>U.S. citizen eligible to work in the United States</li>
-        <li>No work visa or employer sponsorship required</li>
-        <li>Available for project-based and ongoing contract work</li>
-      </ul>
-    </div>
-  </section>
 
   <section class="section split-section section-effect section-effect--grid section-effect--low">
     <div><SectionHeading eyebrow="Contract support model" h2="A practical contract website support service" body="Start with the problem you need solved. I will confirm the scope and cost before any paid work begins." /></div>
