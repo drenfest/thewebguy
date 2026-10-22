@@ -18,6 +18,7 @@
   import { breadcrumbSchema, fixNoteArticleSchema, schemaList } from "$lib/data/schema.js";
   import { fixNoteUplifts } from "$lib/data/fix-note-uplift.js";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
+  import { formatFixNoteCharge } from "$lib/data/fix-note-billing.js";
 
   let { data } = $props();
   const note = $derived(data.note);
@@ -85,6 +86,24 @@
       <section class="fix-note-intro">
         <h2>Quick summary</h2>
         <p>{uplift?.intro || note.excerpt}</p>
+      </section>
+
+      <section class="fix-note-section fix-note-charge" aria-labelledby="fix-note-charge-heading">
+        <h2 id="fix-note-charge-heading">What I charged</h2>
+        {#if note.billing}
+          <p class="fix-note-charge__amount">{formatFixNoteCharge(note.billing)} <span>USD billed</span></p>
+          <p>{note.billing.scope}</p>
+          <p class="fix-note-charge__context">
+            {#if note.billing.basis === "bundle"}
+              This is the billed amount for the described work block, including its related tasks. It is not a separate price for each task.
+            {:else}
+              This is the historical itemized charge for this work.
+            {/if}
+            It is not a current quote or confirmation of payment received. Similar work is quoted for its own scope.
+          </p>
+        {:else}
+          <p>No verified itemized amount is available for this note. I have not estimated a price or assigned another job’s charge to it.</p>
+        {/if}
       </section>
 
       <section class="fix-note-section">
@@ -295,6 +314,32 @@
     color: var(--muted);
     font-size: 1.05rem;
     line-height: 1.72;
+  }
+
+  .fix-note-charge {
+    margin-bottom: clamp(34px, 4vw, 48px);
+    padding: clamp(18px, 3vw, 26px);
+    border: 1px solid rgba(8, 112, 82, 0.22);
+    border-radius: 8px;
+    background: #f1fbf7;
+  }
+
+  .fix-note-charge .fix-note-charge__amount {
+    color: var(--accent-dark);
+    font-size: clamp(1.7rem, 4vw, 2.3rem);
+    font-weight: 800;
+    line-height: 1.3;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .fix-note-charge__amount span {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .fix-note-charge .fix-note-charge__context {
+    font-size: 0.92rem;
   }
 
   .fix-note-section ul {

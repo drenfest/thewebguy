@@ -38,6 +38,10 @@
       <p>
         Real website problems, the changes made, and what was checked afterward. Browse by the issue or platform that matches your project.
       </p>
+      <p class="fix-notes-archive-hero__billing-note">
+        Client details are anonymized. Billed amounts are historical examples of the stated scope, not current quotes.
+        Bundled charges are labeled, and unverified amounts are left unpriced. Dates on newly added notes are publication dates, not client work dates.
+      </p>
     </div>
   </section>
 

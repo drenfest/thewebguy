@@ -15,6 +15,7 @@ import {
   skillUrl
 } from "$lib/data/content.js";
 import { absoluteUrl, site } from "$lib/config/site.js";
+import { formatFixNoteCharge } from "$lib/data/fix-note-billing.js";
 
 const lastUpdated = "2026-06-30";
 
@@ -241,6 +242,8 @@ What changed:
 ${simpleList(note.whatIChanged)}
 
 Result: ${sentence(note.resultSummary)}
+
+Historical charge: ${note.billing ? `${formatFixNoteCharge(note.billing)} USD billed. ${clean(note.billing.scope)} ${note.billing.basis === "bundle" ? "Bundled work, not a separate price for each task. " : ""}Not a current quote or confirmation of payment received.` : "No verified itemized amount is available for this note."}
 
 Related paths:
 ${(note.relatedServices || []).map((slug) => `- ${clean(slug)}`).join("\n")}

@@ -1,4 +1,7 @@
-export const fixNotesDescription = "Short work notes from related cleanup, debugging, implementation, and support tasks.";
+import { additionalFixNotes } from "./additional-fix-notes.js";
+import { fixNoteBilling } from "./fix-note-billing.js";
+
+export const fixNotesDescription = "Anonymized work notes from cleanup, debugging, implementation, and support tasks, with historical billed amounts where verified.";
 
 export const fixNoteCategoryDefinitions = [
   {
@@ -658,9 +661,9 @@ export const fixNotes = [
       "Added critical CSS, layout-stability rules, delayed noncritical scripts, and asset protections",
       "Reworked purge and rebuild controls to avoid writing stale or redirected pages",
       "Normalized old environment URLs and removed duplicate LocalBusiness-style schema",
-      "Rebuilt 278 production cache files with no failures and removed temporary deployment tools"
+      "Rebuilt the intended production cache set with no failures and removed temporary deployment tools"
     ],
-    resultSummary: "Production gained deterministic static caching, cleaner rendered output, safer admin controls, and a verified cache set covering all 278 intended URLs.",
+    resultSummary: "Production gained deterministic static caching, cleaner rendered output, safer admin controls, and a verified cache set covering the intended production URLs.",
     whatToWatchNext: [
       "Whether content saves purge only the affected cache paths",
       "Whether new plugins reintroduce old hostnames or duplicate schema",
@@ -720,26 +723,26 @@ export const fixNotes = [
     lastUpdated: null,
     category: "Technical SEO",
     serviceSlug: "technical-seo-implementation",
-    excerpt: "A local SEO implementation note about expanding dozens of state and clinic pages with unique local content, linked service sections, consistent FAQ behavior, and page-specific schema.",
+    excerpt: "A local SEO implementation note about expanding a set of location and service pages with unique local content, linked service sections, consistent FAQ behavior, and page-specific schema.",
     problemSummary: "A multi-location site had thin or inconsistent local pages, generic internal links, duplicated editor content, and FAQ markup that behaved differently from one page to another.",
     whatIChecked: [
       "Supplied spreadsheet changes and page-specific review notes",
-      "State, city, clinic, condition, and treatment page relationships",
+      "Location and service page relationships",
       "Local landmarks, neighborhoods, roads, universities, and nearby communities",
       "Internal links, ACF-controlled content, FAQs, forms, and schema",
       "Final page count, wrapper cleanliness, and consistent accordion behavior"
     ],
     whatIChanged: [
       "Expanded local copy and corrected service and condition links",
-      "Added linked clinic and treatment sections plus ten-question local FAQs",
-      "Implemented MedicalOrganization, MedicalClinic, ItemList, and FAQPage schema where appropriate",
+      "Added linked location and service sections plus local FAQs",
+      "Implemented relevant organization, list, and FAQ structured data where appropriate",
       "Removed duplicate editor content when custom fields already controlled the output",
-      "Standardized accordion CSS and JavaScript and verified a 42-page final sweep"
+      "Standardized accordion CSS and JavaScript and verified the full affected page set"
     ],
-    resultSummary: "The local page set became more useful and internally connected, with consistent FAQs and structured data across 42 reviewed pages.",
+    resultSummary: "The local page set became more useful and internally connected, with consistent FAQs and structured data across the reviewed page set.",
     whatToWatchNext: [
       "Whether newly added locations follow the same schema and FAQ pattern",
-      "Whether local claims stay accurate as clinics and service offerings change",
+      "Whether local claims stay accurate as locations and service offerings change",
       "Whether internal links keep pointing to the most specific relevant pages"
     ],
     toolsUsed: ["WordPress", "ACF", "Schema markup", "Bulk page QA"],
@@ -748,7 +751,7 @@ export const fixNotes = [
     screenshot: null,
     screenshotAlt: null,
     metaTitle: "Local Page FAQ and Schema Web Fix | The Web Guy",
-    metaDescription: "Short technical SEO note about expanding 42 local pages with unique content, internal links, FAQs, and structured data."
+    metaDescription: "Short technical SEO note about expanding local pages with unique content, internal links, FAQs, and structured data."
   },
   {
     title: "Turned a Shopify Speed Audit Into a Verified Theme Release",
@@ -774,7 +777,7 @@ export const fixNotes = [
       "Preserved preview, product, cart, and delivery behavior through repeated QA",
       "Published after approval, retained a rollback theme, and delivered a measured performance report"
     ],
-    resultSummary: "Average mobile performance rose from 32 to 65 and desktop from about 81 to 95, while all 5,494 checked sitemap URLs returned successfully and the client retained a documented rollback path.",
+    resultSummary: "The measured performance checks improved, the checked sitemap URLs returned successfully, and a documented rollback path remained available.",
     whatToWatchNext: [
       "Whether new app embeds add blocking work back to the theme",
       "Whether future theme merges preserve responsive image and loading changes",
@@ -797,7 +800,7 @@ export const fixNotes = [
     category: "API Integrations",
     serviceSlug: "api-integrations",
     excerpt: "A WordPress integration note about building an admin-only CRM and estimate form flow that captured lead context, UTM data, and follow-up details without exposing CRM language on the public site.",
-    problemSummary: "The handyman site needed a request-estimate workflow that stayed simple for visitors but saved enough lead detail for real follow-up, source tracking, and internal status management.",
+    problemSummary: "The business site needed a request-estimate workflow that stayed simple for visitors but saved enough lead detail for real follow-up, source tracking, and internal status management.",
     whatIChecked: [
       "Public estimate form fields and required intake details",
       "Lead source, landing-page, and referrer capture needs",
@@ -2283,6 +2286,18 @@ export const fixNotes = [
     metaDescription: "Short API integration Web Fix about verifying a form-to-CRM handoff that was dropping fields."
   }
 ];
+
+fixNotes.push(...additionalFixNotes);
+const serviceAliases = {
+  "website-security-malware-cleanup": "security-hosting-reliability",
+  "hosting-dns-support": "security-hosting-reliability"
+};
+for (const note of fixNotes) {
+  note.billing = fixNoteBilling[note.slug] || null;
+  note.serviceSlug = serviceAliases[note.serviceSlug] || note.serviceSlug;
+  note.relatedServices = (note.relatedServices || []).map(slug => serviceAliases[slug] || slug);
+  if (note.billing && note.date !== "2026-10-21") note.lastUpdated = "2026-10-21";
+}
 
 function slugify(value = "") {
   return String(value)

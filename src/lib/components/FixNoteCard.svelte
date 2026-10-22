@@ -1,4 +1,5 @@
 <script>
+  import { formatFixNoteCharge } from "$lib/data/fix-note-billing.js";
   import { fixNoteCategorySlug, fixNoteCategoryUrl, fixNoteDisplayDate, fixNoteUrl } from "$lib/data/content.js";
 
   let {
@@ -24,6 +25,13 @@
 
     <h3><a href={fixNoteUrl(note.slug)} title={`Read the Web Fix: ${note.title}`}>{note.title}</a></h3>
     <p>{note.excerpt}</p>
+
+    {#if note.billing}
+      <p class="fix-note-card__charge">
+        <strong>{formatFixNoteCharge(note.billing)}</strong> billed
+        {#if note.billing.basis === "bundle"}<span> · bundled work</span>{/if}
+      </p>
+    {/if}
 
     {#if showTools && tools.length}
       <div class="fix-note-card__chips" aria-label={`${note.title} tools used`}>
@@ -114,6 +122,16 @@
     color: #d8e1eb;
     font-size: 0.96rem;
     line-height: 1.58;
+  }
+
+  .fix-note-card__charge {
+    color: #b9f3d9;
+    font-size: 0.9rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .fix-note-card__charge strong {
+    font-size: 1.1rem;
   }
 
   .fix-note-card__chips {
