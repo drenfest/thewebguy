@@ -61,6 +61,9 @@ Required Render environment variables:
 - `GMAIL_REDIRECT_URI`: OAuth callback URL. Use `https://thewebguy.app/api/admin/gmail-oauth/callback` and add the same URL as an authorized redirect URI in Google Cloud.
 - `RENDER_API_KEY`: optional Render API key. When set, the OAuth callback can write `GMAIL_REFRESH_TOKEN` back to the current Render service.
 - `CONTACT_OAUTH_TRIGGER_DEPLOY`: set to `true` to trigger a Render redeploy after the OAuth callback updates `GMAIL_REFRESH_TOKEN`.
+- `TWG_CLIENTOPS_URL`: private ClientOps Site origin. Use `https://twg-clientops.drenfest.chatgpt.site`.
+- `TWG_CLIENTOPS_SERVICE_TOKEN`: private Sites service token used only by the server-side contact endpoint.
+- `TWG_CLIENTOPS_INTAKE_SECRET`: create-only lead intake secret shared with ClientOps.
 - `SMTP_HOST`: SMTP server hostname. Use only for local dev, paid hosting, or hosts that allow outbound SMTP.
 - `SMTP_PORT`: SMTP port. Use `587` for STARTTLS in most cases, or `465` for implicit TLS.
 - `SMTP_SECURE`: `false` for port `587`, `true` for port `465`.
@@ -75,6 +78,7 @@ Contact form behavior:
 - The endpoint sends server-side. There is no paid email API service and no background worker process.
 - Without email configuration, the endpoint returns a configuration error instead of exposing the private recipient address to the browser.
 - The sender email from the form is used as the `reply_to` value so replies go back to the requester.
+- After a contact email is delivered, the server forwards the normalized request into the private ClientOps lead queue. Intake failures are logged without telling the visitor to resend an email that was already delivered.
 
 Local environment setup:
 

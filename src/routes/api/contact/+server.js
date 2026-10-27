@@ -513,6 +513,72 @@ function preferredProvider() {
   return "";
 }
 
+function clientOpsConfig() {
+  return {
+    url: clean(env.TWG_CLIENTOPS_URL, 2000).replace(/\/$/, ""),
+    serviceToken: clean(env.TWG_CLIENTOPS_SERVICE_TOKEN, 8000),
+    intakeSecret: clean(env.TWG_CLIENTOPS_INTAKE_SECRET, 2000)
+  };
+}
+
+function clientOpsConfigured(config) {
+  return Boolean(config.url && config.serviceToken && config.intakeSecret);
+}
+
+async function sendClientOpsLead(contactRequest, idempotencyKey) {
+  const config = clientOpsConfig();
+  if (!clientOpsConfigured(config)) {
+    return { status: "not-configured" };
+  }
+
+  const response = await fetch(`${config.url}/api/v1/intake/leads`, {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      "oai-sites-authorization": `Bearer ${config.serviceToken}`,
+      "x-twg-intake-key": config.intakeSecret,
+      "idempotency-key": idempotencyKey
+    },
+    body: JSON.stringify({
+      name: contactRequest.name,
+      email: contactRequest.email,
+      company: contactRequest.company,
+      subject: `${contactRequest.service || contactRequest.skill || "Website"} request from ${contactRequest.name}`,
+      website: contactRequest.url,
+      service: contactRequest.service,
+      message: contactRequest.details,
+      consent: true,
+      metadata: {
+        skill: contactRequest.skill,
+        location: contactRequest.location,
+        timeline: contactRequest.timeline,
+        workType: contactRequest.workType,
+        hours: contactRequest.hours,
+        sourcePagePath: contactRequest.sourcePagePath,
+        sourcePageTitle: contactRequest.sourcePageTitle,
+        sourcePageType: contactRequest.sourcePageType,
+        sourceCta: contactRequest.sourceCta
+      }
+    })
+  });
+  const result = await response.json().catch(() => ({}));
+
+  if (!response.ok) {
+    throw new Error(`ClientOps intake failed (${response.status}): ${result.message || result.error || "Unknown error"}`);
+  }
+
+  return { status: result.duplicate ? "duplicate" : "created", id: result.record?.id || result.id || "" };
+}
+
+async function recordClientOpsLead(contactRequest, idempotencyKey) {
+  try {
+    return await sendClientOpsLead(contactRequest, idempotencyKey);
+  } catch (error) {
+    console.error("ClientOps lead intake failed after contact email delivery", error);
+    return { status: "failed" };
+  }
+}
+
 export async function POST({ request, getClientAddress }) {
   const payload = await request.json().catch(() => null);
   if (!payload) {
@@ -600,9 +666,12 @@ export async function POST({ request, getClientAddress }) {
         html: bodyHtml
       });
 
+      const clientOps = await recordClientOpsLead(normalized, `contact-${hashValue(duplicateKey)}`);
+
       return json({
         ok: true,
         mode: "gmail-api-email",
+        clientOps: clientOps.status,
         request: normalized
       });
     } catch (error) {
@@ -637,9 +706,12 @@ export async function POST({ request, getClientAddress }) {
       html: bodyHtml
     });
 
+    const clientOps = await recordClientOpsLead(normalized, `contact-${hashValue(duplicateKey)}`);
+
     return json({
       ok: true,
       mode: "smtp-email",
+      clientOps: clientOps.status,
       request: normalized
     });
   } catch (error) {

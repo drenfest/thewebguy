@@ -60,6 +60,12 @@ services:
         sync: false
       - key: CONTACT_OAUTH_TRIGGER_DEPLOY
         value: true
+      - key: TWG_CLIENTOPS_URL
+        value: https://twg-clientops.drenfest.chatgpt.site
+      - key: TWG_CLIENTOPS_SERVICE_TOKEN
+        sync: false
+      - key: TWG_CLIENTOPS_INTAKE_SECRET
+        sync: false
       - key: SMTP_HOST
         sync: false
       - key: SMTP_PORT
