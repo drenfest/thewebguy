@@ -155,21 +155,22 @@ export const serviceProofBySlug = {
     ]
   },
   "fix-broken-wordpress-site": {
-    eyebrow: "Broken WordPress proof",
-    heading: "Proof of WordPress triage, recovery, and repair work",
-    intro: "Broken WordPress work starts by reproducing the failure, checking recent changes, and tracing the site layer that owns the symptom.",
+    eyebrow: "",
+    heading: "WordPress repair work I can trace and verify",
+    intro: "A broken WordPress site can fail in the browser, inside a plugin, or at the hosting layer. I start with the affected action and recent changes, then use the evidence from that path to decide what needs repair.",
+    subsections: true,
     items: [
       {
-        label: "Plugin and theme conflicts",
-        copy: "Worked through plugin updates, theme output, page-builder behavior, PHP errors, cache mismatches, and admin-side failures."
+        label: "A form stopped sending usable events",
+        copy: "A Contact Form 7 site was using AJAX submissions, so its existing analytics trigger did not match the completed action. I added a small plugin that sends a data-layer event on successful submission and adjusted the tag trigger. The implementation avoided putting submitted names, phone numbers, or email addresses into the event."
       },
       {
-        label: "Visible site failures",
-        copy: "Fixed broken layouts, failed forms, missing assets, JavaScript errors, white-screen style failures, and front-end behavior that changed suddenly."
+        label: "Full-screen scrolling hid page content",
+        copy: "On a WordPress site using full-screen rows, sections could advance before visitors had read the content. I isolated the scrolling and anchor behavior, tested the change on a duplicate page, and deployed a scoped CSS and JavaScript plugin to control overflow and section transitions."
       },
       {
-        label: "Careful next steps",
-        copy: "Reviewed backup, hosting, cache, access, and recovery context before making changes that could hide the real cause or overwrite good work."
+        label: "Performance work needed safer cache behavior",
+        copy: "A WordPress performance project required control over script loading and static-page regeneration. I built must-use plugin controls for front-end loading and a cache workflow that skips redirected URLs, bypasses admin requests, and rebuilds content in manageable batches."
       }
     ]
   },
@@ -358,13 +359,27 @@ export const skillProofBySlug = {
     ]
   },
   "wordpress-plugin-development": {
-    eyebrow: "Plugin proof",
-    heading: "Proof of WordPress plugin and custom functionality work",
-    intro: "Plugin work is strongest when it solves a site-specific problem without piling on unnecessary dependencies.",
+    eyebrow: "",
+    heading: "Custom WordPress plugins built for real problems",
+    intro: "Some WordPress features need their own small plugin instead of another theme edit. My work has included form-to-CRM connectors, compatibility layers for existing shortcodes, performance controls, and WordPress admin tools that keep business logic separate from presentation.",
+    subsections: true,
     items: [
-      { label: "Custom functionality", copy: "Built custom WordPress functionality, admin workflows, hooks, and integrations when a plugin-only stack was not enough." },
-      { label: "Debugging", copy: "Worked through plugin conflicts, PHP errors, form behavior, API handoffs, and admin-side failures." },
-      { label: "Integration fit", copy: "Connected plugin work to APIs, webhooks, tracking, automation, and technical SEO implementation." }
+      {
+        label: "Form submissions delivered through a queue",
+        copy: "Built a PHP plugin that receives saved Fluent Forms submissions, maps fields to an external CRM, and queues delivery for WordPress's scheduler. The admin settings support separate form mappings, credentials, and a recorded delivery outcome. A live submission was accepted by the receiving API."
+      },
+      {
+        label: "Gravity Forms connected to an external lead system",
+        copy: "Built a connector with field mapping, customer lookup, duplicate-submission protection, entry-level diagnostics, and API error handling. Testing exposed an existing-customer response that required a safer lookup path; a later form submission created a lead successfully."
+      },
+      {
+        label: "Old shortcodes, new form system",
+        copy: "Built a compatibility plugin that keeps legacy shortcode calls working while rendering a newer embedded form. Existing WordPress pages did not need their saved shortcode content rewritten, and the embedded output received responsive styling."
+      },
+      {
+        label: "Performance controls and static caching",
+        copy: "Built a must-use plugin to control critical CSS, script timing, image loading, and static-cache regeneration. The cache can purge affected URLs after content changes and rebuild pages in batches. One production rebuild completed 278 URLs without failures."
+      }
     ]
   },
   "wordpress-theme-development": {
@@ -471,13 +486,15 @@ export const skillProofBySlug = {
 
 export const locationProofBySlug = {
   "freeport-il": {
-    eyebrow: "Freeport-area proof",
-    heading: "Proof for local WordPress, SEO, tracking, and webmaster support near Freeport",
-    intro: "Freeport-area support is positioned around practical help for existing local sites that need fixes, updates, visibility, and lead-flow cleanup.",
+    eyebrow: "",
+    heading: "Local SEO changes I can make on the website",
+    intro: "For a Freeport business, local search work often starts on the pages you control. I can improve a service page's title and headings, connect related pages with useful internal links, correct redirect or canonical problems, add appropriate structured data, and check whether important pages can be crawled and indexed. If a quote form or call button is the main lead path, I can also verify that its tracking matches the action visitors actually take.",
+    subsections: true,
     items: [
-      { label: "Local site needs", copy: "Worked on local SEO, WordPress cleanup, forms, tracking, service pages, and recurring webmaster-style support." },
-      { label: "Regional content", copy: "Created local/service content across industries like plumbing, dental, mental health, water treatment, cleaning, electrical, and tourism-style businesses." },
-      { label: "Technical depth", copy: "Connected local support to WordPress themes, GA4/GTM, Cloudflare/DNS/SSL, page cleanup, and technical SEO implementation." }
+      {
+        label: "Service pages that connect search visits to inquiries",
+        copy: "A service page needs to make the business, service, and coverage area clear, then give visitors a working route to a call or quote. I can tighten the page structure, connect related services, repair broken links and redirects, and check the form or call-button tracking. The work addresses the website problems between finding the page and contacting the business."
+      }
     ]
   },
   "rockford-il": {
@@ -511,13 +528,15 @@ export const locationProofBySlug = {
     ]
   },
   "janesville-wi": {
-    eyebrow: "Janesville proof",
-    heading: "Proof for Janesville technical SEO, speed cleanup, agency overflow, and ecommerce",
-    intro: "Janesville-area support fits sites that need implementation depth: crawl cleanup, performance review, ecommerce structure, and production support.",
+    eyebrow: "",
+    heading: "Technical SEO and WordPress help for Janesville sites",
+    intro: "When a Janesville site has thin service pages, inconsistent internal links, crawl errors, slow templates, or unreliable form tracking, I can handle the website-side fixes. That can mean clarifying page headings, repairing internal navigation, implementing supplied schema recommendations, reducing script or image weight, or tracing a lead form that no longer records a conversion. The work is scoped to the affected pages and systems.",
+    subsections: true,
     items: [
-      { label: "Technical SEO", copy: "Implemented schema, internal links, crawl cleanup, page-role review, redirects, headings, and metadata." },
-      { label: "Performance", copy: "Diagnosed performance issues tied to scripts, plugins, images, caching, hosting, themes, and front-end code." },
-      { label: "Ecommerce", copy: "Worked on product/category page structure, product schema, tracking, Merchant Center-style issues, and catalog cleanup." }
+      {
+        label: "Fix the page and the path to a lead",
+        copy: "A slow service page, a broken mobile menu, or an untracked quote form can undermine an otherwise useful website. I work through the affected template, scripts, links, and form behavior so the repair addresses how visitors use the site. WordPress, front-end code, and measurement can be handled together when the same problem crosses those systems."
+      }
     ]
   },
   "dixon-il": {

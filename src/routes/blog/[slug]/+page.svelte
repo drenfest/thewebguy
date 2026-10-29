@@ -265,7 +265,7 @@
   <Hero
     eyebrow={post.eyebrow}
     h1={post.h1 || post.title}
-    intro={post.summary}
+    intro={post.heroIntro || post.summary}
     cta={post.heroCta || "Send This Website Problem"}
     secondary={post.heroSecondary || "View Website Fixes"}
     secondaryHref={post.heroSecondaryHref || "/services/website-fixes/"}

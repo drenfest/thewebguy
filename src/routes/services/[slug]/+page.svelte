@@ -4,6 +4,7 @@
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
   import SectionHeading from "$lib/components/SectionHeading.svelte";
   import CardGrid from "$lib/components/CardGrid.svelte";
+  import SymptomCards from "$lib/components/SymptomCards.svelte";
   import TabbedServiceFeature from "$lib/components/TabbedServiceFeature.svelte";
   import CtaBand from "$lib/components/CtaBand.svelte";
   import RelatedProjectHelp from "$lib/components/RelatedProjectHelp.svelte";
@@ -664,7 +665,11 @@
       <SectionHeading eyebrow={serviceSectionEyebrow(section)} h2={serviceSectionHeading(section)} />
       {#if service.slug === "ai-built-website-cleanup" && section.h2 === "What AI-built sites usually need cleaned up"}
         <TabbedServiceFeature items={aiCleanupTabs} sectionLabel={section.h2} />
+      {:else if section.symptoms}
+        {#if section.intro}<p class="wide-copy">{section.intro}</p>{/if}
+        <SymptomCards items={section.symptoms} />
       {:else if section.cards}
+        {#if section.intro}<p class="wide-copy">{section.intro}</p>{/if}
         <CardGrid
           items={section.cards}
           mediaByTitle={service.slug === "ai-built-website-cleanup" && section.h2 === "What an AI-built website checker should actually check" ? aiCheckerInfographics : {}}
@@ -680,6 +685,10 @@
         </div>
       {:else}
         <p class="wide-copy">{section.body}</p>
+      {/if}
+      {#if section.afterHeading}
+        <h3>{section.afterHeading}</h3>
+        <InternalLinkCopy paragraphs={section.afterParagraphs} className="internal-link-copy--wide" />
       {/if}
       {/if}
     </section>
@@ -697,6 +706,10 @@
 
   <ServiceTroubleshootingGuide
     {service}
+    showDiagnosis={!["fix-broken-wordpress-site", "wordpress-plugin-conflict-help"].includes(service.slug)}
+    sendHeading={service.guideDetail?.heading}
+    sendCopy={service.guideDetail?.copy}
+    detailItems={service.guideDetail?.items || []}
     proofMatch={service.slug === "ai-built-website-cleanup" ? "exact" : "related"}
     proofId={service.slug === "ai-built-website-cleanup" ? "ai-fix-notes" : ""}
   />

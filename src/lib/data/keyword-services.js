@@ -73,6 +73,27 @@ export const keywordLandingSpecs = [
   },
   {
     slug: "fix-broken-wordpress-site",
+    guideDetail: {
+      heading: "Are your WordPress components, widgets, or menus failing?",
+      copy: "A page can look complete while individual controls are unusable. These symptoms help distinguish an interaction problem from a broken embed or navigation layout.",
+      items: [
+        {
+          heading: "Interactive components stop responding",
+          symptoms: "Tabs, accordions, buttons, popups, or custom controls do not open, close, or update when clicked.",
+          possibleIssues: "A JavaScript exception, a missing dependency, duplicated event handlers, or scripts running before the component is ready."
+        },
+        {
+          heading: "Embedded widgets are blank or incomplete",
+          symptoms: "A booking tool, map, video, form embed, or third-party widget is missing, clipped, or stuck loading.",
+          possibleIssues: "A failed external request, consent settings, blocked iframe content, an embed-code change, or container sizing."
+        },
+        {
+          heading: "Menus fail on mobile or hide their links",
+          symptoms: "The hamburger button does nothing, dropdowns disappear, links sit behind another layer, or visitors cannot scroll the open menu.",
+          possibleIssues: "Click-handler conflicts, stacking order, breakpoint styles, focus behavior, or overflow rules that trap or hide navigation."
+        }
+      ]
+    },
     title: "Fix a Broken WordPress Site | The Web Guy",
     meta: "WordPress site broken after an update or change? Get help reproducing the failure, tracing the cause, and planning a safe repair. Start with a free quote.",
     h1: "Fix a Broken WordPress Site",
@@ -105,6 +126,42 @@ export const keywordLandingSpecs = [
         ]
       },
       {
+        h2: "WordPress symptoms and possible causes",
+        intro: "The visible symptom helps narrow the investigation. These are possible causes to test, not diagnoses to assume before the affected page and action are checked.",
+        symptoms: [
+          {
+            heading: "A blank page or critical error",
+            symptoms: "The public site, wp-admin, or a specific page stops loading, sometimes immediately after an update.",
+            possibleIssues: "A PHP error, incompatible plugin or theme code, exhausted server resources, or a hosting configuration change."
+          },
+          {
+            heading: "Buttons, menus, or widgets stop responding",
+            symptoms: "Clicks do nothing, a popup will not open, a mobile menu stays closed, or a feature only works while logged in.",
+            possibleIssues: "A JavaScript error, missing assets, script-loading order, a cache mismatch, or a blocked browser request."
+          },
+          {
+            heading: "A form says sent, but the lead goes missing",
+            symptoms: "The success message appears, but no email or CRM record arrives.",
+            possibleIssues: "Notification settings, mail delivery, a failed integration request, field mapping, or a scheduled delivery job. A successful submit message does not establish which handoff failed."
+          },
+          {
+            heading: "The layout breaks on mobile",
+            symptoms: "Text is clipped, sections overlap, scrolling skips content, or controls disappear at smaller widths.",
+            possibleIssues: "Theme or page-builder styles, fixed dimensions, overflow rules, or scripts that calculate the wrong viewport size."
+          },
+          {
+            heading: "Edits do not appear on the live page",
+            symptoms: "The editor shows the change, but visitors keep seeing an older version.",
+            possibleIssues: "A page cache, CDN cache, stale generated files, or a rebuild that did not include the affected URL."
+          },
+          {
+            heading: "A cart or checkout stops working",
+            symptoms: "Products will not stay in the cart, checkout loops, or an order cannot be placed.",
+            possibleIssues: "Session handling, cached commerce pages, validation, payment responses, or an extension changing the checkout request."
+          }
+        ]
+      },
+      {
         h2: "Related broken WordPress support paths",
         cards: [
           ["Website Fixes", "Use this when the WordPress problem appears as a broken layout, failed script, bad form, mobile issue, or visible website bug.", "/services/website-fixes/", "View Website Fixes"],
@@ -124,6 +181,42 @@ export const keywordLandingSpecs = [
   },
   {
     slug: "wordpress-emergency-support",
+    guideDetail: {
+      heading: "Which customer or staff action is broken?",
+      copy: "An emergency can affect one critical action even while the homepage still loads. These are examples of failures I can investigate and the systems that may be involved.",
+      items: [
+        {
+          heading: "Account recovery is broken",
+          symptoms: "Password-reset emails never arrive, reset links are rejected, or customers are trapped in a login loop.",
+          possibleIssues: "Mail delivery, expired tokens, cached account pages, or a security or membership plugin changing the recovery flow."
+        },
+        {
+          heading: "Customers cannot place orders",
+          symptoms: "Place order returns an error, checkout never finishes, or payment and order status disagree.",
+          possibleIssues: "Checkout validation, session handling, gateway responses, or extensions modifying the order request."
+        },
+        {
+          heading: "A form submits but its email never arrives",
+          symptoms: "The visitor sees success, but the expected notification is absent from the inbox.",
+          possibleIssues: "Notification rules, outgoing mail configuration, a mail-provider rejection, or spam filtering. I distinguish the saved submission from the email handoff."
+        },
+        {
+          heading: "The CRM no longer receives form fills",
+          symptoms: "WordPress saves the form entry, but the connected lead system has no matching record.",
+          possibleIssues: "Expired authorization, changed field mapping, a rejected API request, or a stopped delivery queue or scheduled task."
+        },
+        {
+          heading: "Add to cart is not working",
+          symptoms: "Products do not enter the cart, the count stays unchanged, or the cart becomes empty on the next page.",
+          possibleIssues: "A failed browser request, a plugin interaction, session cookies, or cache behavior affecting cart state."
+        },
+        {
+          heading: "The site or admin is unavailable",
+          symptoms: "Visitors see a critical error, the site redirects unexpectedly, or staff cannot access WordPress.",
+          possibleIssues: "A PHP failure, hosting or DNS problems, a security restriction, or a compromise. The recovery approach depends on the available access and backup state."
+        }
+      ]
+    },
     title: "WordPress Emergency Support | The Web Guy",
     meta: "WordPress emergency support for broken pages, white screens, failed forms, checkout issues, plugin conflicts, and urgent website problems.",
     h1: "WordPress Emergency Support",
@@ -172,9 +265,26 @@ export const keywordLandingSpecs = [
         ]
       },
       {
-        h2: "How to request emergency WordPress help",
-        body:
-          "Use the contact form or live chat and send the URL, what is broken, the expected behavior, when it started, recent changes, screenshots or exact errors, and whether leads, checkout, access, or a live campaign is affected. Include available backup, hosting, staging, and administrator-access context without sending passwords in the first message."
+        h2: "Before you request emergency WordPress help",
+        intro: "If you can safely create a current backup through WordPress or your host, do that before reaching out. If access is unavailable or the backup fails, contact me with that limitation rather than making more changes to the live site.",
+        cards: [
+          [
+            "Preserve a current backup if you can",
+            "Back up both files and the database, or ask your host for a snapshot. Keep existing backups as well. Do not restore an older copy over newer orders, form entries, or content while trying to diagnose the problem."
+          ],
+          [
+            "Know what makes the issue urgent",
+            "Examples include a public outage or critical error, customers unable to place orders, a lead form losing inquiries, account access blocking customers or staff, or suspicious redirects and visible signs of a compromise. State which business activity is currently blocked."
+          ],
+          [
+            "Be ready to share the failure details",
+            "Have the affected URLs, exact error or screenshot, approximate start time, recent updates or deployments, and a short description of expected versus actual behavior. Note whether the issue affects everyone or only certain devices, accounts, or actions."
+          ],
+          [
+            "Know the access and recovery options",
+            "Be ready to identify who controls WordPress, hosting, DNS, backups, staging, and the code repository where relevant. Mention which access still works and the date of the latest usable backup. Arrange credentials securely after contact; do not put passwords or payment details in the initial message."
+          ]
+        ]
       }
     ],
     related: ["website-fixes", "fix-broken-wordpress-site", "wordpress-support", "security-hosting-reliability"],
@@ -285,6 +395,10 @@ export const keywordLandingSpecs = [
   },
   {
     slug: "wordpress-plugin-conflict-help",
+    guideDetail: {
+      heading: "Keep the features your site depends on",
+      copy: "Disabling a plugin can remove the symptom and also remove a needed feature. I test the interaction so the fix can address settings, asset loading, hooks, or compatibility without treating a permanent shutdown as the finished repair."
+    },
     title: "WordPress Plugin Conflict Help | The Web Guy",
     meta: "Get developer help diagnosing and fixing WordPress plugin conflicts affecting forms, checkout, layouts, admin behavior, JavaScript, performance, updates, or site stability.",
     h1: "Fix WordPress Plugin Conflicts Without Breaking Your Site",
@@ -317,7 +431,19 @@ export const keywordLandingSpecs = [
         ]
       },
       {
-        h2: "How WordPress plugin troubleshooting should be isolated",
+        h2: "What I check before turning plugins off",
+        intro: "First, reproduce the failed action on a specific page: a form, checkout step, editor screen, menu, or scheduled task. Record what should happen, what actually happens, and which WordPress, plugin, theme, PHP, or cache change came immediately before it. Then compare the relevant PHP log, browser console, and network requests. When the issue can be reproduced safely, test one suspected interaction at a time on staging or another controlled copy. Retest the original user action after the smallest fix.",
+        afterHeading: "A compatibility fix may be smaller than replacing a plugin",
+        afterParagraphs: [
+          [
+            "For example, when a WordPress form or embed changes systems, a small compatibility layer built through ",
+            {
+              text: "custom WordPress plugin development",
+              href: "/skills/wordpress-plugin-development/"
+            },
+            " can preserve existing shortcodes and update the output without editing every saved page. The right fix depends on the behavior that actually failed."
+          ]
+        ],
         cards: [
           ["Back up and use staging when possible", "Avoid blind production testing when the failure affects leads, checkout, wp-admin, SEO pages, or revenue-critical functionality."],
           ["Reproduce the symptom", "Name the URL, action, expected behavior, broken behavior, browser/device, and when the problem started before changing plugin settings."],
@@ -873,6 +999,28 @@ export const keywordLandingSpecs = [
   },
   {
     slug: "white-label-wordpress-support",
+    guideDetail: {
+      heading: "Staging, Git, and a dated record of the work",
+      copy: "I make changes reviewable before release and document what was delivered. The exact workflow fits the agency's repository, hosting, and approval process.",
+      items: [
+        {
+          heading: "Test the implementation on staging",
+          copy: "When a staging environment is available, I reproduce the issue and test the change there before proposing a production release. I note differences such as payment test modes, integrations, or caching that still require a production check."
+        },
+        {
+          heading: "Keep Git changes focused",
+          copy: "For projects managed in Git, I keep the implementation in focused commits or a reviewable branch. The diff identifies the files and behavior changed, so your team can review, approve, and trace the release without unrelated edits mixed in."
+        },
+        {
+          heading: "Show before-and-after screenshots",
+          copy: "I capture the affected page or interface before and after the change, using matching views where practical. The handoff pairs those screenshots with the change description and the checks performed, rather than relying on a completion message alone."
+        },
+        {
+          heading: "Build a timeline across releases",
+          copy: "Dated screenshots, commit references where available, and completion notes create a chronological record of the site. Your agency can see what changed in each release, revisit earlier decisions, and review progress over time."
+        }
+      ]
+    },
     title: "White Label WordPress Development & Support | The Web Guy",
     meta: "White-label WordPress development and support for agencies needing full builds, themes, plugins, WooCommerce, migrations, integrations, SEO implementation, fixes, and ongoing technical execution.",
     h1: "White Label WordPress Development and Support",
@@ -922,6 +1070,10 @@ export const keywordLandingSpecs = [
           ["WordPress Support", "Use the main WordPress service page when the request does not need white-label boundaries or agency-specific handoff.", "/services/wordpress-support/", "View WordPress Support"],
           ["Technical SEO Implementation", "Use this when agency SEO recommendations need WordPress implementation instead of another report.", "/services/technical-seo-implementation/", "View SEO Implementation"]
         ]
+      },
+      {
+        h2: "WordPress development that fits your agency's delivery process",
+        body: "When your team has sold the work but implementation is blocking delivery, I can take on a defined WordPress task without taking over the client relationship. The work can cover plugin hooks, forms, templates, and front-end behavior, with the changes and tests documented for your reviewer. Your agency keeps control of client communication, approvals, and release decisions."
       },
       {
         h2: "How to hand off white-label WordPress work",
@@ -976,6 +1128,10 @@ export const keywordLandingSpecs = [
   },
   {
     slug: "woocommerce-support",
+    guideDetail: {
+      heading: "Check more than the order confirmation",
+      copy: "Checkout changes can affect payment responses, shipping, tax, coupons, and order data. I check the affected cart-to-order path so a visible success message does not hide a failed payment or an incomplete order."
+    },
     title: "WooCommerce Support | The Web Guy",
     meta: "Need technical WooCommerce website help? Get developer support for checkout, product pages, plugins, tracking, schema, product data, and performance.",
     h1: "WooCommerce Support",
@@ -1024,6 +1180,42 @@ export const keywordLandingSpecs = [
         ]
       },
       {
+        h2: "WooCommerce checkout symptoms and possible issues",
+        intro: "Checkout can fail before payment, during authorization, or after the customer sees a confirmation. I trace the step that breaks and check the related cart, payment, and order behavior.",
+        symptoms: [
+          {
+            heading: "Add to cart does nothing",
+            symptoms: "The button spins, the cart count does not change, or the product disappears when the next page loads.",
+            possibleIssues: "A failed cart request, a JavaScript conflict, session or cookie handling, or cached cart content."
+          },
+          {
+            heading: "Checkout spins or will not continue",
+            symptoms: "The customer cannot move past an address field or the Place order button never completes.",
+            possibleIssues: "Hidden validation errors, blocked checkout requests, a timeout, or an extension changing the submitted fields."
+          },
+          {
+            heading: "Payment is rejected or never completes",
+            symptoms: "Customers see a gateway error, repeated declines, or a payment page that cannot return to the store.",
+            possibleIssues: "The gateway response, authentication settings, an interrupted redirect, or a payment-plugin compatibility problem. A declined card is not automatically a website fault."
+          },
+          {
+            heading: "Shipping, tax, or discounts look wrong",
+            symptoms: "Rates are missing, totals change unexpectedly, or a valid coupon is rejected.",
+            possibleIssues: "Shipping zones, address matching, tax settings, overlapping discount rules, or an external rate-service response."
+          },
+          {
+            heading: "Payment succeeds but the order is missing or pending",
+            symptoms: "The customer has a payment reference, but the store has no matching completed order or shows the wrong status.",
+            possibleIssues: "An interrupted order request, a delayed payment notification, or an extension changing order status. Payment and order records need to be compared before another charge is attempted."
+          },
+          {
+            heading: "The order exists but confirmation is missing",
+            symptoms: "The store records the purchase, but the customer or store owner receives no confirmation email.",
+            possibleIssues: "Order-status triggers, notification settings, outgoing mail delivery, or a mail-provider rejection rather than the checkout button itself."
+          }
+        ]
+      },
+      {
         h2: "How to hand off WooCommerce work",
         body:
           "Send the store URL, affected product or customer path, what should happen, what happens now, recent changes, screenshots or order examples, and the plugins, payment, shipping, tax, feed, tracking, or integration context involved. State whether the request is a one-off fix, an ongoing queue, or part of a larger development project."
@@ -1062,6 +1254,7 @@ export function buildKeywordLandingPage(spec) {
     eyebrow: spec.eyebrow,
     intro: spec.intro || `${helpLead} for ${spec.intent}. Start with the URL, the symptom, what should happen instead, and any recent changes that may have triggered it.`,
     cta: spec.cta || "Get a Free Quote",
+    guideDetail: spec.guideDetail,
     audience: spec.audience || `This page is for businesses, agencies, and site owners who know the symptom or task but need practical technical help. Start with a free quote based on the URL, context, access limits, and the outcome you want.`,
     audienceHeading: spec.audienceHeading || `${spec.eyebrow} fit`,
     showInHub: false,

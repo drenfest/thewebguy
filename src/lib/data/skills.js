@@ -26,6 +26,59 @@ export const skillPages = [
   },
   {
     slug: "wordpress-plugin-development",
+    contextHeading: "Other WordPress services I offer",
+    contextIntro: "Custom plugins are one part of the work. I also modify existing plugins, connect APIs, build WooCommerce functionality, and create admin tools that reduce manual work.",
+    projectTable: {
+      heading: "WordPress problems a custom plugin can solve",
+      columns: [
+        {
+          key: "problem",
+          label: "Website problem"
+        },
+        {
+          key: "work",
+          label: "Development approach"
+        },
+        {
+          key: "information",
+          label: "Why it matters"
+        }
+      ],
+      rows: [
+        {
+          problem: "Form entries need to reach a CRM",
+          work: "Submission hooks, per-form field mapping, queued API delivery",
+          information: "Keep form data mapped correctly and make delivery failures visible."
+        },
+        {
+          problem: "Legacy shortcodes must keep working",
+          work: "A compatibility plugin that renders the replacement form",
+          information: "Keep existing pages working when the form system changes."
+        },
+        {
+          problem: "Admin work repeats or breaks",
+          work: "Settings screens, permissions, scoped jobs, recorded results",
+          information: "Reduce repeated manual steps while keeping permissions and results visible."
+        },
+        {
+          problem: "Slow pages need tighter controls",
+          work: "Critical CSS, deferred assets, safe cache purging and rebuilds",
+          information: "Keep cached pages current without disrupting admin or redirected URLs."
+        },
+        {
+          problem: "Important logic lives inside a theme",
+          work: "Move independent functions into an update-safe plugin",
+          information: "Keep business logic independent of theme changes and updates."
+        },
+        {
+          problem: "Plugins interact badly after an update",
+          work: "Inspect hooks, logs, script timing and the broken user action",
+          information: "Restore the affected feature without discarding functionality the site still needs."
+        }
+      ],
+      afterHeading: "When a plugin is the better home",
+      afterBody: "I keep reusable behavior, stored data, scheduled tasks, integrations, and admin settings in plugin code when that work needs to survive a theme change. Theme code is the better fit when a change mainly controls how the site looks."
+    },
     title: "WordPress Plugin Developer | Custom Plugin Development",
     meta: "Hire a WordPress plugin developer for custom plugin development, existing plugin modification, APIs, WooCommerce extensions, admin tools, automation, debugging, and maintenance.",
     h1: "WordPress Plugin Developer for Custom Features and Integrations",
@@ -39,8 +92,7 @@ export const skillPages = [
       ["Existing plugin modification", "Use a WordPress plugin developer when an existing plugin needs hooks, filters, templates, API adjustments, or safer extension work instead of direct vendor-file edits.", "/services/wordpress-plugin-conflict-help/", "View plugin troubleshooting", "wordpress-support"],
       ["API integrations", "Custom WordPress plugins often need REST API calls, webhook handlers, authentication, payload cleanup, retries, and reliable data handoff between tools.", "/services/api-integrations/", "View API integrations", "api-integrations"],
       ["WooCommerce extensions", "WooCommerce plugin work can cover checkout rules, product data, order handling, admin workflow, fulfillment data, and compatibility with other extensions.", "/services/ecommerce-support/", "View ecommerce support", "ecommerce-support"],
-      ["Admin tools and automation", "Internal WordPress dashboards, importers, scheduled checks, reporting helpers, and workflow tools often become lightweight custom plugin projects.", "/services/automation-internal-tools/", "View automation help", "automation-internal-tools"],
-      ["Plugin development examples", "Examples include a CRM handoff plugin with webhook retries, a WooCommerce order-status helper, and an admin reporting tool built around custom post types and scheduled syncs.", "/contact/", "Discuss a custom plugin", "wordpress-support"]
+      ["Admin tools and automation", "Internal WordPress dashboards, importers, scheduled checks, reporting helpers, and workflow tools often become lightweight custom plugin projects.", "/services/automation-internal-tools/", "View automation help", "automation-internal-tools"]
     ],
     relatedServices: ["wordpress-support", "api-integrations", "automation-internal-tools", "technical-seo-implementation"],
     relatedSkills: ["php-javascript-node", "rest-api-webhook-integrations", "automation-dashboards-reporting", "wordpress-theme-development"],

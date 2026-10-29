@@ -266,10 +266,14 @@
   <section class="section section-effect section-effect--traces section-effect--low">
     <SectionHeading
       eyebrow={`${skill.eyebrow} planning`}
-      h2={`How to turn ${skill.eyebrow} into a website task`}
-      body="Use this table to compare the problem, implementation focus, related service path, and evidence that makes the technical work easier to scope."
+      h2={skill.projectTable?.heading || `How to turn ${skill.eyebrow} into a website task`}
+      body={skill.projectTable ? "" : "Use this table to compare the problem, implementation focus, related service path, and evidence that makes the technical work easier to scope."}
     />
-    <SortableTable caption={`${skill.eyebrow} implementation table`} columns={skillTableColumns} rows={skillRows} />
+    <SortableTable caption={skill.projectTable ? "" : `${skill.eyebrow} implementation table`} columns={skill.projectTable?.columns || skillTableColumns} rows={skill.projectTable?.rows || skillRows} />
+    {#if skill.projectTable}
+      <h3>{skill.projectTable.afterHeading}</h3>
+      <p class="wide-copy">{skill.projectTable.afterBody}</p>
+    {/if}
   </section>
 
   <section class="section soft-section section-effect section-effect--hex section-effect--medium">
@@ -285,8 +289,8 @@
     <section class="section section-effect section-effect--traces section-effect--low">
       <SectionHeading
         eyebrow={`Related ${skill.eyebrow.toLowerCase()} work`}
-        h2={`${skill.eyebrow} support paths and adjacent tasks`}
-        body="These are the service and skill paths most likely to matter when this capability shows up on a real website."
+        h2={skill.contextHeading || `${skill.eyebrow} support paths and adjacent tasks`}
+        body={skill.contextIntro || "These are the service and skill paths most likely to matter when this capability shows up on a real website."}
       />
       <CardGrid className="card-grid compact-grid" items={skill.contextCards} />
     </section>

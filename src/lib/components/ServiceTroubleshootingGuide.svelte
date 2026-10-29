@@ -20,6 +20,7 @@
     deliveryCopy = "A diagnosis, the agreed changes, verification results, unresolved dependencies, and a plain completion note that explains what changed and what still needs attention.",
     sendHeading = "What to send first",
     sendCopy = "The affected URL, expected versus actual behavior, when it started, recent changes, a screenshot or screen recording, and whether admin or hosting access still works.",
+    detailItems = [],
     proofSlugsOverride = [],
     proofMatch = "related",
     proofId = ""
@@ -94,12 +95,14 @@
   {/if}
 
   {#if showDelivery}
-  <div class="service-guide__middle">
+  <div class="service-guide__middle" class:service-guide__middle--detailed={detailItems.length > 0}>
+    {#if !detailItems.length}
     <article class="service-guide__panel">
       <span class="service-guide__number" aria-hidden="true">04</span>
       <h3>{deliveryHeading}</h3>
       <p>{deliveryCopy}</p>
     </article>
+    {/if}
 
     <article class="service-guide__panel service-guide__panel--send">
       <span class="service-guide__number" aria-hidden="true">05</span>
@@ -107,6 +110,21 @@
       <p>{sendCopy}</p>
     </article>
   </div>
+  {#if detailItems.length}
+    <div class="service-guide__detail-grid">
+      {#each detailItems as item}
+        <article class="service-guide__panel">
+          <h4>{item.heading}</h4>
+          {#if item.symptoms}
+            <p><strong>Symptoms:</strong> {item.symptoms}</p>
+            <p><strong>Possible issues:</strong> {item.possibleIssues}</p>
+          {:else}
+            <p>{item.copy}</p>
+          {/if}
+        </article>
+      {/each}
+    </div>
+  {/if}
   {/if}
 
   {#if showProof && examples.length}
@@ -143,6 +161,27 @@
 </section>
 
 <style>
+  .service-guide__middle.service-guide__middle--detailed {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .service-guide__detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .service-guide__detail-grid h4 {
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 760px) {
+    .service-guide__detail-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
   .service-guide {
     display: grid;
     gap: clamp(18px, 3vw, 28px);

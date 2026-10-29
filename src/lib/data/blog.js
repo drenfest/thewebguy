@@ -86,10 +86,11 @@ export const blogPosts = [
   {
     slug: "something-broke-on-your-website",
     title: "Website Repair Help: Safe Triage & Next Steps",
-    h1: "Fix My Broken Website: Start With the Symptom and the Safest Next Move",
+    h1: "Something Broke on Your Website? Diagnose the Symptom First",
     meta: "Website suddenly broken? Use this repair-help guide to identify the symptom, recent changes, browser errors, hosting, cache, forms, scripts, and the safest next step.",
     eyebrow: "Something broke",
     summary: "If your website is broken and the next thought is fix my broken website, identify what is broken, when it started, what changed, and whether rollback, cache cleanup, plugin/theme isolation, hosting review, or developer repair is the safest first move.",
+    heroIntro: "A blank page, failed form, broken layout, or checkout error can come from different parts of a site. Start with the visible symptom, what changed, and the business action affected. That gives you a safer first check before changing plugins, content, or hosting settings.",
     problemType: "Start here",
     relatedService: "website-fixes",
     category: "start-here",
@@ -119,11 +120,12 @@ export const blogPosts = [
         " might be a plugin conflict, a theme template issue, a cache problem, a JavaScript error, a DNS issue, or a third-party script changing behavior. A custom site can break for the same reasons. The label is less useful than the symptom."
       ],
       [
-        "A good first pass does not require panic or a full rebuild. It starts with what changed, where the issue appears, whether rollback is safer than repair, and whether the break affects revenue, leads, SEO pages, tracking, or trust. If one page is broken or the visible symptom looks front-end specific, compare this guide with ",
-        { text: "CSS and JavaScript website bugs", href: "/blog/css-javascript-errors-website-bugs/", title: "Read the CSS and JavaScript website bug guide" },
-        " and ",
-        { text: "Fix My Broken Website", href: "/blog/fix-my-broken-website/", title: "Read the focused broken website triage guide" },
-        " before changing the wrong layer. Use this parent guide for broad routing. Use the focused child page when you already know the repair order needs to stay tightly scoped to one broken page or one obvious failure."
+        "Already know what's broken and need a safe repair order? Read ",
+        {
+          text: "Fix My Broken Website: What to Check Before You Change Anything",
+          href: "/blog/fix-my-broken-website/"
+        },
+        " for a backup-first sequence."
       ]
     ],
     sections: [
@@ -377,9 +379,12 @@ export const blogPosts = [
       ],
       "The mistake is treating every broken-site issue like the same problem. A page with missing CSS, a checkout that cannot submit, a lead form that says success but sends nothing, and a site that redirects in a loop all need different checks. They also carry different business risk.",
       [
-        "This guide is the focused child of ",
-        { text: "Something Broke on Your Website", href: "/blog/something-broke-on-your-website/", title: "Read the broader broken website troubleshooting guide" },
-        ". Use the parent guide to understand the broad symptom buckets. Use this page when the exact request is fix my broken website and you need a practical repair order plus a cleaner handoff to a website fixer."
+        "Still figuring out which part of the site failed? Start with ",
+        {
+          text: "Something Broke on Your Website? Diagnose the Symptom First",
+          href: "/blog/something-broke-on-your-website/"
+        },
+        ", then return here for the repair sequence."
       ]
     ],
     sections: [
