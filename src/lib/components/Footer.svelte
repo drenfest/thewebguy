@@ -2,6 +2,7 @@
   import { aiDevelopmentPages, aiDevelopmentUrl } from "$lib/data/ai-development.js";
   import { page } from "$app/state";
   import { contactHrefWithContext } from "$lib/contact-context.js";
+  let { showCta = true } = $props();
   const quoteHref = $derived(contactHrefWithContext("/contact/#request-form", { sourcePath: page.url.pathname, sourceCta: "Get a Free Quote" }));
   const year = new Date().getFullYear();
   const mainPages = [
@@ -139,6 +140,7 @@
 </script>
 
 <footer class="site-footer">
+  {#if showCta}
   <div class="footer-cta">
     <div class="footer-cta-copy">
       <strong>Need web work handled?</strong>
@@ -148,6 +150,8 @@
       <a class="button button-primary" href={quoteHref} title="Open the contact request form">Get a Free Quote</a>
     </div>
   </div>
+
+  {/if}
 
   <div class="footer-inner">
     <section class="footer-brand-row" aria-label="The Web Guy footer summary">

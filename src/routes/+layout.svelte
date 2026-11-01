@@ -1,5 +1,6 @@
 <script>
   import { onMount } from "svelte";
+  import { page } from "$app/state";
   import Header from "$lib/components/Header.svelte";
   import Footer from "$lib/components/Footer.svelte";
   import GoogleAnalytics from "$lib/components/GoogleAnalytics.svelte";
@@ -11,6 +12,7 @@
   let TawkLiveChatComponent = $state(null);
   let TopologyBridgeComponent = $state(null);
   let { children } = $props();
+  const isInformationalArticle = $derived(page.url.pathname.replace(/\/$/, "") === "/blog/topological-relevance-vector-seo");
 
   onMount(() => {
     let cancelled = false;
@@ -72,18 +74,18 @@
 
 <Header />
 <GoogleAnalytics />
-{#if ExitIntentPromptComponent}
+{#if ExitIntentPromptComponent && !isInformationalArticle}
   <ExitIntentPromptComponent />
 {/if}
 {#if MotionObserverComponent}
   <MotionObserverComponent />
 {/if}
-{#if TawkLiveChatComponent}
+{#if TawkLiveChatComponent && !isInformationalArticle}
   <TawkLiveChatComponent />
 {/if}
 {@render children()}
 <SeasonalLightning />
-{#if TopologyBridgeComponent}
+{#if TopologyBridgeComponent && !isInformationalArticle}
   <TopologyBridgeComponent />
 {/if}
-<Footer />
+<Footer showCta={!isInformationalArticle} />

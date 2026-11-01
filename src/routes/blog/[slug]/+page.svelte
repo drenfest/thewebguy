@@ -1,4 +1,5 @@
 <script>
+  import RelevanceArticle from "$lib/components/RelevanceArticle.svelte";
   import Seo from "$lib/components/Seo.svelte";
   import Hero from "$lib/components/Hero.svelte";
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
@@ -31,6 +32,9 @@
     faqSchema(post.faqs || [])
   ));
   const relatedPosts = $derived(blogPosts.filter((item) => item.slug !== post.slug).slice(0, 3));
+  const technicalSeoCards = $derived(blogPosts
+    .filter((item) => item.slug !== post.slug && item.tags?.includes("technical-seo"))
+    .map((item) => [item.title.replace(/\s*\| The Web Guy$/, ""), item.summary, blogUrl(item.slug), "Read article", item.relatedService]));
   const topicalItems = $derived((post.links || []).map(([label, href, copy]) => ({
     label: topicalLabel(href),
     title: label,
@@ -262,18 +266,33 @@
 <Seo title={post.title.includes("|") ? post.title : `${post.title} | The Web Guy`} description={post.meta} schema={seoSchema} />
 
 <main class={`blog-post-page blog-post-${post.slug}`}>
+  {#if post.informational}
+    <section class="hero hero--compact">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">{post.eyebrow}</p>
+          <h1>{post.h1 || post.title}</h1>
+          <p class="hero-lede">{post.summary}</p>
+        </div>
+      </div>
+    </section>
+  {:else}
   <Hero
     eyebrow={post.eyebrow}
     h1={post.h1 || post.title}
-    intro={post.heroIntro || post.summary}
+    intro={post.summary}
     cta={post.heroCta || "Send This Website Problem"}
     secondary={post.heroSecondary || "View Website Fixes"}
     secondaryHref={post.heroSecondaryHref || "/services/website-fixes/"}
     image={blogHeroImage(post)}
   />
+  {/if}
 
   <Breadcrumbs items={breadcrumbs} />
 
+  {#if post.slug === "topological-relevance-vector-seo"}
+    <RelevanceArticle />
+  {:else}
   <section class="section blog-article">
     <div class="article-layout">
       <nav class="article-toc" aria-label="Article table of contents">
@@ -455,6 +474,9 @@
     </div>
   </section>
 
+  {/if}
+
+  {#if !post.informational}
   <ContextualSupport
     eyebrow="Fix options"
     heading="Turn this article into the right fix path"
@@ -485,6 +507,15 @@
       items={otherCards}
     />
   </section>
+
+  {/if}
+
+  {#if post.informational}
+    <section class="section section-effect section-effect--grid section-effect--low" id="other-technical-seo-articles">
+      <SectionHeading eyebrow="Related reading" h2="Other articles about technical SEO" />
+      <CardGrid className="card-grid compact-grid" items={technicalSeoCards} />
+    </section>
+  {/if}
 
   {#if post.faqs}
     <section class="section section-effect section-effect--traces section-effect--low">
