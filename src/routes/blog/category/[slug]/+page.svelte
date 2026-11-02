@@ -1,4 +1,6 @@
 <script>
+  import { updates, linkedCopy } from "$lib/data/editorial-updates.js";
+  import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import Seo from "$lib/components/Seo.svelte";
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
   import SectionHeading from "$lib/components/SectionHeading.svelte";
@@ -10,6 +12,7 @@
 
   let { data } = $props();
   const category = $derived(data.category);
+  const editorial = $derived(updates.collections[`/blog/category/${category.slug}/`]);
   const categoryPath = $derived(blogCategoryUrl(category.slug));
   const breadcrumbs = $derived([
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
@@ -36,7 +39,9 @@
   const summaryItems = $derived(sortedPosts.map((post) => ({
     label: post.problemType || "Blog",
     title: post.title.replace(" | The Web Guy", ""),
-    copy: post.summary,
+    copy: category.slug === "seo-pages-ai" && post.slug === "ai-built-website-not-ready-to-launch"
+      ? "Check routing, forms, tracking, accessibility and the other production details before sending visitors to an AI-built site."
+      : post.summary,
     href: blogUrl(post.slug),
     linkLabel: "Read article"
   })));
@@ -70,13 +75,13 @@
     <SectionHeading
       eyebrow="Articles"
       h2={`${category.label} troubleshooting posts`}
-      body="These posts are grouped here because they solve closely related website problems and implementation questions."
     />
+    <InternalLinkCopy paragraphs={[linkedCopy(Object.values(editorial?.copy || {})[0] || "", editorial?.links || [])]} />
     <SummaryLinkGrid items={summaryItems} className="summary-link-grid summary-link-grid--compact" />
   </section>
 
   <CtaBand
-    heading={`Need help with ${category.label.toLowerCase()} work?`}
+    heading={editorial?.copy["Final quote-section heading."] || "Need help with this on your website?"}
     copy="Send the URL, the symptom, what should happen instead, and any recent changes."
     label="Get a Free Quote"
     secondaryLabel="View Blog"

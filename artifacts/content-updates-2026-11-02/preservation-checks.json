@@ -1,0 +1,15 @@
+{
+  "contactFormMarkup": "byte-identical after newline normalization",
+  "contactScript": "identical except the content-update import; validation, submission, context and thank-you handling unchanged",
+  "unchangedComponentSources": [
+    "src/lib/components/FaqQuestionForm.svelte",
+    "src/lib/components/TawkLiveChat.svelte",
+    "src/lib/components/relevance-evidence.js",
+    "src/lib/components/RelevanceArticle.svelte"
+  ],
+  "toporankDataAttributesPreserved": 3091,
+  "status": "verified",
+  "workspaceSnapshotPublicationDatesPreserved": 310,
+  "releasePublicationDatesPreserved": 206,
+  "releaseBaseCommit": "199ed15bafee8bf08e4544b764931cd13c104262"
+}

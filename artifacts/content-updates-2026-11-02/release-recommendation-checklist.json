@@ -1,0 +1,2133 @@
+{
+  "base": "http://127.0.0.1:5198",
+  "entries": 268,
+  "counts": {
+    "verified": 260,
+    "verified_user_decision": 1,
+    "retained_after_evidence_review": 5,
+    "verified_source_mapping": 1,
+    "requires_provider_settings_review": 1
+  },
+  "metadataChecks": [
+    {
+      "url": "/services/wordpress-maintenance/",
+      "field": "meta",
+      "status": "verified"
+    },
+    {
+      "url": "/services/wordpress-plugin-conflict-help/",
+      "field": "h1",
+      "status": "verified"
+    },
+    {
+      "url": "/blog/cms-plugin-theme-weirdness/",
+      "field": "title",
+      "status": "verified"
+    },
+    {
+      "url": "/blog/cms-plugin-theme-weirdness/",
+      "field": "meta",
+      "status": "verified"
+    },
+    {
+      "url": "/blog/cms-plugin-theme-weirdness/",
+      "field": "h1",
+      "status": "verified"
+    },
+    {
+      "url": "/blog/css-javascript-errors-website-bugs/",
+      "field": "title",
+      "status": "verified"
+    },
+    {
+      "url": "/blog/css-javascript-errors-website-bugs/",
+      "field": "meta",
+      "status": "verified"
+    },
+    {
+      "url": "/blog/css-javascript-errors-website-bugs/",
+      "field": "h1",
+      "status": "verified"
+    },
+    {
+      "url": "/blog/javascript-issues-website-troubleshooting/",
+      "field": "h1",
+      "status": "verified"
+    },
+    {
+      "url": "/fix-notes/built-admin-only-wordpress-crm-estimate-intake/",
+      "field": "title",
+      "status": "verified"
+    },
+    {
+      "url": "/fix-notes/cleaned-wordpress-install-database-after-malware/",
+      "field": "title",
+      "status": "verified"
+    },
+    {
+      "url": "/fix-notes/cleaned-wordpress-install-database-after-malware/",
+      "field": "meta",
+      "status": "verified"
+    },
+    {
+      "url": "/fix-notes/migrated-site-content-between-domains-without-rebuild/",
+      "field": "title",
+      "status": "verified"
+    },
+    {
+      "url": "/fix-notes/stabilized-contact-form-email-sending-without-overcomplicating/",
+      "field": "title",
+      "status": "verified"
+    },
+    {
+      "url": "/fix-notes/stabilized-contact-form-email-sending-without-overcomplicating/",
+      "field": "meta",
+      "status": "verified"
+    },
+    {
+      "url": "/fix-notes/traced-deceptive-page-warning-obfuscated-database-payload/",
+      "field": "title",
+      "status": "verified"
+    },
+    {
+      "url": "/fix-notes/traced-live-wordpress-display-problem-host-cache/",
+      "field": "title",
+      "status": "verified"
+    },
+    {
+      "url": "/fix-notes/traced-live-wordpress-display-problem-host-cache/",
+      "field": "meta",
+      "status": "verified"
+    },
+    {
+      "url": "/fix-notes/tracked-live-site-display-issue-server-side-cache/",
+      "field": "title",
+      "status": "verified"
+    },
+    {
+      "url": "/fix-notes/tracked-live-site-display-issue-server-side-cache/",
+      "field": "meta",
+      "status": "verified"
+    },
+    {
+      "url": "/fix-notes/uploaded-structured-blog-posts-schema-output/",
+      "field": "title",
+      "status": "verified"
+    },
+    {
+      "url": "/fix-notes/category/automation-internal-tools/",
+      "field": "meta",
+      "status": "verified"
+    },
+    {
+      "url": "/fix-notes/category/ecommerce-support/",
+      "field": "meta",
+      "status": "verified"
+    },
+    {
+      "url": "/fix-notes/category/website-fixes/",
+      "field": "title",
+      "status": "verified"
+    },
+    {
+      "url": "/fix-notes/category/website-fixes/",
+      "field": "meta",
+      "status": "verified"
+    },
+    {
+      "url": "/fix-notes/category/website-fixes/",
+      "field": "h1",
+      "status": "verified"
+    },
+    {
+      "url": "/sites-for-sale/",
+      "field": "meta",
+      "status": "verified"
+    },
+    {
+      "url": "/sites-for-sale/hammernest-handyman/",
+      "field": "title",
+      "status": "verified"
+    },
+    {
+      "url": "/sites-for-sale/hammernest-handyman/",
+      "field": "meta",
+      "status": "verified"
+    },
+    {
+      "url": "/sites-for-sale/modemind/",
+      "field": "title",
+      "status": "verified"
+    }
+  ],
+  "sharedCorrections": [
+    {
+      "id": "G01",
+      "status": "verified",
+      "evidence": "No publisher-facing sections, anchor-writing instructions, or AI Development Cluster heading remain in rendered main content."
+    },
+    {
+      "id": "G02",
+      "status": "verified",
+      "evidence": "Repeated service intake card removed; hubs and skills consolidate repeated route grids while retaining all proposed internal destinations."
+    },
+    {
+      "id": "G03",
+      "status": "verified",
+      "evidence": "No broken SSL casing or singular-count grammar; FAQ and article card labels use descriptive authored text."
+    },
+    {
+      "id": "G04",
+      "status": "verified",
+      "evidence": "All eleven PDF tables match complete rendered triples; the custom plugin table remains six authored rows."
+    },
+    {
+      "id": "G05",
+      "status": "verified",
+      "evidence": "Build, implementation, automation, agency, measurement, storefront, and continuing-support pages have service-appropriate approved-scope workflows; the four existing custom production layouts retain their own authored workflow arrays."
+    },
+    {
+      "id": "G06",
+      "status": "verified",
+      "evidence": "API build/repair split preserved, overlapping roles differentiated, and no URLs or indexation directives changed without evidence."
+    },
+    {
+      "id": "G07",
+      "status": "verified",
+      "evidence": "Broad unqualified score/time-saving claims removed; specific numerical Shopify lab results remain qualified in the original note."
+    },
+    {
+      "id": "G08",
+      "status": "verified",
+      "evidence": "Eight remote-city proof blocks use Available support; Freeport names the confirmed base; Madison has linked maintenance scope; Galena retains remote FAQs plus the booking boundary."
+    },
+    {
+      "id": "G09",
+      "status": "verified",
+      "evidence": "WebPage/BlogPosting/sitemap dates are checked by page verification; original publication dates preserved and unchanged pages are not mass-redated."
+    },
+    {
+      "id": "B01",
+      "status": "verified",
+      "evidence": "Standard articles no longer render paragraph-duplicating automatic tables; the CSS/JavaScript guide retains its authored diagnostic comparison."
+    },
+    {
+      "id": "B02",
+      "status": "verified",
+      "evidence": "Standard article heroes use compact presentation without the full onboarding panel before the informational answer."
+    },
+    {
+      "id": "B03",
+      "status": "verified",
+      "evidence": "Rendered related article card headings have their repeated metadata brand suffix removed."
+    },
+    {
+      "id": "B04",
+      "status": "verified",
+      "evidence": "All 27 tag introductions use their authored reader-facing copy; generated collections and navigation remain."
+    },
+    {
+      "id": "B05",
+      "status": "retained_after_evidence_review",
+      "evidence": "All five candidate archives were checked against available saved evidence; conditional noindex changes were not applied. See archive-evidence-review.json."
+    },
+    {
+      "id": "FN-01",
+      "status": "verified",
+      "evidence": "Quick summary renders only when the normalized uplift introduction differs from the hero excerpt; genuinely distinct summaries remain."
+    },
+    {
+      "id": "FN-02",
+      "status": "verified",
+      "evidence": "Generic mechanical service bridge removed; supplied tailored bridges and existing relevant service cards retained."
+    },
+    {
+      "id": "FN-03",
+      "status": "verified",
+      "evidence": "All twelve category headings use authored casing; dynamic one/many count labels are verified."
+    },
+    {
+      "id": "FN-04",
+      "status": "verified",
+      "evidence": "All 59 audited work notes visibly identify Gary Hunt and link to About, with original dates preserved."
+    }
+  ],
+  "recommendations": [
+    {
+      "id": "P001.1",
+      "page": "/",
+      "change": "Problem selector labels",
+      "status": "verified",
+      "evidence": "Three distinct selector labels and destinations; desktop keyboard selection and phone select behavior verified separately."
+    },
+    {
+      "id": "P001.2",
+      "page": "/",
+      "change": "White-label FAQ answer",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P002.1",
+      "page": "/about/",
+      "change": "Hero introduction",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P002.2",
+      "page": "/about/",
+      "change": "Final fit section",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P004.1",
+      "page": "/contact/",
+      "change": "Contact-channel paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P004.2",
+      "page": "/contact/",
+      "change": "Order of main sections",
+      "status": "verified",
+      "evidence": "Existing request form precedes retained contracting eligibility information. Form inputs, submission handler and optional disclosure are preserved."
+    },
+    {
+      "id": "P005.1",
+      "page": "/faq/",
+      "change": "Sections before “What do you charge?”",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P005.2",
+      "page": "/faq/",
+      "change": "“Can you troubleshoot Core Web Vitals?” answer",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P005.3",
+      "page": "/faq/",
+      "change": "Repeated answer links",
+      "status": "verified",
+      "evidence": "FAQ destination URLs retained, with descriptive names replacing Related page."
+    },
+    {
+      "id": "P011.1",
+      "page": "/services/",
+      "change": "Repeated lower routing sections",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P011.2",
+      "page": "/services/",
+      "change": "Automation service-card description",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P012.1",
+      "page": "/services/agency-overflow-developer/",
+      "change": "Hero paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P012.2",
+      "page": "/services/agency-overflow-developer/",
+      "change": "“In practice” workflow",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P013.1",
+      "page": "/services/agency-overflow/",
+      "change": "Handoff paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P013.2",
+      "page": "/services/agency-overflow/",
+      "change": "Section beginning “Agency overflow usually touches these lanes”",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P014.1",
+      "page": "/services/ai-built-website-cleanup/",
+      "change": "Handoff paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P014.2",
+      "page": "/services/ai-built-website-cleanup/",
+      "change": "Related-services heading",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P015.1",
+      "page": "/services/analytics-tracking/",
+      "change": "Hero paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P015.2",
+      "page": "/services/analytics-tracking/",
+      "change": "Handoff paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P017.1",
+      "page": "/services/automation-internal-tools/",
+      "change": "Hero paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P017.2",
+      "page": "/services/automation-internal-tools/",
+      "change": "SEO automation proof claim",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P017.3",
+      "page": "/services/automation-internal-tools/",
+      "change": "Relevant Web Fixes",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P019.1",
+      "page": "/services/conversion-tracking-troubleshooting/",
+      "change": "Handoff paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P019.2",
+      "page": "/services/conversion-tracking-troubleshooting/",
+      "change": "Before “What conversion troubleshooting checks”",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P020.1",
+      "page": "/services/ecommerce-support/",
+      "change": "Fit-section opening",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P020.2",
+      "page": "/services/ecommerce-support/",
+      "change": "Relevant Web Fixes",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P021.1",
+      "page": "/services/elementor-layout-broken/",
+      "change": "Hero paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P021.2",
+      "page": "/services/elementor-layout-broken/",
+      "change": "Handoff paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P022.1",
+      "page": "/services/fix-broken-wordpress-site/",
+      "change": "Handoff paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P022.2",
+      "page": "/services/fix-broken-wordpress-site/",
+      "change": "Proof section heading",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P023.1",
+      "page": "/services/fix-wordpress-issue/",
+      "change": "Hero paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P023.2",
+      "page": "/services/fix-wordpress-issue/",
+      "change": "FAQ",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P024.1",
+      "page": "/services/ga4-gtm-setup-help/",
+      "change": "“In practice” workflow",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P024.2",
+      "page": "/services/ga4-gtm-setup-help/",
+      "change": "After “Common form and conversion tracking setups”",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P025.1",
+      "page": "/services/hourly-wordpress-developer/",
+      "change": "Hero paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P025.2",
+      "page": "/services/hourly-wordpress-developer/",
+      "change": "Handoff paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P026.1",
+      "page": "/services/landing-pages/",
+      "change": "Handoff paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P026.2",
+      "page": "/services/landing-pages/",
+      "change": "“In practice” workflow",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P027.1",
+      "page": "/services/ongoing-webmaster-support/",
+      "change": "“In practice” workflow",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P027.2",
+      "page": "/services/ongoing-webmaster-support/",
+      "change": "After “Hourly or project-based support expectations”",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P028.1",
+      "page": "/services/react-static-sites/",
+      "change": "Architecture-fit paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P028.2",
+      "page": "/services/react-static-sites/",
+      "change": "“In practice” workflow",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P029.1",
+      "page": "/services/schema-implementation-service/",
+      "change": "Hero paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P029.2",
+      "page": "/services/schema-implementation-service/",
+      "change": "FAQ, after the existing comparison answer",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P030.1",
+      "page": "/services/security-hosting-reliability/",
+      "change": "Fit-section opening",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P030.2",
+      "page": "/services/security-hosting-reliability/",
+      "change": "Relevant Web Fixes",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P031.1",
+      "page": "/services/seo-audit-implementation/",
+      "change": "Hero paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P031.2",
+      "page": "/services/seo-audit-implementation/",
+      "change": "Handoff paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P032.1",
+      "page": "/services/shopify-liquid-support/",
+      "change": "Hero paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P032.2",
+      "page": "/services/shopify-liquid-support/",
+      "change": "Relevant Web Fixes",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P033.1",
+      "page": "/services/site-speed-performance/",
+      "change": "Performance proof",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P033.2",
+      "page": "/services/site-speed-performance/",
+      "change": "After “Realistic Core Web Vitals and Lighthouse expectations”",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P034.1",
+      "page": "/services/technical-seo-developer/",
+      "change": "Entire “Internal-link and cannibalization checks” section",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P034.2",
+      "page": "/services/technical-seo-developer/",
+      "change": "Second implementation example",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P034.3",
+      "page": "/services/technical-seo-developer/",
+      "change": "Relevant Web Fixes",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P035.1",
+      "page": "/services/technical-seo-implementation/",
+      "change": "Handoff paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P035.2",
+      "page": "/services/technical-seo-implementation/",
+      "change": "“In practice” workflow",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P036.1",
+      "page": "/services/web-services-automation/",
+      "change": "Handoff paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P036.2",
+      "page": "/services/web-services-automation/",
+      "change": "“In practice” workflow",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P037.1",
+      "page": "/services/website-fixes/",
+      "change": "Hero paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P037.2",
+      "page": "/services/website-fixes/",
+      "change": "Second troubleshooting-route paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P039.1",
+      "page": "/services/website-maintenance-for-agencies/",
+      "change": "Hero paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P039.2",
+      "page": "/services/website-maintenance-for-agencies/",
+      "change": "“In practice” workflow",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P040.1",
+      "page": "/services/website-support-for-agencies/",
+      "change": "Hero paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P040.2",
+      "page": "/services/website-support-for-agencies/",
+      "change": "Handoff paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P041.1",
+      "page": "/services/white-label-wordpress-support/",
+      "change": "Handoff paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P041.2",
+      "page": "/services/white-label-wordpress-support/",
+      "change": "Relevant Web Fixes",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P042.1",
+      "page": "/services/woocommerce-checkout-error-fix/",
+      "change": "Skill introduction",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P042.2",
+      "page": "/services/woocommerce-checkout-error-fix/",
+      "change": "Relevant Web Fixes label",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P043.1",
+      "page": "/services/woocommerce-support/",
+      "change": "“WooCommerce checkout symptoms and possible issues” section",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P043.2",
+      "page": "/services/woocommerce-support/",
+      "change": "Relevant Web Fixes label",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P044.1",
+      "page": "/services/wordpress-developer-for-small-tasks/",
+      "change": "Hero paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P044.2",
+      "page": "/services/wordpress-developer-for-small-tasks/",
+      "change": "“In practice” workflow",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P045.1",
+      "page": "/services/wordpress-emergency-support/",
+      "change": "Emergency response offer",
+      "status": "verified_user_decision",
+      "evidence": "User explicitly confirmed keeping the currently published response terms in this chat. No response-policy change applied."
+    },
+    {
+      "id": "P045.2",
+      "page": "/services/wordpress-emergency-support/",
+      "change": "Relevant Web Fixes",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P046.1",
+      "page": "/services/wordpress-help/",
+      "change": "Hero paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P046.2",
+      "page": "/services/wordpress-help/",
+      "change": "Handoff paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P047.1",
+      "page": "/services/wordpress-maintenance/",
+      "change": "Hero paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P047.2",
+      "page": "/services/wordpress-maintenance/",
+      "change": "“In practice” workflow",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P048.1",
+      "page": "/services/wordpress-plugin-conflict-help/",
+      "change": "“Plugin conflict repair examples” section",
+      "status": "verified",
+      "evidence": "All three supplied mechanisms render as separate cards, without presenting them as unverified completed engagements."
+    },
+    {
+      "id": "P048.2",
+      "page": "/services/wordpress-plugin-conflict-help/",
+      "change": "H1",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P049.1",
+      "page": "/services/wordpress-support/",
+      "change": "Repeated handoff paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P049.2",
+      "page": "/services/wordpress-support/",
+      "change": "Hourly or project-based fit paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P051.1",
+      "page": "/services/wordpress-website-support/",
+      "change": "Hero paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P051.2",
+      "page": "/services/wordpress-website-support/",
+      "change": "“In practice” heading and workflow",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P052.1",
+      "page": "/services/wordpress-white-screen-of-death-fix/",
+      "change": "Hero paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P052.2",
+      "page": "/services/wordpress-white-screen-of-death-fix/",
+      "change": "Handoff paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P053.1",
+      "page": "/skills/",
+      "change": "Technical proof introduction",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P053.2",
+      "page": "/skills/",
+      "change": "Repeated routing sections",
+      "status": "verified",
+      "evidence": "Complete twelve-skill grouped directory and one Services/Contact handoff retained; repeated route grids removed."
+    },
+    {
+      "id": "P054.1",
+      "page": "/skills/cloudflare-dns-ssl/",
+      "change": "Implementation planning table",
+      "status": "verified",
+      "evidence": "All 5 rendered rows match the PDF's authored problem/evidence/work triples; no parallel-array service associations remain."
+    },
+    {
+      "id": "P054.2",
+      "page": "/skills/cloudflare-dns-ssl/",
+      "change": "Opening sentence in service-work section",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P055.1",
+      "page": "/skills/crawl-analysis-internal-linking/",
+      "change": "Implementation planning table",
+      "status": "verified",
+      "evidence": "All 5 rendered rows match the PDF's authored problem/evidence/work triples; no parallel-array service associations remain."
+    },
+    {
+      "id": "P055.2",
+      "page": "/skills/crawl-analysis-internal-linking/",
+      "change": "Proof/related-reading placement",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P056.1",
+      "page": "/skills/ga4-gtm-measurement-integrity/",
+      "change": "Implementation planning table",
+      "status": "verified",
+      "evidence": "All 5 rendered rows match the PDF's authored problem/evidence/work triples; no parallel-array service associations remain."
+    },
+    {
+      "id": "P056.2",
+      "page": "/skills/ga4-gtm-measurement-integrity/",
+      "change": "“Where GA4 / GTM fits” paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P057.1",
+      "page": "/skills/google-merchant-center-product-data/",
+      "change": "Implementation planning table",
+      "status": "verified",
+      "evidence": "All 5 rendered rows match the PDF's authored problem/evidence/work triples; no parallel-array service associations remain."
+    },
+    {
+      "id": "P057.2",
+      "page": "/skills/google-merchant-center-product-data/",
+      "change": "“Can you fix every Merchant Center issue?” answer",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P058.1",
+      "page": "/skills/performance-engineering/",
+      "change": "Implementation planning table",
+      "status": "verified",
+      "evidence": "All 5 rendered rows match the PDF's authored problem/evidence/work triples; no parallel-array service associations remain."
+    },
+    {
+      "id": "P058.2",
+      "page": "/skills/performance-engineering/",
+      "change": "Performance proof cards",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P059.1",
+      "page": "/skills/production-debugging/",
+      "change": "Implementation planning table",
+      "status": "verified",
+      "evidence": "All 6 rendered rows match the PDF's authored problem/evidence/work triples; no parallel-array service associations remain."
+    },
+    {
+      "id": "P059.2",
+      "page": "/skills/production-debugging/",
+      "change": "Informational bridge",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P060.1",
+      "page": "/skills/programmatic-seo/",
+      "change": "Implementation planning table",
+      "status": "verified",
+      "evidence": "All 5 rendered rows match the PDF's authored problem/evidence/work triples; no parallel-array service associations remain."
+    },
+    {
+      "id": "P060.2",
+      "page": "/skills/programmatic-seo/",
+      "change": "After “Do you create doorway pages?” or before the planning table",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P061.1",
+      "page": "/skills/rest-api-webhook-integrations/",
+      "change": "Hero paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P061.2",
+      "page": "/skills/rest-api-webhook-integrations/",
+      "change": "Implementation planning table",
+      "status": "verified",
+      "evidence": "All 6 rendered rows match the PDF's authored problem/evidence/work triples; no parallel-array service associations remain."
+    },
+    {
+      "id": "P062.1",
+      "page": "/skills/schema-structured-data/",
+      "change": "Implementation planning table",
+      "status": "verified",
+      "evidence": "All 5 rendered rows match the PDF's authored problem/evidence/work triples; no parallel-array service associations remain."
+    },
+    {
+      "id": "P062.2",
+      "page": "/skills/schema-structured-data/",
+      "change": "Rich-results FAQ, after the existing no-guarantee answer",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P063.1",
+      "page": "/skills/shopify-plus-liquid/",
+      "change": "Implementation planning table",
+      "status": "verified",
+      "evidence": "All 5 rendered rows match the PDF's authored problem/evidence/work triples; no parallel-array service associations remain."
+    },
+    {
+      "id": "P063.2",
+      "page": "/skills/shopify-plus-liquid/",
+      "change": "Shopify proof section",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P064.1",
+      "page": "/skills/wordpress-plugin-development/",
+      "change": "Hero paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P064.2",
+      "page": "/skills/wordpress-plugin-development/",
+      "change": "After the custom-plugin examples",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P065.1",
+      "page": "/skills/wordpress-theme-development/",
+      "change": "Implementation planning table",
+      "status": "verified",
+      "evidence": "All 5 rendered rows match the PDF's authored problem/evidence/work triples; no parallel-array service associations remain."
+    },
+    {
+      "id": "P065.2",
+      "page": "/skills/wordpress-theme-development/",
+      "change": "Theme proof block",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P066.1",
+      "page": "/locations/",
+      "change": "Hero introduction",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P066.2",
+      "page": "/locations/",
+      "change": "Regional proof card",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P066.3",
+      "page": "/locations/",
+      "change": "Repeated city and service navigation",
+      "status": "verified",
+      "evidence": "One complete city directory, one service chooser, and one closing contact action."
+    },
+    {
+      "id": "P067.1",
+      "page": "/locations/beloit-wi/",
+      "change": "Capability/proof section heading",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P068.1",
+      "page": "/locations/dixon-il/",
+      "change": "Capability/proof section heading",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P068.2",
+      "page": "/locations/dixon-il/",
+      "change": "Closing contact prompt",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P069.1",
+      "page": "/locations/dubuque-ia/",
+      "change": "Opening service paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P069.2",
+      "page": "/locations/dubuque-ia/",
+      "change": "Capability/proof section heading",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P070.1",
+      "page": "/locations/freeport-il/",
+      "change": "Hero introduction",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P071.1",
+      "page": "/locations/galena-il/",
+      "change": "Opening service paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P071.2",
+      "page": "/locations/galena-il/",
+      "change": "Capability/proof section heading",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P071.3",
+      "page": "/locations/galena-il/",
+      "change": "Add one booking-specific FAQ beside the existing remote-support questions",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P072.1",
+      "page": "/locations/janesville-wi/",
+      "change": "First two paragraphs under Janesville website support",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P073.1",
+      "page": "/locations/madison-wi/",
+      "change": "Opening service paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P073.2",
+      "page": "/locations/madison-wi/",
+      "change": "New short section before the service grid",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P073.3",
+      "page": "/locations/madison-wi/",
+      "change": "Capability/proof section heading",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P074.1",
+      "page": "/locations/monroe-wi/",
+      "change": "Capability/proof section heading",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P074.2",
+      "page": "/locations/monroe-wi/",
+      "change": "Website-support introduction after the current service summary",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P075.1",
+      "page": "/locations/rockford-il/",
+      "change": "First paragraph under Rockford website support",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P075.2",
+      "page": "/locations/rockford-il/",
+      "change": "Capability/proof section heading",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P076.1",
+      "page": "/locations/sterling-il/",
+      "change": "Capability/proof section heading",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P077.1",
+      "page": "/blog/",
+      "change": "Sentence immediately below “Newest website support articles”.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P077.2",
+      "page": "/blog/",
+      "change": "Category cards with one result and tag cards with one result.",
+      "status": "verified",
+      "evidence": "Checked the independent rendered sections/labels and their source ordering; the PDF block contains separate UI elements."
+    },
+    {
+      "id": "P077.3",
+      "page": "/blog/",
+      "change": "Opening navigation through “Specific website problems”; consolidate\nrepeated article presentations.",
+      "status": "verified",
+      "evidence": "Checked the independent rendered sections/labels and their source ordering; the PDF block contains separate UI elements."
+    },
+    {
+      "id": "P078.1",
+      "page": "/blog/ai-built-website-not-ready-to-launch/",
+      "change": "After “Check routing and deployment”; append to the paragraph beginning “A\nsite that works in preview”.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P078.2",
+      "page": "/blog/ai-built-website-not-ready-to-launch/",
+      "change": "After “Check forms and data handoff”; append to the existing test list.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P079.1",
+      "page": "/blog/broken-layouts-mobile-website-fixes/",
+      "change": "“Common signs” paragraph; update its duplicate in the troubleshooting table\ntoo.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P079.2",
+      "page": "/blog/broken-layouts-mobile-website-fixes/",
+      "change": "First two items in the pre-edit checklist: cache clearing and disabling\noptimization.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P080.1",
+      "page": "/blog/cms-plugin-theme-weirdness/",
+      "change": "“Practical fix path” paragraph.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P080.2",
+      "page": "/blog/cms-plugin-theme-weirdness/",
+      "change": "Title, H1 and description fields.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P081.1",
+      "page": "/blog/css-javascript-errors-website-bugs/",
+      "change": "Opening paragraph after the introductory navigation; replace the full\nparagraph beginning “If you are searching”.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P081.2",
+      "page": "/blog/css-javascript-errors-website-bugs/",
+      "change": "From “Immediate JavaScript diagnostic summary” through “Debugging\nworkflow”, including the “Internal-link anchors to use” block; consolidate into\nthe diagnosis below.",
+      "status": "verified",
+      "evidence": "Four authored diagnostic rows replace duplicate JavaScript instructions; retained sorting, updated TOC and detailed-guide handoff checked."
+    },
+    {
+      "id": "P081.3",
+      "page": "/blog/css-javascript-errors-website-bugs/",
+      "change": "Hero H1 and corresponding title/description fields.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P082.1",
+      "page": "/blog/embeds-iframes-widgets-breaking-pages/",
+      "change": "“Practical fix path” paragraph.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P082.2",
+      "page": "/blog/embeds-iframes-widgets-breaking-pages/",
+      "change": "Immediately after “Practical fix path”; add a short loading branch.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P083.1",
+      "page": "/blog/fix-my-broken-website/",
+      "change": "Opening explanatory paragraph beginning “If you are searching”.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P083.2",
+      "page": "/blog/fix-my-broken-website/",
+      "change": "After “Check the change timeline”; add a short example before “Fix one layer\nand verify the user path”.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P084.1",
+      "page": "/blog/forms-modals-not-working/",
+      "change": "“Practical fix path” paragraph.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P084.2",
+      "page": "/blog/forms-modals-not-working/",
+      "change": "Generic “API & Integrations” service card in the first “Fix options” group.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P085.1",
+      "page": "/blog/google-ads-conversion-tracking-not-working/",
+      "change": "“Reality checks” list item and the paragraph immediately after the list.",
+      "status": "verified",
+      "evidence": "Checked the independent rendered sections/labels and their source ordering; the PDF block contains separate UI elements."
+    },
+    {
+      "id": "P085.2",
+      "page": "/blog/google-ads-conversion-tracking-not-working/",
+      "change": "“Check GA4 imports separately”; append a duplicate-goal check after the\nexisting import checks.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P086.1",
+      "page": "/blog/gtm-form-tracking-ga4/",
+      "change": "“Common trigger methods” list item.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P086.2",
+      "page": "/blog/gtm-form-tracking-ga4/",
+      "change": "FAQ answer to “Should I track a button click as a form submission?”",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P086.3",
+      "page": "/blog/gtm-form-tracking-ga4/",
+      "change": "After “Choose the right GTM trigger”; insert before the parameter section.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P087.1",
+      "page": "/blog/javascript-issues-website-troubleshooting/",
+      "change": "First explanatory paragraph after the introductory navigation.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P087.2",
+      "page": "/blog/javascript-issues-website-troubleshooting/",
+      "change": "Paragraph beginning “This page is a focused child”.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P087.3",
+      "page": "/blog/javascript-issues-website-troubleshooting/",
+      "change": "After the paragraph that identifies the owner of the failing script; add a short\nworked example.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P088.1",
+      "page": "/blog/need-a-page-live-fast/",
+      "change": "“A page needs more than a headline and button”; replace its first two\nparagraphs.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P088.2",
+      "page": "/blog/need-a-page-live-fast/",
+      "change": "“What makes a page good enough to launch”; replace the opening paragraph.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P089.1",
+      "page": "/blog/seo-audit-done-now-implement-it/",
+      "change": "Replace the “Proof example: audit notes into shipped changes” block heading\nand paragraph.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P089.2",
+      "page": "/blog/seo-audit-done-now-implement-it/",
+      "change": "After “Not every SEO recommendation is equal”; add a concrete priority\ncomparison.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P090.1",
+      "page": "/blog/something-broke-on-your-website/",
+      "change": "Opening paragraph; replace its final sentence.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P090.2",
+      "page": "/blog/something-broke-on-your-website/",
+      "change": "Heading for the existing “Turn this article into the right fix path” section.",
+      "status": "verified",
+      "evidence": "Checked the independent rendered sections/labels and their source ordering; the PDF block contains separate UI elements."
+    },
+    {
+      "id": "P090.3",
+      "page": "/blog/something-broke-on-your-website/",
+      "change": "Replace the body/list under “When the real request is fix my broken website”\nwith a short handoff; retain the surrounding symptom sections.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P091.1",
+      "page": "/blog/topological-relevance-vector-seo/",
+      "change": "After the WooCommerce Checkout Error Fix Help example, before the\nWordPress Plugin Conflict Help example; add a short decision passage.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P091.2",
+      "page": "/blog/topological-relevance-vector-seo/",
+      "change": "Opening paragraph under “Three pages with no observed queries”; append\nthe reporting-limit explanation.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P091.3",
+      "page": "/blog/topological-relevance-vector-seo/",
+      "change": "Closing “Observed lower boundary” paragraph and its displayed/accessible\ninequality.",
+      "status": "verified",
+      "evidence": "Frozen 183-row calculation independently reproduced: 72 observed-query pages; minimum 0.5720406864195534; all stored scores exactly match the documented weighted formula. Math uses a consistent 0–100 displayed T."
+    },
+    {
+      "id": "P092.1",
+      "page": "/blog/tracking-scripts-pixels-broken/",
+      "change": "“Practical fix path” paragraph.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P092.2",
+      "page": "/blog/tracking-scripts-pixels-broken/",
+      "change": "Opening “Related symptoms” paragraph.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P092.3",
+      "page": "/blog/tracking-scripts-pixels-broken/",
+      "change": "“Common symptoms” sentence, including its troubleshooting-table duplicate.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P093.1",
+      "page": "/blog/website-data-systems-not-connecting/",
+      "change": "Flow displayed after “Data problems usually start with a broken flow”.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P093.2",
+      "page": "/blog/website-data-systems-not-connecting/",
+      "change": "Replace “Proof example: one action, every handoff” heading and its\nparagraph.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P093.3",
+      "page": "/blog/website-data-systems-not-connecting/",
+      "change": "Opening related-symptoms paragraph.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P094.1",
+      "page": "/blog/woocommerce-checkout-not-working/",
+      "change": "“Look for script, cache, and session issues”; replace the paragraph beginning\n“Checkout pages rely”.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P094.2",
+      "page": "/blog/woocommerce-checkout-not-working/",
+      "change": "“Verify order data and tracking after the fix”; append to the paragraph\nbeginning “A checkout fix”.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P095.1",
+      "page": "/blog/wordpress-site-broken-after-plugin-update/",
+      "change": "“Recover carefully”; insert after its opening paragraph.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P095.2",
+      "page": "/blog/wordpress-site-broken-after-plugin-update/",
+      "change": "“Recover carefully”; add before the safer-recovery list.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P096.1",
+      "page": "/blog/category/ai-development/",
+      "change": "Paragraph below the article-list heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P096.2",
+      "page": "/blog/category/ai-development/",
+      "change": "Final quote-section heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P097.1",
+      "page": "/blog/category/ecommerce-checkout/",
+      "change": "Paragraph below the article-list heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P097.2",
+      "page": "/blog/category/ecommerce-checkout/",
+      "change": "Final quote-section heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P098.1",
+      "page": "/blog/category/forms-tracking-data/",
+      "change": "Paragraph below the article-list heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P098.2",
+      "page": "/blog/category/forms-tracking-data/",
+      "change": "Final quote-section heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P099.1",
+      "page": "/blog/category/front-end-layout/",
+      "change": "Paragraph below the article-list heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P099.2",
+      "page": "/blog/category/front-end-layout/",
+      "change": "Final quote-section heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P100.1",
+      "page": "/blog/category/seo-pages-ai/",
+      "change": "Paragraph below the article-list heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P100.2",
+      "page": "/blog/category/seo-pages-ai/",
+      "change": "Generated article collection for this category; add the existing AI launch\narticle through its category membership.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P101.1",
+      "page": "/blog/category/start-here/",
+      "change": "Paragraph below the article-list heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P101.2",
+      "page": "/blog/category/start-here/",
+      "change": "Final quote-section heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P102.1",
+      "page": "/blog/category/wordpress-cms/",
+      "change": "Paragraph below the article-list heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P102.2",
+      "page": "/blog/category/wordpress-cms/",
+      "change": "Final quote-section heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P103.1",
+      "page": "/blog/tag/ai-built/",
+      "change": "Paragraph below the tagged-posts heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P104.1",
+      "page": "/blog/tag/analytics-tracking/",
+      "change": "Paragraph below the tagged-posts heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P105.1",
+      "page": "/blog/tag/api-integrations/",
+      "change": "Paragraph below the tagged-posts heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P106.1",
+      "page": "/blog/tag/automation/",
+      "change": "Paragraph below the tagged-posts heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P106.2",
+      "page": "/blog/tag/automation/",
+      "change": "Robots metadata and XML sitemap treatment, after checking the archive’s\nown Search Console evidence.",
+      "status": "retained_after_evidence_review",
+      "evidence": "Reviewed saved October 27/28 Search Console imports. They do not establish a complete archive-level query/value comparison. Retained crawlability, canonical, sitemap inclusion and indexation rather than equating unavailable query rows with zero value. See archive-evidence-review.json."
+    },
+    {
+      "id": "P107.1",
+      "page": "/blog/tag/checkout/",
+      "change": "Paragraph below the tagged-posts heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P107.2",
+      "page": "/blog/tag/checkout/",
+      "change": "Robots metadata and XML sitemap treatment, after checking the archive’s\nown Search Console evidence.",
+      "status": "retained_after_evidence_review",
+      "evidence": "Reviewed saved October 27/28 Search Console imports. They do not establish a complete archive-level query/value comparison. Retained crawlability, canonical, sitemap inclusion and indexation rather than equating unavailable query rows with zero value. See archive-evidence-review.json."
+    },
+    {
+      "id": "P108.1",
+      "page": "/blog/tag/conversion-tracking/",
+      "change": "Paragraph below the tagged-posts heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P109.1",
+      "page": "/blog/tag/crawl-analysis/",
+      "change": "Paragraph below the tagged-posts heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P109.2",
+      "page": "/blog/tag/crawl-analysis/",
+      "change": "Robots metadata and XML sitemap treatment, after checking the archive’s\nown Search Console evidence.",
+      "status": "retained_after_evidence_review",
+      "evidence": "Reviewed saved October 27/28 Search Console imports. They do not establish a complete archive-level query/value comparison. Retained crawlability, canonical, sitemap inclusion and indexation rather than equating unavailable query rows with zero value. See archive-evidence-review.json."
+    },
+    {
+      "id": "P110.1",
+      "page": "/blog/tag/css/",
+      "change": "Paragraph below the tagged-posts heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P111.1",
+      "page": "/blog/tag/dashboards/",
+      "change": "Paragraph below the tagged-posts heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P111.2",
+      "page": "/blog/tag/dashboards/",
+      "change": "Final quote-section heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P112.1",
+      "page": "/blog/tag/ecommerce/",
+      "change": "Paragraph below the tagged-posts heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P113.1",
+      "page": "/blog/tag/embeds-iframes/",
+      "change": "Paragraph below the tagged-posts heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P114.1",
+      "page": "/blog/tag/emergency-support/",
+      "change": "Paragraph below the tagged-posts heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P115.1",
+      "page": "/blog/tag/forms/",
+      "change": "Paragraph below the tagged-posts heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P116.1",
+      "page": "/blog/tag/ga4-gtm/",
+      "change": "Paragraph below the tagged-posts heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P117.1",
+      "page": "/blog/tag/internal-links/",
+      "change": "Paragraph below the tagged-posts heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P118.1",
+      "page": "/blog/tag/javascript/",
+      "change": "Paragraph below the tagged-posts heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P119.1",
+      "page": "/blog/tag/landing-pages/",
+      "change": "Paragraph below the tagged-posts heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P120.1",
+      "page": "/blog/tag/mobile-layout/",
+      "change": "Paragraph below the tagged-posts heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P121.1",
+      "page": "/blog/tag/page-builders/",
+      "change": "Paragraph below the tagged-posts heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P122.1",
+      "page": "/blog/tag/plugin-conflicts/",
+      "change": "Paragraph below the tagged-posts heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P123.1",
+      "page": "/blog/tag/seo-audit/",
+      "change": "Paragraph below the tagged-posts heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P124.1",
+      "page": "/blog/tag/site-speed/",
+      "change": "Paragraph below the tagged-posts heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P125.1",
+      "page": "/blog/tag/technical-seo/",
+      "change": "Paragraph below the tagged-posts heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P126.1",
+      "page": "/blog/tag/themes/",
+      "change": "Paragraph below the tagged-posts heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P126.2",
+      "page": "/blog/tag/themes/",
+      "change": "Robots metadata and XML sitemap treatment, after checking the archive’s\nown Search Console evidence.",
+      "status": "retained_after_evidence_review",
+      "evidence": "Reviewed saved October 27/28 Search Console imports. They do not establish a complete archive-level query/value comparison. Retained crawlability, canonical, sitemap inclusion and indexation rather than equating unavailable query rows with zero value. See archive-evidence-review.json."
+    },
+    {
+      "id": "P127.1",
+      "page": "/blog/tag/website-fixes/",
+      "change": "Paragraph below the tagged-posts heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P128.1",
+      "page": "/blog/tag/woocommerce/",
+      "change": "Paragraph below the tagged-posts heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P128.2",
+      "page": "/blog/tag/woocommerce/",
+      "change": "Robots metadata and XML sitemap treatment, after checking the archive’s\nown Search Console evidence.",
+      "status": "retained_after_evidence_review",
+      "evidence": "Reviewed saved October 27/28 Search Console imports. They do not establish a complete archive-level query/value comparison. Retained crawlability, canonical, sitemap inclusion and indexation rather than equating unavailable query rows with zero value. See archive-evidence-review.json."
+    },
+    {
+      "id": "P129.1",
+      "page": "/blog/tag/wordpress/",
+      "change": "Paragraph below the tagged-posts heading.",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P130.1",
+      "page": "/fix-notes/",
+      "change": "Category-count labels on AI Website Cleanup and Ecommerce Support cards",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P132.1",
+      "page": "/fix-notes/added-floating-click-to-call-review-badge-support/",
+      "change": "Result",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P133.1",
+      "page": "/fix-notes/added-location-specific-proof-content-service-pages/",
+      "change": "Result",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P136.1",
+      "page": "/fix-notes/built-accessible-service-page-custom-imagery-schema/",
+      "change": "Result",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P137.1",
+      "page": "/fix-notes/built-admin-only-wordpress-crm-estimate-intake/",
+      "change": "How this relates to your project",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P138.1",
+      "page": "/fix-notes/built-local-first-workflow-app-session-continuity/",
+      "change": "Result",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P138.2",
+      "page": "/fix-notes/built-local-first-workflow-app-session-continuity/",
+      "change": "Where this fix usually leads next",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P141.1",
+      "page": "/fix-notes/built-static-site-lead-handler-contact-popup-flow/",
+      "change": "Result",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P143.1",
+      "page": "/fix-notes/checked-suspicious-wordpress-users-after-site-compromise/",
+      "change": "Where this fix usually leads next",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P145.1",
+      "page": "/fix-notes/cleaned-up-crawl-paths-google-slow-to-index/",
+      "change": "The problem",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P146.1",
+      "page": "/fix-notes/cleaned-up-faq-sections-across-wordpress-pages/",
+      "change": "What I changed list",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P148.1",
+      "page": "/fix-notes/cleaned-up-wordpress-assets-slowing-down-service-page/",
+      "change": "Result",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P150.1",
+      "page": "/fix-notes/completed-requested-site-modifications-output-review/",
+      "change": "Quick summary and repeated change/result sections",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P153.1",
+      "page": "/fix-notes/fixed-contact-form-email-delivery-authenticated-sending/",
+      "change": "Hero description",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P154.1",
+      "page": "/fix-notes/fixed-lead-tracking-contact-form-hard-to-measure/",
+      "change": "Where this fix usually leads next",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P157.1",
+      "page": "/fix-notes/fixed-wordpress-critical-error-caused-cache-plugin/",
+      "change": "Result",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P158.1",
+      "page": "/fix-notes/improved-internal-links-service-pages-supporting-content/",
+      "change": "Where this fix usually leads next",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P159.1",
+      "page": "/fix-notes/migrated-site-content-between-domains-without-rebuild/",
+      "change": "Hero description",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P160.1",
+      "page": "/fix-notes/optimized-shopify-theme-page-speed-core-web-vitals/",
+      "change": "Result",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P165.1",
+      "page": "/fix-notes/rebuilt-static-wordpress-caching-hundreds-urls/",
+      "change": "Where this fix usually leads next",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P166.1",
+      "page": "/fix-notes/rebuilt-wordpress-site-from-crawl-into-reusable-blocks/",
+      "change": "Where this fix usually leads next",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P169.1",
+      "page": "/fix-notes/removed-wordpress-backdoor-separated-waf-crawl-block/",
+      "change": "Where this fix usually leads next",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P171.1",
+      "page": "/fix-notes/repaired-custom-permalinks-location-based-service-pages/",
+      "change": "Where this fix usually leads next",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P172.1",
+      "page": "/fix-notes/repaired-full-screen-section-scrolling-theme-overflow/",
+      "change": "Result",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P176.1",
+      "page": "/fix-notes/resolved-unused-instagram-feed-plugin-issue/",
+      "change": "Hero description",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P178.1",
+      "page": "/fix-notes/reviewed-shopify-theme-files-before-template-changes/",
+      "change": "Where this fix usually leads next",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P180.1",
+      "page": "/fix-notes/stabilized-contact-form-email-sending-without-overcomplicating/",
+      "change": "Result",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P182.1",
+      "page": "/fix-notes/structured-client-facing-html-invoices-detailed-work-blocks/",
+      "change": "Where this fix usually leads next",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P183.1",
+      "page": "/fix-notes/traced-deceptive-page-warning-obfuscated-database-payload/",
+      "change": "Where this fix usually leads next",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P186.1",
+      "page": "/fix-notes/turned-shopify-speed-audit-verified-theme-release/",
+      "change": "Result",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P188.1",
+      "page": "/fix-notes/uploaded-structured-blog-posts-schema-output/",
+      "change": "The problem",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P192.1",
+      "page": "/fix-notes/category/automation-internal-tools/",
+      "change": "Hero introduction",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P193.1",
+      "page": "/fix-notes/category/ecommerce-support/",
+      "change": "Hero introduction",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P202.1",
+      "page": "/sites-for-sale/",
+      "change": "Opening paragraph",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P202.2",
+      "page": "/sites-for-sale/",
+      "change": "HammerNest inventory description",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P203.1",
+      "page": "/sites-for-sale/hammernest-handyman/",
+      "change": "Opening description",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P203.2",
+      "page": "/sites-for-sale/hammernest-handyman/",
+      "change": "Performance section heading",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P203.3",
+      "page": "/sites-for-sale/hammernest-handyman/",
+      "change": "After-acquisition statement",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P204.1",
+      "page": "/sites-for-sale/modemind/",
+      "change": "Performance section heading",
+      "status": "verified",
+      "evidence": "Complete normalized replacement copy is present in the rendered main content."
+    },
+    {
+      "id": "P205.1",
+      "page": "/privacy/",
+      "change": "Analytics disclosure",
+      "status": "verified_source_mapping",
+      "evidence": "FAQ submission and search components send text parameters; sanitizeParams truncates strings but does not redact personal data. The existing disclosure accurately says these texts may reach analytics. No new redaction or compliance claim was added. See privacy-payload-review.json."
+    },
+    {
+      "id": "P205.2",
+      "page": "/privacy/",
+      "change": "Data collection and providers",
+      "status": "requires_provider_settings_review",
+      "evidence": "Tawk provider and site-side intake are confirmed in source. Hosted transcript and retention settings are not available in repository configuration. The PDF requires verified settings and owner review before revised policy wording; no retention period or new policy promise has been invented."
+    }
+  ]
+}

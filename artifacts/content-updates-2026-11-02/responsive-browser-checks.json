@@ -1,0 +1,76 @@
+[
+  {
+    "route": "/",
+    "documentWidth": 375,
+    "h1": "Get Your Website Working the Way It Should.",
+    "viewport": 390
+  },
+  {
+    "route": "/services/",
+    "documentWidth": 375,
+    "h1": "Contract Website Services for WordPress, SEO, Tracking, and Site Fixes",
+    "viewport": 390
+  },
+  {
+    "route": "/services/landing-pages/",
+    "documentWidth": 375,
+    "h1": "Landing Page Development",
+    "viewport": 390
+  },
+  {
+    "route": "/services/wordpress-plugin-conflict-help/",
+    "documentWidth": 375,
+    "h1": "WordPress Plugin Conflict Diagnosis and Repair",
+    "viewport": 390
+  },
+  {
+    "route": "/skills/programmatic-seo/",
+    "documentWidth": 375,
+    "h1": "Programmatic SEO Support",
+    "viewport": 390
+  },
+  {
+    "route": "/skills/shopify-plus-liquid/",
+    "documentWidth": 375,
+    "h1": "Shopify Plus & Liquid Support",
+    "viewport": 390
+  },
+  {
+    "route": "/blog/css-javascript-errors-website-bugs/",
+    "articleWidth": 339,
+    "documentWidth": 375,
+    "h1": "Is It CSS or JavaScript? Find the Cause of a Broken Page",
+    "viewport": 390
+  },
+  {
+    "route": "/blog/website-data-systems-not-connecting/",
+    "articleWidth": 339,
+    "documentWidth": 375,
+    "h1": "Website Data and Systems Not Connecting? Map the Flow First.",
+    "viewport": 390
+  },
+  {
+    "route": "/locations/galena-il/",
+    "documentWidth": 375,
+    "h1": "Local Website Support for Galena, IL Businesses",
+    "viewport": 390
+  },
+  {
+    "route": "/fix-notes/category/website-fixes/",
+    "documentWidth": 375,
+    "h1": "Website Repair Examples",
+    "viewport": 390
+  },
+  {
+    "route": "/contact/",
+    "documentWidth": 375,
+    "h1": "Get a Free Quote From The Web Guy",
+    "viewport": 390
+  },
+  {
+    "route": "/blog/",
+    "documentWidth": 375,
+    "h1": "Website Troubleshooting Notes",
+    "viewport": 390
+  }
+]

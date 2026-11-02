@@ -1,4 +1,5 @@
 <script>
+  import { updates } from "$lib/data/editorial-updates.js";
   import Seo from "$lib/components/Seo.svelte";
   import Hero from "$lib/components/Hero.svelte";
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
@@ -347,22 +348,7 @@
 
   <Breadcrumbs items={breadcrumbs} />
 
-  <section class="section soft-section split-section section-effect section-effect--signals section-effect--low">
-    <div>
-      <SectionHeading
-        eyebrow="U.S. contract availability"
-        h2="Available for 1099 contract work"
-        body="I am available for hire as an independent contractor under a 1099 arrangement for one-time projects, recurring support, and agency overflow work."
-      />
-    </div>
-    <div>
-      <ul class="check-list">
-        <li>U.S. citizen eligible to work in the United States</li>
-        <li>No work visa or employer sponsorship required</li>
-        <li>Available for project-based and ongoing contract work</li>
-      </ul>
-    </div>
-  </section>
+
 
   <section class="section contact-section">
     <div class="contact-grid">
@@ -376,7 +362,7 @@
           <span>Start with your project</span>
           <strong>Free quote</strong>
           <p>Tell me what you need. I will confirm fit, scope, and cost before you commit. Engineering review, diagnostics, and implementation are paid work.</p>
-          <p class="contact-channel-note">My phone number is not published because of the volume of spam calls. Send me a message through this form or the live chat and I will get back to you. When live chat is available, you will usually be talking directly with me.</p>
+          <p class="contact-channel-note">{updates.static["/contact/"].copy["Contact-channel paragraph"]}</p>
         </div>
       </div>
 
@@ -440,6 +426,23 @@
         <div role="status" aria-live="polite" aria-atomic="true">{#if status.message}<p class={`form-status ${status.type}`}>{status.message}</p>{/if}</div>
         <button class="button button-primary cta-animated cta-animated--primary" type="submit" disabled={formLocked} aria-disabled={formLocked}>{submitLabel}</button>
       </form>
+    </div>
+  </section>
+
+  <section class="section soft-section split-section section-effect section-effect--signals section-effect--low">
+    <div>
+      <SectionHeading
+        eyebrow="U.S. contract availability"
+        h2="For agencies and contracting teams"
+        body="I am available for hire as an independent contractor under a 1099 arrangement for one-time projects, recurring support, and agency overflow work."
+      />
+    </div>
+    <div>
+      <ul class="check-list">
+        <li>U.S. citizen eligible to work in the United States</li>
+        <li>No work visa or employer sponsorship required</li>
+        <li>Available for project-based and ongoing contract work</li>
+      </ul>
     </div>
   </section>
 

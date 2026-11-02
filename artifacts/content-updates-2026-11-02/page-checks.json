@@ -1,0 +1,1650 @@
+[
+  {
+    "id": "P001",
+    "url": "/",
+    "status": 200,
+    "title": "The Web Guy | SEO Developer, WordPress Help & Website Fixes",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P002",
+    "url": "/about/",
+    "status": 200,
+    "title": "About The Web Guy | Practical Website Support",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P003",
+    "url": "/rate/",
+    "status": 200,
+    "title": "How Website Quotes Work | The Web Guy",
+    "date": "2026-10-09",
+    "errors": []
+  },
+  {
+    "id": "P004",
+    "url": "/contact/",
+    "status": 200,
+    "title": "Contact The Web Guy | Get a Free Website Quote",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P005",
+    "url": "/faq/",
+    "status": 200,
+    "title": "The Web Guy FAQ | Contract Website Help",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P006",
+    "url": "/ai-development-oversight/",
+    "status": 200,
+    "title": "AI Development Oversight & Human Code Review | The Web Guy",
+    "date": "2026-09-30",
+    "errors": []
+  },
+  {
+    "id": "P007",
+    "url": "/ai-development-oversight/ai-code-review/",
+    "status": 200,
+    "title": "AI Code Review for Websites & Pull Requests | The Web Guy",
+    "date": "2026-09-30",
+    "errors": []
+  },
+  {
+    "id": "P008",
+    "url": "/ai-development-oversight/ai-development-guardrails/",
+    "status": 200,
+    "title": "AI Development Guardrails & Review Workflows | The Web Guy",
+    "date": "2026-09-30",
+    "errors": []
+  },
+  {
+    "id": "P009",
+    "url": "/ai-development-oversight/ai-production-oversight/",
+    "status": 200,
+    "title": "AI Development Production Oversight | The Web Guy",
+    "date": "2026-09-30",
+    "errors": []
+  },
+  {
+    "id": "P010",
+    "url": "/ai-development-oversight/ai-website-qa/",
+    "status": 200,
+    "title": "AI Website QA & Pre-Launch Review | The Web Guy",
+    "date": "2026-09-30",
+    "errors": []
+  },
+  {
+    "id": "P011",
+    "url": "/services/",
+    "status": 200,
+    "title": "Website Services | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P012",
+    "url": "/services/agency-overflow-developer/",
+    "status": 200,
+    "title": "Agency Overflow Developer | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P013",
+    "url": "/services/agency-overflow/",
+    "status": 200,
+    "title": "Agency Overflow Web Support | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P014",
+    "url": "/services/ai-built-website-cleanup/",
+    "status": 200,
+    "title": "AI-Built Website Checker and Cleanup | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P015",
+    "url": "/services/analytics-tracking/",
+    "status": 200,
+    "title": "Analytics and Tracking Support | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P016",
+    "url": "/services/api-integrations/",
+    "status": 200,
+    "title": "API Integration Development | The Web Guy",
+    "date": "2026-07-20",
+    "errors": []
+  },
+  {
+    "id": "P017",
+    "url": "/services/automation-internal-tools/",
+    "status": 200,
+    "title": "Website Automation & Internal Tools | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P018",
+    "url": "/services/contact-form-not-working-wordpress/",
+    "status": 200,
+    "title": "WordPress Contact Form Repair | The Web Guy",
+    "date": "2026-07-08",
+    "errors": []
+  },
+  {
+    "id": "P019",
+    "url": "/services/conversion-tracking-troubleshooting/",
+    "status": 200,
+    "title": "Conversion Tracking Troubleshooting | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P020",
+    "url": "/services/ecommerce-support/",
+    "status": 200,
+    "title": "Ecommerce Website Support | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P021",
+    "url": "/services/elementor-layout-broken/",
+    "status": 200,
+    "title": "Elementor Layout Broken? WordPress Help | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P022",
+    "url": "/services/fix-broken-wordpress-site/",
+    "status": 200,
+    "title": "Fix a Broken WordPress Site | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P023",
+    "url": "/services/fix-wordpress-issue/",
+    "status": 200,
+    "title": "Fix WordPress Issues | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P024",
+    "url": "/services/ga4-gtm-setup-help/",
+    "status": 200,
+    "title": "GA4 and GTM Setup Help | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P025",
+    "url": "/services/hourly-wordpress-developer/",
+    "status": 200,
+    "title": "Hourly WordPress Developer | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P026",
+    "url": "/services/landing-pages/",
+    "status": 200,
+    "title": "Landing Page Development | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P027",
+    "url": "/services/ongoing-webmaster-support/",
+    "status": 200,
+    "title": "Ongoing Webmaster Support | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P028",
+    "url": "/services/react-static-sites/",
+    "status": 200,
+    "title": "React and Static Site Help | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P029",
+    "url": "/services/schema-implementation-service/",
+    "status": 200,
+    "title": "Schema Implementation Service | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P030",
+    "url": "/services/security-hosting-reliability/",
+    "status": 200,
+    "title": "Website Security, Hosting and Reliability Support | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P031",
+    "url": "/services/seo-audit-implementation/",
+    "status": 200,
+    "title": "SEO Audit Implementation | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P032",
+    "url": "/services/shopify-liquid-support/",
+    "status": 200,
+    "title": "Shopify Liquid Support | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P033",
+    "url": "/services/site-speed-performance/",
+    "status": 200,
+    "title": "Site Speed Cleanup and Core Web Vitals Help | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P034",
+    "url": "/services/technical-seo-developer/",
+    "status": 200,
+    "title": "SEO Developer | Technical SEO Implementation Services",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P035",
+    "url": "/services/technical-seo-implementation/",
+    "status": 200,
+    "title": "Technical SEO Implementation | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P036",
+    "url": "/services/web-services-automation/",
+    "status": 200,
+    "title": "Web Services Automation | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P037",
+    "url": "/services/website-fixes/",
+    "status": 200,
+    "title": "Website Fixes and Website Fixer Help | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P038",
+    "url": "/services/website-integration-help/",
+    "status": 200,
+    "title": "Website Integration Troubleshooting | The Web Guy",
+    "date": "2026-07-08",
+    "errors": []
+  },
+  {
+    "id": "P039",
+    "url": "/services/website-maintenance-for-agencies/",
+    "status": 200,
+    "title": "Website Maintenance for Agencies | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P040",
+    "url": "/services/website-support-for-agencies/",
+    "status": 200,
+    "title": "Website Support for Agencies | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P041",
+    "url": "/services/white-label-wordpress-support/",
+    "status": 200,
+    "title": "White Label WordPress Development & Support | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P042",
+    "url": "/services/woocommerce-checkout-error-fix/",
+    "status": 200,
+    "title": "WooCommerce Checkout Error Fix Help | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P043",
+    "url": "/services/woocommerce-support/",
+    "status": 200,
+    "title": "WooCommerce Support | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P044",
+    "url": "/services/wordpress-developer-for-small-tasks/",
+    "status": 200,
+    "title": "WordPress Developer for Small Tasks | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P045",
+    "url": "/services/wordpress-emergency-support/",
+    "status": 200,
+    "title": "WordPress Emergency Support | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P046",
+    "url": "/services/wordpress-help/",
+    "status": 200,
+    "title": "WordPress Help | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P047",
+    "url": "/services/wordpress-maintenance/",
+    "status": 200,
+    "title": "WordPress Maintenance Help | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P048",
+    "url": "/services/wordpress-plugin-conflict-help/",
+    "status": 200,
+    "title": "WordPress Plugin Conflict Help | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P049",
+    "url": "/services/wordpress-support/",
+    "status": 200,
+    "title": "WordPress Support | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P050",
+    "url": "/services/wordpress-troubleshooting/",
+    "status": 200,
+    "title": "WordPress Troubleshooting Service | The Web Guy",
+    "date": "2026-07-08",
+    "errors": []
+  },
+  {
+    "id": "P051",
+    "url": "/services/wordpress-website-support/",
+    "status": 200,
+    "title": "WordPress Website Support | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P052",
+    "url": "/services/wordpress-white-screen-of-death-fix/",
+    "status": 200,
+    "title": "WordPress White Screen of Death Fix | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P053",
+    "url": "/skills/",
+    "status": 200,
+    "title": "Technical Web Skills Behind The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P054",
+    "url": "/skills/cloudflare-dns-ssl/",
+    "status": 200,
+    "title": "Cloudflare, DNS & SSL Website Support | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P055",
+    "url": "/skills/crawl-analysis-internal-linking/",
+    "status": 200,
+    "title": "Crawl Analysis & Internal Linking Help | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P056",
+    "url": "/skills/ga4-gtm-measurement-integrity/",
+    "status": 200,
+    "title": "GA4 & GTM Measurement Integrity Help | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P057",
+    "url": "/skills/google-merchant-center-product-data/",
+    "status": 200,
+    "title": "Google Merchant Center & Product Data Help | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P058",
+    "url": "/skills/performance-engineering/",
+    "status": 200,
+    "title": "Website Performance Engineering Diagnostics | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P059",
+    "url": "/skills/production-debugging/",
+    "status": 200,
+    "title": "Production Website Debugging | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P060",
+    "url": "/skills/programmatic-seo/",
+    "status": 200,
+    "title": "Programmatic SEO Support & Implementation | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P061",
+    "url": "/skills/rest-api-webhook-integrations/",
+    "status": 200,
+    "title": "REST API and Webhook Integration Help | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P062",
+    "url": "/skills/schema-structured-data/",
+    "status": 200,
+    "title": "Schema & Structured Data Implementation | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P063",
+    "url": "/skills/shopify-plus-liquid/",
+    "status": 200,
+    "title": "Shopify Plus & Liquid Support | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P064",
+    "url": "/skills/wordpress-plugin-development/",
+    "status": 200,
+    "title": "WordPress Plugin Developer | Custom Plugin Development",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P065",
+    "url": "/skills/wordpress-theme-development/",
+    "status": 200,
+    "title": "WordPress Theme Development Services | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P066",
+    "url": "/locations/",
+    "status": 200,
+    "title": "Website Support Service Areas | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P067",
+    "url": "/locations/beloit-wi/",
+    "status": 200,
+    "title": "Website Support & Technical SEO in Beloit, WI | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P068",
+    "url": "/locations/dixon-il/",
+    "status": 200,
+    "title": "Website Support & Technical SEO in Dixon, IL | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P069",
+    "url": "/locations/dubuque-ia/",
+    "status": 200,
+    "title": "Website Support & Technical SEO in Dubuque, IA | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P070",
+    "url": "/locations/freeport-il/",
+    "status": 200,
+    "title": "Website Support & Technical SEO in Freeport, IL | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P071",
+    "url": "/locations/galena-il/",
+    "status": 200,
+    "title": "Local Website Support in Galena, IL | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P072",
+    "url": "/locations/janesville-wi/",
+    "status": 200,
+    "title": "Website Support & Technical SEO in Janesville, WI | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P073",
+    "url": "/locations/madison-wi/",
+    "status": 200,
+    "title": "Website Maintenance & Support in Madison, WI | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P074",
+    "url": "/locations/monroe-wi/",
+    "status": 200,
+    "title": "Website Support & Technical SEO in Monroe, WI | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P075",
+    "url": "/locations/rockford-il/",
+    "status": 200,
+    "title": "Local Website Support in Rockford, IL | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P076",
+    "url": "/locations/sterling-il/",
+    "status": 200,
+    "title": "Local Website Support in Sterling, IL | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P077",
+    "url": "/blog/",
+    "status": 200,
+    "title": "Website Troubleshooting Blog | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P078",
+    "url": "/blog/ai-built-website-not-ready-to-launch/",
+    "status": 200,
+    "title": "AI-Built Website Not Ready to Launch? Cleanup Checklist | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P079",
+    "url": "/blog/broken-layouts-mobile-website-fixes/",
+    "status": 200,
+    "title": "WordPress Broken Layout Fix: Mobile & Desktop | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P080",
+    "url": "/blog/cms-plugin-theme-weirdness/",
+    "status": 200,
+    "title": "WordPress Plugin or Theme Problem? Find the Failing Layer | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P081",
+    "url": "/blog/css-javascript-errors-website-bugs/",
+    "status": 200,
+    "title": "CSS or JavaScript Problem? Diagnose the Broken Page | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P082",
+    "url": "/blog/embeds-iframes-widgets-breaking-pages/",
+    "status": 200,
+    "title": "Embeds, Iframes, and Widgets Breaking Website Pages | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P083",
+    "url": "/blog/fix-my-broken-website/",
+    "status": 200,
+    "title": "Fix My Broken Website: Safe Repair Order | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P084",
+    "url": "/blog/forms-modals-not-working/",
+    "status": 200,
+    "title": "Forms and Modals Not Working: Where Website Leads Disappear | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P085",
+    "url": "/blog/google-ads-conversion-tracking-not-working/",
+    "status": 200,
+    "title": "Google Ads Conversion Tracking Not Working? Check the Full Path | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P086",
+    "url": "/blog/gtm-form-tracking-ga4/",
+    "status": 200,
+    "title": "GTM Form Tracking for GA4: Why Form Events Go Missing | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P087",
+    "url": "/blog/javascript-issues-website-troubleshooting/",
+    "status": 200,
+    "title": "JavaScript Not Working? Website Troubleshooting | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P088",
+    "url": "/blog/need-a-page-live-fast/",
+    "status": 200,
+    "title": "Need a Page Live Fast? What It Needs to Launch | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P089",
+    "url": "/blog/seo-audit-done-now-implement-it/",
+    "status": 200,
+    "title": "SEO Audit Done? How to Implement the Fixes | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P090",
+    "url": "/blog/something-broke-on-your-website/",
+    "status": 200,
+    "title": "Website Repair Help: Safe Triage & Next Steps | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P091",
+    "url": "/blog/topological-relevance-vector-seo/",
+    "status": 200,
+    "title": "Topological Relevance: What TopoRank Reveals About Search Visibility | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P092",
+    "url": "/blog/tracking-scripts-pixels-broken/",
+    "status": 200,
+    "title": "Tracking Scripts and Pixels Are Broken: How to Spot the Problem | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P093",
+    "url": "/blog/website-data-systems-not-connecting/",
+    "status": 200,
+    "title": "Website Tracking & Data Troubleshooting | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P094",
+    "url": "/blog/woocommerce-checkout-not-working/",
+    "status": 200,
+    "title": "WooCommerce Checkout Not Working? Start With the Failure Point | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P095",
+    "url": "/blog/wordpress-site-broken-after-plugin-update/",
+    "status": 200,
+    "title": "WordPress Broken After Plugin Update? What to Check | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P096",
+    "url": "/blog/category/ai-development/",
+    "status": 200,
+    "title": "AI Development Blog Category | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P097",
+    "url": "/blog/category/ecommerce-checkout/",
+    "status": 200,
+    "title": "Ecommerce & Checkout Blog Category | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P098",
+    "url": "/blog/category/forms-tracking-data/",
+    "status": 200,
+    "title": "Forms, Tracking & Data Blog Category | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P099",
+    "url": "/blog/category/front-end-layout/",
+    "status": 200,
+    "title": "Front-End & Layout Blog Category | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P100",
+    "url": "/blog/category/seo-pages-ai/",
+    "status": 200,
+    "title": "SEO, Pages & AI Launches Blog Category | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P101",
+    "url": "/blog/category/start-here/",
+    "status": 200,
+    "title": "Start Here Blog Category | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P102",
+    "url": "/blog/category/wordpress-cms/",
+    "status": 200,
+    "title": "WordPress & CMS Blog Category | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P103",
+    "url": "/blog/tag/ai-built/",
+    "status": 200,
+    "title": "AI-Built Cleanup Blog Tag | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P104",
+    "url": "/blog/tag/analytics-tracking/",
+    "status": 200,
+    "title": "Analytics & Tracking Blog Tag | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P105",
+    "url": "/blog/tag/api-integrations/",
+    "status": 200,
+    "title": "APIs & Integrations Blog Tag | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P106",
+    "url": "/blog/tag/automation/",
+    "status": 200,
+    "title": "Automation Blog Tag | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P107",
+    "url": "/blog/tag/checkout/",
+    "status": 200,
+    "title": "Checkout Blog Tag | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P108",
+    "url": "/blog/tag/conversion-tracking/",
+    "status": 200,
+    "title": "Conversion Tracking Blog Tag | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P109",
+    "url": "/blog/tag/crawl-analysis/",
+    "status": 200,
+    "title": "Crawl Analysis Blog Tag | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P110",
+    "url": "/blog/tag/css/",
+    "status": 200,
+    "title": "CSS Blog Tag | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P111",
+    "url": "/blog/tag/dashboards/",
+    "status": 200,
+    "title": "Dashboards Blog Tag | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P112",
+    "url": "/blog/tag/ecommerce/",
+    "status": 200,
+    "title": "Ecommerce Blog Tag | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P113",
+    "url": "/blog/tag/embeds-iframes/",
+    "status": 200,
+    "title": "Embeds & Iframes Blog Tag | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P114",
+    "url": "/blog/tag/emergency-support/",
+    "status": 200,
+    "title": "Emergency Support Blog Tag | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P115",
+    "url": "/blog/tag/forms/",
+    "status": 200,
+    "title": "Forms Blog Tag | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P116",
+    "url": "/blog/tag/ga4-gtm/",
+    "status": 200,
+    "title": "GA4 & GTM Blog Tag | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P117",
+    "url": "/blog/tag/internal-links/",
+    "status": 200,
+    "title": "Internal Links Blog Tag | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P118",
+    "url": "/blog/tag/javascript/",
+    "status": 200,
+    "title": "JavaScript Blog Tag | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P119",
+    "url": "/blog/tag/landing-pages/",
+    "status": 200,
+    "title": "Landing Pages Blog Tag | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P120",
+    "url": "/blog/tag/mobile-layout/",
+    "status": 200,
+    "title": "Mobile Layout Blog Tag | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P121",
+    "url": "/blog/tag/page-builders/",
+    "status": 200,
+    "title": "Page Builders Blog Tag | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P122",
+    "url": "/blog/tag/plugin-conflicts/",
+    "status": 200,
+    "title": "Plugin Conflicts Blog Tag | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P123",
+    "url": "/blog/tag/seo-audit/",
+    "status": 200,
+    "title": "SEO Audit Blog Tag | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P124",
+    "url": "/blog/tag/site-speed/",
+    "status": 200,
+    "title": "Site Speed Blog Tag | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P125",
+    "url": "/blog/tag/technical-seo/",
+    "status": 200,
+    "title": "Technical SEO Blog Tag | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P126",
+    "url": "/blog/tag/themes/",
+    "status": 200,
+    "title": "Themes Blog Tag | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P127",
+    "url": "/blog/tag/website-fixes/",
+    "status": 200,
+    "title": "Website Fixes Blog Tag | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P128",
+    "url": "/blog/tag/woocommerce/",
+    "status": 200,
+    "title": "WooCommerce Blog Tag | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P129",
+    "url": "/blog/tag/wordpress/",
+    "status": 200,
+    "title": "WordPress Blog Tag | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P130",
+    "url": "/fix-notes/",
+    "status": 200,
+    "title": "Web Fixes | Real Website Work | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P131",
+    "url": "/fix-notes/added-call-tracking-tag-management-site-verification-static-site/",
+    "status": 200,
+    "title": "Static Site Tracking Setup Web Fix | The Web Guy",
+    "date": "2026-09-29",
+    "errors": []
+  },
+  {
+    "id": "P132",
+    "url": "/fix-notes/added-floating-click-to-call-review-badge-support/",
+    "status": 200,
+    "title": "Click-to-Call and Review Badge Web Fix | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P133",
+    "url": "/fix-notes/added-location-specific-proof-content-service-pages/",
+    "status": 200,
+    "title": "Location Proof Content Web Fix | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P134",
+    "url": "/fix-notes/allowed-form-embed-wordpress-security-without-broad-bypass/",
+    "status": 200,
+    "title": "WordPress Form Firewall Web Fix | The Web Guy",
+    "date": "2026-09-28",
+    "errors": []
+  },
+  {
+    "id": "P135",
+    "url": "/fix-notes/audited-wordpress-site-remaining-malware-indicators/",
+    "status": 200,
+    "title": "WordPress Malware Audit Web Fix | The Web Guy",
+    "date": "2026-05-26",
+    "errors": []
+  },
+  {
+    "id": "P136",
+    "url": "/fix-notes/built-accessible-service-page-custom-imagery-schema/",
+    "status": 200,
+    "title": "Accessible WordPress Service Page Web Fix | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P137",
+    "url": "/fix-notes/built-admin-only-wordpress-crm-estimate-intake/",
+    "status": 200,
+    "title": "WordPress CRM Plugin for Estimate Intake | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P138",
+    "url": "/fix-notes/built-local-first-workflow-app-session-continuity/",
+    "status": 200,
+    "title": "Local-First Workflow App Web Fix | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P139",
+    "url": "/fix-notes/built-production-ready-static-service-website-astro/",
+    "status": 200,
+    "title": "Astro Service Website Build Web Fix | The Web Guy",
+    "date": "2026-07-22",
+    "errors": []
+  },
+  {
+    "id": "P140",
+    "url": "/fix-notes/built-role-aware-operations-dashboard-prototype/",
+    "status": 200,
+    "title": "Operations Dashboard Prototype Web Fix | The Web Guy",
+    "date": "2026-06-15",
+    "errors": []
+  },
+  {
+    "id": "P141",
+    "url": "/fix-notes/built-static-site-lead-handler-contact-popup-flow/",
+    "status": 200,
+    "title": "Static Site Lead Handler Web Fix | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P142",
+    "url": "/fix-notes/centralized-business-data-faq-schema-pull-request-review/",
+    "status": 200,
+    "title": "Shared Site Data and FAQ Schema Web Fix | The Web Guy",
+    "date": "2026-09-25",
+    "errors": []
+  },
+  {
+    "id": "P143",
+    "url": "/fix-notes/checked-suspicious-wordpress-users-after-site-compromise/",
+    "status": 200,
+    "title": "Suspicious WordPress User Cleanup Web Fix | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P144",
+    "url": "/fix-notes/cleaned-up-ai-built-page-easier-to-use-maintain/",
+    "status": 200,
+    "title": "AI-Built Page Cleanup Web Fix | The Web Guy",
+    "date": "2026-05-09",
+    "errors": []
+  },
+  {
+    "id": "P145",
+    "url": "/fix-notes/cleaned-up-crawl-paths-google-slow-to-index/",
+    "status": 200,
+    "title": "Crawl Path Cleanup Web Fix | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P146",
+    "url": "/fix-notes/cleaned-up-faq-sections-across-wordpress-pages/",
+    "status": 200,
+    "title": "WordPress FAQ Cleanup Web Fix | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P147",
+    "url": "/fix-notes/cleaned-up-mobile-page-too-many-competing-sections/",
+    "status": 200,
+    "title": "Mobile Landing Page Cleanup Web Fix | The Web Guy",
+    "date": "2026-04-30",
+    "errors": []
+  },
+  {
+    "id": "P148",
+    "url": "/fix-notes/cleaned-up-wordpress-assets-slowing-down-service-page/",
+    "status": 200,
+    "title": "WordPress Asset Cleanup Web Fix | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P149",
+    "url": "/fix-notes/cleaned-wordpress-install-database-after-malware/",
+    "status": 200,
+    "title": "WordPress Recovery Package and User Cleanup | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P150",
+    "url": "/fix-notes/completed-requested-site-modifications-output-review/",
+    "status": 200,
+    "title": "Site Modification Review Web Fix | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P151",
+    "url": "/fix-notes/consolidated-conflicting-wordpress-seo-plugins/",
+    "status": 200,
+    "title": "WordPress SEO Plugin Consolidation Web Fix | The Web Guy",
+    "date": "2026-09-10",
+    "errors": []
+  },
+  {
+    "id": "P152",
+    "url": "/fix-notes/expanded-local-pages-consistent-faqs-structured-data/",
+    "status": 200,
+    "title": "Local Page FAQ and Schema Web Fix | The Web Guy",
+    "date": "2026-07-20",
+    "errors": []
+  },
+  {
+    "id": "P153",
+    "url": "/fix-notes/fixed-contact-form-email-delivery-authenticated-sending/",
+    "status": 200,
+    "title": "Contact Form Email Delivery Web Fix | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P154",
+    "url": "/fix-notes/fixed-lead-tracking-contact-form-hard-to-measure/",
+    "status": 200,
+    "title": "Contact Form Lead Tracking Web Fix | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P155",
+    "url": "/fix-notes/fixed-mobile-bio-popup-scrolling-project-image-quality/",
+    "status": 200,
+    "title": "Mobile Popup and Image Quality Web Fix | The Web Guy",
+    "date": "2026-07-01",
+    "errors": []
+  },
+  {
+    "id": "P156",
+    "url": "/fix-notes/fixed-mobile-layout-below-tablet-width/",
+    "status": 200,
+    "title": "Mobile Layout Web Fix | The Web Guy",
+    "date": "2026-06-21",
+    "errors": []
+  },
+  {
+    "id": "P157",
+    "url": "/fix-notes/fixed-wordpress-critical-error-caused-cache-plugin/",
+    "status": 200,
+    "title": "WordPress Cache Plugin Critical Error Web Fix | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P158",
+    "url": "/fix-notes/improved-internal-links-service-pages-supporting-content/",
+    "status": 200,
+    "title": "Internal Linking Cleanup Web Fix | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P159",
+    "url": "/fix-notes/migrated-site-content-between-domains-without-rebuild/",
+    "status": 200,
+    "title": "Content Transfer Between Website Domains | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P160",
+    "url": "/fix-notes/optimized-shopify-theme-page-speed-core-web-vitals/",
+    "status": 200,
+    "title": "Shopify Page Speed Web Fix | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P161",
+    "url": "/fix-notes/prepared-bulk-location-page-imports-elementor-templates/",
+    "status": 200,
+    "title": "WordPress Location Page Import Web Fix | The Web Guy",
+    "date": "2026-05-26",
+    "errors": []
+  },
+  {
+    "id": "P162",
+    "url": "/fix-notes/prepared-domain-migration-without-dropping-existing-hostname/",
+    "status": 200,
+    "title": "Domain Migration Preparation Web Fix | The Web Guy",
+    "date": "2026-09-22",
+    "errors": []
+  },
+  {
+    "id": "P163",
+    "url": "/fix-notes/published-structured-blog-content-optimized-featured-images/",
+    "status": 200,
+    "title": "Optimized WordPress Blog Publishing Web Fix | The Web Guy",
+    "date": "2026-09-27",
+    "errors": []
+  },
+  {
+    "id": "P164",
+    "url": "/fix-notes/rebuilt-large-service-site-image-system-mega-menu/",
+    "status": 200,
+    "title": "Service Imagery and Mega Menu Web Fix | The Web Guy",
+    "date": "2026-09-18",
+    "errors": []
+  },
+  {
+    "id": "P165",
+    "url": "/fix-notes/rebuilt-static-wordpress-caching-hundreds-urls/",
+    "status": 200,
+    "title": "WordPress Static Cache Rebuild Web Fix | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P166",
+    "url": "/fix-notes/rebuilt-wordpress-site-from-crawl-into-reusable-blocks/",
+    "status": 200,
+    "title": "WordPress Rebuild From Crawl Web Fix | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P167",
+    "url": "/fix-notes/recovered-multiple-wordpress-sites-after-malware-injection/",
+    "status": 200,
+    "title": "WordPress Malware Recovery Web Fix | The Web Guy",
+    "date": "2026-05-26",
+    "errors": []
+  },
+  {
+    "id": "P168",
+    "url": "/fix-notes/refactored-nextjs-site-static-hosting/",
+    "status": 200,
+    "title": "Next.js Static Hosting Refactor Web Fix | The Web Guy",
+    "date": "2026-06-15",
+    "errors": []
+  },
+  {
+    "id": "P169",
+    "url": "/fix-notes/removed-wordpress-backdoor-separated-waf-crawl-block/",
+    "status": 200,
+    "title": "WordPress Backdoor and WAF Web Fix | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P170",
+    "url": "/fix-notes/removed-wordpress-backdoors-hardened-file-access/",
+    "status": 200,
+    "title": "WordPress Backdoor Cleanup Web Fix | The Web Guy",
+    "date": "2026-06-15",
+    "errors": []
+  },
+  {
+    "id": "P171",
+    "url": "/fix-notes/repaired-custom-permalinks-location-based-service-pages/",
+    "status": 200,
+    "title": "WordPress Custom Permalink Web Fix | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P172",
+    "url": "/fix-notes/repaired-full-screen-section-scrolling-theme-overflow/",
+    "status": 200,
+    "title": "WordPress Full-Screen Scrolling Web Fix | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P173",
+    "url": "/fix-notes/repaired-recaptcha-loading-without-disabling-page-optimization/",
+    "status": 200,
+    "title": "reCAPTCHA Script Loading Web Fix | The Web Guy",
+    "date": "2026-09-24",
+    "errors": []
+  },
+  {
+    "id": "P174",
+    "url": "/fix-notes/replaced-embedded-hero-forms-accessible-booking-modal/",
+    "status": 200,
+    "title": "Accessible Booking Modal Web Fix | The Web Guy",
+    "date": "2026-09-14",
+    "errors": []
+  },
+  {
+    "id": "P175",
+    "url": "/fix-notes/replaced-oversized-booking-embed-validated-lead-form/",
+    "status": 200,
+    "title": "Validated Service Lead Form Web Fix | The Web Guy",
+    "date": "2026-09-30",
+    "errors": []
+  },
+  {
+    "id": "P176",
+    "url": "/fix-notes/resolved-unused-instagram-feed-plugin-issue/",
+    "status": 200,
+    "title": "Instagram Plugin Cleanup Web Fix | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P177",
+    "url": "/fix-notes/reviewed-builder-based-site-performance-design-constraints/",
+    "status": 200,
+    "title": "Builder-Based Performance Review Web Fix | The Web Guy",
+    "date": "2026-05-26",
+    "errors": []
+  },
+  {
+    "id": "P178",
+    "url": "/fix-notes/reviewed-shopify-theme-files-before-template-changes/",
+    "status": 200,
+    "title": "Shopify Theme File Review Web Fix | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P179",
+    "url": "/fix-notes/reviewed-wordpress-site-suspicious-plugin-like-files/",
+    "status": 200,
+    "title": "Suspicious WordPress File Review Web Fix | The Web Guy",
+    "date": "2026-05-26",
+    "errors": []
+  },
+  {
+    "id": "P180",
+    "url": "/fix-notes/stabilized-contact-form-email-sending-without-overcomplicating/",
+    "status": 200,
+    "title": "WordPress Form Email With Limited Access | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P181",
+    "url": "/fix-notes/staged-cleaned-wordpress-recovery-backup-locally/",
+    "status": 200,
+    "title": "WordPress Backup Recovery Web Fix | The Web Guy",
+    "date": "2026-06-15",
+    "errors": []
+  },
+  {
+    "id": "P182",
+    "url": "/fix-notes/structured-client-facing-html-invoices-detailed-work-blocks/",
+    "status": 200,
+    "title": "HTML Invoice Workflow Web Fix | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P183",
+    "url": "/fix-notes/traced-deceptive-page-warning-obfuscated-database-payload/",
+    "status": 200,
+    "title": "WordPress Deceptive-Page Database Payload | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P184",
+    "url": "/fix-notes/traced-live-wordpress-display-problem-host-cache/",
+    "status": 200,
+    "title": "WordPress Host Cache Diagnosis After Updates | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P185",
+    "url": "/fix-notes/tracked-live-site-display-issue-server-side-cache/",
+    "status": 200,
+    "title": "Stale Page Retest After Host Cache Refresh | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P186",
+    "url": "/fix-notes/turned-shopify-speed-audit-verified-theme-release/",
+    "status": 200,
+    "title": "Shopify Performance Release Web Fix | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P187",
+    "url": "/fix-notes/updated-static-promotion-page-chat-script/",
+    "status": 200,
+    "title": "Static Promotion Page Web Fix | The Web Guy",
+    "date": "2026-06-15",
+    "errors": []
+  },
+  {
+    "id": "P188",
+    "url": "/fix-notes/uploaded-structured-blog-posts-schema-output/",
+    "status": 200,
+    "title": "WordPress Blog Publishing and Schema Output | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P189",
+    "url": "/fix-notes/verified-form-to-crm-api-handoff-dropping-fields/",
+    "status": 200,
+    "title": "Form-to-CRM API Handoff Web Fix | The Web Guy",
+    "date": "2026-04-09",
+    "errors": []
+  },
+  {
+    "id": "P190",
+    "url": "/fix-notes/category/ai-website-cleanup/",
+    "status": 200,
+    "title": "AI Website Cleanup Web Fixes | The Web Guy",
+    "date": "2026-06-30",
+    "errors": []
+  },
+  {
+    "id": "P191",
+    "url": "/fix-notes/category/api-integrations/",
+    "status": 200,
+    "title": "API Integrations Web Fixes | The Web Guy",
+    "date": "2026-09-30",
+    "errors": []
+  },
+  {
+    "id": "P192",
+    "url": "/fix-notes/category/automation-internal-tools/",
+    "status": 200,
+    "title": "Automation & Internal Tools Web Fixes | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P193",
+    "url": "/fix-notes/category/ecommerce-support/",
+    "status": 200,
+    "title": "Ecommerce Support Web Fixes | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P194",
+    "url": "/fix-notes/category/landing-pages/",
+    "status": 200,
+    "title": "Landing Pages Web Fixes | The Web Guy",
+    "date": "2026-09-30",
+    "errors": []
+  },
+  {
+    "id": "P195",
+    "url": "/fix-notes/category/page-speed/",
+    "status": 200,
+    "title": "Page Speed Web Fixes | The Web Guy",
+    "date": "2026-07-03",
+    "errors": []
+  },
+  {
+    "id": "P196",
+    "url": "/fix-notes/category/production-debugging/",
+    "status": 200,
+    "title": "Production Debugging Web Fixes | The Web Guy",
+    "date": "2026-09-30",
+    "errors": []
+  },
+  {
+    "id": "P197",
+    "url": "/fix-notes/category/security-hosting/",
+    "status": 200,
+    "title": "Security & Hosting Web Fixes | The Web Guy",
+    "date": "2026-07-03",
+    "errors": []
+  },
+  {
+    "id": "P198",
+    "url": "/fix-notes/category/technical-seo/",
+    "status": 200,
+    "title": "Technical SEO Web Fixes | The Web Guy",
+    "date": "2026-09-30",
+    "errors": []
+  },
+  {
+    "id": "P199",
+    "url": "/fix-notes/category/tracking-analytics/",
+    "status": 200,
+    "title": "Tracking & Analytics Web Fixes | The Web Guy",
+    "date": "2026-06-30",
+    "errors": []
+  },
+  {
+    "id": "P200",
+    "url": "/fix-notes/category/website-fixes/",
+    "status": 200,
+    "title": "Website Repair Examples | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P201",
+    "url": "/fix-notes/category/wordpress-support/",
+    "status": 200,
+    "title": "WordPress Support Web Fixes | The Web Guy",
+    "date": "2026-09-30",
+    "errors": []
+  },
+  {
+    "id": "P202",
+    "url": "/sites-for-sale/",
+    "status": 200,
+    "title": "Sites For Sale | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P203",
+    "url": "/sites-for-sale/hammernest-handyman/",
+    "status": 200,
+    "title": "HammerNest Handyman Website for Sale | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P204",
+    "url": "/sites-for-sale/modemind/",
+    "status": 200,
+    "title": "ModeMind: Sold Workflow App Example | The Web Guy",
+    "date": "2026-11-02",
+    "errors": []
+  },
+  {
+    "id": "P205",
+    "url": "/privacy/",
+    "status": 200,
+    "title": "Privacy Policy | The Web Guy",
+    "date": "2026-06-16",
+    "errors": []
+  },
+  {
+    "id": "P206",
+    "url": "/terms/",
+    "status": 200,
+    "title": "Terms of Service | The Web Guy",
+    "date": "2026-09-30",
+    "errors": []
+  }
+]

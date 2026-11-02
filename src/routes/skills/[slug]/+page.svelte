@@ -1,4 +1,5 @@
 <script>
+  import { updates, linkedCopy } from "$lib/data/editorial-updates.js";
   import Seo from "$lib/components/Seo.svelte";
   import Hero from "$lib/components/Hero.svelte";
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
@@ -215,28 +216,10 @@
     ]),
     " so the technical fix is tied to what a visitor, marketer, or site owner actually sees."
   ]] : []);
-  const skillTaskParagraphs = $derived(skill.problems[0] && skill.tasks[0] ? [[
-    `When ${skill.problems[0].charAt(0).toLowerCase()}${skill.problems[0].slice(1)}, the first useful step is to ${skill.tasks[0].charAt(0).toLowerCase()}${skill.tasks[0].slice(1)}. The goal is a tested implementation, not another generic recommendation.`
-  ]] : []);
-  const allSkillInternalParagraphs = $derived([
-    ...(skillFocusParagraphs[skill.slug] || skillTaskParagraphs),
-    ...skillSupportingParagraphs
-  ]);
-  const skillTableColumns = [
-    { key: "need", label: "Need" },
-    { key: "implementation", label: "Implementation focus" },
-    { key: "service", label: "Service route" },
-    { key: "evidence", label: "Useful evidence" }
-  ];
-  const skillRows = $derived(skill.problems.map((problem, index) => {
-    const relatedService = relatedServiceCards[index % Math.max(relatedServiceCards.length, 1)];
-    return {
-      need: problem,
-      implementation: skill.tasks[index % Math.max(skill.tasks.length, 1)] || skill.connection,
-      service: relatedService ? { text: relatedService.eyebrow, href: serviceUrl(relatedService.slug) } : { text: "Website Services", href: "/services/" },
-      evidence: "URL, reproduction steps, access context, current output, and desired result"
-    };
-  }));
+  const editorial = $derived(updates.skills[skill.slug]);
+  const allSkillInternalParagraphs = $derived(Object.entries(editorial?.copy || {})
+    .filter(([heading]) => !/Hero paragraph|answer|FAQ|Performance proof|Shopify proof|Theme proof|table/i.test(heading))
+    .map(([, copy]) => linkedCopy(copy, skill.editorialLinks || editorial.links)));
 </script>
 
 <Seo title={skill.title} description={skill.meta} schema={seoSchema} />
@@ -262,17 +245,21 @@
   </section>
 
   <ProofPanel proof={skillProof} />
+  {#if skill.slug === "programmatic-seo"}
+    <section class="section"><p>See the <a class="text-link" href="/blog/topological-relevance-vector-seo/">TopoRank page and query study</a> for a dated example of comparing page meaning, internal links, and disclosed queries.</p></section>
+  {/if}
 
   <section class="section section-effect section-effect--traces section-effect--low">
     <SectionHeading
       eyebrow={`${skill.eyebrow} planning`}
-      h2={skill.projectTable?.heading || `How to turn ${skill.eyebrow} into a website task`}
-      body={skill.projectTable ? "" : "Use this table to compare the problem, implementation focus, related service path, and evidence that makes the technical work easier to scope."}
+      h2={skill.projectTable.heading}
+
     />
-    <SortableTable caption={skill.projectTable ? "" : `${skill.eyebrow} implementation table`} columns={skill.projectTable?.columns || skillTableColumns} rows={skill.projectTable?.rows || skillRows} />
+    {#if skill.planningIntro}<InternalLinkCopy paragraphs={[linkedCopy(skill.planningIntro, editorial?.links || [])]} />{/if}
+    <SortableTable caption={skill.projectTable.heading} columns={skill.projectTable.columns} rows={skill.projectTable.rows} />
     {#if skill.projectTable}
-      <h3>{skill.projectTable.afterHeading}</h3>
-      <p class="wide-copy">{skill.projectTable.afterBody}</p>
+      {#if skill.projectTable.afterHeading}<h3>{skill.projectTable.afterHeading}</h3>{/if}
+      {#if skill.projectTable.afterBody}<p class="wide-copy">{skill.projectTable.afterBody}</p>{/if}
     {/if}
   </section>
 
@@ -285,32 +272,9 @@
     />
   </section>
 
-  {#if skill.contextCards}
-    <section class="section section-effect section-effect--traces section-effect--low">
-      <SectionHeading
-        eyebrow={`Related ${skill.eyebrow.toLowerCase()} work`}
-        h2={skill.contextHeading || `${skill.eyebrow} support paths and adjacent tasks`}
-        body={skill.contextIntro || "These are the service and skill paths most likely to matter when this capability shows up on a real website."}
-      />
-      <CardGrid className="card-grid compact-grid" items={skill.contextCards} />
-    </section>
-  {/if}
-
   <RelatedSkills slugs={skill.relatedSkills} />
 
-  <ContextualSupport
-    eyebrow={`${skill.eyebrow} service handoff`}
-    heading={`Where ${skill.eyebrow} becomes billable website work`}
-    intro="These links connect this capability to the service paths where it usually becomes useful work."
-    items={contextualSupportItems}
-  />
 
-  <TopicalLinks
-    eyebrow={`${skill.eyebrow} support routes`}
-    heading={`${skill.eyebrow} inside larger website support work`}
-    intro="Use these links when the skill is only one part of the work and you need the surrounding service, platform, or technical implementation context."
-    items={topicalItems}
-  />
 
   {#if fixNoteCategory}
     <FixNotesPanel category={fixNoteCategory} serviceSlug={skill.slug} />

@@ -1,4 +1,5 @@
 <script>
+  import { updates } from "$lib/data/editorial-updates.js";
   import Seo from "$lib/components/Seo.svelte";
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
   import SectionHeading from "$lib/components/SectionHeading.svelte";
@@ -29,8 +30,8 @@
 </script>
 
 <Seo
-  title={`${site.name} | Sites For Sale | The Web Guy`}
-  description={site.cardSummary}
+  title={site.metaTitle || `${site.name} | Sites For Sale | The Web Guy`}
+  description={site.metaDescription || site.cardSummary}
   schema={seoSchema}
 />
 
@@ -111,7 +112,7 @@
   </section>
 
   <section class="section section-effect section-effect--traces section-effect--low">
-    <SectionHeading eyebrow="Measured proof" h2="Current performance and visibility state" body={site.buyerHook} />
+    <SectionHeading eyebrow="Measured proof" h2={updates.static[`/sites-for-sale/${site.slug}/`].copy["Performance section heading"]} body={site.buyerHook} />
     <div class="metrics-grid">
       <article class="metric-panel">
         <h3>Lighthouse snapshot</h3>

@@ -17,11 +17,6 @@ const conversionOverrides = {
   "shopify-liquid-support": ["Show me the Shopify change", "Request Shopify Liquid Help"]
 };
 
-function sentence(value = "") {
-  const text = String(value).trim().replace(/[.!?]+$/, "");
-  return text ? `${text[0].toLowerCase()}${text.slice(1)}` : "the work you need completed";
-}
-
 function firstUsefulSection(service) {
   return (service.sections || []).find((section) => section.bullets?.length || section.cards?.length);
 }
@@ -55,8 +50,8 @@ export function serviceConversionFor(service) {
     status: "Project handoff",
     statusAction: service.eyebrow,
     eyebrow: "A focused first step",
-    heading: override?.[0] || (genericCtas.has(suppliedCta) ? `Ask about ${service.eyebrow.toLowerCase()}` : suppliedCta),
-    copy: `Send the URL and tell me about ${sentence(primaryNeed)}. Include what should happen instead and any deadline or recent change that matters.`,
+    heading: override?.[0] || (genericCtas.has(suppliedCta) ? `Ask about ${service.eyebrow}` : suppliedCta),
+    copy: service.intake || "Send the URL, the work you need handled, the result you want, and any deadline or recent change that matters.",
     label,
     tags: ["URL + context", "Expected result", "Priority"],
     proof: [primaryNeed, secondaryNeed, "Scope and cost agreed before work starts"]

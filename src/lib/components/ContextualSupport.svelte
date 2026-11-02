@@ -3,6 +3,7 @@
     eyebrow = "Next step",
     heading = "Pages that clarify the work",
     intro = "",
+    sectionId = undefined,
     items = []
   } = $props();
 
@@ -12,7 +13,7 @@
 </script>
 
 {#if items.length}
-  <section class="section contextual-support-section section-effect section-effect--signals section-effect--low">
+  <section id={sectionId} class="section contextual-support-section section-effect section-effect--signals section-effect--low">
     <div class="contextual-support-panel">
       <div class="section-heading">
         <p class="eyebrow">{eyebrow}</p>

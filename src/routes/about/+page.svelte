@@ -1,4 +1,5 @@
 <script>
+  import { updates } from "$lib/data/editorial-updates.js";
   import Seo from "$lib/components/Seo.svelte";
   import Hero from "$lib/components/Hero.svelte";
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
@@ -130,7 +131,7 @@
   <Hero
     eyebrow="Contract website support"
     h1="About The Web Guy"
-    intro="The Web Guy is built around practical web support: fixing broken pages, cleaning up WordPress, implementing SEO work, building landing pages, troubleshooting tracking, and helping agencies move production work forward."
+    intro={updates.static["/about/"].copy["Hero introduction"]}
     cta="Work With The Web Guy"
     image={staticHeroImages.about}
   />
@@ -183,6 +184,6 @@
 
   <section class="section split-section section-effect section-effect--traces section-effect--low">
     <div><SectionHeading eyebrow="How website work is handled" h2="Plain, useful, and focused on the site" body="The best requests include a URL, a task list, an audit, screenshots, or a clear description of what should happen. The Web Guy gives practical updates instead of technical theater." /></div>
-    <div><SectionHeading eyebrow="Best-fit website projects" h2="Best for execution, not bloated process" body="Good fit: businesses and agencies that need a technical person to move web work forward. Not a fit: unlimited flat-fee work, fake emergency chaos, or projects that need a large agency team." /></div>
+    <div><SectionHeading eyebrow="Best-fit website projects" h2="Work with clear priorities and approval points" body={updates.static["/about/"].copy["Final fit section"]} /></div>
   </section>
 </main>

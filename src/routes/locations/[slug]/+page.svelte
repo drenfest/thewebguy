@@ -1,4 +1,5 @@
 <script>
+  import { updates, linkedCopy } from "$lib/data/editorial-updates.js";
   import Seo from "$lib/components/Seo.svelte";
   import Hero from "$lib/components/Hero.svelte";
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
@@ -25,6 +26,7 @@
 
   let { data } = $props();
   const location = $derived(data.location);
+  const editorial = $derived(updates.locations[location.slug]);
   const locationPath = $derived(locationUrl(location.slug));
   const breadcrumbs = $derived([
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
@@ -41,7 +43,8 @@
     [`What do you charge for website help in ${location.city}?`, `Send the site and the work you need for a free quote. Scope and cost are agreed before any paid work begins.`],
     [`Can you help with WordPress sites in ${location.city}?`, `Yes. WordPress support includes updates, theme cleanup, page builder issues, plugin conflicts, SEO implementation, speed cleanup, and form troubleshooting.`],
     [`Do you offer ongoing website support for ${location.city} businesses?`, `Yes. Ongoing support can be hourly or project based for monthly updates, small improvements, technical fixes, and recurring webmaster tasks.`],
-    [`Can you help agencies or marketing teams near ${location.city}?`, `Yes. Agency overflow support is available for production work, SEO implementation, landing pages, tracking QA, and website cleanup.`]
+    [`Can you help agencies or marketing teams near ${location.city}?`, `Yes. Agency overflow support is available for production work, SEO implementation, landing pages, tracking QA, and website cleanup.`],
+    ...(location.faqs || []).map(([question, answer]) => [question, linkedCopy(answer, editorial?.links || [])])
   ]);
   const seoSchema = $derived(schemaList(
     breadcrumbSchema(breadcrumbs, locationPath),
@@ -109,7 +112,7 @@
   <Hero
     eyebrow={`${location.city}, ${location.state}`}
     h1={`Local Website Support for ${location.city}, ${location.state} Businesses`}
-    intro={`The Web Guy helps ${location.city}-area businesses with local-friendly hourly or project-based website support: WordPress support, website fixes, technical SEO, landing pages, tracking, ecommerce cleanup, and ongoing webmaster help.`}
+    intro={editorial?.copy["Hero introduction"] || `Remote website support for ${location.city}-area businesses: WordPress, website fixes, technical SEO, tracking, and ongoing website work.`}
     cta={`Request ${location.city} Web Support`}
     image={locationHeroImage(location)}
   />
@@ -119,7 +122,7 @@
   <section class="section split-section section-effect section-effect--hex section-effect--low">
     <div>
       <SectionHeading eyebrow={`${location.city} website support`} h2={`Website support for businesses near ${location.city}, ${location.state}`} />
-      {#each location.context as paragraph}<p>{paragraph}</p>{/each}
+      <InternalLinkCopy paragraphs={location.context.map((paragraph) => linkedCopy(paragraph, editorial?.links || []))} />
       <InternalLinkCopy paragraphs={locationInternalParagraphs} />
     </div>
     <div>
@@ -130,6 +133,12 @@
     </div>
   </section>
 
+  {#if editorial?.copy["New short section before the service grid"]}
+    <section class="section soft-section">
+      <SectionHeading eyebrow="Website maintenance" h2="Ongoing website maintenance for Madison teams" />
+      <InternalLinkCopy paragraphs={[linkedCopy(editorial.copy["New short section before the service grid"].replace(/^Ongoing website maintenance for Madison teams /, ""), editorial.links)]} />
+    </section>
+  {/if}
   <ProofPanel proof={locationProof} />
 
   <section class="section soft-section section-effect section-effect--signals section-effect--low">
@@ -144,39 +153,6 @@
         service.slug
       ])}
     />
-  </section>
-
-  <section class="section split-section section-effect section-effect--hex section-effect--low">
-    <div>
-      <SectionHeading
-        eyebrow={`Route ${location.city} web requests`}
-        h2={`How ${location.city} website support requests usually start`}
-        body={`Most ${location.city}-area website requests start with a specific symptom: a page needs updated, a form is not sending, tracking does not match leads, an SEO task is stuck, or WordPress needs cleanup.`}
-      />
-      <ul class="check-list">
-        {#each relatedServices.slice(0, 3) as service}
-          <li>
-            <a class="text-link" href={serviceUrl(service.slug)} title={`View ${service.eyebrow} for ${location.city}, ${location.state} website support`}>{service.eyebrow}</a>
-            <span>{service.intro}</span>
-          </li>
-        {/each}
-      </ul>
-    </div>
-    <div>
-      <SectionHeading
-        eyebrow={`${location.city} technical support`}
-        h2={`Technical website skills that may matter after the first look`}
-        body={`Once the ${location.city} site issue is reproduced, the fix may involve a specific platform, tracking setup, template, script, API, performance problem, or hosting layer.`}
-      />
-      <ul class="check-list">
-        {#each relatedSkills.slice(0, 3) as skill}
-          <li>
-            <a class="text-link" href={skillUrl(skill.slug)} title={`View ${skill.eyebrow} capability for ${location.city}, ${location.state} website support`}>{skill.eyebrow}</a>
-            <span>{skill.connection}</span>
-          </li>
-        {/each}
-      </ul>
-    </div>
   </section>
 
   <section class="section section-effect section-effect--traces section-effect--low">
@@ -195,21 +171,9 @@
 
   <NearbyLocations slugs={location.nearby} />
 
-  <ContextualSupport
-    eyebrow={`${location.city} nearby support`}
-    heading={`Nearby website support paths around ${location.city}`}
-    intro="Use these nearby city and service links when the issue connects local pages, forms, tracking, platform cleanup, or SEO implementation."
-    items={contextualSupportItems}
-  />
 
-  <TopicalLinks
-    eyebrow={`${location.city} support routes`}
-    heading={`Related web support for ${location.city}-area businesses`}
-    intro="These links connect local service-area pages to the services and skills most likely to solve the actual website problem."
-    items={topicalItems}
-  />
 
-  <CtaBand heading={`Need web support in ${location.city}?`} copy={`Send the URL, issue, timeline, and what should happen next for the site.`} label={`Request ${location.city} Web Support`} />
+  <CtaBand heading={`Need web support in ${location.city}?`} copy={editorial?.copy["Closing contact prompt"] || "Send the URL, issue, timeline, and what should happen next for the site."} label={`Request ${location.city} Web Support`} />
 
   <section class="section section-effect section-effect--grid section-effect--low">
     <SectionHeading eyebrow="FAQ" h2={`${location.city} web support questions`} />

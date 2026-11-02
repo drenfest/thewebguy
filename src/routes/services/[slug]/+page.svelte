@@ -152,7 +152,7 @@
     "shopify-plus-liquid": "inspect Liquid templates, product data, storefront scripts, app output, and ecommerce events.",
     "programmatic-seo": "review templates, source data, metadata, internal links, and crawl paths before expanding page volume."
   };
-  const serviceInvestigationParagraphs = $derived(relatedSkills[0] ? [[
+  const serviceInvestigationParagraphs = $derived(service.slug === "woocommerce-checkout-error-fix" ? [["I ", {text:"trace the cart and checkout requests",href:"/skills/production-debugging/",title:"View production debugging for checkout requests"}, ", relevant WordPress errors, gateway responses, and resulting order state. Analytics checks come after the purchase path is understood and only where included in scope."]] : relatedSkills[0] ? [[
     "I use ",
     {
       text: relatedSkills[0].eyebrow,
@@ -586,7 +586,6 @@
         </ul>
       {/if}
     </div>
-    <ServiceQuoteCard {conversion} sourceTitle={service.h1} />
     <InternalLinkCopy paragraphs={allServiceInternalParagraphs} className="internal-link-copy--wide" />
   </section>
 
@@ -683,6 +682,8 @@
             </ul>
           </div>
         </div>
+      {:else if section.paragraphs}
+        <InternalLinkCopy paragraphs={section.paragraphs} className="internal-link-copy--wide" />
       {:else}
         <p class="wide-copy">{section.body}</p>
       {/if}
@@ -706,7 +707,10 @@
 
   <ServiceTroubleshootingGuide
     {service}
-    showDiagnosis={!["fix-broken-wordpress-site", "wordpress-plugin-conflict-help"].includes(service.slug)}
+    proofSlugsOverride={service.evidenceSlugs || []}
+    showDiagnosis={!service.workflow && !["fix-broken-wordpress-site", "wordpress-plugin-conflict-help"].includes(service.slug)}
+    showSend={Boolean(service.guideDetail)}
+    deliveryCopy={service.workflow ? "You receive the agreed work, a record of the checks performed, review and completion notes, and any unresolved dependency or separately scoped follow-up." : undefined}
     sendHeading={service.guideDetail?.heading}
     sendCopy={service.guideDetail?.copy}
     detailItems={service.guideDetail?.items || []}
@@ -730,7 +734,7 @@
 
   <RelatedProjectHelp
     eyebrow={`${service.eyebrow} project paths`}
-    heading={service.slug === "ai-built-website-cleanup" ? "Continue Through the AI Development Cluster" : "Related help for this project"}
+    heading={service.slug === "ai-built-website-cleanup" ? "Choose the next step for your AI-built site" : "Related help for this project"}
     intro={service.slug === "ai-built-website-cleanup"
       ? "Choose the AI-focused review, QA, oversight, or guardrail path that matches what the generated site needs next."
       : `Compare the most relevant services, technical skills, and focused support paths when ${service.eyebrow.toLowerCase()} is only one part of the work.`}

@@ -1,7 +1,6 @@
 import { absoluteUrl, site } from "$lib/config/site.js";
 import { contentDatesForUrl } from "$lib/data/content-dates.js";
 
-const LAST_MODIFIED = "2026-06-12";
 const PROVIDER_ID = `${absoluteUrl("/")}#the-web-guy`;
 const WEBSITE_ID = `${absoluteUrl("/")}#website`;
 
@@ -142,7 +141,7 @@ export function webPageSchema({ title, description, url }) {
     description: asText(description),
     isPartOf: { "@id": WEBSITE_ID },
     about: { "@id": PROVIDER_ID },
-    dateModified: LAST_MODIFIED
+    dateModified: contentDatesForUrl(new URL(absoluteUrl(url)).pathname).updated
   };
 }
 
@@ -212,7 +211,7 @@ export function skillPageSchema(skill, path) {
         description: asText(skill.connection || skill.intro)
       },
       provider: { "@id": PROVIDER_ID },
-      dateModified: LAST_MODIFIED
+      dateModified: contentDatesForUrl(path).updated
     },
     {
       "@context": "https://schema.org",
@@ -261,7 +260,7 @@ export function articleSchema(post, path) {
     mainEntityOfPage: absoluteUrl(path),
     headline: asText(post.h1 || stripSiteSuffix(post.title)),
     description: asText(post.meta || post.summary),
-    author: { "@id": PROVIDER_ID },
+    author: { "@type": "Person", name: "Gary Hunt", url: absoluteUrl("/about/") },
     publisher: { "@id": PROVIDER_ID },
     datePublished: dates.published,
     dateModified: dates.updated,
@@ -307,7 +306,7 @@ export function fixNoteArticleSchema(note, path) {
     mainEntityOfPage: absoluteUrl(path),
     headline: asText(note.title),
     description: asText(note.metaDescription || note.excerpt),
-    author: { "@id": PROVIDER_ID },
+    author: { "@type": "Person", name: "Gary Hunt", url: absoluteUrl("/about/") },
     publisher: { "@id": PROVIDER_ID },
     datePublished: note.date,
     dateModified: note.lastUpdated || note.date,

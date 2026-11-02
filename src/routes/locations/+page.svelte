@@ -1,4 +1,5 @@
 <script>
+  import { updates } from "$lib/data/editorial-updates.js";
   import Seo from "$lib/components/Seo.svelte";
   import Hero from "$lib/components/Hero.svelte";
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
@@ -142,65 +143,14 @@
   <Hero
     eyebrow="Website support service areas"
     h1="Local-Friendly Website Support by City and Region"
-    intro="The Web Guy provides local-friendly, remote website support across the listed service areas. Choose the city or region that fits your business, then route the request into the WordPress, website-fix, technical SEO, tracking, ecommerce, or ongoing support service that matches the work."
+    intro={updates.static["/locations/"].copy["Hero introduction"]}
     cta="Request Local Web Support"
     image={staticHeroImages.locations}
   />
 
   <Breadcrumbs items={breadcrumbs} />
 
-  <section class="section split-section section-effect section-effect--hex section-effect--low">
-    <div>
-      <SectionHeading
-        eyebrow="Regional website support"
-        h2="Start with the city or region, then route the website work"
-        body="These service-area pages give local companies, agencies, contractors, ecommerce sellers, professional services, nonprofits, and other organizations a regional entry point into practical remote website help without requiring a large agency process."
-      />
-      <InternalLinkCopy paragraphs={locationHubInlineParagraphs} />
-    </div>
-    <div class="rate-callout">
-      <span>Start with your project</span>
-      <strong>Free quote</strong>
-      <p>Available for one-time fixes, monthly support, agency overflow, technical cleanup, and web platform support.</p>
-    </div>
-  </section>
-
   <ProofPanel proof={locationsHubProof} />
-
-  <section class="section split-section section-effect section-effect--signals section-effect--low">
-    <div>
-      <SectionHeading
-        eyebrow="Local lead-flow problems"
-        h2="Most local website requests are really lead-flow problems"
-        body="A local business website usually needs useful service pages, working contact forms, reliable phone-click tracking, fast mobile pages, clean WordPress updates, and technical SEO implementation that supports how people search in the region."
-      />
-      <a class="text-link" href="/services/technical-seo-implementation/" title="View technical SEO implementation support for local service pages, metadata, schema, redirects, and internal links">Improve local SEO execution</a>
-    </div>
-    <div>
-      <SectionHeading
-        eyebrow="Remote-friendly local support"
-        h2="The city page is just the entry point for the website work"
-        body="Once the site problem is clear, the work usually routes into WordPress Support, Website Fixes, Landing Pages, Analytics & Tracking, or Ongoing Webmaster Support rather than a generic local marketing package."
-      />
-      <a class="text-link" href="/services/ongoing-webmaster-support/" title="View ongoing webmaster support for recurring updates, fixes, SEO tasks, tracking, and site cleanup">View ongoing webmaster help</a>
-    </div>
-  </section>
-
-  <ContextualSupport
-    eyebrow="Nearby city pages"
-    heading="Primary local website support pages"
-    intro="Use these city pages to choose the market that fits your business, then connect the request to the website service that matches the actual work."
-    items={locationHubContextualItems}
-  />
-
-  <section class="section section-effect section-effect--grid section-effect--low">
-    <SectionHeading
-      eyebrow="Service area details"
-      h2="Compare local website support pages by city and region"
-      body="The city pages are entry points into the same practical website work: fixes, WordPress support, SEO implementation, tracking, landing pages, and recurring webmaster help."
-    />
-    <SortableTable caption="Local website support city table" columns={locationTableColumns} rows={locationRows} />
-  </section>
 
   <TopicalLinks
     eyebrow="Local website support paths"
@@ -209,7 +159,7 @@
     items={locationHubLinks}
   />
 
-  <CtaBand heading="Need local-friendly web support?" copy="Send the URL, city, issue, and timeline. Work is remote-friendly, practical, and focused on the site problem." label="Request Local Web Support" />
+
 
   {#each regions as region, index}
     <section class={`section section-effect ${effectVariants[(index + 1) % effectVariants.length]} section-effect--low`}>
@@ -222,4 +172,5 @@
       />
     </section>
   {/each}
+  <CtaBand heading="Need local-friendly web support?" copy="Send the URL, city, issue, and timeline. Work is remote-friendly, practical, and focused on the site problem." label="Request Local Web Support" />
 </main>

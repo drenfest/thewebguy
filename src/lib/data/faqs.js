@@ -1,3 +1,4 @@
+import { updates } from "./editorial-updates.js";
 export const faqs = [
   ["What do you charge?", "Start with a free quote. Send the website, the problem or goal, and your timeline. I will confirm the scope and cost before you decide whether to go ahead.", "/rate/"],
   ["Do you work with agencies?", "Yes. Agencies can use The Web Guy for WordPress production, SEO implementation, landing pages, QA cleanup, technical fixes, tracking, and overflow work.", "/services/agency-overflow/"],
@@ -23,3 +24,11 @@ export const faqs = [
   ["How do I send a request?", "Use the contact page. Send the URL, what needs fixed or built, timeline, and whether it is one-time or ongoing.", "/contact/"],
   ["What happens after I contact you?", "The Web Guy reviews the request, asks any needed questions, identifies the best first move, and quotes a next step for approval if the fit is clear.", "/contact/"]
 ];
+
+for (const faq of faqs) {
+  if (faq[0] === "Do you work white-label?") {
+    faq[1] = [updates.static["/"].copy["White-label FAQ answer"], " ", {text:"White Label WordPress Support", href:"/services/white-label-wordpress-support/"}];
+    faq[2] = "/services/white-label-wordpress-support/";
+  }
+  if (faq[0] === "Can you troubleshoot Core Web Vitals?") faq[1] = updates.static["/faq/"].copy['“Can you troubleshoot Core Web Vitals?” answer'];
+}

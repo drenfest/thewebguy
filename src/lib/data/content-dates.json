@@ -1,11 +1,11 @@
 {
   "/": {
     "published": "2026-06-11",
-    "updated": "2026-10-09"
+    "updated": "2026-11-02"
   },
   "/services/": {
     "published": "2026-06-11",
-    "updated": "2026-10-09"
+    "updated": "2026-11-02"
   },
   "/ai-development-oversight/": {
     "published": "2026-09-30",
@@ -13,27 +13,27 @@
   },
   "/blog/": {
     "published": "2026-06-11",
-    "updated": "2026-10-09"
+    "updated": "2026-11-02"
   },
   "/fix-notes/": {
     "published": "2026-06-30",
-    "updated": "2026-10-09"
+    "updated": "2026-11-02"
   },
   "/sites-for-sale/": {
     "published": "2026-07-22",
-    "updated": "2026-10-09"
+    "updated": "2026-11-02"
   },
   "/skills/": {
     "published": "2026-06-11",
-    "updated": "2026-09-30"
+    "updated": "2026-11-02"
   },
   "/locations/": {
     "published": "2026-06-11",
-    "updated": "2026-10-01"
+    "updated": "2026-11-02"
   },
   "/about/": {
     "published": "2026-06-11",
-    "updated": "2026-10-09"
+    "updated": "2026-11-02"
   },
   "/rate/": {
     "published": "2026-06-11",
@@ -41,11 +41,11 @@
   },
   "/contact/": {
     "published": "2026-06-11",
-    "updated": "2026-10-09"
+    "updated": "2026-11-02"
   },
   "/faq/": {
     "published": "2026-06-11",
-    "updated": "2026-09-30"
+    "updated": "2026-11-02"
   },
   "/privacy/": {
     "published": "2026-06-12",
@@ -73,39 +73,39 @@
   },
   "/services/wordpress-support/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/services/technical-seo-implementation/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/services/landing-pages/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/services/site-speed-performance/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/services/website-fixes/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/services/ai-built-website-cleanup/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/services/agency-overflow/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/services/ecommerce-support/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/services/analytics-tracking/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/services/api-integrations/": {
     "published": "2026-06-29",
@@ -113,31 +113,31 @@
   },
   "/services/security-hosting-reliability/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/services/automation-internal-tools/": {
     "published": "2026-06-29",
-    "updated": "2026-07-20"
+    "updated": "2026-11-02"
   },
   "/services/ongoing-webmaster-support/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/services/react-static-sites/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/services/wordpress-help/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/services/wordpress-website-support/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/services/wordpress-maintenance/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/services/wordpress-troubleshooting/": {
     "published": "2026-06-29",
@@ -145,23 +145,23 @@
   },
   "/services/fix-wordpress-issue/": {
     "published": "2026-06-29",
-    "updated": "2026-07-08"
+    "updated": "2026-11-02"
   },
   "/services/fix-broken-wordpress-site/": {
     "published": "2026-06-29",
-    "updated": "2026-10-28"
+    "updated": "2026-11-02"
   },
   "/services/wordpress-emergency-support/": {
     "published": "2026-06-29",
-    "updated": "2026-10-28"
+    "updated": "2026-11-02"
   },
   "/services/wordpress-white-screen-of-death-fix/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/services/woocommerce-checkout-error-fix/": {
     "published": "2026-06-29",
-    "updated": "2026-10-01"
+    "updated": "2026-11-02"
   },
   "/services/contact-form-not-working-wordpress/": {
     "published": "2026-06-29",
@@ -169,31 +169,31 @@
   },
   "/services/elementor-layout-broken/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/services/wordpress-plugin-conflict-help/": {
     "published": "2026-06-29",
-    "updated": "2026-10-28"
+    "updated": "2026-11-02"
   },
   "/services/wordpress-developer-for-small-tasks/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/services/hourly-wordpress-developer/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/services/seo-audit-implementation/": {
     "published": "2026-06-29",
-    "updated": "2026-07-08"
+    "updated": "2026-11-02"
   },
   "/services/technical-seo-developer/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/services/schema-implementation-service/": {
     "published": "2026-06-29",
-    "updated": "2026-07-22"
+    "updated": "2026-11-02"
   },
   "/services/website-integration-help/": {
     "published": "2026-07-08",
@@ -201,251 +201,251 @@
   },
   "/services/web-services-automation/": {
     "published": "2026-07-08",
-    "updated": "2026-07-08"
+    "updated": "2026-11-02"
   },
   "/services/ga4-gtm-setup-help/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/services/conversion-tracking-troubleshooting/": {
     "published": "2026-06-29",
-    "updated": "2026-10-01"
+    "updated": "2026-11-02"
   },
   "/services/agency-overflow-developer/": {
     "published": "2026-06-29",
-    "updated": "2026-07-22"
+    "updated": "2026-11-02"
   },
   "/services/white-label-wordpress-support/": {
     "published": "2026-06-29",
-    "updated": "2026-10-28"
+    "updated": "2026-11-02"
   },
   "/services/website-maintenance-for-agencies/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/services/website-support-for-agencies/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/services/shopify-liquid-support/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/services/woocommerce-support/": {
     "published": "2026-06-29",
-    "updated": "2026-10-28"
+    "updated": "2026-11-02"
   },
   "/blog/something-broke-on-your-website/": {
     "published": "2026-06-29",
-    "updated": "2026-10-28"
+    "updated": "2026-11-02"
   },
   "/blog/fix-my-broken-website/": {
     "published": "2026-07-08",
-    "updated": "2026-10-28"
+    "updated": "2026-11-02"
   },
   "/blog/seo-audit-done-now-implement-it/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/blog/need-a-page-live-fast/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/blog/website-data-systems-not-connecting/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/blog/broken-layouts-mobile-website-fixes/": {
     "published": "2026-06-29",
-    "updated": "2026-07-08"
+    "updated": "2026-11-02"
   },
   "/blog/css-javascript-errors-website-bugs/": {
     "published": "2026-06-29",
-    "updated": "2026-07-22"
+    "updated": "2026-11-02"
   },
   "/blog/javascript-issues-website-troubleshooting/": {
     "published": "2026-07-08",
-    "updated": "2026-07-10"
+    "updated": "2026-11-02"
   },
   "/blog/forms-modals-not-working/": {
     "published": "2026-06-29",
-    "updated": "2026-07-08"
+    "updated": "2026-11-02"
   },
   "/blog/embeds-iframes-widgets-breaking-pages/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/blog/tracking-scripts-pixels-broken/": {
     "published": "2026-06-29",
-    "updated": "2026-07-08"
+    "updated": "2026-11-02"
   },
   "/blog/cms-plugin-theme-weirdness/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/blog/woocommerce-checkout-not-working/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/blog/wordpress-site-broken-after-plugin-update/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/blog/gtm-form-tracking-ga4/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/blog/google-ads-conversion-tracking-not-working/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/blog/ai-built-website-not-ready-to-launch/": {
     "published": "2026-09-30",
-    "updated": "2026-10-09"
+    "updated": "2026-11-02"
   },
   "/blog/topological-relevance-vector-seo/": {
     "published": "2026-06-29",
-    "updated": "2026-10-31"
+    "updated": "2026-11-02"
   },
   "/blog/category/start-here/": {
     "published": "2026-06-29",
-    "updated": "2026-07-08"
+    "updated": "2026-11-02"
   },
   "/blog/category/front-end-layout/": {
     "published": "2026-06-29",
-    "updated": "2026-07-08"
+    "updated": "2026-11-02"
   },
   "/blog/category/forms-tracking-data/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/blog/category/wordpress-cms/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/blog/category/seo-pages-ai/": {
     "published": "2026-06-29",
-    "updated": "2026-10-09"
+    "updated": "2026-11-02"
   },
   "/blog/category/ai-development/": {
     "published": "2026-10-09",
-    "updated": "2026-10-09"
+    "updated": "2026-11-02"
   },
   "/blog/category/ecommerce-checkout/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/blog/tag/website-fixes/": {
     "published": "2026-06-29",
-    "updated": "2026-07-24"
+    "updated": "2026-11-02"
   },
   "/blog/tag/css/": {
     "published": "2026-06-29",
-    "updated": "2026-07-22"
+    "updated": "2026-11-02"
   },
   "/blog/tag/javascript/": {
     "published": "2026-06-29",
-    "updated": "2026-10-09"
+    "updated": "2026-11-02"
   },
   "/blog/tag/mobile-layout/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/blog/tag/embeds-iframes/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/blog/tag/forms/": {
     "published": "2026-06-29",
-    "updated": "2026-10-09"
+    "updated": "2026-11-02"
   },
   "/blog/tag/ga4-gtm/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/blog/tag/conversion-tracking/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/blog/tag/analytics-tracking/": {
     "published": "2026-06-29",
-    "updated": "2026-07-08"
+    "updated": "2026-11-02"
   },
   "/blog/tag/api-integrations/": {
     "published": "2026-06-29",
-    "updated": "2026-07-08"
+    "updated": "2026-11-02"
   },
   "/blog/tag/dashboards/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/blog/tag/wordpress/": {
     "published": "2026-06-29",
-    "updated": "2026-07-22"
+    "updated": "2026-11-02"
   },
   "/blog/tag/plugin-conflicts/": {
     "published": "2026-06-29",
-    "updated": "2026-07-08"
+    "updated": "2026-11-02"
   },
   "/blog/tag/themes/": {
     "published": "2026-06-29",
-    "updated": "2026-10-01"
+    "updated": "2026-11-02"
   },
   "/blog/tag/page-builders/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/blog/tag/woocommerce/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/blog/tag/ecommerce/": {
     "published": "2026-06-29",
-    "updated": "2026-07-08"
+    "updated": "2026-11-02"
   },
   "/blog/tag/checkout/": {
     "published": "2026-06-29",
-    "updated": "2026-10-01"
+    "updated": "2026-11-02"
   },
   "/blog/tag/landing-pages/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/blog/tag/technical-seo/": {
     "published": "2026-06-29",
-    "updated": "2026-07-11"
+    "updated": "2026-11-02"
   },
   "/blog/tag/seo-audit/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/blog/tag/internal-links/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/blog/tag/crawl-analysis/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/blog/tag/ai-built/": {
     "published": "2026-06-29",
-    "updated": "2026-10-09"
+    "updated": "2026-11-02"
   },
   "/blog/tag/site-speed/": {
     "published": "2026-06-29",
-    "updated": "2026-10-09"
+    "updated": "2026-11-02"
   },
   "/blog/tag/automation/": {
     "published": "2026-06-29",
-    "updated": "2026-10-09"
+    "updated": "2026-11-02"
   },
   "/blog/tag/emergency-support/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/fix-notes/traced-deceptive-page-warning-obfuscated-database-payload/": {
     "published": "2026-09-26",
-    "updated": "2026-09-26"
+    "updated": "2026-11-02"
   },
   "/fix-notes/repaired-recaptcha-loading-without-disabling-page-optimization/": {
     "published": "2026-09-24",
@@ -469,7 +469,7 @@
   },
   "/fix-notes/built-accessible-service-page-custom-imagery-schema/": {
     "published": "2026-09-23",
-    "updated": "2026-09-23"
+    "updated": "2026-11-02"
   },
   "/fix-notes/published-structured-blog-content-optimized-featured-images/": {
     "published": "2026-09-27",
@@ -481,7 +481,7 @@
   },
   "/fix-notes/repaired-full-screen-section-scrolling-theme-overflow/": {
     "published": "2026-09-07",
-    "updated": "2026-09-07"
+    "updated": "2026-11-02"
   },
   "/fix-notes/replaced-embedded-hero-forms-accessible-booking-modal/": {
     "published": "2026-09-14",
@@ -497,15 +497,15 @@
   },
   "/fix-notes/removed-wordpress-backdoor-separated-waf-crawl-block/": {
     "published": "2026-09-03",
-    "updated": "2026-09-03"
+    "updated": "2026-11-02"
   },
   "/fix-notes/fixed-wordpress-critical-error-caused-cache-plugin/": {
     "published": "2026-08-18",
-    "updated": "2026-08-18"
+    "updated": "2026-11-02"
   },
   "/fix-notes/rebuilt-static-wordpress-caching-hundreds-urls/": {
     "published": "2026-08-03",
-    "updated": "2026-08-03"
+    "updated": "2026-11-02"
   },
   "/fix-notes/built-production-ready-static-service-website-astro/": {
     "published": "2026-07-22",
@@ -517,47 +517,47 @@
   },
   "/fix-notes/turned-shopify-speed-audit-verified-theme-release/": {
     "published": "2026-07-18",
-    "updated": "2026-07-18"
+    "updated": "2026-11-02"
   },
   "/fix-notes/built-admin-only-wordpress-crm-estimate-intake/": {
     "published": "2026-07-13",
-    "updated": "2026-07-13"
+    "updated": "2026-11-02"
   },
   "/fix-notes/built-local-first-workflow-app-session-continuity/": {
     "published": "2026-07-17",
-    "updated": "2026-07-17"
+    "updated": "2026-11-02"
   },
   "/fix-notes/structured-client-facing-html-invoices-detailed-work-blocks/": {
     "published": "2026-07-15",
-    "updated": "2026-07-15"
+    "updated": "2026-11-02"
   },
   "/fix-notes/rebuilt-wordpress-site-from-crawl-into-reusable-blocks/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/fix-notes/optimized-shopify-theme-page-speed-core-web-vitals/": {
     "published": "2026-07-01",
-    "updated": "2026-07-01"
+    "updated": "2026-11-02"
   },
   "/fix-notes/cleaned-wordpress-install-database-after-malware/": {
     "published": "2026-07-01",
-    "updated": "2026-07-01"
+    "updated": "2026-11-02"
   },
   "/fix-notes/traced-live-wordpress-display-problem-host-cache/": {
     "published": "2026-07-01",
-    "updated": "2026-07-01"
+    "updated": "2026-11-02"
   },
   "/fix-notes/fixed-contact-form-email-delivery-authenticated-sending/": {
     "published": "2026-07-01",
-    "updated": "2026-07-01"
+    "updated": "2026-11-02"
   },
   "/fix-notes/resolved-unused-instagram-feed-plugin-issue/": {
     "published": "2026-07-01",
-    "updated": "2026-07-01"
+    "updated": "2026-11-02"
   },
   "/fix-notes/added-floating-click-to-call-review-badge-support/": {
     "published": "2026-07-01",
-    "updated": "2026-07-01"
+    "updated": "2026-11-02"
   },
   "/fix-notes/fixed-mobile-bio-popup-scrolling-project-image-quality/": {
     "published": "2026-07-01",
@@ -565,11 +565,11 @@
   },
   "/fix-notes/built-static-site-lead-handler-contact-popup-flow/": {
     "published": "2026-06-15",
-    "updated": "2026-06-15"
+    "updated": "2026-11-02"
   },
   "/fix-notes/cleaned-up-faq-sections-across-wordpress-pages/": {
     "published": "2026-06-15",
-    "updated": "2026-06-15"
+    "updated": "2026-11-02"
   },
   "/fix-notes/staged-cleaned-wordpress-recovery-backup-locally/": {
     "published": "2026-06-15",
@@ -581,7 +581,7 @@
   },
   "/fix-notes/completed-requested-site-modifications-output-review/": {
     "published": "2026-06-15",
-    "updated": "2026-06-15"
+    "updated": "2026-11-02"
   },
   "/fix-notes/refactored-nextjs-site-static-hosting/": {
     "published": "2026-06-15",
@@ -597,7 +597,7 @@
   },
   "/fix-notes/repaired-custom-permalinks-location-based-service-pages/": {
     "published": "2026-06-15",
-    "updated": "2026-06-15"
+    "updated": "2026-11-02"
   },
   "/fix-notes/reviewed-builder-based-site-performance-design-constraints/": {
     "published": "2026-05-26",
@@ -609,7 +609,7 @@
   },
   "/fix-notes/uploaded-structured-blog-posts-schema-output/": {
     "published": "2026-05-26",
-    "updated": "2026-05-26"
+    "updated": "2026-11-02"
   },
   "/fix-notes/audited-wordpress-site-remaining-malware-indicators/": {
     "published": "2026-05-26",
@@ -617,7 +617,7 @@
   },
   "/fix-notes/migrated-site-content-between-domains-without-rebuild/": {
     "published": "2026-05-26",
-    "updated": "2026-05-26"
+    "updated": "2026-11-02"
   },
   "/fix-notes/reviewed-wordpress-site-suspicious-plugin-like-files/": {
     "published": "2026-05-26",
@@ -629,11 +629,11 @@
   },
   "/fix-notes/added-location-specific-proof-content-service-pages/": {
     "published": "2026-05-26",
-    "updated": "2026-05-26"
+    "updated": "2026-11-02"
   },
   "/fix-notes/cleaned-up-wordpress-assets-slowing-down-service-page/": {
     "published": "2026-06-28",
-    "updated": "2026-06-28"
+    "updated": "2026-11-02"
   },
   "/fix-notes/fixed-mobile-layout-below-tablet-width/": {
     "published": "2026-06-21",
@@ -641,23 +641,23 @@
   },
   "/fix-notes/cleaned-up-crawl-paths-google-slow-to-index/": {
     "published": "2026-06-14",
-    "updated": "2026-06-14"
+    "updated": "2026-11-02"
   },
   "/fix-notes/improved-internal-links-service-pages-supporting-content/": {
     "published": "2026-06-07",
-    "updated": "2026-06-07"
+    "updated": "2026-11-02"
   },
   "/fix-notes/fixed-lead-tracking-contact-form-hard-to-measure/": {
     "published": "2026-05-31",
-    "updated": "2026-05-31"
+    "updated": "2026-11-02"
   },
   "/fix-notes/stabilized-contact-form-email-sending-without-overcomplicating/": {
     "published": "2026-05-24",
-    "updated": "2026-06-03"
+    "updated": "2026-11-02"
   },
   "/fix-notes/tracked-live-site-display-issue-server-side-cache/": {
     "published": "2026-05-18",
-    "updated": "2026-05-18"
+    "updated": "2026-11-02"
   },
   "/fix-notes/cleaned-up-ai-built-page-easier-to-use-maintain/": {
     "published": "2026-05-09",
@@ -669,11 +669,11 @@
   },
   "/fix-notes/reviewed-shopify-theme-files-before-template-changes/": {
     "published": "2026-04-24",
-    "updated": "2026-04-24"
+    "updated": "2026-11-02"
   },
   "/fix-notes/checked-suspicious-wordpress-users-after-site-compromise/": {
     "published": "2026-04-17",
-    "updated": "2026-04-17"
+    "updated": "2026-11-02"
   },
   "/fix-notes/verified-form-to-crm-api-handoff-dropping-fields/": {
     "published": "2026-04-09",
@@ -681,7 +681,7 @@
   },
   "/fix-notes/category/website-fixes/": {
     "published": "2026-06-30",
-    "updated": "2026-09-30"
+    "updated": "2026-11-02"
   },
   "/fix-notes/category/page-speed/": {
     "published": "2026-06-30",
@@ -709,7 +709,7 @@
   },
   "/fix-notes/category/ecommerce-support/": {
     "published": "2026-06-30",
-    "updated": "2026-09-30"
+    "updated": "2026-11-02"
   },
   "/fix-notes/category/landing-pages/": {
     "published": "2026-06-30",
@@ -725,102 +725,102 @@
   },
   "/fix-notes/category/automation-internal-tools/": {
     "published": "2026-07-03",
-    "updated": "2026-07-03"
+    "updated": "2026-11-02"
   },
   "/sites-for-sale/hammernest-handyman/": {
     "published": "2026-07-22",
-    "updated": "2026-07-22"
+    "updated": "2026-11-02"
   },
   "/sites-for-sale/modemind/": {
     "published": "2026-07-22",
-    "updated": "2026-07-22"
+    "updated": "2026-11-02"
   },
   "/skills/shopify-plus-liquid/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/skills/wordpress-plugin-development/": {
     "published": "2026-06-29",
-    "updated": "2026-10-28"
+    "updated": "2026-11-02"
   },
   "/skills/wordpress-theme-development/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/skills/performance-engineering/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/skills/production-debugging/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/skills/ga4-gtm-measurement-integrity/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/skills/rest-api-webhook-integrations/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/skills/programmatic-seo/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/skills/schema-structured-data/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/skills/crawl-analysis-internal-linking/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/skills/google-merchant-center-product-data/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/skills/cloudflare-dns-ssl/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/locations/freeport-il/": {
     "published": "2026-06-29",
-    "updated": "2026-10-28"
+    "updated": "2026-11-02"
   },
   "/locations/rockford-il/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/locations/monroe-wi/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/locations/beloit-wi/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/locations/janesville-wi/": {
     "published": "2026-06-29",
-    "updated": "2026-10-28"
+    "updated": "2026-11-02"
   },
   "/locations/dixon-il/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/locations/sterling-il/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/locations/galena-il/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/locations/dubuque-ia/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   },
   "/locations/madison-wi/": {
     "published": "2026-06-29",
-    "updated": "2026-06-29"
+    "updated": "2026-11-02"
   }
 }

@@ -1,3 +1,4 @@
+import { updates } from "./editorial-updates.js";
 export const locationPages = [
   {
     slug: "freeport-il",
@@ -181,6 +182,14 @@ export const locationPages = [
     nearby: ["janesville-wi", "middleton-wi", "fitchburg-wi", "verona-wi"]
   }
 ];
+
+for (const location of locationPages) {
+  const patch = updates.locations[location.slug];
+  const opening = patch?.copy["Opening service paragraph"] || patch?.copy["First paragraph under Rockford website support"] || patch?.copy["First two paragraphs under Janesville website support"];
+  if (opening) location.context.splice(0, location.slug === "janesville-wi" ? 2 : 1, opening);
+  if (location.slug === "monroe-wi") location.context.push(patch.copy["Website-support introduction after the current service summary"]);
+  if (location.slug === "galena-il") location.faqs = [...(location.faqs || []), ["Can you help with a booking form embedded on my website?", "I can investigate the website side of the embed, including loading problems, sizing, mobile layout and tracking. Changes inside the booking platform may also need its provider or account owner."]];
+}
 
 export const locationMap = Object.fromEntries(locationPages.map((location) => [location.slug, location]));
 

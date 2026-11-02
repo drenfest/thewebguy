@@ -1,4 +1,5 @@
 <script>
+  import { updates } from "$lib/data/editorial-updates.js";
   import Seo from "$lib/components/Seo.svelte";
   import Hero from "$lib/components/Hero.svelte";
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
@@ -49,7 +50,7 @@
 
 <Seo
   title="Sites For Sale | The Web Guy"
-  description="Single-sale website and app assets from The Web Guy, shown with real screenshots, status badges, and detail pages built to help buyers evaluate the product."
+  description={updates.static["/sites-for-sale/"].meta}
   schema={seoSchema}
 />
 
@@ -57,7 +58,7 @@
   <Hero
     eyebrow="Single-sale digital assets"
     h1="Sites For Sale"
-    intro="Acquisition-ready web assets, built once and sold once. Each listing is presented like a product: real screenshots, state badges, proof where available, and a direct path into the underlying system depth."
+    intro={updates.static["/sites-for-sale/"].copy["Opening paragraph"]}
     cta="Ask About Buying a Site"
     ctaHref="#inventory-inquiry"
     image={staticHeroImages.services}

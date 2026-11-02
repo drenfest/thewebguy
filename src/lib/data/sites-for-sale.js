@@ -1,3 +1,4 @@
+import { updates } from "./editorial-updates.js";
 export function siteForSaleUrl(slug) {
   return `/sites-for-sale/${slug}/`;
 }
@@ -244,4 +245,16 @@ export const sitesForSale = [
   }
 ];
 
+for (const asset of sitesForSale) {
+  const patch = updates.static[`/sites-for-sale/${asset.slug}/`];
+  if (patch?.title) asset.metaTitle = patch.title;
+  if (patch?.meta) asset.metaDescription = patch.meta;
+  if (asset.slug === "hammernest-handyman") {
+    asset.cardSummary = updates.static["/sites-for-sale/"].copy["HammerNest inventory description"];
+    asset.heroSummary = patch.copy["Opening description"];
+    for (const section of asset.sections || []) {
+      if (section.items) section.items = section.items.map((item) => item.includes("starting to compound") ? patch.copy["After-acquisition statement"] : item);
+    }
+  }
+}
 export const siteForSaleMap = Object.fromEntries(sitesForSale.map((site) => [site.slug, site]));

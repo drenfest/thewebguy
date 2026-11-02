@@ -1,3 +1,6 @@
+import { applyEditorialNote, updates } from "./editorial-updates.js";
+import contentDates from "./content-dates.json" with { type: "json" };
+
 export const fixNotesDescription = "Short work notes from related cleanup, debugging, implementation, and support tasks.";
 
 export const fixNoteCategoryDefinitions = [
@@ -2284,6 +2287,11 @@ export const fixNotes = [
   }
 ];
 
+for (const note of fixNotes) {
+  const recorded = contentDates[`/fix-notes/${note.slug}/`];
+  if (recorded?.updated && recorded.updated > note.date) note.lastUpdated = recorded.updated;
+}
+
 function slugify(value = "") {
   return String(value)
     .toLowerCase()
@@ -2400,6 +2408,17 @@ function fixNoteMatchDetails(note, service = {}) {
     matchedTags,
     score: relationshipScore + troubleshootingIntentScore + (matchedTags.length * 4) + Math.min(contextOverlap, 8)
   };
+}
+
+fixNotes.forEach(applyEditorialNote);
+for (const category of fixNoteCategoryDefinitions) {
+  const headings = {"ai-website-cleanup":"Recent AI website cleanup notes", "api-integrations":"Recent API integration notes", "automation-internal-tools":"Recent automation and internal tools notes", "ecommerce-support":"Recent ecommerce support notes", "landing-pages":"Recent landing page notes", "page-speed":"Recent page speed notes", "production-debugging":"Recent production debugging notes", "security-hosting":"Recent security and hosting notes", "technical-seo":"Recent technical SEO notes", "tracking-analytics":"Recent tracking and analytics notes", "website-fixes":"Recent website repair notes", "wordpress-support":"Recent WordPress support notes"};
+  category.heading = headings[category.slug];
+  const patch = updates.noteCategories[category.slug];
+  if (patch?.copy["Hero introduction"]) category.description = patch.copy["Hero introduction"];
+  if (patch?.title) category.metaTitle = patch.title;
+  if (patch?.meta) category.metaDescription = patch.meta;
+  if (patch?.h1) category.h1 = patch.h1;
 }
 
 export const sortedFixNotes = [...fixNotes].sort(sortByNewest);

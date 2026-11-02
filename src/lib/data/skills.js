@@ -1,3 +1,4 @@
+import { applyEditorialSkill } from "./editorial-updates.js";
 export const skillPages = [
   {
     slug: "shopify-plus-liquid",
@@ -362,6 +363,8 @@ export const skillPages = [
     ]
   }
 ];
+
+skillPages.forEach(applyEditorialSkill);
 
 export const skillMap = Object.fromEntries(skillPages.map((skill) => [skill.slug, skill]));
 

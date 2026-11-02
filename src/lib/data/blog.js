@@ -1,3 +1,5 @@
+import { applyEditorialArticle } from "./editorial-updates.js";
+
 export const practicalExamples = [
   ["SEO audit needs implemented", "Send the crawl notes, audit spreadsheet, or priority list. The work can move from recommendations into real site changes."],
   ["WordPress is messy", "Old themes, plugin bloat, Elementor spacing, mobile issues, mystery CSS, and tracking scripts in strange places."],
@@ -2254,13 +2256,14 @@ export const blogPosts = [
   }
 ];
 
+blogPosts.forEach(applyEditorialArticle);
 export const blogMap = Object.fromEntries(blogPosts.map((post) => [post.slug, post]));
 export const blogCategoryMap = Object.fromEntries(blogCategoryDefinitions.map((category) => [category.slug, category]));
 export const blogTagMap = Object.fromEntries(blogTagDefinitions.map((tag) => [tag.slug, tag]));
 
 export const blogCategories = blogCategoryDefinitions.map((category) => ({
   ...category,
-  posts: blogPosts.filter((post) => post.category === category.slug)
+  posts: blogPosts.filter((post) => post.category === category.slug || post.categories?.includes(category.slug))
 }));
 
 export const blogTags = blogTagDefinitions.map((tag) => ({

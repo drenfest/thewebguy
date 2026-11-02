@@ -1,0 +1,79 @@
+[
+  {
+    "slug": "cloudflare-dns-ssl",
+    "rows": 5,
+    "ascending": true,
+    "descending": true,
+    "rowAssociationsPreserved": true
+  },
+  {
+    "slug": "crawl-analysis-internal-linking",
+    "rows": 5,
+    "ascending": true,
+    "descending": true,
+    "rowAssociationsPreserved": true
+  },
+  {
+    "slug": "ga4-gtm-measurement-integrity",
+    "rows": 5,
+    "ascending": true,
+    "descending": true,
+    "rowAssociationsPreserved": true
+  },
+  {
+    "slug": "google-merchant-center-product-data",
+    "rows": 5,
+    "ascending": true,
+    "descending": true,
+    "rowAssociationsPreserved": true
+  },
+  {
+    "slug": "performance-engineering",
+    "rows": 5,
+    "ascending": true,
+    "descending": true,
+    "rowAssociationsPreserved": true
+  },
+  {
+    "slug": "production-debugging",
+    "rows": 6,
+    "ascending": true,
+    "descending": true,
+    "rowAssociationsPreserved": true
+  },
+  {
+    "slug": "programmatic-seo",
+    "rows": 5,
+    "ascending": true,
+    "descending": true,
+    "rowAssociationsPreserved": true
+  },
+  {
+    "slug": "rest-api-webhook-integrations",
+    "rows": 6,
+    "ascending": true,
+    "descending": true,
+    "rowAssociationsPreserved": true
+  },
+  {
+    "slug": "schema-structured-data",
+    "rows": 5,
+    "ascending": true,
+    "descending": true,
+    "rowAssociationsPreserved": true
+  },
+  {
+    "slug": "shopify-plus-liquid",
+    "rows": 5,
+    "ascending": true,
+    "descending": true,
+    "rowAssociationsPreserved": true
+  },
+  {
+    "slug": "wordpress-theme-development",
+    "rows": 5,
+    "ascending": true,
+    "descending": true,
+    "rowAssociationsPreserved": true
+  }
+]

@@ -1,9 +1,8 @@
 import { locationMap, locationUrl } from "./locations.js";
-import { keywordServicePages } from "./keyword-services.js";
-import { coreServicePages, serviceUrl } from "./services.js";
+import { servicePages } from "./content.js";
+import { serviceUrl } from "./services.js";
 import { serviceSkillMap, skillMap, skillUrl } from "./skills.js";
 
-const servicePages = [...coreServicePages, ...keywordServicePages];
 const serviceMap = Object.fromEntries(servicePages.map((service) => [service.slug, service]));
 
 export const staticRoutes = new Set(["/", "/services/", "/blog/", "/fix-notes/", "/skills/", "/locations/", "/rate/", "/about/", "/faq/", "/contact/"]);

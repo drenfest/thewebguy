@@ -1,3 +1,5 @@
+import { updates } from "./editorial-updates.js";
+
 export const servicesHubProof = {
   eyebrow: "Service proof",
   heading: "Evidence behind the website service paths",
@@ -21,7 +23,7 @@ export const servicesHubProof = {
 export const skillsHubProof = {
   eyebrow: "Technical proof",
   heading: "Skills tied to real website implementation work",
-  intro: "These skills are not resume filler. They are the tools and debugging paths behind WordPress fixes, Shopify cleanup, tracking QA, API work, performance improvements, and SEO implementation.",
+  intro: "Explore the implementation work behind the service: WordPress themes and plugins, Shopify templates, measurement, integrations, performance and technical SEO. Each skill page explains the problems it addresses and the checks involved.",
   items: [
     {
       label: "Platform engineering",
@@ -44,8 +46,8 @@ export const locationsHubProof = {
   intro: "The location pages connect regional intent to the work local businesses actually need: working lead forms, clean WordPress updates, local pages, tracking, speed, ecommerce, and ongoing support.",
   items: [
     {
-      label: "Local SEO execution",
-      copy: "Worked on local SEO campaigns targeting stronger Map Pack visibility and built service-area or city-page strategies that avoid pure duplicate boilerplate."
+      label: "Website-side SEO implementation",
+      copy: "Support can cover service pages, titles and headings, internal links, schema, redirects and crawl issues. The work is scoped around changes to the website."
     },
     {
       label: "Lead-flow support",
@@ -592,13 +594,35 @@ export const locationProofBySlug = {
 };
 
 export function proofForService(slug) {
-  return serviceProofBySlug[slug];
+  const proof = serviceProofBySlug[slug];
+  if (slug === "site-speed-performance") return {
+    ...proof, heading: "Performance work you can inspect",
+    intro: updates.services[slug].sections["Performance proof"].replace(/^Performance work you can inspect /, ""),
+    items: [{label:"Shopify performance release note",copy:"Read the reported tests and release context.",href:"/fix-notes/turned-shopify-speed-audit-verified-theme-release/"}]
+  };
+  if (slug === "automation-internal-tools") return { ...proof, items: proof.items.map((item) => /80-90/.test(item.copy) ? {...item,copy:"Built reporting and audit workflows that collect repeatable inputs, compare results, and highlight items needing review."} : item) };
+  return proof;
 }
 
 export function proofForSkill(slug) {
-  return skillProofBySlug[slug];
+  const proof = skillProofBySlug[slug];
+  const patch = updates.skills[slug];
+  const evidence = patch?.links.filter((link) => link.href.startsWith("/fix-notes/"));
+  const authoredProof = {
+    "performance-engineering": ["Performance proof cards", "Performance work you can inspect"],
+    "shopify-plus-liquid": ["Shopify proof section", "Shopify work example"],
+    "wordpress-theme-development": ["Theme proof block", "WordPress build example"]
+  }[slug];
+  if (authoredProof) {
+    const [key, heading] = authoredProof;
+    return { ...proof, heading, intro: patch.copy[key].slice(heading.length + 1), items: evidence.map((link) => ({label:link.text,copy:"Read the full implementation and recorded checks.",href:link.href})) };
+  }
+  if (evidence?.length) return {...proof, items:[...(proof?.items || []), ...evidence.map((link) => ({label:link.text,copy:"Read the implementation, completed stage, and checks in the published work note.",href:link.href}))]};
+  return proof;
 }
 
 export function proofForLocation(slug) {
-  return locationProofBySlug[slug];
+  const proof = locationProofBySlug[slug];
+  const heading = updates.locations[slug]?.copy["Capability/proof section heading"];
+  return heading ? { ...proof, eyebrow:"Available support", heading } : proof;
 }

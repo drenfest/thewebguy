@@ -1,4 +1,6 @@
 <script>
+  import { updates, linkedCopy } from "$lib/data/editorial-updates.js";
+  import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import Seo from "$lib/components/Seo.svelte";
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
   import SectionHeading from "$lib/components/SectionHeading.svelte";
@@ -10,6 +12,7 @@
 
   let { data } = $props();
   const tag = $derived(data.tag);
+  const editorial = $derived(updates.collections[`/blog/tag/${tag.slug}/`]);
   const tagPath = $derived(blogTagUrl(tag.slug));
   const breadcrumbs = $derived([
     { label: "Home", href: "/", title: "View The Web Guy homepage" },
@@ -72,13 +75,13 @@
     <SectionHeading
       eyebrow="Tagged posts"
       h2={`${tag.label} troubleshooting posts`}
-      body="These posts share the same symptom, platform detail, or implementation theme and belong together in Search and site navigation."
     />
+    <InternalLinkCopy paragraphs={[linkedCopy(Object.values(editorial?.copy || {})[0] || "", editorial?.links || [])]} />
     <SummaryLinkGrid items={summaryItems} className="summary-link-grid summary-link-grid--compact" />
   </section>
 
   <CtaBand
-    heading={`Need help with ${tag.label.toLowerCase()} issues?`}
+    heading={editorial?.copy["Final quote-section heading."] || "Need help with this on your website?"}
     copy="Send the URL, what is broken, what should happen instead, and any recent changes."
     label="Get a Free Quote"
     secondaryLabel="View Blog"

@@ -1,5 +1,7 @@
 <script>
   import SectionHeading from "./SectionHeading.svelte";
+  import InternalLinkCopy from "./InternalLinkCopy.svelte";
+  import { linkedCopy } from "$lib/data/editorial-updates.js";
   import { fixNoteDisplayDate, fixNoteMap, fixNoteUrl, getFixNotesForService, sortedFixNotes } from "$lib/data/content.js";
 
   let {
@@ -7,6 +9,7 @@
     showDiagnosis = true,
     showProcess = true,
     showDelivery = true,
+    showSend = true,
     showProof = true,
     diagnosisEyebrow = "",
     diagnosisHeading = "From a visible symptom to a verified fix",
@@ -14,7 +17,7 @@
     symptomsOverride = [],
     investigationCopy = "",
     processHeading = "How the work proceeds",
-    processBody = "Each step narrows uncertainty before more changes are made.",
+    processBody = "Review the URL, symptom, and expected result for the quote. Agree the paid investigation or repair scope and cost. Reproduce the failure within that scope, make the approved change, and retest the affected action. Explain any additional work before expanding the scope.",
     processStepsOverride = [],
     deliveryHeading = "What you receive",
     deliveryCopy = "A diagnosis, the agreed changes, verification results, unresolved dependencies, and a plain completion note that explains what changed and what still needs attention.",
@@ -39,10 +42,15 @@
     "A form, checkout, admin screen, layout, integration, or tracked action is failing",
     "The problem appeared after an update, deployment, content change, or cache rebuild"
   ]).slice(0, 5));
-  const processSteps = $derived(processStepsOverride.length ? processStepsOverride : ["Reproduce", "Isolate", "Agree", "Repair", "Retest"]);
+  const processSteps = $derived(processStepsOverride.length ? processStepsOverride : service?.workflow ? [] : ["Review the quote request", "Agree scope and cost", "Investigate within scope", "Make the approved change", "Retest and hand over"]);
 
   function firstItem(items = [], fallback = "") {
     return items[0] || fallback;
+  }
+
+  function exampleResult(note) {
+    if (note.slug === "turned-shopify-speed-audit-verified-theme-release") return "The work note records the theme release, product and cart checks, URL checks, and retained rollback theme. Read the original note for the qualified Lighthouse lab scores and test context.";
+    return note.resultSummary;
   }
 </script>
 
@@ -79,23 +87,23 @@
     <div class="service-guide__process-copy">
       <span class="service-guide__number" aria-hidden="true">03</span>
       <div>
-        <h3 id="service-process-heading">{processHeading}</h3>
-        <p>{processBody}</p>
+        <h3 id="service-process-heading">{service?.workflow?.heading || processHeading}</h3>
+        <p>{service?.workflow?.body || processBody}</p>
       </div>
     </div>
-    <ol class="service-guide__steps">
+    {#if processSteps.length}<ol class="service-guide__steps">
       {#each processSteps as step, index}
         <li>
           <span>{index + 1}</span>
           <strong>{step}</strong>
         </li>
       {/each}
-    </ol>
+    </ol>{/if}
   </article>
   {/if}
 
   {#if showDelivery}
-  <div class="service-guide__middle" class:service-guide__middle--detailed={detailItems.length > 0}>
+  <div class="service-guide__middle" class:service-guide__middle--detailed={detailItems.length > 0 || !showSend}>
     {#if !detailItems.length}
     <article class="service-guide__panel">
       <span class="service-guide__number" aria-hidden="true">04</span>
@@ -104,11 +112,11 @@
     </article>
     {/if}
 
-    <article class="service-guide__panel service-guide__panel--send">
+    {#if showSend}<article class="service-guide__panel service-guide__panel--send">
       <span class="service-guide__number" aria-hidden="true">05</span>
       <h3>{sendHeading}</h3>
       <p>{sendCopy}</p>
-    </article>
+    </article>{/if}
   </div>
   {#if detailItems.length}
     <div class="service-guide__detail-grid">
@@ -133,8 +141,12 @@
         <span class="service-guide__number" aria-hidden="true">06</span>
         <div>
           <p class="eyebrow">Relevant Web Fixes</p>
-          <h3>{examples.length === 1 ? "Actual troubleshooting example" : "Actual troubleshooting examples"}</h3>
-          <p>{examples.length === 1 ? "A related work note that shows the problem, the change made, and what was checked afterward." : "Related work notes that show the problem, the change made, and what was checked afterward."}</p>
+          <h3>{service?.evidenceHeading || (examples.length === 1 ? "Actual troubleshooting example" : "Actual troubleshooting examples")}</h3>
+          {#if service?.evidenceIntro}
+            <InternalLinkCopy paragraphs={[linkedCopy(service.evidenceIntro, service.evidenceLinks || [])]} />
+          {:else}
+            <p>{examples.length === 1 ? "A related work note that shows the problem, the change made, and what was checked afterward." : "Related work notes that show the problem, the change made, and what was checked afterward."}</p>
+          {/if}
         </div>
       </div>
 
@@ -150,7 +162,7 @@
               <div><dt>Symptom</dt><dd>{note.problemSummary}</dd></div>
               <div><dt>Evidence</dt><dd>{firstItem(note.whatIChecked, note.excerpt)}</dd></div>
               <div><dt>Change</dt><dd>{firstItem(note.whatIChanged, "The agreed repair was implemented and documented.")}</dd></div>
-              <div><dt>Verified result</dt><dd>{note.resultSummary}</dd></div>
+              <div><dt>Verified result</dt><dd>{exampleResult(note)}</dd></div>
             </dl>
             <a class="service-guide__example-link" href={fixNoteUrl(note.slug)} title={`Read the Web Fix: ${note.title}`}>Read the full Web Fix -&gt;</a>
           </article>

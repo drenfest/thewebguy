@@ -1,0 +1,12 @@
+{
+  "mode": "Offline source-function test; no network requests or form submissions",
+  "faqSource": "src/lib/components/FaqQuestionForm.svelte:66",
+  "searchSource": "src/lib/components/Header.svelte:182",
+  "sanitizer": "src/lib/analytics.js:sanitizeParams",
+  "syntheticEmailRetained": true,
+  "configuredSearchTruncationLength": 120,
+  "observedLengthIncludingEllipsis": 122,
+  "currentDisclosure": "FAQ question text and site search terms may be sent to analytics.",
+  "finding": "Whitespace-normalized text is truncated, rather than identifying values being redacted. Existing disclosure is consistent; no claim of personal-data redaction is supported.",
+  "provider": "Tawk integration confirmed in site code and render.yaml; hosted transcript/retention settings remain unverified."
+}

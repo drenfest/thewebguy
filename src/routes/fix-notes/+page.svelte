@@ -65,7 +65,7 @@
     <div class="fix-notes-categories__grid">
       {#each fixNoteCategories as category}
         <a href={fixNoteCategoryUrl(category.slug)} title={`View ${category.label} Web Fixes`}>
-          <span>{category.notes.length} notes</span>
+          <span>{category.notes.length} {category.notes.length === 1 ? "note" : "notes"}</span>
           <strong>{category.label}</strong>
           <em>{category.description}</em>
         </a>

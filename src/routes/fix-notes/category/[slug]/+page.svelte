@@ -1,4 +1,5 @@
 <script>
+  import { updates } from "$lib/data/editorial-updates.js";
   import Seo from "$lib/components/Seo.svelte";
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
   import SectionHeading from "$lib/components/SectionHeading.svelte";
@@ -22,8 +23,8 @@
 </script>
 
 <Seo
-  title={category.slug === "website-fixes" ? "Website Fixes | Web Fixes | The Web Guy" : `${category.label} Web Fixes | The Web Guy`}
-  description={`${category.label} Web Fixes from The Web Guy. ${category.description}`}
+  title={category.metaTitle || `${category.label} Web Fixes | The Web Guy`}
+  description={category.metaDescription || `${category.label} Web Fixes from The Web Guy. ${category.description}`}
   schema={seoSchema}
 />
 
@@ -31,7 +32,7 @@
   <section class="section fix-note-category-hero section-effect section-effect--grid section-effect--low">
     <div class="fix-note-category-hero__inner">
       <p class="eyebrow">Web Fixes</p>
-      <h1>{category.label} Web Fixes</h1>
+      <h1>{category.h1 || `${category.label} Web Fixes`}</h1>
       <p>{category.description}</p>
     </div>
   </section>
@@ -41,10 +42,14 @@
   <section class="section section-effect section-effect--signals section-effect--low">
     <SectionHeading
       eyebrow="Related Web Fixes"
-      h2={`Recent ${category.label.toLowerCase()} notes`}
+      h2={category.heading || `Recent ${category.label} notes`}
       body="Short work notes from related cleanup, debugging, implementation, and support tasks."
     />
     <FixNoteList notes={category.notes} currentCategorySlug={category.slug} />
+    {#if updates.noteCategories[category.slug]?.links.length}
+      <h3>Related Shopify work</h3>
+      <ul>{#each updates.noteCategories[category.slug].links as link}<li><a class="text-link" href={link.href}>{link.text}</a></li>{/each}</ul>
+    {/if}
   </section>
 
   <CtaBand

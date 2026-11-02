@@ -9,7 +9,7 @@
   import ContextualSupport from "$lib/components/ContextualSupport.svelte";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
   import SortableTable from "$lib/components/SortableTable.svelte";
-  import { blogCategories, blogCategoryMap, blogPosts, blogTagMap, blogTags, blogTagUrl, blogUrl } from "$lib/data/content.js";
+  import { blogCategories, blogCategoryMap, blogCategoryUrl, blogPosts, blogTagMap, blogTags, blogTagUrl, blogUrl } from "$lib/data/content.js";
   import { formatContentDate, updatedDateForUrl } from "$lib/data/content-dates.js";
   import { staticHeroImages } from "$lib/data/hero-images.js";
   import { blogPostListSchema, breadcrumbSchema, schemaList } from "$lib/data/schema.js";
@@ -34,7 +34,7 @@
   const sortedSomethingBrokePosts = sortedBlogPosts.filter((post) => post.problemType === "Something broke");
   const categorySections = blogCategories.map((category) => ({
     ...category,
-    posts: sortedBlogPosts.filter((post) => post.category === category.slug)
+    posts: sortedBlogPosts.filter((post) => (post.category === category.slug || post.categories?.includes(category.slug)))
   })).filter((category) => category.posts.length);
   const tagSections = blogTags.map((tag) => ({
     ...tag,
@@ -192,17 +192,25 @@
 
   <Breadcrumbs items={breadcrumbs} />
 
+  <section class="section soft-section">
+    <SectionHeading eyebrow="Reading paths" h2="Choose a starting point" />
+    <ul class="check-list">
+      <li>Something broke: <a href="/blog/something-broke-on-your-website/">diagnose the symptom</a>, then follow the <a href="/blog/fix-my-broken-website/">safe repair order</a>.</li>
+      <li><a href="/blog/category/forms-tracking-data/">Forms or measurement</a>: separate a failed submission from a missing event or delivery problem.</li>
+      <li><a href="/blog/category/seo-pages-ai/">A launch or SEO task</a>: define what the page must do and verify the implementation.</li>
+    </ul>
+  </section>
   <section class="section section-effect section-effect--grid section-effect--low">
     <SectionHeading
       eyebrow="Categories and tags"
-      h2="Browse website troubleshooting by topic"
-      body="The blog is grouped by the practical problem type first, then by tags for platform, symptom, tracking, SEO, and implementation details."
+      h2="All topics"
+      body="Browse by category or use a symptom, platform or implementation tag."
     />
     <div class="blog-taxonomy-grid">
       {#each categorySections as category}
         <article id={`category-${category.slug}`} class="blog-taxonomy-card">
           <div>
-            <span class="blog-taxonomy-count">{category.posts.length} articles</span>
+            <span class="blog-taxonomy-count">{category.posts.length} {category.posts.length === 1 ? "article" : "articles"}</span>
             <h3>{category.label}</h3>
             <p>{category.description}</p>
           </div>
@@ -211,11 +219,7 @@
               <a href={blogTagUrl(tag.slug)} title={`View ${tag.label} tagged posts`}>{tag.label}</a>
             {/each}
           </div>
-          <ul class="blog-taxonomy-posts">
-            {#each category.posts.slice(0, 4) as post}
-              <li><a href={blogUrl(post.slug)} title={`Read ${post.title.replace(" | The Web Guy", "")}`}>{post.title.replace(" | The Web Guy", "")}</a></li>
-            {/each}
-          </ul>
+          <a class="text-link" href={blogCategoryUrl(category.slug)}>Browse {category.label}</a>
         </article>
       {/each}
     </div>
@@ -231,15 +235,11 @@
       {#each tagSections as tag}
         <article id={`tag-${tag.slug}`} class="blog-tag-card">
           <div>
-            <span class="blog-taxonomy-count">{tag.posts.length} posts</span>
+            <span class="blog-taxonomy-count">{tag.posts.length} {tag.posts.length === 1 ? "post" : "posts"}</span>
             <h3>{tag.label}</h3>
             <p>{tag.description}</p>
           </div>
-          <div class="blog-tag-posts">
-            {#each tag.posts.slice(0, 4) as post}
-              <a href={blogUrl(post.slug)} title={`Read ${post.title.replace(" | The Web Guy", "")}`}>{post.title.replace(" | The Web Guy", "")}</a>
-            {/each}
-          </div>
+          <a class="text-link" href={blogTagUrl(tag.slug)}>Browse {tag.label}</a>
         </article>
       {/each}
     </div>
@@ -249,7 +249,7 @@
     <SectionHeading
       eyebrow="Latest articles"
       h2="Newest website support articles"
-      body="Recent posts are listed newest first, using the article update date with the newest additions first when dates match."
+      body="Browse the latest troubleshooting notes, or choose a topic to narrow the list."
     />
     <div class="latest-article-list">
       {#each sortedBlogPosts as post}
@@ -271,42 +271,6 @@
       {/each}
     </div>
   </section>
-
-  <section class="section section-effect section-effect--grid section-effect--low">
-    <SectionHeading
-      eyebrow="Broken website starting points"
-      h2="When something broke"
-      body="These posts are built for the moment when the site is acting weird and you need a sharper name for the problem before asking for help."
-    />
-    <InternalLinkCopy paragraphs={blogHubInlineParagraphs} />
-    <SummaryLinkGrid
-      className="summary-link-grid summary-link-grid--compact"
-      items={articleSummaryItems(startHerePosts, startHereArticleBullets)}
-    />
-    <SortableTable caption="Troubleshooting article routing table" columns={blogTableColumns} rows={blogRows} />
-  </section>
-
-  <section class="section soft-section section-effect section-effect--signals section-effect--low">
-    <SectionHeading eyebrow="Specific broken-site symptoms" h2="Specific website problems" />
-    <SummaryLinkGrid
-      className="summary-link-grid summary-link-grid--compact"
-      items={articleSummaryItems(sortedSomethingBrokePosts, brokenSymptomArticleBullets)}
-    />
-  </section>
-
-  <ContextualSupport
-    eyebrow="Troubleshooting-to-service paths"
-    heading="Troubleshooting paths with service context"
-    intro="Use these reading paths to move from the symptom to the page that can help fix it."
-    items={blogHubContextualItems}
-  />
-
-  <TopicalLinks
-    eyebrow="Article-to-service routes"
-    heading="Turn the article into the next practical website action"
-    intro="The posts are written to help name the problem. These links point from the reading path into the service pages that usually handle the work."
-    items={blogHubLinks}
-  />
 
   <CtaBand heading="Know what broke?" copy="Send the URL, symptoms, what should happen, and what changed recently. That is enough to start a useful conversation." label="Get a Free Quote" />
 

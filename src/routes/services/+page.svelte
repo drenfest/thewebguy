@@ -1,4 +1,5 @@
 <script>
+  import { updates } from "$lib/data/editorial-updates.js";
   import Seo from "$lib/components/Seo.svelte";
   import Hero from "$lib/components/Hero.svelte";
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
@@ -132,7 +133,7 @@
     return {
       label,
       title: service.h1,
-      copy: catalogCopy[service.slug] || service.intro,
+      copy: service.slug === "automation-internal-tools" ? updates.static["/services/"].copy["Automation service-card description"] : catalogCopy[service.slug] || service.intro,
       bullets: serviceSummaryBullets[service.slug] || [
         service.keywordCluster || service.eyebrow,
         "Focused guidance for this specific website problem",
@@ -239,6 +240,18 @@
 
   <Breadcrumbs items={breadcrumbs} />
 
+  <section class="section soft-section section-effect section-effect--signals section-effect--low">
+    <SectionHeading eyebrow="Start with the task" h2="Choose your starting point" />
+    <ul class="check-list">
+      <li>Something broke: <a class="text-link" href="/services/website-fixes/">website fixes</a>.</li>
+      <li>An audit needs implementation: <a class="text-link" href="/services/technical-seo-implementation/">technical SEO</a>.</li>
+      <li>A page needs building: <a class="text-link" href="/services/landing-pages/">landing pages</a>.</li>
+      <li>Data is missing or wrong: <a class="text-link" href="/services/analytics-tracking/">tracking</a> or <a class="text-link" href="/services/website-integration-help/">integration help</a>.</li>
+    </ul>
+    <p>Still unsure? <a class="text-link" href="/contact/">Send the URL and explain the result you need.</a></p>
+  </section>
+
+
   <section class="section split-section soft-section">
     <div><SectionHeading eyebrow="AI Development Oversight" h2="Using AI to Build or Change Your Website?" body="Add experienced engineering review around the work. Start with a code review, pre-launch QA, production oversight, or practical guardrails for your team." /></div>
     <div><a class="button button-primary" href="/ai-development-oversight/">Explore AI Development</a><p>Free quote. Review and implementation are paid work with scope agreed first.</p></div>
@@ -250,9 +263,10 @@
       h2="Choose the help closest to the actual problem"
       body="Start with what is broken, what needs to change, or what you want to build. You do not need to choose the perfect category before contacting me."
     />
-    <InternalLinkCopy paragraphs={serviceHubInlineParagraphs} />
     <SummaryLinkGrid items={coreServiceSummaryItems} />
-    <SortableTable caption="Service comparison and handoff table" columns={serviceTableColumns} rows={serviceRows} />
+    <details class="service-comparison-details"><summary>Compare the inputs and deliverables for common services</summary>
+      <SortableTable caption="Service comparison and handoff table" columns={serviceTableColumns} rows={serviceRows} />
+    </details>
   </section>
 
   <ProofPanel proof={servicesHubProof} />
@@ -269,47 +283,6 @@
     {/each}
   </section>
 
-  <section class="section soft-section section-effect section-effect--hex section-effect--medium">
-    <SectionHeading eyebrow="Website problem routing" h2="Start with the website pain, not the service label" />
-    <CardGrid
-      className="card-grid compact-grid"
-      items={painCards}
-    />
-  </section>
-
-  <section class="section split-section section-effect section-effect--traces section-effect--low">
-    <div>
-      <SectionHeading
-        eyebrow="Broken-site handoffs"
-        h2="Most website service requests start as a symptom"
-        body="A broken page usually starts with Website Fixes, then moves into WordPress Support, production debugging, or reliability work once the cause is clear. SEO requests often begin with Technical SEO Implementation, then turn into schema, crawl cleanup, internal links, or ecommerce product data."
-      />
-      <a class="text-link" href="/services/website-fixes/" title="View website fixes for broken layouts, forms, scripts, embeds, and visible bugs">Start with website fixes</a>
-    </div>
-    <div>
-      <SectionHeading
-        eyebrow="Page launches and measurement"
-        h2="New website work needs a working path"
-        body="A page build is usually tied to Landing Pages, Analytics & Tracking, React/static front-end work, or API integrations. If an agency already owns strategy, Agency Overflow keeps production moving without turning every task into a full project."
-      />
-      <a class="text-link" href="/services/landing-pages/" title="View landing page support for service pages, campaign pages, forms, tracking, and launch work">Plan a page build</a>
-    </div>
-  </section>
-
-  <ContextualSupport
-    eyebrow="Website service starting points"
-    heading="Primary website service paths from the services hub"
-    intro="Start with these service paths when the problem is visible, technical, unfinished, or stuck between strategy and implementation."
-    items={serviceHubContextualItems}
-  />
-
-  <TopicalLinks
-    eyebrow="Website service routes"
-    heading="Match the request to the page that can actually move it forward"
-    intro="These are the strongest service paths for common website problems, from broken front-end behavior to SEO implementation, tracking, and agency overflow."
-    items={serviceHubLinks}
-  />
-
   <section class="section section-effect section-effect--hex section-effect--medium">
     <SectionHeading
       eyebrow="Broken website symptoms"
@@ -319,28 +292,6 @@
     <SummaryLinkGrid className="summary-link-grid summary-link-grid--compact" items={brokenSymptomItems} />
   </section>
 
-  <section class="section split-section section-effect section-effect--grid section-effect--low">
-    <div>
-      <SectionHeading eyebrow="For agencies" h2="Overflow production without hiring full-time" body="Use The Web Guy for WordPress edits, SEO implementation, landing pages, QA cleanup, tracking fixes, ecommerce cleanup, and technical tasks when the team is overloaded." />
-      <a class="text-link" href="/services/agency-overflow/" title="View agency overflow web support">View agency overflow</a>
-    </div>
-    <div>
-      <SectionHeading eyebrow="For business owners" h2="A practical web helper for annoying site problems" body="Get developer help when the website is broken, outdated, slow, hard to update, not tracking correctly, or sitting on a backlog of small-but-important tasks." />
-      <a class="text-link" href="/rate/" title="View the website quote process">See the quote process</a>
-    </div>
-  </section>
-
   <CtaBand heading="Not sure which service fits?" copy="Send the URL and the messy version of the problem. I will ask any questions needed to confirm fit and quote the next step." label="Get a Free Quote" />
 
-  <section class="section soft-section split-section section-effect section-effect--signals section-effect--low">
-    <div>
-      <SectionHeading eyebrow="Ecommerce and platform work" h2="Shopify, WooCommerce, BigCommerce, APIs, and tracking" body="Platform support can include product data cleanup, Merchant Center, schema, Liquid/template fixes, checkout bugs, ecommerce tracking, APIs, webhooks, and performance cleanup." />
-      <a class="text-link" href="/services/ecommerce-support/" title="View ecommerce website support">View ecommerce support</a>
-    </div>
-    <div class="rate-callout">
-      <span>Start with your project</span>
-      <strong>Free quote</strong>
-      <p>Agree the scope and cost for your website work before it starts.</p>
-    </div>
-  </section>
 </main>

@@ -6395,6 +6395,7 @@
 
 </div>
 </div>
+<aside class="article-callout"><h3>What I would keep separate</h3><p>WooCommerce Support and Checkout Error Fix Help have a page-to-page cosine of 0.855, and the published passages already link them in both directions. Their jobs remain different: broad store work on one page, a failed purchase path on the other. I would keep both pages and those contextual links.</p><p>The phrase “woocommerce broken checkout checker” shows why meaning alone is insufficient. Its vector fit is 75.84, while its combined score is 41.77; the wording may ask for a tool even though the page offers hands-on diagnosis. I would keep the repair page focused on the checkout failures I check and the work the service delivers. A checker or monitoring product would need its own real offering before it deserved a promise on that page.</p></aside>
 <div class="v4-card" id="example-wordpress_plugin_conflicts" aria-labelledby="example-wordpress_plugin_conflicts-title">
 <div class="v4-card-heading">
 <h3 id="example-wordpress_plugin_conflicts-title">
@@ -8825,6 +8826,7 @@
 <section class="article-section v4-examples" id="observed-query-divergences" aria-labelledby="observed-query-divergences-heading" data-comparison="no-observed-queries">
 <h2 id="observed-query-divergences-heading">Three pages with no observed queries</h2>
 <p>The first six examples connect pages with search phrases that appeared in Search Console. These three pages have no query rows returned for the same comparison period, September 28–October 25, 2026. They provide a contrast between a page’s relationship to its subject and an observed connection to a search.</p>
+<p>An empty returned query list does not establish zero search visibility. Search Console omits some queries for privacy and does not show every row. Check the page-level performance data before treating an empty query list as zero impressions. Here, the absence means there is no disclosed page-query pair to score. <a href="https://support.google.com/webmasters/answer/17011259?hl=en">Search Console query-reporting limitations</a> explain why the returned rows are incomplete.</p>
 <p>The page-and-topic measurements remain available. A query-specific score needs a query to compare with the page, so an absent phrase is not assigned a zero score.</p>
 <div class="v4-card" id="no-query-rebuilt-wordpress-site-from-crawl-into-reusable-blocks" data-query-status="none-observed" aria-labelledby="no-query-rebuilt-wordpress-site-from-crawl-into-reusable-blocks-title">
 <div class="v4-card-heading">
@@ -9114,11 +9116,12 @@
 <p>That is where relevance becomes a potential search opportunity: a search expresses a need that the page can meaningfully answer, and the surrounding pages reinforce its role. The numbers help identify that relationship; they do not guarantee a ranking. The value of topological relevance is understanding how the language, purpose and connections across a website come together to answer the searches it is suited to serve.</p>
 <p>The closing test extends beyond the nine examples above. All <strong>183 pages</strong> were compared with Search Console API data for thewebguy.app over September 28–October 25, 2026. The comparison uses each page’s Topical Relevance Score, rather than the individual phrase scores.</p>
 <p>Across all pages tested, a Topical Relevance Score of <strong>57.20 out of 100</strong> was <strong>an observed lower boundary in this dataset</strong> for pages that populated for queries in Search Console.</p>
+<p>The frozen calculation used 183 URL records and 72 pages with at least one disclosed query observation with an impression in a complete Web-search week between September 28 and October 25, 2026. The minimum was <strong>57.20406864195534/100</strong>, on the page “Need a Page Live Fast?”. The displayed 57.20 is rounded to two decimal places; the strict comparison below is to that rounded value, not a Google eligibility threshold.</p><p>The stored page score is 0.40 × lexical fit + 0.40 × vector fit + 0.20 × link support, with all three inputs and the stored result on a 0–1 scale. Here T is that result multiplied by 100. Query-level scores elsewhere in the article describe separate page-query pairs. The sample minimum is an observation about these disclosed records, not a cutoff for pages or sites outside this sample.</p>
 <div class="equation article-callout" tabindex="0" role="region" aria-label="Site-wide query visibility test result">
 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block" aria-label="In this site-wide test, an observed query appearance implies a page-level Topical Relevance Score greater than 57.20 out of 100">
-<mrow><msub><mi>O</mi><mtext>test</mtext></msub><mo>=</mo><mtext>true</mtext><mo>⇒</mo><mi>T</mi><mo>&gt;</mo><mfrac><mn>57.20</mn><mn>100</mn></mfrac></mrow>
+<mrow><msub><mi>O</mi><mtext>test</mtext></msub><mo>=</mo><mtext>true</mtext><mo>⇒</mo><mi>T</mi><mo>&gt;</mo><mn>57.20</mn></mrow>
 </math>
-<p class="formula-fallback">O<sub>test</sub> = true ⇒ T &gt; 57.20 / 100</p>
+<p class="formula-fallback">O<sub>test</sub> = true ⇒ T &gt; 57.20 (T on a 0–100 scale)</p>
 </div>
 </section>
 </article>

@@ -1,4 +1,5 @@
 <script>
+  import { cleanTitle } from "$lib/data/editorial-updates.js";
   import RelevanceArticle from "$lib/components/RelevanceArticle.svelte";
   import Seo from "$lib/components/Seo.svelte";
   import Hero from "$lib/components/Hero.svelte";
@@ -41,7 +42,7 @@
     href,
     copy: copy || "Use this page when the issue needs hands-on website support instead of another generic troubleshooting article."
   })));
-  const contextualSupportItems = $derived((post.links || []).slice(0, 4).map(([label, href, copy]) => ({
+  const contextualSupportItems = $derived([...(post.links || []), ...(post.contextCards || []).map((card) => [contextLabel(card), contextHref(card), contextCopy(card)])].filter((item, index, items) => items.findIndex((other) => other[1] === item[1]) === index).map(([label, href, copy]) => ({
     title: label,
     href,
     titleAttr: `View ${label} from this troubleshooting article`,
@@ -130,16 +131,16 @@
     supportPath: articleSupportLinks[0] ? { text: articleSupportLinks[0][0], href: articleSupportLinks[0][1] } : { text: "Website Fixes", href: "/services/website-fixes/" }
   })));
   const otherCards = $derived((post.otherItems || relatedPosts.map((item) => [
-    item.title,
+    cleanTitle(item.title),
     item.summary,
     blogUrl(item.slug),
     "Read the post",
     item.relatedService
-  ])).map((item) => item[4] ? item : [...item, iconForHref(item[2])]));
+  ])).map((item) => [cleanTitle(item[0]), ...item.slice(1)]).map((item) => item[4] ? item : [...item, iconForHref(item[2])]));
   const prioritySectionSet = $derived(new Set(post.prioritySectionHeadings || []));
   const prioritySections = $derived((post.sections || []).filter((section) => prioritySectionSet.has(sectionHeading(section))));
   const standardSections = $derived((post.sections || []).filter((section) => !prioritySectionSet.has(sectionHeading(section))));
-  const showInArticleContextCards = $derived(post.slug !== "something-broke-on-your-website");
+  const showInArticleContextCards = false;
 
   function slugify(text = "") {
     return text
@@ -236,6 +237,8 @@
       return item;
     });
 
+    if (post.diagnosticTable) mappedItems.unshift({ label: post.diagnosticTable.heading, id: "choose-the-layer-from-the-evidence" });
+
     if (post.contextCards) {
       mappedItems.push({
         label: post.contextHeading || "Related implementation paths",
@@ -278,6 +281,8 @@
     </section>
   {:else}
   <Hero
+    compact={true}
+    showCapabilityLinks={false}
     eyebrow={post.eyebrow}
     h1={post.h1 || post.title}
     intro={post.summary}
@@ -323,7 +328,7 @@
           </div>
         {/if}
 
-        <InternalLinkCopy paragraphs={articleInternalParagraphs} className="internal-link-copy--compact" />
+        {#if post.relatedSymptoms}<InternalLinkCopy paragraphs={[post.relatedSymptoms]} className="internal-link-copy--compact" />{/if}
 
         {#if post.exampleBlock}
           <aside class="article-callout article-example-block">
@@ -335,7 +340,12 @@
           </aside>
         {/if}
 
-        <SortableTable caption={`${post.eyebrow} troubleshooting table`} columns={articleTableColumns} rows={articleRows} />
+        {#if post.diagnosticTable}
+          <section class="article-section" id="choose-the-layer-from-the-evidence">
+            <h2>{post.diagnosticTable.heading}</h2>
+            <SortableTable caption={post.diagnosticTable.heading} columns={post.diagnosticTable.columns} rows={post.diagnosticTable.rows} />
+          </section>
+        {/if}
 
         {#each prioritySections as section}
           <section id={sectionId(section)} class="article-section article-section--priority">
@@ -412,6 +422,13 @@
 
             {#if !Array.isArray(section) && section.infographic}
               <TopoRankInfographic {...section.infographic} />
+            {:else if !Array.isArray(section) && section.flowBranches}
+              {#each section.flowBranches as branch}
+                <h3>{branch.label}</h3>
+                <div class="article-flow" aria-label={branch.label}>
+                  {#each branch.steps as step, index}<span>{step}</span>{#if index < branch.steps.length - 1}<b aria-hidden="true">-&gt;</b>{/if}{/each}
+                </div>
+              {/each}
             {:else if !Array.isArray(section) && section.flow}
               <div class="article-flow" aria-label="Flow map">
                 {#each section.flow as step, index}
@@ -434,6 +451,9 @@
               </div>
             {/if}
 
+            {#if !Array.isArray(section) && section.afterBody}
+              <InternalLinkCopy paragraphs={section.afterBody} />
+            {/if}
             {#if !Array.isArray(section) && section.callout}
               <aside class="article-callout">
                 <strong>{section.calloutTitle || "Worth noting"}</strong>
@@ -470,6 +490,12 @@
             </div>
           </section>
         {/if}
+        {#if post.references?.length}
+          <section class="article-section" id="technical-references">
+            <h2>Technical references</h2>
+            <ul>{#each post.references as reference}<li><a class="text-link" href={reference.href}>{reference.text}</a></li>{/each}</ul>
+          </section>
+        {/if}
       </div>
     </div>
   </section>
@@ -478,17 +504,11 @@
 
   {#if !post.informational}
   <ContextualSupport
+    sectionId="related-implementation-paths"
     eyebrow="Fix options"
     heading="Turn this article into the right fix path"
     intro="These links connect the symptom in the article to the service or skill path that usually handles the fix."
     items={contextualSupportItems}
-  />
-
-  <TopicalLinks
-    eyebrow="Useful next links"
-    heading={post.relatedHeading || "Where this problem usually connects"}
-    intro={post.relatedIntro || "These related pages connect this article to the hands-on services, skills, and request paths that usually solve the problem on a real site."}
-    items={topicalItems}
   />
 
   <CtaBand
@@ -526,6 +546,11 @@
 </main>
 
 <style>
+  :global(.blog-article .article-section[id]),
+  :global(#related-implementation-paths) {
+    scroll-margin-top: 110px;
+  }
+
   :global(.blog-post-broken-layouts-mobile-website-fixes > .hero h1) {
     font-size: clamp(2.15rem, 4.45vw, 4.05rem);
   }

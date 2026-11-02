@@ -17,7 +17,7 @@
               <h3>{item.label}</h3>
               <p>{item.copy}</p>
             {:else}
-              <strong>{item.label}</strong>
+              <strong>{#if item.href}<a href={item.href}>{item.label}</a>{:else}{item.label}{/if}</strong>
               <span>{item.copy}</span>
             {/if}
           </li>

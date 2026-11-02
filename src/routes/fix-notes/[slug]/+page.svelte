@@ -18,6 +18,7 @@
   import { breadcrumbSchema, fixNoteArticleSchema, schemaList } from "$lib/data/schema.js";
   import { fixNoteUplifts } from "$lib/data/fix-note-uplift.js";
   import InternalLinkCopy from "$lib/components/InternalLinkCopy.svelte";
+  import { linkedCopy } from "$lib/data/editorial-updates.js";
 
   let { data } = $props();
   const note = $derived(data.note);
@@ -70,6 +71,7 @@
       <h1>{note.title}</h1>
       <p>{note.excerpt}</p>
       <div class="fix-note-hero__dates">
+        <span>Work note by <a href="/about/">Gary Hunt</a></span>
         <time datetime={note.date}>{fixNoteDisplayDate(note)}</time>
         {#if lastUpdatedDate}
           <span>Updated <time datetime={note.lastUpdated}>{lastUpdatedDate}</time></span>
@@ -82,11 +84,14 @@
 
   <section class="section fix-note-article-section section-effect section-effect--grid section-effect--low">
     <article class="fix-note-article">
+      {#if uplift?.intro && uplift.intro.replace(/\s+/g, " ").trim() !== note.excerpt.replace(/\s+/g, " ").trim() && !note.compact}
       <section class="fix-note-intro">
         <h2>Quick summary</h2>
         <p>{uplift?.intro || note.excerpt}</p>
       </section>
+      {/if}
 
+      {#if !note.compact}
       <section class="fix-note-section">
         <h2>The problem</h2>
         <p>{note.problemSummary}</p>
@@ -115,29 +120,15 @@
         <p>{note.resultSummary}</p>
       </section>
 
-      {#if uplift}
+      {#if note.editorialBridge}
+        <section class="fix-note-section">
+          <h2>How this relates to your project</h2>
+          <InternalLinkCopy paragraphs={[linkedCopy(note.editorialBridge, note.editorialLinks)]} />
+        </section>
+      {:else if uplift}
         <section class="fix-note-section">
           <h2>How this relates to your project</h2>
           <InternalLinkCopy paragraphs={[uplift.bridge]} />
-        </section>
-      {:else if relatedSupportLinks.length}
-        <section class="fix-note-section">
-          <h2>Where this fix usually leads next</h2>
-          <p>
-            This kind of work usually connects back to
-            {#each relatedSupportLinks as item, index}
-              {#if index === 0}
-                <a class="text-link" href={item.href} title={item.title}>{item.label}</a>
-              {:else if index === relatedSupportLinks.length - 1}
-                {" and "}
-                <a class="text-link" href={item.href} title={item.title}>{item.label}</a>
-              {:else}
-                {", "}
-                <a class="text-link" href={item.href} title={item.title}>{item.label}</a>
-              {/if}
-            {/each}
-            when the same kind of problem affects your project.
-          </p>
         </section>
       {/if}
 
@@ -159,6 +150,8 @@
             {/each}
           </div>
         </section>
+      {/if}
+
       {/if}
 
       <RelatedServicesBlock {note} />

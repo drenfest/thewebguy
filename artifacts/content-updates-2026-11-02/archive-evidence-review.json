@@ -1,0 +1,43 @@
+{
+  "sources": [
+    "S:\\projects\\go\\topo-crawler\\static\\search-console\\snapshots\\thewebguy-2026-10-28-current-crawl.json",
+    "S:\\projects\\go\\topo-crawler\\static\\search-console\\snapshots\\thewebguy-2026-10-27-current-crawl.json"
+  ],
+  "decisions": [
+    {
+      "path": "/blog/tag/automation/",
+      "availableRows": 6,
+      "distinctQueries": 0,
+      "latestPeriodEnd": "2026-09-30",
+      "decision": "Retain current indexation; available exports do not establish that changing it would preserve query/landing-page value."
+    },
+    {
+      "path": "/blog/tag/checkout/",
+      "availableRows": 0,
+      "distinctQueries": 0,
+      "latestPeriodEnd": null,
+      "decision": "Retain current indexation; available exports do not establish that changing it would preserve query/landing-page value."
+    },
+    {
+      "path": "/blog/tag/crawl-analysis/",
+      "availableRows": 0,
+      "distinctQueries": 0,
+      "latestPeriodEnd": null,
+      "decision": "Retain current indexation; available exports do not establish that changing it would preserve query/landing-page value."
+    },
+    {
+      "path": "/blog/tag/themes/",
+      "availableRows": 0,
+      "distinctQueries": 0,
+      "latestPeriodEnd": null,
+      "decision": "Retain current indexation; available exports do not establish that changing it would preserve query/landing-page value."
+    },
+    {
+      "path": "/blog/tag/woocommerce/",
+      "availableRows": 0,
+      "distinctQueries": 0,
+      "latestPeriodEnd": null,
+      "decision": "Retain current indexation; available exports do not establish that changing it would preserve query/landing-page value."
+    }
+  ]
+}

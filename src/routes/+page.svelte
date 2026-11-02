@@ -90,20 +90,6 @@
       outcome: "Reproduce the problem, identify the responsible layer, and fix it or document the safest next move."
     },
     {
-      label: "SEO is stuck",
-      title: "Search visibility has stalled and the cause is not yet clear",
-      symptoms: ["Important pages earn impressions but rankings or clicks have plateaued", "Traffic dropped without an obvious page or content change", "Crawl, indexation, internal-link, or page-quality signals need diagnosis"],
-      image: "/images/homepage/problem-routing/seo-is-stuck.webp",
-      imageAlt: "Website crawl graph, structured page elements, and search pathways becoming organized",
-      links: [
-        { label: "Technical SEO Implementation", href: "/services/technical-seo-implementation/" },
-        { label: "Technical SEO Developer", href: "/services/technical-seo-developer/" },
-        { label: "Crawl Analysis", href: "/skills/crawl-analysis-internal-linking/" }
-      ],
-      send: "The affected URLs, Search Console or analytics context, recent site changes, CMS details, and any existing crawl data.",
-      outcome: "Identify the technical constraints behind the plateau, prioritize the strongest opportunities, and define the changes worth implementing."
-    },
-    {
       label: "A page needs to launch",
       title: "A service, campaign, local, or landing page needs to launch",
       symptoms: ["A campaign or service is ready but has no useful destination page", "The current page has no clear conversion path", "Copy and assets exist, but the page is not built or launch-ready"],
@@ -118,7 +104,7 @@
       outcome: "A launch-ready page with clear structure, responsive behavior, verified conversion paths, and clean handoff notes."
     },
     {
-      label: "Data does not connect",
+      label: "Connect systems and automate handoffs",
       title: "Website data fails between forms, APIs, CRMs, and business systems",
       symptoms: ["A form succeeds on screen but the lead never reaches the CRM or inbox", "An API or webhook drops fields, duplicates records, or fails intermittently", "Website and ecommerce data never reaches the system where staff need it"],
       image: "/images/homepage/problem-routing/data-does-not-connect.webp",
@@ -188,7 +174,7 @@
       outcome: "A maintainable, responsive feature that fits the existing codebase, supports the required interaction, and is ready for release testing."
     },
     {
-      label: "SEO changes are not implemented",
+      label: "SEO work needs implementing",
       title: "An SEO audit already defines the work, but the changes are not live",
       symptoms: ["A completed audit or ticket list is waiting for a developer", "Metadata, headings, schema, redirects, canonicals, or links need implementation", "The recommendations are clear, but CMS or code changes have stalled"],
       image: "/images/homepage/problem-routing/seo-and-visibility.webp",
@@ -203,7 +189,7 @@
       outcome: "Implement the agreed recommendations, verify the live output, and document what shipped, changed, or remains blocked."
     },
     {
-      label: "Tracking and tools do not connect",
+      label: "Tracking data looks wrong",
       title: "Analytics, pixels, tags, and reports do not measure the same actions",
       symptoms: ["GA4, GTM, ad pixels, and platform reports show conflicting totals", "Conversions fire twice, never fire, or lose campaign attribution", "Client-side navigation, consent, or tag order makes measurement unreliable"],
       image: "/images/homepage/problem-routing/track-connect-automate.webp",

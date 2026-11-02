@@ -1,4 +1,5 @@
 import { coreServicePages } from "./services.js";
+import { applyEditorialService } from "./editorial-updates.js";
 
 export const keywordLandingSpecs = [
   {
@@ -1307,4 +1308,4 @@ export function buildKeywordLandingPage(spec) {
   };
 }
 
-export const keywordServicePages = keywordLandingSpecs.map(buildKeywordLandingPage);
+export const keywordServicePages = keywordLandingSpecs.map(buildKeywordLandingPage).map(applyEditorialService);

@@ -100,21 +100,9 @@
     image={staticHeroImages.faq}
   />
   <Breadcrumbs items={breadcrumbs} />
-  <section class="section soft-section section-effect section-effect--signals section-effect--low">
-    <InternalLinkCopy paragraphs={faqInlineParagraphs} />
+  <section class="section section-effect section-effect--grid section-effect--low">
+    <p>Start with the question that matches your project. Each answer links to the service or quote details when you need more context.</p>
+    <FaqList items={faqs} showLinks={true} />
   </section>
-  <ContextualSupport
-    eyebrow="FAQ service paths"
-    heading="FAQ answers with full service context"
-    intro="Use these deeper pages when a short answer needs a practical service path."
-    items={faqContextualItems}
-  />
-  <TopicalLinks
-    eyebrow="FAQ next steps"
-    heading="If the FAQ points to a specific kind of work, start there"
-    intro="These pages expand the short answers into the service, quote, and request paths people most often need after reading the FAQ."
-    items={faqTopicalLinks}
-  />
   <CtaBand />
-  <section class="section section-effect section-effect--grid section-effect--low"><FaqList items={faqs} showLinks={true} /></section>
 </main>

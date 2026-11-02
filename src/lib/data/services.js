@@ -1,3 +1,5 @@
+import { applyEditorialService } from "./editorial-updates.js";
+
 export const coreServicePages = [
   {
     slug: "wordpress-support",
@@ -896,7 +898,7 @@ export const coreServicePages = [
     ],
     related: ["landing-pages", "website-fixes", "site-speed-performance", "api-integrations"]
   }
-];
+].map(applyEditorialService);
 
 export function serviceUrl(slug) {
   return `/services/${slug}/`;

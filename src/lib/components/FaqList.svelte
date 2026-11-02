@@ -1,7 +1,15 @@
 <script>
+  import { servicePages, skillPages } from "$lib/data/content.js";
   import FaqQuestionForm from "./FaqQuestionForm.svelte";
 
   let { items = [], showLinks = false, askQuestion = true, questionContext = "faq_list" } = $props();
+
+  function destinationLabel(href) {
+    if (href === "/rate/") return "How Quotes Work";
+    if (href === "/contact/") return "Contact The Web Guy";
+    const record = [...servicePages, ...skillPages].find((item) => href === `/services/${item.slug}/` || href === `/skills/${item.slug}/`);
+    return record?.eyebrow || "Website Services";
+  }
 
   function answerParts(answer) {
     return Array.isArray(answer) ? answer.filter(Boolean) : [answer].filter(Boolean);
@@ -26,7 +34,7 @@
             {/if}
           {/each}
         </p>
-        {#if showLinks && link}<a class="text-link" href={link} title={`View the related page for: ${question}`}>Related page</a>{/if}
+        {#if showLinks && link}<a class="text-link" href={link} title={`View the related page for: ${question}`}>{destinationLabel(link)}</a>{/if}
       </details>
     {/each}
   </div>

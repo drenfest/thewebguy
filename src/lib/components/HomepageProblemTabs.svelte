@@ -9,6 +9,16 @@
   function selectRoute(index) {
     activeIndex = Number(index);
   }
+
+  function handleRouteKey(event, index) {
+    const keys = ["ArrowDown", "ArrowRight", "ArrowUp", "ArrowLeft", "Home", "End"];
+    if (!keys.includes(event.key)) return;
+    event.preventDefault();
+    const next = event.key === "Home" ? 0 : event.key === "End" ? items.length - 1
+      : (index + (event.key === "ArrowDown" || event.key === "ArrowRight" ? 1 : -1) + items.length) % items.length;
+    selectRoute(next);
+    document.getElementById(`homepage-problem-tab-${next}`)?.focus();
+  }
 </script>
 
 {#if activeRoute}
@@ -41,6 +51,7 @@
             tabindex={activeIndex === index ? 0 : -1}
             class:active={activeIndex === index}
             onclick={() => selectRoute(index)}
+            onkeydown={(event) => handleRouteKey(event, index)}
           >
             <span>{String(index + 1).padStart(2, "0")}</span>
             <strong>{item.label}</strong>

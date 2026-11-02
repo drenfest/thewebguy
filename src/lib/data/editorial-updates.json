@@ -1,0 +1,2305 @@
+{
+  "services": {
+    "agency-overflow-developer": {
+      "links": [],
+      "intro": "Need a developer to take a defined piece of the client backlog? I can work from your tickets, repository, designs, or audit notes and return changes your reviewer can test and approve. Scope, access, timing, and communication stay inside the agreed agency process.",
+      "workflow": {
+        "heading": "From an assigned ticket to a reviewable change",
+        "body": "Agree the task, cost, and acceptance criteria. Confirm the working environment and release rules. Implement the change. Check the affected behavior. Return the work with test notes and any blocker."
+      }
+    },
+    "agency-overflow": {
+      "links": [
+        {
+          "text": "overflow development",
+          "href": "/services/agency-overflow-developer/"
+        },
+        {
+          "text": "white-label WordPress",
+          "href": "/services/white-label-wordpress-support/"
+        },
+        {
+          "text": "agency maintenance",
+          "href": "/services/website-maintenance-for-agencies/"
+        },
+        {
+          "text": "agency website support",
+          "href": "/services/website-support-for-agencies/"
+        }
+      ],
+      "intake": "Send the client-site URLs, the task queue, priority order, deadline, and who will review the work. Include your access process and any client-communication restrictions.",
+      "sections": {
+        "Section beginning “Agency overflow usually touches these lanes”": "Choose the agency support path Overflow development: a defined implementation backlog. White-label WordPress: WordPress delivery under your agency’s brand. Agency maintenance: recurring checks and updates across named client sites. Agency website support: incoming post-launch requests that need scope and review."
+      }
+    },
+    "ai-built-website-cleanup": {
+      "links": [],
+      "intake": "Send the live or preview URL, how the site was built, and what you need checked or fixed. Include the behavior that fails, any deadline, and where the code is hosted if you know.",
+      "sections": {
+        "Related-services heading": "Choose the next step for your AI-built site"
+      }
+    },
+    "analytics-tracking": {
+      "links": [],
+      "intro": "Know whether the actions that matter on your site are being measured. I can set up or troubleshoot GA4, Google Tag Manager, form events, advertising pixels, and ecommerce tracking, with checks tied to the actual visitor action.",
+      "intake": "Send the site URL, the action you want measured, and where the result should appear. Say whether tracking is new or already installed, and include a redacted example of any mismatch."
+    },
+    "api-integrations": {
+      "links": []
+    },
+    "automation-internal-tools": {
+      "links": [
+        {
+          "text": "operations dashboard prototype",
+          "href": "/fix-notes/built-role-aware-operations-dashboard-prototype/"
+        }
+      ],
+      "intro": "Turn repeatable website work into a script, dashboard, or internal tool your team can use. I build scoped tools for page checks, data cleanup, reporting, and API workflows around the input, output, and decision you need.",
+      "sections": {
+        "SEO automation proof claim": "Built reporting and audit workflows that collect repeatable inputs, compare results, and highlight items needing review.",
+        "Relevant Web Fixes": "Internal-tool example The role-aware operations dashboard prototype made filters, charts, activity views, and role-specific screens reviewable before connection to live data."
+      }
+    },
+    "contact-form-not-working-wordpress": {
+      "links": []
+    },
+    "conversion-tracking-troubleshooting": {
+      "links": [],
+      "intake": "Send the affected URL, one action you tested, the approximate test time, and the platform where the event is missing or wrong. Include the expected result and a redacted example from the report or source system.",
+      "sections": {
+        "Before “What conversion troubleshooting checks”": "Check that the reports are comparing the same thing A mismatch is a reason to investigate, not proof of a broken tag. First compare the action being counted, date range, time zone, counting rules, and attribution settings. Then follow a controlled action through the website and reporting tools."
+      }
+    },
+    "ecommerce-support": {
+      "links": [
+        {
+          "text": "Shopify performance release",
+          "href": "/fix-notes/turned-shopify-speed-audit-verified-theme-release/"
+        }
+      ],
+      "sections": {
+        "Fit-section opening": "Get technical help with the part of your store that needs attention: product pages, theme behavior, data feeds, tracking, or a connected workflow. The scope follows the affected platform and customer or admin task. Full enterprise ecommerce consulting is outside this service.",
+        "Relevant Web Fixes": "Storefront implementation example The Shopify performance release note documents changes to the current theme, image priority, app loading, product and cart checks, and a rollback path."
+      }
+    },
+    "elementor-layout-broken": {
+      "links": [
+        {
+          "text": "mobile layout repair",
+          "href": "/fix-notes/fixed-mobile-layout-below-tablet-width/"
+        }
+      ],
+      "intro": "Elementor looks right in the editor but breaks on the public page? I check the affected layout, styles, and viewport, then scope a repair that restores the intended design and responsive behavior.",
+      "intake": "Send the page URL, a screenshot, and the device or screen width where sections overlap, spacing breaks, or content disappears. Include the intended layout if you have a reference."
+    },
+    "fix-broken-wordpress-site": {
+      "links": [
+        {
+          "text": "cache-plugin critical-error note",
+          "href": "/fix-notes/fixed-wordpress-critical-error-caused-cache-plugin/"
+        }
+      ],
+      "intake": "Send the affected URL and describe which page, form, menu, checkout step, or feature stopped working. Include when it began and whether WordPress admin is still available.",
+      "sections": {
+        "Proof section heading": "WordPress recovery example Read the cache-plugin critical-error note for the reported failure, the isolated component, and the follow-up checks after access returned."
+      }
+    },
+    "fix-wordpress-issue": {
+      "links": [],
+      "intro": "One WordPress problem holding up your site? Send the affected page and what should happen. I scope the repair around a clear result, such as a working button, a corrected layout, or a form completing its intended action.",
+      "sections": {
+        "FAQ": "What if the issue turns out to need a larger change? I explain the finding and the additional work before expanding the scope. The first agreed task may end with a diagnosis and a separate repair proposal."
+      }
+    },
+    "ga4-gtm-setup-help": {
+      "links": [],
+      "workflow": {
+        "heading": "From a measurement requirement to a tested event",
+        "body": "Agree the action, success condition, parameters, destinations, and cost. Implement the approved tags and website changes. Test the event and parameters in the available debug tools. Check duplicate firing and relevant consent states. Hand over the event definitions and results."
+      },
+      "sections": {
+        "After “Common form and conversion tracking setups”": "Keep form details out of ordinary analytics events An event can record that a form succeeded without sending the visitor’s name, email address, phone number, or message as event parameters. Agree the data each destination actually needs before implementing the tags."
+      }
+    },
+    "hourly-wordpress-developer": {
+      "links": [],
+      "intro": "Bring a WordPress task list or a problem that needs investigation. We agree on priorities, the cost basis, and an approval point before I work through the next piece. A clearly defined change can also be quoted as a project.",
+      "intake": "Send the site URL, your first-priority tasks, the result expected from each, and any spending or timing limit you want included in the quote."
+    },
+    "landing-pages": {
+      "links": [
+        {
+          "text": "service-page implementation example",
+          "href": "/fix-notes/built-accessible-service-page-custom-imagery-schema/"
+        }
+      ],
+      "intake": "Send the offer, audience, desired action, existing site, available copy and assets, and launch deadline. Include the form destination and tracking requirements if they are already defined.",
+      "workflow": {
+        "heading": "From an approved brief to a reviewed page",
+        "body": "Agree the offer, page scope, assets, and cost. Build the page in the existing site or agreed stack. Check the layout, links, form path, and scoped measurement. Return the page for review and identify any launch dependency."
+      }
+    },
+    "ongoing-webmaster-support": {
+      "links": [],
+      "workflow": {
+        "heading": "A continuing queue with clear approvals",
+        "body": "Agree the next priorities, cost basis, access, and reviewer. Work through the approved tasks. Check the changed pages or workflows. Return completion notes and identify blocked or newly discovered work before adding it to the scope."
+      },
+      "sections": {
+        "After “Hourly or project-based support expectations”": "Before ongoing work starts Confirm the websites included, how requests are prioritized, who approves changes, how completed work is reported, and any agreed hours or availability. Hosting, third-party subscriptions, monitoring, and emergency coverage are included only when the scope says so."
+      }
+    },
+    "react-static-sites": {
+      "links": [],
+      "sections": {
+        "Architecture-fit paragraph": "If the site needs editing tools, commerce, authentication, or other dynamic behavior, those requirements guide the architecture and integrations before the build is scoped."
+      },
+      "workflow": {
+        "heading": "From a front-end requirement to a checked build",
+        "body": "Agree the behavior, hosting model, scope, and cost. Build or adjust the relevant pages and components. Check responsive interaction, links, forms, and the production build. Document deployment and any external service dependency."
+      }
+    },
+    "schema-implementation-service": {
+      "links": [],
+      "intro": "Get structured data added or corrected in WordPress, Shopify, or a custom site. I check the visible content, existing plugin or template output, and source values before scoping the markup and validation work.",
+      "sections": {
+        "FAQ, after the existing comparison answer": "Will correct schema guarantee a rich result? No. Markup must match the visible content and the requirements of a supported search feature. Google decides whether to display an enhancement. FAQ content can still help visitors, but Google no longer displays FAQ rich results."
+      }
+    },
+    "security-hosting-reliability": {
+      "links": [
+        {
+          "text": "WordPress database-payload investigation",
+          "href": "/fix-notes/traced-deceptive-page-warning-obfuscated-database-payload/"
+        }
+      ],
+      "sections": {
+        "Fit-section opening": "I troubleshoot website failures involving hosting, DNS, SSL, caching, WordPress files, and access. The work focuses on the affected site, the available recovery options, and the hardening changes agreed for that engagement.",
+        "Relevant Web Fixes": "Recovery investigation example The database-payload note explains the inspected WordPress layers, preserved evidence, scoped cleanup, and remaining monitoring questions after a deceptive-page warning."
+      }
+    },
+    "seo-audit-implementation": {
+      "links": [],
+      "intro": "Your SEO audit is finished, but the changes are still waiting. Send the findings and affected URLs. I can implement agreed items in the site, test the resulting output, and return a record of completed work and remaining dependencies.",
+      "intake": "Send the audit, affected URLs or templates, priority order, and any acceptance criteria from your SEO team. Include platform, access, and release constraints."
+    },
+    "shopify-liquid-support": {
+      "links": [
+        {
+          "text": "Shopify theme implementation note",
+          "href": "/fix-notes/optimized-shopify-theme-page-speed-core-web-vitals/"
+        }
+      ],
+      "intro": "Need a Shopify section, product template, collection page, or storefront interaction changed? I work within the existing theme and app setup, with scope and checks tied to the behavior you want.",
+      "sections": {
+        "Relevant Web Fixes": "Shopify theme implementation Read the theme-performance note for the inspected Liquid, app embeds, asset loading, image priorities, and product/cart checks."
+      }
+    },
+    "site-speed-performance": {
+      "links": [
+        {
+          "text": "Shopify performance release note",
+          "href": "/fix-notes/turned-shopify-speed-audit-verified-theme-release/"
+        }
+      ],
+      "sections": {
+        "Performance proof": "Performance work you can inspect The Shopify release note documents theme changes, responsive image priority, app-loading work, product and cart checks, and a retained rollback theme. Read the note for the reported test results and release context.",
+        "After “Realistic Core Web Vitals and Lighthouse expectations”": "How the improvement is checked A controlled Lighthouse test helps diagnose a page and compare a change under the same conditions. Real-user Core Web Vitals reflect visits over time and can differ from that lab test. The handoff should identify the tested URLs, device profile, before-and-after conditions, and remaining limits."
+      }
+    },
+    "technical-seo-developer": {
+      "links": [
+        {
+          "text": "business-data and structured-data implementation",
+          "href": "/fix-notes/centralized-business-data-faq-schema-pull-request-review/"
+        }
+      ],
+      "sections": {
+        "Entire “Internal-link and cannibalization checks” section": "What to include in an SEO development brief Send the affected URLs or templates, the expected output, and the reason the current implementation is wrong. A useful brief can name the redirect destination, canonical rule, structured-data source, rendering requirement, or internal-link placement. I clarify the technical scope and acceptance test before making changes.",
+        "Second implementation example": "Check: the revised heading, title, and contextual links support the page’s chosen purpose. Search Console results are reviewed separately after Google has had time to recrawl the change.",
+        "Relevant Web Fixes": "Related implementation note: centralizing business data and FAQ output reduced conflicting copies of the same information across page content and structured data."
+      }
+    },
+    "technical-seo-implementation": {
+      "links": [],
+      "intake": "Send the site URL, the audit or issue list, priority pages, and the changes your SEO team wants implemented. Include access limits and any agreed acceptance checks.",
+      "workflow": {
+        "heading": "From an SEO finding to a checked implementation",
+        "body": "Agree the work, cost, affected URLs or templates, and acceptance checks. Implement the change. Recheck the output and relevant crawl signals. Record what changed and what still depends on a search engine or provider."
+      }
+    },
+    "web-services-automation": {
+      "links": [],
+      "intake": "Describe the task you repeat, the data source, how often it runs, the comparison period, and the decision the output should support. Share a redacted sample input and expected result if available.",
+      "workflow": {
+        "heading": "From a repeated task to a checked workflow",
+        "body": "Agree the input, schedule, output, failure behavior, and cost. Build the scoped workflow. Test normal, missing, and invalid inputs. Verify the generated result. Document access, operating instructions, and maintenance boundaries."
+      }
+    },
+    "website-fixes": {
+      "links": [],
+      "intro": "Something on your website stopped working? Send the URL, what happens now, and what should happen instead. I help with broken layouts, scripts, forms, and connected workflows. We agree the next step and cost before paid work starts.",
+      "sections": {
+        "Second troubleshooting-route paragraph": "Start with the symptom you can reproduce. The investigation determines whether the fix belongs in the page, CMS, scripts, connected systems, or hosting."
+      }
+    },
+    "website-integration-help": {
+      "links": []
+    },
+    "website-maintenance-for-agencies": {
+      "links": [],
+      "intro": "Keep recurring client-site maintenance in a defined queue. I can handle agreed updates and checks across the sites you assign, document exceptions, and return work for your agency’s review. Each site’s access, scope, and maintenance expectations are agreed first.",
+      "workflow": {
+        "heading": "A maintenance record for each client site",
+        "body": "Confirm the site list, access, checks, and cost. Complete the approved updates and checks. Record completed items, failures, and dependencies by site. Quote separate repairs or feature work before adding them to the queue."
+      }
+    },
+    "website-support-for-agencies": {
+      "links": [],
+      "intro": "Client requests keep arriving after launch: a form stops working, a page needs changing, or tracking no longer matches the site. I help turn those requests into scoped technical work with clear status updates and an agency review point.",
+      "intake": "Send the client-site URL, the original request, expected result, urgency, and your internal reviewer. Include any recent change or access restriction that affects the work."
+    },
+    "white-label-wordpress-support": {
+      "links": [
+        {
+          "text": "reusable-block WordPress rebuild",
+          "href": "/fix-notes/rebuilt-wordpress-site-from-crawl-into-reusable-blocks/"
+        }
+      ],
+      "intake": "Send the WordPress brief, existing URL or staging site, required functionality, review deadline, and your agency’s handoff rules. Include approved designs or a task list when available.",
+      "sections": {
+        "Relevant Web Fixes": "WordPress build evidence The reusable-block rebuild note describes a custom theme, Gutenberg blocks, content import work, and a Vite asset pipeline. It shows the implementation layer behind a larger WordPress handoff."
+      }
+    },
+    "woocommerce-checkout-error-fix": {
+      "links": [
+        {
+          "text": "production debugging",
+          "href": "/skills/production-debugging/"
+        }
+      ],
+      "sections": {
+        "Skill introduction": "I trace the cart and checkout requests, relevant WordPress errors, gateway responses, and resulting order state. Analytics checks come after the purchase path is understood and only where included in scope.",
+        "Relevant Web Fixes label": "Related WordPress repair examples"
+      }
+    },
+    "woocommerce-support": {
+      "links": [],
+      "sections": {
+        "“WooCommerce checkout symptoms and possible issues” section": "When checkout is the main problem A cart, payment, shipping, tax, or order failure needs its own test path. Use WooCommerce checkout repair for that focused investigation. This support page covers the wider store work around products, extensions, templates, data, and ongoing development.",
+        "Relevant Web Fixes label": "Related website implementation notes"
+      }
+    },
+    "wordpress-developer-for-small-tasks": {
+      "links": [],
+      "intro": "Need a WordPress template adjusted, a field added, or a layout corrected? Send the exact page and desired result. I can scope the change and the checks it needs without turning a defined task into a full-site project.",
+      "workflow": {
+        "heading": "From a defined task to a reviewed change",
+        "body": "Agree the requirement and cost. Confirm the affected template or setting. Make the change. Test the expected result and nearby behavior. Hand back what changed and how it was checked."
+      }
+    },
+    "wordpress-emergency-support": {
+      "links": [
+        {
+          "text": "WordPress critical-error recovery",
+          "href": "/fix-notes/fixed-wordpress-critical-error-caused-cache-plugin/"
+        },
+        {
+          "text": "database-payload investigation",
+          "href": "/fix-notes/traced-deceptive-page-warning-obfuscated-database-payload/"
+        }
+      ],
+      "sections": {
+        "Relevant Web Fixes": "Relevant recovery notes: a cache-plugin critical error that blocked CMS access, and a deceptive-page warning traced to a database payload."
+      }
+    },
+    "wordpress-help": {
+      "links": [],
+      "intro": "Need help with WordPress but unsure what to ask for? Send the page and explain what you want it to do. I can help scope a change or an investigation without asking you to identify the plugin, setting, or code first.",
+      "intake": "Send the page URL, what changed or stopped working, and what you expected to happen. A screenshot is useful if the problem is easier to show."
+    },
+    "wordpress-maintenance": {
+      "meta": "Scoped WordPress maintenance for plugin and theme updates, routine checks, page changes, and follow-up tasks. Agree the work and cost before it starts.",
+      "links": [],
+      "intro": "Keep WordPress updates and routine checks on a defined task list. I can scope plugin and theme updates, review the affected pages and forms, and report follow-up work separately from the maintenance you approved.",
+      "workflow": {
+        "heading": "A maintenance pass with defined checks",
+        "body": "Agree the sites, updates, and checks. Review the available backup and testing approach. Apply the approved work. Check the affected pages and critical actions. Report completed items and any separate repair needed."
+      }
+    },
+    "wordpress-plugin-conflict-help": {
+      "h1": "WordPress Plugin Conflict Diagnosis and Repair",
+      "links": [],
+      "sections": {
+        "H1": "WordPress Plugin Conflict Diagnosis and Repair"
+      }
+    },
+    "wordpress-support": {
+      "links": [],
+      "intake": "Send the website URL and the WordPress work you need handled. Include the affected page, the result you want, and any deadline or recent change.",
+      "sections": {
+        "Hourly or project-based fit paragraph": "The quote defines the work, cost, and approval point. If the investigation uncovers additional work, I explain it before the scope expands."
+      }
+    },
+    "wordpress-troubleshooting": {
+      "links": []
+    },
+    "wordpress-website-support": {
+      "links": [],
+      "intro": "Keep an existing WordPress site moving through the changes it needs: page updates, form repairs, plugin issues, and technical cleanup. I work through an agreed task list with clear priorities and review notes for each item.",
+      "workflow": {
+        "heading": "How the support queue stays clear",
+        "body": "Agree the next task and cost. Confirm the expected result and access. Make the scoped change. Test the affected behavior. Return a completion note and identify the next approved item."
+      }
+    },
+    "wordpress-white-screen-of-death-fix": {
+      "links": [
+        {
+          "text": "WordPress critical-error recovery example",
+          "href": "/fix-notes/fixed-wordpress-critical-error-caused-cache-plugin/"
+        }
+      ],
+      "intro": "WordPress showing a blank page or critical error? I investigate the failed request, recent changes, and available logs, then scope a controlled repair that accounts for admin access and recovery options.",
+      "intake": "Send the affected URL, any error text, and whether the public site, WordPress admin, or both are blank. Include recent updates and the latest usable backup date if known."
+    }
+  },
+  "skills": {
+    "cloudflare-dns-ssl": {
+      "copy": {
+        "Opening sentence in service-work section": "For an SSL warning, start with the affected hostname and the exact browser error. DNS, certificate coverage, origin settings and proxy behavior can then be checked against the intended setup."
+      },
+      "links": [
+        {
+          "text": "domain-migration preparation example",
+          "href": "/fix-notes/prepared-domain-migration-without-dropping-existing-hostname/"
+        }
+      ],
+      "table": [
+        {
+          "problem": "TLS warning after a move",
+          "evidence": "Hostname, browser error and certificate details",
+          "work": "Certificate coverage, origin connection and TLS configuration"
+        },
+        {
+          "problem": "Old content survives an update",
+          "evidence": "Affected URL, headers and uncached comparison",
+          "work": "Browser/CDN/host cache ownership and purge behavior"
+        },
+        {
+          "problem": "DNS points to an unexpected destination",
+          "evidence": "Hostname, record type and intended target",
+          "work": "Authoritative records and actual resolution"
+        },
+        {
+          "problem": "Redirect repeats or conflicts",
+          "evidence": "Requested URL and full redirect chain",
+          "work": "Application, origin and edge redirect rules"
+        },
+        {
+          "problem": "Domain launch needs verification",
+          "evidence": "Launch plan and current/target hostnames",
+          "work": "DNS, TLS, redirects and critical live paths"
+        }
+      ]
+    },
+    "crawl-analysis-internal-linking": {
+      "copy": {
+        "Proof/related-reading placement": "See the TopoRank page and query study for an example of comparing page content, internal links and observed search queries. Those measurements support an investigation; they do not reveal Google’s ranking formula."
+      },
+      "links": [
+        {
+          "text": "TopoRank page and query study",
+          "href": "/blog/topological-relevance-vector-seo/"
+        }
+      ],
+      "table": [
+        {
+          "problem": "Important page is difficult to reach",
+          "evidence": "Crawlable inlinks and navigation context",
+          "work": "Add a relevant parent/contextual route"
+        },
+        {
+          "problem": "Link or redirect fails",
+          "evidence": "Source URL, href, response and final destination",
+          "work": "Correct the source link or intended redirect"
+        },
+        {
+          "problem": "Page appears orphaned",
+          "evidence": "Sitemap, crawl inventory and known content references",
+          "work": "Verify discovery coverage before changing links"
+        },
+        {
+          "problem": "Template links are inconsistent",
+          "evidence": "Representative templates and destination rules",
+          "work": "Fix the shared rule and verify affected page types"
+        },
+        {
+          "problem": "Similar URLs may need consolidation",
+          "evidence": "Content comparison and available query/backlink evidence",
+          "work": "Choose a distinct role or a reviewed consolidation plan"
+        }
+      ]
+    },
+    "ga4-gtm-measurement-integrity": {
+      "copy": {
+        "“Where GA4 / GTM fits” paragraph": "GA4 and GTM verification supports Analytics & Tracking. If a lead appears in the form system but not in the CRM or report, I trace the tag event and the system handoff separately."
+      },
+      "links": [],
+      "table": [
+        {
+          "problem": "Events are missing or duplicated",
+          "evidence": "Event name, URL and a reproducible test",
+          "work": "Firing conditions, duplicate sources and consent state"
+        },
+        {
+          "problem": "GTM container is hard to trust",
+          "evidence": "Container access and intended event plan",
+          "work": "Tags, triggers, variables and preview evidence"
+        },
+        {
+          "problem": "Form changed but tracking did not",
+          "evidence": "Current success state and expected event",
+          "work": "Trigger tied to confirmed submission behavior"
+        },
+        {
+          "problem": "Campaign attribution is inconsistent",
+          "evidence": "Landing URL and redacted campaign parameters",
+          "work": "UTM handling, redirects and attribution context"
+        },
+        {
+          "problem": "Ecommerce events are incomplete",
+          "evidence": "Test journey, event payload and product identifiers",
+          "work": "Required event data and destination reporting"
+        }
+      ]
+    },
+    "google-merchant-center-product-data": {
+      "copy": {
+        "“Can you fix every Merchant Center issue?” answer": "I can investigate product data, feeds, structured data and landing-page mismatches. Start with the exact issue message and affected product IDs. Google controls account decisions and product approval, so a particular approval outcome is not guaranteed."
+      },
+      "links": [],
+      "table": [
+        {
+          "problem": "Product is disapproved or missing data",
+          "evidence": "Item ID and exact Merchant Center issue",
+          "work": "Investigate the stated cause in source data, page or account context"
+        },
+        {
+          "problem": "Structured data and page disagree",
+          "evidence": "Product URL and the conflicting values",
+          "work": "Correct product/offer output to match the source and page"
+        },
+        {
+          "problem": "Catalog attributes are inconsistent",
+          "evidence": "Redacted CSV sample and attribute rules",
+          "work": "Normalize fields and validate required values"
+        },
+        {
+          "problem": "Feed is stale or incomplete",
+          "evidence": "Feed source, fetch time and item example",
+          "work": "Inspect export/sync behavior and update failures"
+        },
+        {
+          "problem": "Purchase reporting does not match products",
+          "evidence": "Event payload, product ID and report context",
+          "work": "Check ecommerce measurement separately from listing eligibility"
+        }
+      ]
+    },
+    "performance-engineering": {
+      "copy": {
+        "Performance proof cards": "Performance work you can inspect Read the Shopify theme-release note for the changes made and the Lighthouse scores recorded during the work. A lab score describes the tested page and conditions; real-user performance needs its own data."
+      },
+      "links": [
+        {
+          "text": "Shopify theme-release note",
+          "href": "/fix-notes/turned-shopify-speed-audit-verified-theme-release/"
+        }
+      ],
+      "table": [
+        {
+          "problem": "Page renders slowly",
+          "evidence": "URL, device and Lighthouse/network trace",
+          "work": "Render-blocking resources and loading sequence"
+        },
+        {
+          "problem": "Bundle or hydration work feels heavy",
+          "evidence": "Build output and browser performance trace",
+          "work": "JavaScript weight and client rendering"
+        },
+        {
+          "problem": "Content shifts during load",
+          "evidence": "Page URL and recorded shifting elements",
+          "work": "Image dimensions, fonts and injected content"
+        },
+        {
+          "problem": "Cache serves stale content",
+          "evidence": "Response headers and cached/uncached comparison",
+          "work": "Cache ownership, keys, purges and exclusions"
+        },
+        {
+          "problem": "Lab and real-user results disagree",
+          "evidence": "Dated lab run and available field-data period",
+          "work": "Device/network differences and real user journeys"
+        }
+      ]
+    },
+    "production-debugging": {
+      "copy": {
+        "Informational bridge": "For browser errors, start with the JavaScript troubleshooting guide. For a form or API handoff, the website data-systems guide explains how to trace the request through each destination."
+      },
+      "links": [
+        {
+          "text": "JavaScript troubleshooting guide",
+          "href": "/blog/javascript-issues-website-troubleshooting/"
+        },
+        {
+          "text": "website data-systems guide",
+          "href": "/blog/website-data-systems-not-connecting/"
+        }
+      ],
+      "table": [
+        {
+          "problem": "Form confirms success but no lead arrives",
+          "evidence": "URL, submission time and expected destination",
+          "work": "Browser request, server handling and delivery outcome"
+        },
+        {
+          "problem": "Script works on one page only",
+          "evidence": "Working/failing URLs and console/network evidence",
+          "work": "Dependencies, selectors and page-specific execution"
+        },
+        {
+          "problem": "API or webhook changed behavior",
+          "evidence": "Redacted request/response and timestamp",
+          "work": "Authentication, payload, endpoint and delivery errors"
+        },
+        {
+          "problem": "Tracking is missing or duplicated",
+          "evidence": "Event name and reproducible journey",
+          "work": "Tag firing, consent, parameters and duplicate sources"
+        },
+        {
+          "problem": "CMS update breaks the layout",
+          "evidence": "Affected template and recent change",
+          "work": "Theme/plugin output, CSS and JavaScript"
+        },
+        {
+          "problem": "Problem appears only on production",
+          "evidence": "Deployment and environment comparison",
+          "work": "Cache, configuration, runtime and host behavior"
+        }
+      ]
+    },
+    "programmatic-seo": {
+      "copy": {
+        "After “Do you create doorway pages?” or before the planning table": "Before publishing another page, check what it answers that the existing pages do not. Its source data should support a useful decision, comparison or explanation. If a record only changes the city or keyword, improve the source material or keep that information in the relevant hub."
+      },
+      "links": [
+        {
+          "text": "TopoRank page and query study",
+          "href": "/blog/topological-relevance-vector-seo/"
+        }
+      ],
+      "table": [
+        {
+          "problem": "Plan a repeatable page family",
+          "evidence": "Page purpose and sample source records",
+          "work": "Template fields, required content and distinct page roles"
+        },
+        {
+          "problem": "Scale metadata and schema",
+          "evidence": "Representative URLs and source values",
+          "work": "Accurate title/description/schema generation rules"
+        },
+        {
+          "problem": "Improve internal links",
+          "evidence": "URL inventory and actual page relationships",
+          "work": "Useful hubs, contextual links and consistent destinations"
+        },
+        {
+          "problem": "Clean source data",
+          "evidence": "JSON/CSV sample and validation rules",
+          "work": "Normalization, missing-value handling and duplicate checks"
+        },
+        {
+          "problem": "Avoid thin page expansion",
+          "evidence": "Rendered examples and distinct user questions",
+          "work": "Publish, revise, combine or hold each page based on useful information"
+        }
+      ]
+    },
+    "rest-api-webhook-integrations": {
+      "copy": {
+        "Hero paragraph": "I help websites exchange data with CRMs, ecommerce platforms and other tools. The work can include REST requests, webhook receivers, field mapping, authentication and delivery troubleshooting, depending on what each platform supports."
+      },
+      "links": [
+        {
+          "text": "API Integrations",
+          "href": "/services/api-integrations/"
+        },
+        {
+          "text": "Website Integration Help",
+          "href": "/services/website-integration-help/"
+        }
+      ],
+      "table": [
+        {
+          "problem": "Choose between requests, webhooks or both",
+          "evidence": "Provider documentation and required workflow",
+          "work": "Supported endpoints/events, authentication and limits"
+        },
+        {
+          "problem": "Webhook is sent but processing fails",
+          "evidence": "Event ID, timestamp and redacted response",
+          "work": "Receiver behavior, payload validation and failure handling"
+        },
+        {
+          "problem": "Form needs to create a CRM record",
+          "evidence": "Field mapping and expected destination record",
+          "work": "Submission handoff and destination response"
+        },
+        {
+          "problem": "Payload needs pre-launch validation",
+          "evidence": "Redacted example and provider requirements",
+          "work": "Field types, required values and error responses"
+        },
+        {
+          "problem": "Product or customer records disagree",
+          "evidence": "Sample source/destination values and identifiers",
+          "work": "Mapping, normalization and reconciliation"
+        },
+        {
+          "problem": "Background work fails silently",
+          "evidence": "Job schedule and recorded execution outcome",
+          "work": "Logs, errors, retries and visibility of failure"
+        }
+      ]
+    },
+    "schema-structured-data": {
+      "copy": {
+        "Rich-results FAQ, after the existing no-guarantee answer": "Google no longer displays FAQ rich results. FAQ content can still help visitors, and any markup should match that content. Other search features have their own eligibility requirements and are not guaranteed."
+      },
+      "links": [
+        {
+          "text": "business-data and FAQ-schema review",
+          "href": "/fix-notes/centralized-business-data-faq-schema-pull-request-review/"
+        }
+      ],
+      "table": [
+        {
+          "problem": "Markup does not match visible content",
+          "evidence": "Page URL and current JSON-LD",
+          "work": "Correct the facts and source values"
+        },
+        {
+          "problem": "Product data is incomplete",
+          "evidence": "Product page, variants and source attributes",
+          "work": "Product/offer fields and data consistency"
+        },
+        {
+          "problem": "A template needs new markup",
+          "evidence": "Page type and its actual content fields",
+          "work": "Choose suitable schema and implement its source"
+        },
+        {
+          "problem": "Audit recommendations are unimplemented",
+          "evidence": "Audit item, target URLs and current output",
+          "work": "Implement the agreed eligible markup and validate"
+        },
+        {
+          "problem": "Multiple sources conflict",
+          "evidence": "Theme/plugin output for the same entity",
+          "work": "Choose an authoritative source and reconcile values"
+        }
+      ]
+    },
+    "shopify-plus-liquid": {
+      "copy": {
+        "Shopify proof section": "Shopify work example Read how a Shopify speed audit was turned into a theme release, with the changes and recorded checks documented in the work note."
+      },
+      "links": [
+        {
+          "text": "Shopify speed audit was turned into a theme release",
+          "href": "/fix-notes/turned-shopify-speed-audit-verified-theme-release/"
+        },
+        {
+          "text": "Shopify Liquid Support",
+          "href": "/services/shopify-liquid-support/"
+        }
+      ],
+      "table": [
+        {
+          "problem": "Product data displays incorrectly",
+          "evidence": "Product URL, variant and expected value",
+          "work": "Liquid output, fields and template assignment"
+        },
+        {
+          "problem": "Liquid templates need cleanup",
+          "evidence": "Theme preview and affected sections",
+          "work": "Reusable sections, layout and template logic"
+        },
+        {
+          "problem": "Purchase or other events are missing",
+          "evidence": "Event name, consent state and test journey",
+          "work": "Storefront event collection and destination"
+        },
+        {
+          "problem": "Product schema or feed data disagrees",
+          "evidence": "Product ID, issue message and page/feed values",
+          "work": "Structured data and product-source consistency"
+        },
+        {
+          "problem": "Storefront scripts slow the page",
+          "evidence": "Page URL and performance/network evidence",
+          "work": "Theme assets, app scripts and loading order"
+        }
+      ]
+    },
+    "wordpress-plugin-development": {
+      "copy": {
+        "Hero paragraph": "I build and modify WordPress plugins for custom features, integrations and admin workflows. That includes form-to-CRM handoffs, WooCommerce extensions and automation that should keep working when the theme changes.",
+        "After the custom-plugin examples": "See the WordPress CRM build: estimate intake, an admin lead workflow and follow-up tools in a site-specific plugin."
+      },
+      "links": [
+        {
+          "text": "WordPress CRM build",
+          "href": "/fix-notes/built-admin-only-wordpress-crm-estimate-intake/"
+        }
+      ]
+    },
+    "wordpress-theme-development": {
+      "copy": {
+        "Theme proof block": "WordPress build example Read how a WordPress site was rebuilt from a crawl into reusable blocks. The work note describes the implementation and what was checked."
+      },
+      "links": [
+        {
+          "text": "rebuilt from a crawl into reusable blocks",
+          "href": "/fix-notes/rebuilt-wordpress-site-from-crawl-into-reusable-blocks/"
+        }
+      ],
+      "table": [
+        {
+          "problem": "Approved design needs a WordPress build",
+          "evidence": "Design files, page types and editing requirements",
+          "work": "Templates, blocks, fields and reusable sections"
+        },
+        {
+          "problem": "Existing theme needs a focused change",
+          "evidence": "Affected template and current/expected output",
+          "work": "Child theme or documented extension point"
+        },
+        {
+          "problem": "Product or archive output is wrong",
+          "evidence": "Example product, assigned template and source fields",
+          "work": "WooCommerce template and data output"
+        },
+        {
+          "problem": "Layout breaks on mobile",
+          "evidence": "URL, screen size and a reproducible example",
+          "work": "CSS, template structure and responsive behavior"
+        },
+        {
+          "problem": "SEO changes must reach many pages",
+          "evidence": "Affected templates and agreed audit items",
+          "work": "Headings, crawlable links and structured data output"
+        }
+      ]
+    }
+  },
+  "articles": {
+    "ai-built-website-not-ready-to-launch": {
+      "copy": {
+        "After “Check routing and deployment”; append to the paragraph beginning “A\nsite that works in preview”.": "Open a nested page by pasting its full URL into a fresh browser tab, then refresh it. Follow the same route from the homepage and compare the result. If navigation works but the direct load fails, investigate the deployed route and hosting fallback before rewriting the page. Also open a URL that does not exist and confirm it shows the intended missing-page response.",
+        "After “Check forms and data handoff”; append to the existing test list.": "Run one valid submission and confirm the saved lead reaches its intended destination. Then submit an invalid form and simulate a failed request in a test environment. The page should explain what failed, preserve useful input and let the visitor retry. Hold launch if the primary form loses leads or a required route fails. Put minor visual refinements on a follow-up list once the visitor can complete the page’s main task."
+      },
+      "links": [
+        {
+          "text": "forms and modals not working",
+          "href": "/blog/forms-modals-not-working/"
+        }
+      ]
+    },
+    "broken-layouts-mobile-website-fixes": {
+      "copy": {
+        "“Common signs” paragraph; update its duplicate in the troubleshooting table\ntoo.": "The page looks fine at one width but breaks at another: sticky headers cover content, columns stack badly, buttons drift out of place, images extend beyond their containers, or an unwanted horizontal scrollbar appears.",
+        "First two items in the pre-edit checklist: cache clearing and disabling\noptimization.": "Record the affected URL, viewport and missing or altered CSS file before changing settings. Compare the page with cache bypassed, then purge the relevant cache if stale output is confirmed. On staging, change one optimization setting at a time-such as CSS combination or critical CSS-and retest the same viewport before moving to the next setting."
+      },
+      "links": [
+        {
+          "text": "CSS and JavaScript diagnosis guide",
+          "href": "/blog/css-javascript-errors-website-bugs/"
+        }
+      ]
+    },
+    "cms-plugin-theme-weirdness": {
+      "copy": {
+        "“Practical fix path” paragraph.": "Compare the same URL in a clean browser session and while logged in. If only the public version is wrong, check cached output and any differences for logged-out visitors. If one page is wrong, compare its template, builder settings and content with a working page. If the change affects the whole site, record recent plugin, theme and PHP changes, then use a backup and staging copy to isolate the suspected component. Keep the test narrow enough to identify which change restores the expected behavior.",
+        "Title, H1 and description fields.": "WordPress Plugin and Theme Problems: Find the Failing Layer"
+      },
+      "links": [],
+      "title": "WordPress Plugin or Theme Problem? Find the Failing Layer | The Web Guy",
+      "h1": "WordPress Plugin and Theme Problems: Find the Failing Layer",
+      "meta": "Work out whether a WordPress problem comes from a plugin, theme, page builder, cache or page content, then isolate the affected layer safely."
+    },
+    "css-javascript-errors-website-bugs": {
+      "copy": {
+        "Opening paragraph after the introductory navigation; replace the full\nparagraph beginning “If you are searching”.": "A page can look broken because its styles are wrong, its scripts never update the page, or both. Start with the action that fails. If the menu changes to its open state but remains hidden, inspect its styles. If the click never reaches the control, check for an overlay before tracing the event handler. If a request fails, follow that request before changing the layout.",
+        "Hero H1 and corresponding title/description fields.": "Is It CSS or JavaScript? Find the Cause of a Broken Page"
+      },
+      "links": [
+        {
+          "text": "JavaScript troubleshooting guide",
+          "href": "/blog/javascript-issues-website-troubleshooting/"
+        }
+      ],
+      "title": "CSS or JavaScript Problem? Diagnose the Broken Page | The Web Guy",
+      "h1": "Is It CSS or JavaScript? Find the Cause of a Broken Page",
+      "meta": "Work out whether a broken menu, form or layout comes from CSS, JavaScript, an overlay or a failed request, then follow the right troubleshooting steps."
+    },
+    "embeds-iframes-widgets-breaking-pages": {
+      "copy": {
+        "“Practical fix path” paragraph.": "First inspect the iframe element and its wrapper on your own page. Width, spacing and overflow there can be corrected in the host layout. Content inside a frame from another origin is controlled by that provider; the parent page generally cannot reach in and restyle it. Use the provider’s responsive settings or supported resize integration when the embedded document itself needs to change. Retest the smallest phone width and the longest expected content before choosing a fixed height.",
+        "Immediately after “Practical fix path”; add a short loading branch.": "If the frame is blank Check Console and Network for the frame URL. A missing page, login redirect or refused embedding message needs a different fix from overflow. Record the exact message and check the provider’s supported embed URL and settings before changing the host layout."
+      },
+      "links": [
+        {
+          "text": "MDN iframe reference",
+          "href": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe"
+        }
+      ]
+    },
+    "fix-my-broken-website": {
+      "copy": {
+        "Opening explanatory paragraph beginning “If you are searching”.": "Before changing a broken website, capture what fails and protect the current state. A failed form, stuck checkout, broken layout and inaccessible admin screen need different repairs, but the first rule is the same: preserve the evidence, identify the affected business path and make one reversible change at a time.",
+        "After “Check the change timeline”; add a short example before “Fix one layer\nand verify the user path”.": "Example: the form failed after a plugin update Record the old and new plugin versions and reproduce the failure on a staging copy. If reverting that plugin restores the form, check the plugin’s rollback guidance and any database changes before applying the recovery to the live site. A full database restore may remove orders or leads received after the backup. Choose the narrowest recovery that restores the form, then verify a new submission reaches its destination."
+      },
+      "links": [
+        {
+          "text": "Diagnose the website symptom first",
+          "href": "/blog/something-broke-on-your-website/"
+        },
+        {
+          "text": "WordPress broken after a plugin update",
+          "href": "/blog/wordpress-site-broken-after-plugin-update/"
+        }
+      ]
+    },
+    "forms-modals-not-working": {
+      "copy": {
+        "“Practical fix path” paragraph.": "If the modal never opens, inspect the click target, overlays and browser errors before changing email settings. If the form cannot send a request, check validation and JavaScript. If a request is sent, read its response: a 200 status alone does not prove the submission was accepted. Then check for the saved entry. An accepted entry with no notification points to email delivery; an entry and email with no CRM record points to the integration. Record the first missing step and its test time before changing the next system.",
+        "Generic “API & Integrations” service card in the first “Fix options” group.": "Website Integration Help Use this when the form accepts a submission but the lead, fields or confirmation fail to reach the CRM, email system or other destination."
+      },
+      "links": [
+        {
+          "text": "Website Integration Help",
+          "href": "/services/website-integration-help/"
+        },
+        {
+          "text": "GTM form tracking for GA4",
+          "href": "/blog/gtm-form-tracking-ga4/"
+        }
+      ]
+    },
+    "google-ads-conversion-tracking-not-working": {
+      "copy": {
+        "“Reality checks” list item and the paragraph immediately after the list.": "Tag Assistant verifies the intended conversion action. A successful tag test and an attributed Google Ads conversion answer different questions. First verify the tag on the real success path. Then check whether the reported conversion has an eligible ad interaction, falls within the conversion window and is being compared using the intended report dates. Allow for processing delays. A direct test visit can verify the tag without producing an Ads-attributed conversion.",
+        "“Check GA4 imports separately”; append a duplicate-goal check after the\nexisting import checks.": "If a native Google Ads tag and a GA4 import both represent the same lead, review which action the campaign uses for bidding. Keep the intended optimization action clear and use the other for comparison when appropriate. Check custom goals too: an action included in a custom goal can be used for bidding even when it is labeled secondary."
+      },
+      "links": [
+        {
+          "text": "Google Ads Tag Assistant troubleshooting",
+          "href": "https://support.google.com/google-ads/answer/10989978?hl=en"
+        },
+        {
+          "text": "Primary and secondary conversion actions",
+          "href": "https://support.google.com/google-ads/answer/11461796?hl=en"
+        }
+      ]
+    },
+    "gtm-form-tracking-ga4": {
+      "copy": {
+        "“Common trigger methods” list item.": "Button click: track as a separate interaction; count a lead only after confirmed submission success.",
+        "FAQ answer to “Should I track a button click as a form submission?”": "Track a button click as a separate interaction. Count a submitted lead only after the form confirms success. Test validation failures, server errors and repeated clicks to make sure they do not generate lead events.",
+        "After “Choose the right GTM trigger”; insert before the parameter section.": "Example: an AJAX form with a success callback After the server confirms that the form was accepted, have the form’s supported success callback push a lead_form_success event to the data layer. Use that custom event as the GTM trigger for a GA4 generate_lead event. Send a form identifier, such as quote_request, rather than the visitor’s answers. In preview, submit once successfully and once with invalid data. The lead event should fire once for the successful submission and remain absent for the rejected one."
+      },
+      "links": [
+        {
+          "text": "Google’s data layer guide",
+          "href": "https://developers.google.com/tag-platform/tag-manager/datalayer"
+        },
+        {
+          "text": "GA4 recommended events",
+          "href": "https://developers.google.com/analytics/devguides/collection/ga4/reference/events"
+        }
+      ]
+    },
+    "javascript-issues-website-troubleshooting": {
+      "copy": {
+        "First explanatory paragraph after the introductory navigation.": "A menu will not open, a form never finishes, or a widget works only after a refresh. Reproduce that exact action, then use Console and Network to find the first failure that explains it.",
+        "Paragraph beginning “This page is a focused child”.": "Still deciding whether the problem is CSS or JavaScript? Use the CSS and JavaScript diagnosis guide first. Continue here when a click, event, request or script fails to produce the expected result.",
+        "After the paragraph that identifies the owner of the failing script; add a short\nworked example.": "Example: a menu click throws a TypeError Reproduce the click with Console open. Follow the error to its source, then pause at that line in Sources and inspect the value the code tries to use. If the menu element is null, compare the selector with the current markup and check whether the element exists when the script runs. A changed selector calls for a selector or markup fix; an element created later calls for an initialization fix. Retest the same click after the smallest change, including a fresh page load and the affected mobile width."
+      },
+      "links": [
+        {
+          "text": "CSS and JavaScript diagnosis guide",
+          "href": "/blog/css-javascript-errors-website-bugs/"
+        },
+        {
+          "text": "Chrome DevTools JavaScript debugging guide",
+          "href": "https://developer.chrome.com/docs/devtools/javascript"
+        }
+      ],
+      "h1": "JavaScript Not Working? Trace the Failed Action"
+    },
+    "need-a-page-live-fast": {
+      "copy": {
+        "“A page needs more than a headline and button”; replace its first two\nparagraphs.": "A short page can work when it gives the visitor enough information to understand the offer and take the next step. Start with a clear heading, an accurate offer, the intended audience and a working action. Add proof, process details or FAQs when they answer a real decision question. Choose the sections for the page’s purpose, then check the mobile layout, metadata, links and measurement before launch.",
+        "“What makes a page good enough to launch”; replace the opening paragraph.": "Hold launch if the offer is wrong, the main action fails, required routes do not load, or the mobile layout prevents someone from using the page. For a lead page, submit the form and confirm the lead arrives; for a campaign that depends on conversion reporting, verify the intended event under the tested consent settings. Once those checks pass, schedule smaller visual refinements and supporting content separately."
+      },
+      "links": [
+        {
+          "text": "AI-built website launch checklist",
+          "href": "/blog/ai-built-website-not-ready-to-launch/"
+        }
+      ]
+    },
+    "seo-audit-done-now-implement-it": {
+      "copy": {
+        "Replace the “Proof example: audit notes into shipped changes” block heading\nand paragraph.": "Turn one audit finding into a testable task Suppose an audit finds a service page pointing its canonical to the homepage. First confirm that the service page should be available as a separate search result. If it should, fix the canonical at the template or page setting that generated it, then check the live HTML and the preferred URL used in internal links and the sitemap. Record the before-and-after output. Search Console can later show Google’s selected canonical; changing the tag alone does not prove that selection changed.",
+        "After “Not every SEO recommendation is equal”; add a concrete priority\ncomparison.": "For example, an unintended noindex on a service page needs investigation before rewriting that page’s description. Confirm that the page is meant to appear in search, remove the blocking directive at its source and check the live response. A description rewrite can improve the snippet proposal, but it cannot make a page blocked by noindex eligible for indexing."
+      },
+      "links": [
+        {
+          "text": "Google’s canonical guidance",
+          "href": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls"
+        },
+        {
+          "text": "Google’s noindex guidance",
+          "href": "https://developers.google.com/search/docs/crawling-indexing/block-indexing"
+        }
+      ]
+    },
+    "something-broke-on-your-website": {
+      "copy": {
+        "Opening paragraph; replace its final sentence.": "Start with the symptom below, then open the guide that matches the failure.",
+        "Heading for the existing “Turn this article into the right fix path” section.": "<h2 id=\"related-implementation-paths\">Turn this article into the right fix path</h2>",
+        "Replace the body/list under “When the real request is fix my broken website”\nwith a short handoff; retain the surrounding symptom sections.": "Once you know what failed Use the safe website repair order to protect the current state, test one change and verify the result. If you need help with the repair, send the affected URL, the failed action, when it started and what changed most recently."
+      },
+      "links": [
+        {
+          "text": "safe website repair order",
+          "href": "/blog/fix-my-broken-website/"
+        }
+      ]
+    },
+    "topological-relevance-vector-seo": {
+      "copy": {
+        "After the WooCommerce Checkout Error Fix Help example, before the\nWordPress Plugin Conflict Help example; add a short decision passage.": "What I would keep separate WooCommerce Support and Checkout Error Fix Help have a page-to-page cosine of 0.855, and the published passages already link them in both directions. Their jobs remain different: broad store work on one page, a failed purchase path on the other. I would keep both pages and those contextual links. The phrase “woocommerce broken checkout checker” shows why meaning alone is insufficient. Its vector fit is 75.84, while its combined score is 41.77; the wording may ask for a tool even though the page offers hands-on diagnosis. I would keep the repair page focused on the checkout failures I check and the work the service delivers. A checker or monitoring product would need its own real offering before it deserved a promise on that page.",
+        "Opening paragraph under “Three pages with no observed queries”; append\nthe reporting-limit explanation.": "An empty returned query list does not establish zero search visibility. Search Console omits some queries for privacy and does not show every row. Check the page-level performance data before treating an empty query list as zero impressions. Here, the absence means there is no disclosed page-query pair to score."
+      },
+      "links": [
+        {
+          "text": "Search Console query-reporting limitations",
+          "href": "https://support.google.com/webmasters/answer/17011259?hl=en"
+        }
+      ]
+    },
+    "tracking-scripts-pixels-broken": {
+      "copy": {
+        "“Practical fix path” paragraph.": "List each place tracking is installed: GTM, theme code, a CMS plugin, an ecommerce integration or a vendor widget. Record the destination ID and the action each installation sends. Then perform one successful test action under the consent choice being tested. Compare the event name, destination and number of sends. Two requests are not automatically duplicates; two copies of the same business event sent to the same destination are the issue to investigate.",
+        "Opening “Related symptoms” paragraph.": "If the form itself fails, start with forms and modals not working. If the lead arrives but the event is missing or duplicated, use the GTM form tracking guide. If the tag fires but Google Ads reporting still looks wrong, follow the Google Ads conversion tracking checks.",
+        "“Common symptoms” sentence, including its troubleshooting-table duplicate.": "GA4 events or key events are missing, GTM shows unexpected tag activity, the same event fires twice, or ad-platform totals disagree with recorded leads and orders."
+      },
+      "links": [
+        {
+          "text": "forms and modals not working",
+          "href": "/blog/forms-modals-not-working/"
+        },
+        {
+          "text": "GTM form tracking guide",
+          "href": "/blog/gtm-form-tracking-ga4/"
+        },
+        {
+          "text": "Google Ads conversion tracking checks",
+          "href": "/blog/google-ads-conversion-tracking-not-working/"
+        }
+      ]
+    },
+    "website-data-systems-not-connecting": {
+      "copy": {
+        "Flow displayed after “Data problems usually start with a broken flow”.": "From one accepted form submission, trace both paths: Lead delivery: accepted form → saved entry → email or CRM. Measurement: confirmed success → GTM event → GA4 → report. Compare the form identity and test time at each step. The first missing or changed record tells you which handoff to inspect.",
+        "Replace “Proof example: one action, every handoff” heading and its\nparagraph.": "Follow one test lead Suppose the form saves an entry and sends the confirmation email, but the CRM record is missing a required field. Compare that field in the saved entry, outgoing payload and CRM response. If the payload omits it, fix the field mapping before changing the analytics tag. If the payload includes it but the CRM rejects it, inspect the destination field name and validation rules. Retest with controlled data and keep personal form contents out of analytics.",
+        "Opening related-symptoms paragraph.": "If the form never accepts a submission, start with forms and modals not working. If the lead reaches the CRM but GA4 misses it, use the GTM form tracking guide. For a failed connection that needs repair, Website Integration Help covers the handoff between the site and the destination system."
+      },
+      "links": [
+        {
+          "text": "forms and modals not working",
+          "href": "/blog/forms-modals-not-working/"
+        },
+        {
+          "text": "GTM form tracking guide",
+          "href": "/blog/gtm-form-tracking-ga4/"
+        },
+        {
+          "text": "Website Integration Help",
+          "href": "/services/website-integration-help/"
+        }
+      ]
+    },
+    "woocommerce-checkout-not-working": {
+      "copy": {
+        "“Look for script, cache, and session issues”; replace the paragraph beginning\n“Checkout pages rely”.": "Identify whether the page uses classic checkout or the Checkout block. In Network, preserve the log and inspect Fetch/XHR while reproducing the failure. Classic checkout commonly uses wc-ajax requests; the Checkout block uses WooCommerce Store API requests. Record the failing URL, status, response and test time. Before retrying payment, check whether an order or charge already exists. A spinner can remain even after the server has accepted part of the checkout.",
+        "“Verify order data and tracking after the fix”; append to the paragraph\nbeginning “A checkout fix”.": "For a test in which the intended consent settings permit measurement, compare the order ID, currency, value and items with the purchase event sent to the intended analytics property. Check for a second purchase event after refreshing the confirmation page. Record the consent choice with the test so an intentionally restricted measurement path is not diagnosed as a broken checkout."
+      },
+      "links": [
+        {
+          "text": "WooCommerce checkout troubleshooting",
+          "href": "https://woocommerce.com/document/endless-loadingspinner-on-the-checkout-page/"
+        }
+      ]
+    },
+    "wordpress-site-broken-after-plugin-update": {
+      "copy": {
+        "“Recover carefully”; insert after its opening paragraph.": "If the dashboard will not open Check the WordPress administrator inbox and spam folder for a Recovery Mode email. Its link can let you sign in with the failing component paused for that session, and the message may identify the plugin or theme involved. Record that name, the error and the updated version. If no email arrives, ask the host for the relevant PHP error log and recovery help; a missing email does not rule out a fatal error.",
+        "“Recover carefully”; add before the safer-recovery list.": "Before choosing rollback or restore, check what the update changed. Reverting plugin files may leave a database migration in place. Restoring an older database can remove newer orders, leads or edits. Confirm the plugin’s rollback guidance and the backup timestamp, then choose a recovery path that preserves current business records. Retest the original failure after recovery."
+      },
+      "links": [
+        {
+          "text": "WordPress Recovery Mode documentation",
+          "href": "https://wordpress.org/documentation/article/recovery-mode/"
+        }
+      ]
+    }
+  },
+  "collections": {
+    "/blog/category/ai-development/": {
+      "copy": {
+        "Paragraph below the article-list heading.": "Start with the launch checklist to test routes, forms, tracking, accessibility and future editing on an AI-built site. It helps separate a usable first version from the work still needed before real visitors arrive.",
+        "Final quote-section heading.": "Need help getting an AI-built site ready to launch?"
+      },
+      "links": [
+        {
+          "text": "launch checklist",
+          "href": "/blog/ai-built-website-not-ready-to-launch/"
+        }
+      ]
+    },
+    "/blog/category/ecommerce-checkout/": {
+      "copy": {
+        "Paragraph below the article-list heading.": "Start with the WooCommerce checkout guide to separate a failed payment or order from a successful purchase with missing tracking. Record the exact failure before changing plugins, cache or gateway settings.",
+        "Final quote-section heading.": "Need help with a checkout that is blocking orders?"
+      },
+      "links": [
+        {
+          "text": "WooCommerce checkout guide",
+          "href": "/blog/woocommerce-checkout-not-working/"
+        }
+      ]
+    },
+    "/blog/category/forms-tracking-data/": {
+      "copy": {
+        "Paragraph below the article-list heading.": "First decide whether the submission failed or the measurement failed. Use the forms guide when the action or delivery breaks, the GTM guide when a successful lead needs tracking, and the Google Ads guide when attribution or conversion reporting needs checking. Use the data-flow guide when several systems disagree.",
+        "Final quote-section heading.": "Need help with a form, tracking event or data handoff?"
+      },
+      "links": [
+        {
+          "text": "forms guide",
+          "href": "/blog/forms-modals-not-working/"
+        },
+        {
+          "text": "GTM guide",
+          "href": "/blog/gtm-form-tracking-ga4/"
+        },
+        {
+          "text": "Google Ads guide",
+          "href": "/blog/google-ads-conversion-tracking-not-working/"
+        },
+        {
+          "text": "data-flow guide",
+          "href": "/blog/website-data-systems-not-connecting/"
+        }
+      ]
+    },
+    "/blog/category/front-end-layout/": {
+      "copy": {
+        "Paragraph below the article-list heading.": "Start with the CSS and JavaScript diagnosis guide if you do not know which layer failed. Use the JavaScript guide for a broken action, the layout guide for viewport or builder problems, and the embed guide for content supplied by another service.",
+        "Final quote-section heading.": "Need help with a broken layout or browser action?"
+      },
+      "links": [
+        {
+          "text": "CSS and JavaScript diagnosis guide",
+          "href": "/blog/css-javascript-errors-website-bugs/"
+        },
+        {
+          "text": "JavaScript guide",
+          "href": "/blog/javascript-issues-website-troubleshooting/"
+        },
+        {
+          "text": "layout guide",
+          "href": "/blog/broken-layouts-mobile-website-fixes/"
+        },
+        {
+          "text": "embed guide",
+          "href": "/blog/embeds-iframes-widgets-breaking-pages/"
+        }
+      ]
+    },
+    "/blog/category/seo-pages-ai/": {
+      "copy": {
+        "Paragraph below the article-list heading.": "Use the SEO audit guide to turn recommendations into website changes. Use the page-launch guide for a focused brief and launch checks, or the AI-built checklist for a generated site. The TopoRank case study examines how page meaning, search language and internal links relate.",
+        "Generated article collection for this category; add the existing AI launch\narticle through its category membership.": "AI-Built Website Not Ready to Launch? Cleanup Checklist Check routing, forms, tracking, accessibility and the other production details before sending visitors to an AI-built site."
+      },
+      "links": [
+        {
+          "text": "SEO audit guide",
+          "href": "/blog/seo-audit-done-now-implement-it/"
+        },
+        {
+          "text": "page-launch guide",
+          "href": "/blog/need-a-page-live-fast/"
+        },
+        {
+          "text": "AI-built checklist",
+          "href": "/blog/ai-built-website-not-ready-to-launch/"
+        },
+        {
+          "text": "TopoRank case study",
+          "href": "/blog/topological-relevance-vector-seo/"
+        }
+      ]
+    },
+    "/blog/category/start-here/": {
+      "copy": {
+        "Paragraph below the article-list heading.": "Use “Something Broke on Your Website?” when you need to identify the failing layer. Use “Fix My Broken Website” when you know the symptom and need a safe order for testing a repair.",
+        "Final quote-section heading.": "Need help choosing the first repair step?"
+      },
+      "links": [
+        {
+          "text": "Something Broke on Your Website?",
+          "href": "/blog/something-broke-on-your-website/"
+        },
+        {
+          "text": "Fix My Broken Website",
+          "href": "/blog/fix-my-broken-website/"
+        }
+      ]
+    },
+    "/blog/category/wordpress-cms/": {
+      "copy": {
+        "Paragraph below the article-list heading.": "If the site broke immediately after an update, start with the plugin-update guide and its recovery checks. If the source is unclear, use the plugin and theme diagnosis guide to separate settings, cache, builder output and template behavior.",
+        "Final quote-section heading.": "Need help with a WordPress plugin or theme problem?"
+      },
+      "links": [
+        {
+          "text": "plugin-update guide",
+          "href": "/blog/wordpress-site-broken-after-plugin-update/"
+        },
+        {
+          "text": "plugin and theme diagnosis guide",
+          "href": "/blog/cms-plugin-theme-weirdness/"
+        }
+      ]
+    },
+    "/blog/tag/ai-built/": {
+      "copy": {
+        "Paragraph below the tagged-posts heading.": "Start with the AI-built launch checklist for routes, forms, tracking and deployment. Use the layout guide when the remaining problem is a broken viewport or page-builder layout."
+      },
+      "links": [
+        {
+          "text": "AI-built launch checklist",
+          "href": "/blog/ai-built-website-not-ready-to-launch/"
+        },
+        {
+          "text": "layout guide",
+          "href": "/blog/broken-layouts-mobile-website-fixes/"
+        }
+      ]
+    },
+    "/blog/tag/analytics-tracking/": {
+      "copy": {
+        "Paragraph below the tagged-posts heading.": "Start with tracking scripts and pixels for missing or duplicate events. For form leads, use the GTM guide; for Google Ads reporting, use the conversion-tracking guide. The other posts show how measurement connects with launches, checkout and wider data flows."
+      },
+      "links": [
+        {
+          "text": "tracking scripts and pixels",
+          "href": "/blog/tracking-scripts-pixels-broken/"
+        },
+        {
+          "text": "GTM guide",
+          "href": "/blog/gtm-form-tracking-ga4/"
+        },
+        {
+          "text": "conversion-tracking guide",
+          "href": "/blog/google-ads-conversion-tracking-not-working/"
+        }
+      ]
+    },
+    "/blog/tag/api-integrations/": {
+      "copy": {
+        "Paragraph below the tagged-posts heading.": "Use the data-flow guide when a lead or field fails to reach another system. Start with the forms guide if the submission itself fails, or the GTM guide if the accepted lead arrives but its analytics event is missing."
+      },
+      "links": [
+        {
+          "text": "data-flow guide",
+          "href": "/blog/website-data-systems-not-connecting/"
+        },
+        {
+          "text": "forms guide",
+          "href": "/blog/forms-modals-not-working/"
+        },
+        {
+          "text": "GTM guide",
+          "href": "/blog/gtm-form-tracking-ga4/"
+        }
+      ]
+    },
+    "/blog/tag/automation/": {
+      "copy": {
+        "Paragraph below the tagged-posts heading.": "The current automation example is the TopoRank case study: a repeatable comparison of page meaning, internal links and disclosed Search Console phrases."
+      },
+      "links": [
+        {
+          "text": "TopoRank case study",
+          "href": "/blog/topological-relevance-vector-seo/"
+        }
+      ]
+    },
+    "/blog/tag/checkout/": {
+      "copy": {
+        "Paragraph below the tagged-posts heading.": "Use the WooCommerce checkout guide to identify the failed step: cart, shipping, payment, order creation or post-purchase tracking."
+      },
+      "links": [
+        {
+          "text": "WooCommerce checkout guide",
+          "href": "/blog/woocommerce-checkout-not-working/"
+        }
+      ]
+    },
+    "/blog/tag/conversion-tracking/": {
+      "copy": {
+        "Paragraph below the tagged-posts heading.": "Confirm that the lead or order exists first. Then use the GTM form guide for the event trigger, the Google Ads guide for attributed reporting, or the tracking-script guide for missing and duplicate installations."
+      },
+      "links": [
+        {
+          "text": "GTM form guide",
+          "href": "/blog/gtm-form-tracking-ga4/"
+        },
+        {
+          "text": "Google Ads guide",
+          "href": "/blog/google-ads-conversion-tracking-not-working/"
+        },
+        {
+          "text": "tracking-script guide",
+          "href": "/blog/tracking-scripts-pixels-broken/"
+        }
+      ]
+    },
+    "/blog/tag/crawl-analysis/": {
+      "copy": {
+        "Paragraph below the tagged-posts heading.": "The TopoRank case study connects a dated crawl and page comparison with disclosed Search Console phrases. Read it for the distinction between page meaning, internal-link context and observed query relationships."
+      },
+      "links": [
+        {
+          "text": "TopoRank case study",
+          "href": "/blog/topological-relevance-vector-seo/"
+        }
+      ]
+    },
+    "/blog/tag/css/": {
+      "copy": {
+        "Paragraph below the tagged-posts heading.": "Use the CSS and JavaScript guide when you need to identify the failing layer. Use the WordPress layout guide when the problem is spacing, overflow, cached styles or a viewport-specific break."
+      },
+      "links": [
+        {
+          "text": "CSS and JavaScript guide",
+          "href": "/blog/css-javascript-errors-website-bugs/"
+        },
+        {
+          "text": "WordPress layout guide",
+          "href": "/blog/broken-layouts-mobile-website-fixes/"
+        }
+      ]
+    },
+    "/blog/tag/dashboards/": {
+      "copy": {
+        "Paragraph below the tagged-posts heading.": "Use the data-flow guide when a dashboard disagrees with the source records. Use the Google Ads guide when the mismatch involves ad conversions, imports or attribution.",
+        "Final quote-section heading.": "Need help reconciling a dashboard with the source data?"
+      },
+      "links": [
+        {
+          "text": "data-flow guide",
+          "href": "/blog/website-data-systems-not-connecting/"
+        },
+        {
+          "text": "Google Ads guide",
+          "href": "/blog/google-ads-conversion-tracking-not-working/"
+        }
+      ]
+    },
+    "/blog/tag/ecommerce/": {
+      "copy": {
+        "Paragraph below the tagged-posts heading.": "Start with the checkout guide if customers cannot complete an order. Use the data-flow guide when orders and reports disagree, or the SEO implementation guide for crawl and template changes. The general repair articles help plan changes safely."
+      },
+      "links": [
+        {
+          "text": "checkout guide",
+          "href": "/blog/woocommerce-checkout-not-working/"
+        },
+        {
+          "text": "data-flow guide",
+          "href": "/blog/website-data-systems-not-connecting/"
+        },
+        {
+          "text": "SEO implementation guide",
+          "href": "/blog/seo-audit-done-now-implement-it/"
+        }
+      ]
+    },
+    "/blog/tag/embeds-iframes/": {
+      "copy": {
+        "Paragraph below the tagged-posts heading.": "Open the embed guide for an iframe or widget that is too wide, blank, slow or blocking another control. Start by separating the host-page wrapper from the content controlled by the provider."
+      },
+      "links": [
+        {
+          "text": "embed guide",
+          "href": "/blog/embeds-iframes-widgets-breaking-pages/"
+        }
+      ]
+    },
+    "/blog/tag/emergency-support/": {
+      "copy": {
+        "Paragraph below the tagged-posts heading.": "The current recovery guide covers a WordPress site that breaks after a plugin update. Record the failed page or action, update time and admin access status before choosing a rollback or recovery path."
+      },
+      "links": [
+        {
+          "text": "recovery guide",
+          "href": "/blog/wordpress-site-broken-after-plugin-update/"
+        }
+      ]
+    },
+    "/blog/tag/forms/": {
+      "copy": {
+        "Paragraph below the tagged-posts heading.": "Start with forms and modals when the visitor cannot submit or the lead never arrives. Use GTM form tracking when the submission succeeds but the event fails. Use the data-flow guide for a dropped CRM field or another broken handoff."
+      },
+      "links": [
+        {
+          "text": "forms and modals",
+          "href": "/blog/forms-modals-not-working/"
+        },
+        {
+          "text": "GTM form tracking",
+          "href": "/blog/gtm-form-tracking-ga4/"
+        },
+        {
+          "text": "data-flow guide",
+          "href": "/blog/website-data-systems-not-connecting/"
+        }
+      ]
+    },
+    "/blog/tag/ga4-gtm/": {
+      "copy": {
+        "Paragraph below the tagged-posts heading.": "Use GTM form tracking to choose a success signal and verify the event. Use tracking scripts and pixels to investigate missing or duplicate installations. Open the Google Ads guide when the question is attribution or imported conversions."
+      },
+      "links": [
+        {
+          "text": "GTM form tracking",
+          "href": "/blog/gtm-form-tracking-ga4/"
+        },
+        {
+          "text": "tracking scripts and pixels",
+          "href": "/blog/tracking-scripts-pixels-broken/"
+        },
+        {
+          "text": "Google Ads guide",
+          "href": "/blog/google-ads-conversion-tracking-not-working/"
+        }
+      ]
+    },
+    "/blog/tag/internal-links/": {
+      "copy": {
+        "Paragraph below the tagged-posts heading.": "Read the TopoRank case study to examine how contextual links relate pages with different tasks. Use the SEO implementation guide when an audit has already identified links or templates that need changing."
+      },
+      "links": [
+        {
+          "text": "TopoRank case study",
+          "href": "/blog/topological-relevance-vector-seo/"
+        },
+        {
+          "text": "SEO implementation guide",
+          "href": "/blog/seo-audit-done-now-implement-it/"
+        }
+      ]
+    },
+    "/blog/tag/javascript/": {
+      "copy": {
+        "Paragraph below the tagged-posts heading.": "Use the CSS and JavaScript guide to identify the failing layer. Use JavaScript troubleshooting to trace a broken action through Console, Network and its script owner. The embed and repair guides cover related failures and safe changes."
+      },
+      "links": [
+        {
+          "text": "CSS and JavaScript guide",
+          "href": "/blog/css-javascript-errors-website-bugs/"
+        },
+        {
+          "text": "JavaScript troubleshooting",
+          "href": "/blog/javascript-issues-website-troubleshooting/"
+        }
+      ]
+    },
+    "/blog/tag/landing-pages/": {
+      "copy": {
+        "Paragraph below the tagged-posts heading.": "Start with the page-launch guide for the brief, content and launch checks. Use the AI-built checklist for a generated site, then the tracking guides to verify the action the page is meant to produce."
+      },
+      "links": [
+        {
+          "text": "page-launch guide",
+          "href": "/blog/need-a-page-live-fast/"
+        },
+        {
+          "text": "AI-built checklist",
+          "href": "/blog/ai-built-website-not-ready-to-launch/"
+        }
+      ]
+    },
+    "/blog/tag/mobile-layout/": {
+      "copy": {
+        "Paragraph below the tagged-posts heading.": "Use the WordPress layout guide for styles, builder spacing and breakpoint problems. Use the embed guide when a calendar, video, map or other external widget causes the mobile break."
+      },
+      "links": [
+        {
+          "text": "WordPress layout guide",
+          "href": "/blog/broken-layouts-mobile-website-fixes/"
+        },
+        {
+          "text": "embed guide",
+          "href": "/blog/embeds-iframes-widgets-breaking-pages/"
+        }
+      ]
+    },
+    "/blog/tag/page-builders/": {
+      "copy": {
+        "Paragraph below the tagged-posts heading.": "Start with the layout guide for a broken viewport or builder section. If the failure began with an update, follow the plugin-update checks. Use the plugin and theme guide when settings, templates and public output disagree."
+      },
+      "links": [
+        {
+          "text": "layout guide",
+          "href": "/blog/broken-layouts-mobile-website-fixes/"
+        },
+        {
+          "text": "plugin-update checks",
+          "href": "/blog/wordpress-site-broken-after-plugin-update/"
+        },
+        {
+          "text": "plugin and theme guide",
+          "href": "/blog/cms-plugin-theme-weirdness/"
+        }
+      ]
+    },
+    "/blog/tag/plugin-conflicts/": {
+      "copy": {
+        "Paragraph below the tagged-posts heading.": "Use the plugin-update guide when the timing points to a specific change. Use JavaScript troubleshooting for a broken browser action, or the plugin and theme guide when the source is still unclear."
+      },
+      "links": [
+        {
+          "text": "plugin-update guide",
+          "href": "/blog/wordpress-site-broken-after-plugin-update/"
+        },
+        {
+          "text": "JavaScript troubleshooting",
+          "href": "/blog/javascript-issues-website-troubleshooting/"
+        },
+        {
+          "text": "plugin and theme guide",
+          "href": "/blog/cms-plugin-theme-weirdness/"
+        }
+      ]
+    },
+    "/blog/tag/seo-audit/": {
+      "copy": {
+        "Paragraph below the tagged-posts heading.": "Use the SEO implementation guide to turn an existing audit into scoped changes, choose the right order and verify the live result."
+      },
+      "links": [
+        {
+          "text": "SEO implementation guide",
+          "href": "/blog/seo-audit-done-now-implement-it/"
+        }
+      ]
+    },
+    "/blog/tag/site-speed/": {
+      "copy": {
+        "Paragraph below the tagged-posts heading.": "These posts cover speed as part of launch readiness, embeds, CMS behavior and wider troubleshooting. For a focused investigation of loading and responsiveness, see Website Performance Engineering Diagnostics."
+      },
+      "links": [
+        {
+          "text": "Website Performance Engineering Diagnostics",
+          "href": "/skills/performance-engineering/"
+        }
+      ]
+    },
+    "/blog/tag/technical-seo/": {
+      "copy": {
+        "Paragraph below the tagged-posts heading.": "Use the SEO implementation guide for changes from an audit, the launch guides for a new page or AI-built site, and the TopoRank case study for an analysis of page meaning and internal links."
+      },
+      "links": [
+        {
+          "text": "SEO implementation guide",
+          "href": "/blog/seo-audit-done-now-implement-it/"
+        },
+        {
+          "text": "TopoRank case study",
+          "href": "/blog/topological-relevance-vector-seo/"
+        }
+      ]
+    },
+    "/blog/tag/themes/": {
+      "copy": {
+        "Paragraph below the tagged-posts heading.": "Start with the plugin-update guide when a theme or plugin change triggered the failure. Use the plugin and theme diagnosis guide when template output, builder settings or cache could explain the behavior."
+      },
+      "links": [
+        {
+          "text": "plugin-update guide",
+          "href": "/blog/wordpress-site-broken-after-plugin-update/"
+        },
+        {
+          "text": "plugin and theme diagnosis guide",
+          "href": "/blog/cms-plugin-theme-weirdness/"
+        }
+      ]
+    },
+    "/blog/tag/website-fixes/": {
+      "copy": {
+        "Paragraph below the tagged-posts heading.": "Start with symptom diagnosis, then use the safe repair order before changing the site. The focused guides cover CSS, JavaScript, mobile layout and external embeds once you know which behavior failed."
+      },
+      "links": [
+        {
+          "text": "symptom diagnosis",
+          "href": "/blog/something-broke-on-your-website/"
+        },
+        {
+          "text": "safe repair order",
+          "href": "/blog/fix-my-broken-website/"
+        }
+      ]
+    },
+    "/blog/tag/woocommerce/": {
+      "copy": {
+        "Paragraph below the tagged-posts heading.": "The current WooCommerce article follows checkout from cart and payment through order creation and tracking. Use it to identify the failed step before changing the store."
+      },
+      "links": [
+        {
+          "text": "WooCommerce article",
+          "href": "/blog/woocommerce-checkout-not-working/"
+        }
+      ]
+    },
+    "/blog/tag/wordpress/": {
+      "copy": {
+        "Paragraph below the tagged-posts heading.": "Use the plugin-update guide for a sudden regression, the layout guide for a visual break, and the form or checkout guides for a failed business action. The page-launch and SEO implementation posts cover planned changes once the site is stable."
+      },
+      "links": [
+        {
+          "text": "plugin-update guide",
+          "href": "/blog/wordpress-site-broken-after-plugin-update/"
+        },
+        {
+          "text": "layout guide",
+          "href": "/blog/broken-layouts-mobile-website-fixes/"
+        },
+        {
+          "text": "form",
+          "href": "/blog/forms-modals-not-working/"
+        },
+        {
+          "text": "checkout",
+          "href": "/blog/woocommerce-checkout-not-working/"
+        }
+      ]
+    }
+  },
+  "locations": {
+    "beloit-wi": {
+      "copy": {
+        "Capability/proof section heading": "Website fixes and support available to Beloit businesses"
+      },
+      "links": []
+    },
+    "dixon-il": {
+      "copy": {
+        "Capability/proof section heading": "Webmaster support and technical fixes for Dixon businesses",
+        "Closing contact prompt": "For ongoing support, send your website URL and the updates or problems that keep coming back. Include the most urgent task and any deadline so we can agree the first scope."
+      },
+      "links": []
+    },
+    "dubuque-ia": {
+      "copy": {
+        "Opening service paragraph": "Dubuque companies and agencies can get remote help with website changes that need a developer: WordPress fixes, ecommerce cleanup, technical SEO, tracking verification and landing-page work.",
+        "Capability/proof section heading": "Technical website support for Dubuque companies and agencies"
+      },
+      "links": []
+    },
+    "freeport-il": {
+      "copy": {
+        "Hero introduction": "I’m Gary Hunt, a web developer based in Freeport, Illinois. I help Freeport-area businesses with WordPress updates, broken forms, technical SEO, tracking and ongoing website work. Support is handled remotely, with an hourly or project scope agreed before paid work begins."
+      },
+      "links": []
+    },
+    "galena-il": {
+      "copy": {
+        "Opening service paragraph": "If your Galena business uses seasonal offers, booking tools or visitor inquiries, the website needs to make those actions clear on mobile. I can help with the page layout, embedded forms, tracking and WordPress changes behind that experience.",
+        "Capability/proof section heading": "Landing-page and booking-flow support for Galena businesses",
+        "Add one booking-specific FAQ beside the existing remote-support questions": "Can you help with a booking form embedded on my website? I can investigate the website side of the embed, including loading problems, sizing, mobile layout and tracking. Changes inside the booking platform may also need its provider or account owner."
+      },
+      "links": [
+        {
+          "text": "website side of the embed",
+          "href": "/blog/embeds-iframes-widgets-breaking-pages/"
+        }
+      ]
+    },
+    "janesville-wi": {
+      "copy": {
+        "First two paragraphs under Janesville website support": "If an outdated page, broken form or tracking problem is getting in the way of inquiries, I can investigate the website and scope the changes needed. Janesville businesses and agencies can use remote support for WordPress, technical SEO, ecommerce and other website work, with an hourly or project scope agreed before paid work begins."
+      },
+      "links": []
+    },
+    "madison-wi": {
+      "copy": {
+        "Opening service paragraph": "Madison businesses and agencies can get remote help with ongoing website maintenance, WordPress updates and technical tasks that need a developer.",
+        "New short section before the service grid": "Ongoing website maintenance for Madison teams Recurring support can cover content updates, WordPress maintenance, form or tracking checks and small technical fixes. We agree the priorities and scope before paid work begins. See Ongoing Webmaster Support for recurring work or WordPress Maintenance for WordPress-specific tasks.",
+        "Capability/proof section heading": "Website implementation available to Madison teams"
+      },
+      "links": [
+        {
+          "text": "Ongoing Webmaster Support",
+          "href": "/services/ongoing-webmaster-support/"
+        },
+        {
+          "text": "WordPress Maintenance",
+          "href": "/services/wordpress-maintenance/"
+        }
+      ]
+    },
+    "monroe-wi": {
+      "copy": {
+        "Capability/proof section heading": "WordPress, ecommerce and tracking support for Monroe businesses",
+        "Website-support introduction after the current service summary": "For titles and headings, internal links, redirects or changes from a supplied audit, see Technical SEO Implementation."
+      },
+      "links": [
+        {
+          "text": "Technical SEO Implementation",
+          "href": "/services/technical-seo-implementation/"
+        }
+      ]
+    },
+    "rockford-il": {
+      "copy": {
+        "First paragraph under Rockford website support": "Rockford businesses and agencies can get remote help with existing websites, from a broken form or WordPress layout to a landing page, tracking setup or supplied SEO implementation task.",
+        "Capability/proof section heading": "Technical support for Rockford businesses and agencies"
+      },
+      "links": []
+    },
+    "sterling-il": {
+      "copy": {
+        "Capability/proof section heading": "WordPress, performance and ecommerce support for Sterling businesses"
+      },
+      "links": []
+    }
+  },
+  "notes": {
+    "added-call-tracking-tag-management-site-verification-static-site": {
+      "copy": {},
+      "links": []
+    },
+    "added-floating-click-to-call-review-badge-support": {
+      "copy": {
+        "Result": "The floating phone button was added across the site, and phone-click tracking was verified. Review-badge components and cached-data fallbacks were added while preserving the static build."
+      },
+      "links": []
+    },
+    "added-location-specific-proof-content-service-pages": {
+      "copy": {
+        "Result": "The supplied content was assigned to its intended location pages, and the page setup was checked to make sure unrelated locations would not receive the wrong item."
+      },
+      "links": []
+    },
+    "allowed-form-embed-wordpress-security-without-broad-bypass": {
+      "copy": {},
+      "links": []
+    },
+    "audited-wordpress-site-remaining-malware-indicators": {
+      "copy": {},
+      "links": []
+    },
+    "built-accessible-service-page-custom-imagery-schema": {
+      "copy": {
+        "Result": "The client received a service-page draft with a six-step process, custom imagery, FAQs, and structured data. Contrast, keyboard focus, typography, and responsive overflow were checked before the unpublished draft went to review."
+      },
+      "links": []
+    },
+    "built-admin-only-wordpress-crm-estimate-intake": {
+      "copy": {
+        "How this relates to your project": "A simple estimate form can feed a more detailed internal workflow. Custom WordPress plugin development connects the public submission to lead records, status updates, reminders, and exports inside WordPress."
+      },
+      "links": [
+        {
+          "text": "Custom WordPress plugin development",
+          "href": "/skills/wordpress-plugin-development/"
+        }
+      ],
+      "title": "WordPress CRM Plugin for Estimate Intake | The Web Guy"
+    },
+    "built-local-first-workflow-app-session-continuity": {
+      "copy": {
+        "Result": "The app stores session records locally and keeps attachments in IndexedDB. Users can resume a previous session, work through one active microtask, and export their records.",
+        "Where this fix usually leads next": "Internal tools development starts with the workflow people need to complete. Here, the useful unit was a work session with a timer, one active task, and a way to resume later."
+      },
+      "links": [
+        {
+          "text": "Internal tools development",
+          "href": "/services/automation-internal-tools/"
+        }
+      ]
+    },
+    "built-production-ready-static-service-website-astro": {
+      "copy": {},
+      "links": []
+    },
+    "built-role-aware-operations-dashboard-prototype": {
+      "copy": {},
+      "links": []
+    },
+    "built-static-site-lead-handler-contact-popup-flow": {
+      "copy": {
+        "Result": "The work produced a documented Node and Express lead handler. The later contact flow used an embedded CRM popup, with its contact-click event checked and the static export still building successfully."
+      },
+      "links": []
+    },
+    "centralized-business-data-faq-schema-pull-request-review": {
+      "copy": {},
+      "links": []
+    },
+    "checked-suspicious-wordpress-users-after-site-compromise": {
+      "copy": {
+        "Where this fix usually leads next": "WordPress security investigation includes checking user accounts and permissions alongside files, plugins, and hosting evidence. This task covered the account review and removal of the temporary cleanup tools."
+      },
+      "links": [
+        {
+          "text": "WordPress security investigation",
+          "href": "/services/security-hosting-reliability/"
+        }
+      ]
+    },
+    "cleaned-up-ai-built-page-easier-to-use-maintain": {
+      "copy": {},
+      "links": []
+    },
+    "cleaned-up-crawl-paths-google-slow-to-index": {
+      "copy": {
+        "The problem": "The affected pages needed clearer contextual links, consistent sitemap inclusion, and more specific titles and headings. The review also found repeated copy that made the pages harder to distinguish."
+      },
+      "links": [
+        {
+          "text": "crawl analysis and internal linking",
+          "href": "/skills/crawl-analysis-internal-linking/"
+        }
+      ]
+    },
+    "cleaned-up-faq-sections-across-wordpress-pages": {
+      "copy": {
+        "What I changed list": "Reviewed the affected WordPress pages, updated their FAQ sections and nearby layout, then checked the rendered output for consistency."
+      },
+      "links": []
+    },
+    "cleaned-up-mobile-page-too-many-competing-sections": {
+      "copy": {},
+      "links": []
+    },
+    "cleaned-up-wordpress-assets-slowing-down-service-page": {
+      "copy": {
+        "Result": "Unnecessary assets were reduced on the service-page template, non-critical scripts were delayed, and below-the-fold image loading was adjusted. The page was retested after clearing the site and browser caches."
+      },
+      "links": []
+    },
+    "cleaned-wordpress-install-database-after-malware": {
+      "copy": {},
+      "links": [],
+      "title": "WordPress Recovery Package and User Cleanup | The Web Guy",
+      "meta": "A WordPress recovery note on preparing clean deployable files, excluding stale backups, and removing a confirmed malicious database user."
+    },
+    "completed-requested-site-modifications-output-review": {
+      "copy": {
+        "Quick summary and repeated change/result sections": "Completed the requested website edits and checked the affected pages in the browser against the task list."
+      },
+      "links": []
+    },
+    "consolidated-conflicting-wordpress-seo-plugins": {
+      "copy": {},
+      "links": []
+    },
+    "expanded-local-pages-consistent-faqs-structured-data": {
+      "copy": {},
+      "links": []
+    },
+    "fixed-contact-form-email-delivery-authenticated-sending": {
+      "copy": {
+        "Hero description": "A WordPress contact form returned an error after submission. Testing traced the failure to mail delivery, and authenticated API-based sending restored successful submissions."
+      },
+      "links": []
+    },
+    "fixed-lead-tracking-contact-form-hard-to-measure": {
+      "copy": {
+        "Where this fix usually leads next": "Conversion tracking troubleshooting checks which action an event represents. A contact-button click, form start, and completed submission should remain distinguishable in the reporting."
+      },
+      "links": [
+        {
+          "text": "Conversion tracking troubleshooting",
+          "href": "/services/conversion-tracking-troubleshooting/"
+        }
+      ]
+    },
+    "fixed-mobile-bio-popup-scrolling-project-image-quality": {
+      "copy": {},
+      "links": []
+    },
+    "fixed-mobile-layout-below-tablet-width": {
+      "copy": {},
+      "links": []
+    },
+    "fixed-wordpress-critical-error-caused-cache-plugin": {
+      "copy": {
+        "Result": "WordPress and CMS access returned after the failing cache-plugin path was removed from the active runtime. The removed optimization behavior still needed a compatible replacement."
+      },
+      "links": [
+        {
+          "text": "WordPress plugin-conflict help",
+          "href": "/services/wordpress-plugin-conflict-help/"
+        }
+      ]
+    },
+    "improved-internal-links-service-pages-supporting-content": {
+      "copy": {
+        "Where this fix usually leads next": "Crawl analysis and internal linking help connect a service page with the guides and work examples that support it. Each link should help a reader take the next useful step."
+      },
+      "links": [
+        {
+          "text": "crawl analysis and internal linking",
+          "href": "/skills/crawl-analysis-internal-linking/"
+        }
+      ]
+    },
+    "migrated-site-content-between-domains-without-rebuild": {
+      "copy": {
+        "Hero description": "A scoped content-transfer note about moving requested material from an older domain to a newer one and checking the destination page. Redirects, internal links, and metadata remained separate follow-up checks."
+      },
+      "links": [],
+      "title": "Content Transfer Between Website Domains | The Web Guy"
+    },
+    "optimized-shopify-theme-page-speed-core-web-vitals": {
+      "copy": {
+        "Result": "The staging theme deferred non-critical loaders, adjusted stylesheet delivery, and added priority hints for the likely LCP image. Product, cart, and delivery-field behavior was checked after those changes."
+      },
+      "links": []
+    },
+    "prepared-bulk-location-page-imports-elementor-templates": {
+      "copy": {},
+      "links": []
+    },
+    "prepared-domain-migration-without-dropping-existing-hostname": {
+      "copy": {},
+      "links": []
+    },
+    "published-structured-blog-content-optimized-featured-images": {
+      "copy": {},
+      "links": []
+    },
+    "rebuilt-large-service-site-image-system-mega-menu": {
+      "copy": {},
+      "links": []
+    },
+    "rebuilt-static-wordpress-caching-hundreds-urls": {
+      "copy": {
+        "Where this fix usually leads next": "Performance engineering includes how a cache is built, invalidated, and checked against production. This rebuild moved the fixes into versionable WordPress code and verified the intended cache set."
+      },
+      "links": [
+        {
+          "text": "Performance engineering",
+          "href": "/skills/performance-engineering/"
+        }
+      ]
+    },
+    "rebuilt-wordpress-site-from-crawl-into-reusable-blocks": {
+      "copy": {
+        "Where this fix usually leads next": "WordPress theme development can turn imported content into reusable editing structures. This rebuild used shared PHP templates, dynamic Gutenberg blocks, custom post types, and a Vite asset pipeline."
+      },
+      "links": [
+        {
+          "text": "WordPress theme development",
+          "href": "/skills/wordpress-theme-development/"
+        }
+      ]
+    },
+    "recovered-multiple-wordpress-sites-after-malware-injection": {
+      "copy": {},
+      "links": []
+    },
+    "refactored-nextjs-site-static-hosting": {
+      "copy": {},
+      "links": []
+    },
+    "removed-wordpress-backdoor-separated-waf-crawl-block": {
+      "copy": {
+        "Where this fix usually leads next": "Security and hosting support separates a compromised WordPress installation from a firewall or crawler-access problem. Each finding needs its own evidence and follow-up action."
+      },
+      "links": [
+        {
+          "text": "Security and hosting support",
+          "href": "/services/security-hosting-reliability/"
+        }
+      ]
+    },
+    "removed-wordpress-backdoors-hardened-file-access": {
+      "copy": {},
+      "links": []
+    },
+    "repaired-custom-permalinks-location-based-service-pages": {
+      "copy": {
+        "Where this fix usually leads next": "Custom WordPress development can repair how content relationships become public URLs. This task paired request-resolution logic with an admin utility that matched service pages to their location records."
+      },
+      "links": [
+        {
+          "text": "Custom WordPress development",
+          "href": "/skills/wordpress-plugin-development/"
+        }
+      ]
+    },
+    "repaired-full-screen-section-scrolling-theme-overflow": {
+      "copy": {
+        "Result": "The repaired homepage version showed predictable section scrolling and visible content during testing. It was then prepared for review with the theme interaction isolated."
+      },
+      "links": []
+    },
+    "repaired-recaptcha-loading-without-disabling-page-optimization": {
+      "copy": {},
+      "links": []
+    },
+    "replaced-embedded-hero-forms-accessible-booking-modal": {
+      "copy": {},
+      "links": []
+    },
+    "replaced-oversized-booking-embed-validated-lead-form": {
+      "copy": {},
+      "links": []
+    },
+    "resolved-unused-instagram-feed-plugin-issue": {
+      "copy": {
+        "Hero description": "A WordPress plugin note about updating an Instagram feed plugin, tracing the remaining issue to authentication, and deactivating it after confirming the feed was no longer used."
+      },
+      "links": []
+    },
+    "reviewed-builder-based-site-performance-design-constraints": {
+      "copy": {},
+      "links": []
+    },
+    "reviewed-shopify-theme-files-before-template-changes": {
+      "copy": {
+        "Where this fix usually leads next": "Shopify and Liquid support starts by identifying the template, section, or app behavior that controls the requested change. This review established that starting point and preserved a theme-file reference before editing."
+      },
+      "links": [
+        {
+          "text": "Shopify and Liquid support",
+          "href": "/services/shopify-liquid-support/"
+        }
+      ]
+    },
+    "reviewed-wordpress-site-suspicious-plugin-like-files": {
+      "copy": {},
+      "links": []
+    },
+    "stabilized-contact-form-email-sending-without-overcomplicating": {
+      "copy": {
+        "Result": "Sender and reply-to settings were adjusted, and test submissions were sent through the live form. The remaining DNS or provider-authentication steps were documented for when the required account access became available."
+      },
+      "links": [],
+      "title": "WordPress Form Email With Limited Access | The Web Guy",
+      "meta": "A WordPress form-mail note on sender and reply-to settings, live submission tests, and the DNS or provider steps that still needed account access."
+    },
+    "staged-cleaned-wordpress-recovery-backup-locally": {
+      "copy": {},
+      "links": []
+    },
+    "structured-client-facing-html-invoices-detailed-work-blocks": {
+      "copy": {
+        "Where this fix usually leads next": "Internal tools development can make a recurring administrative task easier to repeat. This invoice workflow uses a reusable HTML layout, project-specific history, and work descriptions clients can review line by line."
+      },
+      "links": [
+        {
+          "text": "Internal tools development",
+          "href": "/services/automation-internal-tools/"
+        }
+      ]
+    },
+    "traced-deceptive-page-warning-obfuscated-database-payload": {
+      "copy": {
+        "Where this fix usually leads next": "WordPress security investigation follows evidence across files, database content, users, and hosting behavior. This case preserved the original evidence before removing the database payload and checking the surrounding installation."
+      },
+      "links": [
+        {
+          "text": "WordPress security investigation",
+          "href": "/services/security-hosting-reliability/"
+        }
+      ],
+      "title": "WordPress Deceptive-Page Database Payload | The Web Guy"
+    },
+    "traced-live-wordpress-display-problem-host-cache": {
+      "copy": {},
+      "links": [],
+      "title": "WordPress Host Cache Diagnosis After Updates | The Web Guy",
+      "meta": "A WordPress debugging note on corrected local output, stale live assets, and a host or CDN cache purge that still needed to happen."
+    },
+    "tracked-live-site-display-issue-server-side-cache": {
+      "copy": {},
+      "links": [],
+      "title": "Stale Page Retest After Host Cache Refresh | The Web Guy",
+      "meta": "A production debugging note on comparing local and live output, checking upstream-cache response headers, and retesting after the cache refreshed."
+    },
+    "turned-shopify-speed-audit-verified-theme-release": {
+      "copy": {
+        "Result": "The report’s average Lighthouse lab performance scores rose from 32 to 65 on mobile and from about 81 to 95 on desktop. All 5,494 checked sitemap URLs returned successfully, and a rollback theme was retained."
+      },
+      "links": []
+    },
+    "updated-static-promotion-page-chat-script": {
+      "copy": {},
+      "links": []
+    },
+    "uploaded-structured-blog-posts-schema-output": {
+      "copy": {
+        "The problem": "The supplied blog content needed consistent WordPress formatting, defined slugs and canonicals, appropriate indexation settings, and structured data that rendered correctly."
+      },
+      "links": [],
+      "title": "WordPress Blog Publishing and Schema Output | The Web Guy"
+    },
+    "verified-form-to-crm-api-handoff-dropping-fields": {
+      "copy": {},
+      "links": []
+    }
+  },
+  "noteCategories": {
+    "ai-website-cleanup": {
+      "copy": {},
+      "links": []
+    },
+    "api-integrations": {
+      "copy": {},
+      "links": []
+    },
+    "automation-internal-tools": {
+      "copy": {
+        "Hero introduction": "A local-first workflow app, a role-aware dashboard prototype, and a reusable HTML invoice system. Each note explains the workflow, the implementation, and the completed stage."
+      },
+      "links": [],
+      "meta": "Internal tools work examples: a local-first workflow app, role-aware dashboard prototype, and reusable HTML invoice system, with implementation notes."
+    },
+    "ecommerce-support": {
+      "copy": {
+        "Hero introduction": "Shopify theme review and performance work, including staging checks, product and cart behavior, and release preparation."
+      },
+      "links": [
+        {
+          "text": "Shopify staging-theme performance work",
+          "href": "/fix-notes/optimized-shopify-theme-page-speed-core-web-vitals/"
+        },
+        {
+          "text": "Shopify performance release and rollback",
+          "href": "/fix-notes/turned-shopify-speed-audit-verified-theme-release/"
+        }
+      ],
+      "meta": "Browse Shopify work notes covering theme-file review, staging performance changes, product and cart checks, and release preparation with rollback."
+    },
+    "landing-pages": {
+      "copy": {},
+      "links": []
+    },
+    "page-speed": {
+      "copy": {},
+      "links": []
+    },
+    "production-debugging": {
+      "copy": {},
+      "links": []
+    },
+    "security-hosting": {
+      "copy": {},
+      "links": []
+    },
+    "technical-seo": {
+      "copy": {},
+      "links": []
+    },
+    "tracking-analytics": {
+      "copy": {},
+      "links": []
+    },
+    "website-fixes": {
+      "copy": {},
+      "links": [],
+      "title": "Website Repair Examples | The Web Guy",
+      "h1": "Website Repair Examples",
+      "meta": "Website repair notes covering mobile layouts, popup scrolling, service imagery, navigation, scoped content transfers, and frontend checks."
+    },
+    "wordpress-support": {
+      "copy": {},
+      "links": []
+    }
+  },
+  "static": {
+    "/": {
+      "copy": {
+        "White-label FAQ answer": "Yes. I can work within your agency’s tools and approval process. We agree on client communication, access, ownership and the work to be delivered before starting."
+      },
+      "links": [
+        {
+          "text": "White Label WordPress Support",
+          "href": "/services/white-label-wordpress-support/"
+        }
+      ]
+    },
+    "/about/": {
+      "copy": {
+        "Hero introduction": "I’m Gary Hunt, an independent web developer based in Freeport, Illinois. I work remotely with businesses and agencies on WordPress, website repairs, technical SEO, tracking and integrations. You work directly with me from the first scoped task through the handoff.",
+        "Final fit section": "The best fit is a business or agency with a defined website task, a technical backlog or a problem that needs investigation. For urgent work, send the affected URL and business impact so I can confirm availability and scope. Larger engagements need clear priorities, responsibilities and approval points."
+      },
+      "links": []
+    },
+    "/rate/": {
+      "copy": {},
+      "links": []
+    },
+    "/contact/": {
+      "copy": {
+        "Contact-channel paragraph": "Send your project through this form or the live chat. When chat is available, you’ll usually be speaking directly with me. I’ll review the details and confirm the next step."
+      },
+      "links": []
+    },
+    "/faq/": {
+      "copy": {
+        "Sections before “What do you charge?”": "Start with the question that matches your project. Each answer links to the service or quote details when you need more context.",
+        "“Can you troubleshoot Core Web Vitals?” answer": "Yes. I use Core Web Vitals data, Lighthouse findings and browser checks to identify practical performance work. Hosting, themes, plugins and required third-party tools affect the result, so a specific score is not guaranteed."
+      },
+      "links": []
+    },
+    "/ai-development-oversight/": {
+      "copy": {},
+      "links": []
+    },
+    "/ai-development-oversight/ai-code-review/": {
+      "copy": {},
+      "links": []
+    },
+    "/ai-development-oversight/ai-development-guardrails/": {
+      "copy": {},
+      "links": []
+    },
+    "/ai-development-oversight/ai-production-oversight/": {
+      "copy": {},
+      "links": []
+    },
+    "/ai-development-oversight/ai-website-qa/": {
+      "copy": {},
+      "links": []
+    },
+    "/services/": {
+      "copy": {
+        "Repeated lower routing sections": "Choose your starting point Something broke: website fixes. An audit needs implementation: technical SEO. A page needs building: landing pages. Data is missing or wrong: tracking or integration help. Still unsure? Send the URL and explain the result you need.",
+        "Automation service-card description": "Build a script, dashboard, or internal tool for repeated page checks, data cleanup, reporting, or API workflows."
+      },
+      "links": []
+    },
+    "/skills/": {
+      "copy": {
+        "Technical proof introduction": "Explore the implementation work behind the service: WordPress themes and plugins, Shopify templates, measurement, integrations, performance and technical SEO. Each skill page explains the problems it addresses and the checks involved."
+      },
+      "links": [
+        {
+          "text": "Website Services",
+          "href": "/services/"
+        },
+        {
+          "text": "send the problem for a quote",
+          "href": "/contact/"
+        }
+      ]
+    },
+    "/locations/": {
+      "copy": {
+        "Hero introduction": "I’m Gary Hunt, an independent web developer based in Freeport, Illinois. I work remotely with businesses and agencies across the Illinois, Wisconsin and Iowa service areas listed below. Choose your city for website support options, or send the URL and the problem you need help with.",
+        "Regional proof card": "Website-side SEO implementation Support can cover service pages, titles and headings, internal links, schema, redirects and crawl issues. The work is scoped around changes to the website."
+      },
+      "links": []
+    },
+    "/blog/": {
+      "copy": {
+        "Sentence immediately below “Newest website support articles”.": "Browse the latest troubleshooting notes, or choose a topic to narrow the list.",
+        "Category cards with one result and tag cards with one result.": "1 article 1 post",
+        "Opening navigation through “Specific website problems”; consolidate\nrepeated article presentations.": "Choose a starting point Something broke: diagnose the symptom, then follow the safe repair order. Forms or measurement: separate a failed submission from a missing event or delivery problem. A launch or SEO task: define what the page must do and verify the implementation. All topics Browse by category or use a symptom, platform or implementation tag."
+      },
+      "links": [
+        {
+          "text": "diagnose the symptom",
+          "href": "/blog/something-broke-on-your-website/"
+        },
+        {
+          "text": "safe repair order",
+          "href": "/blog/fix-my-broken-website/"
+        },
+        {
+          "text": "Forms or measurement",
+          "href": "/blog/category/forms-tracking-data/"
+        },
+        {
+          "text": "A launch or SEO task",
+          "href": "/blog/category/seo-pages-ai/"
+        }
+      ]
+    },
+    "/fix-notes/": {
+      "copy": {
+        "Category-count labels on AI Website Cleanup and Ecommerce Support cards": "1 note"
+      },
+      "links": []
+    },
+    "/sites-for-sale/": {
+      "copy": {
+        "Opening paragraph": "Website and app assets for a single buyer. Compare what is built, what remains in progress and what is included in a transfer. Sold listings stay visible as examples of previous products.",
+        "HammerNest inventory description": "A published handyman website asset with service pages, area pages, estimate intake, CRM capture and tracking. Available for early acquisition; search history is shown as a dated snapshot."
+      },
+      "links": [],
+      "meta": "Explore available website and app assets, compare included pages and systems, and review dated performance snapshots and sold examples."
+    },
+    "/sites-for-sale/hammernest-handyman/": {
+      "copy": {
+        "Opening description": "The asset brings together a WordPress site, service and area pages, estimate intake, an admin CRM and tracking. Review the included systems, current state and transfer scope before deciding whether it fits your business.",
+        "Performance section heading": "Recorded performance and search visibility",
+        "After-acquisition statement": "The listing includes a dated Search Console snapshot. Ask for the available analytics records and lead-system status as part of the acquisition review."
+      },
+      "links": [],
+      "title": "HammerNest Handyman Website for Sale | The Web Guy",
+      "meta": "Review the HammerNest handyman website asset: WordPress pages, estimate intake, CRM, tracking, dated search data, current status and transfer scope."
+    },
+    "/sites-for-sale/modemind/": {
+      "copy": {
+        "Performance section heading": "Recorded performance and archive status"
+      },
+      "links": [],
+      "title": "ModeMind: Sold Workflow App Example | The Web Guy"
+    },
+    "/privacy/": {
+      "copy": {},
+      "links": []
+    },
+    "/terms/": {
+      "copy": {},
+      "links": []
+    }
+  }
+}

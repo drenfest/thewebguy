@@ -1,0 +1,83 @@
+{
+  "date": "2026-11-02",
+  "state": "Verified clean release; publication in progress",
+  "source": "D:/Users/drenf/Downloads/thewebguy-app-improvements-2026-11-02.pdf",
+  "sourceFilesChangedByThisTask": 42,
+  "validation": {
+    "build": "passed",
+    "svelteDiagnostics": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "auditedPages": 206,
+    "httpFailures": 0,
+    "internalDestinationsChecked": 206,
+    "brokenInternalDestinations": 0,
+    "missingFragmentTargets": 0,
+    "articleWebPageDateMismatches": 0,
+    "originalPublicationDatesPreserved": true,
+    "missingProposedInternalLinks": [],
+    "authoredSkillTables": 11,
+    "originalPluginTablePreserved": true,
+    "numberedRecommendations": 268,
+    "recommendationOutcomes": {
+      "verified": 260,
+      "verified_user_decision": 1,
+      "retained_after_evidence_review": 5,
+      "verified_source_mapping": 1,
+      "requires_provider_settings_review": 1
+    },
+    "sharedCorrectionsReviewed": 18,
+    "proposedMetadataFieldsChecked": 30,
+    "representativePhonePages": 12
+  },
+  "browserChecks": [
+    "Desktop table sorting preserves all symptom/evidence/work associations",
+    "Phone table layout retains labels and readable rows",
+    "Contact context survives query parameters; optional fields expand",
+    "Homepage selector shows distinct SEO, integration, and measurement choices; ArrowRight changes selection and focus",
+    "TopoRank Queries and Content & Link Context controls open their respective evidence panels",
+    "Article table of contents resolves to the new diagnosis table; anchor headings clear the sticky header"
+  ],
+  "toporankCalculation": {
+    "frozenSource": "artifacts/relevance-query-comparison-review/site-summary.json and site-inventories-verified.json",
+    "pages": 183,
+    "queryPages": 72,
+    "minimumStoredScore": 0.5720406864195534,
+    "minimumOn100Scale": 57.20406864195534,
+    "displayedRoundedValue": 57.2,
+    "formula": "0.40 lexical + 0.40 vector + 0.20 link support",
+    "formulaVerifiedAgainstFrozenRows": 183,
+    "maximumFormulaDifference": 0,
+    "period": "2026-09-28 through 2026-10-25",
+    "interpretation": "Observed lower boundary of disclosed historical records; not a Google visibility cutoff"
+  },
+  "decisionsPreserved": [
+    {
+      "topic": "Emergency availability",
+      "action": "Owner explicitly confirmed keeping current two-hour initial target, weekday 9 AM–7 PM Central hours, and general 24-hour target."
+    },
+    {
+      "topic": "Agency/automation ownership and five archive indexation candidates",
+      "action": "URLs, canonicals, and indexation retained. Editorial differentiation applied; mergers or noindex require current page/query evidence."
+    },
+    {
+      "topic": "Privacy",
+      "action": "Policy wording retained. Source confirms FAQ/search text parameters are truncated, with no specific personal-data redaction in sanitizeParams. Tawk integration exists; provider-account retention and transcript settings still need owner review before policy changes."
+    },
+    {
+      "topic": "Numerical proof",
+      "action": "Broad 100/90+ and 80-90% claims narrowed. Shopify’s original qualified lab scores retained; reproducibility still depends on the original dated test report/settings."
+    },
+    {
+      "topic": "Thin work notes and plugin-conflict examples",
+      "action": "Known scope narrowed; unspecified modifications use a compact work-log presentation. Mechanism-based plugin wording avoids claiming unverified engagements."
+    },
+    {
+      "topic": "Asset transfer",
+      "action": "Current status, price, historical snapshots, and existing transfer wording preserved. No new licence, domain, account, or transfer promises added."
+    }
+  ],
+  "preservation": "Clean production-based release contains task changes only. Unrelated local work is preserved. No live form messages or external crawls were submitted.",
+  "account": "drenfest"
+}
