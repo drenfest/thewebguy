@@ -1,0 +1,1585 @@
+{
+  "reference": "https://thewebguy-component-library.drenfest.chatgpt.site/",
+  "revision": 2,
+  "components": [
+    {
+      "id": "semantic-color-system",
+      "name": "Brand color & surface system",
+      "category": "Foundations",
+      "sources": []
+    },
+    {
+      "id": "semantic-heading-scale",
+      "name": "H1–H6 · native heading scale",
+      "category": "Foundations",
+      "sources": []
+    },
+    {
+      "id": "semantic-body-text",
+      "name": "Paragraphs & inline text",
+      "category": "Foundations",
+      "sources": []
+    },
+    {
+      "id": "semantic-links",
+      "name": "Links · default, focus & unavailable",
+      "category": "Foundations",
+      "sources": []
+    },
+    {
+      "id": "semantic-lists",
+      "name": "Lists · ordered, unordered & nested",
+      "category": "Foundations",
+      "sources": []
+    },
+    {
+      "id": "semantic-definition-list",
+      "name": "Definitions & key–value records",
+      "category": "Foundations",
+      "sources": []
+    },
+    {
+      "id": "semantic-quotes-dividers",
+      "name": "Quotes, citations, address & rules",
+      "category": "Foundations",
+      "sources": []
+    },
+    {
+      "id": "semantic-code",
+      "name": "Code, terminal output & keyboard keys",
+      "category": "Foundations",
+      "sources": []
+    },
+    {
+      "id": "semantic-table",
+      "name": "Tables · caption, head, body & foot",
+      "category": "Foundations",
+      "sources": []
+    },
+    {
+      "id": "semantic-buttons",
+      "name": "Buttons · action, toggle & disabled",
+      "category": "Foundations",
+      "sources": []
+    },
+    {
+      "id": "semantic-fields",
+      "name": "Text inputs, select & textarea",
+      "category": "Foundations",
+      "sources": []
+    },
+    {
+      "id": "semantic-choice-controls",
+      "name": "Checkboxes, radios & fieldsets",
+      "category": "Foundations",
+      "sources": []
+    },
+    {
+      "id": "semantic-specialized-inputs",
+      "name": "Search, number, date, file & color inputs",
+      "category": "Foundations",
+      "sources": []
+    },
+    {
+      "id": "semantic-validation",
+      "name": "Field states · error, read-only & disabled",
+      "category": "Foundations",
+      "sources": []
+    },
+    {
+      "id": "semantic-progress-meter",
+      "name": "Range, output, progress & meter",
+      "category": "Foundations",
+      "sources": []
+    },
+    {
+      "id": "semantic-disclosure",
+      "name": "Details & summary · native disclosure",
+      "category": "Foundations",
+      "sources": []
+    },
+    {
+      "id": "semantic-figure-media",
+      "name": "Figures, images, captions & time",
+      "category": "Foundations",
+      "sources": []
+    },
+    {
+      "id": "semantic-dialog",
+      "name": "Dialog · focus, backdrop & return",
+      "category": "Foundations",
+      "sources": []
+    },
+    {
+      "id": "semantic-status-language",
+      "name": "Status, tags & contextual feedback",
+      "category": "Foundations",
+      "sources": []
+    },
+    {
+      "id": "semantic-structure",
+      "name": "Semantic structure & reading composition",
+      "category": "Foundations",
+      "sources": []
+    },
+    {
+      "id": "site-navigation",
+      "name": "Header & grouped navigation",
+      "category": "Shell",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/",
+          "selectors": [
+            "header.site-header"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/",
+          "selectors": [
+            ".mobile-accordion-panel"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "site-search",
+      "name": "Page search dialog",
+      "category": "Shell",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/",
+          "selectors": [
+            ".site-search"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "breadcrumbs",
+      "name": "Breadcrumbs",
+      "category": "Shell",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/about/",
+          "selectors": [
+            "nav.breadcrumb-nav"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/",
+          "selectors": [
+            "nav.breadcrumb-nav"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mobile-navigation",
+      "name": "Mobile navigation disclosures",
+      "category": "Shell",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/",
+          "selectors": [
+            "details.mobile-nav-details"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "page-hud",
+      "name": "Section HUD & page index",
+      "category": "Shell",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/",
+          "selectors": [
+            "header.site-header"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "contact-directory-footer",
+      "name": "Contact & directory footer",
+      "category": "Shell",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/",
+          "selectors": [
+            "footer.site-footer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home-hero",
+      "name": "Homepage hero & engineering model",
+      "category": "Heroes",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/",
+          "selectors": [
+            "main > section.hero"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/about/",
+          "selectors": [
+            "main > section.hero"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/privacy/",
+          "selectors": [
+            "main > section.hero"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "compact-hero",
+      "name": "Compact interior hero",
+      "category": "Heroes",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/contact/",
+          "selectors": [
+            "section.hero.hero--compact"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "service-intake",
+      "name": "Project handoff panel",
+      "category": "Heroes",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/services/website-integration-help/",
+          "selectors": [
+            ".hero-panel"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/services/wordpress-support/",
+          "selectors": [
+            ".hero-panel"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/services/contact-form-not-working-wordpress/",
+          "selectors": [
+            ".service-quote-card"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research-masthead",
+      "name": "Research article masthead",
+      "category": "Heroes",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/blog/topological-relevance-vector-seo/",
+          "selectors": [
+            ".hero--compact",
+            ".relevance-snapshot"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai-feature",
+      "name": "AI oversight feature",
+      "category": "Services",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/",
+          "selectors": [
+            "section.home-ai-review-section"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "problem-router",
+      "name": "Problem-to-service routing",
+      "category": "Services",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/",
+          "selectors": [
+            "section.homepage-problem-tabs"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "skills-router",
+      "name": "Skills by use",
+      "category": "Services",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/",
+          "selectors": [
+            "section.homepage-skills"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "service-area",
+      "name": "Local area introduction",
+      "category": "Services",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/",
+          "selectors": [
+            "section.local-remote-section"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "diagnostic-guide",
+      "name": "Diagnostic guide and scope panels",
+      "category": "Services",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/services/contact-form-not-working-wordpress/",
+          "selectors": [
+            ".service-guide__top",
+            ".service-guide__process",
+            ".service-guide__middle"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/services/fix-broken-wordpress-site/",
+          "selectors": [
+            ".service-guide__detail-grid"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/services/wordpress-support/",
+          "selectors": [
+            ".no-overpromise"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "related-help-rail",
+      "name": "Related help carousel",
+      "category": "Services",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/services/api-integrations/",
+          "selectors": [
+            ".related-project-help",
+            ".related-project-help__track",
+            ".related-project-help__controls"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "service-directories",
+      "name": "Service and location directories",
+      "category": "Services",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/services/",
+          "selectors": [
+            ".summary-link-grid",
+            ".summary-link-card"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/locations/",
+          "selectors": [
+            ".summary-link-grid",
+            ".topical-panel"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "task-cards",
+      "name": "Task and symptom card families",
+      "category": "Services",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/services/api-integrations/",
+          "selectors": [
+            ".uplift-card-grid",
+            ".uplift-proof-grid"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/services/fix-broken-wordpress-site/",
+          "selectors": [
+            ".symptom-grid"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/services/ai-built-website-cleanup/",
+          "selectors": [
+            ".card.has-infographic",
+            ".card-infographic"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/services/automation-internal-tools/",
+          "selectors": [
+            ".card.has-icon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "implementation-steps",
+      "name": "Implementation workflow",
+      "category": "Services",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/services/api-integrations/",
+          "selectors": [
+            ".uplift-workflow"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/services/website-integration-help/",
+          "selectors": [
+            ".uplift-workflow"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai-service-chooser",
+      "name": "AI service chooser",
+      "category": "Services",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/ai-development-oversight/",
+          "selectors": [
+            ".ai-service-chooser"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai-review-pipeline",
+      "name": "Engineering review pipeline",
+      "category": "Services",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/ai-development-oversight/",
+          "selectors": [
+            ".ai-process-rail",
+            ".ai-decision"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qa-journey",
+      "name": "Visitor journey map",
+      "category": "Services",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/ai-development-oversight/ai-website-qa/",
+          "selectors": [
+            ".ai-journey-map"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "release-timeline",
+      "name": "Release cycle timeline",
+      "category": "Services",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/ai-development-oversight/ai-production-oversight/",
+          "selectors": [
+            ".ai-release-timeline"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cleanup-tabs",
+      "name": "AI cleanup topic explorer",
+      "category": "Services",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/services/ai-built-website-cleanup/",
+          "selectors": [
+            ".cleanup-tabs",
+            ".cleanup-tabs__rail",
+            ".cleanup-tabs__select-wrap",
+            ".cleanup-tabs__panel"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "contextual-support-routes",
+      "name": "Service handoff rows",
+      "category": "Services",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/about/",
+          "selectors": [
+            ".contextual-support-panel",
+            ".contextual-support-list"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "topical-next-step-cards",
+      "name": "Labeled next-step cards",
+      "category": "Services",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/contact/",
+          "selectors": [
+            ".topical-panel",
+            ".topical-link-list"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "proof-signals",
+      "name": "Proof signals",
+      "category": "Proof",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/",
+          "selectors": [
+            "section.soft-section[aria-label=\"The Web Guy proof signals\"]"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "recent-work",
+      "name": "Recent work navigator",
+      "category": "Proof",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/",
+          "selectors": [
+            "section.proof-reel-section"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "proof-summary",
+      "name": "Proof statement panel",
+      "category": "Proof",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/services/wordpress-support/",
+          "selectors": [
+            ".proof-panel",
+            ".proof-panel-list"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/locations/freeport-il/",
+          "selectors": [
+            ".proof-subsection"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cited-link-evidence",
+      "name": "Cited internal-link evidence",
+      "category": "Proof",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/blog/topological-relevance-vector-seo/",
+          "selectors": [
+            ".v4-related",
+            ".v4-direction",
+            ".v4-passage"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "work-evidence-cards",
+      "name": "Work-note evidence cards",
+      "category": "Proof",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/fix-notes/",
+          "selectors": [
+            ".fix-note-card",
+            ".fix-note-card__meta",
+            ".fix-note-card__chips"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "work-note-record",
+      "name": "Work-note header and evidence sections",
+      "category": "Proof",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/fix-notes/turned-shopify-speed-audit-verified-theme-release/",
+          "selectors": [
+            ".fix-note-hero",
+            ".fix-note-hero__dates",
+            ".fix-note-section",
+            ".fix-note-tags"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "related-work-services",
+      "name": "Related service cards after a work note",
+      "category": "Proof",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/fix-notes/turned-shopify-speed-audit-verified-theme-release/",
+          "selectors": [
+            ".related-services-block",
+            ".related-services-block__grid"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "featured-articles",
+      "name": "Featured article & editorial rows",
+      "category": "Editorial",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/",
+          "selectors": [
+            "section.home-blog-section"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai-review-coverage",
+      "name": "Review coverage disclosures",
+      "category": "Editorial",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/ai-development-oversight/ai-code-review/",
+          "selectors": [
+            ".ai-disclosures"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/ai-development-oversight/ai-website-qa/",
+          "selectors": [
+            ".ai-disclosures"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/ai-development-oversight/",
+          "selectors": [
+            ".ai-context-grid",
+            ".ai-context-visual"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai-starting-brief",
+      "name": "Review examples and starting brief",
+      "category": "Editorial",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/ai-development-oversight/",
+          "selectors": [
+            ".ai-example-notes",
+            ".ai-start-brief"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "code-review-workbench",
+      "name": "Annotated code review",
+      "category": "Editorial",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/ai-development-oversight/ai-code-review/",
+          "selectors": [
+            ".ai-review-workbench",
+            ".ai-code-artifact",
+            ".ai-review-comment"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "code-review-report",
+      "name": "Review finding report",
+      "category": "Editorial",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/ai-development-oversight/ai-code-review/",
+          "selectors": [
+            ".ai-report-sheet"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qa-handoff",
+      "name": "QA ticket and delivery list",
+      "category": "Editorial",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/ai-development-oversight/ai-website-qa/",
+          "selectors": [
+            ".ai-qa-handoff",
+            ".ai-test-ticket",
+            ".ai-delivery-list"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/ai-development-oversight/ai-production-oversight/",
+          "selectors": [
+            ".ai-delivery-list"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/ai-development-oversight/ai-development-guardrails/",
+          "selectors": [
+            ".ai-delivery-list"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guardrail-system",
+      "name": "Shared-source before and after",
+      "category": "Editorial",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/ai-development-oversight/ai-development-guardrails/",
+          "selectors": [
+            ".ai-system-comparison",
+            ".ai-system-before",
+            ".ai-system-after"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guardrail-failure-map",
+      "name": "Failure-to-check register",
+      "category": "Editorial",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/ai-development-oversight/ai-development-guardrails/",
+          "selectors": [
+            ".ai-failure-map",
+            ".ai-technical-note"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "judgment-contrast",
+      "name": "Generation and review contrast",
+      "category": "Editorial",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/services/ai-built-website-cleanup/",
+          "selectors": [
+            ".judgment-contrast",
+            ".judgment-lane",
+            ".judgment-outcome"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "archive-header",
+      "name": "Archive header and category navigation",
+      "category": "Editorial",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/blog/category/forms-tracking-data/",
+          "selectors": [
+            ".blog-taxonomy-hero",
+            ".blog-taxonomy-chip-row"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/fix-notes/category/website-fixes/",
+          "selectors": [
+            ".fix-note-category-hero",
+            ".fix-note-category-nav"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/fix-notes/",
+          "selectors": [
+            ".fix-notes-archive-hero"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taxonomy-tiles",
+      "name": "Topic and work-category tiles",
+      "category": "Editorial",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/blog/",
+          "selectors": [
+            ".blog-taxonomy-card",
+            ".blog-tag-card"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/fix-notes/",
+          "selectors": [
+            ".fix-notes-categories__grid"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "article-preview-variants",
+      "name": "Article preview cards",
+      "category": "Editorial",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/blog/",
+          "selectors": [
+            ".latest-article-card"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/blog/category/forms-tracking-data/",
+          "selectors": [
+            ".summary-link-card"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/blog/gtm-form-tracking-ga4/",
+          "selectors": [
+            ".card.has-icon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "article-reading-layout",
+      "name": "Article reading layout",
+      "category": "Editorial",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/blog/gtm-form-tracking-ga4/",
+          "selectors": [
+            ".article-layout",
+            ".article-toc",
+            ".article-section"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/blog/something-broke-on-your-website/",
+          "selectors": [
+            ".article-group-heading",
+            ".article-section--priority"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "contextual-reading-paths",
+      "name": "Contextual reading and service paths",
+      "category": "Editorial",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/blog/gtm-form-tracking-ga4/",
+          "selectors": [
+            ".contextual-support-panel",
+            ".contextual-support-list"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/blog/category/start-here/",
+          "selectors": [
+            ".internal-link-copy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "planning-tables",
+      "name": "Sortable planning tables",
+      "category": "Data",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/services/",
+          "selectors": [
+            ".service-comparison-details",
+            ".sortable-table"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/skills/shopify-plus-liquid/",
+          "selectors": [
+            ".sortable-table"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/skills/wordpress-plugin-development/",
+          "selectors": [
+            ".sortable-table"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "responsibility-matrix",
+      "name": "Responsibility matrix",
+      "category": "Data",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/ai-development-oversight/ai-production-oversight/",
+          "selectors": [
+            ".ai-responsibility-table"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "article-flow",
+      "name": "Parallel data-flow strips",
+      "category": "Data",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/blog/website-data-systems-not-connecting/",
+          "selectors": [
+            ".article-flow"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "diagnostic-decision-table",
+      "name": "Sortable diagnostic decision table",
+      "category": "Data",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/blog/css-javascript-errors-website-bugs/",
+          "selectors": [
+            ".sortable-table",
+            ".sortable-table-scroll"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research-evidence-card",
+      "name": "Research evidence disclosures",
+      "category": "Data",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/blog/topological-relevance-vector-seo/",
+          "selectors": [
+            ".v4-card",
+            ".v4-tabs",
+            ".v4-panel",
+            ".query-count"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "query-diagnostic-metrics",
+      "name": "Nine-metric query record",
+      "category": "Data",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/blog/topological-relevance-vector-seo/",
+          "selectors": [
+            ".measured-query",
+            ".compact-metric-row",
+            ".metric-help",
+            ".metric-explanation"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "page-topic-metrics",
+      "name": "Page-to-topic metric figure",
+      "category": "Data",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/blog/topological-relevance-vector-seo/",
+          "selectors": [
+            ".v4-diagnostics",
+            ".compact-metric-row--page",
+            ".metric-help"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cosine-direction-scale",
+      "name": "Cosine direction-scale popover",
+      "category": "Data",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/blog/topological-relevance-vector-seo/",
+          "selectors": [
+            ".cosine-score",
+            ".relevance-score-tooltip",
+            "#cosine-tooltip",
+            ".range-marker"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research-equations",
+      "name": "Accessible research equations",
+      "category": "Data",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/blog/topological-relevance-vector-seo/",
+          "selectors": [
+            ".equation",
+            ".formula-fallback"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sortable-technical-table",
+      "name": "Sortable technical context table",
+      "category": "Data",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/about/",
+          "selectors": [
+            ".sortable-table-wrap",
+            ".sortable-table"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "asset-status-language",
+      "name": "Asset status and highlight tiles",
+      "category": "Commerce",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/sites-for-sale/",
+          "selectors": [
+            ".legend-card",
+            ".status-pill",
+            ".highlight-card"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "asset-listings",
+      "name": "Available and sold asset listing cards",
+      "category": "Commerce",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/sites-for-sale/",
+          "selectors": [
+            ".sale-card",
+            ".sale-card-metrics",
+            ".sale-card-actions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "asset-detail-hero",
+      "name": "Asset detail hero and live preview",
+      "category": "Commerce",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/sites-for-sale/hammernest-handyman/",
+          "selectors": [
+            ".sale-hero",
+            ".sale-hero-copy",
+            ".preview-card",
+            ".preview-frame"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "asset-recorded-metrics",
+      "name": "Recorded asset metrics and disclosure states",
+      "category": "Commerce",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/sites-for-sale/hammernest-handyman/",
+          "selectors": [
+            ".metric-panel",
+            ".score-grid",
+            ".search-metrics",
+            ".snapshot-period",
+            ".snapshot-meta"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/sites-for-sale/modemind/",
+          "selectors": [
+            ".metric-panel"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "asset-proof-build-numbers",
+      "name": "Asset proof tiles and build numbers",
+      "category": "Commerce",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/sites-for-sale/hammernest-handyman/",
+          "selectors": [
+            ".preview-signal",
+            ".proof-card",
+            ".stat-list"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "asset-screenshot-gallery",
+      "name": "Asset screenshot figures",
+      "category": "Commerce",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/sites-for-sale/hammernest-handyman/",
+          "selectors": [
+            ".screenshot-grid",
+            ".shot-card"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/sites-for-sale/modemind/",
+          "selectors": [
+            ".screenshot-grid--single"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "asset-detail-checklists",
+      "name": "Asset detail and archive-state sections",
+      "category": "Commerce",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/sites-for-sale/hammernest-handyman/",
+          "selectors": [
+            ".detail-card",
+            ".check-list"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/sites-for-sale/modemind/",
+          "selectors": [
+            ".detail-card"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pricing-model-options",
+      "name": "Pricing model options",
+      "category": "Commerce",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/rate/",
+          "selectors": [
+            "main > section:nth-of-type(3) .process-grid"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq-and-question",
+      "name": "FAQ & question panel",
+      "category": "Forms",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/",
+          "selectors": [
+            ".faq-block details"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/rate/",
+          "selectors": [
+            ".faq-block details"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/faq/",
+          "selectors": [
+            ".faq-block details"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/",
+          "selectors": [
+            "form.faq-question-form"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/faq/",
+          "selectors": [
+            "form.faq-question-form"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "editorial-faq-question",
+      "name": "Editorial FAQ and question form",
+      "category": "Forms",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/blog/gtm-form-tracking-ga4/",
+          "selectors": [
+            ".faq-list",
+            ".faq-question-form",
+            ".faq-question-check"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "asset-inquiry-form",
+      "name": "Asset inquiry and similar-build form",
+      "category": "Forms",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/sites-for-sale/hammernest-handyman/",
+          "selectors": [
+            ".inline-lead-section",
+            ".inline-lead-context",
+            ".inline-lead-form"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/sites-for-sale/",
+          "selectors": [
+            ".inline-lead-section"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/sites-for-sale/modemind/",
+          "selectors": [
+            ".inline-lead-section"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "full-quote-request-form",
+      "name": "Full quote request form",
+      "category": "Forms",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/contact/",
+          "selectors": [
+            "#request-form",
+            ".optional-contact-details",
+            ".rate-callout.light"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "contextual-inline-lead-form",
+      "name": "Compact quote form with context",
+      "category": "Forms",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/rate/",
+          "selectors": [
+            "#quote-form",
+            ".inline-lead-form",
+            ".inline-lead-context"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "actions-and-status",
+      "name": "Actions, tags & focus states",
+      "category": "Content",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/rate/",
+          "selectors": [
+            ".hero .hero-actions"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/contact/",
+          "selectors": [
+            "#request-form button[type=submit]"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai-context-navigation",
+      "name": "Context and sibling navigation",
+      "category": "Content",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/ai-development-oversight/",
+          "selectors": [
+            ".ai-page-nav"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/ai-development-oversight/ai-code-review/",
+          "selectors": [
+            ".ai-page-nav",
+            ".ai-related-links"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tool-map",
+      "name": "Tools and platform map",
+      "category": "Content",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/services/ai-built-website-cleanup/",
+          "selectors": [
+            ".tool-map-grid",
+            ".tool-map-note"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/ai-development-oversight/",
+          "selectors": [
+            ".ai-tool-strip"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "article-checklists-callouts",
+      "name": "Article checklists and callouts",
+      "category": "Content",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/blog/something-broke-on-your-website/",
+          "selectors": [
+            ".article-checklist",
+            ".article-callout",
+            ".article-callout--cta"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "contextual-inline-prose",
+      "name": "Contextual service links",
+      "category": "Content",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/about/",
+          "selectors": [
+            ".internal-link-copy.internal-link-copy--wide"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "technical-capability-matrix",
+      "name": "Technical capability matrix",
+      "category": "Content",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/about/",
+          "selectors": [
+            ".card-grid .card.has-icon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "contract-support-checklist",
+      "name": "Support and contracting panels",
+      "category": "Content",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/about/",
+          "selectors": [
+            "main > section:nth-of-type(2)"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/contact/",
+          "selectors": [
+            "main > section:nth-of-type(3)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "engagement-fit-handoff",
+      "name": "Work style and engagement fit",
+      "category": "Content",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/about/",
+          "selectors": [
+            "main > section:nth-of-type(7).split-section"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq-named-service-links",
+      "name": "FAQ answers with named service links",
+      "category": "Content",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/faq/",
+          "selectors": [
+            ".faq-block details",
+            ".faq-block details .text-link"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "policy-metadata-and-prose",
+      "name": "Policy metadata and long-form copy",
+      "category": "Content",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/privacy/",
+          "selectors": [
+            "main > section:nth-of-type(2)",
+            "main > section:nth-of-type(4)"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/terms/",
+          "selectors": [
+            "main > section:nth-of-type(2)",
+            "main > section:nth-of-type(4)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quote-summary",
+      "name": "Project quote summary",
+      "category": "Conversion",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/about/",
+          "selectors": [
+            "aside.hero-panel"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "teal-cta",
+      "name": "Teal call-to-action band",
+      "category": "Conversion",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/",
+          "selectors": [
+            "section.cta-band"
+          ]
+        },
+        {
+          "url": "https://thewebguy.app/about/",
+          "selectors": [
+            "section.cta-band"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quote-offer",
+      "name": "Quote offer & ways to start",
+      "category": "Conversion",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/",
+          "selectors": [
+            "section#rate"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "handoff-board",
+      "name": "Project handoff board",
+      "category": "Conversion",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/services/ai-built-website-cleanup/",
+          "selectors": [
+            ".handoff-board",
+            ".handoff-board__intro"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quote-process-sequence",
+      "name": "Quote process sequence",
+      "category": "Conversion",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/rate/",
+          "selectors": [
+            "main > section:nth-of-type(2) .process-grid"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "request-preparation-cards",
+      "name": "What-to-send request cards",
+      "category": "Conversion",
+      "sources": [
+        {
+          "url": "https://thewebguy.app/rate/",
+          "selectors": [
+            "#quote-details",
+            ".card-grid"
+          ]
+        }
+      ]
+    }
+  ]
+}

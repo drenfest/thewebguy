@@ -91,12 +91,15 @@ function cleanTitle(title = "") {
 
 function entry({ title, description, href, type, body = "" }) {
   const cleanedTitle = cleanTitle(title);
+  const descriptionText = Array.isArray(description)
+    ? description.map(part => typeof part === "string" ? part : part?.text || part?.label || "").join("")
+    : flatten(description);
   return {
     title: cleanedTitle,
-    description,
+    description: descriptionText,
     href,
     type,
-    searchable: `${cleanedTitle} ${description || ""} ${body}`.toLowerCase()
+    searchable: `${cleanedTitle} ${descriptionText} ${flatten(body)}`.toLowerCase()
   };
 }
 

@@ -124,13 +124,17 @@
   </div>
 
   <form class="contact-form contact-form--tight inline-lead-form" onsubmit={submit} onfocusin={startForm}>
+    <fieldset><legend>01 / Your details</legend>
     <div class="form-row">
       <label>Name<input bind:value={form.name} name="name" type="text" autocomplete="name" placeholder="Your name" required /></label>
       <label>Email<input bind:value={form.email} name="email" type="email" autocomplete="email" placeholder="you@example.com" required /></label>
     </div>
+    </fieldset>
+    <fieldset><legend>02 / Project brief</legend>
     <label>{urlLabel}<input bind:value={form.url} name="url" type="url" placeholder={urlPlaceholder} /></label>
     <label>{detailsLabel}<textarea bind:value={form.details} name="details" rows="6" placeholder={detailsPlaceholder} required></textarea></label>
     <label>{timelineLabel}<input bind:value={form.timeline} name="timeline" type="text" placeholder={timelinePlaceholder} /></label>
+    </fieldset>
     <label class="bot-field" aria-hidden="true" tabindex="-1">Leave this field blank<input bind:value={botTrap} name="websiteCompany" type="text" autocomplete="off" tabindex="-1" /></label>
     <input type="hidden" name="formLoadedAt" value={formLoadedAt} />
     <p class="form-note">{note} <a href="/privacy/">How your request is handled</a>.</p>

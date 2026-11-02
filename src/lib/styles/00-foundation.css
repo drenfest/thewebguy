@@ -20,13 +20,13 @@
 
 :root {
   color-scheme: light;
-  --font-body: "Oxanium", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-display: "Orbitron", "Oxanium", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: "Inter Tight", Arial, sans-serif;
+  --font-display: "Inter Tight", Arial, sans-serif;
   --ink: #111827;
   --muted: #5b6575;
-  --paper: #f6f2e9;
+  --paper: #f3f3ed;
   --panel: #ffffff;
-  --line: #d8d0c1;
+  --line: #b9cac4;
   --dark: #101722;
   --dark-2: #172230;
   --accent: #30c795;

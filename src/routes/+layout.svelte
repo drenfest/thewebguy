@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import { page } from "$app/state";
   import Header from "$lib/components/Header.svelte";
+  import PageNavigator from "$lib/components/PageNavigator.svelte";
   import Footer from "$lib/components/Footer.svelte";
   import GoogleAnalytics from "$lib/components/GoogleAnalytics.svelte";
   import SeasonalLightning from "$lib/components/SeasonalLightning.svelte";
@@ -89,3 +90,4 @@
   <TopologyBridgeComponent />
 {/if}
 <Footer showCta={!isInformationalArticle} />
+<PageNavigator />

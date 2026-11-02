@@ -139,119 +139,33 @@
   ].filter(Boolean);
 </script>
 
+{#snippet folder(number, title, links, groups = [])}
+  <details class="footer-folder">
+    <summary><span class="footer-folder-number">{number}</span><span>{title}</span><span class="footer-folder-count">{links.length + groups.reduce((n, group) => n + group.links.length, 0)} links</span><span class="footer-folder-toggle" aria-hidden="true"></span></summary>
+    <div class="footer-folder-body">
+      <div class="footer-link-list">{#each links as link}<a href={link.href} title={linkTitle(link.label, link.href)}>{link.label}</a>{/each}</div>
+      {#each groups as group}<div class="footer-subgroup"><h4 class="footer-subheading">{group.title}</h4><div class="footer-link-list">{#each group.links as link}<a href={link.href} title={linkTitle(link.label, link.href)}>{link.label}</a>{/each}</div></div>{/each}
+    </div>
+  </details>
+{/snippet}
+
 <footer class="site-footer">
-  {#if showCta}
-  <div class="footer-cta">
-    <div class="footer-cta-copy">
-      <strong>Need web work handled?</strong>
-      <p>Start with the URL, the problem, and the outcome you want.</p>
-    </div>
-    <div class="footer-cta-action">
-      <a class="button button-primary" href={quoteHref} title="Open the contact request form">Get a Free Quote</a>
-    </div>
-  </div>
-
-  {/if}
-
+  <div class="footer-system-label"><span>THE WEB GUY / CONTACT & DIRECTORY</span></div>
+  {#if showCta}<div class="footer-cta"><div class="footer-cta-copy"><strong>Need web work handled?</strong><p>Start with the URL, the problem, and the outcome you want.</p></div><div class="footer-cta-action"><a class="button button-primary" href={quoteHref} title="Open the contact request form">Get a Free Quote <span aria-hidden="true">↗</span></a></div></div>{/if}
   <div class="footer-inner">
     <section class="footer-brand-row" aria-label="The Web Guy footer summary">
-      <div class="footer-brand-copy">
-        <div class="footer-brand-heading">
-          <img
-            class="footer-wordmark"
-            src="/brand/thewebguy-modern-color-wordmark.png"
-            width="1476"
-            height="253"
-            alt="The Web Guy.app"
-            loading="lazy"
-            decoding="async"
-          />
-          <h2 class="sr-only">The Web Guy</h2>
-        </div>
-        <p>Contract web development, WordPress support, Shopify/Liquid help, technical SEO implementation, tracking cleanup, automation, performance, and platform support.</p>
-        <div class="footer-mini-grid footer-brand-pills" aria-label="Core support areas">
-          {#each supportPills as link}
-            <a href={link.href} title={linkTitle(link.label, link.href)}>{link.label}</a>
-          {/each}
-        </div>
-      </div>
-      <div class="footer-brand-support">
-        <p>Practical developer help for existing sites, messy platforms, agency overflow, and web work that needs to move.</p>
-      </div>
+      <div class="footer-brand-copy"><div class="footer-brand-heading"><a href="/" title="View The Web Guy homepage"><img class="footer-wordmark" src="/brand/thewebguy-modern-color-wordmark.png" width="1476" height="253" alt="The Web Guy.app" loading="lazy" decoding="async" /></a><h2 class="sr-only">The Web Guy</h2></div>
+      <p>Contract web development, WordPress support, Shopify/Liquid help, technical SEO implementation, tracking cleanup, automation, performance, and platform support.</p>
+      <div class="footer-mini-grid footer-brand-pills" aria-label="Core support areas">{#each supportPills as link}<a href={link.href} title={linkTitle(link.label, link.href)}>{link.label}</a>{/each}</div></div>
+      <div class="footer-brand-support"><p>Practical developer help for existing sites, messy platforms, agency overflow, and web work that needs to move.</p></div>
     </section>
-
-    <div class="footer-row footer-services-row">
-      <nav class="footer-link-column footer-hub-column" aria-label="Footer Web Guy Hub links">
-        <h3 class="footer-column-heading">Web Guy Hub</h3>
-        <div class="footer-link-list">
-          {#each hubLinks as link}
-            <a href={link.href} title={linkTitle(link.label, link.href)}>{link.label}</a>
-          {/each}
-        </div>
-      </nav>
-
-      <section class="footer-spanning-group footer-services-group" aria-labelledby="footer-services-heading">
-        <h3 id="footer-services-heading" class="footer-column-heading footer-span-heading">Services</h3>
-        <div class="footer-subgroup-grid footer-services-grid">
-          {#each serviceGroups as group}
-            <div class="footer-subgroup">
-              <h4 class="footer-subheading">{group.title}</h4>
-              <div class="footer-link-list">
-                {#each group.links as link}
-                  <a href={link.href} title={linkTitle(link.label, link.href)}>{link.label}</a>
-                {/each}
-              </div>
-            </div>
-          {/each}
-        </div>
-      </section>
-    </div>
-
-    <div class="footer-row footer-lower-row">
-      <nav class="footer-link-column footer-locations-column" aria-label="Footer location links">
-        <h3 class="footer-column-heading">Locations</h3>
-        <div class="footer-link-list">
-          {#each locationLinks as link}
-            <a href={link.href} title={linkTitle(link.label, link.href)}>{link.label}</a>
-          {/each}
-        </div>
-      </nav>
-
-      <section class="footer-spanning-group footer-skills-group" aria-labelledby="footer-skills-heading">
-        <h3 id="footer-skills-heading" class="footer-column-heading footer-span-heading">Core Skills</h3>
-        <div class="footer-subgroup-grid footer-skills-grid">
-          {#each skillGroups as group}
-            <div class="footer-subgroup">
-              <h4 class="footer-subheading">{group.title}</h4>
-              <div class="footer-link-list">
-                {#each group.links as link}
-                  <a href={link.href} title={linkTitle(link.label, link.href)}>{link.label}</a>
-                {/each}
-              </div>
-            </div>
-          {/each}
-        </div>
-      </section>
-
-      <nav class="footer-link-column footer-blog-column" aria-label="Footer blog links">
-        <h3 class="footer-column-heading">Blog</h3>
-        <div class="footer-link-list">
-          {#each blogLinks as link}
-            <a href={link.href} title={linkTitle(link.label, link.href)}>{link.label}</a>
-          {/each}
-        </div>
-      </nav>
-    </div>
+    <nav class="footer-directory" aria-label="Site directory"><p class="footer-directory-label">EXPLORE THE SITE</p>
+      {@render folder('01', 'Web Guy Hub', hubLinks)}
+      {@render folder('02', 'Services', [], serviceGroups)}
+      {@render folder('03', 'Locations', locationLinks)}
+      {@render folder('04', 'Core Skills', [], skillGroups)}
+      {@render folder('05', 'Blog', blogLinks)}
+    </nav>
   </div>
-
-  <div class="footer-bottom-bar">
-    <div class="footer-bottom">
-      <p class="copyright">&copy; {year} The Web Guy. All rights reserved.</p>
-      <nav class="footer-legal-links" aria-label="Footer utility links">
-        <a href="/sitemap.xml" title="View the XML sitemap">Sitemap</a>
-        <a href="/privacy/" title="Read The Web Guy Privacy Policy">Privacy</a>
-        <a href="/terms/" title="Read The Web Guy Terms of Service">Terms</a>
-      </nav>
-    </div>
-  </div>
+  <div class="footer-bottom-bar"><div class="footer-bottom"><p class="copyright">&copy; {year} The Web Guy. All rights reserved.</p><nav class="footer-legal-links" aria-label="Footer utility links"><a href="/sitemap.xml" title="View the XML sitemap">Sitemap</a><a href="/privacy/" title="Read The Web Guy Privacy Policy">Privacy</a><a href="/terms/" title="Read The Web Guy Terms of Service">Terms</a></nav></div></div>
 </footer>

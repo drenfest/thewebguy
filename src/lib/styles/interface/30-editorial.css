@@ -1,0 +1,55 @@
+body.twg-ui :is(h2,h3,h4) .text-link { display:inline; font:inherit; letter-spacing:inherit; line-height:inherit; border:0; padding:0; color:inherit; }
+body.twg-ui :is(h2,h3,h4) .text-link:hover { color:var(--twg-green); }
+body.twg-ui :is(p,li,figcaption) .text-link { display:inline; font:inherit; line-height:inherit; padding-bottom:1px; border-bottom:1px solid currentColor; }
+body.twg-ui .v4-card { min-width:0; border:1px solid var(--twg-line); padding:30px; background:#ffffff38; }
+body.twg-ui .v4-card>h3 { max-width:520px; font-size:30px; }
+body.twg-ui .v4-card>.eyebrow { margin-bottom:20px; }
+body.twg-ui .v4-panel { padding-top:24px; font-size:15px; }
+body.twg-ui .v4-panel+.v4-panel { margin-top:24px; border-top:1px solid var(--twg-line); }
+@media(max-width:720px) {
+  body.twg-ui .v4-card { padding:24px; }
+}
+
+body.twg-ui :is(.eyebrow,.ui-meta,.ui-tag){letter-spacing:.055em}
+body.twg-ui :is(.eyebrow,.ui-meta){font-size:10px}
+body.twg-ui .eyebrow:before{width:7px;height:7px;border:1px solid currentColor;background:transparent;box-shadow:3px 3px 0 -1px currentColor}
+body.twg-ui .v4-card{padding:31px;min-width:0;align-self:start}
+body.twg-ui .v4-card>.eyebrow{font-size:9px;line-height:1.7;max-width:90%;margin-bottom:25px}
+body.twg-ui .v4-card>h3{font-size:29px;line-height:1.17;max-width:620px}
+body.twg-ui .v4-card>h3 a:hover{color:#30c795}
+body.twg-ui .v4-panel{color:#bccbd6;padding-top:26px;font-size:15px}
+body.twg-ui .v4-panel .ui-meta{font-size:9px;color:#8faabc}
+body.twg-ui .v4-panel p{line-height:1.75}
+@media (max-width:700px){
+ body.twg-ui .v4-card{padding:25px}
+}
+@media (max-width:430px){
+ body.twg-ui .v4-card>h3{font-size:27px}
+}
+
+/* Research evidence uses the navy instrument palette throughout its disclosures.
+   The figures, data, score explanations and evidence behavior remain unchanged. */
+body.twg-ui .relevance-article .v4-card {
+  --ink: #edf5f4; --muted: #b3c7d0; --panel: #101722;
+  --accent-dark: #30c795; --line: #426276;
+  --ui-fg: #edf5f4; --ui-muted: #b3c7d0; --ui-bg: #101722;
+  --ui-link: #5ae1b4; --ui-line: #426276; --ui-focus: #a0b9ff;
+  padding: 0; border: 1px solid #426276; border-top: 2px solid #30c795;
+  border-radius: 0; background: #101722; color: #edf5f4; box-shadow: none;
+}
+body.twg-ui .relevance-article .v4-card-heading { background: #172838; border-top: 0; }
+body.twg-ui .relevance-article .v4-card-heading h3 { color: #edf5f4; font-size: 25px; line-height: 1.25; }
+body.twg-ui .relevance-article .v4-tabs { background: #101f2c; gap: 8px 20px; }
+body.twg-ui .relevance-article .v4-tabs button { font: 400 11px/1.6 var(--font-mono); color: #b3c7d0; }
+body.twg-ui .relevance-article .v4-tabs button[aria-expanded=true] { color: #30c795; border-bottom-color: #30c795; }
+body.twg-ui .relevance-article .v4-panel { color: #c5d5dc; }
+body.twg-ui .relevance-article .v4-card :is(h4,strong) { color: #edf5f4; }
+body.twg-ui .relevance-article .v4-card :is(.v4-passage,th) { background: #172838; }
+body.twg-ui .relevance-article .v4-card tbody tr:nth-child(even) { background: #101f2c; }
+body.twg-ui .relevance-article .v4-card :is(.measured-query,.v4-diagnostics,.metric-explanation) { background: #172838; color: #c5d5dc; border-color: #426276; border-radius: 0; }
+body.twg-ui .relevance-article .v4-card .bar .track { fill: #304251; }
+body.twg-ui .relevance-article .v4-card .compact-metric { background: #101f2c; border-color: #426276; border-radius: 0; }
+body.twg-ui .relevance-article .v4-card .metric-help:hover,body.twg-ui .relevance-article .v4-card .metric-help[aria-expanded=true] { background: #30c79514; }
+body.twg-ui :is(.fix-note-category-nav,.blog-taxonomy-nav) a { border-radius: 0; font: 400 11px/1.6 var(--font-mono); border: 1px solid var(--line); background: transparent; padding: 11px 14px; }
+body.twg-ui :is(.fix-note-category-nav,.blog-taxonomy-nav) a.active { background: #101722; color: #30c795; border-color: #3c7867; }
+body.twg-ui :is(.status-pill,.legend-card,.highlight-card,.metric-panel,.preview-card,.proof-card,.shot-card,.sale-card) { border-radius: 0; }

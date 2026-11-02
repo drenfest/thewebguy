@@ -12,6 +12,8 @@
   let searchQuery = $state("");
   let searchFocused = $state(false);
   let searchResults = $state([]);
+  let searchDialog;
+  async function openSearch() { closeDesktopMenu(); closeMobileMenu(); searchDialog?.showModal(); await tick(); document.getElementById("site-search-input")?.focus(); }
   let searchWorker;
   let searchRequestId = 0;
   let lastTrackedSearch = "";
@@ -228,6 +230,7 @@
       search_result_position: index + 1
     });
     searchFocused = false;
+    searchDialog?.close();
     closeMobileMenu();
   }
 
@@ -263,7 +266,9 @@
     }
 
     function handleKeydown(event) {
+      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") { event.preventDefault(); openSearch(); return; }
       if (event.key === "Escape") {
+        if (searchDialog?.open) { event.preventDefault(); searchDialog.close(); }
         closeDesktopMenu();
         closeMobileMenu();
       }
@@ -379,36 +384,7 @@
     {/each}
   </div>
 
-  <div class="site-search" role="search">
-    <label class="sr-only" for="site-search-input">Search pages</label>
-    <input
-      id="site-search-input"
-      bind:value={searchQuery}
-      type="search"
-      autocomplete="off"
-      placeholder="Search site"
-      use:siteSearchInput
-    />
-    {#if showSearchResults}
-      <div class="site-search-results" aria-label="Search results">
-        {#if searchResults.length}
-          {#each searchResults as result, index}
-            <a
-              href={result.href}
-              title={`Open ${result.title}`}
-              onclick={() => handleSearchResultClick(result, index)}
-            >
-              <span>{result.type}</span>
-              <strong>{result.title}</strong>
-              <small>{result.description}</small>
-            </a>
-          {/each}
-        {:else}
-          <p>No matching pages yet.</p>
-        {/if}
-      </div>
-    {/if}
-  </div>
+  <button class="search-open" type="button" aria-label="Search pages" aria-haspopup="dialog" onclick={openSearch}><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button>
 
   <a class="button button-small button-primary header-cta" href={quoteHref} title={linkTitle(headerCta.label, quoteHref)} onclick={handleHeaderContactClick}>{headerCta.label}</a>
 
@@ -517,3 +493,35 @@
     </div>
   </details>
 </header>
+
+<dialog bind:this={searchDialog} class="search-dialog" aria-labelledby="search-dialog-title"><div class="search-dialog-top"><div><p class="eyebrow">SITE SEARCH</p><h2 id="search-dialog-title">Find the right page.</h2></div><button type="button" class="search-close" aria-label="Close search" onclick={() => searchDialog.close()}>×</button></div><p class="search-dialog-hint">Search services, skills, articles and website fixes. Enter at least four characters.</p>  <div class="site-search dialog-site-search" role="search">
+    <label class="sr-only" for="site-search-input">Search pages</label>
+    <input
+      id="site-search-input"
+      bind:value={searchQuery}
+      type="search"
+      autocomplete="off"
+      placeholder="Search site"
+      use:siteSearchInput
+    />
+    {#if searchQuery.trim().length >= 4}
+      <div class="site-search-results" aria-label="Search results">
+        {#if searchResults.length}
+          {#each searchResults as result, index}
+            <a
+              href={result.href}
+              title={`Open ${result.title}`}
+              onclick={() => handleSearchResultClick(result, index)}
+            >
+              <span>{result.type}</span>
+              <strong>{result.title}</strong>
+              <small>{result.description}</small>
+            </a>
+          {/each}
+        {:else}
+          <p>No matching pages yet.</p>
+        {/if}
+      </div>
+    {/if}
+  </div>
+<p class="search-dialog-key">Escape to close <span>Ctrl / ⌘ + K to open</span></p></dialog>

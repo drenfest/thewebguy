@@ -4,6 +4,8 @@
 */
 
 @import "./src/lib/styles/00-foundation.css";
+@import "./src/lib/styles/interface/00-tokens.css";
+@import "./src/lib/styles/interface/01-elements.css";
 @import "./src/lib/styles/10-navigation.css";
 @import "./src/lib/styles/20-hero.css";
 @import "./src/lib/styles/30-layout-sections.css";
@@ -14,3 +16,9 @@
 @import "./src/lib/styles/90-animations.css";
 @import "./src/lib/styles/95-seasonal.css";
 @import "./src/lib/styles/99-responsive.css";
+
+/* Approved interface families, adapted to existing component contracts. */
+@import "./src/lib/styles/interface/10-components.css";
+@import "./src/lib/styles/interface/20-services.css";
+@import "./src/lib/styles/interface/30-editorial.css";
+@import "./src/lib/styles/interface/40-responsive.css";

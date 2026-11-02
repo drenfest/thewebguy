@@ -12,12 +12,12 @@
   }
 
   function handleTabKeys(event) {
-    if (!["ArrowDown", "ArrowUp", "Home", "End"].includes(event.key)) return;
+    if (!["ArrowDown", "ArrowUp", "ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
     event.preventDefault();
 
     if (event.key === "Home") selectSkill(0);
     else if (event.key === "End") selectSkill(items.length - 1);
-    else if (event.key === "ArrowDown") selectSkill((activeIndex + 1) % items.length);
+    else if (event.key === "ArrowDown" || event.key === "ArrowRight") selectSkill((activeIndex + 1) % items.length);
     else selectSkill((activeIndex - 1 + items.length) % items.length);
 
     requestAnimationFrame(() => document.getElementById(`homepage-skill-tab-${activeIndex}`)?.focus());

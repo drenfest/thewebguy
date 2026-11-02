@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from "svelte";
+  import EngineeringModel from "./EngineeringModel.svelte";
   import { page } from "$app/state";
   import { contactHrefWithContext, isContactTarget } from "$lib/contact-context.js";
 
@@ -74,37 +74,11 @@
     return `View ${label}`;
   }
 
-  let HeroEffect = $state(null);
-
-  onMount(() => {
-    if (compact) return;
-    let cancelled = false;
-    const isMobile = window.matchMedia("(max-width: 640px)").matches;
-    const delay = isMobile ? 4200 : 3600;
-
-    async function loadHeroEffect() {
-      const module = await import("./HeroParticles.svelte");
-      if (!cancelled) HeroEffect = module.default;
-    }
-
-    const timeout = window.setTimeout(() => {
-      if ("requestIdleCallback" in window) {
-        window.requestIdleCallback(() => loadHeroEffect().catch(() => {}), { timeout: 1800 });
-        return;
-      }
-
-      loadHeroEffect().catch(() => {});
-    }, delay);
-
-    return () => {
-      cancelled = true;
-      window.clearTimeout(timeout);
-    };
-  });
+  const isHome = $derived(page.url.pathname === "/");
 </script>
 
 <svelte:head>
-  {#if !compact}
+  {#if !compact && !isHome}
   <link
     rel="preload"
     as="image"
@@ -118,15 +92,13 @@
   {/if}
 </svelte:head>
 
-<section class="hero effect effect-hero effect-high" class:hero--compact={compact}>
-  {#if HeroEffect}
-    <HeroEffect intensity="high" />
-  {/if}
+<section class="hero" class:hero--compact={compact} class:hero--home={isHome}>
+
   <div class="hero-grid">
     <div>
       <p class="eyebrow">{eyebrow}</p>
       {#if purpose}<p class="hero-purpose">{purpose}</p>{:else}<p class="availability-pill"><span></span>Direct help from a developer</p>{/if}
-      <h1>{h1}</h1>
+      <h1>{#if isHome && h1.endsWith("It Should.")}{h1.slice(0, -10)}<span class="hero-highlight">It Should.</span>{:else}{h1}{/if}</h1>
       <p class="hero-lede">{intro}</p>
       <div class="hero-actions">
         <a class="button button-primary cta-animated cta-animated--primary" href={contextualCtaHref} title={linkTitle(cta, contextualCtaHref)}>{cta}</a>
@@ -141,7 +113,7 @@
         </nav>
       {/if}
     </div>
-    {#if !compact}<aside class="hero-panel">
+    {#if !compact && isHome}<EngineeringModel />{:else if !compact}<aside class="hero-panel">
       {#if panel}
         <div class="hero-panel-status">
           <span>{panelStatus}</span>

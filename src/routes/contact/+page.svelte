@@ -375,12 +375,16 @@
           </div>
         {/if}
 
+        <fieldset><legend>01 / Your details</legend>
         <label>Name<input bind:value={contactState.draft.name} name="name" type="text" autocomplete="name" placeholder="Your name" required /></label>
         <label>Email<input bind:value={contactState.draft.email} name="email" type="email" autocomplete="email" placeholder="you@example.com" required /></label>
+        </fieldset>
+        <fieldset><legend>02 / Project brief</legend>
         <label>Website URL (optional)<input bind:value={contactState.draft.url} name="url" type="url" placeholder="https://example.com/page-with-the-issue" /></label>
         <label>What is happening or needed?<textarea bind:value={contactState.draft.details} name="details" rows="6" placeholder="Example: The contact form shows a success message, but no email arrives. It started after an update. The form is on the page linked above." required></textarea></label>
         <label>Timeline<input bind:value={contactState.draft.timeline} name="timeline" type="text" placeholder="ASAP, this week, this month, flexible" /></label>
 
+        </fieldset>
         <details class="optional-contact-details">
           <summary>Optional: company, service fit, and ongoing details</summary>
           <div class="optional-contact-grid">
